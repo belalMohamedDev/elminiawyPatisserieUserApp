@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FontConsistent {
-
-  static const String fontFamilyCairo = "Acme";
-
+  static const String fontFamilyAcme = "Acme";
+  static const String fontFamilyCairo = "cairo";
 }
 
 class FontWeightManger {
@@ -15,6 +14,4 @@ class FontWeightManger {
   static const FontWeight bold = FontWeight.w700;
   static const FontWeight extraBold = FontWeight.w800;
   static const FontWeight black = FontWeight.w900;
-
 }
-

@@ -1,4 +1,7 @@
+import 'package:elminiawy/core/routing/routes.dart';
+import 'package:elminiawy/core/style/fonts/font_manger.dart';
 import 'package:elminiawy/core/style/fonts/strings_manger.dart';
+import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,10 +16,8 @@ class AlreadyAccountTextSpan extends StatelessWidget {
     return Text.rich(
         TextSpan(
             text: AppStrings.alreadyHaveAnAccount,
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(fontSize: 15.sp),
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                fontSize: 15.sp, fontFamily: FontConsistent.fontFamilyAcme),
             children: [
               WidgetSpan(
                   child: SizedBox(
@@ -25,13 +26,11 @@ class AlreadyAccountTextSpan extends StatelessWidget {
               TextSpan(
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    // context.pushReplacementNamed(Routes.loginRoute);
+                    context.pushReplacementNamed(Routes.loginRoute);
                   },
                 text: AppStrings.signIn,
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineSmall!
-                    .copyWith(fontSize: 17.sp),
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: 17.sp, fontFamily: FontConsistent.fontFamilyAcme),
               )
             ]),
         style: Theme.of(context).textTheme.bodyLarge);

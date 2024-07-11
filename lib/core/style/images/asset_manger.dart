@@ -1,14 +1,18 @@
 const String imagePath = "asset/image";
-const String jsonPath = "asset/json";
+// const String jsonPath = "asset/json";
 
 class ImageAsset {
-  static const String splashImage = "$imagePath/splash.png";
+  //onBoading screen
   static const String onBoarding = "$imagePath/onBoarding.jpg";
-  static const String splash = "$imagePath/splash.jpg";
+
+  // auth  screen
+  static const String faceBook = "$imagePath/facebook.png";
+  static const String apple = "$imagePath/apple.png";
+  static const String google = "$imagePath/google.png";
 
 
 }
 
-class JsonAsset {
-  static const String splashLogo = "$jsonPath/splash.json";
-}
+// class JsonAsset {
+//   static const String splashLogo = "$jsonPath/splash.json";
+// }

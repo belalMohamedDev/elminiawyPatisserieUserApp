@@ -1,5 +1,6 @@
 
 import 'package:elminiawy/feature/home/presentation/screen/home_screen.dart';
+import 'package:elminiawy/feature/login/presentation/screen/login_view.dart';
 import 'package:elminiawy/feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
@@ -17,11 +18,16 @@ class RouteGenerator {
         );
      
      
-      case Routes.home:
+      case Routes.loginRoute:
+        return MaterialPageRoute(
+          builder: (_) => const LoginView(),
+        );
+     
+
+       case Routes.home:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
         );
-     
       default:
         return unDefinedRoute();
     }

@@ -1,5 +1,3 @@
-
-
 import 'package:elminiawy/core/style/color/color_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +22,7 @@ class CircleAvatarIconButton extends StatelessWidget {
         maxRadius: 27.r,
         backgroundColor: Colors.black12,
         child: CircleAvatar(
-          backgroundColor: ColorManger.offWhite,
+          backgroundColor: ColorManger.white,
           maxRadius: 25.r,
           child: Image.asset(
             imagePath,

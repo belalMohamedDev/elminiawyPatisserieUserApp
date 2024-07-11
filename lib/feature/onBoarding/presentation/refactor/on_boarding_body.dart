@@ -19,7 +19,7 @@ class OnBoardingBody extends StatelessWidget {
             height: 400.h,
           ),
           SizedBox(
-            height: 40.h,
+            height: 50.h,
           ),
           const TitleAndHeadLineText(),
           SizedBox(
@@ -27,7 +27,7 @@ class OnBoardingBody extends StatelessWidget {
           ),
           const GetStartedButton(),
           SizedBox(
-            height: 25.h,
+            height: 35.h,
           ),
           const AlreadyAccountTextSpan()
         ],
@@ -35,4 +35,3 @@ class OnBoardingBody extends StatelessWidget {
     );
   }
 }
-

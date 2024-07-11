@@ -33,13 +33,10 @@ ThemeData getApplicationTheme() {
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
         backgroundColor: ColorManger.brun,
-
         textStyle: getSemiBoldStyle(
           fontSize: 14.sp,
           color: ColorManger.white,
         ),
-
-   
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
         fixedSize: Size.fromHeight(40.h),
@@ -50,7 +47,6 @@ ThemeData getApplicationTheme() {
           systemOverlayStyle: SystemUiOverlayStyle(
               statusBarColor: ColorManger.white,
               statusBarIconBrightness: Brightness.dark),
-      
           color: ColorManger.white),
 
 // //text theme
@@ -78,8 +74,17 @@ ThemeData getApplicationTheme() {
           color: ColorManger.black,
         ),
 
+        bodyLarge: TextStyle(
+          fontSize: 13.sp,
+          color: ColorManger.brunLight,
+        ),
+        // getLightStyle(
+        //   fontSize: 12.sp,
+        //   color: ColorManger.brun,
+        // ),
+
         titleMedium:
-            getSemiBoldStyle(fontSize: 12.sp, color: ColorManger.white),
+            getSemiBoldStyle(fontSize: 12.sp, color: ColorManger.brunLight),
       ),
 
 // // using in text on boarding
@@ -124,21 +129,27 @@ ThemeData getApplicationTheme() {
           color: ColorManger.black26,
         ),
         hintStyle: getMediumStyle(
-          fontSize: 13.sp,
+          fontSize: 11.sp,
           color: ColorManger.black26,
         ),
         errorStyle: TextStyle(
             fontSize: 11.sp,
             fontFamily: FontConsistent.fontFamilyCairo,
             fontWeight: FontWeight.w500),
-        prefixIconColor: ColorManger.black26,
-        suffixIconColor: ColorManger.black26,
+        prefixIconColor: WidgetStateColor.resolveWith((states) =>
+            states.contains(WidgetState.focused)
+                ? ColorManger.brunLight
+                : ColorManger.black26),
+        suffixIconColor: WidgetStateColor.resolveWith((states) =>
+            states.contains(WidgetState.focused)
+                ? ColorManger.brunLight
+                : ColorManger.black26),
         labelStyle: getMediumStyle(
           fontSize: 10.sp,
           color: ColorManger.black26,
         ),
         filled: true,
-        fillColor: ColorManger.offWhite,
+        fillColor: ColorManger.white,
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: ColorManger.selected),
             borderRadius: BorderRadius.circular(12.r)),
