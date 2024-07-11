@@ -1,4 +1,6 @@
+import 'package:elminiawy/core/routing/routes.dart';
 import 'package:elminiawy/core/style/fonts/strings_manger.dart';
+import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedButton extends StatelessWidget {
@@ -11,7 +13,9 @@ class GetStartedButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          context.pushReplacementNamed(Routes.home);
+        },
         child: Text(AppStrings.letsGetStarted,
             style: Theme.of(context).textTheme.titleMedium),
       ),
