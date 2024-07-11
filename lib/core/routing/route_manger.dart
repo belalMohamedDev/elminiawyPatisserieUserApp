@@ -1,8 +1,8 @@
 
+import 'package:elminiawy/feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../feature/splash/presentation/screen/splash_view.dart';
 import '../style/fonts/strings_manger.dart';
 import 'routes.dart';
 
@@ -10,65 +10,11 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
 
-      case Routes.splashRoute:
+      case Routes.onBoardingRoute:
         return MaterialPageRoute(
-          builder: (_) => const SplashView(),
+          builder: (_) => const OnBoardingView(),
         );
-      // case Routes.onBoardingRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const OnBoardingView(),
-      //   );
-      // case Routes.loginRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => instance<LoginBloc>(),
-      //       child: const LoginView(),
-      //     ),
-      //   );
-
-      // case Routes.registerRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => instance<SignUpBloc>(),
-      //       child: const SignUpView(),
-      //     ),
-      //   );
-
      
-
-      // case Routes.forgetPasswordRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider.value(
-      //       value: instance<ForgetPasswordBloc>(),
-      //       child: const ForgetPasswordScreen(),
-      //     ),
-      //   );
-
-      //     case Routes.verificationCodeViewRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider.value(
-      //       value: instance<ForgetPasswordBloc>(),
-      //       child: const VerificationCodeView(),
-      //     ),
-      //   );
-
-      // case Routes.newPassword:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider.value(
-      //       value: instance<ForgetPasswordBloc>(),
-      //       child: const NewPasswordView(),
-      //     ),
-      //   );
-      //      case Routes.home:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const HomeScreen(),
-      //   );
-
-      // case Routes.bottomNavBarRoute:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const BottomNaveBarView(),
-      //   );
-
       default:
         return unDefinedRoute();
     }

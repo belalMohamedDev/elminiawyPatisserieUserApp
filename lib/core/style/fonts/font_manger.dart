@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FontConsistent {
 
-  static const String fontFamilyCairo = "cairo";
+  static const String fontFamilyCairo = "Acme";
 
 }
 

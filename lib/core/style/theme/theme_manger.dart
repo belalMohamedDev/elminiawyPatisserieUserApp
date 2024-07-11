@@ -17,7 +17,11 @@ ThemeData getApplicationTheme() {
 //
 // //main color
 //       primaryColor: ColorManger.gradationLightBlue,
-      scaffoldBackgroundColor: ColorManger.offWhite,
+      scaffoldBackgroundColor: ColorManger.white,
+      pageTransitionsTheme: const PageTransitionsTheme(builders: {
+        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+      }),
+
 // //Button theme
 //       buttonTheme: ButtonThemeData(
 //           buttonColor: ColorManger.lightBlue,
@@ -28,15 +32,14 @@ ThemeData getApplicationTheme() {
 // //elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-        backgroundColor: ColorManger.primary,
+        backgroundColor: ColorManger.brun,
 
         textStyle: getSemiBoldStyle(
           fontSize: 14.sp,
           color: ColorManger.white,
         ),
 
-        // onPrimary: ColorManger.white,
-        // onSurface: ColorManger.white,
+   
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
         fixedSize: Size.fromHeight(40.h),
@@ -45,45 +48,30 @@ ThemeData getApplicationTheme() {
 // //appbar theme
       appBarTheme: AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: ColorManger.offWhite,
+              statusBarColor: ColorManger.white,
               statusBarIconBrightness: Brightness.dark),
-          // centerTitle: true,
-          // elevation: 0,
-          // iconTheme: IconThemeData(
-          //   color: Colors.black,
-          //   size: AppPadding.p22.sp,
-          // ),
-          // titleTextStyle: getMediumStyle(
-          //   fontSize: FontSize.s20.sp,
-          //   color: ColorManger.black,
-          // ),
-          color: ColorManger.offWhite),
+      
+          color: ColorManger.white),
 
 // //text theme
 //
       textTheme: TextTheme(
 // using in text on boarding
-        titleLarge: getBlackStyle(
-            fontSize: 26.sp,
-            color: ColorManger.white,
-            letterSpacing: 1.sp,
-            wordSpacing: 1.sp,
-            height: 0.8.sp),
+        titleLarge: getMediumStyle(
+          fontSize: 22.sp,
+          color: ColorManger.brun,
+        ),
 
         //using in profile page
-        headlineSmall: getSemiBoldStyle(
-            fontSize: 11.sp,
-            color: ColorManger.amberAlpha,
-            wordSpacing: 1.sp,
-            height: 1.3.sp,
-            letterSpacing: 0.8.sp),
+        headlineSmall: getMediumStyle(
+          fontSize: 16.sp,
+          color: ColorManger.brun,
+        ),
 
-        bodySmall: getSemiBoldStyle(
-            fontSize: 12.sp,
-            color: ColorManger.black54,
-            wordSpacing: 1.sp,
-            height: 1.3.sp,
-            letterSpacing: 0.8.sp),
+        bodySmall: getMediumStyle(
+          fontSize: 12.sp,
+          color: Colors.grey.shade500,
+        ),
 
         titleSmall: getMediumStyle(
           fontSize: 14.sp,
@@ -91,7 +79,7 @@ ThemeData getApplicationTheme() {
         ),
 
         titleMedium:
-            getSemiBoldStyle(fontSize: 12.sp, color: ColorManger.primary),
+            getSemiBoldStyle(fontSize: 12.sp, color: ColorManger.white),
       ),
 
 // // using in text on boarding

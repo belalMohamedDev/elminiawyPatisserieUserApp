@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         useInheritedMediaQuery: true,
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          initialRoute: Routes.splashRoute,
+          initialRoute: Routes.onBoardingRoute,
           onGenerateRoute: RouteGenerator.getRoute,
            theme: getApplicationTheme(),
         ));
