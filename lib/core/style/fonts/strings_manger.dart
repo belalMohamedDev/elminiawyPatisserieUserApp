@@ -22,4 +22,6 @@ class AppStrings {
   static const String emailExample = "Example@gmail.com";
   static const String password = "Password";
   static const String enterYourPassword = "Enter your password";
+  static const String pleaseEnterValidEmail = "Please Enter Valid Email";
+  static const String pleaseEnterValidPassword = "Please Enter Valid Password";
 }
