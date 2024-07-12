@@ -91,9 +91,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         response.when(
           success: (loginResponse) {
             _appPreferences.setLoginScreenView();
-            _appPreferences.setLoginScreenData(
+            _appPreferences.setAuthData(
                 userEmail: loginResponse.data!.email!,
-                userToken: loginResponse.accessToken!,
+                accessToken: loginResponse.accessToken!,
+                refreshToken: loginResponse.data!.refreshToken!,
                 userName: loginResponse.data!.name!,
                 userPhone: loginResponse.data!.phone!);
             emit(LoginState.suceess(loginResponse));

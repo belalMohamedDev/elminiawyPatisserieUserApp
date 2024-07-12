@@ -1,11 +1,11 @@
 
 import 'package:dio/dio.dart';
-import 'package:elminiawy/core/network/api_constant/api_constant.dart';
 
 import 'package:retrofit/retrofit.dart';
 
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
+import '../api_constant/api_constant.dart';
 
 part 'app_api.g.dart';
 
@@ -14,7 +14,7 @@ abstract class AppServiceClient {
   factory AppServiceClient(Dio dio, {String baseUrl}) = _AppServiceClient;
 
   @POST(ApiConstants.login)
-  Future<LoginResponse> login(
+  Future<AuthResponse> login(
     @Body() LoginRequestBody loginRequestBody,
   );
 

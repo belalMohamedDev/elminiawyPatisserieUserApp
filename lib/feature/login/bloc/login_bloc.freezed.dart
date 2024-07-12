@@ -783,7 +783,7 @@ mixin _$LoginState {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -795,7 +795,7 @@ mixin _$LoginState {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -807,7 +807,7 @@ mixin _$LoginState {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -915,7 +915,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return initial();
   }
@@ -930,7 +930,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return initial?.call();
   }
@@ -945,7 +945,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1084,7 +1084,7 @@ class _$UserLoginEmailAddressStateImpl implements UserLoginEmailAddressState {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return userLoginEmailAddress(value);
   }
@@ -1099,7 +1099,7 @@ class _$UserLoginEmailAddressStateImpl implements UserLoginEmailAddressState {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return userLoginEmailAddress?.call(value);
   }
@@ -1114,7 +1114,7 @@ class _$UserLoginEmailAddressStateImpl implements UserLoginEmailAddressState {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (userLoginEmailAddress != null) {
@@ -1259,7 +1259,7 @@ class _$UserLoginPasswordStateImpl implements UserLoginPasswordState {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return userLoginPassword(value);
   }
@@ -1274,7 +1274,7 @@ class _$UserLoginPasswordStateImpl implements UserLoginPasswordState {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return userLoginPassword?.call(value);
   }
@@ -1289,7 +1289,7 @@ class _$UserLoginPasswordStateImpl implements UserLoginPasswordState {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (userLoginPassword != null) {
@@ -1433,7 +1433,7 @@ class _$ShowUserPasswordStateImpl implements ShowUserPasswordState {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return showUserPassword(value);
   }
@@ -1448,7 +1448,7 @@ class _$ShowUserPasswordStateImpl implements ShowUserPasswordState {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return showUserPassword?.call(value);
   }
@@ -1463,7 +1463,7 @@ class _$ShowUserPasswordStateImpl implements ShowUserPasswordState {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (showUserPassword != null) {
@@ -1607,7 +1607,7 @@ class _$ButtonLoginVaildationImpl implements ButtonLoginVaildation {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return buttonLoginVaildation(value);
   }
@@ -1622,7 +1622,7 @@ class _$ButtonLoginVaildationImpl implements ButtonLoginVaildation {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return buttonLoginVaildation?.call(value);
   }
@@ -1637,7 +1637,7 @@ class _$ButtonLoginVaildationImpl implements ButtonLoginVaildation {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (buttonLoginVaildation != null) {
@@ -1756,7 +1756,7 @@ class _$LoginButtonLoadingDataImpl implements LoginButtonLoadingData {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return loading();
   }
@@ -1771,7 +1771,7 @@ class _$LoginButtonLoadingDataImpl implements LoginButtonLoadingData {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return loading?.call();
   }
@@ -1786,7 +1786,7 @@ class _$LoginButtonLoadingDataImpl implements LoginButtonLoadingData {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1935,7 +1935,7 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return error(statesCode, errorMessage);
   }
@@ -1950,7 +1950,7 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return error?.call(statesCode, errorMessage);
   }
@@ -1965,7 +1965,7 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -2045,7 +2045,7 @@ abstract class _$$LoginButtonSuccessDataImplCopyWith<$Res> {
           $Res Function(_$LoginButtonSuccessDataImpl) then) =
       __$$LoginButtonSuccessDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({LoginResponse data});
+  $Res call({AuthResponse data});
 }
 
 /// @nodoc
@@ -2066,7 +2066,7 @@ class __$$LoginButtonSuccessDataImplCopyWithImpl<$Res>
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as LoginResponse,
+              as AuthResponse,
     ));
   }
 }
@@ -2077,7 +2077,7 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
   const _$LoginButtonSuccessDataImpl(this.data);
 
   @override
-  final LoginResponse data;
+  final AuthResponse data;
 
   @override
   String toString() {
@@ -2112,7 +2112,7 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
     required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(LoginResponse data) suceess,
+    required TResult Function(AuthResponse data) suceess,
   }) {
     return suceess(data);
   }
@@ -2127,7 +2127,7 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
     TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(LoginResponse data)? suceess,
+    TResult? Function(AuthResponse data)? suceess,
   }) {
     return suceess?.call(data);
   }
@@ -2142,7 +2142,7 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
     TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(LoginResponse data)? suceess,
+    TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (suceess != null) {
@@ -2204,10 +2204,10 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
 }
 
 abstract class LoginButtonSuccessData implements LoginState {
-  const factory LoginButtonSuccessData(final LoginResponse data) =
+  const factory LoginButtonSuccessData(final AuthResponse data) =
       _$LoginButtonSuccessDataImpl;
 
-  LoginResponse get data;
+  AuthResponse get data;
   @JsonKey(ignore: true)
   _$$LoginButtonSuccessDataImplCopyWith<_$LoginButtonSuccessDataImpl>
       get copyWith => throw _privateConstructorUsedError;

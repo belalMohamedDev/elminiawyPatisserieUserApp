@@ -6,17 +6,16 @@ part of 'login_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
-    LoginResponse(
+AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) => AuthResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       accessToken: json['accessToken'] as String?,
       data: json['data'] == null
           ? null
-          : DataLoginResponse.fromJson(json['data'] as Map<String, dynamic>),
+          : DataAuthResponse.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
+Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
@@ -24,8 +23,8 @@ Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
       'data': instance.data,
     };
 
-DataLoginResponse _$DataLoginResponseFromJson(Map<String, dynamic> json) =>
-    DataLoginResponse(
+DataAuthResponse _$DataAuthResponseFromJson(Map<String, dynamic> json) =>
+    DataAuthResponse(
       sId: json['sId'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
@@ -33,7 +32,7 @@ DataLoginResponse _$DataLoginResponseFromJson(Map<String, dynamic> json) =>
       refreshToken: json['refreshToken'] as String?,
     );
 
-Map<String, dynamic> _$DataLoginResponseToJson(DataLoginResponse instance) =>
+Map<String, dynamic> _$DataAuthResponseToJson(DataAuthResponse instance) =>
     <String, dynamic>{
       'sId': instance.sId,
       'name': instance.name,

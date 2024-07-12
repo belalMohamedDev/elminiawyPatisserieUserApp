@@ -12,7 +12,7 @@ class LoginRepository {
   final AppServiceClient _apiService;
   late final NetworkInfo _networkInfo;
 
-  Future<ApiResult<LoginResponse>> login(
+  Future<ApiResult<AuthResponse>> login(
     LoginRequestBody loginRequestBody,
   ) async {
     if (await _networkInfo.isConnected) {

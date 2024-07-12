@@ -27,22 +27,28 @@ class AppPreferences {
     return _sharedPreferences.getBool(PrefKeys.prefsKeyIsUserLoggedIn) ?? false;
   }
 
-  //set login screen data
-  Future<void> setLoginScreenData({
-    required String userToken,
+  //set auth  data
+  Future<void> setAuthData({
+    required String accessToken,
     required String userName,
     required String userPhone,
     required String userEmail,
+    required String refreshToken,
   }) async {
-    await _sharedPreferences.setString(PrefKeys.userToken, userToken);
+    await _sharedPreferences.setString(PrefKeys.userAccessToken, accessToken);
     await _sharedPreferences.setString(PrefKeys.userName, userName);
     await _sharedPreferences.setString(PrefKeys.userPhone, userPhone);
     await _sharedPreferences.setString(PrefKeys.userEmail, userEmail);
+    await _sharedPreferences.setString(PrefKeys.userRefreshToken, refreshToken);
   }
 
 //user token
- 
+
   String isAccessToken() {
-    return  _sharedPreferences.getString(PrefKeys.userToken) ?? "";
+    return _sharedPreferences.getString(PrefKeys.userAccessToken) ?? "";
+  }
+
+  String isRefreshToken() {
+    return _sharedPreferences.getString(PrefKeys.userRefreshToken) ?? "";
   }
 }
