@@ -1,3 +1,5 @@
+import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
+import 'package:elminiawy/feature/signUp/data/repository/sign_up_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -16,6 +18,7 @@ final instance = GetIt.instance;
 Future<void> initAppModule() async {
   await _initAppModule();
   await _initLogin();
+  await _initSignUp();
 }
 
 Future<void> _initAppModule() async {
@@ -49,4 +52,11 @@ Future<void> _initLogin() async {
     ..registerLazySingleton<LoginRepository>(
         () => LoginRepository(instance(), instance()))
     ..registerFactory<LoginBloc>(() => LoginBloc(instance(), instance()));
+}
+
+Future<void> _initSignUp() async {
+  instance
+    ..registerLazySingleton<RegisterRepository>(
+        () => RegisterRepository(instance(), instance()))
+    ..registerFactory<SignUpBloc>(() => SignUpBloc(instance(), instance()));
 }
