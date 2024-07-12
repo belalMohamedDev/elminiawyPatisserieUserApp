@@ -21,7 +21,7 @@ class AlreadyAccountTextSpan extends StatelessWidget {
             children: [
               WidgetSpan(
                   child: SizedBox(
-                width: 8.w,
+                width: 10.w,
               )),
               TextSpan(
                 recognizer: TapGestureRecognizer()
@@ -30,7 +30,7 @@ class AlreadyAccountTextSpan extends StatelessWidget {
                   },
                 text: AppStrings.signIn,
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    fontSize: 17.sp, fontFamily: FontConsistent.fontFamilyAcme),
+                    fontSize: 18.sp, fontFamily: FontConsistent.fontFamilyAcme),
               )
             ]),
         style: Theme.of(context).textTheme.bodyLarge);

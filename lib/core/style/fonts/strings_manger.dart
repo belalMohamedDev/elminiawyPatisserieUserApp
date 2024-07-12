@@ -17,7 +17,7 @@ class AppStrings {
   static const String alreadyHaveAnAccount = "Already have an account?";
   static const String signIn = "Sign In";
 
-  ///////// login screen
+  ///////// auth screen
   static const String orSignInWith = "Or sign in with";
   static const String hiWelcomeBack = "Hi! Welcome back, you've been missed";
   static const String forgetPassword = "Forget Password?";
@@ -30,5 +30,26 @@ class AppStrings {
   static const String pleaseEnterValidEmail = "Please Enter Valid Email";
   static const String pleaseEnterValidPassword = "Please Enter Valid Password";
   static const String loading = 'Loading ....';
+  static const String pleaseEnterValidPhoneNumber =
+      "Please Enter Valid Phone Number";
 
+  static const String pleaseEnterValidFirstName =
+      "Please Enter Valid First name";
+  static const String pleaseEnterValidLastName = "Please Enter Valid Last name";
+  static const String pleaseEnterValidSignUpPhoneNumber =
+      " 8 characters, at least one lowercase,uppercase \n letter,number and special character";
+
+  static const String agreeWith = "Agree with";
+  static const String termsCondition = "Terms & condition";
+  static const String alreadyHaveAccount = "Already have an account?";
+  static const String firstName = "First Name";
+  static const String lastName = "Last Name";
+  static const String firstNameExample = "John";
+  static const String lastNameExample = "Doe";
+  static const String orSignUpWith = "Or sign up with";
+  static const String phone = "Phone";
+  static const String enterPhoneNumber = "Enter Phone Number";
+  static const String createAccount = "Create Account";
+  static const String fillYouInformation =
+      "Fill your information below or register \n with your social account.";
 }

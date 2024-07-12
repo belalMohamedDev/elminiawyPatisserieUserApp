@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/routing/route_manger.dart';
 import 'core/routing/routes.dart';
+import 'core/style/fonts/strings_manger.dart';
 import 'core/style/theme/theme_manger.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,15 +16,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
 
-    return  ScreenUtilInit(
+    return ScreenUtilInit(
         designSize: const Size(375, 812),
         minTextAdapt: true,
         useInheritedMediaQuery: true,
         child: MaterialApp(
+          title: AppStrings.appName,
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.onBoardingRoute,
           onGenerateRoute: RouteGenerator.getRoute,
-           theme: getApplicationTheme(),
+          theme: getApplicationTheme(),
         ));
   }
 }

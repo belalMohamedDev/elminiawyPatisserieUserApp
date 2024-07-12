@@ -5,6 +5,7 @@ import 'package:retrofit/retrofit.dart';
 
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
+import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
 import '../api_constant/api_constant.dart';
 
 part 'app_api.g.dart';
@@ -18,10 +19,10 @@ abstract class AppServiceClient {
     @Body() LoginRequestBody loginRequestBody,
   );
 
-  // @POST(ApiConstants.signup)
-  // Future<RegisterResponse> register(
-  //   @Body() RegisterRequestBody registerRequestBody,
-  // );
+  @POST(ApiConstants.signup)
+  Future<AuthResponse> register(
+    @Body() RegisterRequestBody registerRequestBody,
+  );
 
   // @POST(ApiConstants.forgetPassword)
   // Future<ForgetPasswordResponse> forgetPassword(

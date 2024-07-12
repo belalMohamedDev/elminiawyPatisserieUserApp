@@ -76,6 +76,7 @@ dependencies:
   # splash screen
   flutter_native_splash: ^2.4.1
   flutter_iconly: ^1.0.2
+  country_code_picker: ^3.0.0
 
 dev_dependencies:
   flutter_test:

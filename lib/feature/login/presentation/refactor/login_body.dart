@@ -55,9 +55,7 @@ class LoginViewBody extends StatelessWidget {
                   },
                   child: Text(
                     AppStrings.forgetPassword,
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          decoration: TextDecoration.underline,
-                        ),
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(),
                   ),
                 ),
               ),
@@ -66,7 +64,7 @@ class LoginViewBody extends StatelessWidget {
               ),
               const SignInButton(),
               SizedBox(
-                height: 50.h,
+                height: 60.h,
               ),
               const OrSignInWithText(),
               SizedBox(
@@ -74,7 +72,7 @@ class LoginViewBody extends StatelessWidget {
               ),
               const SignInWithAppleFaceBookAndGoogleButton(),
               SizedBox(
-                height: 40.h,
+                height: 65.h,
               ),
               const DontHaveAnAccountText(),
             ],
