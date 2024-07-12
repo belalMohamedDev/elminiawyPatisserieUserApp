@@ -2,6 +2,11 @@ class AppStrings {
   ///// route
   static const String noRouteFound = "No Route Found";
 
+
+  ////// App Name
+ static const String appName = "Elminiawy Patisserie";
+
+
   ///// onBoarding screen
   static const String welcomeToElminiawyPatisserie =
       "Welcome to Elminiawy Patisserie";
