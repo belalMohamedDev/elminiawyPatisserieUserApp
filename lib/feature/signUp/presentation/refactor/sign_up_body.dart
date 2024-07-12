@@ -8,11 +8,9 @@ import '../widget/agree_with_terms_condition.dart';
 import '../widget/already_have_an_account_text.dart';
 import '../widget/email_sign_up_text_form_field.dart';
 import '../widget/name_text_form_field.dart';
-import '../widget/or_sign_up_with.dart';
 import '../widget/password_sign_up_text_form_field.dart';
 import '../widget/phone_text_form_field.dart';
 import '../widget/sign_up_button.dart';
-import '../widget/sign_up_using_google_apple_face_book.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({
