@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
     color,
     required this.onPressed,
     required this.widget,
-  }) : color = onPressed == null ? ColorManger.brunLight : ColorManger.brun;
+  }) : color = onPressed == null ? ColorManger.unselectedButton : ColorManger.brun;
 
   @override
   Widget build(BuildContext context) {

@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/common/sharedWidget/custom_button.dart';
 import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/routing/routes.dart';
+import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/fonts/strings_manger.dart';
 import '../../bloc/login_bloc.dart';
@@ -17,17 +18,6 @@ class SignInButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return
-    //  CustomButton(
-    //   onPressed: () {},
-    //   widget: Text(
-    //     AppStrings.signIn,
-    //     style: Theme.of(context).textTheme.titleLarge?.copyWith(
-    //         fontSize: 15.sp,
-    //         color: ColorManger.white,
-    //         fontWeight: FontWeightManger.semiBold),
-    //   ),
-    // );
 
     return BlocConsumer<LoginBloc, LoginState>(
       listener: (context, state) {
@@ -67,14 +57,18 @@ class SignInButton extends StatelessWidget {
                 Text(
                   AppStrings.loading,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 14.sp, fontWeight: FontWeightManger.semiBold),
+                      fontSize: 16.sp,
+                      color: ColorManger.white,
+                      fontWeight: FontWeightManger.semiBold),
                 ),
               ],
             ),
             orElse: () => Text(
               AppStrings.signIn,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 14.sp, fontWeight: FontWeightManger.semiBold),
+                  fontSize: 16.sp,
+                  color: ColorManger.white,
+                  fontWeight: FontWeightManger.semiBold),
             ),
           ),
         );

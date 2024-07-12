@@ -1,10 +1,13 @@
 
-import 'package:elminiawy/feature/home/presentation/screen/home_screen.dart';
-import 'package:elminiawy/feature/login/presentation/screen/login_view.dart';
-import 'package:elminiawy/feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 
+import '../../feature/home/presentation/screen/home_screen.dart';
+import '../../feature/login/bloc/login_bloc.dart';
+import '../../feature/login/presentation/screen/login_view.dart';
+import '../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
+import '../application/di.dart';
 import '../style/fonts/strings_manger.dart';
 import 'routes.dart';
 
@@ -18,9 +21,12 @@ class RouteGenerator {
         );
      
      
-      case Routes.loginRoute:
+           case Routes.loginRoute:
         return MaterialPageRoute(
-          builder: (_) => const LoginView(),
+          builder: (_) => BlocProvider(
+            create: (context) => instance<LoginBloc>(),
+            child: const LoginView(),
+          ),
         );
      
 

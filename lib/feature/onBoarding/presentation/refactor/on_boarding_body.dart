@@ -12,25 +12,27 @@ class OnBoardingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: 18.w, right: 18.w, top: 20.h),
-      child: Column(
-        children: [
-          Image.asset(
-            ImageAsset.onBoarding,
-            height: 400.h,
-          ),
-          SizedBox(
-            height: 50.h,
-          ),
-          const TitleAndHeadLineText(),
-          SizedBox(
-            height: 35.h,
-          ),
-          const GetStartedButton(),
-          SizedBox(
-            height: 35.h,
-          ),
-          const AlreadyAccountTextSpan()
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              ImageAsset.onBoarding,
+              height: 400.h,
+            ),
+            SizedBox(
+              height: 50.h,
+            ),
+            const TitleAndHeadLineText(),
+            SizedBox(
+              height: 35.h,
+            ),
+            const GetStartedButton(),
+            SizedBox(
+              height: 35.h,
+            ),
+            const AlreadyAccountTextSpan()
+          ],
+        ),
       ),
     );
   }
