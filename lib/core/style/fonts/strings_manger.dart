@@ -2,10 +2,8 @@ class AppStrings {
   ///// route
   static const String noRouteFound = "No Route Found";
 
-
   ////// App Name
- static const String appName = "Elminiawy Patisserie";
-
+  static const String appName = "Elminiawy Patisserie";
 
   ///// onBoarding screen
   static const String welcomeToElminiawyPatisserie =
@@ -30,6 +28,8 @@ class AppStrings {
   static const String pleaseEnterValidEmail = "Please Enter Valid Email";
   static const String pleaseEnterValidPassword = "Please Enter Valid Password";
   static const String loading = 'Loading ....';
+
+  //sign up
   static const String pleaseEnterValidPhoneNumber =
       "Please Enter Valid Phone Number";
 
@@ -52,4 +52,30 @@ class AppStrings {
   static const String createAccount = "Create Account";
   static const String fillYouInformation =
       "Fill your information below or register \n with your social account.";
+
+//forget password
+  static const String continueText = "Continue";
+  static const String isEmailValid = 'Please enter a valid Email';
+  static const String enterYourEmailToSendVerifyCode =
+      "Enter Your email address and we will send you \n instructions to reset your password ";
+  static const String backToLogin = "Back to Log in";
+  static const String restYourPassword = "Reset Your Password";
+  static const String newPassword = "New Password";
+  static const String youNewPasswordMustBeDifferent =
+      "you new password must be different \n from previously used password.";
+
+  static const String confirmPasswordNotEqualNewPassword =
+      "Confirm Password not equal new Password";
+
+//new password
+  static const String confirmPassword = "confirm password";
+  static const String createNewPassword = "Create New Password";
+
+//verifyCode
+  static const String verifyCode = "Verify Code";
+  static const String pleaseEnterTheCode =
+      "Please Enter the code we just send to email";
+  static const String didntRecieveotp = "Didn't receive OTP?";
+  static const String resendCode = "Resend Code";
+  static const String verify = "Verify";
 }

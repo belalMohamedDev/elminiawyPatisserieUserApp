@@ -5,8 +5,12 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
+import '../../feature/forgetPassword/data/repository/forget_password_repo.dart';
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/data/repository/login_repo.dart';
+import '../../feature/newPassword/data/repository/new_password_repo.dart';
+import '../../feature/verifyCode/data/repository/verify_code_repo.dart';
 import '../network/api/app_api.dart';
 import '../network/dio_factory/dio_factory.dart';
 import '../network/network_connectivity/connectivity_controller.dart';
@@ -19,6 +23,7 @@ Future<void> initAppModule() async {
   await _initAppModule();
   await _initLogin();
   await _initSignUp();
+  await _initForgetPassword();
 }
 
 Future<void> _initAppModule() async {
@@ -47,6 +52,15 @@ Future<void> _initAppModule() async {
   instance.registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio));
 }
 
+
+
+
+
+
+
+/////////////////////////////////
+//////////////
+///////////////////////
 Future<void> _initLogin() async {
   instance
     ..registerLazySingleton<LoginRepository>(
@@ -59,4 +73,19 @@ Future<void> _initSignUp() async {
     ..registerLazySingleton<RegisterRepository>(
         () => RegisterRepository(instance(), instance()))
     ..registerFactory<SignUpBloc>(() => SignUpBloc(instance(), instance()));
+}
+
+// // forget password
+// // verify code repositry
+// // New Password Repository
+Future<void> _initForgetPassword() async {
+  instance
+    ..registerLazySingleton<ForgetPasswordRepository>(
+        () => ForgetPasswordRepository(instance(), instance()))
+    ..registerLazySingleton<VerifyCodeRepository>(
+        () => VerifyCodeRepository(instance(), instance()))
+    ..registerLazySingleton<NewPasswordRepository>(
+        () => NewPasswordRepository(instance(), instance()))
+    ..registerLazySingleton<ForgetPasswordBloc>(() =>
+        ForgetPasswordBloc(instance(), instance(), instance(), instance()));
 }

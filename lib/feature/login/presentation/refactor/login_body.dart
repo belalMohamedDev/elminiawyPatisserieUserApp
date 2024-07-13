@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/style/fonts/strings_manger.dart';
+import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:elminiawy/feature/login/presentation/widget/dont_have_account_text.dart';
 import 'package:elminiawy/feature/login/presentation/widget/email_login_text_form_field.dart';
 import 'package:elminiawy/feature/login/presentation/widget/or_sign_in_with_text.dart';
@@ -7,6 +8,8 @@ import 'package:elminiawy/feature/login/presentation/widget/sign_in_button.dart'
 import 'package:elminiawy/feature/login/presentation/widget/sign_in_with_apple_face_book_and_google_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/routing/routes.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({
@@ -51,7 +54,7 @@ class LoginViewBody extends StatelessWidget {
                 alignment: Alignment.topRight,
                 child: InkWell(
                   onTap: () {
-                    //   context.pushReplacementNamed(Routes.forgetPasswordRoute);
+                     context.pushReplacementNamed(Routes.forgetPasswordRoute);
                   },
                   child: Text(
                     AppStrings.forgetPassword,
