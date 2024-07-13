@@ -75,7 +75,9 @@ dependencies:
   animate_do: ^3.3.4
   # splash screen
   flutter_native_splash: ^2.4.1
+  # icon
   flutter_iconly: ^1.0.2
+  # country code
   country_code_picker: ^3.0.0
 
 dev_dependencies:

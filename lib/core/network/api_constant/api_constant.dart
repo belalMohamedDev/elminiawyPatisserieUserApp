@@ -7,6 +7,8 @@ class ApiConstants {
   static const String forgetPassword = '/v1/api/auth/forgetPassword';
   static const String verifyCode = '/v1/api/auth/verifyCode';
   static const String resetPassword = '/v1/api/auth/resetPassword';
+  static const String refreshToken = '/v1/api/auth/token';
+
   static const String getMissing = '/v1/api/missing';
   static const String getFound = '/v1/api/find';
   static const String updateMyImage = '/v1/api/user/updateMyImage';
