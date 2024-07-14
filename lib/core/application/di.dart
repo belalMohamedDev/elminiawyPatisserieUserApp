@@ -1,16 +1,15 @@
+import 'package:dio/dio.dart';
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:elminiawy/feature/signUp/data/repository/sign_up_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/data/repository/login_repo.dart';
 import '../network/api/app_api.dart';
 import '../network/dio_factory/dio_factory.dart';
 import '../network/network_connectivity/connectivity_controller.dart';
-import '../services/app_storage.dart';
 import 'bloc_observer.dart';
 
 final instance = GetIt.instance;
@@ -25,25 +24,14 @@ Future<void> _initAppModule() async {
   // app module ,its a module where we put all generic dependencies
   Bloc.observer = AppBlocObserver();
 
-  // shared prefs instance
-  final sharedPrefs = await SharedPreferences.getInstance();
-  instance.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
+  instance.registerLazySingleton<NetworkInfo>(
+    () => NetworkInfoImpl(InternetConnectionChecker()),
+  );
 
-//app prefs instance
-  instance
-      .registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
+  // Dio & ApiService
 
-  instance
-    ..registerLazySingleton<NetworkInfo>(
-      () => NetworkInfoImpl(InternetConnectionChecker()),
-    )
+  Dio dio = DioFactory.getDio();
 
-    //dio factory
-    // ..registerLazySingleton<DioFactory>(DioFactory.new,);
-    ..registerLazySingleton<DioFactory>(() => DioFactory(instance()));
-
-  //app service client
-  final dio = await instance<DioFactory>().getDio();
   instance.registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio));
 }
 

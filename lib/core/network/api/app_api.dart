@@ -7,8 +7,6 @@ import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
 import '../api_constant/api_constant.dart';
-import '../refreshToken/refreshTokenRequest/refresh_token_request.dart';
-import '../refreshToken/refreshTokenResponse/response.dart';
 
 part 'app_api.g.dart';
 
@@ -27,9 +25,7 @@ abstract class AppServiceClient {
   );
 
 
-  @POST(ApiConstants.refreshToken)
-  Future<RefreshTokenResponse> refreshToken(
-      @Body() RefreshTokenRequest refreshTokenRequest);
+
 
   // @POST(ApiConstants.forgetPassword)
   // Future<ForgetPasswordResponse> forgetPassword(

@@ -7,6 +7,8 @@ class PrefKeys {
   static const String userName = 'USER_NAME';
   static const String userEmail = 'USER_EMAIL';
   static const String userPhone = 'USER_PHONE';
+  static const String refreshToken = 'refreshToken';
+  static const String accessToken = 'accessToken';
 
 
 }
