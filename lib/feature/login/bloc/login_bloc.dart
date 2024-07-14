@@ -1,9 +1,11 @@
+import 'package:elminiawy/core/services/shared_pref_helper.dart';
 import 'package:elminiawy/feature/login/data/model/loginResponse/login_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/services/app_storage.dart';
+import '../../../core/services/app_storage_key.dart';
 import '../../../core/style/fonts/strings_manger.dart';
 import '../../../core/utils/app_regex.dart';
 import '../data/model/bodyRequest/login_body_request.dart';
@@ -89,14 +91,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         );
 
         response.when(
-          success: (loginResponse) {
-            _appPreferences.setLoginScreenView();
-            _appPreferences.setAuthData(
-                userEmail: loginResponse.data!.email!,
-                accessToken: loginResponse.accessToken!,
-                refreshToken: loginResponse.data!.refreshToken!,
-                userName: loginResponse.data!.name!,
-                userPhone: loginResponse.data!.phone!);
+          success: (loginResponse) async {
+            await saveUserToken(
+                loginResponse.accessToken!, loginResponse.data!.refreshToken!);
             emit(LoginState.suceess(loginResponse));
           },
           failure: (error) {
@@ -108,5 +105,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         );
       },
     );
+  }
+
+  Future<void> saveUserToken(String accessToken, String refreshToken) async {
+    await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
+    await SharedPrefHelper.setSecuredString(
+        PrefKeys.refreshToken, refreshToken);
   }
 }

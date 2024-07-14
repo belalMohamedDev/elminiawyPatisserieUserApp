@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/services/app_storage.dart';
+import '../../../core/services/app_storage_key.dart';
+import '../../../core/services/shared_pref_helper.dart';
 import '../../../core/style/fonts/strings_manger.dart';
 import '../../../core/utils/app_regex.dart';
 import '../data/model/bodyRequest/sign_up_body_request.dart';
@@ -155,14 +157,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         );
 
         response.when(
-          success: (registerResponse) {
-            _appPreferences.setLoginScreenView();
-            _appPreferences.setAuthData(
-                userEmail: registerResponse.data!.email!,
-                accessToken: registerResponse.accessToken!,
-                refreshToken: registerResponse.data!.refreshToken!,
-                userName: registerResponse.data!.name!,
-                userPhone: registerResponse.data!.phone!);
+          success: (registerResponse) async{
+           await saveUserToken(
+                registerResponse.accessToken!, registerResponse.data!.refreshToken!);
             emit(SignUpState.suceess(registerResponse));
           },
           failure: (error) {
@@ -174,5 +171,11 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         );
       },
     );
+  }
+
+   Future<void> saveUserToken(String accessToken, String refreshToken) async {
+    await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
+    await SharedPrefHelper.setSecuredString(
+        PrefKeys.refreshToken, refreshToken);
   }
 }
