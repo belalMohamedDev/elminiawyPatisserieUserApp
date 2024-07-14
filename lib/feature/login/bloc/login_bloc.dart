@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/services/app_storage.dart';
 import '../../../core/services/app_storage_key.dart';
 import '../../../core/style/fonts/strings_manger.dart';
 import '../../../core/utils/app_regex.dart';
@@ -20,11 +19,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final TextEditingController userLoginPassword = TextEditingController();
   final loginFormKey = GlobalKey<FormState>();
   final LoginRepository _loginRepository;
-  final AppPreferences _appPreferences;
   bool showPass = true;
   bool isButtonInVaildator = false;
 
-  LoginBloc(this._loginRepository, this._appPreferences)
+  LoginBloc(this._loginRepository,)
       : super(const _Initial()) {
     on<UserLoginButton>(loginButton);
     on<LoginEvent>((event, emit) {

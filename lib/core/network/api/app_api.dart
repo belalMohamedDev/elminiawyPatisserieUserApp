@@ -3,9 +3,14 @@ import 'package:dio/dio.dart';
 
 import 'package:retrofit/retrofit.dart';
 
+import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
+import '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
+import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
+import '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_request.dart';
+import '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
 import '../api_constant/api_constant.dart';
 
 part 'app_api.g.dart';
@@ -27,20 +32,20 @@ abstract class AppServiceClient {
 
 
 
-  // @POST(ApiConstants.forgetPassword)
-  // Future<ForgetPasswordResponse> forgetPassword(
-  //   @Body() ForgetPasswordRequestBody forgetPasswordRequestBody,
-  // );
+  @POST(ApiConstants.forgetPassword)
+  Future<ForgetPasswordResponse> forgetPassword(
+    @Body() ForgetPasswordRequestBody forgetPasswordRequestBody,
+  );
 
-  // @POST(ApiConstants.verifyCode)
-  // Future<VerifyCodeResponse> verifyCode(
-  //   @Body() VerifyCodeRequestBody verifyCodeRequestBody,
-  // );
+  @POST(ApiConstants.verifyCode)
+  Future<VerifyCodeResponse> verifyCode(
+    @Body() VerifyCodeRequestBody verifyCodeRequestBody,
+  );
 
-  // @PUT(ApiConstants.resetPassword)
-  // Future<NewPasswordResponse> newPassword(
-  //   @Body() NewPasswordRequestBody newPasswordRequestBody,
-  // );
+  @PUT(ApiConstants.resetPassword)
+  Future<AuthResponse> newPassword(
+    @Body() NewPasswordRequestBody newPasswordRequestBody,
+  );
   // @POST(ApiConstants.getFound)
   // @MultiPart()
   // Future<MakeUnReportResponse> makeUnReport(

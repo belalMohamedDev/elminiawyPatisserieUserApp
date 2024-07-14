@@ -2,11 +2,15 @@ import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
+import '../../feature/forgetPassword/presntation/screen/forget_password_screen.dart';
 import '../../feature/home/presentation/screen/home_screen.dart';
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/presentation/screen/login_view.dart';
+import '../../feature/newPassword/presentation/screen/new_password_view.dart';
 import '../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import '../../feature/signUp/presentation/screen/sign_up_view.dart';
+import '../../feature/verifyCode/presentation/screen/verification_code.dart';
 import '../application/di.dart';
 import '../style/fonts/strings_manger.dart';
 import 'routes.dart';
@@ -32,6 +36,30 @@ class RouteGenerator {
           builder: (_) => BlocProvider(
             create: (context) => instance<SignUpBloc>(),
             child: const SignUpView(),
+          ),
+        );
+
+      case Routes.forgetPasswordRoute:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: instance<ForgetPasswordBloc>(),
+            child: const ForgetPasswordScreen(),
+          ),
+        );
+
+      case Routes.verificationCodeViewRoute:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: instance<ForgetPasswordBloc>(),
+            child: const VerificationCodeView(),
+          ),
+        );
+
+      case Routes.newPassword:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: instance<ForgetPasswordBloc>(),
+            child: const NewPasswordView(),
           ),
         );
 

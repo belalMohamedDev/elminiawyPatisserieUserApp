@@ -79,6 +79,7 @@ dependencies:
   flutter_iconly: ^1.0.2
   # country code
   country_code_picker: ^3.0.0
+  flutter_verification_code: ^1.1.7
 
 dev_dependencies:
   flutter_test:

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/services/app_storage.dart';
 import '../../../core/services/app_storage_key.dart';
 import '../../../core/services/shared_pref_helper.dart';
 import '../../../core/style/fonts/strings_manger.dart';
@@ -22,7 +21,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final TextEditingController userSignUpLastName = TextEditingController();
   final TextEditingController userSignUpPhone = TextEditingController();
   final RegisterRepository _registerRepository;
-  final AppPreferences _appPreferences;
 
   bool showPass = true;
   bool agreeWithTerms = true;
@@ -30,7 +28,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   bool isButtonInVaildator = false;
 
   final signUpFormKey = GlobalKey<FormState>();
-  SignUpBloc(this._registerRepository, this._appPreferences)
+  SignUpBloc(this._registerRepository)
       : super(const _Initial()) {
     on<UserRegisterButtonEvent>(registerButton);
 
