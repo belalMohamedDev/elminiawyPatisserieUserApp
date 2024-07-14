@@ -9,8 +9,7 @@ class VerificationCodeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const VerificationCodeBody(),
+      body: const SingleChildScrollView(child: VerificationCodeBody()),
     );
   }
 }
-

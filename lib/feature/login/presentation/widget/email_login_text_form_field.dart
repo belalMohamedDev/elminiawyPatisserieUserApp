@@ -32,6 +32,9 @@ class EmailLoginTextFormField extends StatelessWidget {
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,
               controller: context.read<LoginBloc>().userLoginEmailAddress,
+               autofillHints: const [
+                AutofillHints.email,
+              ],
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     IconlyBroken.message,

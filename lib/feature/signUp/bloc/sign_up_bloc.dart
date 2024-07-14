@@ -28,8 +28,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   bool isButtonInVaildator = false;
 
   final signUpFormKey = GlobalKey<FormState>();
-  SignUpBloc(this._registerRepository)
-      : super(const _Initial()) {
+  SignUpBloc(this._registerRepository) : super(const _Initial()) {
     on<UserRegisterButtonEvent>(registerButton);
 
     on<SignUpEvent>((event, emit) {
@@ -108,9 +107,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     });
   }
 
-
-
-
 ////////////////////////////////////////
 /////////////
 //////////////////////////////////////////
@@ -129,9 +125,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     }
   }
 
-
-
-  
 ////////////////////////////////////////
 /////////////
 //////////////////////////////////////////
@@ -155,10 +148,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         );
 
         response.when(
-          success: (registerResponse) async{
-           await saveUserToken(
-                registerResponse.accessToken!, registerResponse.data!.refreshToken!);
+          success: (registerResponse) async {
             emit(SignUpState.suceess(registerResponse));
+            await saveUserToken(registerResponse.accessToken!,
+                registerResponse.data!.refreshToken!);
           },
           failure: (error) {
             emit(
@@ -171,7 +164,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     );
   }
 
-   Future<void> saveUserToken(String accessToken, String refreshToken) async {
+  Future<void> saveUserToken(String accessToken, String refreshToken) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);

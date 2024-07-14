@@ -129,7 +129,9 @@ class ForgetPasswordBloc
           failure: (error) {
             emit(
               ForgetPasswordState.error(
-                  errorMessage: error.message!, statesCode: error.statusCode!),
+                errorMessage: error.message ?? 'Unknown error',
+                statesCode: error.statusCode ?? 500,
+              ),
             );
           },
         );
@@ -216,9 +218,9 @@ class ForgetPasswordBloc
 
         response.when(
           success: (newPasswordResponse) async {
+            emit(ForgetPasswordState.newPasswordSuceess(newPasswordResponse));
             await saveUserToken(newPasswordResponse.accessToken!,
                 newPasswordResponse.data!.refreshToken!);
-            emit(ForgetPasswordState.newPasswordSuceess(newPasswordResponse));
           },
           failure: (error) {
             emit(

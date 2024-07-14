@@ -14,6 +14,7 @@ part 'login_event.dart';
 part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
+
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final TextEditingController userLoginEmailAddress = TextEditingController();
   final TextEditingController userLoginPassword = TextEditingController();
@@ -22,12 +23,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   bool showPass = true;
   bool isButtonInVaildator = false;
 
-  LoginBloc(this._loginRepository,)
+  LoginBloc(this._loginRepository)
       : super(const _Initial()) {
     on<UserLoginButton>(loginButton);
-    on<LoginEvent>((event, emit) {
+    on<LoginEvent>((event, emit) async {
       if (event is UserLoginEmailAddress) {
-        loginButtonVaildator(event, emit);
+        await loginButtonVaildator(event, emit);
 
         if (!AppRegex.isEmailValid(event.value)) {
           emit(const LoginState.userLoginEmailAddress(
@@ -38,7 +39,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       }
 
       if (event is UserLoginPassword) {
-        loginButtonVaildator(event, emit);
+        await loginButtonVaildator(event, emit);
         if (!AppRegex.isPasswordValid(event.value)) {
           emit(const LoginState.userLoginPassword(
               AppStrings.pleaseEnterValidPassword));
@@ -48,16 +49,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       if (event is UserShowLoginPassword) {
         showPass = !showPass;
 
-        emit(
-          LoginState.showUserPassword(showPass),
-        );
+        emit(LoginState.showUserPassword(showPass));
       }
     });
   }
 
+  
+
   ///////////////////////////////////
   //////////////////
   //////////////////////////////////
+
 
   Future<void> loginButtonVaildator(
       LoginEvent event, Emitter<LoginState> emit) async {
@@ -69,17 +71,19 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       isButtonInVaildator = true;
       emit(LoginState.buttonLoginVaildation(isButtonInVaildator));
     }
+
+    
+
+    ///////////////////////////////////
+    //////////////////
+    //////////////////////////////////
+
   }
 
-/////////////////////////////////////////
-//////////////////
-//////////////////////////////
   Future<void> loginButton(LoginEvent event, Emitter<LoginState> emit) async {
     await event.whenOrNull(
       userLoginButton: () async {
-        emit(
-          const LoginState.loading(),
-        );
+        emit(const LoginState.loading());
 
         final response = await _loginRepository.login(
           LoginRequestBody(
@@ -90,9 +94,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
         response.when(
           success: (loginResponse) async {
-            await saveUserToken(
-                loginResponse.accessToken!, loginResponse.data!.refreshToken!);
+          
             emit(LoginState.suceess(loginResponse));
+
+              await saveUserToken(
+                loginResponse.accessToken!, loginResponse.data!.refreshToken!);
           },
           failure: (error) {
             emit(
@@ -104,6 +110,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       },
     );
   }
+
+
+
+  ///////////////////////////////////
+  //////////////////
+  //////////////////////////////////
 
   Future<void> saveUserToken(String accessToken, String refreshToken) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);

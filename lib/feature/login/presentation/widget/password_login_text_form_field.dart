@@ -34,6 +34,9 @@ class PasswordLoginTextFormField extends StatelessWidget {
               keyboardType: TextInputType.visiblePassword,
               controller: context.read<LoginBloc>().userLoginPassword,
               obscureText: context.read<LoginBloc>().showPass,
+              autofillHints: const [
+                AutofillHints.password,
+              ],
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     IconlyBroken.lock,

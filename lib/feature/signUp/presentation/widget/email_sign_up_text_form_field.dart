@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -35,6 +34,9 @@ class EmailSignUpTextFormField extends StatelessWidget {
               },
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,
+              autofillHints: const [
+                AutofillHints.email,
+              ],
               controller: context.read<SignUpBloc>().userSignUpEmailAddress,
               decoration: InputDecoration(
                   prefixIcon: Icon(

@@ -16,7 +16,7 @@ class VerifyCodeTextFormField extends StatelessWidget {
     return VerificationCode(
       textStyle:
           Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 18.sp),
-      keyboardType: TextInputType.phone,
+      keyboardType: TextInputType.text,
       underlineColor: ColorManger.primary,
       fullBorder: true,
       margin: const EdgeInsets.all(2),

@@ -34,34 +34,36 @@ class PasswordSignUpTextFormField extends StatelessWidget {
               keyboardType: TextInputType.visiblePassword,
               controller: context.read<SignUpBloc>().userSignUpPassword,
               obscureText: context.read<SignUpBloc>().showPass,
+              autofillHints: const [
+                AutofillHints.password,
+              ],
               decoration: InputDecoration(
-                prefixIcon: Icon(
-                  IconlyBroken.lock,
-                  size: 18.sp,
-                ),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    context
-                        .read<SignUpBloc>()
-                        .add(const UserShowSignUpPasswordEvent());
-                  },
-                  icon: context.read<SignUpBloc>().showPass
-                      ? Icon(
-                          IconlyBroken.show,
-                          size: 25.sp,
-                        )
-                      : Icon(
-                          IconlyBroken.hide,
-                          size: 25.sp,
-                        ),
-                ),
-                hintText: AppStrings.enterYourPassword,
-                errorText: state.whenOrNull(
-                  userSignUpPassword: (value) {
-                    return value.isNotEmpty ? value : null;
-                  },
-                )
-              ),
+                  prefixIcon: Icon(
+                    IconlyBroken.lock,
+                    size: 18.sp,
+                  ),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      context
+                          .read<SignUpBloc>()
+                          .add(const UserShowSignUpPasswordEvent());
+                    },
+                    icon: context.read<SignUpBloc>().showPass
+                        ? Icon(
+                            IconlyBroken.show,
+                            size: 25.sp,
+                          )
+                        : Icon(
+                            IconlyBroken.hide,
+                            size: 25.sp,
+                          ),
+                  ),
+                  hintText: AppStrings.enterYourPassword,
+                  errorText: state.whenOrNull(
+                    userSignUpPassword: (value) {
+                      return value.isNotEmpty ? value : null;
+                    },
+                  )),
             )
           ],
         );

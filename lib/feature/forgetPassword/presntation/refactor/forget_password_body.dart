@@ -1,9 +1,11 @@
 import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/routing/routes.dart';
 import '../../../../core/style/fonts/strings_manger.dart';
+import '../../bloc/forget_password_bloc.dart';
 import '../widget/email_forget_password_text_form_field.dart';
 import '../widget/forget_password_button.dart';
 
@@ -43,18 +45,23 @@ class ForgetPasswordBody extends StatelessWidget {
             ),
             const ForgetPasswordButton(),
             SizedBox(
-              height: 30.h,
+              height: 40.h,
             ),
             Align(
               alignment: Alignment.center,
               child: InkWell(
                 onTap: () {
                   context.pushReplacementNamed(Routes.loginRoute);
+
+                  context
+                      .read<ForgetPasswordBloc>()
+                      .userForgetPasswordEmailAddress
+                      .clear();
                 },
                 child: Text(
                   AppStrings.backToLogin,
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        fontSize: 15.sp,
+                        fontSize: 14.sp,
                       ),
                 ),
               ),

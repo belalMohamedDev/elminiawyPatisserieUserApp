@@ -96,6 +96,10 @@ class VerificationCodeBody extends StatelessWidget {
               child: InkWell(
                 onTap: () {
                   context.pushReplacementNamed(Routes.loginRoute);
+                  context
+                      .read<ForgetPasswordBloc>()
+                      .userForgetPasswordEmailAddress
+                      .clear();
                 },
                 child: Text(
                   AppStrings.backToLogin,

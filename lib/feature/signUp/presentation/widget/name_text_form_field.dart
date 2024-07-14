@@ -36,6 +36,9 @@ class NameTextFormField extends StatelessWidget {
                           .add(UserSignUFirstNameEvent(value));
                     },
                     textInputAction: TextInputAction.next,
+                    autofillHints: const [
+                      AutofillHints.name,
+                    ],
                     keyboardType: TextInputType.text,
                     controller: context.read<SignUpBloc>().userSignUpFirstName,
                     decoration: InputDecoration(
@@ -74,6 +77,9 @@ class NameTextFormField extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(UserSignUpLastNameEvent(value));
                       },
+                      autofillHints: const [
+                        AutofillHints.familyName,
+                      ],
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.text,
                       controller: context.read<SignUpBloc>().userSignUpLastName,

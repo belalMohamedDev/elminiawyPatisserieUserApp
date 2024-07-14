@@ -20,5 +20,6 @@ class LoginState with _$LoginState {
   const factory LoginState.error(
       {required int statesCode,
       required String errorMessage}) = LoginButtonErrorData;
+      
   const factory LoginState.suceess(AuthResponse data) = LoginButtonSuccessData;
 }

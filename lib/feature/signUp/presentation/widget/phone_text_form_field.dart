@@ -32,6 +32,9 @@ class PhoneTextFormField extends StatelessWidget {
                 context.read<SignUpBloc>().add(UserSignUpPhoneEvent(value));
               },
               textInputAction: TextInputAction.done,
+              autofillHints: const [
+                AutofillHints.telephoneNumber,
+              ],
               keyboardType: TextInputType.phone,
               controller: context.read<SignUpBloc>().userSignUpPhone,
               decoration: InputDecoration(
