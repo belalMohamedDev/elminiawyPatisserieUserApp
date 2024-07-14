@@ -10,8 +10,6 @@ class AppRegex {
         .hasMatch(password);
   }
 
-  
-
   static bool isPhoneNumberValid(String phoneNumber) {
     return RegExp(r'^(010|011|012|015)[0-9]{8}$').hasMatch(phoneNumber);
   }
@@ -37,6 +35,6 @@ class AppRegex {
   }
 
   static bool isNameValid(String name) {
-    return RegExp(r'^[a-z A-Z,.\-]+$').hasMatch(name);
+    return RegExp(r'^[a-zA-Z\u0621-\u064A\s,.\-]+$').hasMatch(name);
   }
 }

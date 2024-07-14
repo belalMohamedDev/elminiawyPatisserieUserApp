@@ -78,4 +78,5 @@ class AppStrings {
   static const String didntRecieveotp = "Didn't receive OTP?";
   static const String resendCode = "Resend Code";
   static const String verify = "Verify";
+  static const String sessionExpired = 'Your session has expired. Please log in again.';
 }

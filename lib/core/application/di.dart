@@ -75,5 +75,5 @@ Future<void> _initForgetPassword() async {
     ..registerLazySingleton<NewPasswordRepository>(
         () => NewPasswordRepository(instance(), instance()))
     ..registerLazySingleton<ForgetPasswordBloc>(() =>
-        ForgetPasswordBloc(instance(), instance(), instance(), ));
+        ForgetPasswordBloc(instance(), instance(), instance()));
 }
