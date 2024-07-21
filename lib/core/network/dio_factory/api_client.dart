@@ -22,12 +22,10 @@ class TokenInterceptor extends Interceptor {
     String? accessToken =
         await SharedPrefHelper.getSecuredString(PrefKeys.accessToken);
 
-    if (accessToken != null) {
-      // Add the access token to the Authorization header
-      options.headers["Accept"] = "application/json";
-      options.headers["Authorization"] = "Bearer $accessToken";
-    }
-
+    // Add the access token to the Authorization header
+    options.headers["Accept"] = "application/json";
+    options.headers["Authorization"] = "Bearer $accessToken";
+  
     return handler.next(options); // continue
   }
 
@@ -38,43 +36,39 @@ class TokenInterceptor extends Interceptor {
       String? refreshToken =
           await SharedPrefHelper.getSecuredString(PrefKeys.refreshToken);
 
-      if (refreshToken != null) {
-        try {
-          // Request a new access token
-          final response = await dio.post(
-            ApiConstants.refreshToken,
-            data: {'refreshToken': refreshToken},
-          );
+      try {
+        // Request a new access token
+        final response = await dio.post(
+          ApiConstants.refreshToken,
+          data: {'refreshToken': refreshToken},
+        );
 
-          final newAccessToken = response.data['accessToken'];
+        final newAccessToken = response.data['accessToken'];
 
-          // Save the new access token
-          await SharedPrefHelper.setSecuredString(
-              PrefKeys.accessToken, newAccessToken);
+        // Save the new access token
+        await SharedPrefHelper.setSecuredString(
+            PrefKeys.accessToken, newAccessToken);
 
-          // Retry the original request with the new access token
-          err.requestOptions.headers["Authorization"] =
-              "Bearer $newAccessToken";
-          final opts = Options(
-              method: err.requestOptions.method,
-              headers: err.requestOptions.headers);
-          final cloneReq = await dio.request(
-            err.requestOptions.path,
-            options: opts,
-            data: err.requestOptions.data,
-            queryParameters: err.requestOptions.queryParameters,
-          );
+        // Retry the original request with the new access token
+        err.requestOptions.headers["Authorization"] =
+            "Bearer $newAccessToken";
+        final opts = Options(
+            method: err.requestOptions.method,
+            headers: err.requestOptions.headers);
+        final cloneReq = await dio.request(
+          err.requestOptions.path,
+          options: opts,
+          data: err.requestOptions.data,
+          queryParameters: err.requestOptions.queryParameters,
+        );
 
-          return handler.resolve(cloneReq);
-        } catch (e) {
-          // Refresh token is also expired or invalid, force re-login
-          _showSessionExpiredMessage();
-          return handler.reject(err);
-        }
-      } else {
+        return handler.resolve(cloneReq);
+      } catch (e) {
+        // Refresh token is also expired or invalid, force re-login
         _showSessionExpiredMessage();
+        return handler.reject(err);
       }
-    }
+        }
 
     // If the error is not related to token expiration, forward it
     return handler.next(err);

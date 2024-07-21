@@ -15,4 +15,6 @@ class ApiConstants {
   static const String updateMyPassword = '/v1/api/user/updateMyPassword';
   static const String updateMyData = '/v1/api/user/updateMyData';
   static const String getNotification = '/v1/api/notification';
+  static const String getBanner = '/v1/api/banner';
+  static const String getCategory = '/v1/api/categories';
 }

@@ -27,7 +27,7 @@ class NewPasswordButton extends StatelessWidget {
             newPasswordSuceess: (data) {
               ShowToast.showToastSuccessTop(
                   message: data.message!, context: context);
-              context.pushReplacementNamed(Routes.home);
+              context.pushReplacementNamed(Routes.bottomNavBarRoute);
             });
       },
       builder: (context, state) {

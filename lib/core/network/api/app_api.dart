@@ -1,10 +1,11 @@
-
 import 'package:dio/dio.dart';
+import 'package:elminiawy/feature/home/data/response/category_response.dart';
 
 import 'package:retrofit/retrofit.dart';
 
 import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
 import '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
+import '../../../feature/home/data/response/banner_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
@@ -29,9 +30,6 @@ abstract class AppServiceClient {
     @Body() RegisterRequestBody registerRequestBody,
   );
 
-
-
-
   @POST(ApiConstants.forgetPassword)
   Future<ForgetPasswordResponse> forgetPassword(
     @Body() ForgetPasswordRequestBody forgetPasswordRequestBody,
@@ -46,6 +44,14 @@ abstract class AppServiceClient {
   Future<AuthResponse> newPassword(
     @Body() NewPasswordRequestBody newPasswordRequestBody,
   );
+
+  @GET(ApiConstants.getBanner)
+  Future<BannerResponse> getBanners();
+
+  @GET(ApiConstants.getCategory)
+  Future<CategoryResponse> getCategories();
+
+
   // @POST(ApiConstants.getFound)
   // @MultiPart()
   // Future<MakeUnReportResponse> makeUnReport(

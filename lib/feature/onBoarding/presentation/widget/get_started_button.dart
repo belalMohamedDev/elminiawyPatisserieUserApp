@@ -5,6 +5,9 @@ import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/services/app_storage_key.dart';
+import '../../../../core/services/shared_pref_helper.dart';
+
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({
     super.key,
@@ -16,7 +19,9 @@ class GetStartedButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          context.pushReplacementNamed(Routes.home);
+          context.pushNamedAndRemoveUntil(Routes.bottomNavBarRoute);
+
+          SharedPrefHelper.setData(PrefKeys.prefsKeyOnBoardingScreenView, true);
         },
         child: Text(AppStrings.letsGetStarted,
             style: Theme.of(context)

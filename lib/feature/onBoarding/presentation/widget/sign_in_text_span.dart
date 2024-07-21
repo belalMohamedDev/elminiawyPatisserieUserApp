@@ -6,6 +6,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/services/app_storage_key.dart';
+import '../../../../core/services/shared_pref_helper.dart';
+
 class AlreadyAccountTextSpan extends StatelessWidget {
   const AlreadyAccountTextSpan({
     super.key,
@@ -26,7 +29,10 @@ class AlreadyAccountTextSpan extends StatelessWidget {
               TextSpan(
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    context.pushReplacementNamed(Routes.loginRoute);
+                    context.pushNamedAndRemoveUntil(Routes.loginRoute);
+
+                    SharedPrefHelper.setData(
+                        PrefKeys.prefsKeyOnBoardingScreenView, true);
                   },
                 text: AppStrings.signIn,
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
