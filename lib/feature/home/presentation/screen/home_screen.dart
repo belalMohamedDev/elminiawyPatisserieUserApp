@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:elminiawy/feature/home/logic/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -8,6 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/images/asset_manger.dart';
+import '../../logic/bannerCubit/banner_cubit.dart';
+import '../../logic/categoryCubit/category_cubit.dart';
+import '../../logic/productCubit/product_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,8 +21,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-    context.read<HomeCubit>().getBanners();
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future.wait([
+        context.read<BannerCubit>().getBanners(),
+        context.read<CategoryCubit>().getCategories(),
+        context.read<ProductCubit>().getProduct(),
+      ]);
+    });
   }
 
   @override

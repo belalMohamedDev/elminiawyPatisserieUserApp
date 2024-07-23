@@ -9,7 +9,9 @@ import '../../../core/style/color/color_manger.dart';
 import '../../../core/style/fonts/strings_manger.dart';
 import '../../cart/presentation/screen/category_view.dart';
 import '../../category/presentation/screen/cart_view.dart';
-import '../../home/logic/cubit/home_cubit.dart';
+import '../../home/logic/bannerCubit/banner_cubit.dart';
+import '../../home/logic/categoryCubit/category_cubit.dart';
+import '../../home/logic/productCubit/product_cubit.dart';
 import '../../home/presentation/screen/home_screen.dart';
 import '../../profile/presentation/screen/profile_view.dart';
 
@@ -69,8 +71,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List<PersistentTabConfig> _navBarsItems() {
     return [
       PersistentTabConfig(
-        screen: BlocProvider(
-          create: (context) => instance<HomeCubit>(),
+        screen: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => instance<BannerCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => instance<CategoryCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => instance<ProductCubit>(),
+            ),
+          ],
           child: const HomeScreen(),
         ),
         item: ItemConfig(

@@ -1,6 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:elminiawy/feature/home/data/dataSource/local/category_local.dart';
+import 'package:elminiawy/feature/home/data/dataSource/local/product_local.dart';
 import 'package:elminiawy/feature/home/data/repository/category_repositry.dart';
+import 'package:elminiawy/feature/home/data/repository/product_response.dart';
+import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
+import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
+import 'package:elminiawy/feature/home/logic/productCubit/product_cubit.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -11,7 +16,6 @@ import '../../feature/forgetPassword/data/repository/forget_password_repo.dart';
 import '../../feature/home/data/dataSource/local/banner_local.dart';
 import '../../feature/home/data/dataSource/remote/remote_data_source.dart';
 import '../../feature/home/data/repository/banner_repositry.dart';
-import '../../feature/home/logic/cubit/home_cubit.dart';
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/data/repository/login_repo.dart';
 import '../../feature/newPassword/data/repository/new_password_repo.dart';
@@ -26,11 +30,15 @@ import 'bloc_observer.dart';
 final instance = GetIt.instance;
 
 Future<void> initAppModule() async {
-  await _initAppModule();
-  await _initLogin();
-  await _initSignUp();
-  await _initForgetPassword();
-  await _initHome();
+  await Future.wait([
+    _initAppModule(),
+    _initLogin(),
+    _initSignUp(),
+    _initForgetPassword(),
+    _initBanner(),
+    _initCatogry(),
+    _initProduct(),
+  ]);
 }
 
 Future<void> _initAppModule() async {
@@ -46,6 +54,10 @@ Future<void> _initAppModule() async {
   Dio dio = DioFactory.getDio();
 
   instance.registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio));
+
+  // remote data source
+  instance.registerLazySingleton<HomeRemoteDataSource>(
+      () => HomeRemoteDataSourceImpl(instance()));
 }
 
 /////////////////////////////////
@@ -86,28 +98,39 @@ Future<void> _initForgetPassword() async {
 
 //home cuibt
 //banner repositry
-Future<void> _initHome() async {
-  // remote data source
-  instance.registerLazySingleton<HomeRemoteDataSource>(
-      () => HomeRemoteDataSourceImpl(instance()));
-
+Future<void> _initBanner() async {
   // local data source
   instance.registerLazySingleton<BannerLocalDataSource>(
       () => BannerLocalDataSourceImpl());
 
-  instance.registerLazySingleton<CategoryLocalDataSource>(
-      () => CategoryLocalDataSourceImpl());
-
-//home cuibt
-//banner repositr
   instance
     ..registerLazySingleton<BannerRepository>(
         () => BannerRepository(instance(), instance(), instance()))
-
-    ..registerLazySingleton<CategoryRepository>(
-        () => CategoryRepository(instance(), instance(), instance()))    
-    ..registerFactory<HomeCubit>(() => HomeCubit(
+    ..registerLazySingleton<BannerCubit>(() => BannerCubit(
           instance(),
+        ));
+}
+
+Future<void> _initCatogry() async {
+  instance.registerLazySingleton<CategoryLocalDataSource>(
+      () => CategoryLocalDataSourceImpl());
+
+  instance
+    ..registerLazySingleton<CategoryRepository>(
+        () => CategoryRepository(instance(), instance(), instance()))
+    ..registerLazySingleton<CategoryCubit>(() => CategoryCubit(
+          instance(),
+        ));
+}
+
+Future<void> _initProduct() async {
+  instance.registerLazySingleton<ProductLocalDataSource>(
+      () => ProductLocalDataSourceImpl());
+
+  instance
+    ..registerLazySingleton<ProductRepository>(
+        () => ProductRepository(instance(), instance(), instance()))
+    ..registerLazySingleton<ProductCubit>(() => ProductCubit(
           instance(),
         ));
 }

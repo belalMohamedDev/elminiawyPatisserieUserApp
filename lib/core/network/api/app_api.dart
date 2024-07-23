@@ -6,6 +6,7 @@ import 'package:retrofit/retrofit.dart';
 import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
 import '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
 import '../../../feature/home/data/response/banner_response.dart';
+import '../../../feature/home/data/response/product_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
@@ -45,11 +46,17 @@ abstract class AppServiceClient {
     @Body() NewPasswordRequestBody newPasswordRequestBody,
   );
 
-  @GET(ApiConstants.getBanner)
+  @GET(ApiConstants.banner)
   Future<BannerResponse> getBanners();
 
-  @GET(ApiConstants.getCategory)
+  @GET(ApiConstants.category)
   Future<CategoryResponse> getCategories();
+
+  @GET(ApiConstants.product)
+  Future<ProductResponse> getProduct(
+     @Query("limit") int limit ,
+  );
+
 
 
   // @POST(ApiConstants.getFound)
