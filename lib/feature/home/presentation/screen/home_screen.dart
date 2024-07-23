@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:elminiawy/feature/home/presentation/widget/banner_carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -44,12 +44,6 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> sampleImages = [
-      ImageAsset.banner,
-      ImageAsset.banner2,
-      ImageAsset.banner3,
-      ImageAsset.banner4,
-    ];
     return Padding(
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       child: SafeArea(
@@ -150,26 +144,7 @@ class HomeBody extends StatelessWidget {
               SizedBox(
                 height: 30.h,
               ),
-              CarouselSlider(
-                options: CarouselOptions(
-                    height: 130.h,
-                    enableInfiniteScroll: true,
-                    autoPlay: true,
-                    viewportFraction: 1.1,
-                    autoPlayInterval: const Duration(seconds: 3),
-                    autoPlayAnimationDuration: const Duration(seconds: 1),
-                    autoPlayCurve: Curves.easeInOutBack,
-                    scrollDirection: Axis.horizontal),
-                items: sampleImages
-                    .map((e) => ClipRRect(
-                        borderRadius: BorderRadius.circular(12.r),
-                        child: Image.asset(
-                          e,
-                          width: 300.w,
-                          fit: BoxFit.fill,
-                        )))
-                    .toList(),
-              ),
+              const BannerCarouselSlider(),
               SizedBox(
                 height: 30.h,
               ),
@@ -462,3 +437,4 @@ class HomeBody extends StatelessWidget {
     );
   }
 }
+

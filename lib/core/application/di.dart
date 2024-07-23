@@ -106,7 +106,7 @@ Future<void> _initBanner() async {
   instance
     ..registerLazySingleton<BannerRepository>(
         () => BannerRepository(instance(), instance(), instance()))
-    ..registerLazySingleton<BannerCubit>(() => BannerCubit(
+    ..registerFactory<BannerCubit>(() => BannerCubit(
           instance(),
         ));
 }
@@ -118,7 +118,7 @@ Future<void> _initCatogry() async {
   instance
     ..registerLazySingleton<CategoryRepository>(
         () => CategoryRepository(instance(), instance(), instance()))
-    ..registerLazySingleton<CategoryCubit>(() => CategoryCubit(
+    ..registerFactory<CategoryCubit>(() => CategoryCubit(
           instance(),
         ));
 }
@@ -130,7 +130,7 @@ Future<void> _initProduct() async {
   instance
     ..registerLazySingleton<ProductRepository>(
         () => ProductRepository(instance(), instance(), instance()))
-    ..registerLazySingleton<ProductCubit>(() => ProductCubit(
+    ..registerFactory<ProductCubit>(() => ProductCubit(
           instance(),
         ));
 }
