@@ -90,17 +90,17 @@ class CategoryListViewBuilder extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 20.w),
+            padding: EdgeInsets.only(right: 15.w),
             child: Column(
               children: [
                 Container(
                   height: 60.h,
-                  width: 60.w,
+                  width: 70.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12.r),
                       color: ColorManger.backgroundItem),
                   child: Padding(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(8),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.r),
                       child: CachedNetworkImage(

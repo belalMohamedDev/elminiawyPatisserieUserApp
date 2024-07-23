@@ -6,7 +6,7 @@ import '../../response/banner_response.dart';
 
 abstract class HomeRemoteDataSource {
   Future<BannerResponse> banner();
-  Future<CategoryResponse> categories();
+  Future<CategoryResponse> categories(String sort);
   Future<ProductResponse> getProduct(int limit);
 }
 
@@ -19,8 +19,8 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<CategoryResponse> categories() async {
-    return await _appServiceClient.getCategories();
+  Future<CategoryResponse> categories(String sort) async {
+    return await _appServiceClient.getCategories(sort);
   }
   
   @override

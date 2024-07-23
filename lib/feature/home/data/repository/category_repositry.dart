@@ -16,7 +16,7 @@ class CategoryRepository {
   final CategoryLocalDataSource _categoryLocalDataSource;
   final NetworkInfo _networkInfo;
 
-  Future<ApiResult<CategoryResponse>> getCategories() async {
+  Future<ApiResult<CategoryResponse>> getCategories(String sort) async {
     try {
       // Attempt to fetch data from local data source
       final response = await _categoryLocalDataSource.getCategories();
@@ -30,7 +30,7 @@ class CategoryRepository {
       if (await _networkInfo.isConnected) {
         try {
           // Attempt to fetch data from remote data source
-          final response = await _homeRemoteDataSource.categories();
+          final response = await _homeRemoteDataSource.categories(sort);
           debugPrint(
               'Banner data retrieved from remote data source: $response');
 

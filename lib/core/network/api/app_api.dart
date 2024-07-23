@@ -50,7 +50,9 @@ abstract class AppServiceClient {
   Future<BannerResponse> getBanners();
 
   @GET(ApiConstants.category)
-  Future<CategoryResponse> getCategories();
+  Future<CategoryResponse> getCategories(
+     @Query("sort") String sort,
+  );
 
   @GET(ApiConstants.product)
   Future<ProductResponse> getProduct(

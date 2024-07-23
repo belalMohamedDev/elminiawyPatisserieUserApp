@@ -13,11 +13,12 @@ class CategoryCubit extends Cubit<CategoryState> {
   final CategoryRepository _categoryRepository;
   static const int _retryLimit = 3;
   int _retryCount = 0;
+  String sort = 'createdAt';
 
   Future<void> getCategories() async {
     emit(const CategoryState.getCategoriesLoading());
 
-    final response = await _categoryRepository.getCategories();
+    final response = await _categoryRepository.getCategories(sort);
 
     response.when(
       success: (dataResponse) {

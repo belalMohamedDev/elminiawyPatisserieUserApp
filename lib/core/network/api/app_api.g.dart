@@ -191,9 +191,9 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<CategoryResponse> getCategories() async {
+  Future<CategoryResponse> getCategories(String sort) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'sort': sort};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio
