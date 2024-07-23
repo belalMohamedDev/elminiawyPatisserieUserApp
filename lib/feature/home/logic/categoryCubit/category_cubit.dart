@@ -8,11 +8,13 @@ part 'category_state.dart';
 part 'category_cubit.freezed.dart';
 
 class CategoryCubit extends Cubit<CategoryState> {
-  CategoryCubit(this._categoryRepository) : super(const CategoryState.initial());
-    final CategoryRepository _categoryRepository;
+  CategoryCubit(this._categoryRepository)
+      : super(const CategoryState.initial());
+  final CategoryRepository _categoryRepository;
+  static const int _retryLimit = 3;
+  int _retryCount = 0;
 
-
-    Future<void> getCategories() async {
+  Future<void> getCategories() async {
     emit(const CategoryState.getCategoriesLoading());
 
     final response = await _categoryRepository.getCategories();
@@ -22,10 +24,15 @@ class CategoryCubit extends Cubit<CategoryState> {
         emit(CategoryState.getCategoriesSuccess(dataResponse));
       },
       failure: (error) {
-        emit(
-          CategoryState.getCategoriesError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
-        );
+        if (_retryCount < _retryLimit) {
+          _retryCount++;
+          getCategories();
+        } else {
+          emit(
+            CategoryState.getCategoriesError(
+                errorMessage: error.message!, statesCode: error.statusCode!),
+          );
+        }
       },
     );
   }

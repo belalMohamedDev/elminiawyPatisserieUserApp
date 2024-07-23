@@ -10,6 +10,7 @@ import '../../../../core/style/images/asset_manger.dart';
 import '../../logic/bannerCubit/banner_cubit.dart';
 import '../../logic/categoryCubit/category_cubit.dart';
 import '../../logic/productCubit/product_cubit.dart';
+import '../widget/category_list_view_builder.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -148,64 +149,7 @@ class HomeBody extends StatelessWidget {
               SizedBox(
                 height: 30.h,
               ),
-              Row(
-                children: [
-                  Text("Category",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brun,
-                          fontSize: 14.sp)),
-                  const Spacer(),
-                  Text("View all",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brunLight,
-                          fontSize: 14.sp)),
-                ],
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              SizedBox(
-                height: 100.h,
-                child: ListView.builder(
-                  addAutomaticKeepAlives: true,
-                  itemCount: 10,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(right: 20.w),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 60.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.r),
-                                color: ColorManger.backgroundItem),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Image.asset(
-                                ImageAsset.cake,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 8.h,
-                          ),
-                          Text("Cakes",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                      fontFamily: FontConsistent.fontFamilyAcme,
-                                      color: Colors.black38,
-                                      fontSize: 12.sp)),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
+              const CategoryListViewBuilder(),
               SizedBox(
                 height: 10.h,
               ),
