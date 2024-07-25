@@ -13,6 +13,7 @@ import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_re
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
 import '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_request.dart';
 import '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
+import '../../../feature/wishList/data/model/getWishListResponse/response.dart';
 import '../api_constant/api_constant.dart';
 
 part 'app_api.g.dart';
@@ -51,15 +52,24 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.category)
   Future<CategoryResponse> getCategories(
-     @Query("sort") String sort,
+    @Query("sort") String sort,
   );
 
   @GET(ApiConstants.product)
   Future<ProductResponse> getProduct(
-     @Query("limit") int limit ,
+    @Query("limit") int limit,
   );
 
+  @GET(ApiConstants.wishList)
+  Future<WishListProduct> getWishList();
 
+  @POST(ApiConstants.wishList)
+  Future<WishListProduct> addOrRemoveProductFromWishList(
+      @Body() String product);
+
+  @DELETE(ApiConstants.wishList)
+  Future<WishListProduct> removeProductFromWishList(
+      @Body() String product);
 
   // @POST(ApiConstants.getFound)
   // @MultiPart()

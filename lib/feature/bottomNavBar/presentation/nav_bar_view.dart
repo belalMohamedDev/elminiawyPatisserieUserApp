@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
-import '../../../core/application/di.dart';
 import '../../../core/style/color/color_manger.dart';
 import '../../../core/style/fonts/strings_manger.dart';
-import '../../cart/presentation/screen/category_view.dart';
-import '../../category/presentation/screen/cart_view.dart';
-import '../../home/logic/bannerCubit/banner_cubit.dart';
-import '../../home/logic/categoryCubit/category_cubit.dart';
-import '../../home/logic/productCubit/product_cubit.dart';
+import '../../category/presentation/screen/category_view.dart';
+import '../../cart/presentation/screen/cart_view.dart';
 import '../../home/presentation/screen/home_screen.dart';
 import '../../profile/presentation/screen/profile_view.dart';
 
@@ -71,22 +66,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List<PersistentTabConfig> _navBarsItems() {
     return [
       PersistentTabConfig(
-        screen: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => instance<BannerCubit>(),
-            ),
-            BlocProvider(
-              create: (context) => instance<CategoryCubit>(),
-            ),
-            BlocProvider(
-              create: (context) => instance<ProductCubit>(),
-            ),
-          ],
-          child: const HomeScreen(),
-        ),
+        screen: const HomeScreen(),
         item: ItemConfig(
-          icon: Icon(IconlyBroken.home, size: 20.sp),
+          icon: Icon(IconlyBold.home, size: 20.sp),
+          inactiveIcon: Icon(IconlyBroken.home, size: 20.sp),
           title: (AppStrings.home),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
@@ -95,28 +78,31 @@ class _BottomNavBarState extends State<BottomNavBar> {
       PersistentTabConfig(
         screen: const CategoryView(),
         item: ItemConfig(
-          icon: Icon(IconlyBroken.category, size: 20.sp),
+          icon: Icon(IconlyBold.category, size: 20.sp),
+          inactiveIcon: Icon(IconlyBroken.category, size: 20.sp),
           title: (AppStrings.categories),
           activeForegroundColor: ColorManger.brun,
-          inactiveForegroundColor: ColorManger.brunLight,
+          inactiveForegroundColor: ColorManger.brun,
         ),
       ),
       PersistentTabConfig(
         screen: const CartView(),
         item: ItemConfig(
-          icon: Icon(IconlyBroken.bag, size: 20.sp),
+          icon: Icon(IconlyBold.bag, size: 20.sp),
+          inactiveIcon: Icon(IconlyBroken.bag, size: 20.sp),
           title: (AppStrings.shopping),
-          activeForegroundColor: ColorManger.white,
-          inactiveForegroundColor: ColorManger.brunLight,
+          activeForegroundColor: ColorManger.brun,
+          inactiveForegroundColor: ColorManger.brun,
         ),
       ),
       PersistentTabConfig(
         screen: const ProfileView(),
         item: ItemConfig(
-          icon: Icon(IconlyBroken.setting, size: 20.sp),
+          icon: Icon(IconlyBold.setting, size: 20.sp),
+          inactiveIcon: Icon(IconlyBroken.setting, size: 20.sp),
           title: (AppStrings.profile),
-          activeForegroundColor: ColorManger.white,
-          inactiveForegroundColor: ColorManger.brunLight,
+          activeForegroundColor: ColorManger.brun,
+          inactiveForegroundColor: ColorManger.brun,
         ),
       ),
     ];

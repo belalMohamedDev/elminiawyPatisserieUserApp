@@ -18,4 +18,5 @@ class ApiConstants {
   static const String banner = '/v1/api/banner';
   static const String category = '/v1/api/categories';
   static const String product = '/v1/api/product';
+  static const String wishList = '/v1/api/wishList';
 }

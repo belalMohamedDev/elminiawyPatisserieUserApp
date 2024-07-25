@@ -80,8 +80,7 @@ class NewProductGrideView extends StatelessWidget {
         children: List.generate(
           state.data.data!.length,
           (index) => Container(
-            height: 280.h,
-            width: 153.375.w,
+         
             decoration: BoxDecoration(
               color: ColorManger.backgroundItem,
               borderRadius: BorderRadius.circular(15.r),

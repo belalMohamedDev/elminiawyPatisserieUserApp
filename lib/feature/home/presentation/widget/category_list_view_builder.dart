@@ -62,7 +62,7 @@ class CategoryListViewBuilder extends StatelessWidget {
               children: [
                 LoadingShimmer(
                   height: 60.h,
-                  width: 60.w,
+                  width: 70.w,
                   borderRadius: 12.r,
                 ),
                 SizedBox(
@@ -101,18 +101,15 @@ class CategoryListViewBuilder extends StatelessWidget {
                       color: ColorManger.backgroundItem),
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: CachedNetworkImage(
-                        imageUrl: state.data.data![index].image!,
-                        placeholder: (context, url) => LoadingShimmer(
-                          height: 60.h,
-                          width: 60.w,
-                          borderRadius: 12.r,
-                        ),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                    child: CachedNetworkImage(
+                      imageUrl: state.data.data![index].image!,
+                      placeholder: (context, url) => LoadingShimmer(
+                        height: 90.h,
+                        width: 90.w,
+                        borderRadius: 10.r,
                       ),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                     ),
                   ),
                 ),

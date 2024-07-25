@@ -1,4 +1,3 @@
-
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../feature/bottomNavBar/presentation/nav_bar_view.dart';
 import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
 import '../../feature/forgetPassword/presntation/screen/forget_password_screen.dart';
+import '../../feature/home/logic/bannerCubit/banner_cubit.dart';
+import '../../feature/home/logic/categoryCubit/category_cubit.dart';
+import '../../feature/home/logic/productCubit/product_cubit.dart';
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/presentation/screen/login_view.dart';
 import '../../feature/newPassword/presentation/screen/new_password_view.dart';
@@ -65,7 +67,21 @@ class RouteGenerator {
 
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(
-          builder: (_) => const BottomNavBar(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+            
+            BlocProvider(
+              create: (context) => instance<BannerCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => instance<CategoryCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => instance<ProductCubit>(),
+            ),
+            ],
+            child: const BottomNavBar(),
+          ),
         );
 
       default:
