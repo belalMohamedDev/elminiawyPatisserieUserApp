@@ -28,6 +28,7 @@ mixin _$WishListState {
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -46,6 +47,7 @@ mixin _$WishListState {
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -63,6 +65,7 @@ mixin _$WishListState {
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -82,6 +85,7 @@ mixin _$WishListState {
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -102,6 +106,7 @@ mixin _$WishListState {
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -122,6 +127,7 @@ mixin _$WishListState {
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -199,6 +205,7 @@ class _$InitialImpl implements _Initial {
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -220,6 +227,7 @@ class _$InitialImpl implements _Initial {
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -240,6 +248,7 @@ class _$InitialImpl implements _Initial {
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -265,6 +274,7 @@ class _$InitialImpl implements _Initial {
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -288,6 +298,7 @@ class _$InitialImpl implements _Initial {
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -311,6 +322,7 @@ class _$InitialImpl implements _Initial {
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -378,6 +390,7 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -399,6 +412,7 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -419,6 +433,7 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -444,6 +459,7 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -467,6 +483,7 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -490,6 +507,7 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -595,6 +613,7 @@ class _$GetWishListErrorImpl implements GetWishListError {
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -616,6 +635,7 @@ class _$GetWishListErrorImpl implements GetWishListError {
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -636,6 +656,7 @@ class _$GetWishListErrorImpl implements GetWishListError {
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -661,6 +682,7 @@ class _$GetWishListErrorImpl implements GetWishListError {
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -684,6 +706,7 @@ class _$GetWishListErrorImpl implements GetWishListError {
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -707,6 +730,7 @@ class _$GetWishListErrorImpl implements GetWishListError {
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -809,6 +833,7 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -830,6 +855,7 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -850,6 +876,7 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -875,6 +902,7 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -898,6 +926,7 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -921,6 +950,7 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -999,6 +1029,7 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -1020,6 +1051,7 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1040,6 +1072,7 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1065,6 +1098,7 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -1088,6 +1122,7 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -1111,6 +1146,7 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -1222,6 +1258,7 @@ class _$AddOrRemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -1243,6 +1280,7 @@ class _$AddOrRemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1263,6 +1301,7 @@ class _$AddOrRemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1288,6 +1327,7 @@ class _$AddOrRemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -1311,6 +1351,7 @@ class _$AddOrRemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -1334,6 +1375,7 @@ class _$AddOrRemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -1442,6 +1484,7 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -1463,6 +1506,7 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1483,6 +1527,7 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1508,6 +1553,7 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -1531,6 +1577,7 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -1554,6 +1601,7 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -1578,6 +1626,232 @@ abstract class AddOrRemoveProductFromWishListSuccess implements WishListState {
   _$$AddOrRemoveProductFromWishListSuccessImplCopyWith<
           _$AddOrRemoveProductFromWishListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateFavoriteStateImplCopyWith<$Res> {
+  factory _$$UpdateFavoriteStateImplCopyWith(_$UpdateFavoriteStateImpl value,
+          $Res Function(_$UpdateFavoriteStateImpl) then) =
+      __$$UpdateFavoriteStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Map<String, bool> favorites});
+}
+
+/// @nodoc
+class __$$UpdateFavoriteStateImplCopyWithImpl<$Res>
+    extends _$WishListStateCopyWithImpl<$Res, _$UpdateFavoriteStateImpl>
+    implements _$$UpdateFavoriteStateImplCopyWith<$Res> {
+  __$$UpdateFavoriteStateImplCopyWithImpl(_$UpdateFavoriteStateImpl _value,
+      $Res Function(_$UpdateFavoriteStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? favorites = null,
+  }) {
+    return _then(_$UpdateFavoriteStateImpl(
+      null == favorites
+          ? _value._favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
+              as Map<String, bool>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateFavoriteStateImpl implements _UpdateFavoriteState {
+  const _$UpdateFavoriteStateImpl(final Map<String, bool> favorites)
+      : _favorites = favorites;
+
+  final Map<String, bool> _favorites;
+  @override
+  Map<String, bool> get favorites {
+    if (_favorites is EqualUnmodifiableMapView) return _favorites;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_favorites);
+  }
+
+  @override
+  String toString() {
+    return 'WishListState.updateFavoriteState(favorites: $favorites)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateFavoriteStateImpl &&
+            const DeepCollectionEquality()
+                .equals(other._favorites, _favorites));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_favorites));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateFavoriteStateImplCopyWith<_$UpdateFavoriteStateImpl> get copyWith =>
+      __$$UpdateFavoriteStateImplCopyWithImpl<_$UpdateFavoriteStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getWishListLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getWishListError,
+    required TResult Function(WishListProduct data) getWishListSuccess,
+    required TResult Function() addOrRemoveProductFromWishListLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        addOrRemoveProductFromWishListError,
+    required TResult Function(WishListProduct data)
+        addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
+    required TResult Function() removeProductFromWishListLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeProductFromWishListError,
+    required TResult Function(WishListProduct data)
+        removeProductFromWishListSuccess,
+  }) {
+    return updateFavoriteState(favorites);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getWishListLoading,
+    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(WishListProduct data)? getWishListSuccess,
+    TResult? Function()? addOrRemoveProductFromWishListLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        addOrRemoveProductFromWishListError,
+    TResult? Function(WishListProduct data)?
+        addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
+    TResult? Function()? removeProductFromWishListLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        removeProductFromWishListError,
+    TResult? Function(WishListProduct data)? removeProductFromWishListSuccess,
+  }) {
+    return updateFavoriteState?.call(favorites);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getWishListLoading,
+    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(WishListProduct data)? getWishListSuccess,
+    TResult Function()? addOrRemoveProductFromWishListLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        addOrRemoveProductFromWishListError,
+    TResult Function(WishListProduct data)?
+        addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
+    TResult Function()? removeProductFromWishListLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        removeProductFromWishListError,
+    TResult Function(WishListProduct data)? removeProductFromWishListSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateFavoriteState != null) {
+      return updateFavoriteState(favorites);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetWishListLoading value) getWishListLoading,
+    required TResult Function(GetWishListError value) getWishListError,
+    required TResult Function(GetWishListSuccess value) getWishListSuccess,
+    required TResult Function(AddOrRemoveProductFromWishListLoading value)
+        addOrRemoveProductFromWishListLoading,
+    required TResult Function(AddOrRemoveProductFromWishListError value)
+        addOrRemoveProductFromWishListError,
+    required TResult Function(AddOrRemoveProductFromWishListSuccess value)
+        addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
+    required TResult Function(RemoveProductFromWishListLoading value)
+        removeProductFromWishListLoading,
+    required TResult Function(RemoveProductFromWishListError value)
+        removeProductFromWishListError,
+    required TResult Function(RemoveProductFromWishListSuccess value)
+        removeProductFromWishListSuccess,
+  }) {
+    return updateFavoriteState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetWishListLoading value)? getWishListLoading,
+    TResult? Function(GetWishListError value)? getWishListError,
+    TResult? Function(GetWishListSuccess value)? getWishListSuccess,
+    TResult? Function(AddOrRemoveProductFromWishListLoading value)?
+        addOrRemoveProductFromWishListLoading,
+    TResult? Function(AddOrRemoveProductFromWishListError value)?
+        addOrRemoveProductFromWishListError,
+    TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
+        addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
+    TResult? Function(RemoveProductFromWishListLoading value)?
+        removeProductFromWishListLoading,
+    TResult? Function(RemoveProductFromWishListError value)?
+        removeProductFromWishListError,
+    TResult? Function(RemoveProductFromWishListSuccess value)?
+        removeProductFromWishListSuccess,
+  }) {
+    return updateFavoriteState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetWishListLoading value)? getWishListLoading,
+    TResult Function(GetWishListError value)? getWishListError,
+    TResult Function(GetWishListSuccess value)? getWishListSuccess,
+    TResult Function(AddOrRemoveProductFromWishListLoading value)?
+        addOrRemoveProductFromWishListLoading,
+    TResult Function(AddOrRemoveProductFromWishListError value)?
+        addOrRemoveProductFromWishListError,
+    TResult Function(AddOrRemoveProductFromWishListSuccess value)?
+        addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
+    TResult Function(RemoveProductFromWishListLoading value)?
+        removeProductFromWishListLoading,
+    TResult Function(RemoveProductFromWishListError value)?
+        removeProductFromWishListError,
+    TResult Function(RemoveProductFromWishListSuccess value)?
+        removeProductFromWishListSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateFavoriteState != null) {
+      return updateFavoriteState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateFavoriteState implements WishListState {
+  const factory _UpdateFavoriteState(final Map<String, bool> favorites) =
+      _$UpdateFavoriteStateImpl;
+
+  Map<String, bool> get favorites;
+  @JsonKey(ignore: true)
+  _$$UpdateFavoriteStateImplCopyWith<_$UpdateFavoriteStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1633,6 +1907,7 @@ class _$RemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -1654,6 +1929,7 @@ class _$RemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1674,6 +1950,7 @@ class _$RemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1699,6 +1976,7 @@ class _$RemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -1722,6 +2000,7 @@ class _$RemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -1745,6 +2024,7 @@ class _$RemoveProductFromWishListLoadingImpl
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -1856,6 +2136,7 @@ class _$RemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -1877,6 +2158,7 @@ class _$RemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1897,6 +2179,7 @@ class _$RemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -1922,6 +2205,7 @@ class _$RemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -1945,6 +2229,7 @@ class _$RemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -1968,6 +2253,7 @@ class _$RemoveProductFromWishListErrorImpl
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?
@@ -2076,6 +2362,7 @@ class _$RemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(Map<String, bool> favorites) updateFavoriteState,
     required TResult Function() removeProductFromWishListLoading,
     required TResult Function(int statesCode, String errorMessage)
         removeProductFromWishListError,
@@ -2097,6 +2384,7 @@ class _$RemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult? Function()? removeProductFromWishListLoading,
     TResult? Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -2117,6 +2405,7 @@ class _$RemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(Map<String, bool> favorites)? updateFavoriteState,
     TResult Function()? removeProductFromWishListLoading,
     TResult Function(int statesCode, String errorMessage)?
         removeProductFromWishListError,
@@ -2142,6 +2431,7 @@ class _$RemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     required TResult Function(AddOrRemoveProductFromWishListSuccess value)
         addOrRemoveProductFromWishListSuccess,
+    required TResult Function(_UpdateFavoriteState value) updateFavoriteState,
     required TResult Function(RemoveProductFromWishListLoading value)
         removeProductFromWishListLoading,
     required TResult Function(RemoveProductFromWishListError value)
@@ -2165,6 +2455,7 @@ class _$RemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult? Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult? Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult? Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult? Function(RemoveProductFromWishListError value)?
@@ -2188,6 +2479,7 @@ class _$RemoveProductFromWishListSuccessImpl
         addOrRemoveProductFromWishListError,
     TResult Function(AddOrRemoveProductFromWishListSuccess value)?
         addOrRemoveProductFromWishListSuccess,
+    TResult Function(_UpdateFavoriteState value)? updateFavoriteState,
     TResult Function(RemoveProductFromWishListLoading value)?
         removeProductFromWishListLoading,
     TResult Function(RemoveProductFromWishListError value)?

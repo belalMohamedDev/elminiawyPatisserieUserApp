@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // Fetch banners, categories, and products
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
         context.read<CategoryCubit>().getCategories(),
@@ -33,4 +34,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

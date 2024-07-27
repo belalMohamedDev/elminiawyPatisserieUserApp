@@ -22,6 +22,8 @@ class WishListState with _$WishListState {
   const factory WishListState.addOrRemoveProductFromWishListSuccess(WishListProduct data) =
       AddOrRemoveProductFromWishListSuccess;
 
+  const factory WishListState.updateFavoriteState(Map<String, bool> favorites) =
+      _UpdateFavoriteState;
 
 
         //add or remove product from WishList State

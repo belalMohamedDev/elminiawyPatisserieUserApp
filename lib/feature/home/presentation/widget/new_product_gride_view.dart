@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconly/iconly.dart';
 
 import '../../../../core/common/loading/loading_shimmer.dart';
+import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/images/asset_manger.dart';
@@ -37,12 +39,28 @@ class NewProductGrideView extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        BlocBuilder<ProductCubit, ProductState>(
+        BlocConsumer<ProductCubit, ProductState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              getProductSuccess: (data) {
+                for (var element in data.data!) {
+                  context
+                      .read<WishListCubit>()
+                      .favorites
+                      .addAll({element.sId!: element.inWishlist!});
+                }
+              },
+            );
+          },
           builder: (context, state) {
-            if (state is GetProductSuccess) {
-              return _newProductSuccessState(state, context);
-            }
-            return _newProductLoadingState();
+            return BlocBuilder<ProductCubit, ProductState>(
+              builder: (context, state) {
+                if (state is GetProductSuccess) {
+                  return _newProductSuccessState(state, context);
+                }
+                return _newProductLoadingState();
+              },
+            );
           },
         )
       ],
@@ -57,7 +75,7 @@ class NewProductGrideView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        childAspectRatio: 0.6,
+        childAspectRatio: 0.7,
         children: List.generate(
             8,
             (index) => LoadingShimmer(
@@ -68,7 +86,7 @@ class NewProductGrideView extends StatelessWidget {
   }
 
   GridView _newProductSuccessState(
-      GetProductSuccess state, BuildContext context) {
+      GetProductSuccess getProductSuccessState, BuildContext context) {
     return GridView.count(
         addAutomaticKeepAlives: true,
         shrinkWrap: true,
@@ -76,14 +94,13 @@ class NewProductGrideView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        childAspectRatio: 0.6,
+        childAspectRatio: 0.7,
         children: List.generate(
-          state.data.data!.length,
+          getProductSuccessState.data.data!.length,
           (index) => Container(
-         
             decoration: BoxDecoration(
               color: ColorManger.backgroundItem,
-              borderRadius: BorderRadius.circular(15.r),
+              borderRadius: BorderRadius.circular(10.r),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,9 +110,32 @@ class NewProductGrideView extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 105.w, top: 5.h),
                       child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(IconlyBroken.heart,
-                            color: ColorManger.black26),
+                        onPressed: () {
+                          context
+                              .read<WishListCubit>()
+                              .addOrRemoveProductFromWish(getProductSuccessState
+                                  .data.data![index].sId!);
+                        },
+                        icon: BlocConsumer<WishListCubit, WishListState>(
+                          listener: (context, state) {
+                            state.whenOrNull(
+                              addOrRemoveProductFromWishListError:
+                                  (statesCode, errorMessage) =>
+                                      ShowToast.showToastErrorTop(
+                                          errorMessage: errorMessage,
+                                          context: context),
+                            );
+                          },
+                          builder: (context, state) {
+                            return Icon(
+                                context.read<WishListCubit>().favorites[
+                                        getProductSuccessState
+                                            .data.data![index].sId]!
+                                    ? IconlyBold.heart
+                                    : IconlyBroken.heart,
+                                color: ColorManger.brunLight);
+                          },
+                        ),
                       ),
                     ),
                     Image.asset(
@@ -103,51 +143,15 @@ class NewProductGrideView extends StatelessWidget {
                       height: 40.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 50.h, left: 15.w),
+                      padding: EdgeInsets.only(top: 40.h, left: 20.w),
                       child: CachedNetworkImage(
-                        imageUrl: state.data.data![index].image!,
-                        height: 120.h,
-                        placeholder: (context, url) => LoadingShimmer(
-                          height: 130.h,
-                          width: 300.w,
-                          borderRadius: 12.r,
-                        ),
+                        imageUrl:
+                            getProductSuccessState.data.data![index].image!,
+                        height: 100.h,
+                        width: 120.w,
+                        placeholder: (context, url) => const LoadingShimmer(),
                         errorWidget: (context, url, error) =>
                             const Icon(Icons.error),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 170.h, left: 90.w),
-                      child: Container(
-                        height: 20.h,
-                        width: 50.w,
-                        decoration: BoxDecoration(
-                            color: ColorManger.brunLight,
-                            borderRadius: BorderRadius.circular(5.r)),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 10.w, top: 2.h),
-                              child: Text(
-                                  "${state.data.data![index].ratingsQuantity!}",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                          fontSize: 10.sp)),
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Icon(
-                              IconlyBroken.star,
-                              color: ColorManger.white,
-                              size: 10.sp,
-                            )
-                          ],
-                        ),
                       ),
                     ),
                   ],
@@ -156,7 +160,7 @@ class NewProductGrideView extends StatelessWidget {
                   height: 10.h,
                 ),
                 Center(
-                  child: Text(state.data.data![index].title!,
+                  child: Text(getProductSuccessState.data.data![index].title!,
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brun,
@@ -166,7 +170,8 @@ class NewProductGrideView extends StatelessWidget {
                   height: 8.h,
                 ),
                 Center(
-                  child: Text(" ${state.data.data![index].price!} \$",
+                  child: Text(
+                      " ${getProductSuccessState.data.data![index].price!}",
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.w500,
                           color: ColorManger.brunLight,

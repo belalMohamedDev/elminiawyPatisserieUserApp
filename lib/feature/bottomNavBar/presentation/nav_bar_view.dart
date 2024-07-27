@@ -66,17 +66,21 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List<PersistentTabConfig> _navBarsItems() {
     return [
       PersistentTabConfig(
+        
         screen: const HomeScreen(),
         item: ItemConfig(
+          
           icon: Icon(IconlyBold.home, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.home, size: 20.sp),
           title: (AppStrings.home),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
+          
         ),
       ),
       PersistentTabConfig(
         screen: const CategoryView(),
+
         item: ItemConfig(
           icon: Icon(IconlyBold.category, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.category, size: 20.sp),
@@ -107,4 +111,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
       ),
     ];
   }
+
+
+  
 }
+

@@ -218,9 +218,18 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ProductResponse> getProduct(int limit) async {
+  Future<ProductResponse> getProduct(
+    int? limit,
+    String? sort,
+    String? keyword,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'limit': limit};
+    final queryParameters = <String, dynamic>{
+      r'limit': limit,
+      r'sort': sort,
+      r'keyword': keyword,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio
@@ -231,7 +240,7 @@ class _AppServiceClient implements AppServiceClient {
     )
             .compose(
               _dio.options,
-              '/v1/api/product',
+              '/v1/api/product/newProduct',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -276,7 +285,7 @@ class _AppServiceClient implements AppServiceClient {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = product;
+    final _data = {'product': product};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<WishListProduct>(Options(
       method: 'POST',
@@ -303,7 +312,7 @@ class _AppServiceClient implements AppServiceClient {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = product;
+    final _data = {'product': product};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<WishListProduct>(Options(
       method: 'DELETE',

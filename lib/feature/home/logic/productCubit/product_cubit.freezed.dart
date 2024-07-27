@@ -498,10 +498,10 @@ class __$$GetProductSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_$GetProductSuccessImpl(
-      null == data
+      freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as ProductResponse,
@@ -527,11 +527,12 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetProductSuccessImpl &&
-            (identical(other.data, data) || other.data == data));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override

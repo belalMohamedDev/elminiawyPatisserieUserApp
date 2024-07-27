@@ -25,7 +25,7 @@ class TokenInterceptor extends Interceptor {
     // Add the access token to the Authorization header
     options.headers["Accept"] = "application/json";
     options.headers["Authorization"] = "Bearer $accessToken";
-  
+
     return handler.next(options); // continue
   }
 
@@ -41,7 +41,9 @@ class TokenInterceptor extends Interceptor {
         final response = await dio.post(
           ApiConstants.refreshToken,
           data: {'refreshToken': refreshToken},
+          options: Options(headers: {"Content-Type": "application/json"}),
         );
+
 
         final newAccessToken = response.data['accessToken'];
 
@@ -50,8 +52,7 @@ class TokenInterceptor extends Interceptor {
             PrefKeys.accessToken, newAccessToken);
 
         // Retry the original request with the new access token
-        err.requestOptions.headers["Authorization"] =
-            "Bearer $newAccessToken";
+        err.requestOptions.headers["Authorization"] = "Bearer $newAccessToken";
         final opts = Options(
             method: err.requestOptions.method,
             headers: err.requestOptions.headers);
@@ -68,7 +69,7 @@ class TokenInterceptor extends Interceptor {
         _showSessionExpiredMessage();
         return handler.reject(err);
       }
-        }
+    }
 
     // If the error is not related to token expiration, forward it
     return handler.next(err);

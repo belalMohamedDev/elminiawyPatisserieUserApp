@@ -7,16 +7,19 @@ class ApiConstants {
   static const String forgetPassword = '/v1/api/auth/forgetPassword';
   static const String verifyCode = '/v1/api/auth/verifyCode';
   static const String resetPassword = '/v1/api/auth/resetPassword';
-  static const String refreshToken = '/v1/api/auth/token';
+  static const String refreshToken = '$baseUrl/v1/api/auth/token';
 
-  static const String getMissing = '/v1/api/missing';
-  static const String getFound = '/v1/api/find';
+
   static const String updateMyImage = '/v1/api/user/updateMyImage';
   static const String updateMyPassword = '/v1/api/user/updateMyPassword';
   static const String updateMyData = '/v1/api/user/updateMyData';
   static const String notification = '/v1/api/notification';
+
+
+
   static const String banner = '/v1/api/banner';
   static const String category = '/v1/api/categories';
   static const String product = '/v1/api/product';
+  static const String newProduct = '/v1/api/product/newProduct';
   static const String wishList = '/v1/api/wishList';
 }

@@ -1,12 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:elminiawy/feature/home/data/repository/category_repositry.dart';
-import 'package:elminiawy/feature/home/data/repository/product_response.dart';
 import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
-import 'package:elminiawy/feature/home/logic/productCubit/product_cubit.dart';
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
-import 'package:elminiawy/feature/wishList/data/repository/add_remove_product.dart';
-import 'package:elminiawy/feature/wishList/data/repository/get_wish_list.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -14,14 +9,15 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
 import '../../feature/forgetPassword/data/repository/forget_password_repo.dart';
-import '../../feature/home/data/repository/banner_repositry.dart';
+import '../../feature/home/data/repository/repositry.dart';
+import '../../feature/home/logic/productCubit/product_cubit.dart';
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/data/repository/login_repo.dart';
 import '../../feature/newPassword/data/repository/new_password_repo.dart';
 import '../../feature/signUp/bloc/sign_up_bloc.dart';
 import '../../feature/signUp/data/repository/sign_up_repo.dart';
 import '../../feature/verifyCode/data/repository/verify_code_repo.dart';
-import '../../feature/wishList/data/repository/remove_product.dart';
+import '../../feature/wishList/data/repository/repository.dart';
 import '../network/api/app_api.dart';
 import '../network/dio_factory/dio_factory.dart';
 import '../network/network_connectivity/connectivity_controller.dart';
@@ -97,42 +93,30 @@ Future<void> _initForgetPassword() async {
 //banner repositry
 Future<void> _initBanner() async {
   instance
-    ..registerLazySingleton<BannerRepository>(
-        () => BannerRepository(instance(), instance()))
+    ..registerLazySingleton<HomeRepository>(
+        () => HomeRepositoryImplement(instance(), instance()))
     ..registerFactory<BannerCubit>(() => BannerCubit(
           instance(),
         ));
 }
 
 Future<void> _initCatogry() async {
-  instance
-    ..registerLazySingleton<CategoryRepository>(
-        () => CategoryRepository(instance(), instance()))
-    ..registerFactory<CategoryCubit>(() => CategoryCubit(
-          instance(),
-        ));
+  instance.registerFactory<CategoryCubit>(() => CategoryCubit(
+        instance(),
+      ));
 }
 
 Future<void> _initProduct() async {
-  instance
-    ..registerLazySingleton<ProductRepository>(
-        () => ProductRepository(instance(), instance()))
-    ..registerFactory<ProductCubit>(() => ProductCubit(
-          instance(),
-        ));
+  instance.registerFactory<ProductCubit>(() => ProductCubit(
+        instance(),
+      ));
 }
 
 Future<void> _initWishList() async {
   instance
-    ..registerLazySingleton<GetWishListRepository>(
-        () => GetWishListRepository(instance(), instance()))
-    ..registerLazySingleton<AddOrRemoveProductFromWishListRepository>(
-        () => AddOrRemoveProductFromWishListRepository(instance(), instance()))
-    ..registerLazySingleton<RemoveProductFromWishListRepository>(
-        () => RemoveProductFromWishListRepository(instance(), instance()))
+    ..registerLazySingleton<WishListRepository>(
+        () => WishListRepositoryImplement(instance(), instance()))
     ..registerFactory<WishListCubit>(() => WishListCubit(
-          instance(),
-          instance(),
           instance(),
         ));
 }

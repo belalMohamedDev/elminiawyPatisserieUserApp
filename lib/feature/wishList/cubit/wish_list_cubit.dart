@@ -1,32 +1,25 @@
 import 'package:elminiawy/feature/wishList/data/model/getWishListResponse/response.dart';
-import 'package:elminiawy/feature/wishList/data/repository/add_remove_product.dart';
-import 'package:elminiawy/feature/wishList/data/repository/get_wish_list.dart';
+import 'package:elminiawy/feature/wishList/data/repository/repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../data/repository/remove_product.dart';
 
 part 'wish_list_state.dart';
 part 'wish_list_cubit.freezed.dart';
 
 class WishListCubit extends Cubit<WishListState> {
   WishListCubit(
-      this._getWishListRepository,
-      this._addOrRemoveProductFromWishListRepository,
-      this._removeProductFromWishListRepository)
+      this._wishListRepository,
+)
       : super(const WishListState.initial());
-  final GetWishListRepository _getWishListRepository;
-  final AddOrRemoveProductFromWishListRepository
-      _addOrRemoveProductFromWishListRepository;
+  final WishListRepositoryImplement _wishListRepository;
 
-  final RemoveProductFromWishListRepository
-      _removeProductFromWishListRepository;
-  String product = '';
+  Map<String, bool> favorites = {};
 
   Future<void> getWishList() async {
     emit(const WishListState.getWishListLoading());
 
-    final response = await _getWishListRepository.getWishList();
+    final response = await _wishListRepository.getWishList();
 
     response.when(
       success: (dataResponse) {
@@ -41,10 +34,17 @@ class WishListCubit extends Cubit<WishListState> {
     );
   }
 
-  Future<void> addOrRemoveProductFromWish() async {
+  Future<void> addOrRemoveProductFromWish(String product) async {
+    // Update the local state immediately
+
+    final bool isFavorite = favorites[product] ?? false;
+    favorites[product] = !isFavorite;
+    emit(WishListState.updateFavoriteState(favorites));
+
+    // Emit loading state for the API call
     emit(const WishListState.addOrRemoveProductFromWishListLoading());
 
-    final response = await _addOrRemoveProductFromWishListRepository
+    final response = await _wishListRepository
         .addOrRemoveProductFromWishList(product);
 
     response.when(
@@ -52,6 +52,8 @@ class WishListCubit extends Cubit<WishListState> {
         emit(WishListState.addOrRemoveProductFromWishListSuccess(dataResponse));
       },
       failure: (error) {
+        favorites[product] = !favorites[product]!;
+
         emit(
           WishListState.addOrRemoveProductFromWishListError(
               errorMessage: error.message!, statesCode: error.statusCode!),
@@ -60,10 +62,10 @@ class WishListCubit extends Cubit<WishListState> {
     );
   }
 
-  Future<void> removeProductFromWish() async {
+  Future<void> removeProductFromWish(String product) async {
     emit(const WishListState.removeProductFromWishListLoading());
 
-    final response = await _removeProductFromWishListRepository
+    final response = await _wishListRepository
         .removeProductFromWishList(product);
 
     response.when(

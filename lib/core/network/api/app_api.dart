@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:elminiawy/feature/home/data/response/category_response.dart';
+import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
 
 import 'package:retrofit/retrofit.dart';
 
 import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
 import '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
-import '../../../feature/home/data/response/banner_response.dart';
-import '../../../feature/home/data/response/product_response.dart';
+import '../../../feature/home/data/model/response/banner_response.dart';
+import '../../../feature/home/data/model/response/product_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
@@ -55,9 +55,11 @@ abstract class AppServiceClient {
     @Query("sort") String sort,
   );
 
-  @GET(ApiConstants.product)
+  @GET(ApiConstants.newProduct)
   Future<ProductResponse> getProduct(
-    @Query("limit") int limit,
+    @Query("limit") int? limit,
+    @Query("sort") String? sort,
+    @Query("keyword") String? keyword,
   );
 
   @GET(ApiConstants.wishList)
@@ -65,11 +67,11 @@ abstract class AppServiceClient {
 
   @POST(ApiConstants.wishList)
   Future<WishListProduct> addOrRemoveProductFromWishList(
-      @Body() String product);
+        @Field("product") String product);
 
   @DELETE(ApiConstants.wishList)
   Future<WishListProduct> removeProductFromWishList(
-      @Body() String product);
+      @Field("product") String product);
 
   // @POST(ApiConstants.getFound)
   // @MultiPart()

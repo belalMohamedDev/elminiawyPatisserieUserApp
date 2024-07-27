@@ -1,4 +1,5 @@
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
+import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -69,16 +70,18 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-            
-            BlocProvider(
-              create: (context) => instance<BannerCubit>(),
-            ),
-            BlocProvider(
-              create: (context) => instance<CategoryCubit>(),
-            ),
-            BlocProvider(
-              create: (context) => instance<ProductCubit>(),
-            ),
+              BlocProvider(
+                create: (context) => instance<BannerCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => instance<CategoryCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => instance<ProductCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => instance<WishListCubit>(),
+              ),
             ],
             child: const BottomNavBar(),
           ),
