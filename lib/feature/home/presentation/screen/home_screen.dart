@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../logic/bannerCubit/banner_cubit.dart';
 import '../../logic/categoryCubit/category_cubit.dart';
-import '../../logic/productCubit/product_cubit.dart';
+import '../../../newProduct/Cubit/product_cubit.dart';
 import '../refactor/home_body.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,4 +33,5 @@ class _HomeScreenState extends State<HomeScreen> {
       body: HomeBody(),
     );
   }
+
 }

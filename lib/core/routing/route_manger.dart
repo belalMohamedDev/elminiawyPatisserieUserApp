@@ -1,3 +1,4 @@
+import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
 import '../../feature/forgetPassword/presntation/screen/forget_password_screen.dart';
 import '../../feature/home/logic/bannerCubit/banner_cubit.dart';
 import '../../feature/home/logic/categoryCubit/category_cubit.dart';
-import '../../feature/home/logic/productCubit/product_cubit.dart';
+import '../../feature/newProduct/Cubit/product_cubit.dart';
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/presentation/screen/login_view.dart';
 import '../../feature/newPassword/presentation/screen/new_password_view.dart';
@@ -86,6 +87,13 @@ class RouteGenerator {
             child: const BottomNavBar(),
           ),
         );
+
+        
+      case Routes.newProduct:
+        return MaterialPageRoute(
+          builder: (_) => const NewProductView()
+        );
+
 
       default:
         return unDefinedRoute();

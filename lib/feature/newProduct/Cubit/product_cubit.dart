@@ -1,23 +1,23 @@
+import 'package:elminiawy/feature/newProduct/model/repository/repositry.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/model/response/product_response.dart';
-import '../../data/repository/repositry.dart';
+import '../model/response/product_response.dart';
 
 part 'product_state.dart';
 part 'product_cubit.freezed.dart';
 
 class ProductCubit extends Cubit<ProductState> {
-  ProductCubit(this._homeRepository) : super(const ProductState.initial());
-  final HomeRepositoryImplement _homeRepository;
+  ProductCubit(this._productRepository) : super(const ProductState.initial());
+  final ProductRepository _productRepository;
   static const int _retryLimit = 3;
   int _retryCount = 0;
 
   Future<void> getProduct(
-      {String sort = "", String keyword = "", int limit = 4}) async {
+      {String sort = "", String keyword = "", int limit = 0}) async {
     emit(const ProductState.getProductLoading());
 
-    final response = await _homeRepository.getNewProduct(
+    final response = await _productRepository.getNewProduct(
         limit == 0 ? null : limit,
         sort.isEmpty ? null : sort,
         keyword.isEmpty ? null : keyword);

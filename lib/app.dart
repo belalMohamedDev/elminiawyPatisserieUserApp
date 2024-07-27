@@ -1,5 +1,8 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
+import 'package:elminiawy/core/application/di.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/routing/route_manger.dart';
 import 'core/routing/routes.dart';
@@ -19,35 +22,38 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
 
-    return FutureBuilder<String>(
-      future: checkIfLoggedInUser(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          // Show a loading indicator while waiting for the future
-          return const Center(child: CircularProgressIndicator());
-        } else if (snapshot.hasError) {
-          // Handle error
-          return Center(child: Text('Error: ${snapshot.error}'));
-        } else {
-          // Build the MaterialApp with the initial route based on the future result
-          return ScreenUtilInit(
-            designSize: const Size(375, 812),
-            minTextAdapt: true,
-            useInheritedMediaQuery: true,
-            builder: (context, child) {
-              return MaterialApp(
-                locale: DevicePreview.locale(context),
-                builder: DevicePreview.appBuilder,
-                title: AppStrings.appName,
-                debugShowCheckedModeBanner: false,
-                initialRoute: snapshot.data,
-                onGenerateRoute: RouteGenerator.getRoute,
-                theme: getApplicationTheme(),
-              );
-            },
-          );
-        }
-      },
+    return BlocProvider(
+      create: (context) => instance<AppLogicCubit>(),
+      child: FutureBuilder<String>(
+        future: checkIfLoggedInUser(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            // Show a loading indicator while waiting for the future
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            // Handle error
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else {
+            // Build the MaterialApp with the initial route based on the future result
+            return ScreenUtilInit(
+              designSize: const Size(375, 812),
+              minTextAdapt: true,
+              useInheritedMediaQuery: true,
+              builder: (context, child) {
+                return MaterialApp(
+                  locale: DevicePreview.locale(context),
+                  builder: DevicePreview.appBuilder,
+                  title: AppStrings.appName,
+                  debugShowCheckedModeBanner: false,
+                  initialRoute: snapshot.data,
+                  onGenerateRoute: RouteGenerator.getRoute,
+                  theme: getApplicationTheme(),
+                );
+              },
+            );
+          }
+        },
+      ),
     );
   }
 }

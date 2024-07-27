@@ -1,11 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:elminiawy/feature/category/presentation/screen/category_view.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
+import '../../../../core/application/cubit/app_logic_cubit.dart';
 import '../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
@@ -30,15 +29,11 @@ class CategoryListViewBuilder extends StatelessWidget {
             const Spacer(),
             GestureDetector(
               onTap: () {
-                pushScreen(
-                  context,
-                  withNavBar: true,
-                  settings: const RouteSettings(name: "/Categories"),
-                  screen: const CategoryView(),
-                  pageTransitionAnimation: PageTransitionAnimation.slideUp,
-                 
-                );
-                
+          
+                context
+                    .read<AppLogicCubit>()
+                    .bottomNavBarController
+                    .jumpToTab(1);
               },
               child: Text("View all",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(

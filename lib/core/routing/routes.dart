@@ -9,4 +9,5 @@ class Routes {
   static const String aboutApp = "aboutApp";
   static const String home = "home";
   static const String newPassword = "newPassword";
+  static const String newProduct = "newProduct";
 }

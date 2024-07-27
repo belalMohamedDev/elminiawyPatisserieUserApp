@@ -1,4 +1,6 @@
+import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
@@ -18,69 +20,64 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  final PersistentTabController bottomNavBarController =
-      PersistentTabController();
-
   @override
   Widget build(BuildContext context) {
-    return PersistentTabView(
-      controller: bottomNavBarController,
-      margin: const EdgeInsets.all(12.0),
+    return BlocBuilder<AppLogicCubit, AppLogicState>(
+      builder: (context, state) {
+        return PersistentTabView(
+          controller:
+          
+           context.read<AppLogicCubit>().bottomNavBarController,
+          margin: const EdgeInsets.all(12.0),
 
-      backgroundColor: ColorManger.brun, // Default is Colors.white.
-      handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset:
-          true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-      stateManagement: true, // Default is true.
+          backgroundColor: ColorManger.brun,
 
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
+          hideNavigationBar:
+           context.read<AppLogicCubit>().hideNavigationBar,
 
-      screenTransitionAnimation: const ScreenTransitionAnimation(
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
-      ),
+          screenTransitionAnimation: const ScreenTransitionAnimation(
+            curve: Curves.ease,
+            duration: Duration(milliseconds: 200),
+          ),
 
-      tabs: _navBarsItems(),
-      navBarBuilder: (navBarConfig) => Style8BottomNavBar(
-        navBarConfig: navBarConfig,
-        itemAnimationProperties: const ItemAnimation(
-          //   // Screen transition animation on change of selected tab.
+          tabs: _navBarsItems(),
+          navBarBuilder: (navBarConfig) => Style8BottomNavBar(
+            navBarConfig: navBarConfig,
+            itemAnimationProperties: const ItemAnimation(
+              //   // Screen transition animation on change of selected tab.
 
-          curve: Curves.ease,
-          duration: Duration(milliseconds: 200),
-        ),
-        navBarDecoration: NavBarDecoration(
-          color: ColorManger.backgroundItem,
-          //  padding: const EdgeInsets.all(12.0),
-          borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30),
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10)),
-        ),
-      ), // Choose the nav bar style with this property.
+              curve: Curves.ease,
+              duration: Duration(milliseconds: 200),
+            ),
+            navBarDecoration: NavBarDecoration(
+              color: ColorManger.backgroundItem,
+              //  padding: const EdgeInsets.all(12.0),
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10)),
+            ),
+          ), // Choose the nav bar style with this property.
+        );
+      },
     );
   }
 
   List<PersistentTabConfig> _navBarsItems() {
     return [
       PersistentTabConfig(
-        
         screen: const HomeScreen(),
         item: ItemConfig(
-          
           icon: Icon(IconlyBold.home, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.home, size: 20.sp),
           title: (AppStrings.home),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
-          
         ),
       ),
       PersistentTabConfig(
         screen: const CategoryView(),
-
         item: ItemConfig(
           icon: Icon(IconlyBold.category, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.category, size: 20.sp),
@@ -111,8 +108,4 @@ class _BottomNavBarState extends State<BottomNavBar> {
       ),
     ];
   }
-
-
-  
 }
-

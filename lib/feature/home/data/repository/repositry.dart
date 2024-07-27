@@ -5,13 +5,11 @@ import '../../../../core/network/network_connectivity/connectivity_controller.da
 
 import '../model/response/banner_response.dart';
 import '../model/response/category_response.dart';
-import '../model/response/product_response.dart';
 
 abstract class HomeRepository {
   Future<ApiResult<BannerResponse>> getBanner();
   Future<ApiResult<CategoryResponse>> getCategories(String sort);
-  Future<ApiResult<ProductResponse>> getNewProduct(
-      int? limit, String? sort, String? keyword);
+
 }
 
 class HomeRepositoryImplement implements HomeRepository {
@@ -51,20 +49,5 @@ class HomeRepositoryImplement implements HomeRepository {
   }
 
 
-  
-  @override
-  Future<ApiResult<ProductResponse>> getNewProduct(
-      int? limit, String? sort, String? keyword) async {
-    if (await _networkInfo.isConnected) {
-      try {
-        final response = await _apiService.getProduct(limit, sort, keyword);
-        return ApiResult.success(response);
-      } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
-      }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
-    }
-  }
+
 }
