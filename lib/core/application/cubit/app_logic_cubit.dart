@@ -10,10 +10,6 @@ class AppLogicCubit extends Cubit<AppLogicState> {
   final PersistentTabController bottomNavBarController =
       PersistentTabController();
 
-  bool hideNavigationBar = false;
 
-  void setHideNavigationBar(bool value) {
-    hideNavigationBar = value;
-    emit(AppLogicState.hideNavigationBarState(hideNavigationBar: hideNavigationBar));
-  }
+
 }

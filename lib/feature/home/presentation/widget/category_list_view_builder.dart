@@ -29,7 +29,6 @@ class CategoryListViewBuilder extends StatelessWidget {
             const Spacer(),
             GestureDetector(
               onTap: () {
-          
                 context
                     .read<AppLogicCubit>()
                     .bottomNavBarController
@@ -38,7 +37,7 @@ class CategoryListViewBuilder extends StatelessWidget {
               child: Text("View all",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
+                      color: ColorManger.brun,
                       fontSize: 14.sp)),
             ),
           ],

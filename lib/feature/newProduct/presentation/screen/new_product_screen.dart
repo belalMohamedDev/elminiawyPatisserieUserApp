@@ -1,10 +1,8 @@
 import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/application/cubit/app_logic_cubit.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../refactor/new_product_body.dart';
@@ -27,7 +25,6 @@ class NewProductView extends StatelessWidget {
           onPressed: () {
             context.pop();
 
-            context.read<AppLogicCubit>().setHideNavigationBar(false);
           },
         ),
       ),

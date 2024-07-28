@@ -54,6 +54,9 @@ class ProductCubit extends Cubit<ProductState> {
   void clearSearch() {
     search.clear();
     searchList = [];
+    selectedRange = const RangeValues(0, 2000);
+    selectedOption = 1;
+
     emit(
       ProductState.addItemToList(
         searchList!,
@@ -63,7 +66,6 @@ class ProductCubit extends Cubit<ProductState> {
 
   void addItemToList(String value,
       {double? minPrice, double? maxPrice, SortOrder? sortOrder}) {
-
     if (value.isEmpty) {
       searchList = [];
     } else {

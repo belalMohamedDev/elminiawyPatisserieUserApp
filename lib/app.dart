@@ -11,6 +11,10 @@ import 'core/services/shared_pref_helper.dart';
 import 'core/style/fonts/strings_manger.dart';
 import 'core/style/theme/theme_manger.dart';
 import 'core/utils/extensions.dart';
+import 'feature/home/logic/bannerCubit/banner_cubit.dart';
+import 'feature/home/logic/categoryCubit/category_cubit.dart';
+import 'feature/newProduct/Cubit/product_cubit.dart';
+import 'feature/wishList/cubit/wish_list_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp._internal(); // private named constructor
@@ -22,8 +26,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
 
-    return BlocProvider(
-      create: (context) => instance<AppLogicCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => instance<AppLogicCubit>(),
+        ),
+              BlocProvider(
+          create: (context) => instance<BannerCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => instance<CategoryCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => instance<ProductCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => instance<WishListCubit>(),
+        ),
+      ],
       child: FutureBuilder<String>(
         future: checkIfLoggedInUser(),
         builder: (context, snapshot) {
@@ -32,7 +52,7 @@ class MyApp extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             // Handle error
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('Error: //${snapshot.error}'));
           } else {
             // Build the MaterialApp with the initial route based on the future result
             return ScreenUtilInit(

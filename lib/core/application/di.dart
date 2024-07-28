@@ -116,12 +116,11 @@ Future<void> _initCatogry() async {
 }
 
 Future<void> _initProduct() async {
-  instance
-    ..registerLazySingleton<ProductRepository>(
-        () => ProductRepository(instance(), instance()))
-    ..registerFactory<ProductCubit>(() => ProductCubit(
-          instance(),
-        ));
+  instance.registerLazySingleton<ProductRepository>(
+      () => ProductRepository(instance(), instance()));
+  instance.registerFactory<ProductCubit>(() => ProductCubit(
+        instance(),
+      ));
 }
 
 Future<void> _initWishList() async {

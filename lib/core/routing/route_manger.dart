@@ -70,23 +70,7 @@ class RouteGenerator {
 
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(
-          builder: (_) => MultiBlocProvider(
-            providers: [
-              BlocProvider(
-                create: (context) => instance<BannerCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<CategoryCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<ProductCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<WishListCubit>(),
-              ),
-            ],
-            child: const BottomNavBar(),
-          ),
+          builder: (_) => const BottomNavBar(),
         );
 
       case Routes.newProduct:

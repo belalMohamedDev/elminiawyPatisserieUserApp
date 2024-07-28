@@ -1,15 +1,14 @@
-import 'package:elminiawy/core/utils/extensions.dart';
+import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/application/cubit/app_logic_cubit.dart';
 import '../../../../core/common/sharedWidget/product_grid_view_loading.dart';
 import '../../../../core/common/sharedWidget/product_grid_view_success.dart';
-import '../../../../core/routing/routes.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../../newProduct/Cubit/product_cubit.dart';
 
 class NewProductGrideView extends StatelessWidget {
@@ -31,14 +30,13 @@ class NewProductGrideView extends StatelessWidget {
             const Spacer(),
             InkWell(
               onTap: () {
-                context.pushNamed(Routes.newProduct);
-
-                context.read<AppLogicCubit>().setHideNavigationBar(true);
+                NavBarNavigator.push(context,
+                    screen: const NewProductView(), withNavBar: false);
               },
               child: Text("See all",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
+                      color: ColorManger.brun,
                       fontSize: 14.sp)),
             ),
           ],

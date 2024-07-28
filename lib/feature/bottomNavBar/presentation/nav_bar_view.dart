@@ -46,8 +46,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
           backgroundColor: ColorManger.brun,
 
-          hideNavigationBar: context.read<AppLogicCubit>().hideNavigationBar,
-
           screenTransitionAnimation: const ScreenTransitionAnimation(
             curve: Curves.ease,
             duration: Duration(milliseconds: 200),

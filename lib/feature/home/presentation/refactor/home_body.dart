@@ -1,13 +1,11 @@
-import 'package:elminiawy/core/utils/extensions.dart';
+import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/application/cubit/app_logic_cubit.dart';
-import '../../../../core/routing/routes.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../widget/banner_carousel_slider.dart';
 import '../widget/category_list_view_builder.dart';
 import '../widget/new_product_gride_view.dart';
@@ -66,9 +64,11 @@ class HomeBody extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  context.pushNamed(Routes.search);
+                  // context.pushNamed(Routes.search);
 
-                  context.read<AppLogicCubit>().setHideNavigationBar(true);
+                  // context.read<AppLogicCubit>().setHideNavigationBar(true);
+                  NavBarNavigator.push(context,
+                      screen: const SearchView(), withNavBar: false);
                 },
                 child: Row(
                   children: [
@@ -105,11 +105,8 @@ class HomeBody extends StatelessWidget {
                         icon:
                             Icon(IconlyBroken.filter, color: ColorManger.white),
                         onPressed: () {
-                          context.pushNamed(Routes.search);
-
-                          context
-                              .read<AppLogicCubit>()
-                              .setHideNavigationBar(true);
+                          NavBarNavigator.push(context,
+                              screen: const SearchView(), withNavBar: false);
                         },
                       ),
                     ),
