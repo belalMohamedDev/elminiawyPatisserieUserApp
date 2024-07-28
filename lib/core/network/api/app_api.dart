@@ -57,9 +57,7 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> getProduct(
-    @Query("limit") int? limit,
-    @Query("sort") String? sort,
-    @Query("keyword") String? keyword,
+ 
   );
 
   @GET(ApiConstants.wishList)

@@ -2,12 +2,12 @@ import 'package:elminiawy/core/common/loading/loading_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class ProductGridViewLoadingState extends StatelessWidget {
+  final ScrollPhysics? physics;
 
   const ProductGridViewLoadingState({
     super.key,
- 
+    this.physics,
   });
 
   @override
@@ -15,7 +15,7 @@ class ProductGridViewLoadingState extends StatelessWidget {
     return GridView.count(
         addAutomaticKeepAlives: true,
         shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
+        physics: physics,
         crossAxisCount: 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,

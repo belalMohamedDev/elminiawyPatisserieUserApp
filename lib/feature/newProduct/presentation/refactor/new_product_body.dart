@@ -12,17 +12,15 @@ class NewProductBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
-        if (state is GetProductSuccess) {
-          return ProductGridViewSuccessState(
-            context: context,
-            getProductSuccessState: state,
-            grideViewIndex: 16,
-          );
+        if (state is GetProductLoading || state is GetProductError) {
+          return const ProductGridViewLoadingState();
         }
-        return const ProductGridViewLoadingState();
+
+        return ProductGridViewSuccessState(
+          dataList: context.read<ProductCubit>().dataList,
+          grideViewIndex: 16,
+        );
       },
     );
   }
 }
-
-

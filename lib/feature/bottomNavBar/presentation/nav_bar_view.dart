@@ -9,7 +9,10 @@ import '../../../core/style/color/color_manger.dart';
 import '../../../core/style/fonts/strings_manger.dart';
 import '../../category/presentation/screen/category_view.dart';
 import '../../cart/presentation/screen/cart_view.dart';
+import '../../home/logic/bannerCubit/banner_cubit.dart';
+import '../../home/logic/categoryCubit/category_cubit.dart';
 import '../../home/presentation/screen/home_screen.dart';
+import '../../newProduct/Cubit/product_cubit.dart';
 import '../../profile/presentation/screen/profile_view.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -21,19 +24,29 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // Fetch banners, categories, and products
+      await Future.wait([
+        context.read<BannerCubit>().getBanners(),
+        context.read<CategoryCubit>().getCategories(),
+        context.read<ProductCubit>().getProduct(),
+      ]);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppLogicCubit, AppLogicState>(
       builder: (context, state) {
         return PersistentTabView(
-          controller:
-          
-           context.read<AppLogicCubit>().bottomNavBarController,
+          controller: context.read<AppLogicCubit>().bottomNavBarController,
           margin: const EdgeInsets.all(12.0),
 
           backgroundColor: ColorManger.brun,
 
-          hideNavigationBar:
-           context.read<AppLogicCubit>().hideNavigationBar,
+          hideNavigationBar: context.read<AppLogicCubit>().hideNavigationBar,
 
           screenTransitionAnimation: const ScreenTransitionAnimation(
             curve: Curves.ease,

@@ -9,18 +9,8 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../refactor/new_product_body.dart';
 
-class NewProductView extends StatefulWidget {
+class NewProductView extends StatelessWidget {
   const NewProductView({super.key});
-
-  @override
-  State<NewProductView> createState() => _NewProductScreenState();
-}
-
-class _NewProductScreenState extends State<NewProductView> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,11 @@
+import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/application/cubit/app_logic_cubit.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../widget/banner_carousel_slider.dart';
@@ -60,55 +64,57 @@ class HomeBody extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 40.h,
-                      child: TextFormField(
-                        enabled: false,
-                        // initialValue: 'Find Your Patisserie',
-                        decoration: InputDecoration(
+              InkWell(
+                onTap: () {
+                  context.pushNamed(Routes.search);
+
+                  context.read<AppLogicCubit>().setHideNavigationBar(true);
+                },
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 40.h,
+                        child: TextFormField(
+                          enabled: false,
+                          decoration: InputDecoration(
                             hintText: 'Find Your Patisserie',
                             prefixIcon: Icon(IconlyBroken.search,
                                 size: 18.sp, color: ColorManger.brunLight),
                             hintStyle: TextStyle(color: ColorManger.brunLight),
                             fillColor: ColorManger.backgroundItem,
-                            border: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ColorManger.backgroundItem),
-                              borderRadius: BorderRadius.all(
-                                  Radius.elliptical(10.r, 10.r)),
-                            ),
                             disabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: ColorManger.backgroundItem,
                               ),
                               borderRadius: BorderRadius.all(
-                                  Radius.elliptical(10.r, 10.r)),
+                                  Radius.elliptical(12.r, 12.r)),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: ColorManger.backgroundItem,
-                              ),
-                            )),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 41.h,
-                    margin: EdgeInsets.only(left: 10.w, right: 5.w),
-                    decoration: BoxDecoration(
-                      color: ColorManger.backgroundItem,
-                      borderRadius: BorderRadius.circular(12.r),
+                    Container(
+                      height: 41.h,
+                      margin: EdgeInsets.only(left: 10.w, right: 5.w),
+                      decoration: BoxDecoration(
+                        color: ColorManger.backgroundItem,
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: IconButton(
+                        icon: Icon(IconlyBroken.filter,
+                            color: ColorManger.brunLight),
+                        onPressed: () {
+                          context.pushNamed(Routes.search);
+
+                          context
+                              .read<AppLogicCubit>()
+                              .setHideNavigationBar(true);
+                        },
+                      ),
                     ),
-                    child: IconButton(
-                      icon: Icon(IconlyBroken.filter,
-                          color: ColorManger.brunLight),
-                      onPressed: () {},
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(
                 height: 30.h,

@@ -12,10 +12,10 @@ class ProductRepository {
   final AppServiceClient _apiService;
 
   Future<ApiResult<ProductResponse>> getNewProduct(
-      int? limit, String? sort, String? keyword) async {
+    ) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response = await _apiService.getProduct(limit, sort, keyword);
+        final response = await _apiService.getProduct();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);

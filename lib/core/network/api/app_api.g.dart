@@ -218,18 +218,9 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ProductResponse> getProduct(
-    int? limit,
-    String? sort,
-    String? keyword,
-  ) async {
+  Future<ProductResponse> getProduct() async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'limit': limit,
-      r'sort': sort,
-      r'keyword': keyword,
-    };
-    queryParameters.removeWhere((k, v) => v == null);
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio

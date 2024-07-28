@@ -12,4 +12,7 @@ class ProductState with _$ProductState {
 
   const factory ProductState.getProductSuccess(ProductResponse data) =
       GetProductSuccess;
+
+       const factory ProductState.addItemToList(List<DataProductResponse> getFoundData) =
+      AddItemToList;
 }
