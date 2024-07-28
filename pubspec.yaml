@@ -86,6 +86,7 @@ dependencies:
   fan_carousel_image_slider: ^1.0.1
   carousel_slider: ^4.2.1
   device_preview: ^1.2.0
+  modal_bottom_sheet: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -121,6 +122,7 @@ flutter:
     - asset/image/cake.jpg
     - asset/image/cakeItem.png
     - asset/image/newItem.png
+    - asset/image/search.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

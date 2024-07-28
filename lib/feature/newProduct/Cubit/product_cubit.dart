@@ -18,6 +18,8 @@ class ProductCubit extends Cubit<ProductState> {
   List<DataProductResponse>? searchList;
   static const int _retryLimit = 3;
   int _retryCount = 0;
+  int selectedOption = 1;
+  RangeValues selectedRange = const RangeValues(0, 2000);
 
   Future<void> getProduct() async {
     emit(const ProductState.getProductLoading());
@@ -52,14 +54,16 @@ class ProductCubit extends Cubit<ProductState> {
   void clearSearch() {
     search.clear();
     searchList = [];
-    
     emit(
-      ProductState.addItemToList(searchList!),
+      ProductState.addItemToList(
+        searchList!,
+      ),
     );
   }
 
   void addItemToList(String value,
       {double? minPrice, double? maxPrice, SortOrder? sortOrder}) {
+
     if (value.isEmpty) {
       searchList = [];
     } else {
@@ -95,9 +99,52 @@ class ProductCubit extends Cubit<ProductState> {
         }
       }
     }
-
     emit(
-      ProductState.addItemToList(searchList!),
+      ProductState.addItemToList(
+        searchList!,
+      ),
     );
+  }
+  //////////////////////////////////////////////////
+
+  // Methods to update filters
+  void updateSelectedOption(int option) {
+    selectedOption = option;
+    emit(ProductState.selectedOptionState(
+      selectedOption,
+    ));
+    applyFilters();
+  }
+
+  void updateSelectedRange(RangeValues range) {
+    selectedRange = range;
+    emit(ProductState.selectedRangeState(
+      selectedRange,
+    ));
+    applyFilters();
+  }
+
+  void applyFilters() {
+    addItemToList(
+      search.text,
+      minPrice: selectedRange.start,
+      maxPrice: selectedRange.end,
+      sortOrder: getSortOrder(),
+    );
+  }
+
+  SortOrder? getSortOrder() {
+    switch (selectedOption) {
+      case 1:
+        return SortOrder.aToZ;
+      case 2:
+        return SortOrder.zToA;
+      case 3:
+        return SortOrder.priceLowToHigh;
+      case 4:
+        return SortOrder.priceHighToLow;
+      default:
+        return null;
+    }
   }
 }

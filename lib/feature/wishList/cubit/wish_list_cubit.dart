@@ -52,12 +52,13 @@ class WishListCubit extends Cubit<WishListState> {
       failure: (error) {
         if (error.statusCode != 401) {
           favorites[product] = !favorites[product]!;
+          
+          emit(
+            WishListState.addOrRemoveProductFromWishListError(
+                errorMessage: error.message!, statesCode: error.statusCode!),
+          );
         }
 
-        emit(
-          WishListState.addOrRemoveProductFromWishListError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
-        );
       },
     );
   }

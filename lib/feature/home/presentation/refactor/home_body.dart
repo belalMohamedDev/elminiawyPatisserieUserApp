@@ -34,8 +34,8 @@ class HomeBody extends StatelessWidget {
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(IconlyBroken.notification,
-                        color: ColorManger.brunLight),
+                    icon:
+                        Icon(IconlyBold.notification, color: ColorManger.brun),
                   )
                 ],
               ),
@@ -88,7 +88,7 @@ class HomeBody extends StatelessWidget {
                                 color: ColorManger.backgroundItem,
                               ),
                               borderRadius: BorderRadius.all(
-                                  Radius.elliptical(12.r, 12.r)),
+                                  Radius.elliptical(10.r, 10.r)),
                             ),
                           ),
                         ),
@@ -98,12 +98,12 @@ class HomeBody extends StatelessWidget {
                       height: 41.h,
                       margin: EdgeInsets.only(left: 10.w, right: 5.w),
                       decoration: BoxDecoration(
-                        color: ColorManger.backgroundItem,
+                        color: ColorManger.brun,
                         borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: IconButton(
-                        icon: Icon(IconlyBroken.filter,
-                            color: ColorManger.brunLight),
+                        icon:
+                            Icon(IconlyBroken.filter, color: ColorManger.white),
                         onPressed: () {
                           context.pushNamed(Routes.search);
 
