@@ -16,6 +16,8 @@ class ImageAsset {
   static const String cakeItem = "$imagePath/cakeItem.png";
   static const String newItem = "$imagePath/newItem.png";
   static const String search = "$imagePath/search.png";
+  static const String guestIcon = "$imagePath/guest_icon_light.png";
+  static const String guestIconGreen = "$imagePath/guest_icon.png";
 
 
 }

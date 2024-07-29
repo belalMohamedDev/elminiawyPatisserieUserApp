@@ -22,97 +22,12 @@ class HomeBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text("Location",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brunLight,
-                          fontSize: 14.sp)),
-                  const Spacer(),
-                  IconButton(
-                    onPressed: () {},
-                    icon:
-                        Icon(IconlyBold.notification, color: ColorManger.brun),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(IconlyBold.location, color: ColorManger.brown),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  Text("New York, USA",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brun,
-                          fontSize: 14.sp)),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  Icon(
-                    IconlyBold.arrowDown2,
-                    color: ColorManger.brown,
-                    size: 15.sp,
-                  ),
-                ],
-              ),
+              _locationAndNotificationRow(context),
+              _locationName(context),
               SizedBox(
                 height: 20.h,
               ),
-              InkWell(
-                onTap: () {
-                  // context.pushNamed(Routes.search);
-
-                  // context.read<AppLogicCubit>().setHideNavigationBar(true);
-                  NavBarNavigator.push(context,
-                      screen: const SearchView(), withNavBar: false);
-                },
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 40.h,
-                        child: TextFormField(
-                          enabled: false,
-                          decoration: InputDecoration(
-                            hintText: 'Find Your Patisserie',
-                            prefixIcon: Icon(IconlyBroken.search,
-                                size: 18.sp, color: ColorManger.brunLight),
-                            hintStyle: TextStyle(color: ColorManger.brunLight),
-                            fillColor: ColorManger.backgroundItem,
-                            disabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: ColorManger.backgroundItem,
-                              ),
-                              borderRadius: BorderRadius.all(
-                                  Radius.elliptical(10.r, 10.r)),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 41.h,
-                      margin: EdgeInsets.only(left: 10.w, right: 5.w),
-                      decoration: BoxDecoration(
-                        color: ColorManger.brun,
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: IconButton(
-                        icon:
-                            Icon(IconlyBroken.filter, color: ColorManger.white),
-                        onPressed: () {
-                          NavBarNavigator.push(context,
-                              screen: const SearchView(), withNavBar: false);
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              _searchRow(context),
               SizedBox(
                 height: 30.h,
               ),
@@ -129,6 +44,98 @@ class HomeBody extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  InkWell _searchRow(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        NavBarNavigator.push(context,
+            screen: const SearchView(), withNavBar: false);
+      },
+      child: Row(
+        children: [
+          Expanded(
+            child: SizedBox(
+              height: 40.h,
+              child: TextFormField(
+                enabled: false,
+                decoration: InputDecoration(
+                  hintText: 'Find Your Patisserie',
+                  prefixIcon: Icon(IconlyBroken.search,
+                      size: 18.sp, color: ColorManger.brunLight),
+                  hintStyle: TextStyle(color: ColorManger.brunLight),
+                  fillColor: ColorManger.backgroundItem,
+                  disabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: ColorManger.backgroundItem,
+                    ),
+                    borderRadius:
+                        BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            height: 41.h,
+            margin: EdgeInsets.only(left: 10.w, right: 5.w),
+            decoration: BoxDecoration(
+              color: ColorManger.brun,
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+            child: IconButton(
+              icon: Icon(IconlyBroken.filter, color: ColorManger.white),
+              onPressed: () {
+                NavBarNavigator.push(context,
+                    screen: const SearchView(), withNavBar: false);
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Row _locationName(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Icon(IconlyBold.location, color: ColorManger.brown),
+        SizedBox(
+          width: 5.w,
+        ),
+        Text("New York, USA",
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontFamily: FontConsistent.fontFamilyAcme,
+                color: ColorManger.brun,
+                fontSize: 14.sp)),
+        SizedBox(
+          width: 5.w,
+        ),
+        Icon(
+          IconlyBold.arrowDown2,
+          color: ColorManger.brown,
+          size: 15.sp,
+        ),
+      ],
+    );
+  }
+
+  Row _locationAndNotificationRow(BuildContext context) {
+    return Row(
+      children: [
+        Text("Location",
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontFamily: FontConsistent.fontFamilyAcme,
+                color: ColorManger.brunLight,
+                fontSize: 14.sp)),
+        const Spacer(),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(IconlyBold.notification, color: ColorManger.brun),
+        )
+      ],
     );
   }
 }

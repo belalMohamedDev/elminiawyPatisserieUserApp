@@ -22,6 +22,6 @@ class ColorManger {
   static Color unselected = const Color(0xffb5b5b4);
   static Color error = const Color(0xffffeef0);
   static Color redError = const Color(0xffdc707d);
-  // static Color backgroundItem = const Color(0xfff0f0f0);
+  static Color lightWhite = const Color(0xfff2f3f7);
   static Color backgroundItem = const Color.fromARGB(255, 247, 247, 247);
 }

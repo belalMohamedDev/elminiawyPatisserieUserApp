@@ -123,6 +123,8 @@ flutter:
     - asset/image/cakeItem.png
     - asset/image/newItem.png
     - asset/image/search.png
+    - asset/image/guest_icon.png
+    - asset/image/guest_icon_light.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

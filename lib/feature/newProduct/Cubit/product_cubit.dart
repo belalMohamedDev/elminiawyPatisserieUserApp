@@ -14,7 +14,7 @@ class ProductCubit extends Cubit<ProductState> {
   final ProductRepository _productRepository;
   final TextEditingController search = TextEditingController();
 
-  final List<DataProductResponse> dataList = [];
+  List<DataProductResponse> dataList = [];
   List<DataProductResponse>? searchList;
   static const int _retryLimit = 3;
   int _retryCount = 0;
@@ -29,6 +29,7 @@ class ProductCubit extends Cubit<ProductState> {
     response.when(
       success: (dataResponse) {
         if (dataResponse.data!.isNotEmpty) {
+          dataList = [];
           dataList.addAll(dataResponse.data!);
         }
         emit(ProductState.getProductSuccess(dataResponse));
