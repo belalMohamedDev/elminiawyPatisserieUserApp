@@ -13,6 +13,7 @@ class WishListCubit extends Cubit<WishListState> {
   final WishListRepositoryImplement _wishListRepository;
 
   Map<String, bool> favorites = {};
+  List<WishListProductData> dataList = [];
 
   Future<void> getWishList() async {
     emit(const WishListState.getWishListLoading());
@@ -21,44 +22,52 @@ class WishListCubit extends Cubit<WishListState> {
 
     response.when(
       success: (dataResponse) {
+        if (dataResponse.data!.isNotEmpty) {
+          dataList = [];
+          dataList.addAll(dataResponse.data!);
+        }
         emit(WishListState.getWishListSuccess(dataResponse));
       },
       failure: (error) {
-        emit(
-          WishListState.getWishListError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
-        );
+        if (error.statusCode != 401) {
+          emit(
+            WishListState.getWishListError(
+                errorMessage: error.message!, statesCode: error.statusCode!),
+          );
+        }
       },
     );
   }
 
-  Future<void> addOrRemoveProductFromWish(String product) async {
+  Future<void> addOrRemoveProductFromWish(String productId) async {
     // Update the local state immediately
-
-    final bool isFavorite = favorites[product] ?? false;
-    favorites[product] = !isFavorite;
+    final bool isFavorite = favorites[productId] ?? false;
+    favorites[productId] = !isFavorite;
     emit(WishListState.updateFavoriteState(favorites));
 
     // Emit loading state for the API call
     emit(const WishListState.addOrRemoveProductFromWishListLoading());
 
     final response =
-        await _wishListRepository.addOrRemoveProductFromWishList(product);
+        await _wishListRepository.addOrRemoveProductFromWishList(productId);
 
     response.when(
       success: (dataResponse) {
+        if (isFavorite == true) {
+          // Remove the product from dataList if it was unfavorited
+          dataList.removeWhere((product) => product.sId == productId);
+        }
         emit(WishListState.addOrRemoveProductFromWishListSuccess(dataResponse));
       },
       failure: (error) {
         if (error.statusCode != 401) {
-          favorites[product] = !favorites[product]!;
-          
+          favorites[productId] = !favorites[productId]!;
+
           emit(
             WishListState.addOrRemoveProductFromWishListError(
                 errorMessage: error.message!, statesCode: error.statusCode!),
           );
         }
-
       },
     );
   }
