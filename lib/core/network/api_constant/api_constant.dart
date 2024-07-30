@@ -8,6 +8,7 @@ class ApiConstants {
   static const String verifyCode = '/v1/api/auth/verifyCode';
   static const String resetPassword = '/v1/api/auth/resetPassword';
   static const String refreshToken = '$baseUrl/v1/api/auth/token';
+  static const String logOut = '/v1/api/auth/logout';
 
 
   static const String updateMyImage = '/v1/api/user/updateMyImage';

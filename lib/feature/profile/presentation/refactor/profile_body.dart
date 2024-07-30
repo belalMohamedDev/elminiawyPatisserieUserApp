@@ -1,7 +1,14 @@
+import 'package:elminiawy/core/routing/routes.dart';
+import 'package:elminiawy/core/utils/extensions.dart';
+import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/common/toast/show_toast.dart';
+import '../../../../core/services/app_storage_key.dart';
+import '../../../../core/services/shared_pref_helper.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/images/asset_manger.dart';
@@ -9,9 +16,14 @@ import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../../wishList/presentation/screen/wishlist_screen.dart';
 import '../widget/custom_profile_card.dart';
 
-class ProfileBody extends StatelessWidget {
+class ProfileBody extends StatefulWidget {
   const ProfileBody({super.key});
 
+  @override
+  State<ProfileBody> createState() => _ProfileBodyState();
+}
+
+class _ProfileBodyState extends State<ProfileBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -61,44 +73,78 @@ class ProfileBody extends StatelessWidget {
 
   Padding _profileColumnCard(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w),
-        child: Column(
-          children: [
-            CustomProfileCard(
-              title: "My Profile",
-              leadingIcon: IconlyBold.profile,
-              tap: () {},
-            ),
-            CustomProfileCard(
-              title: "My Address",
-              leadingIcon: IconlyBold.location,
-              tap: () {},
-            ),
-            CustomProfileCard(
-              title: "My Orders",
-              leadingIcon: IconlyBold.bag,
-              tap: () {},
-            ),
-            CustomProfileCard(
-              title: "My WishList",
-              leadingIcon: IconlyBold.heart,
-              tap: () {
-                NavBarNavigator.push(context,
-                    screen: const WishListView(), withNavBar: false);
-              },
-            ),
-            CustomProfileCard(
-              title: "Settings",
-              leadingIcon: IconlyBold.setting,
-              tap: () {},
-            ),
-            CustomProfileCard(
+      padding: EdgeInsets.symmetric(horizontal: 25.w),
+      child: Column(
+        children: [
+          CustomProfileCard(
+            title: "My Profile",
+            leadingIcon: IconlyBold.profile,
+            tap: () {},
+          ),
+          CustomProfileCard(
+            title: "My Address",
+            leadingIcon: IconlyBold.location,
+            tap: () {},
+          ),
+          CustomProfileCard(
+            title: "My Orders",
+            leadingIcon: IconlyBold.bag,
+            tap: () {},
+          ),
+          CustomProfileCard(
+            title: "My WishList",
+            leadingIcon: IconlyBold.heart,
+            tap: () {
+              NavBarNavigator.push(context,
+                  screen: const WishListView(), withNavBar: false);
+            },
+          ),
+          CustomProfileCard(
+            title: "Settings",
+            leadingIcon: IconlyBold.setting,
+            tap: () {},
+          ),
+          BlocListener<LogOutCubit, LogOutState>(
+            listener: (context, state) async {
+              if (state is LogOutSuccess) {
+                ShowToast.showToastSuccessTop(
+                    message: state.successMessage, context: context);
+                await SharedPrefHelper.clearAllSecuredData();
+
+                if (context.mounted) {
+                  Navigator.of(context, rootNavigator: !false)
+                      .pushNamedAndRemoveUntil(
+                          Routes.loginRoute, (Route route) => false);
+                }
+              } else if (state is LogOutError) {
+                ShowToast.showToastErrorTop(
+                    errorMessage: state.errorMessage, context: context);
+              }
+            },
+            child: CustomProfileCard(
               title: "Log Out",
               leadingIcon: IconlyBold.logout,
-              tap: () {},
+              tap: () async {
+                final userToken = await SharedPrefHelper.getSecuredString(
+                    PrefKeys.refreshToken);
+                if (context.mounted) {
+                  _checkTokenThenDoLogOut(context, userToken);
+                }
+              },
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _checkTokenThenDoLogOut(BuildContext context, String? userToken) {
+    if (!userToken.isNullOrEmpty()) {
+      context.read<LogOutCubit>().logOut(userToken!);
+    } else {
+      Navigator.of(context, rootNavigator: !false)
+          .pushNamedAndRemoveUntil(Routes.loginRoute, (Route route) => false);
+  
+    }
   }
 }

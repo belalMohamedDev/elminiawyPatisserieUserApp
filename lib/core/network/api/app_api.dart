@@ -6,6 +6,7 @@ import 'package:retrofit/retrofit.dart';
 import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
 import '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
 import '../../../feature/home/data/model/response/banner_response.dart';
+import '../../../feature/logOut/data/model/response/log_out_response.dart';
 import '../../../feature/newProduct/model/response/product_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
@@ -70,6 +71,12 @@ abstract class AppServiceClient {
   @DELETE(ApiConstants.wishList)
   Future<WishListProduct> removeProductFromWishList(
       @Field("product") String product);
+
+
+  @POST(ApiConstants.logOut)
+  Future<LogOutResponse> logOut(
+      @Field("refreshToken") String refreshToken,
+  );
 
   // @POST(ApiConstants.getFound)
   // @MultiPart()

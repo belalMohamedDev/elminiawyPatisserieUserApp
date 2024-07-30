@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
+import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
+import 'package:elminiawy/feature/logOut/data/repository/log_out_repo.dart';
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,6 +39,7 @@ Future<void> initAppModule() async {
     _initCatogry(),
     _initProduct(),
     _initWishList(),
+    _initLogOut()
   ]);
 }
 
@@ -128,6 +131,15 @@ Future<void> _initWishList() async {
     ..registerLazySingleton<WishListRepositoryImplement>(
         () => WishListRepositoryImplement(instance(), instance()))
     ..registerFactory<WishListCubit>(() => WishListCubit(
+          instance(),
+        ));
+}
+
+Future<void> _initLogOut() async {
+  instance
+    ..registerLazySingleton<LogOutRepository>(
+        () => LogOutRepository(instance(), instance()))
+    ..registerFactory<LogOutCubit>(() => LogOutCubit(
           instance(),
         ));
 }

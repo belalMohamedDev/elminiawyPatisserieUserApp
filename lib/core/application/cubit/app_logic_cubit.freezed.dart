@@ -19,39 +19,32 @@ mixin _$AppLogicState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool hideNavigationBar) hideNavigationBarState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool hideNavigationBar)? hideNavigationBarState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool hideNavigationBar)? hideNavigationBarState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(HideNavigationBarState value)
-        hideNavigationBarState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(HideNavigationBarState value)? hideNavigationBarState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(HideNavigationBarState value)? hideNavigationBarState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,7 +107,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool hideNavigationBar) hideNavigationBarState,
   }) {
     return initial();
   }
@@ -123,7 +115,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool hideNavigationBar)? hideNavigationBarState,
   }) {
     return initial?.call();
   }
@@ -132,7 +123,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool hideNavigationBar)? hideNavigationBarState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -145,8 +135,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(HideNavigationBarState value)
-        hideNavigationBarState,
   }) {
     return initial(this);
   }
@@ -155,7 +143,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(HideNavigationBarState value)? hideNavigationBarState,
   }) {
     return initial?.call(this);
   }
@@ -164,7 +151,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(HideNavigationBarState value)? hideNavigationBarState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -176,144 +162,4 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements AppLogicState {
   const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$HideNavigationBarStateImplCopyWith<$Res> {
-  factory _$$HideNavigationBarStateImplCopyWith(
-          _$HideNavigationBarStateImpl value,
-          $Res Function(_$HideNavigationBarStateImpl) then) =
-      __$$HideNavigationBarStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool hideNavigationBar});
-}
-
-/// @nodoc
-class __$$HideNavigationBarStateImplCopyWithImpl<$Res>
-    extends _$AppLogicStateCopyWithImpl<$Res, _$HideNavigationBarStateImpl>
-    implements _$$HideNavigationBarStateImplCopyWith<$Res> {
-  __$$HideNavigationBarStateImplCopyWithImpl(
-      _$HideNavigationBarStateImpl _value,
-      $Res Function(_$HideNavigationBarStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hideNavigationBar = null,
-  }) {
-    return _then(_$HideNavigationBarStateImpl(
-      hideNavigationBar: null == hideNavigationBar
-          ? _value.hideNavigationBar
-          : hideNavigationBar // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$HideNavigationBarStateImpl implements HideNavigationBarState {
-  const _$HideNavigationBarStateImpl({this.hideNavigationBar = false});
-
-  @override
-  @JsonKey()
-  final bool hideNavigationBar;
-
-  @override
-  String toString() {
-    return 'AppLogicState.hideNavigationBarState(hideNavigationBar: $hideNavigationBar)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HideNavigationBarStateImpl &&
-            (identical(other.hideNavigationBar, hideNavigationBar) ||
-                other.hideNavigationBar == hideNavigationBar));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, hideNavigationBar);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$HideNavigationBarStateImplCopyWith<_$HideNavigationBarStateImpl>
-      get copyWith => __$$HideNavigationBarStateImplCopyWithImpl<
-          _$HideNavigationBarStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(bool hideNavigationBar) hideNavigationBarState,
-  }) {
-    return hideNavigationBarState(hideNavigationBar);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(bool hideNavigationBar)? hideNavigationBarState,
-  }) {
-    return hideNavigationBarState?.call(hideNavigationBar);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool hideNavigationBar)? hideNavigationBarState,
-    required TResult orElse(),
-  }) {
-    if (hideNavigationBarState != null) {
-      return hideNavigationBarState(hideNavigationBar);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(HideNavigationBarState value)
-        hideNavigationBarState,
-  }) {
-    return hideNavigationBarState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(HideNavigationBarState value)? hideNavigationBarState,
-  }) {
-    return hideNavigationBarState?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(HideNavigationBarState value)? hideNavigationBarState,
-    required TResult orElse(),
-  }) {
-    if (hideNavigationBarState != null) {
-      return hideNavigationBarState(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HideNavigationBarState implements AppLogicState {
-  const factory HideNavigationBarState({final bool hideNavigationBar}) =
-      _$HideNavigationBarStateImpl;
-
-  bool get hideNavigationBar;
-  @JsonKey(ignore: true)
-  _$$HideNavigationBarStateImplCopyWith<_$HideNavigationBarStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

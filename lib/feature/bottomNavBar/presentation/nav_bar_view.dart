@@ -1,10 +1,12 @@
 import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
+import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
+import '../../../core/application/di.dart';
 import '../../../core/style/color/color_manger.dart';
 import '../../../core/style/fonts/strings_manger.dart';
 import '../../category/presentation/screen/category_view.dart';
@@ -108,7 +110,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
       ),
       PersistentTabConfig(
-        screen: const ProfileView(),
+        screen: BlocProvider(
+          create: (context) => instance<LogOutCubit>(),
+          child: const ProfileView(),
+        ),
         item: ItemConfig(
           icon: Icon(IconlyBold.setting, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.setting, size: 20.sp),
