@@ -19,15 +19,23 @@ class WishListBody extends StatelessWidget {
                   errorMessage: errorMessage, context: context),
         );
       },
-      child: BlocBuilder<WishListCubit, WishListState>(
-        builder: (context, state) {
-          if (state is GetWishListError || state is GetWishListLoading) {
-            return const ProductGridViewLoadingState();
+      child: BlocListener<WishListCubit, WishListState>(
+        listener: (context, state) {
+          if (state is GetWishListError) {
+            ShowToast.showToastErrorTop(
+                errorMessage: state.errorMessage, context: context);
           }
-          return ProductGridViewSuccessState(
-            wishListData: context.read<WishListCubit>().dataList,
-          );
         },
+        child: BlocBuilder<WishListCubit, WishListState>(
+          builder: (context, state) {
+            if (state is GetWishListError || state is GetWishListLoading) {
+              return const ProductGridViewLoadingState();
+            }
+            return ProductGridViewSuccessState(
+              wishListData: context.read<WishListCubit>().dataList,
+            );
+          },
+        ),
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:elminiawy/core/routing/routes.dart';
-import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +6,6 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common/toast/show_toast.dart';
-import '../../../../core/services/app_storage_key.dart';
 import '../../../../core/services/shared_pref_helper.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
@@ -84,7 +82,10 @@ class _ProfileBodyState extends State<ProfileBody> {
           CustomProfileCard(
             title: "My Address",
             leadingIcon: IconlyBold.location,
-            tap: () {},
+            tap: () {
+              Navigator.of(context, rootNavigator: !false)
+                  .pushNamed(Routes.address);
+            },
           ),
           CustomProfileCard(
             title: "My Orders",
@@ -125,26 +126,12 @@ class _ProfileBodyState extends State<ProfileBody> {
               title: "Log Out",
               leadingIcon: IconlyBold.logout,
               tap: () async {
-                final userToken = await SharedPrefHelper.getSecuredString(
-                    PrefKeys.refreshToken);
-                if (context.mounted) {
-                  _checkTokenThenDoLogOut(context, userToken);
-                }
+                context.read<LogOutCubit>().checkTokenThenDoLogOut(context);
               },
             ),
           ),
         ],
       ),
     );
-  }
-
-  void _checkTokenThenDoLogOut(BuildContext context, String? userToken) {
-    if (!userToken.isNullOrEmpty()) {
-      context.read<LogOutCubit>().logOut(userToken!);
-    } else {
-      Navigator.of(context, rootNavigator: !false)
-          .pushNamedAndRemoveUntil(Routes.loginRoute, (Route route) => false);
-  
-    }
   }
 }

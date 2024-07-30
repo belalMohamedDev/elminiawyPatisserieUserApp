@@ -12,6 +12,7 @@ import '../../feature/login/presentation/screen/login_view.dart';
 import '../../feature/newPassword/presentation/screen/new_password_view.dart';
 import '../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import '../../feature/signUp/presentation/screen/sign_up_view.dart';
+import '../../feature/userAddress/presentation/screen/user_address_screen.dart';
 import '../../feature/verifyCode/presentation/screen/verification_code.dart';
 import '../application/di.dart';
 import '../style/fonts/strings_manger.dart';
@@ -63,6 +64,8 @@ class RouteGenerator {
             child: const NewPasswordView(),
           ),
         );
+      case Routes.address:
+        return MaterialPageRoute(builder: (_) => const UserAddressView());
 
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(

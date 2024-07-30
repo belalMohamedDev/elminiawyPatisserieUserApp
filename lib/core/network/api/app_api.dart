@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
+import 'package:elminiawy/feature/userAddress/data/model/response/create_address_response.dart';
 
 import 'package:retrofit/retrofit.dart';
 
@@ -12,6 +13,7 @@ import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
+import '../../../feature/userAddress/data/model/request/create_address_request.dart';
 import '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_request.dart';
 import '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
 import '../../../feature/wishList/data/model/getWishListResponse/response.dart';
@@ -57,25 +59,27 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.newProduct)
-  Future<ProductResponse> getProduct(
- 
-  );
+  Future<ProductResponse> getProduct();
 
   @GET(ApiConstants.wishList)
   Future<WishListProduct> getWishList();
 
   @POST(ApiConstants.wishList)
   Future<WishListProduct> addOrRemoveProductFromWishList(
-        @Field("product") String product);
+      @Field("product") String product);
 
   @DELETE(ApiConstants.wishList)
   Future<WishListProduct> removeProductFromWishList(
       @Field("product") String product);
 
-
   @POST(ApiConstants.logOut)
   Future<LogOutResponse> logOut(
-      @Field("refreshToken") String refreshToken,
+    @Field("refreshToken") String refreshToken,
+  );
+
+  @POST(ApiConstants.address)
+  Future<CreateAddressResponse> createAddress(
+    @Body() CreateAddressRequestBody createAddressRequestBody,
   );
 
   // @POST(ApiConstants.getFound)

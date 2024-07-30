@@ -11,4 +11,5 @@ class Routes {
   static const String newPassword = "newPassword";
   static const String newProduct = "newProduct";
   static const String search = "search";
+  static const String address = "address";
 }
