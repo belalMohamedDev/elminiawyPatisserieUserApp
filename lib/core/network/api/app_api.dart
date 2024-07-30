@@ -14,6 +14,7 @@ import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
 import '../../../feature/userAddress/data/model/request/create_address_request.dart';
+import '../../../feature/userAddress/data/model/response/get_address_response.dart';
 import '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_request.dart';
 import '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
 import '../../../feature/wishList/data/model/getWishListResponse/response.dart';
@@ -81,6 +82,9 @@ abstract class AppServiceClient {
   Future<CreateAddressResponse> createAddress(
     @Body() CreateAddressRequestBody createAddressRequestBody,
   );
+
+  @GET(ApiConstants.address)
+  Future<GetAddressResponse> getAllAddress();
 
   // @POST(ApiConstants.getFound)
   // @MultiPart()

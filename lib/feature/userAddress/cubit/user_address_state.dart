@@ -14,4 +14,16 @@ class UserAddressState with _$UserAddressState {
       CreateAddressResponse data) =
        CreateNewAddressSuccess;
 
+
+
+     const factory UserAddressState.getAllAddressLoading() =
+      GetAllAddressLoading;
+
+  const factory UserAddressState.getAllAddressError(
+      {required int statesCode,
+      required String errorMessage}) =   GetAllAddressError;
+
+  const factory UserAddressState.getAllAddressSuccess(
+      GetAddressResponse data) =   GetAllAddressSuccess;
+
 }

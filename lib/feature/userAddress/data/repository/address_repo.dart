@@ -5,12 +5,13 @@ import '../../../../core/network/api/app_api.dart';
 import '../../../../core/network/apiResult/api_reuslt.dart';
 import '../../../../core/network/error_handler/api_error_handler.dart';
 import '../../../../core/network/network_connectivity/connectivity_controller.dart';
+import '../model/response/get_address_response.dart';
 
 abstract class WishListRepository {
   Future<ApiResult<CreateAddressResponse>> createANewAddress(
       CreateAddressRequestBody createAddressRequestBody);
 
-  // Future<ApiResult<WishListProduct>> getWishList();
+  Future<ApiResult<GetAddressResponse>> getAllAddress();
   // Future<ApiResult<WishListProduct>> removeProductFromWishList(String product);
 }
 
@@ -26,6 +27,21 @@ class WishListRepositoryImplement implements WishListRepository {
       try {
         final response =
             await _apiService.createAddress(createAddressRequestBody);
+        return ApiResult.success(response);
+      } catch (error) {
+        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+      }
+    } else {
+      //return  internet connection error
+      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<ApiResult<GetAddressResponse>> getAllAddress() async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _apiService.getAllAddress();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
