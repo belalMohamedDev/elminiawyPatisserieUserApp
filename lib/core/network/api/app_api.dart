@@ -19,6 +19,7 @@ import '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_req
 import '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
 import '../../../feature/wishList/data/model/getWishListResponse/response.dart';
 import '../api_constant/api_constant.dart';
+import '../success/api_success_general.dart';
 
 part 'app_api.g.dart';
 
@@ -86,61 +87,16 @@ abstract class AppServiceClient {
   @GET(ApiConstants.address)
   Future<GetAddressResponse> getAllAddress();
 
-  // @POST(ApiConstants.getFound)
-  // @MultiPart()
-  // Future<MakeUnReportResponse> makeUnReport(
-  //   @Part() String address,
-  //   @Part() String description,
-  //   @Part() File image,
-  // );
+  @PUT('${ApiConstants.address}/{id}')
+  Future<CreateAddressResponse> updateAddress(
+    @Path("id") String id,
+    @Body() CreateAddressRequestBody createAddressRequestBody,
+  );
 
-  // @POST(ApiConstants.getMissing)
-  // @MultiPart()
-  // Future<MakeAReportResopnse> makeAReport(
-  //   @Part() String name,
-  //   @Part() String age,
-  //   @Part() String address,
-  //   @Part() String clothesLastSeenWearing,
-  //   @Part() String describtion,
-  //   @Part() File image,
-  // );
+  @DELETE('${ApiConstants.address}/{id}')
+  Future<ApiSuccessGeneralModel> deleteAddress(
+    @Path("id") String id,
+  );
 
-  // @POST(ApiConstants.getMissing)
-  // @MultiPart()
-  // Future<MakeAReportObjectResopnse> makeAReportObjet(
-  //   @Part() String address,
-  //   @Part() String describtion,
-  //   @Part() File image,
-  // );
 
-  // @PUT(ApiConstants.updateMyImage)
-  // @MultiPart()
-  // Future<UserDataModelResponse> updateMyImage(
-  //   @Part() File image,
-  // );
-
-  // @PUT(ApiConstants.updateMyPassword)
-  // Future<UserDataModelResponse> updateMyPassword(
-  //   @Body() UpdatePasswordRequestBody updatePasswordRequestBody,
-  // );
-
-  // @PUT(ApiConstants.updateMyData)
-  // Future<UserDataModelResponse> updateMyData(
-  //   @Body() UpdateMyDataRequestBody updateMyDataRequestBody,
-  // );
-
-  // @GET(ApiConstants.getMissing)
-  // Future<GetMissingResopnse> getMissing(
-  //   @Queries() GetMissingReportQueries getMissingReportQueries,
-  // );
-
-  // @GET(ApiConstants.getFound)
-  // Future<GetFoundResopnse> getFound(
-  //   @Queries() GetFoundReportQueries getFoundReportParam,
-  // );
-
-  // @GET(ApiConstants.getNotification)
-  // Future<NotificationResponse> getNotification(
-  //   @Queries() GetNotificationQueries getNotificationQueries,
-  // );
 }

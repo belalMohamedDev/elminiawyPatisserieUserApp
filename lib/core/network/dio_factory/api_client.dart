@@ -44,7 +44,6 @@ class TokenInterceptor extends Interceptor {
           options: Options(headers: {"Content-Type": "application/json"}),
         );
 
-
         final newAccessToken = response.data['accessToken'];
 
         // Save the new access token
@@ -72,6 +71,7 @@ class TokenInterceptor extends Interceptor {
     }
 
     // If the error is not related to token expiration, forward it
+    _showErrorMessage(err.message!);
     return handler.next(err);
   }
 
@@ -88,6 +88,14 @@ class TokenInterceptor extends Interceptor {
         (Route<dynamic> route) => false,
         arguments: AppStrings.sessionExpired,
       );
+    }
+  }
+
+  void _showErrorMessage(String error) {
+    final context = navigatorKey.currentState?.context;
+
+    if (context != null) {
+      ShowToast.showToastErrorTop(errorMessage: error, context: context);
     }
   }
 }

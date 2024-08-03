@@ -28,6 +28,14 @@ mixin _$UserAddressState {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +48,12 @@ mixin _$UserAddressState {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +66,12 @@ mixin _$UserAddressState {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,6 +87,12 @@ mixin _$UserAddressState {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +104,12 @@ mixin _$UserAddressState {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,6 +121,12 @@ mixin _$UserAddressState {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,6 +198,14 @@ class _$InitialImpl implements _Initial {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return initial();
   }
@@ -175,6 +221,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return initial?.call();
   }
@@ -190,6 +242,12 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -211,6 +269,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) {
     return initial(this);
   }
@@ -225,6 +289,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) {
     return initial?.call(this);
   }
@@ -239,6 +309,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -303,6 +379,14 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return createNewAddressLoading();
   }
@@ -318,6 +402,12 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return createNewAddressLoading?.call();
   }
@@ -333,6 +423,12 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressLoading != null) {
@@ -354,6 +450,12 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) {
     return createNewAddressLoading(this);
   }
@@ -368,6 +470,12 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) {
     return createNewAddressLoading?.call(this);
   }
@@ -382,6 +490,12 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressLoading != null) {
@@ -482,6 +596,14 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return createNewAddressError(statesCode, errorMessage);
   }
@@ -497,6 +619,12 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return createNewAddressError?.call(statesCode, errorMessage);
   }
@@ -512,6 +640,12 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressError != null) {
@@ -533,6 +667,12 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) {
     return createNewAddressError(this);
   }
@@ -547,6 +687,12 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) {
     return createNewAddressError?.call(this);
   }
@@ -561,6 +707,12 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressError != null) {
@@ -659,6 +811,14 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return createNewAddressSuccess(data);
   }
@@ -674,6 +834,12 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return createNewAddressSuccess?.call(data);
   }
@@ -689,6 +855,12 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressSuccess != null) {
@@ -710,6 +882,12 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) {
     return createNewAddressSuccess(this);
   }
@@ -724,6 +902,12 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) {
     return createNewAddressSuccess?.call(this);
   }
@@ -738,6 +922,12 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressSuccess != null) {
@@ -806,6 +996,14 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return getAllAddressLoading();
   }
@@ -821,6 +1019,12 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return getAllAddressLoading?.call();
   }
@@ -836,6 +1040,12 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressLoading != null) {
@@ -857,6 +1067,12 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) {
     return getAllAddressLoading(this);
   }
@@ -871,6 +1087,12 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) {
     return getAllAddressLoading?.call(this);
   }
@@ -885,6 +1107,12 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressLoading != null) {
@@ -984,6 +1212,14 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return getAllAddressError(statesCode, errorMessage);
   }
@@ -999,6 +1235,12 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return getAllAddressError?.call(statesCode, errorMessage);
   }
@@ -1014,6 +1256,12 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressError != null) {
@@ -1035,6 +1283,12 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) {
     return getAllAddressError(this);
   }
@@ -1049,6 +1303,12 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) {
     return getAllAddressError?.call(this);
   }
@@ -1063,6 +1323,12 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressError != null) {
@@ -1160,6 +1426,14 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     required TResult Function(int statesCode, String errorMessage)
         getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return getAllAddressSuccess(data);
   }
@@ -1175,6 +1449,12 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return getAllAddressSuccess?.call(data);
   }
@@ -1190,6 +1470,12 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressSuccess != null) {
@@ -1211,6 +1497,12 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
     required TResult Function(GetAllAddressError value) getAllAddressError,
     required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
   }) {
     return getAllAddressSuccess(this);
   }
@@ -1225,6 +1517,12 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
     TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
   }) {
     return getAllAddressSuccess?.call(this);
   }
@@ -1239,6 +1537,12 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
     TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressSuccess != null) {
@@ -1255,5 +1559,1235 @@ abstract class GetAllAddressSuccess implements UserAddressState {
   GetAddressResponse get data;
   @JsonKey(ignore: true)
   _$$GetAllAddressSuccessImplCopyWith<_$GetAllAddressSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateAddressLoadingImplCopyWith<$Res> {
+  factory _$$UpdateAddressLoadingImplCopyWith(_$UpdateAddressLoadingImpl value,
+          $Res Function(_$UpdateAddressLoadingImpl) then) =
+      __$$UpdateAddressLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateAddressLoadingImplCopyWithImpl<$Res>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$UpdateAddressLoadingImpl>
+    implements _$$UpdateAddressLoadingImplCopyWith<$Res> {
+  __$$UpdateAddressLoadingImplCopyWithImpl(_$UpdateAddressLoadingImpl _value,
+      $Res Function(_$UpdateAddressLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
+  const _$UpdateAddressLoadingImpl();
+
+  @override
+  String toString() {
+    return 'UserAddressState.updateAddressLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAddressLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createNewAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        createNewAddressError,
+    required TResult Function(CreateAddressResponse data)
+        createNewAddressSuccess,
+    required TResult Function() getAllAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getAllAddressError,
+    required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+  }) {
+    return updateAddressLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createNewAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult? Function()? getAllAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+  }) {
+    return updateAddressLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createNewAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult Function()? getAllAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressLoading != null) {
+      return updateAddressLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CreateNewAddressLoading value)
+        createNewAddressLoading,
+    required TResult Function(CreateNewAddressError value)
+        createNewAddressError,
+    required TResult Function(CreateNewAddressSuccess value)
+        createNewAddressSuccess,
+    required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
+    required TResult Function(GetAllAddressError value) getAllAddressError,
+    required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
+  }) {
+    return updateAddressLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult? Function(GetAllAddressError value)? getAllAddressError,
+    TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
+  }) {
+    return updateAddressLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult Function(GetAllAddressError value)? getAllAddressError,
+    TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressLoading != null) {
+      return updateAddressLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateAddressLoading implements UserAddressState {
+  const factory UpdateAddressLoading() = _$UpdateAddressLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateAddressErrorImplCopyWith<$Res> {
+  factory _$$UpdateAddressErrorImplCopyWith(_$UpdateAddressErrorImpl value,
+          $Res Function(_$UpdateAddressErrorImpl) then) =
+      __$$UpdateAddressErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int statesCode, String errorMessage});
+}
+
+/// @nodoc
+class __$$UpdateAddressErrorImplCopyWithImpl<$Res>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$UpdateAddressErrorImpl>
+    implements _$$UpdateAddressErrorImplCopyWith<$Res> {
+  __$$UpdateAddressErrorImplCopyWithImpl(_$UpdateAddressErrorImpl _value,
+      $Res Function(_$UpdateAddressErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? statesCode = null,
+    Object? errorMessage = null,
+  }) {
+    return _then(_$UpdateAddressErrorImpl(
+      statesCode: null == statesCode
+          ? _value.statesCode
+          : statesCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateAddressErrorImpl implements UpdateAddressError {
+  const _$UpdateAddressErrorImpl(
+      {required this.statesCode, required this.errorMessage});
+
+  @override
+  final int statesCode;
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'UserAddressState.updateAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAddressErrorImpl &&
+            (identical(other.statesCode, statesCode) ||
+                other.statesCode == statesCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateAddressErrorImplCopyWith<_$UpdateAddressErrorImpl> get copyWith =>
+      __$$UpdateAddressErrorImplCopyWithImpl<_$UpdateAddressErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createNewAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        createNewAddressError,
+    required TResult Function(CreateAddressResponse data)
+        createNewAddressSuccess,
+    required TResult Function() getAllAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getAllAddressError,
+    required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+  }) {
+    return updateAddressError(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createNewAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult? Function()? getAllAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+  }) {
+    return updateAddressError?.call(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createNewAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult Function()? getAllAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressError != null) {
+      return updateAddressError(statesCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CreateNewAddressLoading value)
+        createNewAddressLoading,
+    required TResult Function(CreateNewAddressError value)
+        createNewAddressError,
+    required TResult Function(CreateNewAddressSuccess value)
+        createNewAddressSuccess,
+    required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
+    required TResult Function(GetAllAddressError value) getAllAddressError,
+    required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
+  }) {
+    return updateAddressError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult? Function(GetAllAddressError value)? getAllAddressError,
+    TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
+  }) {
+    return updateAddressError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult Function(GetAllAddressError value)? getAllAddressError,
+    TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressError != null) {
+      return updateAddressError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateAddressError implements UserAddressState {
+  const factory UpdateAddressError(
+      {required final int statesCode,
+      required final String errorMessage}) = _$UpdateAddressErrorImpl;
+
+  int get statesCode;
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$UpdateAddressErrorImplCopyWith<_$UpdateAddressErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateAddressSuccessImplCopyWith<$Res> {
+  factory _$$UpdateAddressSuccessImplCopyWith(_$UpdateAddressSuccessImpl value,
+          $Res Function(_$UpdateAddressSuccessImpl) then) =
+      __$$UpdateAddressSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CreateAddressResponse data});
+}
+
+/// @nodoc
+class __$$UpdateAddressSuccessImplCopyWithImpl<$Res>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$UpdateAddressSuccessImpl>
+    implements _$$UpdateAddressSuccessImplCopyWith<$Res> {
+  __$$UpdateAddressSuccessImplCopyWithImpl(_$UpdateAddressSuccessImpl _value,
+      $Res Function(_$UpdateAddressSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateAddressSuccessImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CreateAddressResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
+  const _$UpdateAddressSuccessImpl(this.data);
+
+  @override
+  final CreateAddressResponse data;
+
+  @override
+  String toString() {
+    return 'UserAddressState.updateAddressSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAddressSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateAddressSuccessImplCopyWith<_$UpdateAddressSuccessImpl>
+      get copyWith =>
+          __$$UpdateAddressSuccessImplCopyWithImpl<_$UpdateAddressSuccessImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createNewAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        createNewAddressError,
+    required TResult Function(CreateAddressResponse data)
+        createNewAddressSuccess,
+    required TResult Function() getAllAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getAllAddressError,
+    required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+  }) {
+    return updateAddressSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createNewAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult? Function()? getAllAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+  }) {
+    return updateAddressSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createNewAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult Function()? getAllAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressSuccess != null) {
+      return updateAddressSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CreateNewAddressLoading value)
+        createNewAddressLoading,
+    required TResult Function(CreateNewAddressError value)
+        createNewAddressError,
+    required TResult Function(CreateNewAddressSuccess value)
+        createNewAddressSuccess,
+    required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
+    required TResult Function(GetAllAddressError value) getAllAddressError,
+    required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
+  }) {
+    return updateAddressSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult? Function(GetAllAddressError value)? getAllAddressError,
+    TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
+  }) {
+    return updateAddressSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult Function(GetAllAddressError value)? getAllAddressError,
+    TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressSuccess != null) {
+      return updateAddressSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateAddressSuccess implements UserAddressState {
+  const factory UpdateAddressSuccess(final CreateAddressResponse data) =
+      _$UpdateAddressSuccessImpl;
+
+  CreateAddressResponse get data;
+  @JsonKey(ignore: true)
+  _$$UpdateAddressSuccessImplCopyWith<_$UpdateAddressSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveAddressLoadingImplCopyWith<$Res> {
+  factory _$$RemoveAddressLoadingImplCopyWith(_$RemoveAddressLoadingImpl value,
+          $Res Function(_$RemoveAddressLoadingImpl) then) =
+      __$$RemoveAddressLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RemoveAddressLoadingImplCopyWithImpl<$Res>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$RemoveAddressLoadingImpl>
+    implements _$$RemoveAddressLoadingImplCopyWith<$Res> {
+  __$$RemoveAddressLoadingImplCopyWithImpl(_$RemoveAddressLoadingImpl _value,
+      $Res Function(_$RemoveAddressLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
+  const _$RemoveAddressLoadingImpl();
+
+  @override
+  String toString() {
+    return 'UserAddressState.removeAddressLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveAddressLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createNewAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        createNewAddressError,
+    required TResult Function(CreateAddressResponse data)
+        createNewAddressSuccess,
+    required TResult Function() getAllAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getAllAddressError,
+    required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+  }) {
+    return removeAddressLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createNewAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult? Function()? getAllAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+  }) {
+    return removeAddressLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createNewAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult Function()? getAllAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (removeAddressLoading != null) {
+      return removeAddressLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CreateNewAddressLoading value)
+        createNewAddressLoading,
+    required TResult Function(CreateNewAddressError value)
+        createNewAddressError,
+    required TResult Function(CreateNewAddressSuccess value)
+        createNewAddressSuccess,
+    required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
+    required TResult Function(GetAllAddressError value) getAllAddressError,
+    required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
+  }) {
+    return removeAddressLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult? Function(GetAllAddressError value)? getAllAddressError,
+    TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
+  }) {
+    return removeAddressLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult Function(GetAllAddressError value)? getAllAddressError,
+    TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (removeAddressLoading != null) {
+      return removeAddressLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveAddressLoading implements UserAddressState {
+  const factory RemoveAddressLoading() = _$RemoveAddressLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$RemoveAddressErrorImplCopyWith<$Res> {
+  factory _$$RemoveAddressErrorImplCopyWith(_$RemoveAddressErrorImpl value,
+          $Res Function(_$RemoveAddressErrorImpl) then) =
+      __$$RemoveAddressErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int statesCode, String errorMessage});
+}
+
+/// @nodoc
+class __$$RemoveAddressErrorImplCopyWithImpl<$Res>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$RemoveAddressErrorImpl>
+    implements _$$RemoveAddressErrorImplCopyWith<$Res> {
+  __$$RemoveAddressErrorImplCopyWithImpl(_$RemoveAddressErrorImpl _value,
+      $Res Function(_$RemoveAddressErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? statesCode = null,
+    Object? errorMessage = null,
+  }) {
+    return _then(_$RemoveAddressErrorImpl(
+      statesCode: null == statesCode
+          ? _value.statesCode
+          : statesCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveAddressErrorImpl implements RemoveAddressError {
+  const _$RemoveAddressErrorImpl(
+      {required this.statesCode, required this.errorMessage});
+
+  @override
+  final int statesCode;
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'UserAddressState.removeAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveAddressErrorImpl &&
+            (identical(other.statesCode, statesCode) ||
+                other.statesCode == statesCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveAddressErrorImplCopyWith<_$RemoveAddressErrorImpl> get copyWith =>
+      __$$RemoveAddressErrorImplCopyWithImpl<_$RemoveAddressErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createNewAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        createNewAddressError,
+    required TResult Function(CreateAddressResponse data)
+        createNewAddressSuccess,
+    required TResult Function() getAllAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getAllAddressError,
+    required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+  }) {
+    return removeAddressError(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createNewAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult? Function()? getAllAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+  }) {
+    return removeAddressError?.call(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createNewAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult Function()? getAllAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (removeAddressError != null) {
+      return removeAddressError(statesCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CreateNewAddressLoading value)
+        createNewAddressLoading,
+    required TResult Function(CreateNewAddressError value)
+        createNewAddressError,
+    required TResult Function(CreateNewAddressSuccess value)
+        createNewAddressSuccess,
+    required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
+    required TResult Function(GetAllAddressError value) getAllAddressError,
+    required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
+  }) {
+    return removeAddressError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult? Function(GetAllAddressError value)? getAllAddressError,
+    TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
+  }) {
+    return removeAddressError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult Function(GetAllAddressError value)? getAllAddressError,
+    TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (removeAddressError != null) {
+      return removeAddressError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveAddressError implements UserAddressState {
+  const factory RemoveAddressError(
+      {required final int statesCode,
+      required final String errorMessage}) = _$RemoveAddressErrorImpl;
+
+  int get statesCode;
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$RemoveAddressErrorImplCopyWith<_$RemoveAddressErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveAddressSuccessImplCopyWith<$Res> {
+  factory _$$RemoveAddressSuccessImplCopyWith(_$RemoveAddressSuccessImpl value,
+          $Res Function(_$RemoveAddressSuccessImpl) then) =
+      __$$RemoveAddressSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiSuccessGeneralModel data});
+}
+
+/// @nodoc
+class __$$RemoveAddressSuccessImplCopyWithImpl<$Res>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$RemoveAddressSuccessImpl>
+    implements _$$RemoveAddressSuccessImplCopyWith<$Res> {
+  __$$RemoveAddressSuccessImplCopyWithImpl(_$RemoveAddressSuccessImpl _value,
+      $Res Function(_$RemoveAddressSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$RemoveAddressSuccessImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ApiSuccessGeneralModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
+  const _$RemoveAddressSuccessImpl(this.data);
+
+  @override
+  final ApiSuccessGeneralModel data;
+
+  @override
+  String toString() {
+    return 'UserAddressState.removeAddressSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveAddressSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveAddressSuccessImplCopyWith<_$RemoveAddressSuccessImpl>
+      get copyWith =>
+          __$$RemoveAddressSuccessImplCopyWithImpl<_$RemoveAddressSuccessImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createNewAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        createNewAddressError,
+    required TResult Function(CreateAddressResponse data)
+        createNewAddressSuccess,
+    required TResult Function() getAllAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getAllAddressError,
+    required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+  }) {
+    return removeAddressSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createNewAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult? Function()? getAllAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+  }) {
+    return removeAddressSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createNewAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult Function()? getAllAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (removeAddressSuccess != null) {
+      return removeAddressSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CreateNewAddressLoading value)
+        createNewAddressLoading,
+    required TResult Function(CreateNewAddressError value)
+        createNewAddressError,
+    required TResult Function(CreateNewAddressSuccess value)
+        createNewAddressSuccess,
+    required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
+    required TResult Function(GetAllAddressError value) getAllAddressError,
+    required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
+  }) {
+    return removeAddressSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult? Function(GetAllAddressError value)? getAllAddressError,
+    TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
+  }) {
+    return removeAddressSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult Function(GetAllAddressError value)? getAllAddressError,
+    TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (removeAddressSuccess != null) {
+      return removeAddressSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveAddressSuccess implements UserAddressState {
+  const factory RemoveAddressSuccess(final ApiSuccessGeneralModel data) =
+      _$RemoveAddressSuccessImpl;
+
+  ApiSuccessGeneralModel get data;
+  @JsonKey(ignore: true)
+  _$$RemoveAddressSuccessImplCopyWith<_$RemoveAddressSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

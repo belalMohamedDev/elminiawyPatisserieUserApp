@@ -5,7 +5,6 @@ import 'package:elminiawy/core/network/dio_factory/api_client.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-
 const String applicationJson = 'application/json';
 const String contentType = 'contentType';
 const String accept = 'Accept';
@@ -26,10 +25,7 @@ class DioFactory {
         ..options.receiveTimeout = timeOut
         ..options.receiveDataWhenStatusError = true;
 
-
-
       dio?.interceptors.add(TokenInterceptor(dio!));
-
 
       if (!kReleaseMode) {
         // It's debug mode so print app logs
@@ -41,8 +37,6 @@ class DioFactory {
       return dio!;
     }
   }
-
-
 
   static void addDioInterceptor() {
     dio?.interceptors.add(
