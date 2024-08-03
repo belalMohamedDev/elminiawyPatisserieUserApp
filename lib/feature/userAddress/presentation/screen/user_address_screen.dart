@@ -1,13 +1,27 @@
 import 'package:elminiawy/core/utils/extensions.dart';
+import 'package:elminiawy/feature/userAddress/cubit/user_address_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../refactor/user_address_body.dart';
 
-class UserAddressView extends StatelessWidget {
+class UserAddressView extends StatefulWidget {
   const UserAddressView({super.key});
+
+  @override
+  State<UserAddressView> createState() => _UserAddressViewState();
+}
+
+class _UserAddressViewState extends State<UserAddressView> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<UserAddressCubit>().getUserAddress();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +51,11 @@ class UserAddressView extends StatelessWidget {
           ),
         ],
       ),
-      body: const UserAddressBody(),
+      body: Padding(
+        padding: EdgeInsets.only(left: 20.w, top: 10.h),
+        child: const UserAddressBody(),
+      ),
     );
   }
 }
 
-class UserAddressBody extends StatelessWidget {
-  const UserAddressBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}

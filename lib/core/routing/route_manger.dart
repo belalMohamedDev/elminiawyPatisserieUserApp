@@ -12,6 +12,7 @@ import '../../feature/login/presentation/screen/login_view.dart';
 import '../../feature/newPassword/presentation/screen/new_password_view.dart';
 import '../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import '../../feature/signUp/presentation/screen/sign_up_view.dart';
+import '../../feature/userAddress/cubit/user_address_cubit.dart';
 import '../../feature/userAddress/presentation/screen/user_address_screen.dart';
 import '../../feature/verifyCode/presentation/screen/verification_code.dart';
 import '../application/di.dart';
@@ -65,7 +66,12 @@ class RouteGenerator {
           ),
         );
       case Routes.address:
-        return MaterialPageRoute(builder: (_) => const UserAddressView());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<UserAddressCubit>(),
+            child: const UserAddressView(),
+          ),
+        );
 
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(

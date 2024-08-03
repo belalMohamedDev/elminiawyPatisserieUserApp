@@ -19,6 +19,8 @@ import '../../feature/newPassword/data/repository/new_password_repo.dart';
 import '../../feature/newProduct/model/repository/repositry.dart';
 import '../../feature/signUp/bloc/sign_up_bloc.dart';
 import '../../feature/signUp/data/repository/sign_up_repo.dart';
+import '../../feature/userAddress/cubit/user_address_cubit.dart';
+import '../../feature/userAddress/data/repository/address_repo.dart';
 import '../../feature/verifyCode/data/repository/verify_code_repo.dart';
 import '../../feature/wishList/data/repository/repository.dart';
 import '../network/api/app_api.dart';
@@ -39,7 +41,8 @@ Future<void> initAppModule() async {
     _initCatogry(),
     _initProduct(),
     _initWishList(),
-    _initLogOut()
+    _initLogOut(),
+    _initUserAddress()
   ]);
 }
 
@@ -140,6 +143,15 @@ Future<void> _initLogOut() async {
     ..registerLazySingleton<LogOutRepository>(
         () => LogOutRepository(instance(), instance()))
     ..registerFactory<LogOutCubit>(() => LogOutCubit(
+          instance(),
+        ));
+}
+
+Future<void> _initUserAddress() async {
+  instance
+    ..registerLazySingleton<UserAddressRepositoryImplement>(
+        () => UserAddressRepositoryImplement(instance(), instance()))
+    ..registerFactory<UserAddressCubit>(() => UserAddressCubit(
           instance(),
         ));
 }

@@ -14,7 +14,8 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   UserAddressCubit(this._userAddressRepository)
       : super(const UserAddressState.initial());
 
-  final UserAddressRepository _userAddressRepository;
+  final UserAddressRepositoryImplement _userAddressRepository;
+  List<GetAddressResponseData> addressDataList = [];
 
   Future<void> getUserAddress() async {
     emit(const UserAddressState.getAllAddressLoading());
@@ -23,6 +24,10 @@ class UserAddressCubit extends Cubit<UserAddressState> {
 
     response.when(
       success: (dataResponse) {
+        if (dataResponse.data!.isNotEmpty) {
+          addressDataList = [];
+          addressDataList.addAll(dataResponse.data!);
+        }
         emit(UserAddressState.getAllAddressSuccess(dataResponse));
       },
       failure: (error) {
@@ -36,13 +41,15 @@ class UserAddressCubit extends Cubit<UserAddressState> {
     );
   }
 
-  Future<void> deleteUserAddress(String id) async {
+  Future<void> deleteUserAddress(String addressId) async {
     emit(const UserAddressState.removeAddressLoading());
 
-    final response = await _userAddressRepository.removeAddress(id);
+    final response = await _userAddressRepository.removeAddress(addressId);
 
     response.when(
       success: (dataResponse) {
+        addressDataList.removeWhere((address) => address.sId == addressId);
+
         emit(UserAddressState.removeAddressSuccess(dataResponse));
       },
       failure: (error) {

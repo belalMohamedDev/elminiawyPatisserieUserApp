@@ -50,13 +50,15 @@ class TokenInterceptor extends Interceptor {
         await SharedPrefHelper.setSecuredString(
             PrefKeys.accessToken, newAccessToken);
 
+        final String fullPath = ApiConstants.baseUrl + err.requestOptions.path;
+
         // Retry the original request with the new access token
         err.requestOptions.headers["Authorization"] = "Bearer $newAccessToken";
         final opts = Options(
             method: err.requestOptions.method,
             headers: err.requestOptions.headers);
         final cloneReq = await dio.request(
-          err.requestOptions.path,
+          fullPath,
           options: opts,
           data: err.requestOptions.data,
           queryParameters: err.requestOptions.queryParameters,
@@ -71,7 +73,6 @@ class TokenInterceptor extends Interceptor {
     }
 
     // If the error is not related to token expiration, forward it
-    _showErrorMessage(err.message!);
     return handler.next(err);
   }
 
@@ -88,14 +89,6 @@ class TokenInterceptor extends Interceptor {
         (Route<dynamic> route) => false,
         arguments: AppStrings.sessionExpired,
       );
-    }
-  }
-
-  void _showErrorMessage(String error) {
-    final context = navigatorKey.currentState?.context;
-
-    if (context != null) {
-      ShowToast.showToastErrorTop(errorMessage: error, context: context);
     }
   }
 }
