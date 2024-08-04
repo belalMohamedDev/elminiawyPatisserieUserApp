@@ -11,7 +11,7 @@ class WishListBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<WishListCubit, WishListState>(
+    return BlocConsumer<WishListCubit, WishListState>(
       listener: (context, state) {
         state.whenOrNull(
           getWishListError: (statesCode, errorMessage) =>
@@ -19,24 +19,14 @@ class WishListBody extends StatelessWidget {
                   errorMessage: errorMessage, context: context),
         );
       },
-      child: BlocListener<WishListCubit, WishListState>(
-        listener: (context, state) {
-          if (state is GetWishListError) {
-            ShowToast.showToastErrorTop(
-                errorMessage: state.errorMessage, context: context);
-          }
-        },
-        child: BlocBuilder<WishListCubit, WishListState>(
-          builder: (context, state) {
-            if (state is GetWishListError || state is GetWishListLoading) {
-              return const ProductGridViewLoadingState();
-            }
-            return ProductGridViewSuccessState(
-              wishListData: context.read<WishListCubit>().dataList,
-            );
-          },
-        ),
-      ),
+      builder: (context, state) {
+        if (state is GetWishListError || state is GetWishListLoading) {
+          return const ProductGridViewLoadingState();
+        }
+        return ProductGridViewSuccessState(
+          wishListData: context.read<WishListCubit>().dataList,
+        );
+      },
     );
   }
 }

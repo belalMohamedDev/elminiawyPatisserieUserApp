@@ -12,6 +12,7 @@ import '../../../feature/newProduct/model/response/product_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
+import '../../../feature/productBasedOnCategory/data/response/product_category.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
 import '../../../feature/userAddress/data/model/request/create_address_request.dart';
 import '../../../feature/userAddress/data/model/response/get_address_response.dart';
@@ -98,5 +99,8 @@ abstract class AppServiceClient {
     @Path("id") String id,
   );
 
-
+  @GET('${ApiConstants.product}/{id}/category')
+  Future<GetProductsBasedOnCategory> getProductsBasedOnCategory(
+    @Path("id") String id,
+  );
 }
