@@ -5,9 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/application/cubit/app_logic_cubit.dart';
+import '../../../../core/application/di.dart';
 import '../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
+import '../../../productBasedOnCategory/cubit/product_based_on_category_cubit.dart';
+import '../../../productBasedOnCategory/presentation/screen/get_product_based_on_category.dart';
 import '../../logic/categoryCubit/category_cubit.dart';
 
 class CategoryListViewBuilder extends StatelessWidget {
@@ -100,37 +104,53 @@ class CategoryListViewBuilder extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(right: 15.w),
-            child: Column(
-              children: [
-                Container(
-                  height: 60.h,
-                  width: 70.w,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.r),
-                      color: ColorManger.backgroundItem),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: CachedNetworkImage(
-                      imageUrl: state.data.data![index].image!,
-                      placeholder: (context, url) => LoadingShimmer(
-                        height: 90.h,
-                        width: 90.w,
-                        borderRadius: 10.r,
+            child: InkWell(
+              onTap: () {
+                NavBarNavigator.push(context,
+                    screen: BlocProvider(
+                      create: (context) =>
+                          instance<ProductBasedOnCategoryCubit>(),
+                      child: ProductBaseOnCategory(
+                        categoryId: state.data.data![index].sId!,
+                        categoryName: state.data.data![index].title!,
                       ),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
+                    ),
+                    withNavBar: false);
+              },
+              child: Column(
+                children: [
+                  InkWell(
+                    child: Container(
+                      height: 60.h,
+                      width: 70.w,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.r),
+                          color: ColorManger.backgroundItem),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: CachedNetworkImage(
+                          imageUrl: state.data.data![index].image!,
+                          placeholder: (context, url) => LoadingShimmer(
+                            height: 90.h,
+                            width: 90.w,
+                            borderRadius: 10.r,
+                          ),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 12.h,
-                ),
-                Text(state.data.data![index].title!,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: Colors.black38,
-                        fontSize: 12.sp)),
-              ],
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  Text(state.data.data![index].title!,
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontFamily: FontConsistent.fontFamilyAcme,
+                          color: Colors.black38,
+                          fontSize: 12.sp)),
+                ],
+              ),
             ),
           );
         },

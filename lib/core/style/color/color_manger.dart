@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ColorManger {
   static Color brun = const Color(0xff533334);
   static Color brown = const Color(0xff533334).withAlpha(220);
+  static Color brownLight = const Color(0xff533334).withAlpha(40);
   static Color brunLight = const Color(0xff9B8470);
   static Color grey = const Color(0xff454444);
   static Color unselectedButton = const Color(0xff685252);

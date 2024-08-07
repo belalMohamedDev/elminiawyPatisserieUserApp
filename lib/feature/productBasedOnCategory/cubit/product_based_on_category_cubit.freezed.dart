@@ -46,25 +46,29 @@ mixin _$ProductBasedOnCategoryState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductLoading value) getProductLoading,
-    required TResult Function(GetProductError value) getProductError,
-    required TResult Function(GetProductSuccess value) getProductSuccess,
+    required TResult Function(GeProductBasedOnCategoryLoading value)
+        getProductLoading,
+    required TResult Function(GetProductBasedOnCategoryError value)
+        getProductError,
+    required TResult Function(GetProductBasedOnCategorySuccess value)
+        getProductSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductLoading value)? getProductLoading,
-    TResult? Function(GetProductError value)? getProductError,
-    TResult? Function(GetProductSuccess value)? getProductSuccess,
+    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult? Function(GetProductBasedOnCategorySuccess value)?
+        getProductSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductLoading value)? getProductLoading,
-    TResult Function(GetProductError value)? getProductError,
-    TResult Function(GetProductSuccess value)? getProductSuccess,
+    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -169,9 +173,12 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductLoading value) getProductLoading,
-    required TResult Function(GetProductError value) getProductError,
-    required TResult Function(GetProductSuccess value) getProductSuccess,
+    required TResult Function(GeProductBasedOnCategoryLoading value)
+        getProductLoading,
+    required TResult Function(GetProductBasedOnCategoryError value)
+        getProductError,
+    required TResult Function(GetProductBasedOnCategorySuccess value)
+        getProductSuccess,
   }) {
     return initial(this);
   }
@@ -180,9 +187,10 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductLoading value)? getProductLoading,
-    TResult? Function(GetProductError value)? getProductError,
-    TResult? Function(GetProductSuccess value)? getProductSuccess,
+    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult? Function(GetProductBasedOnCategorySuccess value)?
+        getProductSuccess,
   }) {
     return initial?.call(this);
   }
@@ -191,9 +199,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductLoading value)? getProductLoading,
-    TResult Function(GetProductError value)? getProductError,
-    TResult Function(GetProductSuccess value)? getProductSuccess,
+    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -208,26 +216,29 @@ abstract class _Initial implements ProductBasedOnCategoryState {
 }
 
 /// @nodoc
-abstract class _$$GeProductLoadingImplCopyWith<$Res> {
-  factory _$$GeProductLoadingImplCopyWith(_$GeProductLoadingImpl value,
-          $Res Function(_$GeProductLoadingImpl) then) =
-      __$$GeProductLoadingImplCopyWithImpl<$Res>;
+abstract class _$$GeProductBasedOnCategoryLoadingImplCopyWith<$Res> {
+  factory _$$GeProductBasedOnCategoryLoadingImplCopyWith(
+          _$GeProductBasedOnCategoryLoadingImpl value,
+          $Res Function(_$GeProductBasedOnCategoryLoadingImpl) then) =
+      __$$GeProductBasedOnCategoryLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GeProductLoadingImplCopyWithImpl<$Res>
+class __$$GeProductBasedOnCategoryLoadingImplCopyWithImpl<$Res>
     extends _$ProductBasedOnCategoryStateCopyWithImpl<$Res,
-        _$GeProductLoadingImpl>
-    implements _$$GeProductLoadingImplCopyWith<$Res> {
-  __$$GeProductLoadingImplCopyWithImpl(_$GeProductLoadingImpl _value,
-      $Res Function(_$GeProductLoadingImpl) _then)
+        _$GeProductBasedOnCategoryLoadingImpl>
+    implements _$$GeProductBasedOnCategoryLoadingImplCopyWith<$Res> {
+  __$$GeProductBasedOnCategoryLoadingImplCopyWithImpl(
+      _$GeProductBasedOnCategoryLoadingImpl _value,
+      $Res Function(_$GeProductBasedOnCategoryLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GeProductLoadingImpl implements GeProductLoading {
-  const _$GeProductLoadingImpl();
+class _$GeProductBasedOnCategoryLoadingImpl
+    implements GeProductBasedOnCategoryLoading {
+  const _$GeProductBasedOnCategoryLoadingImpl();
 
   @override
   String toString() {
@@ -237,7 +248,8 @@ class _$GeProductLoadingImpl implements GeProductLoading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GeProductLoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GeProductBasedOnCategoryLoadingImpl);
   }
 
   @override
@@ -286,9 +298,12 @@ class _$GeProductLoadingImpl implements GeProductLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductLoading value) getProductLoading,
-    required TResult Function(GetProductError value) getProductError,
-    required TResult Function(GetProductSuccess value) getProductSuccess,
+    required TResult Function(GeProductBasedOnCategoryLoading value)
+        getProductLoading,
+    required TResult Function(GetProductBasedOnCategoryError value)
+        getProductError,
+    required TResult Function(GetProductBasedOnCategorySuccess value)
+        getProductSuccess,
   }) {
     return getProductLoading(this);
   }
@@ -297,9 +312,10 @@ class _$GeProductLoadingImpl implements GeProductLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductLoading value)? getProductLoading,
-    TResult? Function(GetProductError value)? getProductError,
-    TResult? Function(GetProductSuccess value)? getProductSuccess,
+    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult? Function(GetProductBasedOnCategorySuccess value)?
+        getProductSuccess,
   }) {
     return getProductLoading?.call(this);
   }
@@ -308,9 +324,9 @@ class _$GeProductLoadingImpl implements GeProductLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductLoading value)? getProductLoading,
-    TResult Function(GetProductError value)? getProductError,
-    TResult Function(GetProductSuccess value)? getProductSuccess,
+    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -320,25 +336,30 @@ class _$GeProductLoadingImpl implements GeProductLoading {
   }
 }
 
-abstract class GeProductLoading implements ProductBasedOnCategoryState {
-  const factory GeProductLoading() = _$GeProductLoadingImpl;
+abstract class GeProductBasedOnCategoryLoading
+    implements ProductBasedOnCategoryState {
+  const factory GeProductBasedOnCategoryLoading() =
+      _$GeProductBasedOnCategoryLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$GetProductErrorImplCopyWith<$Res> {
-  factory _$$GetProductErrorImplCopyWith(_$GetProductErrorImpl value,
-          $Res Function(_$GetProductErrorImpl) then) =
-      __$$GetProductErrorImplCopyWithImpl<$Res>;
+abstract class _$$GetProductBasedOnCategoryErrorImplCopyWith<$Res> {
+  factory _$$GetProductBasedOnCategoryErrorImplCopyWith(
+          _$GetProductBasedOnCategoryErrorImpl value,
+          $Res Function(_$GetProductBasedOnCategoryErrorImpl) then) =
+      __$$GetProductBasedOnCategoryErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int statesCode, String errorMessage});
 }
 
 /// @nodoc
-class __$$GetProductErrorImplCopyWithImpl<$Res>
+class __$$GetProductBasedOnCategoryErrorImplCopyWithImpl<$Res>
     extends _$ProductBasedOnCategoryStateCopyWithImpl<$Res,
-        _$GetProductErrorImpl> implements _$$GetProductErrorImplCopyWith<$Res> {
-  __$$GetProductErrorImplCopyWithImpl(
-      _$GetProductErrorImpl _value, $Res Function(_$GetProductErrorImpl) _then)
+        _$GetProductBasedOnCategoryErrorImpl>
+    implements _$$GetProductBasedOnCategoryErrorImplCopyWith<$Res> {
+  __$$GetProductBasedOnCategoryErrorImplCopyWithImpl(
+      _$GetProductBasedOnCategoryErrorImpl _value,
+      $Res Function(_$GetProductBasedOnCategoryErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -347,7 +368,7 @@ class __$$GetProductErrorImplCopyWithImpl<$Res>
     Object? statesCode = null,
     Object? errorMessage = null,
   }) {
-    return _then(_$GetProductErrorImpl(
+    return _then(_$GetProductBasedOnCategoryErrorImpl(
       statesCode: null == statesCode
           ? _value.statesCode
           : statesCode // ignore: cast_nullable_to_non_nullable
@@ -362,8 +383,9 @@ class __$$GetProductErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetProductErrorImpl implements GetProductError {
-  const _$GetProductErrorImpl(
+class _$GetProductBasedOnCategoryErrorImpl
+    implements GetProductBasedOnCategoryError {
+  const _$GetProductBasedOnCategoryErrorImpl(
       {required this.statesCode, required this.errorMessage});
 
   @override
@@ -380,7 +402,7 @@ class _$GetProductErrorImpl implements GetProductError {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetProductErrorImpl &&
+            other is _$GetProductBasedOnCategoryErrorImpl &&
             (identical(other.statesCode, statesCode) ||
                 other.statesCode == statesCode) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -393,9 +415,10 @@ class _$GetProductErrorImpl implements GetProductError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetProductErrorImplCopyWith<_$GetProductErrorImpl> get copyWith =>
-      __$$GetProductErrorImplCopyWithImpl<_$GetProductErrorImpl>(
-          this, _$identity);
+  _$$GetProductBasedOnCategoryErrorImplCopyWith<
+          _$GetProductBasedOnCategoryErrorImpl>
+      get copyWith => __$$GetProductBasedOnCategoryErrorImplCopyWithImpl<
+          _$GetProductBasedOnCategoryErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -440,9 +463,12 @@ class _$GetProductErrorImpl implements GetProductError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductLoading value) getProductLoading,
-    required TResult Function(GetProductError value) getProductError,
-    required TResult Function(GetProductSuccess value) getProductSuccess,
+    required TResult Function(GeProductBasedOnCategoryLoading value)
+        getProductLoading,
+    required TResult Function(GetProductBasedOnCategoryError value)
+        getProductError,
+    required TResult Function(GetProductBasedOnCategorySuccess value)
+        getProductSuccess,
   }) {
     return getProductError(this);
   }
@@ -451,9 +477,10 @@ class _$GetProductErrorImpl implements GetProductError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductLoading value)? getProductLoading,
-    TResult? Function(GetProductError value)? getProductError,
-    TResult? Function(GetProductSuccess value)? getProductSuccess,
+    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult? Function(GetProductBasedOnCategorySuccess value)?
+        getProductSuccess,
   }) {
     return getProductError?.call(this);
   }
@@ -462,9 +489,9 @@ class _$GetProductErrorImpl implements GetProductError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductLoading value)? getProductLoading,
-    TResult Function(GetProductError value)? getProductError,
-    TResult Function(GetProductSuccess value)? getProductSuccess,
+    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -474,34 +501,38 @@ class _$GetProductErrorImpl implements GetProductError {
   }
 }
 
-abstract class GetProductError implements ProductBasedOnCategoryState {
-  const factory GetProductError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetProductErrorImpl;
+abstract class GetProductBasedOnCategoryError
+    implements ProductBasedOnCategoryState {
+  const factory GetProductBasedOnCategoryError(
+          {required final int statesCode, required final String errorMessage}) =
+      _$GetProductBasedOnCategoryErrorImpl;
 
   int get statesCode;
   String get errorMessage;
   @JsonKey(ignore: true)
-  _$$GetProductErrorImplCopyWith<_$GetProductErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetProductBasedOnCategoryErrorImplCopyWith<
+          _$GetProductBasedOnCategoryErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetProductSuccessImplCopyWith<$Res> {
-  factory _$$GetProductSuccessImplCopyWith(_$GetProductSuccessImpl value,
-          $Res Function(_$GetProductSuccessImpl) then) =
-      __$$GetProductSuccessImplCopyWithImpl<$Res>;
+abstract class _$$GetProductBasedOnCategorySuccessImplCopyWith<$Res> {
+  factory _$$GetProductBasedOnCategorySuccessImplCopyWith(
+          _$GetProductBasedOnCategorySuccessImpl value,
+          $Res Function(_$GetProductBasedOnCategorySuccessImpl) then) =
+      __$$GetProductBasedOnCategorySuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({GetProductsBasedOnCategory data});
 }
 
 /// @nodoc
-class __$$GetProductSuccessImplCopyWithImpl<$Res>
+class __$$GetProductBasedOnCategorySuccessImplCopyWithImpl<$Res>
     extends _$ProductBasedOnCategoryStateCopyWithImpl<$Res,
-        _$GetProductSuccessImpl>
-    implements _$$GetProductSuccessImplCopyWith<$Res> {
-  __$$GetProductSuccessImplCopyWithImpl(_$GetProductSuccessImpl _value,
-      $Res Function(_$GetProductSuccessImpl) _then)
+        _$GetProductBasedOnCategorySuccessImpl>
+    implements _$$GetProductBasedOnCategorySuccessImplCopyWith<$Res> {
+  __$$GetProductBasedOnCategorySuccessImplCopyWithImpl(
+      _$GetProductBasedOnCategorySuccessImpl _value,
+      $Res Function(_$GetProductBasedOnCategorySuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -509,7 +540,7 @@ class __$$GetProductSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$GetProductSuccessImpl(
+    return _then(_$GetProductBasedOnCategorySuccessImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -520,8 +551,9 @@ class __$$GetProductSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetProductSuccessImpl implements GetProductSuccess {
-  const _$GetProductSuccessImpl(this.data);
+class _$GetProductBasedOnCategorySuccessImpl
+    implements GetProductBasedOnCategorySuccess {
+  const _$GetProductBasedOnCategorySuccessImpl(this.data);
 
   @override
   final GetProductsBasedOnCategory data;
@@ -535,7 +567,7 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetProductSuccessImpl &&
+            other is _$GetProductBasedOnCategorySuccessImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -545,9 +577,10 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetProductSuccessImplCopyWith<_$GetProductSuccessImpl> get copyWith =>
-      __$$GetProductSuccessImplCopyWithImpl<_$GetProductSuccessImpl>(
-          this, _$identity);
+  _$$GetProductBasedOnCategorySuccessImplCopyWith<
+          _$GetProductBasedOnCategorySuccessImpl>
+      get copyWith => __$$GetProductBasedOnCategorySuccessImplCopyWithImpl<
+          _$GetProductBasedOnCategorySuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -592,9 +625,12 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductLoading value) getProductLoading,
-    required TResult Function(GetProductError value) getProductError,
-    required TResult Function(GetProductSuccess value) getProductSuccess,
+    required TResult Function(GeProductBasedOnCategoryLoading value)
+        getProductLoading,
+    required TResult Function(GetProductBasedOnCategoryError value)
+        getProductError,
+    required TResult Function(GetProductBasedOnCategorySuccess value)
+        getProductSuccess,
   }) {
     return getProductSuccess(this);
   }
@@ -603,9 +639,10 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductLoading value)? getProductLoading,
-    TResult? Function(GetProductError value)? getProductError,
-    TResult? Function(GetProductSuccess value)? getProductSuccess,
+    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult? Function(GetProductBasedOnCategorySuccess value)?
+        getProductSuccess,
   }) {
     return getProductSuccess?.call(this);
   }
@@ -614,9 +651,9 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductLoading value)? getProductLoading,
-    TResult Function(GetProductError value)? getProductError,
-    TResult Function(GetProductSuccess value)? getProductSuccess,
+    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -626,12 +663,15 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   }
 }
 
-abstract class GetProductSuccess implements ProductBasedOnCategoryState {
-  const factory GetProductSuccess(final GetProductsBasedOnCategory data) =
-      _$GetProductSuccessImpl;
+abstract class GetProductBasedOnCategorySuccess
+    implements ProductBasedOnCategoryState {
+  const factory GetProductBasedOnCategorySuccess(
+          final GetProductsBasedOnCategory data) =
+      _$GetProductBasedOnCategorySuccessImpl;
 
   GetProductsBasedOnCategory get data;
   @JsonKey(ignore: true)
-  _$$GetProductSuccessImplCopyWith<_$GetProductSuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetProductBasedOnCategorySuccessImplCopyWith<
+          _$GetProductBasedOnCategorySuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -70,13 +70,10 @@ Future<void> _initAppModule() async {
             instance(),
           ));
 
-// app logic cuibt
+  // app logic cuibt
   instance.registerFactory<AppLogicCubit>(() => AppLogicCubit());
 }
 
-/////////////////////////////////
-//////////////
-///////////////////////
 Future<void> _initLogin() async {
   instance
     ..registerLazySingleton<LoginRepository>(
@@ -95,9 +92,9 @@ Future<void> _initSignUp() async {
         ));
 }
 
-// // forget password
-// // verify code repositry
-// // New Password Repository
+// forget password
+// verify code repositry
+// New Password Repository
 Future<void> _initForgetPassword() async {
   instance
     ..registerLazySingleton<ForgetPasswordRepository>(
@@ -110,8 +107,8 @@ Future<void> _initForgetPassword() async {
         () => ForgetPasswordBloc(instance(), instance(), instance()));
 }
 
-//home cuibt
-//banner repositry
+// home cuibt
+// banner repositry
 Future<void> _initBanner() async {
   instance.registerFactory<BannerCubit>(() => BannerCubit(
         instance(),

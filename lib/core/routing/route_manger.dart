@@ -73,6 +73,15 @@ class RouteGenerator {
           ),
         );
 
+      // case Routes.productBasedOnCategory:
+      //   return MaterialPageRoute(
+      //     builder: (_) => BlocProvider(
+      //       create: (context) => instance<ProductBasedOnCategoryCubit>(),
+      //       child: const ProductBaseOnCategory(),
+
+      //     ),
+      //   );
+
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(
           builder: (_) => const BottomNavBar(),
