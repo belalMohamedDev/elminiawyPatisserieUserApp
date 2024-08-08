@@ -9,7 +9,6 @@ abstract class WishListRepository {
       String product);
 
   Future<ApiResult<WishListProduct>> getWishList();
-  Future<ApiResult<WishListProduct>> removeProductFromWishList(String product);
 }
 
 class WishListRepositoryImplement implements WishListRepository {
@@ -49,19 +48,5 @@ class WishListRepositoryImplement implements WishListRepository {
     }
   }
 
-  @override
-  Future<ApiResult<WishListProduct>> removeProductFromWishList(
-      String product) async {
-    if (await _networkInfo.isConnected) {
-      try {
-        final response = await _apiService.removeProductFromWishList(product);
-        return ApiResult.success(response);
-      } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
-      }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
-    }
-  }
+
 }

@@ -22,10 +22,10 @@ class WishListCubit extends Cubit<WishListState> {
 
     response.when(
       success: (dataResponse) {
-        if (dataResponse.data!.isNotEmpty) {
-          dataList = [];
-          dataList.addAll(dataResponse.data!);
-        }
+        dataList = [];
+
+        dataList.addAll(dataResponse.data!);
+
         emit(WishListState.getWishListSuccess(dataResponse));
       },
       failure: (error) {
@@ -68,25 +68,6 @@ class WishListCubit extends Cubit<WishListState> {
                 errorMessage: error.message!, statesCode: error.statusCode!),
           );
         }
-      },
-    );
-  }
-
-  Future<void> removeProductFromWish(String product) async {
-    emit(const WishListState.removeProductFromWishListLoading());
-
-    final response =
-        await _wishListRepository.removeProductFromWishList(product);
-
-    response.when(
-      success: (dataResponse) {
-        emit(WishListState.removeProductFromWishListSuccess(dataResponse));
-      },
-      failure: (error) {
-        emit(
-          WishListState.removeProductFromWishListError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
-        );
       },
     );
   }

@@ -299,33 +299,6 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<WishListProduct> removeProductFromWishList(String product) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = {'product': product};
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<WishListProduct>(Options(
-      method: 'DELETE',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/v1/api/wishList',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = WishListProduct.fromJson(_result.data!);
-    return _value;
-  }
-
-  @override
   Future<LogOutResponse> logOut(String refreshToken) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

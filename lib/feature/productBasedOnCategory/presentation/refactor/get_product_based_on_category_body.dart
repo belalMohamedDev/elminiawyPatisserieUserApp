@@ -34,9 +34,6 @@ class ProductBaseOnCategoryBody extends StatelessWidget {
                   child: Column(
                     children: [
                       _subCategoryLoadingAndErrorState(),
-                      SizedBox(
-                        height: 40.h,
-                      ),
                       const Expanded(child: ProductGridViewLoadingState()),
                     ],
                   ),

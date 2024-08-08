@@ -26,13 +26,5 @@ class WishListState with _$WishListState {
       _UpdateFavoriteState;
 
 
-        //add or remove product from WishList State
-  const factory WishListState.removeProductFromWishListLoading() =
-      RemoveProductFromWishListLoading;
-  const factory WishListState.removeProductFromWishListError(
-      {required int statesCode,
-      required String errorMessage}) = RemoveProductFromWishListError;
 
-  const factory WishListState.removeProductFromWishListSuccess(
-      WishListProduct data) = RemoveProductFromWishListSuccess;
 }

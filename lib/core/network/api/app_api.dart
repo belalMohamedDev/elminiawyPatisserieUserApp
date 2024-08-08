@@ -71,10 +71,6 @@ abstract class AppServiceClient {
   Future<WishListProduct> addOrRemoveProductFromWishList(
       @Field("product") String product);
 
-  @DELETE(ApiConstants.wishList)
-  Future<WishListProduct> removeProductFromWishList(
-      @Field("product") String product);
-
   @POST(ApiConstants.logOut)
   Future<LogOutResponse> logOut(
     @Field("refreshToken") String refreshToken,
