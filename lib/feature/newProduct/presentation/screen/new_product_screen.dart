@@ -24,12 +24,11 @@ class NewProductView extends StatelessWidget {
           icon: const Icon(IconlyBroken.arrowLeft),
           onPressed: () {
             context.pop();
-
           },
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 15.h),
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
         child: const NewProductBody(),
       ),
     );
