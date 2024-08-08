@@ -5,8 +5,10 @@ part 'product_category.g.dart';
 class GetProductsBasedOnCategory {
   bool? status;
   String? message;
+  @JsonKey(name: "AllProducts")
   List<Products>? allProducts;
-  List<Data>? data;
+  @JsonKey(name: "data")
+  List<SubCategoryProductData>? data;
 
   GetProductsBasedOnCategory(
       {this.status, this.message, this.allProducts, this.data});
@@ -24,14 +26,18 @@ class Products {
   String? title;
   String? description;
   int? ratingsAverage;
+  @JsonKey(name: "_id")
   String? sId;
   int? price;
   String? subCategory;
   String? image;
   String? publicId;
   int? ratingsQuantity;
-
   String? category;
+  @JsonKey(name: "in_wishlist")
+  bool? inWishlist;
+  @JsonKey(name: "in_cart")
+  bool? inCart;
 
   Products(
       {this.title,
@@ -54,16 +60,17 @@ class Products {
 }
 
 @JsonSerializable()
-class Data {
+class SubCategoryProductData {
   String? id;
   String? title;
   List<Products>? products;
 
-  Data({this.id, this.title, this.products});
+  SubCategoryProductData({this.id, this.title, this.products});
 
   //from json
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  factory SubCategoryProductData.fromJson(Map<String, dynamic> json) =>
+      _$SubCategoryProductDataFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+  Map<String, dynamic> toJson() => _$SubCategoryProductDataToJson(this);
 }

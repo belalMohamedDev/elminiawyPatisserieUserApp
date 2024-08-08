@@ -11,11 +11,12 @@ GetProductsBasedOnCategory _$GetProductsBasedOnCategoryFromJson(
     GetProductsBasedOnCategory(
       status: json['status'] as bool?,
       message: json['message'] as String?,
-      allProducts: (json['allProducts'] as List<dynamic>?)
+      allProducts: (json['AllProducts'] as List<dynamic>?)
           ?.map((e) => Products.fromJson(e as Map<String, dynamic>))
           .toList(),
       data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Data.fromJson(e as Map<String, dynamic>))
+          ?.map(
+              (e) => SubCategoryProductData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -24,7 +25,7 @@ Map<String, dynamic> _$GetProductsBasedOnCategoryToJson(
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
-      'allProducts': instance.allProducts,
+      'AllProducts': instance.allProducts,
       'data': instance.data,
     };
 
@@ -32,29 +33,35 @@ Products _$ProductsFromJson(Map<String, dynamic> json) => Products(
       title: json['title'] as String?,
       description: json['description'] as String?,
       ratingsAverage: (json['ratingsAverage'] as num?)?.toInt(),
-      sId: json['sId'] as String?,
+      sId: json['_id'] as String?,
       price: (json['price'] as num?)?.toInt(),
       subCategory: json['subCategory'] as String?,
       image: json['image'] as String?,
       publicId: json['publicId'] as String?,
       ratingsQuantity: (json['ratingsQuantity'] as num?)?.toInt(),
       category: json['category'] as String?,
-    );
+    )
+      ..inWishlist = json['in_wishlist'] as bool?
+      ..inCart = json['in_cart'] as bool?;
 
 Map<String, dynamic> _$ProductsToJson(Products instance) => <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
       'ratingsAverage': instance.ratingsAverage,
-      'sId': instance.sId,
+      '_id': instance.sId,
       'price': instance.price,
       'subCategory': instance.subCategory,
       'image': instance.image,
       'publicId': instance.publicId,
       'ratingsQuantity': instance.ratingsQuantity,
       'category': instance.category,
+      'in_wishlist': instance.inWishlist,
+      'in_cart': instance.inCart,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+SubCategoryProductData _$SubCategoryProductDataFromJson(
+        Map<String, dynamic> json) =>
+    SubCategoryProductData(
       id: json['id'] as String?,
       title: json['title'] as String?,
       products: (json['products'] as List<dynamic>?)
@@ -62,7 +69,9 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
           .toList(),
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$SubCategoryProductDataToJson(
+        SubCategoryProductData instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'products': instance.products,

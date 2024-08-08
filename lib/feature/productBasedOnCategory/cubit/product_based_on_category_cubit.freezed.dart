@@ -24,6 +24,8 @@ mixin _$ProductBasedOnCategoryState {
         getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
+    required TResult Function(List<Products>? data) filterProductListSuccess,
+    required TResult Function(int index) changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +34,8 @@ mixin _$ProductBasedOnCategoryState {
     TResult? Function()? getProductLoading,
     TResult? Function(int statesCode, String errorMessage)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult? Function(List<Products>? data)? filterProductListSuccess,
+    TResult? Function(int index)? changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,35 +44,45 @@ mixin _$ProductBasedOnCategoryState {
     TResult Function()? getProductLoading,
     TResult Function(int statesCode, String errorMessage)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult Function(List<Products>? data)? filterProductListSuccess,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductBasedOnCategoryLoading value)
+    required TResult Function(GetProductBasedOnCategoryLoading value)
         getProductLoading,
     required TResult Function(GetProductBasedOnCategoryError value)
         getProductError,
     required TResult Function(GetProductBasedOnCategorySuccess value)
         getProductSuccess,
+    required TResult Function(FilterProductListSuccess value)
+        filterProductListSuccess,
+    required TResult Function(ChangeCategoryIndex value) changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryLoading value)?
+        getProductLoading,
     TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult? Function(GetProductBasedOnCategorySuccess value)?
         getProductSuccess,
+    TResult? Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult? Function(ChangeCategoryIndex value)? changeCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryLoading value)? getProductLoading,
     TResult Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
+    TResult Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult Function(ChangeCategoryIndex value)? changeCategoryIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +153,8 @@ class _$InitialImpl implements _Initial {
         getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
+    required TResult Function(List<Products>? data) filterProductListSuccess,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return initial();
   }
@@ -150,6 +166,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getProductLoading,
     TResult? Function(int statesCode, String errorMessage)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult? Function(List<Products>? data)? filterProductListSuccess,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return initial?.call();
   }
@@ -161,6 +179,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getProductLoading,
     TResult Function(int statesCode, String errorMessage)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult Function(List<Products>? data)? filterProductListSuccess,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -173,12 +193,15 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductBasedOnCategoryLoading value)
+    required TResult Function(GetProductBasedOnCategoryLoading value)
         getProductLoading,
     required TResult Function(GetProductBasedOnCategoryError value)
         getProductError,
     required TResult Function(GetProductBasedOnCategorySuccess value)
         getProductSuccess,
+    required TResult Function(FilterProductListSuccess value)
+        filterProductListSuccess,
+    required TResult Function(ChangeCategoryIndex value) changeCategoryIndex,
   }) {
     return initial(this);
   }
@@ -187,10 +210,13 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryLoading value)?
+        getProductLoading,
     TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult? Function(GetProductBasedOnCategorySuccess value)?
         getProductSuccess,
+    TResult? Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult? Function(ChangeCategoryIndex value)? changeCategoryIndex,
   }) {
     return initial?.call(this);
   }
@@ -199,9 +225,11 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryLoading value)? getProductLoading,
     TResult Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
+    TResult Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult Function(ChangeCategoryIndex value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -216,29 +244,29 @@ abstract class _Initial implements ProductBasedOnCategoryState {
 }
 
 /// @nodoc
-abstract class _$$GeProductBasedOnCategoryLoadingImplCopyWith<$Res> {
-  factory _$$GeProductBasedOnCategoryLoadingImplCopyWith(
-          _$GeProductBasedOnCategoryLoadingImpl value,
-          $Res Function(_$GeProductBasedOnCategoryLoadingImpl) then) =
-      __$$GeProductBasedOnCategoryLoadingImplCopyWithImpl<$Res>;
+abstract class _$$GetProductBasedOnCategoryLoadingImplCopyWith<$Res> {
+  factory _$$GetProductBasedOnCategoryLoadingImplCopyWith(
+          _$GetProductBasedOnCategoryLoadingImpl value,
+          $Res Function(_$GetProductBasedOnCategoryLoadingImpl) then) =
+      __$$GetProductBasedOnCategoryLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GeProductBasedOnCategoryLoadingImplCopyWithImpl<$Res>
+class __$$GetProductBasedOnCategoryLoadingImplCopyWithImpl<$Res>
     extends _$ProductBasedOnCategoryStateCopyWithImpl<$Res,
-        _$GeProductBasedOnCategoryLoadingImpl>
-    implements _$$GeProductBasedOnCategoryLoadingImplCopyWith<$Res> {
-  __$$GeProductBasedOnCategoryLoadingImplCopyWithImpl(
-      _$GeProductBasedOnCategoryLoadingImpl _value,
-      $Res Function(_$GeProductBasedOnCategoryLoadingImpl) _then)
+        _$GetProductBasedOnCategoryLoadingImpl>
+    implements _$$GetProductBasedOnCategoryLoadingImplCopyWith<$Res> {
+  __$$GetProductBasedOnCategoryLoadingImplCopyWithImpl(
+      _$GetProductBasedOnCategoryLoadingImpl _value,
+      $Res Function(_$GetProductBasedOnCategoryLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GeProductBasedOnCategoryLoadingImpl
-    implements GeProductBasedOnCategoryLoading {
-  const _$GeProductBasedOnCategoryLoadingImpl();
+class _$GetProductBasedOnCategoryLoadingImpl
+    implements GetProductBasedOnCategoryLoading {
+  const _$GetProductBasedOnCategoryLoadingImpl();
 
   @override
   String toString() {
@@ -249,7 +277,7 @@ class _$GeProductBasedOnCategoryLoadingImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GeProductBasedOnCategoryLoadingImpl);
+            other is _$GetProductBasedOnCategoryLoadingImpl);
   }
 
   @override
@@ -264,6 +292,8 @@ class _$GeProductBasedOnCategoryLoadingImpl
         getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
+    required TResult Function(List<Products>? data) filterProductListSuccess,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return getProductLoading();
   }
@@ -275,6 +305,8 @@ class _$GeProductBasedOnCategoryLoadingImpl
     TResult? Function()? getProductLoading,
     TResult? Function(int statesCode, String errorMessage)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult? Function(List<Products>? data)? filterProductListSuccess,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return getProductLoading?.call();
   }
@@ -286,6 +318,8 @@ class _$GeProductBasedOnCategoryLoadingImpl
     TResult Function()? getProductLoading,
     TResult Function(int statesCode, String errorMessage)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult Function(List<Products>? data)? filterProductListSuccess,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -298,12 +332,15 @@ class _$GeProductBasedOnCategoryLoadingImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductBasedOnCategoryLoading value)
+    required TResult Function(GetProductBasedOnCategoryLoading value)
         getProductLoading,
     required TResult Function(GetProductBasedOnCategoryError value)
         getProductError,
     required TResult Function(GetProductBasedOnCategorySuccess value)
         getProductSuccess,
+    required TResult Function(FilterProductListSuccess value)
+        filterProductListSuccess,
+    required TResult Function(ChangeCategoryIndex value) changeCategoryIndex,
   }) {
     return getProductLoading(this);
   }
@@ -312,10 +349,13 @@ class _$GeProductBasedOnCategoryLoadingImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryLoading value)?
+        getProductLoading,
     TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult? Function(GetProductBasedOnCategorySuccess value)?
         getProductSuccess,
+    TResult? Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult? Function(ChangeCategoryIndex value)? changeCategoryIndex,
   }) {
     return getProductLoading?.call(this);
   }
@@ -324,9 +364,11 @@ class _$GeProductBasedOnCategoryLoadingImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryLoading value)? getProductLoading,
     TResult Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
+    TResult Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult Function(ChangeCategoryIndex value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getProductLoading != null) {
@@ -336,10 +378,10 @@ class _$GeProductBasedOnCategoryLoadingImpl
   }
 }
 
-abstract class GeProductBasedOnCategoryLoading
+abstract class GetProductBasedOnCategoryLoading
     implements ProductBasedOnCategoryState {
-  const factory GeProductBasedOnCategoryLoading() =
-      _$GeProductBasedOnCategoryLoadingImpl;
+  const factory GetProductBasedOnCategoryLoading() =
+      _$GetProductBasedOnCategoryLoadingImpl;
 }
 
 /// @nodoc
@@ -429,6 +471,8 @@ class _$GetProductBasedOnCategoryErrorImpl
         getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
+    required TResult Function(List<Products>? data) filterProductListSuccess,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return getProductError(statesCode, errorMessage);
   }
@@ -440,6 +484,8 @@ class _$GetProductBasedOnCategoryErrorImpl
     TResult? Function()? getProductLoading,
     TResult? Function(int statesCode, String errorMessage)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult? Function(List<Products>? data)? filterProductListSuccess,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return getProductError?.call(statesCode, errorMessage);
   }
@@ -451,6 +497,8 @@ class _$GetProductBasedOnCategoryErrorImpl
     TResult Function()? getProductLoading,
     TResult Function(int statesCode, String errorMessage)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult Function(List<Products>? data)? filterProductListSuccess,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -463,12 +511,15 @@ class _$GetProductBasedOnCategoryErrorImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductBasedOnCategoryLoading value)
+    required TResult Function(GetProductBasedOnCategoryLoading value)
         getProductLoading,
     required TResult Function(GetProductBasedOnCategoryError value)
         getProductError,
     required TResult Function(GetProductBasedOnCategorySuccess value)
         getProductSuccess,
+    required TResult Function(FilterProductListSuccess value)
+        filterProductListSuccess,
+    required TResult Function(ChangeCategoryIndex value) changeCategoryIndex,
   }) {
     return getProductError(this);
   }
@@ -477,10 +528,13 @@ class _$GetProductBasedOnCategoryErrorImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryLoading value)?
+        getProductLoading,
     TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult? Function(GetProductBasedOnCategorySuccess value)?
         getProductSuccess,
+    TResult? Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult? Function(ChangeCategoryIndex value)? changeCategoryIndex,
   }) {
     return getProductError?.call(this);
   }
@@ -489,9 +543,11 @@ class _$GetProductBasedOnCategoryErrorImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryLoading value)? getProductLoading,
     TResult Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
+    TResult Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult Function(ChangeCategoryIndex value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
@@ -591,6 +647,8 @@ class _$GetProductBasedOnCategorySuccessImpl
         getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
+    required TResult Function(List<Products>? data) filterProductListSuccess,
+    required TResult Function(int index) changeCategoryIndex,
   }) {
     return getProductSuccess(data);
   }
@@ -602,6 +660,8 @@ class _$GetProductBasedOnCategorySuccessImpl
     TResult? Function()? getProductLoading,
     TResult? Function(int statesCode, String errorMessage)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult? Function(List<Products>? data)? filterProductListSuccess,
+    TResult? Function(int index)? changeCategoryIndex,
   }) {
     return getProductSuccess?.call(data);
   }
@@ -613,6 +673,8 @@ class _$GetProductBasedOnCategorySuccessImpl
     TResult Function()? getProductLoading,
     TResult Function(int statesCode, String errorMessage)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult Function(List<Products>? data)? filterProductListSuccess,
+    TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -625,12 +687,15 @@ class _$GetProductBasedOnCategorySuccessImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(GeProductBasedOnCategoryLoading value)
+    required TResult Function(GetProductBasedOnCategoryLoading value)
         getProductLoading,
     required TResult Function(GetProductBasedOnCategoryError value)
         getProductError,
     required TResult Function(GetProductBasedOnCategorySuccess value)
         getProductSuccess,
+    required TResult Function(FilterProductListSuccess value)
+        filterProductListSuccess,
+    required TResult Function(ChangeCategoryIndex value) changeCategoryIndex,
   }) {
     return getProductSuccess(this);
   }
@@ -639,10 +704,13 @@ class _$GetProductBasedOnCategorySuccessImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryLoading value)?
+        getProductLoading,
     TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult? Function(GetProductBasedOnCategorySuccess value)?
         getProductSuccess,
+    TResult? Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult? Function(ChangeCategoryIndex value)? changeCategoryIndex,
   }) {
     return getProductSuccess?.call(this);
   }
@@ -651,9 +719,11 @@ class _$GetProductBasedOnCategorySuccessImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(GeProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryLoading value)? getProductLoading,
     TResult Function(GetProductBasedOnCategoryError value)? getProductError,
     TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
+    TResult Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult Function(ChangeCategoryIndex value)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getProductSuccess != null) {
@@ -674,4 +744,351 @@ abstract class GetProductBasedOnCategorySuccess
   _$$GetProductBasedOnCategorySuccessImplCopyWith<
           _$GetProductBasedOnCategorySuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FilterProductListSuccessImplCopyWith<$Res> {
+  factory _$$FilterProductListSuccessImplCopyWith(
+          _$FilterProductListSuccessImpl value,
+          $Res Function(_$FilterProductListSuccessImpl) then) =
+      __$$FilterProductListSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Products>? data});
+}
+
+/// @nodoc
+class __$$FilterProductListSuccessImplCopyWithImpl<$Res>
+    extends _$ProductBasedOnCategoryStateCopyWithImpl<$Res,
+        _$FilterProductListSuccessImpl>
+    implements _$$FilterProductListSuccessImplCopyWith<$Res> {
+  __$$FilterProductListSuccessImplCopyWithImpl(
+      _$FilterProductListSuccessImpl _value,
+      $Res Function(_$FilterProductListSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$FilterProductListSuccessImpl(
+      freezed == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Products>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FilterProductListSuccessImpl implements FilterProductListSuccess {
+  const _$FilterProductListSuccessImpl(final List<Products>? data)
+      : _data = data;
+
+  final List<Products>? _data;
+  @override
+  List<Products>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ProductBasedOnCategoryState.filterProductListSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FilterProductListSuccessImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FilterProductListSuccessImplCopyWith<_$FilterProductListSuccessImpl>
+      get copyWith => __$$FilterProductListSuccessImplCopyWithImpl<
+          _$FilterProductListSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getProductError,
+    required TResult Function(GetProductsBasedOnCategory data)
+        getProductSuccess,
+    required TResult Function(List<Products>? data) filterProductListSuccess,
+    required TResult Function(int index) changeCategoryIndex,
+  }) {
+    return filterProductListSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult? Function(List<Products>? data)? filterProductListSuccess,
+    TResult? Function(int index)? changeCategoryIndex,
+  }) {
+    return filterProductListSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult Function(List<Products>? data)? filterProductListSuccess,
+    TResult Function(int index)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (filterProductListSuccess != null) {
+      return filterProductListSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetProductBasedOnCategoryLoading value)
+        getProductLoading,
+    required TResult Function(GetProductBasedOnCategoryError value)
+        getProductError,
+    required TResult Function(GetProductBasedOnCategorySuccess value)
+        getProductSuccess,
+    required TResult Function(FilterProductListSuccess value)
+        filterProductListSuccess,
+    required TResult Function(ChangeCategoryIndex value) changeCategoryIndex,
+  }) {
+    return filterProductListSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetProductBasedOnCategoryLoading value)?
+        getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult? Function(GetProductBasedOnCategorySuccess value)?
+        getProductSuccess,
+    TResult? Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult? Function(ChangeCategoryIndex value)? changeCategoryIndex,
+  }) {
+    return filterProductListSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
+    TResult Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult Function(ChangeCategoryIndex value)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (filterProductListSuccess != null) {
+      return filterProductListSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FilterProductListSuccess implements ProductBasedOnCategoryState {
+  const factory FilterProductListSuccess(final List<Products>? data) =
+      _$FilterProductListSuccessImpl;
+
+  List<Products>? get data;
+  @JsonKey(ignore: true)
+  _$$FilterProductListSuccessImplCopyWith<_$FilterProductListSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeCategoryIndexImplCopyWith<$Res> {
+  factory _$$ChangeCategoryIndexImplCopyWith(_$ChangeCategoryIndexImpl value,
+          $Res Function(_$ChangeCategoryIndexImpl) then) =
+      __$$ChangeCategoryIndexImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$ChangeCategoryIndexImplCopyWithImpl<$Res>
+    extends _$ProductBasedOnCategoryStateCopyWithImpl<$Res,
+        _$ChangeCategoryIndexImpl>
+    implements _$$ChangeCategoryIndexImplCopyWith<$Res> {
+  __$$ChangeCategoryIndexImplCopyWithImpl(_$ChangeCategoryIndexImpl _value,
+      $Res Function(_$ChangeCategoryIndexImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$ChangeCategoryIndexImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeCategoryIndexImpl implements ChangeCategoryIndex {
+  const _$ChangeCategoryIndexImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'ProductBasedOnCategoryState.changeCategoryIndex(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeCategoryIndexImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeCategoryIndexImplCopyWith<_$ChangeCategoryIndexImpl> get copyWith =>
+      __$$ChangeCategoryIndexImplCopyWithImpl<_$ChangeCategoryIndexImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getProductLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getProductError,
+    required TResult Function(GetProductsBasedOnCategory data)
+        getProductSuccess,
+    required TResult Function(List<Products>? data) filterProductListSuccess,
+    required TResult Function(int index) changeCategoryIndex,
+  }) {
+    return changeCategoryIndex(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getProductLoading,
+    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult? Function(List<Products>? data)? filterProductListSuccess,
+    TResult? Function(int index)? changeCategoryIndex,
+  }) {
+    return changeCategoryIndex?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getProductLoading,
+    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
+    TResult Function(List<Products>? data)? filterProductListSuccess,
+    TResult Function(int index)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (changeCategoryIndex != null) {
+      return changeCategoryIndex(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetProductBasedOnCategoryLoading value)
+        getProductLoading,
+    required TResult Function(GetProductBasedOnCategoryError value)
+        getProductError,
+    required TResult Function(GetProductBasedOnCategorySuccess value)
+        getProductSuccess,
+    required TResult Function(FilterProductListSuccess value)
+        filterProductListSuccess,
+    required TResult Function(ChangeCategoryIndex value) changeCategoryIndex,
+  }) {
+    return changeCategoryIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetProductBasedOnCategoryLoading value)?
+        getProductLoading,
+    TResult? Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult? Function(GetProductBasedOnCategorySuccess value)?
+        getProductSuccess,
+    TResult? Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult? Function(ChangeCategoryIndex value)? changeCategoryIndex,
+  }) {
+    return changeCategoryIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetProductBasedOnCategoryLoading value)? getProductLoading,
+    TResult Function(GetProductBasedOnCategoryError value)? getProductError,
+    TResult Function(GetProductBasedOnCategorySuccess value)? getProductSuccess,
+    TResult Function(FilterProductListSuccess value)? filterProductListSuccess,
+    TResult Function(ChangeCategoryIndex value)? changeCategoryIndex,
+    required TResult orElse(),
+  }) {
+    if (changeCategoryIndex != null) {
+      return changeCategoryIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeCategoryIndex implements ProductBasedOnCategoryState {
+  const factory ChangeCategoryIndex(final int index) =
+      _$ChangeCategoryIndexImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$ChangeCategoryIndexImplCopyWith<_$ChangeCategoryIndexImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

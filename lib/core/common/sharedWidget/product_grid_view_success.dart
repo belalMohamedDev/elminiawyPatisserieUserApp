@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:elminiawy/core/common/loading/loading_shimmer.dart';
 import 'package:elminiawy/core/common/toast/show_toast.dart';
+import 'package:elminiawy/feature/productBasedOnCategory/data/response/product_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -17,6 +18,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
   final List<DataProductResponse>? dataList;
   final List<DataProductResponse>? searchList;
   final List<WishListProductData>? wishListData;
+  final List<Products>? allProductList;
 
   final int? grideViewIndex;
   final ScrollPhysics? physics;
@@ -28,14 +30,17 @@ class ProductGridViewSuccessState extends StatelessWidget {
     this.grideViewIndex,
     this.physics,
     this.wishListData,
+    this.allProductList,
   });
 
   @override
   Widget build(BuildContext context) {
     final bool isSearchActive = searchList != null;
 
-    final List displayList =
-        isSearchActive ? searchList! : (dataList ?? wishListData!);
+// Determine which list to use for display
+    final List displayList = isSearchActive
+        ? searchList!
+        : (dataList ?? wishListData ?? allProductList ?? []);
 
     final int maxItemCount = displayList.length;
 
@@ -137,10 +142,12 @@ class ProductGridViewSuccessState extends StatelessWidget {
             ),
           ),
         ),
-        Image.asset(
-          ImageAsset.newItem,
-          height: 40.h,
-        ),
+        allProductList != null
+            ? const SizedBox()
+            : Image.asset(
+                ImageAsset.newItem,
+                height: 40.h,
+              ),
         Padding(
           padding: EdgeInsets.only(top: 25.h, left: 25.w),
           child: CachedNetworkImage(
