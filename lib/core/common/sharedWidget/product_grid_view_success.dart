@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../../feature/newProduct/model/response/product_response.dart';
+import '../../../feature/productDetails/product_model_sheet.dart';
 import '../../../feature/wishList/cubit/wish_list_cubit.dart';
 import '../../../feature/wishList/data/model/getWishListResponse/response.dart';
 import '../../style/color/color_manger.dart';
@@ -59,52 +61,55 @@ class ProductGridViewSuccessState extends StatelessWidget {
         childAspectRatio: 0.75,
         children: List.generate(
           itemCount,
-          (index) => Container(
-            decoration: BoxDecoration(
-              color: ColorManger.backgroundItem,
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _wishListAndImageStack(context, index, displayList),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Center(
-                  child: Text(
-                    displayList[index].title!,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
-                        fontSize: 14.sp),
+          (index) => InkWell(
+            onTap: () => showSortBottomSheet(context, index, displayList),
+            child: Container(
+              decoration: BoxDecoration(
+                color: ColorManger.backgroundItem,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _wishListAndImageStack(context, index, displayList),
+                  SizedBox(
+                    height: 10.h,
                   ),
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                Center(
-                  child: Text(
-                    displayList[index].description!,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 14.sp),
+                  Center(
+                    child: Text(
+                      displayList[index].title!,
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontFamily: FontConsistent.fontFamilyAcme,
+                          color: ColorManger.brun,
+                          fontSize: 14.sp),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                Center(
-                  child: Text(
-                    " ${displayList[index].price!}",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: ColorManger.brunLight,
-                        fontSize: 14.sp),
+                  SizedBox(
+                    height: 5.h,
                   ),
-                ),
-              ],
+                  Center(
+                    child: Text(
+                      displayList[index].description!,
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontFamily: FontConsistent.fontFamilyAcme,
+                          color: ColorManger.brunLight,
+                          fontSize: 14.sp),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Center(
+                    child: Text(
+                      " ${displayList[index].price!}",
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: ColorManger.brunLight,
+                          fontSize: 14.sp),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ));
@@ -160,5 +165,17 @@ class ProductGridViewSuccessState extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void showSortBottomSheet(BuildContext context, int index, List displayList) {
+    showCupertinoModalBottomSheet(
+        useRootNavigator: true,
+        barrierColor: Colors.black54,
+        elevation: 20.r,
+        context: context,
+        builder: (context) => ProductBottomSheet(
+              index: index,
+              displayList: displayList,
+            ));
   }
 }

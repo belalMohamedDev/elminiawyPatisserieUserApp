@@ -32,7 +32,7 @@ Map<String, dynamic> _$GetProductsBasedOnCategoryToJson(
 Products _$ProductsFromJson(Map<String, dynamic> json) => Products(
       title: json['title'] as String?,
       description: json['description'] as String?,
-      ratingsAverage: (json['ratingsAverage'] as num?)?.toInt(),
+      ratingsAverage: (json['ratingsAverage'] as num?)?.toDouble(),
       sId: json['_id'] as String?,
       price: (json['price'] as num?)?.toInt(),
       subCategory: json['subCategory'] as String?,

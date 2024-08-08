@@ -6,19 +6,25 @@ class CustomButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Color color;
   final Widget? widget;
+  final double? height;
+  final double? width;
 
-  CustomButton({
-    super.key,
-    color,
-    required this.onPressed,
-    required this.widget,
-  }) : color = onPressed == null ? ColorManger.unselectedButton : ColorManger.brun;
+  CustomButton(
+      {super.key,
+      color,
+      required this.onPressed,
+      required this.widget,
+      height,
+      this.width = double.infinity})
+      : color =
+            onPressed == null ? ColorManger.unselectedButton : ColorManger.brun,
+        height = 40.h;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40.h,
-      width: double.infinity,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.r), color: color),
       child: TextButton(onPressed: onPressed, child: widget!),

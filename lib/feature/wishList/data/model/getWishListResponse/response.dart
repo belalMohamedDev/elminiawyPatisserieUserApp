@@ -25,7 +25,7 @@ class WishListProductData {
   String? description;
   @JsonKey(name: "in_cart")
   bool? inCart;
-  int? ratingsAverage;
+  double? ratingsAverage;
   @JsonKey(name: "_id")
   String? sId;
   int? price;

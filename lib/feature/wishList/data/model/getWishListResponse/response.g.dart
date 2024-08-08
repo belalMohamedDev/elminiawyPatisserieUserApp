@@ -27,7 +27,7 @@ WishListProductData _$WishListProductDataFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String?,
       description: json['description'] as String?,
       inCart: json['in_cart'] as bool?,
-      ratingsAverage: (json['ratingsAverage'] as num?)?.toInt(),
+      ratingsAverage: (json['ratingsAverage'] as num?)?.toDouble(),
       sId: json['_id'] as String?,
       price: (json['price'] as num?)?.toInt(),
       subCategory: json['subCategory'] as String?,

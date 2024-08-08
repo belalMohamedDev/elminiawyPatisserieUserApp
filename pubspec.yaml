@@ -88,6 +88,7 @@ dependencies:
   device_preview: ^1.2.0
   modal_bottom_sheet: ^3.0.0
   flutter_slidable: ^3.1.1
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

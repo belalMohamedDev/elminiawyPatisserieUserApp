@@ -25,7 +25,7 @@ class GetProductsBasedOnCategory {
 class Products {
   String? title;
   String? description;
-  int? ratingsAverage;
+  double? ratingsAverage;
   @JsonKey(name: "_id")
   String? sId;
   int? price;
