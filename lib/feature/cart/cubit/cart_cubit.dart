@@ -39,6 +39,8 @@ class CartCubit extends Cubit<CartState> {
   }
 
   void decreaseQuantity() {
-    emit(CartState.updateQuantityNumber(quantityItem--));
+    if (quantityItem > 1) {
+      emit(CartState.updateQuantityNumber(quantityItem--));
+    }
   }
 }

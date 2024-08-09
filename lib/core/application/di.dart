@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
+import 'package:elminiawy/feature/cart/data/repository/cart_repo.dart';
 import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
@@ -45,7 +47,8 @@ Future<void> initAppModule() async {
     _initWishList(),
     _initLogOut(),
     _initUserAddress(),
-    _initProductBasedOnCategory()
+    _initProductBasedOnCategory(),
+    _initCart()
   ]);
 }
 
@@ -164,4 +167,13 @@ Future<void> _initProductBasedOnCategory() async {
         () => ProductBasedOnCategoryCubit(
               instance(),
             ));
+}
+
+Future<void> _initCart() async {
+  instance
+    ..registerLazySingleton<CartRepositoryImplement>(
+        () => CartRepositoryImplement(instance(), instance()))
+    ..registerFactory<CartCubit>(() => CartCubit(
+          instance(),
+        ));
 }

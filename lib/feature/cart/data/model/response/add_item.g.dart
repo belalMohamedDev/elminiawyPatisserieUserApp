@@ -28,13 +28,13 @@ Map<String, dynamic> _$AddItemToCartResponseToJson(
 
 AddItemToCartData _$AddItemToCartDataFromJson(Map<String, dynamic> json) =>
     AddItemToCartData(
-      user: json['user'] as String?,
+      user: json['user'] == null
+          ? null
+          : User.fromJson(json['user'] as Map<String, dynamic>),
       cartItems: (json['cartItems'] as List<dynamic>?)
           ?.map((e) => CartItems.fromJson(e as Map<String, dynamic>))
           .toList(),
       sId: json['sId'] as String?,
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
       totalCartPrice: (json['totalCartPrice'] as num?)?.toInt(),
     );
 
@@ -43,13 +43,13 @@ Map<String, dynamic> _$AddItemToCartDataToJson(AddItemToCartData instance) =>
       'user': instance.user,
       'cartItems': instance.cartItems,
       'sId': instance.sId,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
       'totalCartPrice': instance.totalCartPrice,
     };
 
 CartItems _$CartItemsFromJson(Map<String, dynamic> json) => CartItems(
-      product: json['product'] as String?,
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
       quantity: (json['quantity'] as num?)?.toInt(),
       price: (json['price'] as num?)?.toInt(),
       sId: json['sId'] as String?,
@@ -62,4 +62,30 @@ Map<String, dynamic> _$CartItemsToJson(CartItems instance) => <String, dynamic>{
       'price': instance.price,
       'sId': instance.sId,
       'totalItemPrice': instance.totalItemPrice,
+    };
+
+User _$UserFromJson(Map<String, dynamic> json) => User(
+      sId: json['sId'] as String?,
+      name: json['name'] as String?,
+      email: json['email'] as String?,
+      phone: json['phone'] as String?,
+    );
+
+Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
+      'sId': instance.sId,
+      'name': instance.name,
+      'email': instance.email,
+      'phone': instance.phone,
+    };
+
+Product _$ProductFromJson(Map<String, dynamic> json) => Product(
+      title: json['title'] as String?,
+      sId: json['sId'] as String?,
+      image: json['image'] as String?,
+    );
+
+Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
+      'title': instance.title,
+      'sId': instance.sId,
+      'image': instance.image,
     };

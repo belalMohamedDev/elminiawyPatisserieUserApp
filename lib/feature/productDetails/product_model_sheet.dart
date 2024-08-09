@@ -1,15 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../core/application/di.dart';
 import '../../core/common/loading/loading_shimmer.dart';
 import '../../core/common/sharedWidget/custom_button.dart';
 import '../../core/common/toast/show_toast.dart';
 import '../../core/style/color/color_manger.dart';
 import '../../core/style/fonts/font_manger.dart';
+import '../../core/style/fonts/strings_manger.dart';
 import '../wishList/cubit/wish_list_cubit.dart';
 
 class ProductBottomSheet extends StatelessWidget {
@@ -23,89 +26,142 @@ class ProductBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final product = displayList[index];
 
-    return Padding(
-      padding: EdgeInsets.only(left: 30.w, right: 30.w),
-      child: SizedBox(
-        height: 350.h,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+    return BlocProvider(
+      create: (context) => instance<CartCubit>(),
+      child: Padding(
+        padding: EdgeInsets.only(left: 30.w, right: 30.w),
+        child: SizedBox(
+          height: 350.h,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              _productImageRatingNameAndFavoritRow(product, context),
+              SizedBox(
+                height: 20.h,
+              ),
+              Text(
+                'Description',
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    fontFamily: FontConsistent.fontFamilyAcme,
+                    color: ColorManger.brown,
+                    fontSize: 15.sp),
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Text(
+                displayList[index].description!,
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    fontFamily: FontConsistent.fontFamilyAcme,
+                    color: ColorManger.brunLight,
+                    fontSize: 15.sp),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              _addRemoveAndAddToCartButton(context)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  BlocConsumer _addRemoveAndAddToCartButton(BuildContext context) {
+    return BlocConsumer<CartCubit, CartState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          addItemToCartError: (statesCode, errorMessage) =>
+              ShowToast.showToastErrorTop(
+                  errorMessage: errorMessage, context: context),
+          addItemToCartSuccess: (data) => ShowToast.showToastSuccessTop(
+              message: data.message!, context: context),
+        );
+      },
+      builder: (context, state) {
+        return Row(
           children: [
-            _productImageRatingNameAndFavoritRow(product, context),
+            GestureDetector(
+              onTap: () => context.read<CartCubit>().decreaseQuantity(),
+              child: CircleAvatar(
+                backgroundColor: ColorManger.brownLight,
+                child: Icon(
+                  Icons.remove,
+                  color: ColorManger.brown,
+                ),
+              ),
+            ),
             SizedBox(
-              height: 20.h,
+              width: 10.w,
             ),
             Text(
-              'Description',
+              '${context.read<CartCubit>().quantityItem}',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontFamily: FontConsistent.fontFamilyAcme,
                   color: ColorManger.brown,
                   fontSize: 15.sp),
             ),
             SizedBox(
-              height: 5.h,
+              width: 10.w,
             ),
-            Text(
-              displayList[index].description!,
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brunLight,
-                  fontSize: 15.sp),
+            GestureDetector(
+              onTap: () => context.read<CartCubit>().increaseQuantity(),
+              child: CircleAvatar(
+                backgroundColor: ColorManger.brown,
+                child: Icon(
+                  Icons.add_rounded,
+                  color: ColorManger.white,
+                ),
+              ),
             ),
-            SizedBox(
-              height: 40.h,
+            const Spacer(),
+            CustomButton(
+              height: 50.h,
+              width: 190.w,
+              onPressed: () {
+                context
+                    .read<CartCubit>()
+                    .addItemToCart(displayList[index].sId!);
+              },
+              widget: state.maybeWhen(
+                addItemToCartLoading: () => Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 20.h,
+                      width: 20.w,
+                      child: const CircularProgressIndicator(
+                        color: Colors.white,
+                        strokeWidth: 2.0,
+                        strokeAlign: 0.01,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15.w,
+                    ),
+                    Text(
+                      AppStrings.loading,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontSize: 14.sp,
+                          color: ColorManger.white,
+                          fontWeight: FontWeightManger.semiBold),
+                    ),
+                  ],
+                ),
+                orElse: () => Text(
+                  'Add To Cart',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontSize: 16.sp,
+                      color: ColorManger.white,
+                      fontWeight: FontWeightManger.semiBold),
+                ),
+              ),
             ),
-            _addRemoveAndAddToCartButton(context)
           ],
-        ),
-      ),
-    );
-  }
-
-  Row _addRemoveAndAddToCartButton(BuildContext context) {
-    return Row(
-      children: [
-        CircleAvatar(
-          backgroundColor: ColorManger.brownLight,
-          child: Icon(
-            Icons.remove,
-            color: ColorManger.brown,
-          ),
-        ),
-        SizedBox(
-          width: 10.w,
-        ),
-        Text(
-          '1',
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brown,
-              fontSize: 15.sp),
-        ),
-        SizedBox(
-          width: 10.w,
-        ),
-        CircleAvatar(
-          backgroundColor: ColorManger.brown,
-          child: Icon(
-            Icons.add_rounded,
-            color: ColorManger.white,
-          ),
-        ),
-        const Spacer(),
-        CustomButton(
-          height: 50.h,
-          width: 190.w,
-          onPressed: () {},
-          widget: Text(
-            'Add To Cart',
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontSize: 16.sp,
-                color: ColorManger.white,
-                fontWeight: FontWeightManger.semiBold),
-          ),
-        ),
-      ],
+        );
+      },
     );
   }
 

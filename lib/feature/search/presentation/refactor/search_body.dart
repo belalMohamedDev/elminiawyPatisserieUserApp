@@ -104,6 +104,7 @@ class _SearchScreenBodyState extends State<SearchScreenBody> {
   void showSortBottomSheet(BuildContext context) {
     showBarModalBottomSheet(
         elevation: 20.r,
+        barrierColor: Colors.black54,
         context: context,
         builder: (context) => const FilterBottomSheet());
   }

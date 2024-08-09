@@ -22,19 +22,15 @@ class AddItemToCartResponse {
 
 @JsonSerializable()
 class AddItemToCartData {
-  String? user;
+  User? user;
   List<CartItems>? cartItems;
   String? sId;
-  String? createdAt;
-  String? updatedAt;
   int? totalCartPrice;
 
   AddItemToCartData({
     this.user,
     this.cartItems,
     this.sId,
-    this.createdAt,
-    this.updatedAt,
     this.totalCartPrice,
   });
 
@@ -48,7 +44,7 @@ class AddItemToCartData {
 
 @JsonSerializable()
 class CartItems {
-  String? product;
+  Product? product;
   int? quantity;
   int? price;
   String? sId;
@@ -63,4 +59,36 @@ class CartItems {
 
   //to json
   Map<String, dynamic> toJson() => _$CartItemsToJson(this);
+}
+
+@JsonSerializable()
+class User {
+  String? sId;
+  String? name;
+  String? email;
+  String? phone;
+
+  User({this.sId, this.name, this.email, this.phone});
+
+    //from json
+  factory User.fromJson(Map<String, dynamic> json) =>
+      _$UserFromJson(json);
+
+  //to json
+  Map<String, dynamic> toJson() => _$UserToJson(this);
+}
+
+@JsonSerializable()
+class Product {
+  String? title;
+  String? sId;
+  String? image;
+
+  Product({this.title, this.sId, this.image});
+    //from json
+  factory Product.fromJson(Map<String, dynamic> json) =>
+      _$ProductFromJson(json);
+
+  //to json
+  Map<String, dynamic> toJson() => _$ProductToJson(this);
 }
