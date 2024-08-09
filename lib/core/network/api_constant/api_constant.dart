@@ -25,9 +25,8 @@ class ApiConstants {
   static const String wishList = '/v1/api/wishList';
 
 
-
-
   static const String address = '/v1/api/address';
+  static const String cart = '/v1/api/cart';
 
 
 
