@@ -472,9 +472,8 @@ class CartBody extends StatelessWidget {
               child: SizedBox(
                 height: 40.h,
                 child: TextFormField(
-                  //      controller: getProduct.search,
+                  controller: context.read<CartCubit>().applyCouponController,
                   keyboardType: TextInputType.text,
-
                   decoration: InputDecoration(
                       hintText: 'Enter Coupon code',
                       hintStyle: TextStyle(color: ColorManger.brunLight),
@@ -496,21 +495,24 @@ class CartBody extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: 38.h,
-              width: 70.w,
-              margin: EdgeInsets.only(left: 10.w, right: 5.w),
-              decoration: BoxDecoration(
-                color: ColorManger.brun,
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: Center(
-                child: Text(
-                  'Apply',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.white,
-                      fontSize: 12.sp),
+            InkWell(
+              onTap: () => context.read<CartCubit>().applyCoupon(),
+              child: Container(
+                height: 38.h,
+                width: 70.w,
+                margin: EdgeInsets.only(left: 10.w, right: 5.w),
+                decoration: BoxDecoration(
+                  color: ColorManger.brun,
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Center(
+                  child: Text(
+                    'Apply',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontFamily: FontConsistent.fontFamilyAcme,
+                        color: ColorManger.white,
+                        fontSize: 12.sp),
+                  ),
                 ),
               ),
             ),

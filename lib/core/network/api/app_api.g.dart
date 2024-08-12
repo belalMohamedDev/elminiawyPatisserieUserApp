@@ -581,11 +581,11 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<GetCartResponse> applyCouponToCart(String quantity) async {
+  Future<GetCartResponse> applyCouponToCart(String coupon) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {'coupon': quantity};
+    final _data = {'coupon': coupon};
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<GetCartResponse>(Options(
       method: 'PUT',

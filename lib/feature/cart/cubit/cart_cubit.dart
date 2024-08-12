@@ -14,6 +14,9 @@ class CartCubit extends Cubit<CartState> {
   CartCubit(this._cartRepositoryImplement) : super(const CartState.initial());
   final CartRepositoryImplement _cartRepositoryImplement;
   int quantityItem = 1;
+  static const int _retryLimit = 3;
+  int _retryCount = 0;
+
   final TextEditingController applyCouponController = TextEditingController();
 
   Future<void> addItemToCart(String productId) async {
@@ -58,10 +61,16 @@ class CartCubit extends Cubit<CartState> {
       },
       failure: (error) {
         if (error.statusCode != 401) {
-          emit(
-            CartState.getCartItemError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
-          );
+          if (_retryCount < _retryLimit) {
+            _retryCount++;
+            getCartItem();
+          } else {
+            emit(
+              CartState.getCartItemError(
+                  errorMessage: error.message!, statesCode: error.statusCode!),
+            );
+            _retryCount = 0;
+          }
         }
       },
     );
@@ -79,7 +88,7 @@ class CartCubit extends Cubit<CartState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.getCartItemError(
+            CartState.deleteCartItemError(
                 errorMessage: error.message!, statesCode: error.statusCode!),
           );
         }
@@ -98,7 +107,7 @@ class CartCubit extends Cubit<CartState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.getCartItemError(
+            CartState.updateQuantityToCartItemError(
                 errorMessage: error.message!, statesCode: error.statusCode!),
           );
         }
@@ -114,12 +123,13 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
+        applyCouponController.clear();
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.getCartItemError(
+            CartState.applyCoupon(
                 errorMessage: error.message!, statesCode: error.statusCode!),
           );
         }
