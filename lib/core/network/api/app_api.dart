@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:elminiawy/feature/cart/data/model/response/get_cart.dart';
 import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
 import 'package:elminiawy/feature/userAddress/data/model/response/create_address_response.dart';
 
@@ -105,5 +106,24 @@ abstract class AppServiceClient {
   @POST(ApiConstants.cart)
   Future<AddItemToCartResponse> addItemToCart(
     @Body() AddItemToCartRequestBody addItemToCartRequestBody,
+  );
+
+  @GET(ApiConstants.cart)
+  Future<GetCartResponse> getCartItem();
+
+  @DELETE('${ApiConstants.cart}/{id}')
+  Future<GetCartResponse> removeItemFromCart(
+    @Path("id") String id,
+  );
+
+  @PUT('${ApiConstants.cart}/{id}')
+  Future<GetCartResponse> updateItemQuantityFromCart(
+    @Path("id") String id,
+    @Field("quantity") int quantity,
+  );
+
+  @PUT('${ApiConstants.cart}/applyCoupon')
+  Future<GetCartResponse> applyCouponToCart(
+    @Field("coupon") String coupon,
   );
 }

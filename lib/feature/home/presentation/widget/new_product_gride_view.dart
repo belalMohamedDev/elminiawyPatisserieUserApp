@@ -58,16 +58,16 @@ class NewProductGrideView extends StatelessWidget {
             );
           },
           builder: (context, state) {
-            if (state is GetProductLoading || state is GetProductError) {
-              return const ProductGridViewLoadingState(
-                physics: NeverScrollableScrollPhysics(),
+            if (state is GetProductSuccess) {
+              return ProductGridViewSuccessState(
+                dataList: context.read<ProductCubit>().dataList,
+                grideViewIndex: 4,
+                physics: const NeverScrollableScrollPhysics(),
               );
             }
 
-            return ProductGridViewSuccessState(
-              dataList: context.read<ProductCubit>().dataList,
-              grideViewIndex: 4,
-              physics: const NeverScrollableScrollPhysics(),
+            return const ProductGridViewLoadingState(
+              physics: NeverScrollableScrollPhysics(),
             );
           },
         )

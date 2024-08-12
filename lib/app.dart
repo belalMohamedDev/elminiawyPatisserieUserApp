@@ -11,6 +11,7 @@ import 'core/services/shared_pref_helper.dart';
 import 'core/style/fonts/strings_manger.dart';
 import 'core/style/theme/theme_manger.dart';
 import 'core/utils/extensions.dart';
+import 'feature/cart/cubit/cart_cubit.dart';
 import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => instance<AppLogicCubit>(),
         ),
-              BlocProvider(
+        BlocProvider(
           create: (context) => instance<BannerCubit>(),
         ),
         BlocProvider(
@@ -42,6 +43,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => instance<WishListCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => instance<CartCubit>(),
         ),
       ],
       child: FutureBuilder<String>(

@@ -6,7 +6,6 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/application/di.dart';
 import '../../core/common/loading/loading_shimmer.dart';
 import '../../core/common/sharedWidget/custom_button.dart';
 import '../../core/common/toast/show_toast.dart';
@@ -26,43 +25,40 @@ class ProductBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final product = displayList[index];
 
-    return BlocProvider(
-      create: (context) => instance<CartCubit>(),
-      child: Padding(
-        padding: EdgeInsets.only(left: 30.w, right: 30.w),
-        child: SizedBox(
-          height: 350.h,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              _productImageRatingNameAndFavoritRow(product, context),
-              SizedBox(
-                height: 20.h,
-              ),
-              Text(
-                'Description',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.brown,
-                    fontSize: 15.sp),
-              ),
-              SizedBox(
-                height: 5.h,
-              ),
-              Text(
-                displayList[index].description!,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.brunLight,
-                    fontSize: 15.sp),
-              ),
-              SizedBox(
-                height: 40.h,
-              ),
-              _addRemoveAndAddToCartButton(context)
-            ],
-          ),
+    return Padding(
+      padding: EdgeInsets.only(left: 20.w, right: 20.w),
+      child: SizedBox(
+        height: 350.h,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            _productImageRatingNameAndFavoritRow(product, context),
+            SizedBox(
+              height: 20.h,
+            ),
+            Text(
+              '  Description',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brown,
+                  fontSize: 15.sp),
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            Text(
+              '  ${displayList[index].description!}',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brunLight,
+                  fontSize: 15.sp),
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
+            _addRemoveAndAddToCartButton(context)
+          ],
         ),
       ),
     );
@@ -82,6 +78,9 @@ class ProductBottomSheet extends StatelessWidget {
       builder: (context, state) {
         return Row(
           children: [
+            SizedBox(
+              width: 10.w,
+            ),
             GestureDetector(
               onTap: () => context.read<CartCubit>().decreaseQuantity(),
               child: CircleAvatar(
@@ -153,7 +152,7 @@ class ProductBottomSheet extends StatelessWidget {
                 orElse: () => Text(
                   'Add To Cart',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 16.sp,
+                      fontSize: 14.sp,
                       color: ColorManger.white,
                       fontWeight: FontWeightManger.semiBold),
                 ),
@@ -169,7 +168,7 @@ class ProductBottomSheet extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 50.h),
+          padding: EdgeInsets.only(top: 40.h),
           child: Container(
             decoration: BoxDecoration(
               color: ColorManger.backgroundItem,
@@ -187,9 +186,7 @@ class ProductBottomSheet extends StatelessWidget {
           width: 15.w,
         ),
         _namePriceAndRatingColumn(context),
-        SizedBox(
-          width: 32.w,
-        ),
+        const Spacer(),
         _wishListContainer(context, product),
       ],
     );

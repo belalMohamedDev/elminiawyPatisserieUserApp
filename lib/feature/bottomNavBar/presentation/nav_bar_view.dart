@@ -43,8 +43,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return BlocBuilder<AppLogicCubit, AppLogicState>(
       builder: (context, state) {
         return PersistentTabView(
+          avoidBottomPadding: false,
+          stateManagement: false,
+
           controller: context.read<AppLogicCubit>().bottomNavBarController,
-          margin: const EdgeInsets.all(12.0),
+
+          margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 30.h),
 
           backgroundColor: ColorManger.brun,
 
@@ -63,7 +67,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
               duration: Duration(milliseconds: 200),
             ),
             navBarDecoration: NavBarDecoration(
-              color: ColorManger.backgroundItem,
+              color:
+                  context.read<AppLogicCubit>().bottomNavBarController.index ==
+                          2
+                      ? ColorManger.lightWhite
+                      : ColorManger.backgroundItem,
               //  padding: const EdgeInsets.all(12.0),
               borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(30),

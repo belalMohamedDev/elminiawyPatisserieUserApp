@@ -37,7 +37,6 @@ class _SearchScreenBodyState extends State<SearchScreenBody> {
                         maxPrice: getProduct.selectedRange.end,
                         sortOrder: getProduct.getSortOrder(),
                       ),
-                      //getProduct.addItemToList(value),
                       keyboardType: TextInputType.text,
                       controller: getProduct.search,
                       decoration: InputDecoration(
