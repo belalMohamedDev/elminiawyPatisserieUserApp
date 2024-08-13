@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/common/sharedWidget/layout_builder_point_line.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../cubit/cart_cubit.dart';
@@ -68,25 +69,7 @@ class PaymentSummary extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            LayoutBuilder(
-                builder: (BuildContext context, BoxConstraints constraints) {
-              final boxWidth = constraints.constrainWidth();
-              final dashWidth = 10.w;
-              final dashCount = (boxWidth / (2 * dashWidth)).floor();
-              return Flex(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                direction: Axis.horizontal,
-                children: List.generate(dashCount, (_) {
-                  return SizedBox(
-                    width: dashWidth,
-                    height: 1.h,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(color: ColorManger.brown),
-                    ),
-                  );
-                }),
-              );
-            }),
+            const LayoutBuilderPointLine(),
             SizedBox(
               height: 20.h,
             ),
@@ -186,25 +169,7 @@ class PaymentSummary extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            LayoutBuilder(
-                builder: (BuildContext context, BoxConstraints constraints) {
-              final boxWidth = constraints.constrainWidth();
-              final dashWidth = 10.w;
-              final dashCount = (boxWidth / (2 * dashWidth)).floor();
-              return Flex(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                direction: Axis.horizontal,
-                children: List.generate(dashCount, (_) {
-                  return SizedBox(
-                    width: dashWidth,
-                    height: 1.h,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(color: ColorManger.brown),
-                    ),
-                  );
-                }),
-              );
-            }),
+          const LayoutBuilderPointLine(),
             SizedBox(
               height: 25.h,
             ),
@@ -243,3 +208,4 @@ class PaymentSummary extends StatelessWidget {
     );
   }
 }
+

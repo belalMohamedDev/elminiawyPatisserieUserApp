@@ -29,17 +29,4 @@ class CartState with _$CartState {
   const factory CartState.deleteCartItemError(
       {required int statesCode,
       required String errorMessage}) = DeleteCartItemError;
-
-  //UPDATE QUANTITY item from Cart  State
-
-  const factory CartState.updateQuantityToCartItemError(
-      {required int statesCode,
-      required String errorMessage}) = UpdateQuantityToCartItemError;
-
-
-        //Apply Coupon Cart  State
-
-  const factory CartState.applyCoupon(
-      {required int statesCode,
-      required String errorMessage}) = ApplyCouponError;
 }

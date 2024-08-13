@@ -104,14 +104,7 @@ class CartCubit extends Cubit<CartState> {
       success: (dataResponse) {
         emit(CartState.getCartItemSuccess(dataResponse));
       },
-      failure: (error) {
-        if (error.statusCode != 401) {
-          emit(
-            CartState.updateQuantityToCartItemError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
-          );
-        }
-      },
+      failure: (error) {},
     );
   }
 
@@ -126,14 +119,7 @@ class CartCubit extends Cubit<CartState> {
         applyCouponController.clear();
         emit(CartState.getCartItemSuccess(dataResponse));
       },
-      failure: (error) {
-        if (error.statusCode != 401) {
-          emit(
-            CartState.applyCoupon(
-                errorMessage: error.message!, statesCode: error.statusCode!),
-          );
-        }
-      },
+      failure: (error) {},
     );
   }
 }

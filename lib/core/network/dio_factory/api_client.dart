@@ -70,6 +70,24 @@ class TokenInterceptor extends Interceptor {
         _showSessionExpiredMessage();
         return handler.reject(err);
       }
+    } else if (err.response?.statusCode == 500) {
+      // Retry the request in case of a 500 error
+      try {
+        final cloneReq = await dio.request(
+          err.requestOptions.path,
+          options: Options(
+            method: err.requestOptions.method,
+            headers: err.requestOptions.headers,
+          ),
+          data: err.requestOptions.data,
+          queryParameters: err.requestOptions.queryParameters,
+        );
+
+        return handler.resolve(cloneReq);
+      } catch (e) {
+        // If retry fails, forward the error
+        return handler.reject(err);
+      }
     }
 
     // If the error is not related to token expiration, forward it
