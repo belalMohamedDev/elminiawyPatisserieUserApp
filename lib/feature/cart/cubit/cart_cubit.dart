@@ -59,11 +59,11 @@ class CartCubit extends Cubit<CartState> {
       success: (dataResponse) {
         emit(CartState.getCartItemSuccess(dataResponse));
       },
-      failure: (error) {
+      failure: (error) async {
         if (error.statusCode != 401) {
           if (_retryCount < _retryLimit) {
             _retryCount++;
-            getCartItem();
+            await getCartItem(); // Retry the request
           } else {
             emit(
               CartState.getCartItemError(
