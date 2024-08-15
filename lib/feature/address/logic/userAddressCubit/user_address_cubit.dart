@@ -1,11 +1,11 @@
-import 'package:elminiawy/feature/userAddress/data/model/response/get_address_response.dart';
+import 'package:elminiawy/feature/address/data/model/response/get_address_response.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/network/success/api_success_general.dart';
-import '../data/model/request/create_address_request.dart';
-import '../data/model/response/create_address_response.dart';
-import '../data/repository/address_repo.dart';
+import '../../../../core/network/success/api_success_general.dart';
+import '../../data/model/request/create_address_request.dart';
+import '../../data/model/response/create_address_response.dart';
+import '../../data/repository/address_repo.dart';
 
 part 'user_address_state.dart';
 part 'user_address_cubit.freezed.dart';

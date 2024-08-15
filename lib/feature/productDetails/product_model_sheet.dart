@@ -266,10 +266,13 @@ class ProductBottomSheet extends StatelessWidget {
             );
           },
           builder: (context, state) {
-            return Icon(
-                context.read<WishListCubit>().favorites[product.sId]!
-                    ? IconlyBold.heart
-                    : IconlyBroken.heart,
+            bool isInWishlist = context
+                    .read<WishListCubit>()
+                    .favorites
+                    .containsKey(product.sId) &&
+                context.read<WishListCubit>().favorites[product.sId]!;
+
+            return Icon(isInWishlist ? IconlyBold.heart : IconlyBroken.heart,
                 color: ColorManger.brunLight);
           },
         ),

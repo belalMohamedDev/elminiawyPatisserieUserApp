@@ -16,14 +16,17 @@ class CartBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
-        if (state is GetCartItemSuccess) {
-          if (state.data.data!.cartItems!.isEmpty) {
+        if (state is GetCartItemSuccess || state is UpdateQuantityItemLoading) {
+            final cartData = context.read<CartCubit>().cartData;
+
+          if (cartData!.cartItems!.isEmpty) {
             return Container(
               height: double.infinity,
               width: double.infinity,
               color: ColorManger.white,
             );
           }
+          
           return CustomScrollView(
             slivers: [
               SliverPadding(
@@ -35,10 +38,10 @@ class CartBody extends StatelessWidget {
                       return Padding(
                         padding: EdgeInsets.only(bottom: 5.h),
                         child: ProductCartItem(
-                            cartItems: state.data.data!.cartItems![index]),
+                            cartItems: cartData.cartItems![index]),
                       );
                     },
-                    childCount: state.data.data?.cartItems?.length ?? 0,
+                    childCount: cartData.cartItems?.length ?? 0,
                   ),
                 ),
               ),
@@ -51,7 +54,7 @@ class CartBody extends StatelessWidget {
                       SizedBox(
                         height: 10.h,
                       ),
-                      PaymentSummary(state)
+                      const PaymentSummary()
                     ],
                   ),
                 ),

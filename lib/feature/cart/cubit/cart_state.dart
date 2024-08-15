@@ -21,12 +21,16 @@ class CartState with _$CartState {
       {required int statesCode,
       required String errorMessage}) = GetCartItemError;
 
-  const factory CartState.getCartItemSuccess(GetCartResponse data) =
-      GetCartItemSuccess;
+  const factory CartState.getCartItemSuccess(
+    GetCartResponse? data,
+  ) = GetCartItemSuccess;
 
   //delete item from Cart  State
 
   const factory CartState.deleteCartItemError(
       {required int statesCode,
       required String errorMessage}) = DeleteCartItemError;
+
+  const factory CartState.updateQuantityItemLoading(int quantity) =
+      UpdateQuantityItemLoading;
 }

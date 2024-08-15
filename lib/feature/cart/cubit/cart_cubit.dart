@@ -13,6 +13,8 @@ part 'cart_cubit.freezed.dart';
 class CartCubit extends Cubit<CartState> {
   CartCubit(this._cartRepositoryImplement) : super(const CartState.initial());
   final CartRepositoryImplement _cartRepositoryImplement;
+  GetCartDataResponse? cartData;
+
   int quantityItem = 1;
   static const int _retryLimit = 3;
   int _retryCount = 0;
@@ -27,6 +29,7 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
+        quantityItem = 0;
         emit(CartState.addItemToCartSuccess(dataResponse));
       },
       failure: (error) {
@@ -57,6 +60,8 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
+        cartData = dataResponse.data;
+
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) async {
@@ -83,6 +88,8 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
+        cartData = dataResponse.data;
+
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) {
@@ -97,11 +104,15 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> updateQuantityToItem(String id, int quantity) async {
+    emit(CartState.updateQuantityItemLoading(quantity));
+
     final response =
         await _cartRepositoryImplement.updateItemQuantityFromCart(id, quantity);
 
     response.when(
       success: (dataResponse) {
+        cartData = dataResponse.data;
+
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) {},
@@ -116,7 +127,10 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
+        cartData = dataResponse.data;
+
         applyCouponController.clear();
+
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) {},

@@ -1,5 +1,5 @@
-import 'package:elminiawy/feature/userAddress/data/model/request/create_address_request.dart';
-import 'package:elminiawy/feature/userAddress/data/model/response/create_address_response.dart';
+import 'package:elminiawy/feature/address/data/model/request/create_address_request.dart';
+import 'package:elminiawy/feature/address/data/model/response/create_address_response.dart';
 
 import '../../../../core/network/api/app_api.dart';
 import '../../../../core/network/apiResult/api_reuslt.dart';

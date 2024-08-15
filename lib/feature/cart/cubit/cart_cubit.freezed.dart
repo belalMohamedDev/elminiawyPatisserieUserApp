@@ -27,9 +27,10 @@ mixin _$CartState {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,8 +42,9 @@ mixin _$CartState {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,8 +56,9 @@ mixin _$CartState {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,6 +73,8 @@ mixin _$CartState {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +88,8 @@ mixin _$CartState {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -96,6 +103,8 @@ mixin _$CartState {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,9 +174,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return initial();
   }
@@ -182,8 +192,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return initial?.call();
   }
@@ -198,8 +209,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -220,6 +232,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return initial(this);
   }
@@ -236,6 +250,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return initial?.call(this);
   }
@@ -252,6 +268,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -313,9 +331,10 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return addItemToCartLoading();
   }
@@ -330,8 +349,9 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return addItemToCartLoading?.call();
   }
@@ -346,8 +366,9 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (addItemToCartLoading != null) {
@@ -368,6 +389,8 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return addItemToCartLoading(this);
   }
@@ -384,6 +407,8 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return addItemToCartLoading?.call(this);
   }
@@ -400,6 +425,8 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (addItemToCartLoading != null) {
@@ -498,9 +525,10 @@ class _$AddItemToCartErrorImpl implements AddItemToCartError {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return addItemToCartError(statesCode, errorMessage);
   }
@@ -515,8 +543,9 @@ class _$AddItemToCartErrorImpl implements AddItemToCartError {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return addItemToCartError?.call(statesCode, errorMessage);
   }
@@ -531,8 +560,9 @@ class _$AddItemToCartErrorImpl implements AddItemToCartError {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (addItemToCartError != null) {
@@ -553,6 +583,8 @@ class _$AddItemToCartErrorImpl implements AddItemToCartError {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return addItemToCartError(this);
   }
@@ -569,6 +601,8 @@ class _$AddItemToCartErrorImpl implements AddItemToCartError {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return addItemToCartError?.call(this);
   }
@@ -585,6 +619,8 @@ class _$AddItemToCartErrorImpl implements AddItemToCartError {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (addItemToCartError != null) {
@@ -681,9 +717,10 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return addItemToCartSuccess(data);
   }
@@ -698,8 +735,9 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return addItemToCartSuccess?.call(data);
   }
@@ -714,8 +752,9 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (addItemToCartSuccess != null) {
@@ -736,6 +775,8 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return addItemToCartSuccess(this);
   }
@@ -752,6 +793,8 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return addItemToCartSuccess?.call(this);
   }
@@ -768,6 +811,8 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (addItemToCartSuccess != null) {
@@ -863,9 +908,10 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return updateQuantityNumber(quantity);
   }
@@ -880,8 +926,9 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return updateQuantityNumber?.call(quantity);
   }
@@ -896,8 +943,9 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (updateQuantityNumber != null) {
@@ -918,6 +966,8 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return updateQuantityNumber(this);
   }
@@ -934,6 +984,8 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return updateQuantityNumber?.call(this);
   }
@@ -950,6 +1002,8 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (updateQuantityNumber != null) {
@@ -1016,9 +1070,10 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return getCartItemLoading();
   }
@@ -1033,8 +1088,9 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return getCartItemLoading?.call();
   }
@@ -1049,8 +1105,9 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (getCartItemLoading != null) {
@@ -1071,6 +1128,8 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return getCartItemLoading(this);
   }
@@ -1087,6 +1146,8 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return getCartItemLoading?.call(this);
   }
@@ -1103,6 +1164,8 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (getCartItemLoading != null) {
@@ -1201,9 +1264,10 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return getCartItemError(statesCode, errorMessage);
   }
@@ -1218,8 +1282,9 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return getCartItemError?.call(statesCode, errorMessage);
   }
@@ -1234,8 +1299,9 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (getCartItemError != null) {
@@ -1256,6 +1322,8 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return getCartItemError(this);
   }
@@ -1272,6 +1340,8 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return getCartItemError?.call(this);
   }
@@ -1288,6 +1358,8 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (getCartItemError != null) {
@@ -1315,7 +1387,7 @@ abstract class _$$GetCartItemSuccessImplCopyWith<$Res> {
           $Res Function(_$GetCartItemSuccessImpl) then) =
       __$$GetCartItemSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({GetCartResponse data});
+  $Res call({GetCartResponse? data});
 }
 
 /// @nodoc
@@ -1329,13 +1401,13 @@ class __$$GetCartItemSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_$GetCartItemSuccessImpl(
-      null == data
+      freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as GetCartResponse,
+              as GetCartResponse?,
     ));
   }
 }
@@ -1346,7 +1418,7 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
   const _$GetCartItemSuccessImpl(this.data);
 
   @override
-  final GetCartResponse data;
+  final GetCartResponse? data;
 
   @override
   String toString() {
@@ -1383,9 +1455,10 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return getCartItemSuccess(data);
   }
@@ -1400,8 +1473,9 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return getCartItemSuccess?.call(data);
   }
@@ -1416,8 +1490,9 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (getCartItemSuccess != null) {
@@ -1438,6 +1513,8 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return getCartItemSuccess(this);
   }
@@ -1454,6 +1531,8 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return getCartItemSuccess?.call(this);
   }
@@ -1470,6 +1549,8 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (getCartItemSuccess != null) {
@@ -1480,10 +1561,10 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
 }
 
 abstract class GetCartItemSuccess implements CartState {
-  const factory GetCartItemSuccess(final GetCartResponse data) =
+  const factory GetCartItemSuccess(final GetCartResponse? data) =
       _$GetCartItemSuccessImpl;
 
-  GetCartResponse get data;
+  GetCartResponse? get data;
   @JsonKey(ignore: true)
   _$$GetCartItemSuccessImplCopyWith<_$GetCartItemSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1574,9 +1655,10 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     required TResult Function() getCartItemLoading,
     required TResult Function(int statesCode, String errorMessage)
         getCartItemError,
-    required TResult Function(GetCartResponse data) getCartItemSuccess,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
     required TResult Function(int statesCode, String errorMessage)
         deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
   }) {
     return deleteCartItemError(statesCode, errorMessage);
   }
@@ -1591,8 +1673,9 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
     TResult? Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult? Function(GetCartResponse data)? getCartItemSuccess,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
     TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
   }) {
     return deleteCartItemError?.call(statesCode, errorMessage);
   }
@@ -1607,8 +1690,9 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
     TResult Function(int statesCode, String errorMessage)? getCartItemError,
-    TResult Function(GetCartResponse data)? getCartItemSuccess,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
     TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (deleteCartItemError != null) {
@@ -1629,6 +1713,8 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     required TResult Function(GetCartItemError value) getCartItemError,
     required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
     required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
   }) {
     return deleteCartItemError(this);
   }
@@ -1645,6 +1731,8 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     TResult? Function(GetCartItemError value)? getCartItemError,
     TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
   }) {
     return deleteCartItemError?.call(this);
   }
@@ -1661,6 +1749,8 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     TResult Function(GetCartItemError value)? getCartItemError,
     TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
     TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
     required TResult orElse(),
   }) {
     if (deleteCartItemError != null) {
@@ -1680,4 +1770,196 @@ abstract class DeleteCartItemError implements CartState {
   @JsonKey(ignore: true)
   _$$DeleteCartItemErrorImplCopyWith<_$DeleteCartItemErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateQuantityItemLoadingImplCopyWith<$Res> {
+  factory _$$UpdateQuantityItemLoadingImplCopyWith(
+          _$UpdateQuantityItemLoadingImpl value,
+          $Res Function(_$UpdateQuantityItemLoadingImpl) then) =
+      __$$UpdateQuantityItemLoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int quantity});
+}
+
+/// @nodoc
+class __$$UpdateQuantityItemLoadingImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$UpdateQuantityItemLoadingImpl>
+    implements _$$UpdateQuantityItemLoadingImplCopyWith<$Res> {
+  __$$UpdateQuantityItemLoadingImplCopyWithImpl(
+      _$UpdateQuantityItemLoadingImpl _value,
+      $Res Function(_$UpdateQuantityItemLoadingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quantity = null,
+  }) {
+    return _then(_$UpdateQuantityItemLoadingImpl(
+      null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateQuantityItemLoadingImpl implements UpdateQuantityItemLoading {
+  const _$UpdateQuantityItemLoadingImpl(this.quantity);
+
+  @override
+  final int quantity;
+
+  @override
+  String toString() {
+    return 'CartState.updateQuantityItemLoading(quantity: $quantity)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateQuantityItemLoadingImpl &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, quantity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateQuantityItemLoadingImplCopyWith<_$UpdateQuantityItemLoadingImpl>
+      get copyWith => __$$UpdateQuantityItemLoadingImplCopyWithImpl<
+          _$UpdateQuantityItemLoadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() addItemToCartLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        addItemToCartError,
+    required TResult Function(AddItemToCartResponse data) addItemToCartSuccess,
+    required TResult Function(int quantity) updateQuantityNumber,
+    required TResult Function() getCartItemLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getCartItemError,
+    required TResult Function(GetCartResponse? data) getCartItemSuccess,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteCartItemError,
+    required TResult Function(int quantity) updateQuantityItemLoading,
+  }) {
+    return updateQuantityItemLoading(quantity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? addItemToCartLoading,
+    TResult? Function(int statesCode, String errorMessage)? addItemToCartError,
+    TResult? Function(AddItemToCartResponse data)? addItemToCartSuccess,
+    TResult? Function(int quantity)? updateQuantityNumber,
+    TResult? Function()? getCartItemLoading,
+    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(GetCartResponse? data)? getCartItemSuccess,
+    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(int quantity)? updateQuantityItemLoading,
+  }) {
+    return updateQuantityItemLoading?.call(quantity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? addItemToCartLoading,
+    TResult Function(int statesCode, String errorMessage)? addItemToCartError,
+    TResult Function(AddItemToCartResponse data)? addItemToCartSuccess,
+    TResult Function(int quantity)? updateQuantityNumber,
+    TResult Function()? getCartItemLoading,
+    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(GetCartResponse? data)? getCartItemSuccess,
+    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(int quantity)? updateQuantityItemLoading,
+    required TResult orElse(),
+  }) {
+    if (updateQuantityItemLoading != null) {
+      return updateQuantityItemLoading(quantity);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AddItemToCartLoading value) addItemToCartLoading,
+    required TResult Function(AddItemToCartError value) addItemToCartError,
+    required TResult Function(AddItemToCartSuccess value) addItemToCartSuccess,
+    required TResult Function(UpdateQuantityNumber value) updateQuantityNumber,
+    required TResult Function(GetCartItemLoading value) getCartItemLoading,
+    required TResult Function(GetCartItemError value) getCartItemError,
+    required TResult Function(GetCartItemSuccess value) getCartItemSuccess,
+    required TResult Function(DeleteCartItemError value) deleteCartItemError,
+    required TResult Function(UpdateQuantityItemLoading value)
+        updateQuantityItemLoading,
+  }) {
+    return updateQuantityItemLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AddItemToCartLoading value)? addItemToCartLoading,
+    TResult? Function(AddItemToCartError value)? addItemToCartError,
+    TResult? Function(AddItemToCartSuccess value)? addItemToCartSuccess,
+    TResult? Function(UpdateQuantityNumber value)? updateQuantityNumber,
+    TResult? Function(GetCartItemLoading value)? getCartItemLoading,
+    TResult? Function(GetCartItemError value)? getCartItemError,
+    TResult? Function(GetCartItemSuccess value)? getCartItemSuccess,
+    TResult? Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult? Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
+  }) {
+    return updateQuantityItemLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AddItemToCartLoading value)? addItemToCartLoading,
+    TResult Function(AddItemToCartError value)? addItemToCartError,
+    TResult Function(AddItemToCartSuccess value)? addItemToCartSuccess,
+    TResult Function(UpdateQuantityNumber value)? updateQuantityNumber,
+    TResult Function(GetCartItemLoading value)? getCartItemLoading,
+    TResult Function(GetCartItemError value)? getCartItemError,
+    TResult Function(GetCartItemSuccess value)? getCartItemSuccess,
+    TResult Function(DeleteCartItemError value)? deleteCartItemError,
+    TResult Function(UpdateQuantityItemLoading value)?
+        updateQuantityItemLoading,
+    required TResult orElse(),
+  }) {
+    if (updateQuantityItemLoading != null) {
+      return updateQuantityItemLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateQuantityItemLoading implements CartState {
+  const factory UpdateQuantityItemLoading(final int quantity) =
+      _$UpdateQuantityItemLoadingImpl;
+
+  int get quantity;
+  @JsonKey(ignore: true)
+  _$$UpdateQuantityItemLoadingImplCopyWith<_$UpdateQuantityItemLoadingImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

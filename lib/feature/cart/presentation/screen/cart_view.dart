@@ -40,11 +40,13 @@ class _CartViewState extends State<CartView> {
       body: const CartBody(),
       bottomSheet: BlocBuilder<CartCubit, CartState>(
         builder: (context, state) {
-          if (state is GetCartItemSuccess) {
-            if (state.data.data!.cartItems!.isEmpty) {
+          if (state is GetCartItemSuccess|| state is UpdateQuantityItemLoading) {
+            final cartData = context.read<CartCubit>().cartData;
+
+            if (cartData!.cartItems!.isEmpty) {
               return const SizedBox.shrink();
             }
-            return _grandTotalBottomSheet(context, state);
+            return _grandTotalBottomSheet(context);
           }
           return const SizedBox.shrink();
         },
@@ -52,8 +54,8 @@ class _CartViewState extends State<CartView> {
     );
   }
 
-  Padding _grandTotalBottomSheet(
-      BuildContext context, GetCartItemSuccess state) {
+  Padding _grandTotalBottomSheet(BuildContext context) {
+    final cartData = context.read<CartCubit>().cartData;
     return Padding(
       padding: EdgeInsets.only(
         left: 8.w,
@@ -93,7 +95,7 @@ class _CartViewState extends State<CartView> {
                     ),
                     child: Center(
                       child: Text(
-                        '${state.data.data?.totalOrderPrice} \$',
+                        '${cartData!.totalOrderPrice} \$',
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontFamily: FontConsistent.fontFamilyAcme,
                             color: ColorManger.brown,

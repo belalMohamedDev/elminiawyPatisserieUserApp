@@ -64,64 +64,88 @@ class ProductCartItem extends StatelessWidget {
               ),
               _namePriceAndRatingColumn(context, cartItems),
               const Spacer(),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: ColorManger.brownLight,
-                      borderRadius: BorderRadius.circular(14.r),
-                    ),
-                    child: Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () => context
-                              .read<CartCubit>()
-                              .updateQuantityToItem(cartItems.sId!, -1),
-                          child: CircleAvatar(
-                            backgroundColor: ColorManger.brownLight,
-                            maxRadius: 15.r,
-                            child: Icon(
-                              Icons.remove,
-                              color: ColorManger.brown,
-                              size: 15.r,
+              BlocBuilder<CartCubit, CartState>(
+                builder: (context, state) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: ColorManger.brownLight,
+                          borderRadius: BorderRadius.circular(14.r),
+                        ),
+                        child: Column(
+                          children: [
+                            GestureDetector(
+                              onTap: () => context
+                                  .read<CartCubit>()
+                                  .updateQuantityToItem(cartItems.sId!, -1),
+                              child: CircleAvatar(
+                                backgroundColor: ColorManger.brownLight,
+                                maxRadius: 15.r,
+                                child: state is UpdateQuantityItemLoading
+                                    ? (state).quantity == -1
+                                        ? CircularProgressIndicator(
+                                            color: ColorManger.brown,
+                                          )
+                                        : Icon(
+                                            Icons.remove,
+                                            color: ColorManger.brown,
+                                            size: 15.r,
+                                          )
+                                    : Icon(
+                                        Icons.remove,
+                                        color: ColorManger.brown,
+                                        size: 15.r,
+                                      ),
+                              ),
                             ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10.h,
-                        ),
-                        Text(
-                          '${cartItems.quantity!}',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.brown,
-                                  fontSize: 15.sp),
-                        ),
-                        SizedBox(
-                          width: 10.h,
-                        ),
-                        GestureDetector(
-                          onTap: () => context
-                              .read<CartCubit>()
-                              .updateQuantityToItem(cartItems.sId!, 1),
-                          child: CircleAvatar(
-                            maxRadius: 15.r,
-                            backgroundColor: ColorManger.brun,
-                            child: Icon(
-                              size: 15.r,
-                              Icons.add_rounded,
-                              color: ColorManger.white,
+                            SizedBox(
+                              width: 10.h,
                             ),
-                          ),
+                            Text(
+                              '${cartItems.quantity!}',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                      fontFamily: FontConsistent.fontFamilyAcme,
+                                      color: ColorManger.brown,
+                                      fontSize: 15.sp),
+                            ),
+                            SizedBox(
+                              width: 10.h,
+                            ),
+                            GestureDetector(
+                              onTap: () => context
+                                  .read<CartCubit>()
+                                  .updateQuantityToItem(cartItems.sId!, 1),
+                              child: CircleAvatar(
+                                maxRadius: 15.r,
+                                backgroundColor: ColorManger.brun,
+                                child: state is UpdateQuantityItemLoading
+                                    ? (state).quantity == 1
+                                        ? CircularProgressIndicator(
+                                            color: ColorManger.white,
+                                          )
+                                        : Icon(
+                                            Icons.add_rounded,
+                                            color: ColorManger.white,
+                                            size: 15.r,
+                                          )
+                                    : Icon(
+                                        Icons.add_rounded,
+                                        color: ColorManger.white,
+                                        size: 15.r,
+                                      ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                ],
+                      ),
+                    ],
+                  );
+                },
               ),
               SizedBox(
                 width: 20.w,
@@ -132,7 +156,8 @@ class ProductCartItem extends StatelessWidget {
       ),
     );
   }
-   Column _namePriceAndRatingColumn(
+
+  Column _namePriceAndRatingColumn(
       BuildContext context, GetCartItems cartItems) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,5 +207,4 @@ class ProductCartItem extends StatelessWidget {
       ],
     );
   }
-
 }

@@ -8,6 +8,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../../feature/cart/cubit/cart_cubit.dart';
 import '../../../feature/newProduct/model/response/product_response.dart';
 import '../../../feature/productDetails/product_model_sheet.dart';
 import '../../../feature/wishList/cubit/wish_list_cubit.dart';
@@ -138,10 +139,14 @@ class ProductGridViewSuccessState extends StatelessWidget {
                 );
               },
               builder: (context, state) {
+                bool isInWishlist = context
+                        .read<WishListCubit>()
+                        .favorites
+                        .containsKey(product.sId) &&
+                    context.read<WishListCubit>().favorites[product.sId]!;
+
                 return Icon(
-                    context.read<WishListCubit>().favorites[product.sId]!
-                        ? IconlyBold.heart
-                        : IconlyBroken.heart,
+                    isInWishlist ? IconlyBold.heart : IconlyBroken.heart,
                     color: ColorManger.brunLight);
               },
             ),
@@ -176,6 +181,8 @@ class ProductGridViewSuccessState extends StatelessWidget {
         builder: (context) => ProductBottomSheet(
               index: index,
               displayList: displayList,
-            ));
+            )).then((value) {
+      context.read<CartCubit>().quantityItem = 0;
+    });
   }
 }

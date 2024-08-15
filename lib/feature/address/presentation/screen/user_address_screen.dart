@@ -1,5 +1,6 @@
 import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/userAddress/cubit/user_address_cubit.dart';
+import 'package:elminiawy/feature/address/logic/userAddressCubit/user_address_cubit.dart';
+import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../refactor/user_address_body.dart';
 
 class UserAddressView extends StatefulWidget {
@@ -46,7 +48,10 @@ class _UserAddressViewState extends State<UserAddressView> {
               icon: const Icon(
                 IconlyBroken.plus,
               ),
-              onPressed: () {},
+              onPressed: () {
+                NavBarNavigator.push(context,
+                    screen: const MapScreen(), withNavBar: false);
+              },
             ),
           ),
         ],
@@ -58,4 +63,3 @@ class _UserAddressViewState extends State<UserAddressView> {
     );
   }
 }
-

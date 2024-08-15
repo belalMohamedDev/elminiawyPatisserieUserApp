@@ -26,6 +26,12 @@ class WishListCubit extends Cubit<WishListState> {
 
         dataList.addAll(dataResponse.data!);
 
+        for (var element in dataResponse.data!) {
+          if (element.inWishlist == true) {
+            favorites[element.sId!] = element.inWishlist!;
+          }
+        }
+
         emit(WishListState.getWishListSuccess(dataResponse));
       },
       failure: (error) {

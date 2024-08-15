@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common/sharedWidget/layout_builder_point_line.dart';
@@ -7,14 +8,14 @@ import '../../../../core/style/fonts/font_manger.dart';
 import '../../cubit/cart_cubit.dart';
 
 class PaymentSummary extends StatelessWidget {
-  final GetCartItemSuccess state;
-  const PaymentSummary(
-    this.state, {
+  const PaymentSummary({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final cartData = context.read<CartCubit>().cartData;
+
     return Container(
       height: 350.h,
       width: double.infinity,
@@ -56,7 +57,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${state.data.data?.totalCartPrice} \$',
+                      '${cartData!.totalCartPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brown,
@@ -92,7 +93,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${state.data.data?.totalPriceAfterDiscount} \$',
+                      '${cartData.totalPriceAfterDiscount} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: Colors.green,
@@ -124,7 +125,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${state.data.data?.taxPrice} \$',
+                      '${cartData.taxPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brunLight,
@@ -156,7 +157,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${state.data.data?.shippingPrice} \$',
+                      '${cartData.shippingPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brunLight,
@@ -169,7 +170,7 @@ class PaymentSummary extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-          const LayoutBuilderPointLine(),
+            const LayoutBuilderPointLine(),
             SizedBox(
               height: 25.h,
             ),
@@ -192,7 +193,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${state.data.data?.totalOrderPrice} \$',
+                      '${cartData.totalOrderPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brun,
@@ -208,4 +209,3 @@ class PaymentSummary extends StatelessWidget {
     );
   }
 }
-

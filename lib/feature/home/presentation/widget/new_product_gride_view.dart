@@ -48,12 +48,18 @@ class NewProductGrideView extends StatelessWidget {
           listener: (context, state) {
             state.whenOrNull(
               getProductSuccess: (data) {
+            
+
+                final wishListCubit = context.read<WishListCubit>();
+
                 for (var element in data.data!) {
-                  context
-                      .read<WishListCubit>()
-                      .favorites
-                      .addAll({element.sId!: element.inWishlist!});
+                  if (element.inWishlist == true) {
+                    wishListCubit.favorites[element.sId!] = element.inWishlist!;
+                  } else {
+                    wishListCubit.favorites.remove(element.sId!);
+                  }
                 }
+
               },
             );
           },

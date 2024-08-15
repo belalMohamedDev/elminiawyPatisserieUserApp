@@ -8,7 +8,7 @@ import '../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
-import '../../cubit/user_address_cubit.dart';
+import '../../logic/userAddressCubit/user_address_cubit.dart';
 
 class UserAddressBody extends StatelessWidget {
   const UserAddressBody({super.key});
