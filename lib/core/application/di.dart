@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
 import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
 import 'package:elminiawy/feature/cart/data/repository/cart_repo.dart';
 import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
@@ -12,6 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
+import '../../feature/address/data/repository/store_address_repo.dart';
+import '../../feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
 import '../../feature/forgetPassword/data/repository/forget_password_repo.dart';
 import '../../feature/home/data/repository/repositry.dart';
@@ -46,7 +49,7 @@ Future<void> initAppModule() async {
     _initProduct(),
     _initWishList(),
     _initLogOut(),
-    _initUserAddress(),
+    _initAddress(),
     _initProductBasedOnCategory(),
     _initCart()
   ]);
@@ -150,11 +153,19 @@ Future<void> _initLogOut() async {
         ));
 }
 
-Future<void> _initUserAddress() async {
+Future<void> _initAddress() async {
   instance
     ..registerLazySingleton<UserAddressRepositoryImplement>(
         () => UserAddressRepositoryImplement(instance(), instance()))
     ..registerFactory<UserAddressCubit>(() => UserAddressCubit(
+          instance(),
+        ))
+    ..registerFactory<MapCubit>(() => MapCubit());
+
+  instance
+    ..registerLazySingleton<StoreAddressRepositoryImplement>(
+        () => StoreAddressRepositoryImplement(instance(), instance()))
+    ..registerFactory<StoreAddressCuibtCubit>(() => StoreAddressCuibtCubit(
           instance(),
         ));
 }

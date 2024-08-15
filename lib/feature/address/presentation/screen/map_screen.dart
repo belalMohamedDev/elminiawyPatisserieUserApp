@@ -47,7 +47,7 @@ class _MapScreenState extends State<MapScreen> {
                         zoom: 15),
                     onMapCreated: onMapCreated,
                     mapType: MapType.terrain,
-                    onTap: (argument) {
+                    onTap: (argument) async{
                       markers.clear();
                       markers.addAll([
                         Marker(
@@ -58,11 +58,10 @@ class _MapScreenState extends State<MapScreen> {
                       ]);
                       setState(() {});
 
-                      print(argument);
+             
                       _getAddressFromLatLng(
                               argument.latitude, argument.longitude)
                           .then((address) {
-                        print('Address: $address');
                       });
                     },
                     markers: markers),
@@ -226,4 +225,6 @@ class _MapScreenState extends State<MapScreen> {
       return 'Failed to get address: $e';
     }
   }
+
+
 }

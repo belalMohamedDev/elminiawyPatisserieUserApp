@@ -5,6 +5,7 @@ import 'package:elminiawy/feature/address/data/model/response/create_address_res
 
 import 'package:retrofit/retrofit.dart';
 
+import '../../../feature/address/data/model/response/get_store_address_response.dart';
 import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
 import '../../../feature/cart/data/model/response/add_item.dart';
 import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
@@ -126,4 +127,7 @@ abstract class AppServiceClient {
   Future<GetCartResponse> applyCouponToCart(
     @Field("coupon") String coupon,
   );
+
+  @GET(ApiConstants.storeAddress)
+  Future<GetStoreAddressResponse> getAllStoreBranch();
 }

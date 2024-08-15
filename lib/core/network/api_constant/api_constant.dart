@@ -28,6 +28,8 @@ class ApiConstants {
   static const String address = '/v1/api/address';
   static const String cart = '/v1/api/cart';
 
+  static const String storeAddress = '/v1/api/store/address';
+
 
 
 
