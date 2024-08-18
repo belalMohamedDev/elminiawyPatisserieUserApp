@@ -54,7 +54,7 @@ GetStoreAddressData _$GetStoreAddressDataFromJson(Map<String, dynamic> json) =>
       branchArea: json['branchArea'] as String?,
       briefness: json['briefness'] as String?,
       region: json['region'] as String?,
-      sId: json['sId'] as String?,
+      sId: json['_id'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
@@ -66,7 +66,7 @@ Map<String, dynamic> _$GetStoreAddressDataToJson(
       'branchArea': instance.branchArea,
       'briefness': instance.briefness,
       'region': instance.region,
-      'sId': instance.sId,
+      '_id': instance.sId,
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
     };

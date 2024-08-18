@@ -18,6 +18,10 @@ class ImageAsset {
   static const String search = "$imagePath/search.png";
   static const String guestIcon = "$imagePath/guest_icon_light.png";
   static const String guestIconGreen = "$imagePath/guest_icon.png";
+  static const String pickMarker = "$imagePath/pick_marker.png";
+  static const String storeLocation = "$imagePath/storeLocation.png";
+  static const String navigation = "$imagePath/navigation.png";
+  static const String map = "$imagePath/map.png";
 
 
 }

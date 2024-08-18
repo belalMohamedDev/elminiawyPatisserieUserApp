@@ -1,230 +1,274 @@
-import 'dart:developer';
-
+import 'package:custom_map_markers/custom_map_markers.dart';
+import 'package:elminiawy/core/common/sharedWidget/custom_button.dart';
+import 'package:elminiawy/core/style/images/asset_manger.dart';
+import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_google_maps_webservices/places.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../../core/application/constant_manger.dart';
-import '../../../../core/utils/map.dart';
+import '../../../../core/style/color/color_manger.dart';
+import '../../../../core/style/fonts/font_manger.dart';
+import '../../logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({
-    super.key,
-  });
+  const MapScreen({super.key});
 
   @override
   State<MapScreen> createState() => _MapScreenState();
 }
 
 class _MapScreenState extends State<MapScreen> {
-  final TextEditingController searchController = TextEditingController();
-  LatLng? _currentPosition;
-  late GoogleMapController mapController;
-  Set<Marker> markers = {};
-  ScaffoldState? currentState;
-  final places = GoogleMapsPlaces(apiKey: AppConstant.mapKey);
-  List<Prediction> predictions = [];
+  String buttonText = "";
+  MapType mapType = MapType.normal;
 
   @override
   void initState() {
-    mapPreProcessing();
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future.wait([
+        context.read<StoreAddressCuibt>().getAllStoreAddress().then(
+          (value) {
+            context.read<MapCubit>().getCurrentLocation(context);
+            for (var store
+                in context.read<StoreAddressCuibt>().addressDataList) {
+              LatLng position = LatLng(store.location!.coordinates![1],
+                  store.location!.coordinates![0]);
+
+              context.read<MapCubit>().calculateDistance(
+                  context.read<MapCubit>().targetPosition, position);
+            }
+            if (context.read<MapCubit>().nearestDistance <= 5000) {
+              buttonText = "Pick Location";
+            } else {
+              buttonText = "Service not available in this area";
+            }
+          },
+        ),
+        context.read<MapCubit>().init(context)
+      ]);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final mapCuibt = context.read<MapCubit>();
+    final storeAddressCuibt = context.read<StoreAddressCuibt>();
     return Scaffold(
-      body: _currentPosition == null
-          ? const Center(child: CircularProgressIndicator())
-          : Stack(
-              children: [
-                GoogleMap(
-                    initialCameraPosition: CameraPosition(
-                        target: LatLng(_currentPosition!.latitude,
-                            _currentPosition!.longitude),
-                        zoom: 15),
-                    onMapCreated: onMapCreated,
-                    mapType: MapType.terrain,
-                    onTap: (argument) async{
-                      markers.clear();
-                      markers.addAll([
-                        Marker(
-                          markerId: const MarkerId("1"),
-                          position:
-                              LatLng(argument.latitude, argument.longitude),
-                        )
-                      ]);
-                      setState(() {});
+      body: BlocBuilder<MapCubit, MapState>(
+        builder: (context, state) {
+          if (state is Error) {
+            return Center(child: Text(state.message));
+          }
 
-             
-                      _getAddressFromLatLng(
-                              argument.latitude, argument.longitude)
-                          .then((address) {
-                      });
-                    },
-                    markers: markers),
-                Positioned(
-                  top: 15,
-                  right: 10,
-                  left: 10,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0)),
-                    height: 50,
-                    child: TextField(
-                      controller: searchController,
-                      onChanged: (value) {
-                        getPredictions(value).then((predictionsList) {
-                          log('$predictionsList==== value ===');
-                          setState(() {
-                            predictions = predictionsList;
-                          });
-                        });
-                      },
-                      decoration: InputDecoration(
-                        label: const Text(
-                          "بحث",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        prefixIcon: const Icon(
-                          Icons.map,
-                          color: Colors.grey,
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 15.0, horizontal: 15.0),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(
-                            color: Colors.grey,
-                            width: 2.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                predictions.isEmpty
-                    ? const SizedBox.shrink()
-                    : Positioned(
-                        top: 100,
-                        right: 10,
-                        left: 10,
-                        child: Container(
-                          color: Colors.white,
-                          height: 100,
-                          child: ListView.builder(
-                            itemCount: predictions.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return ListTile(
-                                title: Text(
-                                  predictions[index].description!,
-                                  style: const TextStyle(color: Colors.black),
-                                ),
-                                onTap: () async {
-                                  log(predictions[index]
-                                      .description!
-                                      .toString());
+          return Stack(
+            children: [
+              _mapWidget(context, mapCuibt, storeAddressCuibt),
+              Positioned(
+                top: 45.h,
+                right: 10.w,
+                left: 10.w,
+                child: _buildSearchBar(context),
+              ),
+              BlocBuilder<MapCubit, MapState>(
+                builder: (context, state) {
+                  if (state is SearchResults) {
+                    return Positioned(
+                      top: 100.h,
+                      right: 10.w,
+                      left: 10.w,
+                      child: _buildSearchResults(state.predictions, context),
+                    );
+                  }
 
-                                  PlacesDetailsResponse response =
-                                      await places.getDetailsByPlaceId(
-                                          predictions[index].placeId!);
-                                  if (response.isOkay) {
-                                    double lat =
-                                        response.result.geometry!.location.lat;
-                                    double lng =
-                                        response.result.geometry!.location.lng;
-                                    _changeLocation(10, LatLng(lat, lng));
-                                    predictions.clear();
-                                    setState(() {});
-                                  }
-                                },
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-              ],
+                  return const SizedBox();
+                },
+              ),
+              Positioned(
+                bottom: 165.h,
+                right: 25.w,
+                child: _currentLocationButton(
+                    mapCuibt, context, storeAddressCuibt),
+              ),
+              Positioned(
+                bottom: 105.h,
+                right: 25.w,
+                child: _togelMapType(),
+              ),
+              Positioned(
+                bottom: 30.h,
+                left: 10.w,
+                right: 10.w,
+                child: _pickLocationButton(context),
+              )
+            ],
+          );
+        },
+      ),
+    );
+  }
+
+  CustomButton _pickLocationButton(BuildContext context) {
+    return CustomButton(
+      onPressed: () {},
+      widget: Text(
+        buttonText.isEmpty ? "Enter Complete address" : buttonText,
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontSize: 16.sp,
+            color: ColorManger.white,
+            fontWeight: FontWeightManger.semiBold),
+      ),
+    );
+  }
+
+  InkWell _togelMapType() {
+    return InkWell(
+      onTap: () {
+        setState(() {});
+        if (mapType == MapType.normal) {
+          mapType = MapType.hybrid;
+        } else {
+          mapType = MapType.normal;
+        }
+      },
+      child: CircleAvatar(
+        maxRadius: 22.r,
+        backgroundColor: ColorManger.brown,
+        child: Image.asset(
+          ImageAsset.map,
+          height: 20.h,
+        ),
+      ),
+    );
+  }
+
+  InkWell _currentLocationButton(MapCubit mapCuibt, BuildContext context,
+      StoreAddressCuibt storeAddressCuibt) {
+    return InkWell(
+      onTap: () {
+        mapCuibt.getCurrentLocation(context);
+        for (var store in storeAddressCuibt.addressDataList) {
+          LatLng position = LatLng(
+              store.location!.coordinates![1], store.location!.coordinates![0]);
+
+          mapCuibt.calculateDistance(mapCuibt.targetPosition, position);
+        }
+        if (mapCuibt.nearestDistance <= 5000) {
+          buttonText = "Pick Location";
+        } else {
+          buttonText = "Service not available in this area";
+        }
+      },
+      child: CircleAvatar(
+        maxRadius: 22.r,
+        backgroundColor: ColorManger.brown,
+        child: Image.asset(
+          ImageAsset.navigation,
+          height: 20.h,
+        ),
+      ),
+    );
+  }
+
+  CustomGoogleMapMarkerBuilder _mapWidget(BuildContext context,
+      MapCubit mapCuibt, StoreAddressCuibt storeAddressCuibt) {
+    return CustomGoogleMapMarkerBuilder(
+      customMarkers: context.read<MapCubit>().markers,
+      builder: (p0, Set<Marker>? markers) {
+        return GoogleMap(
+          zoomControlsEnabled: false,
+          initialCameraPosition: CameraPosition(
+              target: context.read<MapCubit>().targetPosition, zoom: 16),
+          onMapCreated: (controller) =>
+              context.read<MapCubit>().setMapController(controller),
+          markers: markers ?? {},
+          mapType: mapType,
+          onTap: (argument) async {
+            mapCuibt.nearestDistance = double.infinity;
+
+            mapCuibt.addCurrentLocationMarkerToMap(argument);
+
+            for (var store in storeAddressCuibt.addressDataList) {
+              LatLng position = LatLng(store.location!.coordinates![1],
+                  store.location!.coordinates![0]);
+
+              mapCuibt.calculateDistance(argument, position);
+            }
+
+            setState(() {
+              if (mapCuibt.nearestDistance <= 5000) {
+                buttonText = "Pick Location";
+              } else {
+                buttonText = "Service not available in this area";
+              }
+            });
+          },
+        );
+      },
+    );
+  }
+
+  Widget _buildSearchBar(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.8,
+      height: 50,
+      child: TextFormField(
+        onChanged: (value) {
+          context.read<MapCubit>().searchLocation(value);
+        },
+        style: TextStyle(color: ColorManger.white),
+        decoration: InputDecoration(
+            hintText: 'Find Your Location',
+            prefixIcon: Icon(IconlyBroken.search,
+                size: 18.sp, color: ColorManger.white),
+            hintStyle: TextStyle(color: ColorManger.white),
+            fillColor: ColorManger.brunLight,
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: ColorManger.brunLight,
+              ),
+              borderRadius: BorderRadius.all(Radius.elliptical(10.r, 10.r)),
             ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: ColorManger.brunLight,
+              ),
+              borderRadius: BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+            )),
+      ),
     );
   }
 
-  void onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
-
-  void setCurrentLocation(LatLng currentPosition) {
-    _currentPosition = currentPosition;
-    setState(() {});
-  }
-
-  void addMarkerToMap(LatLng currentPosition) {
-    markers.addAll([
-      Marker(
-        markerId: const MarkerId("1"),
-        position: LatLng(currentPosition.latitude, currentPosition.longitude),
-      )
-    ]);
-  }
-
-  void mapPreProcessing() async {
-    Position? currentPosition = await AppUtils.determinePosition(context);
-    setCurrentLocation(LatLng(
-        currentPosition?.latitude ?? 23, currentPosition?.longitude ?? 47));
-    addMarkerToMap(LatLng(
-        currentPosition?.latitude ?? 23, currentPosition?.longitude ?? 47));
-  }
-
-  Future<List<Prediction>> getPredictions(String query) async {
-    PlacesAutocompleteResponse response = await places.autocomplete(
-      query,
+  Widget _buildSearchResults(
+      List<Prediction> predictions, BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).pop();
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            color: ColorManger.brunLight,
+            borderRadius: BorderRadius.circular(10.r)),
+        height: 100.h,
+        child: ListView.builder(
+          itemCount: predictions.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              title: Text(
+                predictions[index].description!,
+                style: TextStyle(color: ColorManger.white),
+              ),
+              onTap: () {
+                context
+                    .read<MapCubit>()
+                    .moveToLocationInTextFormField(predictions[index]);
+              },
+            );
+          },
+        ),
+      ),
     );
-    log("${response.predictions} here");
-    if (response.isOkay) {
-      return response.predictions;
-    } else {
-      return [];
-    }
   }
-
-  void _changeLocation(double zoom, LatLng latLng) {
-    double newZoom = zoom > 15 ? zoom : 15;
-    _currentPosition = latLng;
-    setState(() {
-      mapController.animateCamera(CameraUpdate.newCameraPosition(
-          CameraPosition(target: latLng, zoom: newZoom)));
-      markers.clear();
-      _currentPosition = latLng;
-      markers.add(Marker(
-        markerId: const MarkerId('1'),
-        position: latLng,
-      ));
-    });
-  }
-
-  Future<String> _getAddressFromLatLng(
-      double latitude, double longitude) async {
-    try {
-      List<Placemark> placemarks = await placemarkFromCoordinates(
-        latitude,
-        longitude,
-      );
-
-      Placemark place = placemarks[0];
-      String address =
-          "${place.street}, ${place.locality}, ${place.administrativeArea}, ${place.country}";
-
-      return address;
-    } catch (e) {
-      return 'Failed to get address: $e';
-    }
-  }
-
-
 }

@@ -43,6 +43,7 @@ class GetStoreAddressData {
   String? branchArea;
   String? briefness;
   String? region;
+  @JsonKey(name: "_id")
   String? sId;
   String? createdAt;
   String? updatedAt;

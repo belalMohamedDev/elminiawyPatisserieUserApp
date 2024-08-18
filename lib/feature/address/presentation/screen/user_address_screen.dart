@@ -6,9 +6,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/application/di.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
+import '../../logic/mapCubit/map_cubit.dart';
 import '../refactor/user_address_body.dart';
 
 class UserAddressView extends StatefulWidget {
@@ -50,7 +52,11 @@ class _UserAddressViewState extends State<UserAddressView> {
               ),
               onPressed: () {
                 NavBarNavigator.push(context,
-                    screen: const MapScreen(), withNavBar: false);
+                    screen: BlocProvider(
+                      create: (context) =>  instance<MapCubit>(),
+                      child: const MapScreen(),
+                    ),
+                    withNavBar: false);
               },
             ),
           ),

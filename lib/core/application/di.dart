@@ -10,6 +10,7 @@ import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_google_maps_webservices/places.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -34,6 +35,7 @@ import '../network/api/app_api.dart';
 import '../network/dio_factory/dio_factory.dart';
 import '../network/network_connectivity/connectivity_controller.dart';
 import 'bloc_observer.dart';
+import 'constant_manger.dart';
 import 'cubit/app_logic_cubit.dart';
 
 final instance = GetIt.instance;
@@ -41,6 +43,7 @@ final instance = GetIt.instance;
 Future<void> initAppModule() async {
   await Future.wait([
     _initAppModule(),
+    _initPlaces(),
     _initLogin(),
     _initSignUp(),
     _initForgetPassword(),
@@ -79,6 +82,14 @@ Future<void> _initAppModule() async {
   // app logic cuibt
   instance.registerFactory<AppLogicCubit>(() => AppLogicCubit());
 }
+
+Future<void> _initPlaces() async {
+
+  final places = GoogleMapsPlaces(apiKey: AppConstant.mapKey);
+
+  instance.registerLazySingleton<GoogleMapsPlaces>(() => places);
+}
+
 
 Future<void> _initLogin() async {
   instance
@@ -160,12 +171,14 @@ Future<void> _initAddress() async {
     ..registerFactory<UserAddressCubit>(() => UserAddressCubit(
           instance(),
         ))
-    ..registerFactory<MapCubit>(() => MapCubit());
+    ..registerFactory<MapCubit>(() => MapCubit(
+          instance(),
+        ));
 
   instance
     ..registerLazySingleton<StoreAddressRepositoryImplement>(
         () => StoreAddressRepositoryImplement(instance(), instance()))
-    ..registerFactory<StoreAddressCuibtCubit>(() => StoreAddressCuibtCubit(
+    ..registerFactory<StoreAddressCuibt>(() => StoreAddressCuibt(
           instance(),
         ));
 }

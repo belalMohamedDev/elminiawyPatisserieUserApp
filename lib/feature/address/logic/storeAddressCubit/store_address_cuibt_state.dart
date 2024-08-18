@@ -1,17 +1,17 @@
 part of 'store_address_cuibt_cubit.dart';
 
 @freezed
-class StoreAddressCuibtState with _$StoreAddressCuibtState {
-  const factory StoreAddressCuibtState.initial() = _Initial;
+class StoreAddressState with _$StoreAddressState {
+  const factory StoreAddressState.initial() = _Initial;
 
 
-  const factory StoreAddressCuibtState.getAllStoreAddressLoading() = GetAllStoreAddressLoading;
+  const factory StoreAddressState.getAllStoreAddressLoading() = GetAllStoreAddressLoading;
 
-  const factory StoreAddressCuibtState.getAllStoreAddressError(
+  const factory StoreAddressState.getAllStoreAddressError(
       {required int statesCode,
       required String errorMessage}) = GetAllStoreAddressError;
 
-  const factory StoreAddressCuibtState.getAllStoreAddressSuccess(
+  const factory StoreAddressState.getAllStoreAddressSuccess(
       GetStoreAddressResponse data) =
       GetAllStoreAddressSuccess;
 

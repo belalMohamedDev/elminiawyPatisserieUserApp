@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$StoreAddressCuibtState {
+mixin _$StoreAddressState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -80,17 +80,16 @@ mixin _$StoreAddressCuibtState {
 }
 
 /// @nodoc
-abstract class $StoreAddressCuibtStateCopyWith<$Res> {
-  factory $StoreAddressCuibtStateCopyWith(StoreAddressCuibtState value,
-          $Res Function(StoreAddressCuibtState) then) =
-      _$StoreAddressCuibtStateCopyWithImpl<$Res, StoreAddressCuibtState>;
+abstract class $StoreAddressStateCopyWith<$Res> {
+  factory $StoreAddressStateCopyWith(
+          StoreAddressState value, $Res Function(StoreAddressState) then) =
+      _$StoreAddressStateCopyWithImpl<$Res, StoreAddressState>;
 }
 
 /// @nodoc
-class _$StoreAddressCuibtStateCopyWithImpl<$Res,
-        $Val extends StoreAddressCuibtState>
-    implements $StoreAddressCuibtStateCopyWith<$Res> {
-  _$StoreAddressCuibtStateCopyWithImpl(this._value, this._then);
+class _$StoreAddressStateCopyWithImpl<$Res, $Val extends StoreAddressState>
+    implements $StoreAddressStateCopyWith<$Res> {
+  _$StoreAddressStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -107,7 +106,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$StoreAddressCuibtStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$StoreAddressStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -121,7 +120,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'StoreAddressCuibtState.initial()';
+    return 'StoreAddressState.initial()';
   }
 
   @override
@@ -219,7 +218,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements StoreAddressCuibtState {
+abstract class _Initial implements StoreAddressState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -233,7 +232,7 @@ abstract class _$$GetAllStoreAddressLoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetAllStoreAddressLoadingImplCopyWithImpl<$Res>
-    extends _$StoreAddressCuibtStateCopyWithImpl<$Res,
+    extends _$StoreAddressStateCopyWithImpl<$Res,
         _$GetAllStoreAddressLoadingImpl>
     implements _$$GetAllStoreAddressLoadingImplCopyWith<$Res> {
   __$$GetAllStoreAddressLoadingImplCopyWithImpl(
@@ -249,7 +248,7 @@ class _$GetAllStoreAddressLoadingImpl implements GetAllStoreAddressLoading {
 
   @override
   String toString() {
-    return 'StoreAddressCuibtState.getAllStoreAddressLoading()';
+    return 'StoreAddressState.getAllStoreAddressLoading()';
   }
 
   @override
@@ -348,7 +347,7 @@ class _$GetAllStoreAddressLoadingImpl implements GetAllStoreAddressLoading {
   }
 }
 
-abstract class GetAllStoreAddressLoading implements StoreAddressCuibtState {
+abstract class GetAllStoreAddressLoading implements StoreAddressState {
   const factory GetAllStoreAddressLoading() = _$GetAllStoreAddressLoadingImpl;
 }
 
@@ -364,8 +363,7 @@ abstract class _$$GetAllStoreAddressErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetAllStoreAddressErrorImplCopyWithImpl<$Res>
-    extends _$StoreAddressCuibtStateCopyWithImpl<$Res,
-        _$GetAllStoreAddressErrorImpl>
+    extends _$StoreAddressStateCopyWithImpl<$Res, _$GetAllStoreAddressErrorImpl>
     implements _$$GetAllStoreAddressErrorImplCopyWith<$Res> {
   __$$GetAllStoreAddressErrorImplCopyWithImpl(
       _$GetAllStoreAddressErrorImpl _value,
@@ -404,7 +402,7 @@ class _$GetAllStoreAddressErrorImpl implements GetAllStoreAddressError {
 
   @override
   String toString() {
-    return 'StoreAddressCuibtState.getAllStoreAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'StoreAddressState.getAllStoreAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
   }
 
   @override
@@ -514,7 +512,7 @@ class _$GetAllStoreAddressErrorImpl implements GetAllStoreAddressError {
   }
 }
 
-abstract class GetAllStoreAddressError implements StoreAddressCuibtState {
+abstract class GetAllStoreAddressError implements StoreAddressState {
   const factory GetAllStoreAddressError(
       {required final int statesCode,
       required final String errorMessage}) = _$GetAllStoreAddressErrorImpl;
@@ -538,7 +536,7 @@ abstract class _$$GetAllStoreAddressSuccessImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetAllStoreAddressSuccessImplCopyWithImpl<$Res>
-    extends _$StoreAddressCuibtStateCopyWithImpl<$Res,
+    extends _$StoreAddressStateCopyWithImpl<$Res,
         _$GetAllStoreAddressSuccessImpl>
     implements _$$GetAllStoreAddressSuccessImplCopyWith<$Res> {
   __$$GetAllStoreAddressSuccessImplCopyWithImpl(
@@ -570,7 +568,7 @@ class _$GetAllStoreAddressSuccessImpl implements GetAllStoreAddressSuccess {
 
   @override
   String toString() {
-    return 'StoreAddressCuibtState.getAllStoreAddressSuccess(data: $data)';
+    return 'StoreAddressState.getAllStoreAddressSuccess(data: $data)';
   }
 
   @override
@@ -677,7 +675,7 @@ class _$GetAllStoreAddressSuccessImpl implements GetAllStoreAddressSuccess {
   }
 }
 
-abstract class GetAllStoreAddressSuccess implements StoreAddressCuibtState {
+abstract class GetAllStoreAddressSuccess implements StoreAddressState {
   const factory GetAllStoreAddressSuccess(final GetStoreAddressResponse data) =
       _$GetAllStoreAddressSuccessImpl;
 

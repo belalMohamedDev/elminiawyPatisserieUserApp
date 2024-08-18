@@ -94,6 +94,8 @@ dependencies:
   flutter_google_maps_webservices: ^1.1.1
   geocoding: ^3.0.0
   http: ^1.2.2
+  widget_to_marker: ^1.0.6
+  custom_map_markers: ^0.0.2+1
 
 dev_dependencies:
   flutter_test:
@@ -132,6 +134,12 @@ flutter:
     - asset/image/search.png
     - asset/image/guest_icon.png
     - asset/image/guest_icon_light.png
+    - asset/image/pick_marker.png
+    - asset/image/storeLocation.png
+    - asset/image/navigation.png
+    - asset/image/map.png
+
+    
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

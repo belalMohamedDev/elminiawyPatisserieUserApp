@@ -7,15 +7,15 @@ import '../../data/repository/store_address_repo.dart';
 part 'store_address_cuibt_state.dart';
 part 'store_address_cuibt_cubit.freezed.dart';
 
-class StoreAddressCuibtCubit extends Cubit<StoreAddressCuibtState> {
-  StoreAddressCuibtCubit(this._addressRepositoryImplement)
-      : super(const StoreAddressCuibtState.initial());
+class StoreAddressCuibt extends Cubit<StoreAddressState> {
+  StoreAddressCuibt(this._addressRepositoryImplement)
+      : super(const StoreAddressState.initial());
 
   final StoreAddressRepositoryImplement _addressRepositoryImplement;
   List<GetStoreAddressData> addressDataList = [];
 
   Future<void> getAllStoreAddress() async {
-    emit(const StoreAddressCuibtState.getAllStoreAddressLoading());
+    emit(const StoreAddressState.getAllStoreAddressLoading());
 
     final response = await _addressRepositoryImplement.getAllStoreAddress();
 
@@ -24,11 +24,11 @@ class StoreAddressCuibtCubit extends Cubit<StoreAddressCuibtState> {
         addressDataList = [];
         addressDataList.addAll(dataResponse.data!);
       }
-      emit(StoreAddressCuibtState.getAllStoreAddressSuccess(dataResponse));
+      emit(StoreAddressState.getAllStoreAddressSuccess(dataResponse));
     }, failure: (error) {
       if (error.statusCode != 401) {
         emit(
-          StoreAddressCuibtState.getAllStoreAddressError(
+          StoreAddressState.getAllStoreAddressError(
               errorMessage: error.message!, statesCode: error.statusCode!),
         );
       }
