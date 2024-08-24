@@ -141,6 +141,7 @@ flutter:
     - asset/image/building.png
     - asset/image/home.png
     - asset/image/bag.png
+    - asset/image/location.png
 
     
 

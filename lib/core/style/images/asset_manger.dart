@@ -25,6 +25,7 @@ class ImageAsset {
   static const String building = "$imagePath/building.png";
   static const String bag = "$imagePath/bag.png";
   static const String home = "$imagePath/home.png";
+  static const String addLocation = "$imagePath/location.png";
   
 
 

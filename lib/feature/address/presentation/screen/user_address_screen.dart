@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/application/di.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/style/images/asset_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../logic/mapCubit/map_cubit.dart';
 import '../refactor/user_address_body.dart';
@@ -27,7 +28,7 @@ class _UserAddressViewState extends State<UserAddressView> {
     super.initState();
     context.read<UserAddressCubit>().getUserAddress();
   }
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,27 +47,29 @@ class _UserAddressViewState extends State<UserAddressView> {
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 5.w),
-            child: IconButton(
-              icon: const Icon(
-                IconlyBroken.plus,
-              ),
-              onPressed: () {
-                NavBarNavigator.push(context,
-                    screen: MultiBlocProvider(
-                      providers: [
-                        BlocProvider(
-                          create: (context) => instance<MapCubit>(),
-                        ),
-                        BlocProvider.value(
-                          value: instance<StoreAddressCuibt>(),
-                        ),
-                      ],
-                      child: const MapScreen(),
-                    ),
-                    withNavBar: false);
-              },
-            ),
+            padding: EdgeInsets.only(right: 15.w),
+            child: InkWell(
+                onTap: () {
+                  NavBarNavigator.push(context,
+                      screen: MultiBlocProvider(
+                        providers: [
+                          BlocProvider(
+                            create: (context) => instance<MapCubit>(),
+                          ),
+                          BlocProvider.value(
+                            value: instance<StoreAddressCuibt>(),
+                          ),
+                        ],
+                        child: const MapScreen(),
+                      ),
+                      withNavBar: false);
+                },
+                child: Image.asset(
+                  ImageAsset.addLocation,
+                  height: 22.h,
+                )),
+
+    
           ),
         ],
       ),
