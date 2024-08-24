@@ -22,6 +22,10 @@ class ImageAsset {
   static const String storeLocation = "$imagePath/storeLocation.png";
   static const String navigation = "$imagePath/navigation.png";
   static const String map = "$imagePath/map.png";
+  static const String building = "$imagePath/building.png";
+  static const String bag = "$imagePath/bag.png";
+  static const String home = "$imagePath/home.png";
+  
 
 
 }

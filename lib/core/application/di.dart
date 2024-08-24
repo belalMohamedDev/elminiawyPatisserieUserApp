@@ -84,12 +84,10 @@ Future<void> _initAppModule() async {
 }
 
 Future<void> _initPlaces() async {
-
   final places = GoogleMapsPlaces(apiKey: AppConstant.mapKey);
 
   instance.registerLazySingleton<GoogleMapsPlaces>(() => places);
 }
-
 
 Future<void> _initLogin() async {
   instance
@@ -168,10 +166,10 @@ Future<void> _initAddress() async {
   instance
     ..registerLazySingleton<UserAddressRepositoryImplement>(
         () => UserAddressRepositoryImplement(instance(), instance()))
-    ..registerFactory<UserAddressCubit>(() => UserAddressCubit(
+    ..registerFactory<MapCubit>(() => MapCubit(
           instance(),
         ))
-    ..registerFactory<MapCubit>(() => MapCubit(
+    ..registerFactory<UserAddressCubit>(() => UserAddressCubit(
           instance(),
         ));
 

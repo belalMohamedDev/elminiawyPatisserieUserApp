@@ -82,7 +82,7 @@ abstract class AppServiceClient {
 
   @POST(ApiConstants.address)
   Future<CreateAddressResponse> createAddress(
-    @Body() CreateAddressRequestBody createAddressRequestBody,
+    @Body() Map<String, dynamic>  createAddressRequestBody,
   );
 
   @GET(ApiConstants.address)

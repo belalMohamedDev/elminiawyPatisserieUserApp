@@ -75,6 +75,7 @@ class MapCubit extends Cubit<MapState> {
 
   // Add a marker for the current location on the map
   void addCurrentLocationMarkerToMap(LatLng position) async {
+    targetPosition = position;
     final marker = MarkerData(
       marker: Marker(
         markerId: const MarkerId('currentLocation'),

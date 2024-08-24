@@ -30,17 +30,18 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
       CreateAddressRequestBody createAddressRequestBody) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response =
-            await _apiService.createAddress(createAddressRequestBody);
+        final response = await _apiService.createAddress(
+          createAddressRequestBody.toFilteredJson(),
+        );
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
       }
     } else {
-      //return  internet connection error
       return ApiResult.failure(DataSource.noInternetConnection.getFailure());
     }
   }
+
 
   @override
   Future<ApiResult<GetAddressResponse>> getAllAddress() async {

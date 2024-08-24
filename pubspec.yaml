@@ -138,6 +138,9 @@ flutter:
     - asset/image/storeLocation.png
     - asset/image/navigation.png
     - asset/image/map.png
+    - asset/image/building.png
+    - asset/image/home.png
+    - asset/image/bag.png
 
     
 

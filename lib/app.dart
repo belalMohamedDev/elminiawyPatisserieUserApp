@@ -4,15 +4,13 @@ import 'package:elminiawy/core/application/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'core/routing/route_manger.dart';
 import 'core/routing/routes.dart';
 import 'core/services/app_storage_key.dart';
 import 'core/services/shared_pref_helper.dart';
 import 'core/style/fonts/strings_manger.dart';
 import 'core/style/theme/theme_manger.dart';
 import 'core/utils/extensions.dart';
-import 'feature/address/logic/mapCubit/map_cubit.dart';
-import 'feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
-import 'feature/address/presentation/screen/map_screen.dart';
 import 'feature/cart/cubit/cart_cubit.dart';
 import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
@@ -27,6 +25,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     ScreenUtil.init(context);
 
     return MultiBlocProvider(
@@ -49,17 +48,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => instance<CartCubit>(),
         ),
-
-
-        //----------------------
-        BlocProvider(
-          create: (context) => instance<MapCubit>(),
-        ),
-          BlocProvider(
-          create: (context) => instance<StoreAddressCuibt>(),
-        ),
       ],
-      
       child: FutureBuilder<String>(
         future: checkIfLoggedInUser(),
         builder: (context, snapshot) {
@@ -81,9 +70,8 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                  // initialRoute: snapshot.data,
-                  // onGenerateRoute: RouteGenerator.getRoute,
-                  home: const MapScreen(),
+                  initialRoute: snapshot.data,
+                  onGenerateRoute: RouteGenerator.getRoute,
                   theme: getApplicationTheme(),
                 );
               },

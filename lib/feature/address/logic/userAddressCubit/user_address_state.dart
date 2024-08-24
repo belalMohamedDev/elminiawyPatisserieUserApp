@@ -23,9 +23,8 @@ class UserAddressState with _$UserAddressState {
   const factory UserAddressState.getAllAddressSuccess(GetAddressResponse data) =
       GetAllAddressSuccess;
 
-
-
-
+  const factory UserAddressState.changeRegionAreaIndex(int index,String alias) =
+      ChangeRegionAreaIndex;
 
   const factory UserAddressState.updateAddressLoading() = UpdateAddressLoading;
 
@@ -34,10 +33,7 @@ class UserAddressState with _$UserAddressState {
       required String errorMessage}) = UpdateAddressError;
 
   const factory UserAddressState.updateAddressSuccess(
-      CreateAddressResponse data) =
-      UpdateAddressSuccess;
-
-
+      CreateAddressResponse data) = UpdateAddressSuccess;
 
   const factory UserAddressState.removeAddressLoading() = RemoveAddressLoading;
 
@@ -46,6 +42,5 @@ class UserAddressState with _$UserAddressState {
       required String errorMessage}) = RemoveAddressError;
 
   const factory UserAddressState.removeAddressSuccess(
-      ApiSuccessGeneralModel data) =
-      RemoveAddressSuccess;
+      ApiSuccessGeneralModel data) = RemoveAddressSuccess;
 }

@@ -327,12 +327,12 @@ class _AppServiceClient implements AppServiceClient {
 
   @override
   Future<CreateAddressResponse> createAddress(
-      CreateAddressRequestBody createAddressRequestBody) async {
+      Map<String, dynamic> createAddressRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(createAddressRequestBody.toJson());
+    _data.addAll(createAddressRequestBody);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<CreateAddressResponse>(Options(
       method: 'POST',

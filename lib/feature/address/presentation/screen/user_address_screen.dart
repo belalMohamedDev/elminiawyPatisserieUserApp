@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/utils/extensions.dart';
+import 'package:elminiawy/feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 import 'package:elminiawy/feature/address/logic/userAddressCubit/user_address_cubit.dart';
 import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _UserAddressViewState extends State<UserAddressView> {
     super.initState();
     context.read<UserAddressCubit>().getUserAddress();
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +53,15 @@ class _UserAddressViewState extends State<UserAddressView> {
               ),
               onPressed: () {
                 NavBarNavigator.push(context,
-                    screen: BlocProvider(
-                      create: (context) =>  instance<MapCubit>(),
+                    screen: MultiBlocProvider(
+                      providers: [
+                        BlocProvider(
+                          create: (context) => instance<MapCubit>(),
+                        ),
+                        BlocProvider.value(
+                          value: instance<StoreAddressCuibt>(),
+                        ),
+                      ],
                       child: const MapScreen(),
                     ),
                     withNavBar: false);

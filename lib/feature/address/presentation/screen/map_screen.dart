@@ -9,9 +9,12 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../../../core/application/di.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../logic/storeAddressCubit/store_address_cuibt_cubit.dart';
+import '../../logic/userAddressCubit/user_address_cubit.dart';
+import 'add_new_address_screen.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -68,8 +71,8 @@ class _MapScreenState extends State<MapScreen> {
               _mapWidget(context, mapCuibt, storeAddressCuibt),
               Positioned(
                 top: 45.h,
-                right: 10.w,
-                left: 10.w,
+                right: 20.w,
+                left: 20.w,
                 child: _buildSearchBar(context),
               ),
               BlocBuilder<MapCubit, MapState>(
@@ -99,9 +102,9 @@ class _MapScreenState extends State<MapScreen> {
               ),
               Positioned(
                 bottom: 30.h,
-                left: 10.w,
-                right: 10.w,
-                child: _pickLocationButton(context),
+                left: 20.w,
+                right: 20.w,
+                child: _pickLocationButton(context, mapCuibt),
               )
             ],
           );
@@ -110,9 +113,43 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  CustomButton _pickLocationButton(BuildContext context) {
+  CustomButton _pickLocationButton(BuildContext context, MapCubit mapCuibt) {
     return CustomButton(
-      onPressed: () {},
+      onPressed: () async {
+        if (mapCuibt.nearestDistance <= 5000) {
+          String addressAreaInformation = await mapCuibt.getAddressFromLatLng(
+              mapCuibt.targetPosition.latitude,
+              mapCuibt.targetPosition.longitude);
+          if (!context.mounted) return;
+
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BlocProvider(
+                create: (context) => instance<UserAddressCubit>(),
+                child: AddNewAddressScreen(
+                    latLng: mapCuibt.targetPosition,
+                    markerData: mapCuibt.markers,
+                    addressAreaInformation: addressAreaInformation),
+              ),
+            ),
+            (route) => route.isFirst,
+          );
+
+          // Navigator.pushReplacement(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => BlocProvider(
+          //       create: (context) => instance<UserAddressCubit>(),
+          //       child: AddNewAddressScreen(
+          //           latLng: mapCuibt.targetPosition,
+          //           markerData: mapCuibt.markers,
+          //           addressAreaInformation: addressAreaInformation),
+          //     ),
+          //   ),
+          // );
+        }
+      },
       widget: Text(
         buttonText.isEmpty ? "Enter Complete address" : buttonText,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
