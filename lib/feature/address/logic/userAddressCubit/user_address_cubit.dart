@@ -28,7 +28,6 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   final TextEditingController addressLabel = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-
   List<GetAddressResponseData> addressDataList = [];
   int regionAreaIndex = 0;
   String aliasData = "Apartment";
@@ -110,7 +109,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
     );
   }
 
-Future<void> addNewAddress(
+  Future<void> addNewAddress(
       String region, String latitude, String longitude) async {
     emit(const UserAddressState.createNewAddressLoading());
 
@@ -159,25 +158,38 @@ Future<void> addNewAddress(
     );
   }
 
-
-  Future<void> updateAddress(String id) async {
+  Future<void> updateAddress(
+      String id, String region, String latitude, String longitude) async {
     emit(const UserAddressState.updateAddressLoading());
+    final createAddressRequestBody = CreateAddressRequestBody(
+      additionalDirections: additionalDirectionsContoller.text.trim().isNotEmpty
+          ? additionalDirectionsContoller.text.trim()
+          : null,
+      alias: aliasData.trim().isNotEmpty ? aliasData.trim() : null,
+      buildingName: buildingNameController.text.trim().isNotEmpty
+          ? buildingNameController.text.trim()
+          : null,
+      apartmentNumber: companyController.text.trim().isNotEmpty
+          ? companyController.text.trim()
+          : null,
+      floor: floorController.text.trim().isNotEmpty
+          ? floorController.text.trim()
+          : null,
+      region: region.trim().isNotEmpty ? region.trim() : null,
+      streetName: streetController.text.trim().isNotEmpty
+          ? streetController.text.trim()
+          : null,
+      phone: phoneNumberContoller.text.trim().isNotEmpty
+          ? phoneNumberContoller.text.trim()
+          : null,
+      addressLabel:
+          addressLabel.text.trim().isNotEmpty ? addressLabel.text.trim() : null,
+      latitude: latitude.trim().isNotEmpty ? latitude.trim() : null,
+      longitude: longitude.trim().isNotEmpty ? longitude.trim() : null,
+    );
 
     final response = await _userAddressRepository.updateAddress(
-        id,
-        CreateAddressRequestBody(
-          additionalDirections: '',
-          alias: '',
-          buildingName: '',
-          apartmentNumber: '',
-          floor: '',
-          region: '',
-          streetName: '',
-          phone: '',
-          addressLabel: '',
-          latitude: '',
-          longitude: '',
-        ));
+        id, createAddressRequestBody);
 
     response.when(
       success: (dataResponse) {

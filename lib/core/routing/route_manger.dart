@@ -4,6 +4,7 @@ import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../feature/address/logic/mapCubit/map_cubit.dart';
 import '../../feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 import '../../feature/bottomNavBar/presentation/nav_bar_view.dart';
 import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
@@ -71,6 +72,9 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
+              BlocProvider(
+                create: (context) => instance<MapCubit>(),
+              ),
               BlocProvider(
                 create: (context) => instance<UserAddressCubit>(),
               ),

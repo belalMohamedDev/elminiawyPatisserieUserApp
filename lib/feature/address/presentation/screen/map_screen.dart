@@ -136,18 +136,7 @@ class _MapScreenState extends State<MapScreen> {
             (route) => route.isFirst,
           );
 
-          // Navigator.pushReplacement(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => BlocProvider(
-          //       create: (context) => instance<UserAddressCubit>(),
-          //       child: AddNewAddressScreen(
-          //           latLng: mapCuibt.targetPosition,
-          //           markerData: mapCuibt.markers,
-          //           addressAreaInformation: addressAreaInformation),
-          //     ),
-          //   ),
-          // );
+        
         }
       },
       widget: Text(

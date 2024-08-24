@@ -79,7 +79,7 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
     if (await _networkInfo.isConnected) {
       try {
         final response =
-            await _apiService.updateAddress(id, createAddressRequestBody);
+            await _apiService.updateAddress(id, createAddressRequestBody.toFilteredJson());
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);

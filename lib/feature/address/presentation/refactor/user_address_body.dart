@@ -1,14 +1,18 @@
+import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:iconly/iconly.dart';
 
+import '../../../../core/application/di.dart';
 import '../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../logic/userAddressCubit/user_address_cubit.dart';
+import '../screen/add_new_address_screen.dart';
 
 class UserAddressBody extends StatelessWidget {
   const UserAddressBody({super.key});
@@ -64,7 +68,33 @@ class UserAddressBody extends StatelessWidget {
                         label: 'Delete',
                       ),
                       SlidableAction(
-                        onPressed: (context) {},
+                        onPressed: (context) {
+                          LatLng latLng = LatLng(
+                              userAddress.addressDataList[index].location!
+                                  .coordinates![1],
+                              userAddress.addressDataList[index].location!
+                                  .coordinates![0]);
+
+                          final mapCubit = context.read<MapCubit>();
+                          mapCubit.addCurrentLocationMarkerToMap(latLng);
+
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BlocProvider.value(
+                                value: instance<UserAddressCubit>(),
+                                child: AddNewAddressScreen(
+                                  latLng: latLng,
+                                  markerData: mapCubit.markers,
+                                  addressAreaInformation: userAddress
+                                      .addressDataList[index].region!,
+                                  getAddressResponseData:
+                                      userAddress.addressDataList[index],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
                         backgroundColor: ColorManger.backgroundItem,
                         foregroundColor: ColorManger.brown,
                         icon: IconlyBold.edit,
@@ -73,8 +103,7 @@ class UserAddressBody extends StatelessWidget {
                     ],
                   ),
 
-                  // The child of the Slidable is what the user sees when the
-                  // component is not dragged.
+              
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -115,18 +144,21 @@ class UserAddressBody extends StatelessWidget {
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          Text(
-                            userAddress.addressDataList[index].region!,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.grey,
-                                    fontSize: 11.sp),
-                            maxLines: 1,
-                            textAlign: TextAlign.start,
-                            overflow: TextOverflow.ellipsis,
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: 300.w),
+                            child: Text(
+                              userAddress.addressDataList[index].region!,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                      fontFamily: FontConsistent.fontFamilyAcme,
+                                      color: ColorManger.grey,
+                                      fontSize: 11.sp),
+                              maxLines: 1,
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ],
                       )
@@ -134,7 +166,7 @@ class UserAddressBody extends StatelessWidget {
                   )),
             ),
             SizedBox(
-              height: 20.h,
+              height: 15.h,
             )
           ],
         );

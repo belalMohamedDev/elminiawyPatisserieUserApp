@@ -13,19 +13,22 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/fonts/strings_manger.dart';
 import '../../../../core/utils/app_regex.dart';
+import '../../data/model/response/get_address_response.dart';
 import '../../logic/userAddressCubit/user_address_cubit.dart';
 import '../widget/region_area_widget.dart';
 
 class AddNewAddressBody extends StatelessWidget {
-  final LatLng latLng;
-  final List<MarkerData> markerData;
-  final String addressAreaInformation;
+  final LatLng? latLng;
+  final List<MarkerData>? markerData;
+  final String? addressAreaInformation;
+  final GetAddressResponseData? getAddressResponseData;
 
   const AddNewAddressBody({
     super.key,
-    required this.latLng,
-    required this.markerData,
-    required this.addressAreaInformation,
+    this.latLng,
+    this.markerData,
+    this.addressAreaInformation,
+    this.getAddressResponseData,
   });
 
   @override
@@ -36,11 +39,11 @@ class AddNewAddressBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _mapWidget(context, latLng, markerData),
+            _mapWidget(context, latLng!, markerData!),
             SizedBox(
               height: 10.h,
             ),
-            _cardArea(context, addressAreaInformation),
+            _cardArea(context, addressAreaInformation!),
             SizedBox(
               height: 15.h,
             ),
@@ -48,7 +51,7 @@ class AddNewAddressBody extends StatelessWidget {
             SizedBox(
               height: 15.h,
             ),
-            _addressTextFormField(context, latLng, addressAreaInformation),
+            _addressTextFormField(context, latLng!, addressAreaInformation!),
           ],
         ),
       ),
@@ -63,6 +66,9 @@ class AddNewAddressBody extends StatelessWidget {
             createNewAddressError: (statesCode, errorMessage) =>
                 ShowToast.showToastErrorTop(
                     errorMessage: errorMessage, context: context),
+            updateAddressError: (statesCode, errorMessage) =>
+                ShowToast.showToastErrorTop(
+                    errorMessage: errorMessage, context: context),
             createNewAddressSuccess: (data) {
               final userAddressCubit = context.read<UserAddressCubit>();
 
@@ -71,6 +77,16 @@ class AddNewAddressBody extends StatelessWidget {
               if (context.mounted) {
                 userAddressCubit.clearAllControllers();
 
+                Navigator.pushReplacementNamed(
+                  context,
+                  Routes.address,
+                );
+              }
+            },
+            updateAddressSuccess: (data) {
+              ShowToast.showToastSuccessTop(
+                  message: data.message!, context: context);
+              if (context.mounted) {
                 Navigator.pushReplacementNamed(
                   context,
                   Routes.address,
@@ -237,14 +253,50 @@ class AddNewAddressBody extends StatelessWidget {
                   CustomButton(
                       onPressed: () async {
                         if (userAddressCubit.formKey.currentState!.validate()) {
-                          await userAddressCubit.addNewAddress(
-                              addressAreaInformation,
-                              '${latLng.latitude}',
-                              '${latLng.longitude}');
+                          if (getAddressResponseData != null) {
+                            await userAddressCubit.updateAddress(
+                                getAddressResponseData!.sId!,
+                                addressAreaInformation,
+                                '${latLng.latitude}',
+                                '${latLng.longitude}');
+                          } else {
+                            await userAddressCubit.addNewAddress(
+                                addressAreaInformation,
+                                '${latLng.latitude}',
+                                '${latLng.longitude}');
+                          }
                         }
                       },
                       widget: state.maybeWhen(
                         createNewAddressLoading: () => Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: 20.h,
+                              width: 20.w,
+                              child: const CircularProgressIndicator(
+                                color: Colors.white,
+                                strokeWidth: 2.0,
+                                strokeAlign: 0.01,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15.w,
+                            ),
+                            Text(
+                              AppStrings.loading,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                      fontSize: 16.sp,
+                                      color: ColorManger.white,
+                                      fontWeight: FontWeightManger.semiBold),
+                            ),
+                          ],
+                        ),
+                        updateAddressLoading: () => Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -372,11 +424,17 @@ class AddNewAddressBody extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 20.w, top: 5.h),
-                  child: Text(addressAreaInformation,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brunLight,
-                          fontSize: 10.sp)),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 250.w),
+                    child: Text(addressAreaInformation,
+                        maxLines: 1,
+                        textAlign: TextAlign.start,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontFamily: FontConsistent.fontFamilyAcme,
+                            color: ColorManger.brunLight,
+                            fontSize: 10.sp)),
+                  ),
                 )
               ],
             ),

@@ -18,7 +18,6 @@ import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
 import '../../../feature/productBasedOnCategory/data/response/product_category.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
-import '../../../feature/address/data/model/request/create_address_request.dart';
 import '../../../feature/address/data/model/response/get_address_response.dart';
 import '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_request.dart';
 import '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
@@ -91,7 +90,7 @@ abstract class AppServiceClient {
   @PUT('${ApiConstants.address}/{id}')
   Future<CreateAddressResponse> updateAddress(
     @Path("id") String id,
-    @Body() CreateAddressRequestBody createAddressRequestBody,
+     @Body() Map<String, dynamic> createAddressRequestBody,
   );
 
   @DELETE('${ApiConstants.address}/{id}')
