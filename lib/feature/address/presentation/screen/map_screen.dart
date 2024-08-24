@@ -9,15 +9,14 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../../core/application/di.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../logic/storeAddressCubit/store_address_cuibt_cubit.dart';
-import '../../logic/userAddressCubit/user_address_cubit.dart';
 import 'add_new_address_screen.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({super.key});
+  final bool isUpdateMap;
+  const MapScreen({super.key, this.isUpdateMap = false});
 
   @override
   State<MapScreen> createState() => _MapScreenState();
@@ -122,21 +121,26 @@ class _MapScreenState extends State<MapScreen> {
               mapCuibt.targetPosition.longitude);
           if (!context.mounted) return;
 
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(
-              builder: (context) => BlocProvider(
-                create: (context) => instance<UserAddressCubit>(),
-                child: AddNewAddressScreen(
+          if (widget.isUpdateMap == true) {
+            var resultData = {
+              'latLng': mapCuibt.targetPosition,
+              'markerData': mapCuibt.markers,
+              'addressAreaInformation': addressAreaInformation
+            };
+
+            Navigator.pop(context, resultData);
+          } else {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AddNewAddressScreen(
                     latLng: mapCuibt.targetPosition,
                     markerData: mapCuibt.markers,
                     addressAreaInformation: addressAreaInformation),
               ),
-            ),
-            (route) => route.isFirst,
-          );
-
-        
+              (route) => route.isFirst,
+            );
+          }
         }
       },
       widget: Text(

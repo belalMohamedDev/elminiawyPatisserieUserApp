@@ -11,6 +11,11 @@ class UserAddressState with _$UserAddressState {
       {required int statesCode,
       required String errorMessage}) = CreateNewAddressError;
 
+  const factory UserAddressState.updateAddressRegion(
+      {required String message,
+      required LatLng latLng,
+      required List<MarkerData> markData}) = UpdateAddressRegion;
+
   const factory UserAddressState.createNewAddressSuccess(
       CreateAddressResponse data) = CreateNewAddressSuccess;
 
@@ -23,8 +28,8 @@ class UserAddressState with _$UserAddressState {
   const factory UserAddressState.getAllAddressSuccess(GetAddressResponse data) =
       GetAllAddressSuccess;
 
-  const factory UserAddressState.changeRegionAreaIndex(int index,String alias) =
-      ChangeRegionAreaIndex;
+  const factory UserAddressState.changeRegionAreaIndex(
+      int index, String alias) = ChangeRegionAreaIndex;
 
   const factory UserAddressState.updateAddressLoading() = UpdateAddressLoading;
 

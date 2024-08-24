@@ -1,5 +1,4 @@
 import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 import 'package:elminiawy/feature/address/logic/userAddressCubit/user_address_cubit.dart';
 import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/application/di.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/images/asset_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../logic/mapCubit/map_cubit.dart';
 import '../refactor/user_address_body.dart';
 
 class UserAddressView extends StatefulWidget {
@@ -51,17 +48,7 @@ class _UserAddressViewState extends State<UserAddressView> {
             child: InkWell(
                 onTap: () {
                   NavBarNavigator.push(context,
-                      screen: MultiBlocProvider(
-                        providers: [
-                          BlocProvider(
-                            create: (context) => instance<MapCubit>(),
-                          ),
-                          BlocProvider.value(
-                            value: instance<StoreAddressCuibt>(),
-                          ),
-                        ],
-                        child: const MapScreen(),
-                      ),
+                      screen: const MapScreen(),
                       withNavBar: false);
                 },
                 child: Image.asset(

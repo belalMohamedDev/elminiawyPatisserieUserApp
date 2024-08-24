@@ -22,6 +22,9 @@ mixin _$UserAddressState {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -45,6 +48,8 @@ mixin _$UserAddressState {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -64,6 +69,8 @@ mixin _$UserAddressState {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -85,6 +92,7 @@ mixin _$UserAddressState {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -105,6 +113,7 @@ mixin _$UserAddressState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -123,6 +132,7 @@ mixin _$UserAddressState {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -199,6 +209,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -225,6 +238,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -247,6 +262,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -274,6 +291,7 @@ class _$InitialImpl implements _Initial {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -297,6 +315,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -318,6 +337,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -387,6 +407,9 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -413,6 +436,8 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -435,6 +460,8 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -462,6 +489,7 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -485,6 +513,7 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -506,6 +535,7 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -611,6 +641,9 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -637,6 +670,8 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -659,6 +694,8 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -686,6 +723,7 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -709,6 +747,7 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -730,6 +769,7 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -760,6 +800,264 @@ abstract class CreateNewAddressError implements UserAddressState {
   @JsonKey(ignore: true)
   _$$CreateNewAddressErrorImplCopyWith<_$CreateNewAddressErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateAddressRegionImplCopyWith<$Res> {
+  factory _$$UpdateAddressRegionImplCopyWith(_$UpdateAddressRegionImpl value,
+          $Res Function(_$UpdateAddressRegionImpl) then) =
+      __$$UpdateAddressRegionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message, LatLng latLng, List<MarkerData> markData});
+}
+
+/// @nodoc
+class __$$UpdateAddressRegionImplCopyWithImpl<$Res>
+    extends _$UserAddressStateCopyWithImpl<$Res, _$UpdateAddressRegionImpl>
+    implements _$$UpdateAddressRegionImplCopyWith<$Res> {
+  __$$UpdateAddressRegionImplCopyWithImpl(_$UpdateAddressRegionImpl _value,
+      $Res Function(_$UpdateAddressRegionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+    Object? latLng = null,
+    Object? markData = null,
+  }) {
+    return _then(_$UpdateAddressRegionImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      latLng: null == latLng
+          ? _value.latLng
+          : latLng // ignore: cast_nullable_to_non_nullable
+              as LatLng,
+      markData: null == markData
+          ? _value._markData
+          : markData // ignore: cast_nullable_to_non_nullable
+              as List<MarkerData>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
+  const _$UpdateAddressRegionImpl(
+      {required this.message,
+      required this.latLng,
+      required final List<MarkerData> markData})
+      : _markData = markData;
+
+  @override
+  final String message;
+  @override
+  final LatLng latLng;
+  final List<MarkerData> _markData;
+  @override
+  List<MarkerData> get markData {
+    if (_markData is EqualUnmodifiableListView) return _markData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_markData);
+  }
+
+  @override
+  String toString() {
+    return 'UserAddressState.updateAddressRegion(message: $message, latLng: $latLng, markData: $markData)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAddressRegionImpl &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.latLng, latLng) || other.latLng == latLng) &&
+            const DeepCollectionEquality().equals(other._markData, _markData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message, latLng,
+      const DeepCollectionEquality().hash(_markData));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateAddressRegionImplCopyWith<_$UpdateAddressRegionImpl> get copyWith =>
+      __$$UpdateAddressRegionImplCopyWithImpl<_$UpdateAddressRegionImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createNewAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
+    required TResult Function(CreateAddressResponse data)
+        createNewAddressSuccess,
+    required TResult Function() getAllAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        getAllAddressError,
+    required TResult Function(GetAddressResponse data) getAllAddressSuccess,
+    required TResult Function(int index, String alias) changeRegionAreaIndex,
+    required TResult Function() updateAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAddressError,
+    required TResult Function(CreateAddressResponse data) updateAddressSuccess,
+    required TResult Function() removeAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        removeAddressError,
+    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+  }) {
+    return updateAddressRegion(message, latLng, markData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createNewAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
+    TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult? Function()? getAllAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult? Function(int index, String alias)? changeRegionAreaIndex,
+    TResult? Function()? updateAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult? Function()? removeAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+  }) {
+    return updateAddressRegion?.call(message, latLng, markData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createNewAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
+    TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
+    TResult Function()? getAllAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(GetAddressResponse data)? getAllAddressSuccess,
+    TResult Function(int index, String alias)? changeRegionAreaIndex,
+    TResult Function()? updateAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(CreateAddressResponse data)? updateAddressSuccess,
+    TResult Function()? removeAddressLoading,
+    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressRegion != null) {
+      return updateAddressRegion(message, latLng, markData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CreateNewAddressLoading value)
+        createNewAddressLoading,
+    required TResult Function(CreateNewAddressError value)
+        createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
+    required TResult Function(CreateNewAddressSuccess value)
+        createNewAddressSuccess,
+    required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
+    required TResult Function(GetAllAddressError value) getAllAddressError,
+    required TResult Function(GetAllAddressSuccess value) getAllAddressSuccess,
+    required TResult Function(ChangeRegionAreaIndex value)
+        changeRegionAreaIndex,
+    required TResult Function(UpdateAddressLoading value) updateAddressLoading,
+    required TResult Function(UpdateAddressError value) updateAddressError,
+    required TResult Function(UpdateAddressSuccess value) updateAddressSuccess,
+    required TResult Function(RemoveAddressLoading value) removeAddressLoading,
+    required TResult Function(RemoveAddressError value) removeAddressError,
+    required TResult Function(RemoveAddressSuccess value) removeAddressSuccess,
+  }) {
+    return updateAddressRegion(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
+    TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult? Function(GetAllAddressError value)? getAllAddressError,
+    TResult? Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult? Function(ChangeRegionAreaIndex value)? changeRegionAreaIndex,
+    TResult? Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult? Function(UpdateAddressError value)? updateAddressError,
+    TResult? Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult? Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult? Function(RemoveAddressError value)? removeAddressError,
+    TResult? Function(RemoveAddressSuccess value)? removeAddressSuccess,
+  }) {
+    return updateAddressRegion?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
+    TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
+    TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
+    TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
+    TResult Function(GetAllAddressError value)? getAllAddressError,
+    TResult Function(GetAllAddressSuccess value)? getAllAddressSuccess,
+    TResult Function(ChangeRegionAreaIndex value)? changeRegionAreaIndex,
+    TResult Function(UpdateAddressLoading value)? updateAddressLoading,
+    TResult Function(UpdateAddressError value)? updateAddressError,
+    TResult Function(UpdateAddressSuccess value)? updateAddressSuccess,
+    TResult Function(RemoveAddressLoading value)? removeAddressLoading,
+    TResult Function(RemoveAddressError value)? removeAddressError,
+    TResult Function(RemoveAddressSuccess value)? removeAddressSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateAddressRegion != null) {
+      return updateAddressRegion(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateAddressRegion implements UserAddressState {
+  const factory UpdateAddressRegion(
+      {required final String message,
+      required final LatLng latLng,
+      required final List<MarkerData> markData}) = _$UpdateAddressRegionImpl;
+
+  String get message;
+  LatLng get latLng;
+  List<MarkerData> get markData;
+  @JsonKey(ignore: true)
+  _$$UpdateAddressRegionImplCopyWith<_$UpdateAddressRegionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -833,6 +1131,9 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -859,6 +1160,8 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -881,6 +1184,8 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -908,6 +1213,7 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -931,6 +1237,7 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -952,6 +1259,7 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -1025,6 +1333,9 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -1051,6 +1362,8 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1073,6 +1386,8 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1100,6 +1415,7 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -1123,6 +1439,7 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -1144,6 +1461,7 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -1248,6 +1566,9 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -1274,6 +1595,8 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1296,6 +1619,8 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1323,6 +1648,7 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -1346,6 +1672,7 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -1367,6 +1694,7 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -1469,6 +1797,9 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -1495,6 +1826,8 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1517,6 +1850,8 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1544,6 +1879,7 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -1567,6 +1903,7 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -1588,6 +1925,7 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -1696,6 +2034,9 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -1722,6 +2063,8 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1744,6 +2087,8 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1771,6 +2116,7 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -1794,6 +2140,7 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -1815,6 +2162,7 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -1889,6 +2237,9 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -1915,6 +2266,8 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1937,6 +2290,8 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -1964,6 +2319,7 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -1987,6 +2343,7 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -2008,6 +2365,7 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -2112,6 +2470,9 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -2138,6 +2499,8 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2160,6 +2523,8 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2187,6 +2552,7 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -2210,6 +2576,7 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -2231,6 +2598,7 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -2333,6 +2701,9 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -2359,6 +2730,8 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2381,6 +2754,8 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2408,6 +2783,7 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -2431,6 +2807,7 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -2452,6 +2829,7 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -2525,6 +2903,9 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -2551,6 +2932,8 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2573,6 +2956,8 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2600,6 +2985,7 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -2623,6 +3009,7 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -2644,6 +3031,7 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -2748,6 +3136,9 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -2774,6 +3165,8 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2796,6 +3189,8 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -2823,6 +3218,7 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -2846,6 +3242,7 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -2867,6 +3264,7 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,
@@ -2969,6 +3367,9 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     required TResult Function() createNewAddressLoading,
     required TResult Function(int statesCode, String errorMessage)
         createNewAddressError,
+    required TResult Function(
+            String message, LatLng latLng, List<MarkerData> markData)
+        updateAddressRegion,
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
@@ -2995,6 +3396,8 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     TResult? Function()? createNewAddressLoading,
     TResult? Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
     TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -3017,6 +3420,8 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     TResult Function()? createNewAddressLoading,
     TResult Function(int statesCode, String errorMessage)?
         createNewAddressError,
+    TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
+        updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
     TResult Function(int statesCode, String errorMessage)? getAllAddressError,
@@ -3044,6 +3449,7 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
         createNewAddressLoading,
     required TResult Function(CreateNewAddressError value)
         createNewAddressError,
+    required TResult Function(UpdateAddressRegion value) updateAddressRegion,
     required TResult Function(CreateNewAddressSuccess value)
         createNewAddressSuccess,
     required TResult Function(GetAllAddressLoading value) getAllAddressLoading,
@@ -3067,6 +3473,7 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     TResult? Function(_Initial value)? initial,
     TResult? Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult? Function(CreateNewAddressError value)? createNewAddressError,
+    TResult? Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult? Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult? Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult? Function(GetAllAddressError value)? getAllAddressError,
@@ -3088,6 +3495,7 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     TResult Function(_Initial value)? initial,
     TResult Function(CreateNewAddressLoading value)? createNewAddressLoading,
     TResult Function(CreateNewAddressError value)? createNewAddressError,
+    TResult Function(UpdateAddressRegion value)? updateAddressRegion,
     TResult Function(CreateNewAddressSuccess value)? createNewAddressSuccess,
     TResult Function(GetAllAddressLoading value)? getAllAddressLoading,
     TResult Function(GetAllAddressError value)? getAllAddressError,

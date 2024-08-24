@@ -15,9 +15,10 @@ import '../../../../core/style/fonts/strings_manger.dart';
 import '../../../../core/utils/app_regex.dart';
 import '../../data/model/response/get_address_response.dart';
 import '../../logic/userAddressCubit/user_address_cubit.dart';
+import '../screen/map_screen.dart';
 import '../widget/region_area_widget.dart';
 
-class AddNewAddressBody extends StatelessWidget {
+class AddNewAddressBody extends StatefulWidget {
   final LatLng? latLng;
   final List<MarkerData>? markerData;
   final String? addressAreaInformation;
@@ -32,6 +33,23 @@ class AddNewAddressBody extends StatelessWidget {
   });
 
   @override
+  State<AddNewAddressBody> createState() => _AddNewAddressBodyState();
+}
+
+class _AddNewAddressBodyState extends State<AddNewAddressBody> {
+  late LatLng? latLng;
+  late List<MarkerData>? markerData;
+  late String? addressAreaInformation;
+
+  @override
+  void initState() {
+    super.initState();
+    latLng = widget.latLng;
+    markerData = widget.markerData;
+    addressAreaInformation = widget.addressAreaInformation;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
@@ -39,11 +57,11 @@ class AddNewAddressBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _mapWidget(context, latLng!, markerData!),
+            _mapWidget(context, widget.latLng!, widget.markerData!),
             SizedBox(
               height: 10.h,
             ),
-            _cardArea(context, addressAreaInformation!),
+            _cardArea(context, widget.addressAreaInformation!),
             SizedBox(
               height: 15.h,
             ),
@@ -51,15 +69,14 @@ class AddNewAddressBody extends StatelessWidget {
             SizedBox(
               height: 15.h,
             ),
-            _addressTextFormField(context, latLng!, addressAreaInformation!),
+            _addressTextFormField(context),
           ],
         ),
       ),
     );
   }
 
-  BlocConsumer _addressTextFormField(
-      BuildContext context, LatLng latLng, String addressAreaInformation) {
+  BlocConsumer _addressTextFormField(BuildContext context) {
     return BlocConsumer<UserAddressCubit, UserAddressState>(
       listener: (context, state) {
         state.whenOrNull(
@@ -253,17 +270,29 @@ class AddNewAddressBody extends StatelessWidget {
                   CustomButton(
                       onPressed: () async {
                         if (userAddressCubit.formKey.currentState!.validate()) {
-                          if (getAddressResponseData != null) {
+                          if (widget.getAddressResponseData != null) {
                             await userAddressCubit.updateAddress(
-                                getAddressResponseData!.sId!,
-                                addressAreaInformation,
-                                '${latLng.latitude}',
-                                '${latLng.longitude}');
+                                widget.getAddressResponseData!.sId!,
+                                state is UpdateAddressRegion
+                                    ? state.message
+                                    : addressAreaInformation!,
+                                state is UpdateAddressRegion
+                                    ? '${state.latLng.latitude}'
+                                    : '${latLng!.latitude}',
+                                state is UpdateAddressRegion
+                                    ? '${state.latLng.longitude}'
+                                    : '${latLng!.longitude}');
                           } else {
                             await userAddressCubit.addNewAddress(
-                                addressAreaInformation,
-                                '${latLng.latitude}',
-                                '${latLng.longitude}');
+                                state is UpdateAddressRegion
+                                    ? state.message
+                                    : addressAreaInformation!,
+                                state is UpdateAddressRegion
+                                    ? '${state.latLng.latitude}'
+                                    : '${latLng!.latitude}',
+                                state is UpdateAddressRegion
+                                    ? '${state.latLng.longitude}'
+                                    : '${latLng!.longitude}');
                           }
                         }
                       },
@@ -380,99 +409,136 @@ class AddNewAddressBody extends StatelessWidget {
     );
   }
 
-  Card _cardArea(BuildContext context, String addressAreaInformation) {
-    return Card(
-      elevation: 1.8,
-      shadowColor: ColorManger.brownLight,
-      child: Container(
-        height: 55.h,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.r),
-          color: ColorManger.white,
-        ),
-        child: Row(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+  BlocBuilder _cardArea(BuildContext context, String addressAreaInformation) {
+    return BlocBuilder<UserAddressCubit, UserAddressState>(
+      builder: (context, state) {
+        return Card(
+          elevation: 1.8,
+          shadowColor: ColorManger.brownLight,
+          child: Container(
+            height: 55.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.r),
+              color: ColorManger.white,
+            ),
+            child: Row(
               children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 12.w,
-                    top: 12.h,
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        IconlyBold.location,
-                        size: 18.sp,
-                        color: ColorManger.brun,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 12.w,
+                        top: 12.h,
                       ),
-                      SizedBox(
-                        width: 2.w,
+                      child: Row(
+                        children: [
+                          Icon(
+                            IconlyBold.location,
+                            size: 18.sp,
+                            color: ColorManger.brun,
+                          ),
+                          SizedBox(
+                            width: 2.w,
+                          ),
+                          Text("Area",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                      fontFamily: FontConsistent.fontFamilyAcme,
+                                      color: ColorManger.brun,
+                                      fontSize: 12.sp)),
+                        ],
                       ),
-                      Text("Area",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.brun,
-                                  fontSize: 12.sp)),
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 20.w, top: 5.h),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: 250.w),
+                        child: Text(addressAreaInformation,
+                            maxLines: 1,
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(
+                                    fontFamily: FontConsistent.fontFamilyAcme,
+                                    color: ColorManger.brunLight,
+                                    fontSize: 10.sp)),
+                      ),
+                    )
+                  ],
                 ),
+                const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(left: 20.w, top: 5.h),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 250.w),
-                    child: Text(addressAreaInformation,
-                        maxLines: 1,
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.ellipsis,
+                  padding: EdgeInsets.only(right: 20.w, top: 2.h),
+                  child: InkWell(
+                    onTap: () async {
+                      var result = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MapScreen(
+                            isUpdateMap: true,
+                          ),
+                        ),
+                      );
+
+                      if (result != null) {
+                        // Process the returned data
+                        if (!context.mounted) return;
+
+                        latLng = result['latLng'];
+                        markerData = result['markerData'];
+                        addressAreaInformation =
+                            result['addressAreaInformation'];
+                        context
+                            .read<UserAddressCubit>()
+                            .updateAddressAreaInformation(
+                                addressAreaInformation, latLng!, markerData!);
+
+                        // Do something with the data
+                      }
+                    },
+                    child: Text("Change",
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brunLight,
-                            fontSize: 10.sp)),
+                            color: ColorManger.brun,
+                            fontSize: 13.sp)),
                   ),
                 )
               ],
             ),
-            const Spacer(),
-            Padding(
-              padding: EdgeInsets.only(right: 20.w, top: 2.h),
-              child: InkWell(
-                onTap: () {},
-                child: Text("Change",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
-                        fontSize: 13.sp)),
-              ),
-            )
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
-  ClipRRect _mapWidget(
+  BlocBuilder _mapWidget(
       BuildContext context, LatLng latLng, List<MarkerData> markerData) {
-    return ClipRRect(
-        borderRadius: BorderRadius.circular(8.r),
-        child: SizedBox(
-          height: 100.h,
-          width: double.infinity,
-          child: CustomGoogleMapMarkerBuilder(
-            customMarkers: markerData,
-            builder: (p0, Set<Marker>? markers) {
-              return GoogleMap(
-                zoomControlsEnabled: false,
-                initialCameraPosition: CameraPosition(target: latLng, zoom: 13),
-                markers: markers ?? {},
-              );
-            },
-          ),
-        ));
+    return BlocBuilder<UserAddressCubit, UserAddressState>(
+      builder: (context, state) {
+        return ClipRRect(
+            borderRadius: BorderRadius.circular(8.r),
+            child: SizedBox(
+              height: 100.h,
+              width: double.infinity,
+              child: CustomGoogleMapMarkerBuilder(
+                customMarkers: markerData,
+                builder: (p0, Set<Marker>? markers) {
+                  return GoogleMap(
+                    zoomControlsEnabled: false,
+                    initialCameraPosition:
+                        CameraPosition(target: latLng, zoom: 13),
+                    markers: markers ?? {},
+                  );
+                },
+              ),
+            ));
+      },
+    );
   }
 }
