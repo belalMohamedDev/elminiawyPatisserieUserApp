@@ -5,8 +5,8 @@ import 'package:elminiawy/feature/address/data/model/response/create_address_res
 
 import 'package:retrofit/retrofit.dart';
 
-import '../../../feature/accountInfo/data/request/update_account_information.dart';
-import '../../../feature/accountInfo/data/response/update_account_information.dart';
+import '../../../feature/accountInfo/data/model/request/update_account_information.dart';
+import '../../../feature/accountInfo/data/model/response/update_account_information.dart';
 import '../../../feature/address/data/model/response/get_store_address_response.dart';
 import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
 import '../../../feature/cart/data/model/response/add_item.dart';
