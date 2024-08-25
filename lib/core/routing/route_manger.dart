@@ -1,3 +1,4 @@
+import 'package:elminiawy/feature/myProfile/presentation/screen/my_profile_screen.dart';
 import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
 import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
@@ -70,14 +71,10 @@ class RouteGenerator {
           builder: (_) => const UserAddressView(),
         );
 
-      // case Routes.productBasedOnCategory:
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider(
-      //       create: (context) => instance<ProductBasedOnCategoryCubit>(),
-      //       child: const ProductBaseOnCategory(),
-
-      //     ),
-      //   );
+      case Routes.myProfile:
+        return MaterialPageRoute(
+          builder: (_) => const MyProfile(),
+        );
 
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(
