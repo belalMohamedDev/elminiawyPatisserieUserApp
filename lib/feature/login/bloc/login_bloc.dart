@@ -14,7 +14,6 @@ part 'login_event.dart';
 part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
-
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final TextEditingController userLoginEmailAddress = TextEditingController();
   final TextEditingController userLoginPassword = TextEditingController();
@@ -23,8 +22,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   bool showPass = true;
   bool isButtonInVaildator = false;
 
-  LoginBloc(this._loginRepository)
-      : super(const _Initial()) {
+  LoginBloc(this._loginRepository) : super(const _Initial()) {
     on<UserLoginButton>(loginButton);
     on<LoginEvent>((event, emit) async {
       if (event is UserLoginEmailAddress) {
@@ -54,12 +52,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     });
   }
 
-  
-
   ///////////////////////////////////
   //////////////////
   //////////////////////////////////
-
 
   Future<void> loginButtonVaildator(
       LoginEvent event, Emitter<LoginState> emit) async {
@@ -72,12 +67,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(LoginState.buttonLoginVaildation(isButtonInVaildator));
     }
 
-    
-
     ///////////////////////////////////
     //////////////////
     //////////////////////////////////
-
   }
 
   Future<void> loginButton(LoginEvent event, Emitter<LoginState> emit) async {
@@ -94,11 +86,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
         response.when(
           success: (loginResponse) async {
-          
             emit(LoginState.suceess(loginResponse));
 
-              await saveUserToken(
-                loginResponse.accessToken!, loginResponse.data!.refreshToken!);
+            await saveUserToken(
+                loginResponse.accessToken!,
+                loginResponse.data!.refreshToken!,
+                loginResponse.data!.name!,
+                loginResponse.data!.phone!,
+                loginResponse.data!.email!);
           },
           failure: (error) {
             emit(
@@ -111,13 +106,21 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     );
   }
 
-
-
   ///////////////////////////////////
   //////////////////
   //////////////////////////////////
 
-  Future<void> saveUserToken(String accessToken, String refreshToken) async {
+  Future<void> saveUserToken(
+    String accessToken,
+    String refreshToken,
+    String userName,
+    String userPhone,
+    String userEmail,
+  ) async {
+    await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
+
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);

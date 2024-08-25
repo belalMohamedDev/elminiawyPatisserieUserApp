@@ -150,8 +150,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         response.when(
           success: (registerResponse) async {
             emit(SignUpState.suceess(registerResponse));
-            await saveUserToken(registerResponse.accessToken!,
-                registerResponse.data!.refreshToken!);
+         
+            await saveUserToken(
+                registerResponse.accessToken!,
+                registerResponse.data!.refreshToken!,
+                registerResponse.data!.name!,
+                registerResponse.data!.phone!,
+                registerResponse.data!.email!);
           },
           failure: (error) {
             emit(
@@ -164,9 +169,21 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     );
   }
 
-  Future<void> saveUserToken(String accessToken, String refreshToken) async {
+  Future<void> saveUserToken(
+    String accessToken,
+    String refreshToken,
+    String userName,
+    String userPhone,
+    String userEmail,
+  ) async {
+    await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
+
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);
   }
 }
+
+
