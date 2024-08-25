@@ -1,4 +1,4 @@
-import 'package:elminiawy/feature/myProfile/presentation/screen/my_profile_screen.dart';
+import 'package:elminiawy/feature/accountInfo/presentation/screen/account_info_screen.dart';
 import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
 import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
@@ -71,9 +71,9 @@ class RouteGenerator {
           builder: (_) => const UserAddressView(),
         );
 
-      case Routes.myProfile:
+      case Routes.accountInfomation:
         return MaterialPageRoute(
-          builder: (_) => const MyProfile(),
+          builder: (_) => const AccountInfomation(),
         );
 
       case Routes.bottomNavBarRoute:

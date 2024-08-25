@@ -79,7 +79,7 @@ class _ProfileBodyState extends State<ProfileBody> {
             leadingIcon: IconlyBold.profile,
             tap: () {
               Navigator.of(context, rootNavigator: !false)
-                  .pushNamed(Routes.myProfile);
+                  .pushNamed(Routes.accountInfomation);
             },
           ),
           CustomProfileCard(

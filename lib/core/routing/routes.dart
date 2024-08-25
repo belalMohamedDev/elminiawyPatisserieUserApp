@@ -12,5 +12,5 @@ class Routes {
   static const String search = "search";
   static const String address = "address";
   static const String productBasedOnCategory = "productBasedOnCategory";
-  static const String myProfile = "MyProfile";
+  static const String accountInfomation = "AccountInfomation";
 }
