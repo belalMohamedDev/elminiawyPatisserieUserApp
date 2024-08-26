@@ -14,7 +14,7 @@ import 'feature/address/logic/mapCubit/map_cubit.dart';
 import 'feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 import 'feature/address/logic/userAddressCubit/user_address_cubit.dart';
 import 'feature/cart/cubit/cart_cubit.dart';
-import 'feature/changeEmail/presentation/screen/change_email.dart';
+import 'feature/changePassword/presentation/screen/change_password_screen.dart';
 import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   // initialRoute: snapshot.data,
                   // onGenerateRoute: RouteGenerator.getRoute,
-                  home: const ChangeEmailScreen(),
+                  home: const ChangePasswordScreen(),
                   theme: getApplicationTheme(),
                 );
               },
