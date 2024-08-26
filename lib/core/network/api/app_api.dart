@@ -133,7 +133,7 @@ abstract class AppServiceClient {
   Future<GetStoreAddressResponse> getAllStoreBranch();
 
 
-  @POST(ApiConstants.updateMyData)
+  @PUT(ApiConstants.updateMyData)
   Future<UpdateAccountInformationResponse> updateMyData(
     @Body() UpdateAccountInformationRequestBody updateAccountInformationRequestBody,
   );

@@ -102,8 +102,6 @@ class UserAddressBody extends StatelessWidget {
                       ),
                     ],
                   ),
-
-              
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -176,21 +174,44 @@ class UserAddressBody extends StatelessWidget {
 
   ListView _userAddressErrorAndLoadingState() {
     return ListView.builder(
-      itemCount: 6,
+      itemCount: 12,
       scrollDirection: Axis.vertical,
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.only(right: 20.w),
-          child: Column(
+          padding: EdgeInsets.only(right: 20.w, top: 25.h),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              LoadingShimmer(
-                height: 70.h,
-                width: double.infinity,
-                borderRadius: 12.r,
+              Icon(
+                IconlyBold.location,
+                color: ColorManger.brown,
               ),
               SizedBox(
-                height: 10.h,
-              )
+                width: 5.w,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  LoadingShimmer(
+                    height: 5.h,
+                    width: 280.w,
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  LoadingShimmer(
+                    height: 5.h,
+                    width: 180.w,
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  LoadingShimmer(
+                    height: 5.h,
+                    width: 80.w,
+                  ),
+                ],
+              ),
             ],
           ),
         );

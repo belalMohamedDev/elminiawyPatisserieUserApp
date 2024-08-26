@@ -1,3 +1,4 @@
+import 'package:elminiawy/feature/accountInfo/cubit/account_information_cubit.dart';
 import 'package:elminiawy/feature/accountInfo/presentation/screen/account_info_screen.dart';
 import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
 import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
@@ -73,7 +74,10 @@ class RouteGenerator {
 
       case Routes.accountInfomation:
         return MaterialPageRoute(
-          builder: (_) => const AccountInfomation(),
+          builder: (_) => BlocProvider(
+            create: (context) =>  instance<AccountInformationCubit>(),
+            child: const AccountInfomation(),
+          ),
         );
 
       case Routes.bottomNavBarRoute:

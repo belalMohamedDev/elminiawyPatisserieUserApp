@@ -645,7 +645,7 @@ class _AppServiceClient implements AppServiceClient {
     _data.addAll(updateAccountInformationRequestBody.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<UpdateAccountInformationResponse>(Options(
-      method: 'POST',
+      method: 'PUT',
       headers: _headers,
       extra: _extra,
     )
