@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../../../core/application/cubit/app_logic_cubit.dart';
 import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/services/shared_pref_helper.dart';
 import '../../../../core/style/color/color_manger.dart';
@@ -78,8 +80,7 @@ class _ProfileBodyState extends State<ProfileBody> {
             title: "My Profile",
             leadingIcon: IconlyBold.profile,
             tap: () {
-              Navigator.of(context, rootNavigator: !false)
-                  .pushNamed(Routes.accountInfomation);
+              chaneProfileDataaBottomSheet(context);
             },
           ),
           CustomProfileCard(
@@ -119,10 +120,29 @@ class _ProfileBodyState extends State<ProfileBody> {
                   Navigator.of(context, rootNavigator: !false)
                       .pushNamedAndRemoveUntil(
                           Routes.loginRoute, (Route route) => false);
+
+                  context
+                      .read<AppLogicCubit>()
+                      .bottomNavBarController
+                      .jumpToTab(0);
                 }
               } else if (state is LogOutError) {
                 ShowToast.showToastErrorTop(
                     errorMessage: state.errorMessage, context: context);
+                if (state.statesCode == 400) {
+                  await SharedPrefHelper.clearAllSecuredData();
+
+                  if (context.mounted) {
+                    Navigator.of(context, rootNavigator: !false)
+                        .pushNamedAndRemoveUntil(
+                            Routes.loginRoute, (Route route) => false);
+
+                    context
+                        .read<AppLogicCubit>()
+                        .bottomNavBarController
+                        .jumpToTab(0);
+                  }
+                }
               }
             },
             child: CustomProfileCard(
@@ -136,5 +156,50 @@ class _ProfileBodyState extends State<ProfileBody> {
         ],
       ),
     );
+  }
+
+  void chaneProfileDataaBottomSheet(BuildContext context) {
+    showCupertinoModalBottomSheet(
+        useRootNavigator: true,
+        barrierColor: Colors.black54,
+        elevation: 20.r,
+        context: context,
+        builder: (context) => SizedBox(
+              height: 300.h,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 35.h),
+                child: Material(
+                  color: ColorManger.white,
+                  child: Column(
+                    children: [
+                      CustomProfileCard(
+                        title: "Account Information",
+                        leadingIcon: IconlyBold.infoCircle,
+                        tap: () {
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushReplacementNamed(Routes.accountInfomation);
+                        },
+                      ),
+                      CustomProfileCard(
+                        title: "Change Email Address",
+                        leadingIcon: IconlyBold.message,
+                        tap: () {
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.address);
+                        },
+                      ),
+                      CustomProfileCard(
+                        title: "Change Password",
+                        leadingIcon: IconlyBold.lock,
+                        tap: () {
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.address);
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ));
   }
 }

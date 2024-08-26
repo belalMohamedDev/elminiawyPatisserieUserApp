@@ -8,25 +8,26 @@ class CustomButton extends StatelessWidget {
   final Widget? widget;
   final double? height;
   final double? width;
+  final double? radius;
 
   CustomButton(
       {super.key,
       color,
       required this.onPressed,
       required this.widget,
-      height,
-      this.width = double.infinity})
+      this.height = 40,
+      this.width = double.infinity,
+      this.radius = 12})
       : color =
-            onPressed == null ? ColorManger.unselectedButton : ColorManger.brun,
-        height = 40.h;
+            onPressed == null ? ColorManger.unselectedButton : ColorManger.brun;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
+      height: height!.h,
       width: width,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.r), color: color),
+          borderRadius: BorderRadius.circular(radius!.r), color: color),
       child: TextButton(onPressed: onPressed, child: widget!),
     );
   }
