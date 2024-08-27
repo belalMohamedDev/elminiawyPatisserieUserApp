@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:elminiawy/feature/cart/data/model/response/get_cart.dart';
+import 'package:elminiawy/feature/changePassword/data/model/request/change_my_password_request.dart';
+import 'package:elminiawy/feature/changePassword/data/model/response/change_my_password_response.dart';
 import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
 import 'package:elminiawy/feature/address/data/model/response/create_address_response.dart';
 
@@ -10,6 +12,8 @@ import '../../../feature/accountInfo/data/model/response/update_account_informat
 import '../../../feature/address/data/model/response/get_store_address_response.dart';
 import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
 import '../../../feature/cart/data/model/response/add_item.dart';
+import '../../../feature/changeEmailAddress/data/model/request/change_email_request.dart';
+import '../../../feature/changeEmailAddress/data/model/response/change_email_response.dart';
 import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
 import '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
 import '../../../feature/home/data/model/response/banner_response.dart';
@@ -138,4 +142,15 @@ abstract class AppServiceClient {
     @Body() UpdateAccountInformationRequestBody updateAccountInformationRequestBody,
   );
 
+
+  @PUT(ApiConstants.updateMyEmailAddress)
+  Future<UpdateEmailAddressResponse> updateMyEmailAddress(
+    @Body()
+    ChangeEmailRequestBody changeEmailRequestBody,
+  );
+
+  @PUT(ApiConstants.updateMyPassword)
+  Future<UpdateMyPasswordResponse> updateMyPasswordService(
+    @Body() ChangeMyPasswordRequestBody changeMyPasswordRequestBody,
+  );
 }

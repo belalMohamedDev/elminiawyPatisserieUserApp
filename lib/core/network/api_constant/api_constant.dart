@@ -14,6 +14,7 @@ class ApiConstants {
   static const String updateMyImage = '/v1/api/user/updateMyImage';
   static const String updateMyPassword = '/v1/api/user/updateMyPassword';
   static const String updateMyData = '/v1/api/user/updateMyData';
+  static const String updateMyEmailAddress = '/v1/api/user/updateMyEmailAddress';
   static const String notification = '/v1/api/notification';
 
 

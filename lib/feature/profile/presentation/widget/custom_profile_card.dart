@@ -19,45 +19,44 @@ class CustomProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: tap,
-      child: Column(
-        children: [
-          Divider(color: ColorManger.backgroundItem),
-          SizedBox(
-            height: 10.h,
+    return Column(
+      children: [
+        Divider(color: ColorManger.backgroundItem),
+        InkWell(
+          onTap: tap,
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.h),
+            child: Row(
+              children: [
+                Icon(
+                  leadingIcon,
+                  color: ColorManger.brun,
+                  size: 16.sp,
+                ),
+                SizedBox(
+                  width: 20.w,
+                ),
+                Text(title,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontFamily: FontConsistent.fontFamilyAcme,
+                        color: ColorManger.brun,
+                        fontSize: 12.sp)),
+                const Spacer(),
+                Icon(
+                  IconlyBroken.arrowRight2,
+                  color: ColorManger.brun,
+                  size: 18.sp,
+                ),
+              ],
+            ),
           ),
-          Row(
-            children: [
-              Icon(
-                leadingIcon,
-                color: ColorManger.brun,
-                size: 16.sp,
-              ),
-              SizedBox(
-                width: 20.w,
-              ),
-              Text(title,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 12.sp)),
-              const Spacer(),
-              Icon(
-                IconlyBroken.arrowRight2,
-                color: ColorManger.brun,
-                size: 18.sp,
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          Divider(
-            color: ColorManger.backgroundItem,
-          ),
-        ],
-      ),
+        ),
+        Divider(
+          color: ColorManger.backgroundItem,
+        ),
+      ],
     );
   }
 }

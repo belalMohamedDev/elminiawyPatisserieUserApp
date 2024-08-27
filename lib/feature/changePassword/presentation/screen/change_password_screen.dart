@@ -141,52 +141,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
           SizedBox(
             height: 25.h,
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 5.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                    "Password must be at least 8 Characters and should incloude:",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 12.sp)),
-                SizedBox(
-                  height: 15.h,
-                ),
-                Text(". 1 upperCase letter (A-Z)",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 12.sp)),
-                SizedBox(
-                  height: 15.h,
-                ),
-                Text(". 1 lowerCase letter (a-z)",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 12.sp)),
-                SizedBox(
-                  height: 15.h,
-                ),
-                Text(". 1 number letter (0-9)",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 12.sp)),
-                SizedBox(
-                  height: 15.h,
-                ),
-                Text(". 1 special character (-@#\\\$%^&*_-+=,.?/)",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 12.sp)),
-              ],
-            ),
-          ),
+          _instructionsTextColumn(context),
           const Spacer(),
           CustomButton(
             onPressed: () {},
@@ -199,6 +154,54 @@ class ChangeUserPasswordBody extends StatelessWidget {
                   fontWeight: FontWeightManger.semiBold),
             ),
           )
+        ],
+      ),
+    );
+  }
+
+  Padding _instructionsTextColumn(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(left: 5.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Password must be at least 8 Characters and should incloude:",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brunLight,
+                  fontSize: 12.sp)),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text(". 1 upperCase letter (A-Z)",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brunLight,
+                  fontSize: 12.sp)),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text(". 1 lowerCase letter (a-z)",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brunLight,
+                  fontSize: 12.sp)),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text(". 1 number letter (0-9)",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brunLight,
+                  fontSize: 12.sp)),
+          SizedBox(
+            height: 15.h,
+          ),
+          Text(". 1 special character (-@#\\\$%^&*_-+=,.?/)",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brunLight,
+                  fontSize: 12.sp)),
         ],
       ),
     );

@@ -71,94 +71,121 @@ class _ProfileBodyState extends State<ProfileBody> {
     );
   }
 
-  Padding _profileColumnCard(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.w),
-      child: Column(
-        children: [
-          CustomProfileCard(
-            title: "My Profile",
-            leadingIcon: IconlyBold.profile,
-            tap: () {
-              chaneProfileDataaBottomSheet(context);
-            },
-          ),
-          CustomProfileCard(
-            title: "My Address",
-            leadingIcon: IconlyBold.location,
-            tap: () {
-              Navigator.of(context, rootNavigator: !false)
-                  .pushNamed(Routes.address);
-            },
-          ),
-          CustomProfileCard(
-            title: "My Orders",
-            leadingIcon: IconlyBold.bag,
-            tap: () {},
-          ),
-          CustomProfileCard(
-            title: "My WishList",
-            leadingIcon: IconlyBold.heart,
-            tap: () {
-              NavBarNavigator.push(context,
-                  screen: const WishListView(), withNavBar: false);
-            },
-          ),
-          CustomProfileCard(
-            title: "Settings",
-            leadingIcon: IconlyBold.setting,
-            tap: () {},
-          ),
-          BlocListener<LogOutCubit, LogOutState>(
-            listener: (context, state) async {
-              if (state is LogOutSuccess) {
-                ShowToast.showToastSuccessTop(
-                    message: state.successMessage, context: context);
-                await SharedPrefHelper.clearAllSecuredData();
+  BlocBuilder _profileColumnCard(BuildContext context) {
+    return BlocBuilder<LogOutCubit, LogOutState>(
+      builder: (context, state) {
+        return Stack(
+          alignment: Alignment.center,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
+              child: Column(
+                children: [
+                  CustomProfileCard(
+                    title: "My Profile",
+                    leadingIcon: IconlyBold.profile,
+                    tap: () {
+                      _chaneProfileDataaBottomSheet(context);
+                    },
+                  ),
+                  CustomProfileCard(
+                    title: "My Address",
+                    leadingIcon: IconlyBold.location,
+                    tap: () {
+                      Navigator.of(context, rootNavigator: !false)
+                          .pushNamed(Routes.address);
+                    },
+                  ),
+                  CustomProfileCard(
+                    title: "My Orders",
+                    leadingIcon: IconlyBold.bag,
+                    tap: () {},
+                  ),
+                  CustomProfileCard(
+                    title: "My WishList",
+                    leadingIcon: IconlyBold.heart,
+                    tap: () {
+                      NavBarNavigator.push(context,
+                          screen: const WishListView(), withNavBar: false);
+                    },
+                  ),
+                  CustomProfileCard(
+                    title: "Settings",
+                    leadingIcon: IconlyBold.setting,
+                    tap: () {},
+                  ),
+                  BlocListener<LogOutCubit, LogOutState>(
+                      listener: (context, state) async {
+                        if (state is LogOutSuccess) {
+                          ShowToast.showToastSuccessTop(
+                              message: state.successMessage, context: context);
+                          await SharedPrefHelper.clearAllSecuredData();
 
-                if (context.mounted) {
-                  Navigator.of(context, rootNavigator: !false)
-                      .pushNamedAndRemoveUntil(
-                          Routes.loginRoute, (Route route) => false);
+                          if (context.mounted) {
+                            Navigator.of(context, rootNavigator: !false)
+                                .pushNamedAndRemoveUntil(
+                                    Routes.loginRoute, (Route route) => false);
 
-                  context
-                      .read<AppLogicCubit>()
-                      .bottomNavBarController
-                      .jumpToTab(0);
-                }
-              } else if (state is LogOutError) {
-                ShowToast.showToastErrorTop(
-                    errorMessage: state.errorMessage, context: context);
-                if (state.statesCode == 400) {
-                  await SharedPrefHelper.clearAllSecuredData();
+                            context
+                                .read<AppLogicCubit>()
+                                .bottomNavBarController
+                                .jumpToTab(0);
+                          }
+                        } else if (state is LogOutError) {
+                          ShowToast.showToastErrorTop(
+                              errorMessage: state.errorMessage,
+                              context: context);
+                          if (state.statesCode == 400) {
+                            await SharedPrefHelper.clearAllSecuredData();
 
-                  if (context.mounted) {
-                    Navigator.of(context, rootNavigator: !false)
-                        .pushNamedAndRemoveUntil(
-                            Routes.loginRoute, (Route route) => false);
+                            if (context.mounted) {
+                              Navigator.of(context, rootNavigator: !false)
+                                  .pushNamedAndRemoveUntil(Routes.loginRoute,
+                                      (Route route) => false);
 
-                    context
-                        .read<AppLogicCubit>()
-                        .bottomNavBarController
-                        .jumpToTab(0);
-                  }
-                }
-              }
-            },
-            child: CustomProfileCard(
-              title: "Log Out",
-              leadingIcon: IconlyBold.logout,
-              tap: () async {
-                context.read<LogOutCubit>().checkTokenThenDoLogOut(context);
-              },
+                              context
+                                  .read<AppLogicCubit>()
+                                  .bottomNavBarController
+                                  .jumpToTab(0);
+                            }
+                          }
+                        }
+                      },
+                      child: CustomProfileCard(
+                        title: "Log Out",
+                        leadingIcon: IconlyBold.logout,
+                        tap: () async {
+                          context
+                              .read<LogOutCubit>()
+                              .checkTokenThenDoLogOut(context);
+                        },
+                      )),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
+            if (state is LogOutLoading)
+              Container(
+                  height: 70.h,
+                  width: 70.w,
+                  decoration: BoxDecoration(
+                      color: ColorManger.brun,
+                      borderRadius: BorderRadius.circular(12.r)),
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(20.r),
+                      child: CircularProgressIndicator(
+                        color: ColorManger.white,
+                        strokeWidth: 3.sp,
+                      ),
+                    ),
+                  )),
+          ],
+        );
+      },
     );
   }
 
-  void chaneProfileDataaBottomSheet(BuildContext context) {
+  void _chaneProfileDataaBottomSheet(BuildContext context) {
     showCupertinoModalBottomSheet(
         useRootNavigator: true,
         barrierColor: Colors.black54,
@@ -185,7 +212,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                         leadingIcon: IconlyBold.message,
                         tap: () {
                           Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.address);
+                              .pushReplacementNamed(Routes.changeMyEmail);
                         },
                       ),
                       CustomProfileCard(
@@ -193,7 +220,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                         leadingIcon: IconlyBold.lock,
                         tap: () {
                           Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.address);
+                              .pushReplacementNamed(Routes.changeMyPassword);
                         },
                       ),
                     ],
