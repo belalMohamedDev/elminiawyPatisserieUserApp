@@ -4,13 +4,12 @@ part of 'change_email_address_cubit.dart';
 class ChangeEmailAddressState with _$ChangeEmailAddressState {
   const factory ChangeEmailAddressState.initial() = _Initial;
 
-    const factory ChangeEmailAddressState.changeEmailAddressLoading() = ChangeEmailAddressLoading;
+  const factory ChangeEmailAddressState.changeEmailAddressLoading() =
+      ChangeEmailAddressLoading;
   const factory ChangeEmailAddressState.changeEmailAddressError(
       {required int statesCode,
       required String errorMessage}) = ChangeEmailAddressError;
 
   const factory ChangeEmailAddressState.changeEmailAddressSuccess(
-      UpdateEmailAddressResponse data) =
-      ChangeEmailAddressSuccess;
-
+      UpdateEmailAddressResponse data) = ChangeEmailAddressSuccess;
 }

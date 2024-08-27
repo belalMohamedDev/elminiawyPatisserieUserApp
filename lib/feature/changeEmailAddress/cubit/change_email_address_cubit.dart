@@ -14,7 +14,7 @@ class ChangeEmailAddressCubit extends Cubit<ChangeEmailAddressState> {
 
   final ChangeEmailAddressRepository _changeEmailAddressRepository;
 
-  Future<void> changeEmailAddress() async {
+  Future<void> submitEmailAddressChange() async {
     emit(const ChangeEmailAddressState.changeEmailAddressLoading());
 
     final response = await _changeEmailAddressRepository.changeMyEmailAddress(
