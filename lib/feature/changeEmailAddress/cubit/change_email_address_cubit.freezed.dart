@@ -24,6 +24,8 @@ mixin _$ChangeEmailAddressState {
         changeEmailAddressError,
     required TResult Function(UpdateEmailAddressResponse data)
         changeEmailAddressSuccess,
+    required TResult Function(bool isPasswordVisible)
+        changePasswordVisibilityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +36,7 @@ mixin _$ChangeEmailAddressState {
         changeEmailAddressError,
     TResult? Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +47,7 @@ mixin _$ChangeEmailAddressState {
         changeEmailAddressError,
     TResult Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +60,8 @@ mixin _$ChangeEmailAddressState {
         changeEmailAddressError,
     required TResult Function(ChangeEmailAddressSuccess value)
         changeEmailAddressSuccess,
+    required TResult Function(ChangePasswordVisibilityState value)
+        changePasswordVisibilityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +72,8 @@ mixin _$ChangeEmailAddressState {
     TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult? Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult? Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +84,8 @@ mixin _$ChangeEmailAddressState {
     TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,6 +154,8 @@ class _$InitialImpl implements _Initial {
         changeEmailAddressError,
     required TResult Function(UpdateEmailAddressResponse data)
         changeEmailAddressSuccess,
+    required TResult Function(bool isPasswordVisible)
+        changePasswordVisibilityState,
   }) {
     return initial();
   }
@@ -157,6 +169,7 @@ class _$InitialImpl implements _Initial {
         changeEmailAddressError,
     TResult? Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
   }) {
     return initial?.call();
   }
@@ -170,6 +183,7 @@ class _$InitialImpl implements _Initial {
         changeEmailAddressError,
     TResult Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -188,6 +202,8 @@ class _$InitialImpl implements _Initial {
         changeEmailAddressError,
     required TResult Function(ChangeEmailAddressSuccess value)
         changeEmailAddressSuccess,
+    required TResult Function(ChangePasswordVisibilityState value)
+        changePasswordVisibilityState,
   }) {
     return initial(this);
   }
@@ -201,6 +217,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult? Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult? Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
   }) {
     return initial?.call(this);
   }
@@ -214,6 +232,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -275,6 +295,8 @@ class _$ChangeEmailAddressLoadingImpl implements ChangeEmailAddressLoading {
         changeEmailAddressError,
     required TResult Function(UpdateEmailAddressResponse data)
         changeEmailAddressSuccess,
+    required TResult Function(bool isPasswordVisible)
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressLoading();
   }
@@ -288,6 +310,7 @@ class _$ChangeEmailAddressLoadingImpl implements ChangeEmailAddressLoading {
         changeEmailAddressError,
     TResult? Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
   }) {
     return changeEmailAddressLoading?.call();
   }
@@ -301,6 +324,7 @@ class _$ChangeEmailAddressLoadingImpl implements ChangeEmailAddressLoading {
         changeEmailAddressError,
     TResult Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (changeEmailAddressLoading != null) {
@@ -319,6 +343,8 @@ class _$ChangeEmailAddressLoadingImpl implements ChangeEmailAddressLoading {
         changeEmailAddressError,
     required TResult Function(ChangeEmailAddressSuccess value)
         changeEmailAddressSuccess,
+    required TResult Function(ChangePasswordVisibilityState value)
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressLoading(this);
   }
@@ -332,6 +358,8 @@ class _$ChangeEmailAddressLoadingImpl implements ChangeEmailAddressLoading {
     TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult? Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult? Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressLoading?.call(this);
   }
@@ -345,6 +373,8 @@ class _$ChangeEmailAddressLoadingImpl implements ChangeEmailAddressLoading {
     TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (changeEmailAddressLoading != null) {
@@ -443,6 +473,8 @@ class _$ChangeEmailAddressErrorImpl implements ChangeEmailAddressError {
         changeEmailAddressError,
     required TResult Function(UpdateEmailAddressResponse data)
         changeEmailAddressSuccess,
+    required TResult Function(bool isPasswordVisible)
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressError(statesCode, errorMessage);
   }
@@ -456,6 +488,7 @@ class _$ChangeEmailAddressErrorImpl implements ChangeEmailAddressError {
         changeEmailAddressError,
     TResult? Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
   }) {
     return changeEmailAddressError?.call(statesCode, errorMessage);
   }
@@ -469,6 +502,7 @@ class _$ChangeEmailAddressErrorImpl implements ChangeEmailAddressError {
         changeEmailAddressError,
     TResult Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (changeEmailAddressError != null) {
@@ -487,6 +521,8 @@ class _$ChangeEmailAddressErrorImpl implements ChangeEmailAddressError {
         changeEmailAddressError,
     required TResult Function(ChangeEmailAddressSuccess value)
         changeEmailAddressSuccess,
+    required TResult Function(ChangePasswordVisibilityState value)
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressError(this);
   }
@@ -500,6 +536,8 @@ class _$ChangeEmailAddressErrorImpl implements ChangeEmailAddressError {
     TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult? Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult? Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressError?.call(this);
   }
@@ -513,6 +551,8 @@ class _$ChangeEmailAddressErrorImpl implements ChangeEmailAddressError {
     TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (changeEmailAddressError != null) {
@@ -608,6 +648,8 @@ class _$ChangeEmailAddressSuccessImpl implements ChangeEmailAddressSuccess {
         changeEmailAddressError,
     required TResult Function(UpdateEmailAddressResponse data)
         changeEmailAddressSuccess,
+    required TResult Function(bool isPasswordVisible)
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressSuccess(data);
   }
@@ -621,6 +663,7 @@ class _$ChangeEmailAddressSuccessImpl implements ChangeEmailAddressSuccess {
         changeEmailAddressError,
     TResult? Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
   }) {
     return changeEmailAddressSuccess?.call(data);
   }
@@ -634,6 +677,7 @@ class _$ChangeEmailAddressSuccessImpl implements ChangeEmailAddressSuccess {
         changeEmailAddressError,
     TResult Function(UpdateEmailAddressResponse data)?
         changeEmailAddressSuccess,
+    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (changeEmailAddressSuccess != null) {
@@ -652,6 +696,8 @@ class _$ChangeEmailAddressSuccessImpl implements ChangeEmailAddressSuccess {
         changeEmailAddressError,
     required TResult Function(ChangeEmailAddressSuccess value)
         changeEmailAddressSuccess,
+    required TResult Function(ChangePasswordVisibilityState value)
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressSuccess(this);
   }
@@ -665,6 +711,8 @@ class _$ChangeEmailAddressSuccessImpl implements ChangeEmailAddressSuccess {
     TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult? Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult? Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
   }) {
     return changeEmailAddressSuccess?.call(this);
   }
@@ -678,6 +726,8 @@ class _$ChangeEmailAddressSuccessImpl implements ChangeEmailAddressSuccess {
     TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
     TResult Function(ChangeEmailAddressSuccess value)?
         changeEmailAddressSuccess,
+    TResult Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
     required TResult orElse(),
   }) {
     if (changeEmailAddressSuccess != null) {
@@ -694,5 +744,183 @@ abstract class ChangeEmailAddressSuccess implements ChangeEmailAddressState {
   UpdateEmailAddressResponse get data;
   @JsonKey(ignore: true)
   _$$ChangeEmailAddressSuccessImplCopyWith<_$ChangeEmailAddressSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangePasswordVisibilityStateImplCopyWith<$Res> {
+  factory _$$ChangePasswordVisibilityStateImplCopyWith(
+          _$ChangePasswordVisibilityStateImpl value,
+          $Res Function(_$ChangePasswordVisibilityStateImpl) then) =
+      __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isPasswordVisible});
+}
+
+/// @nodoc
+class __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>
+    extends _$ChangeEmailAddressStateCopyWithImpl<$Res,
+        _$ChangePasswordVisibilityStateImpl>
+    implements _$$ChangePasswordVisibilityStateImplCopyWith<$Res> {
+  __$$ChangePasswordVisibilityStateImplCopyWithImpl(
+      _$ChangePasswordVisibilityStateImpl _value,
+      $Res Function(_$ChangePasswordVisibilityStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isPasswordVisible = null,
+  }) {
+    return _then(_$ChangePasswordVisibilityStateImpl(
+      null == isPasswordVisible
+          ? _value.isPasswordVisible
+          : isPasswordVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangePasswordVisibilityStateImpl
+    implements ChangePasswordVisibilityState {
+  const _$ChangePasswordVisibilityStateImpl(this.isPasswordVisible);
+
+  @override
+  final bool isPasswordVisible;
+
+  @override
+  String toString() {
+    return 'ChangeEmailAddressState.changePasswordVisibilityState(isPasswordVisible: $isPasswordVisible)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangePasswordVisibilityStateImpl &&
+            (identical(other.isPasswordVisible, isPasswordVisible) ||
+                other.isPasswordVisible == isPasswordVisible));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isPasswordVisible);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangePasswordVisibilityStateImplCopyWith<
+          _$ChangePasswordVisibilityStateImpl>
+      get copyWith => __$$ChangePasswordVisibilityStateImplCopyWithImpl<
+          _$ChangePasswordVisibilityStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() changeEmailAddressLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        changeEmailAddressError,
+    required TResult Function(UpdateEmailAddressResponse data)
+        changeEmailAddressSuccess,
+    required TResult Function(bool isPasswordVisible)
+        changePasswordVisibilityState,
+  }) {
+    return changePasswordVisibilityState(isPasswordVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? changeEmailAddressLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        changeEmailAddressError,
+    TResult? Function(UpdateEmailAddressResponse data)?
+        changeEmailAddressSuccess,
+    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
+  }) {
+    return changePasswordVisibilityState?.call(isPasswordVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? changeEmailAddressLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        changeEmailAddressError,
+    TResult Function(UpdateEmailAddressResponse data)?
+        changeEmailAddressSuccess,
+    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
+    required TResult orElse(),
+  }) {
+    if (changePasswordVisibilityState != null) {
+      return changePasswordVisibilityState(isPasswordVisible);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ChangeEmailAddressLoading value)
+        changeEmailAddressLoading,
+    required TResult Function(ChangeEmailAddressError value)
+        changeEmailAddressError,
+    required TResult Function(ChangeEmailAddressSuccess value)
+        changeEmailAddressSuccess,
+    required TResult Function(ChangePasswordVisibilityState value)
+        changePasswordVisibilityState,
+  }) {
+    return changePasswordVisibilityState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ChangeEmailAddressLoading value)?
+        changeEmailAddressLoading,
+    TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
+    TResult? Function(ChangeEmailAddressSuccess value)?
+        changeEmailAddressSuccess,
+    TResult? Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
+  }) {
+    return changePasswordVisibilityState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ChangeEmailAddressLoading value)?
+        changeEmailAddressLoading,
+    TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
+    TResult Function(ChangeEmailAddressSuccess value)?
+        changeEmailAddressSuccess,
+    TResult Function(ChangePasswordVisibilityState value)?
+        changePasswordVisibilityState,
+    required TResult orElse(),
+  }) {
+    if (changePasswordVisibilityState != null) {
+      return changePasswordVisibilityState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangePasswordVisibilityState
+    implements ChangeEmailAddressState {
+  const factory ChangePasswordVisibilityState(final bool isPasswordVisible) =
+      _$ChangePasswordVisibilityStateImpl;
+
+  bool get isPasswordVisible;
+  @JsonKey(ignore: true)
+  _$$ChangePasswordVisibilityStateImplCopyWith<
+          _$ChangePasswordVisibilityStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,6 +1,8 @@
 import 'package:elminiawy/feature/accountInfo/cubit/account_information_cubit.dart';
 import 'package:elminiawy/feature/accountInfo/presentation/screen/account_info_screen.dart';
+import 'package:elminiawy/feature/changeEmailAddress/cubit/change_email_address_cubit.dart';
 import 'package:elminiawy/feature/changeEmailAddress/presentation/screen/change_email.dart';
+import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.dart';
 import 'package:elminiawy/feature/changePassword/presentation/screen/change_password_screen.dart';
 import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
 import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
@@ -84,11 +86,17 @@ class RouteGenerator {
 
       case Routes.changeMyEmail:
         return MaterialPageRoute(
-          builder: (_) => const ChangeEmailScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => instance<ChangeEmailAddressCubit>(),
+            child: const ChangeEmailScreen(),
+          ),
         );
       case Routes.changeMyPassword:
         return MaterialPageRoute(
-          builder: (_) => const ChangePasswordScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => instance<ChangeMyPasswordCubit>(),
+            child: const ChangePasswordScreen(),
+          ),
         );
 
       case Routes.bottomNavBarRoute:

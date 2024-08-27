@@ -19,6 +19,7 @@ class AccountInformationCubit extends Cubit<AccountInformationState> {
 
   final TextEditingController userNameController = TextEditingController();
   final TextEditingController userPhoneController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   String userEmail = '';
   String _initialUserName = '';

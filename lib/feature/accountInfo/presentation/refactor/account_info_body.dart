@@ -7,6 +7,7 @@ import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/fonts/strings_manger.dart';
+import '../../../../core/utils/app_regex.dart';
 import '../../cubit/account_information_cubit.dart';
 
 class AccountInfomationBody extends StatelessWidget {
@@ -32,12 +33,12 @@ class AccountInfomationBody extends StatelessWidget {
     );
   }
 
-  Column _accountInformationTextFormField(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 50.h,
-          child: TextFormField(
+  Form _accountInformationTextFormField(BuildContext context) {
+    return Form(
+      key: context.read<AccountInformationCubit>().formKey,
+      child: Column(
+        children: [
+          TextFormField(
             enabled: false,
             decoration: InputDecoration(
               hintText: context.read<AccountInformationCubit>().userEmail,
@@ -53,13 +54,10 @@ class AccountInfomationBody extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        SizedBox(
-          height: 50.h,
-          child: TextFormField(
+          SizedBox(
+            height: 10.h,
+          ),
+          TextFormField(
             style: TextStyle(
                 color:
                     context.read<AccountInformationCubit>().isTextFormFieldEnabl
@@ -69,6 +67,14 @@ class AccountInfomationBody extends StatelessWidget {
                 context.read<AccountInformationCubit>().userNameController,
             enabled:
                 context.read<AccountInformationCubit>().isTextFormFieldEnabl,
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isNameValid(value)) {
+                return 'Please enter a valid name';
+              }
+              return null;
+            },
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
@@ -93,13 +99,18 @@ class AccountInfomationBody extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        SizedBox(
-          height: 50.h,
-          child: TextFormField(
+          SizedBox(
+            height: 10.h,
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isPhoneNumberValid(value)) {
+                return 'Please enter a valid phone number';
+              }
+              return null;
+            },
             controller:
                 context.read<AccountInformationCubit>().userPhoneController,
             enabled:
@@ -133,8 +144,8 @@ class AccountInfomationBody extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -169,9 +180,15 @@ class AccountInfomationBody extends StatelessWidget {
                       .read<AccountInformationCubit>()
                       .isTextFormFieldEnabl ==
                   true) {
-                context
+                if (context
                     .read<AccountInformationCubit>()
-                    .updateAccountInformation();
+                    .formKey
+                    .currentState!
+                    .validate()) {
+                  context
+                      .read<AccountInformationCubit>()
+                      .updateAccountInformation();
+                }
               }
             },
             child: state.maybeWhen(

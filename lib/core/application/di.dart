@@ -3,6 +3,10 @@ import 'package:elminiawy/feature/accountInfo/cubit/account_information_cubit.da
 import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
 import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
 import 'package:elminiawy/feature/cart/data/repository/cart_repo.dart';
+import 'package:elminiawy/feature/changeEmailAddress/cubit/change_email_address_cubit.dart';
+import 'package:elminiawy/feature/changeEmailAddress/data/repository/change_email_repo.dart';
+import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.dart';
+import 'package:elminiawy/feature/changePassword/data/repository/change_password_repo.dart';
 import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
@@ -57,7 +61,9 @@ Future<void> initAppModule() async {
     _initAddress(),
     _initProductBasedOnCategory(),
     _initCart(),
-    _initAccoutInformation()
+    _initAccoutInformation(),
+    _initChangeEmailAddress(),
+    _initChangeMyPassword()
   ]);
 }
 
@@ -208,6 +214,24 @@ Future<void> _initAccoutInformation() async {
     ..registerLazySingleton<AccountInformationRepositoryImplement>(
         () => AccountInformationRepositoryImplement(instance(), instance()))
     ..registerFactory<AccountInformationCubit>(() => AccountInformationCubit(
+          instance(),
+        ));
+}
+
+Future<void> _initChangeEmailAddress() async {
+  instance
+    ..registerLazySingleton<ChangeEmailAddressRepository>(
+        () => ChangeEmailAddressRepository(instance(), instance()))
+    ..registerFactory<ChangeEmailAddressCubit>(() => ChangeEmailAddressCubit(
+          instance(),
+        ));
+}
+
+Future<void> _initChangeMyPassword() async {
+  instance
+    ..registerLazySingleton<ChangeMyPasswordRepository>(
+        () => ChangeMyPasswordRepository(instance(), instance()))
+    ..registerFactory<ChangeMyPasswordCubit>(() => ChangeMyPasswordCubit(
           instance(),
         ));
 }

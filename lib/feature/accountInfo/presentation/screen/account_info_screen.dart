@@ -43,6 +43,7 @@ class _AccountInfomationState extends State<AccountInfomation> {
           InkWell(
             onTap: () {
               context.read<AccountInformationCubit>().enablTextFormField();
+              context.read<AccountInformationCubit>().getUserInfo();
             },
             child: Padding(
               padding: EdgeInsets.only(right: 18.w),
@@ -59,4 +60,3 @@ class _AccountInfomationState extends State<AccountInfomation> {
     );
   }
 }
-

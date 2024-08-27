@@ -12,4 +12,8 @@ class ChangeEmailAddressState with _$ChangeEmailAddressState {
 
   const factory ChangeEmailAddressState.changeEmailAddressSuccess(
       UpdateEmailAddressResponse data) = ChangeEmailAddressSuccess;
+
+        const factory ChangeEmailAddressState.changePasswordVisibilityState(
+    bool isPasswordVisible,
+  ) = ChangePasswordVisibilityState;
 }
