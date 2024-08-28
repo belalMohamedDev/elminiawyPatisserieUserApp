@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../core/services/app_storage_key.dart';
 import '../../../core/services/shared_pref_helper.dart';
 import '../data/model/request/update_account_information.dart';
+import '../data/model/response/delete_account.dart';
 
 part 'account_information_state.dart';
 part 'account_information_cubit.freezed.dart';
@@ -87,5 +88,26 @@ class AccountInformationCubit extends Cubit<AccountInformationState> {
   ) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
+  }
+
+  Future<void> summitdeleteAccount() async {
+    emit(const AccountInformationState.deleteAccountLoading());
+
+    final response =
+        await _accountInformationRepositoryImplement.deleteAccountRepo();
+
+    response.when(
+      success: (dataResponse) async {
+        emit(AccountInformationState.deleteAccountSuccess(dataResponse));
+      },
+      failure: (error) {
+        if (error.statusCode != 401) {
+          emit(
+            AccountInformationState.deleteAccountError(
+                errorMessage: error.message!, statesCode: error.statusCode!),
+          );
+        }
+      },
+    );
   }
 }

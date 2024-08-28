@@ -3,7 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/application/cubit/app_logic_cubit.dart';
 import '../../../../core/common/toast/show_toast.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/services/shared_pref_helper.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/fonts/strings_manger.dart';
@@ -153,16 +156,32 @@ class AccountInfomationBody extends StatelessWidget {
     return BlocConsumer<AccountInformationCubit, AccountInformationState>(
       listener: (context, state) {
         state.whenOrNull(
-            updateAccountInformationError: (statesCode, errorMessage) =>
-                ShowToast.showToastErrorTop(
-                    errorMessage: errorMessage, context: context),
-            updateAccountInformationSuccess: (data) {
-              ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
+          updateAccountInformationError: (statesCode, errorMessage) =>
+              ShowToast.showToastErrorTop(
+                  errorMessage: errorMessage, context: context),
+          updateAccountInformationSuccess: (data) {
+            ShowToast.showToastSuccessTop(
+                message: data.message!, context: context);
 
-              context.read<AccountInformationCubit>().getUserInfo();
-              context.read<AccountInformationCubit>().enablTextFormField();
-            });
+            context.read<AccountInformationCubit>().getUserInfo();
+            context.read<AccountInformationCubit>().enablTextFormField();
+          },
+          deleteAccountSuccess: (data) async {
+            ShowToast.showToastSuccessTop(
+                message: data.message!, context: context);
+            await SharedPrefHelper.clearAllSecuredData();
+            if (context.mounted) {
+              Navigator.of(context, rootNavigator: !false)
+                  .pushNamedAndRemoveUntil(
+                      Routes.loginRoute, (Route route) => false);
+
+              context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
+            }
+          },
+          deleteAccountError: (statesCode, errorMessage) =>
+              ShowToast.showToastErrorTop(
+                  errorMessage: errorMessage, context: context),
+        );
       },
       builder: (context, state) {
         return Container(
@@ -189,10 +208,37 @@ class AccountInfomationBody extends StatelessWidget {
                       .read<AccountInformationCubit>()
                       .updateAccountInformation();
                 }
+              } else {
+                context.read<AccountInformationCubit>().summitdeleteAccount();
               }
             },
             child: state.maybeWhen(
               updateAccountInformationLoading: () => Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 20.h,
+                    width: 20.w,
+                    child: const CircularProgressIndicator(
+                      color: Colors.white,
+                      strokeWidth: 2.0,
+                      strokeAlign: 0.01,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15.w,
+                  ),
+                  Text(
+                    AppStrings.loading,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontSize: 16.sp,
+                        color: ColorManger.white,
+                        fontWeight: FontWeightManger.semiBold),
+                  ),
+                ],
+              ),
+              deleteAccountLoading: () => Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

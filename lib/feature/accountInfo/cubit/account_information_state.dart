@@ -21,4 +21,16 @@ class AccountInformationState with _$AccountInformationState {
   ) = ChangeEnablTextFormField;
 
   const factory AccountInformationState.noChangesDetected() = NoChangesDetected;
+
+
+
+    const factory AccountInformationState.deleteAccountLoading() =
+      DeleteAccountLoading;
+  const factory AccountInformationState.deleteAccountError(
+      {required int statesCode,
+      required String errorMessage}) = DeleteAccountError;
+
+  const factory AccountInformationState.deleteAccountSuccess(
+      DeleteAccountResponse data) = DeleteAccountSuccess;
+
 }

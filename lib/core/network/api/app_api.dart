@@ -8,6 +8,7 @@ import 'package:elminiawy/feature/address/data/model/response/create_address_res
 import 'package:retrofit/retrofit.dart';
 
 import '../../../feature/accountInfo/data/model/request/update_account_information.dart';
+import '../../../feature/accountInfo/data/model/response/delete_account.dart';
 import '../../../feature/accountInfo/data/model/response/update_account_information.dart';
 import '../../../feature/address/data/model/response/get_store_address_response.dart';
 import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
@@ -87,7 +88,7 @@ abstract class AppServiceClient {
 
   @POST(ApiConstants.address)
   Future<CreateAddressResponse> createAddress(
-    @Body() Map<String, dynamic>  createAddressRequestBody,
+    @Body() Map<String, dynamic> createAddressRequestBody,
   );
 
   @GET(ApiConstants.address)
@@ -96,7 +97,7 @@ abstract class AppServiceClient {
   @PUT('${ApiConstants.address}/{id}')
   Future<CreateAddressResponse> updateAddress(
     @Path("id") String id,
-     @Body() Map<String, dynamic> createAddressRequestBody,
+    @Body() Map<String, dynamic> createAddressRequestBody,
   );
 
   @DELETE('${ApiConstants.address}/{id}')
@@ -136,21 +137,22 @@ abstract class AppServiceClient {
   @GET(ApiConstants.storeAddress)
   Future<GetStoreAddressResponse> getAllStoreBranch();
 
-
   @PUT(ApiConstants.updateMyData)
   Future<UpdateAccountInformationResponse> updateMyData(
-    @Body() UpdateAccountInformationRequestBody updateAccountInformationRequestBody,
+    @Body()
+    UpdateAccountInformationRequestBody updateAccountInformationRequestBody,
   );
-
 
   @PUT(ApiConstants.updateMyEmailAddress)
   Future<UpdateEmailAddressResponse> updateMyEmailAddress(
-    @Body()
-    ChangeEmailRequestBody changeEmailRequestBody,
+    @Body() ChangeEmailRequestBody changeEmailRequestBody,
   );
 
   @PUT(ApiConstants.updateMyPassword)
   Future<UpdateMyPasswordResponse> updateMyPasswordService(
     @Body() ChangeMyPasswordRequestBody changeMyPasswordRequestBody,
   );
+
+  @DELETE(ApiConstants.deleteMyAccount)
+  Future<DeleteAccountResponse> deleteMyAccountService();
 }

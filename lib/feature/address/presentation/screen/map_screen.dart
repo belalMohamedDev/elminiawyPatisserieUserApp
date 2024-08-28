@@ -112,34 +112,60 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  CustomButton _pickLocationButton(BuildContext context, MapCubit mapCuibt) {
+  CustomButton _pickLocationButton(BuildContext context, MapCubit mapCubit) {
     return CustomButton(
       onPressed: () async {
-        if (mapCuibt.nearestDistance <= 5000) {
-          String addressAreaInformation = await mapCuibt.getAddressFromLatLng(
-              mapCuibt.targetPosition.latitude,
-              mapCuibt.targetPosition.longitude);
-          if (!context.mounted) return;
-
-          if (widget.isUpdateMap == true) {
-            var resultData = {
-              'latLng': mapCuibt.targetPosition,
-              'markerData': mapCuibt.markers,
-              'addressAreaInformation': addressAreaInformation
-            };
-
-            Navigator.pop(context, resultData);
-          } else {
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                builder: (context) => AddNewAddressScreen(
-                    latLng: mapCuibt.targetPosition,
-                    markerData: mapCuibt.markers,
-                    addressAreaInformation: addressAreaInformation),
-              ),
-              (route) => route.isFirst,
+        if (mapCubit.nearestDistance <= 5000) {
+          try {
+            // Perform the async operation without using the context directly.
+            final value = await mapCubit.getAddressFromLatLng(
+              mapCubit.targetPosition.latitude,
+              mapCubit.targetPosition.longitude,
             );
+
+            if (!mounted) return; // Ensure the widget is still mounted.
+
+            if (widget.isUpdateMap == true) {
+              var resultData = {
+                'latLng': mapCubit.targetPosition,
+                'markerData': mapCubit.markers,
+                'addressAreaInformation': value,
+              };
+
+              // Use the context only if the widget is still mounted.
+              if (mounted) {
+                Navigator.pop(context, resultData);
+              }
+            } else {
+              // Use the context only if the widget is still mounted.
+              if (mounted) {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddNewAddressScreen(
+                      latLng: mapCubit.targetPosition,
+                      markerData: mapCubit.markers,
+                      addressAreaInformation: value,
+                    ),
+                  ),
+                  (route) => route.isFirst,
+                );
+              }
+            }
+          } catch (error) {
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('An error occurred. Please try again.'),
+                ),
+              );
+
+              // Retry the operation if necessary.
+              await Future.delayed(const Duration(seconds: 2));
+              if (mounted) {
+                _pickLocationButton(context, mapCubit).onPressed!();
+              }
+            }
           }
         }
       },
@@ -152,6 +178,99 @@ class _MapScreenState extends State<MapScreen> {
       ),
     );
   }
+
+  // CustomButton _pickLocationButton(BuildContext context, MapCubit mapCuibt) {
+  //   return CustomButton(
+  //     onPressed: () async {
+  //       if (mapCuibt.nearestDistance <= 5000) {
+  //         // Capture the context to use after the async call
+  //         final currentContext = context;
+
+  //         try {
+  //           final value = await mapCuibt.getAddressFromLatLng(
+  //             mapCuibt.targetPosition.latitude,
+  //             mapCuibt.targetPosition.longitude,
+  //           );
+
+  //           if (!mounted) return; // Check if the widget is still mounted
+
+  //           if (widget.isUpdateMap == true) {
+  //             var resultData = {
+  //               'latLng': mapCuibt.targetPosition,
+  //               'markerData': mapCuibt.markers,
+  //               'addressAreaInformation': value
+  //             };
+
+  //             Navigator.pop(currentContext, resultData);
+  //           } else {
+  //             Navigator.pushAndRemoveUntil(
+  //               currentContext,
+  //               MaterialPageRoute(
+  //                 builder: (context) => AddNewAddressScreen(
+  //                   latLng: mapCuibt.targetPosition,
+  //                   markerData: mapCuibt.markers,
+  //                   addressAreaInformation: value,
+  //                 ),
+  //               ),
+  //               (route) => route.isFirst,
+  //             );
+  //           }
+  //         } catch (error) {
+  //           if (!mounted) return; // Check if the widget is still mounted
+
+  //           ScaffoldMessenger.of(currentContext).showSnackBar(
+  //             const SnackBar(
+  //               content: Text('An error occurred. Please try again.'),
+  //             ),
+  //           );
+
+  //           await Future.delayed(Duration(seconds: 2));
+  //           if (!mounted) return; // Check if the widget is still mounted
+
+  //           _pickLocationButton(currentContext, mapCuibt).onPressed!();
+  //         }
+  //       }
+  //     },
+  //     // () async {
+  //     //   if (mapCuibt.nearestDistance <= 5000) {
+  //     //     await mapCuibt
+  //     //         .getAddressFromLatLng(mapCuibt.targetPosition.latitude,
+  //     //             mapCuibt.targetPosition.longitude)
+  //     //         .then(
+  //     //       (value) {
+  //     //         if (widget.isUpdateMap == true) {
+  //     //           var resultData = {
+  //     //             'latLng': mapCuibt.targetPosition,
+  //     //             'markerData': mapCuibt.markers,
+  //     //             'addressAreaInformation': value
+  //     //           };
+
+  //     //           Navigator.pop(context, resultData);
+  //     //         } else {
+  //     //           Navigator.pushAndRemoveUntil(
+  //     //             context,
+  //     //             MaterialPageRoute(
+  //     //               builder: (context) => AddNewAddressScreen(
+  //     //                   latLng: mapCuibt.targetPosition,
+  //     //                   markerData: mapCuibt.markers,
+  //     //                   addressAreaInformation: value),
+  //     //             ),
+  //     //             (route) => route.isFirst,
+  //     //           );
+  //     //         }
+  //     //       },
+  //     //     );
+  //     //   }
+  //     // },
+  //     widget: Text(
+  //       buttonText.isEmpty ? "Enter Complete address" : buttonText,
+  //       style: Theme.of(context).textTheme.titleLarge?.copyWith(
+  //           fontSize: 16.sp,
+  //           color: ColorManger.white,
+  //           fontWeight: FontWeightManger.semiBold),
+  //     ),
+  //   );
+  // }
 
   InkWell _togelMapType() {
     return InkWell(

@@ -29,6 +29,10 @@ mixin _$AccountInformationState {
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,6 +47,9 @@ mixin _$AccountInformationState {
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +64,9 @@ mixin _$AccountInformationState {
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,6 +83,9 @@ mixin _$AccountInformationState {
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +100,9 @@ mixin _$AccountInformationState {
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -101,6 +117,9 @@ mixin _$AccountInformationState {
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,6 +193,10 @@ class _$InitialImpl implements _Initial {
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return initial();
   }
@@ -191,6 +214,9 @@ class _$InitialImpl implements _Initial {
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return initial?.call();
   }
@@ -208,6 +234,9 @@ class _$InitialImpl implements _Initial {
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -230,6 +259,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) {
     return initial(this);
   }
@@ -247,6 +279,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) {
     return initial?.call(this);
   }
@@ -264,6 +299,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -331,6 +369,10 @@ class _$UpdateAccountInformationLoadingImpl
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading();
   }
@@ -348,6 +390,9 @@ class _$UpdateAccountInformationLoadingImpl
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading?.call();
   }
@@ -365,6 +410,9 @@ class _$UpdateAccountInformationLoadingImpl
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationLoading != null) {
@@ -387,6 +435,9 @@ class _$UpdateAccountInformationLoadingImpl
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading(this);
   }
@@ -404,6 +455,9 @@ class _$UpdateAccountInformationLoadingImpl
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading?.call(this);
   }
@@ -421,6 +475,9 @@ class _$UpdateAccountInformationLoadingImpl
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationLoading != null) {
@@ -528,6 +585,10 @@ class _$UpdateAccountInformationErrorImpl
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return updateAccountInformationError(statesCode, errorMessage);
   }
@@ -545,6 +606,9 @@ class _$UpdateAccountInformationErrorImpl
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationError?.call(statesCode, errorMessage);
   }
@@ -562,6 +626,9 @@ class _$UpdateAccountInformationErrorImpl
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationError != null) {
@@ -584,6 +651,9 @@ class _$UpdateAccountInformationErrorImpl
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) {
     return updateAccountInformationError(this);
   }
@@ -601,6 +671,9 @@ class _$UpdateAccountInformationErrorImpl
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) {
     return updateAccountInformationError?.call(this);
   }
@@ -618,6 +691,9 @@ class _$UpdateAccountInformationErrorImpl
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationError != null) {
@@ -722,6 +798,10 @@ class _$UpdateAccountInformationSuccessImpl
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess(data);
   }
@@ -739,6 +819,9 @@ class _$UpdateAccountInformationSuccessImpl
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess?.call(data);
   }
@@ -756,6 +839,9 @@ class _$UpdateAccountInformationSuccessImpl
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationSuccess != null) {
@@ -778,6 +864,9 @@ class _$UpdateAccountInformationSuccessImpl
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess(this);
   }
@@ -795,6 +884,9 @@ class _$UpdateAccountInformationSuccessImpl
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess?.call(this);
   }
@@ -812,6 +904,9 @@ class _$UpdateAccountInformationSuccessImpl
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationSuccess != null) {
@@ -929,6 +1024,10 @@ class _$GetStorageDataImpl implements GetStorageData {
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return getStorageData(userEmail, userName, userPhone);
   }
@@ -946,6 +1045,9 @@ class _$GetStorageDataImpl implements GetStorageData {
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return getStorageData?.call(userEmail, userName, userPhone);
   }
@@ -963,6 +1065,9 @@ class _$GetStorageDataImpl implements GetStorageData {
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (getStorageData != null) {
@@ -985,6 +1090,9 @@ class _$GetStorageDataImpl implements GetStorageData {
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) {
     return getStorageData(this);
   }
@@ -1002,6 +1110,9 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) {
     return getStorageData?.call(this);
   }
@@ -1019,6 +1130,9 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (getStorageData != null) {
@@ -1119,6 +1233,10 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return changeEnablTextFormField(enable);
   }
@@ -1136,6 +1254,9 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return changeEnablTextFormField?.call(enable);
   }
@@ -1153,6 +1274,9 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (changeEnablTextFormField != null) {
@@ -1175,6 +1299,9 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) {
     return changeEnablTextFormField(this);
   }
@@ -1192,6 +1319,9 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) {
     return changeEnablTextFormField?.call(this);
   }
@@ -1209,6 +1339,9 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (changeEnablTextFormField != null) {
@@ -1277,6 +1410,10 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
         getStorageData,
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return noChangesDetected();
   }
@@ -1294,6 +1431,9 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
         getStorageData,
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return noChangesDetected?.call();
   }
@@ -1311,6 +1451,9 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
         getStorageData,
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (noChangesDetected != null) {
@@ -1333,6 +1476,9 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     required TResult Function(ChangeEnablTextFormField value)
         changeEnablTextFormField,
     required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
   }) {
     return noChangesDetected(this);
   }
@@ -1350,6 +1496,9 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     TResult? Function(GetStorageData value)? getStorageData,
     TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
   }) {
     return noChangesDetected?.call(this);
   }
@@ -1367,6 +1516,9 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     TResult Function(GetStorageData value)? getStorageData,
     TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
     TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (noChangesDetected != null) {
@@ -1378,4 +1530,601 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
 
 abstract class NoChangesDetected implements AccountInformationState {
   const factory NoChangesDetected() = _$NoChangesDetectedImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteAccountLoadingImplCopyWith<$Res> {
+  factory _$$DeleteAccountLoadingImplCopyWith(_$DeleteAccountLoadingImpl value,
+          $Res Function(_$DeleteAccountLoadingImpl) then) =
+      __$$DeleteAccountLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteAccountLoadingImplCopyWithImpl<$Res>
+    extends _$AccountInformationStateCopyWithImpl<$Res,
+        _$DeleteAccountLoadingImpl>
+    implements _$$DeleteAccountLoadingImplCopyWith<$Res> {
+  __$$DeleteAccountLoadingImplCopyWithImpl(_$DeleteAccountLoadingImpl _value,
+      $Res Function(_$DeleteAccountLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
+  const _$DeleteAccountLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AccountInformationState.deleteAccountLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteAccountLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() updateAccountInformationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAccountInformationError,
+    required TResult Function(UpdateAccountInformationResponse data)
+        updateAccountInformationSuccess,
+    required TResult Function(
+            String userEmail, String userName, String userPhone)
+        getStorageData,
+    required TResult Function(bool enable) changeEnablTextFormField,
+    required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+  }) {
+    return deleteAccountLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? updateAccountInformationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        updateAccountInformationError,
+    TResult? Function(UpdateAccountInformationResponse data)?
+        updateAccountInformationSuccess,
+    TResult? Function(String userEmail, String userName, String userPhone)?
+        getStorageData,
+    TResult? Function(bool enable)? changeEnablTextFormField,
+    TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+  }) {
+    return deleteAccountLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? updateAccountInformationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        updateAccountInformationError,
+    TResult Function(UpdateAccountInformationResponse data)?
+        updateAccountInformationSuccess,
+    TResult Function(String userEmail, String userName, String userPhone)?
+        getStorageData,
+    TResult Function(bool enable)? changeEnablTextFormField,
+    TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteAccountLoading != null) {
+      return deleteAccountLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(UpdateAccountInformationLoading value)
+        updateAccountInformationLoading,
+    required TResult Function(UpdateAccountInformationError value)
+        updateAccountInformationError,
+    required TResult Function(UpdateAccountInformationSuccess value)
+        updateAccountInformationSuccess,
+    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(ChangeEnablTextFormField value)
+        changeEnablTextFormField,
+    required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
+  }) {
+    return deleteAccountLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(UpdateAccountInformationLoading value)?
+        updateAccountInformationLoading,
+    TResult? Function(UpdateAccountInformationError value)?
+        updateAccountInformationError,
+    TResult? Function(UpdateAccountInformationSuccess value)?
+        updateAccountInformationSuccess,
+    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
+    TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
+  }) {
+    return deleteAccountLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(UpdateAccountInformationLoading value)?
+        updateAccountInformationLoading,
+    TResult Function(UpdateAccountInformationError value)?
+        updateAccountInformationError,
+    TResult Function(UpdateAccountInformationSuccess value)?
+        updateAccountInformationSuccess,
+    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
+    TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteAccountLoading != null) {
+      return deleteAccountLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteAccountLoading implements AccountInformationState {
+  const factory DeleteAccountLoading() = _$DeleteAccountLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteAccountErrorImplCopyWith<$Res> {
+  factory _$$DeleteAccountErrorImplCopyWith(_$DeleteAccountErrorImpl value,
+          $Res Function(_$DeleteAccountErrorImpl) then) =
+      __$$DeleteAccountErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int statesCode, String errorMessage});
+}
+
+/// @nodoc
+class __$$DeleteAccountErrorImplCopyWithImpl<$Res>
+    extends _$AccountInformationStateCopyWithImpl<$Res,
+        _$DeleteAccountErrorImpl>
+    implements _$$DeleteAccountErrorImplCopyWith<$Res> {
+  __$$DeleteAccountErrorImplCopyWithImpl(_$DeleteAccountErrorImpl _value,
+      $Res Function(_$DeleteAccountErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? statesCode = null,
+    Object? errorMessage = null,
+  }) {
+    return _then(_$DeleteAccountErrorImpl(
+      statesCode: null == statesCode
+          ? _value.statesCode
+          : statesCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteAccountErrorImpl implements DeleteAccountError {
+  const _$DeleteAccountErrorImpl(
+      {required this.statesCode, required this.errorMessage});
+
+  @override
+  final int statesCode;
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'AccountInformationState.deleteAccountError(statesCode: $statesCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteAccountErrorImpl &&
+            (identical(other.statesCode, statesCode) ||
+                other.statesCode == statesCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteAccountErrorImplCopyWith<_$DeleteAccountErrorImpl> get copyWith =>
+      __$$DeleteAccountErrorImplCopyWithImpl<_$DeleteAccountErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() updateAccountInformationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAccountInformationError,
+    required TResult Function(UpdateAccountInformationResponse data)
+        updateAccountInformationSuccess,
+    required TResult Function(
+            String userEmail, String userName, String userPhone)
+        getStorageData,
+    required TResult Function(bool enable) changeEnablTextFormField,
+    required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+  }) {
+    return deleteAccountError(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? updateAccountInformationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        updateAccountInformationError,
+    TResult? Function(UpdateAccountInformationResponse data)?
+        updateAccountInformationSuccess,
+    TResult? Function(String userEmail, String userName, String userPhone)?
+        getStorageData,
+    TResult? Function(bool enable)? changeEnablTextFormField,
+    TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+  }) {
+    return deleteAccountError?.call(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? updateAccountInformationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        updateAccountInformationError,
+    TResult Function(UpdateAccountInformationResponse data)?
+        updateAccountInformationSuccess,
+    TResult Function(String userEmail, String userName, String userPhone)?
+        getStorageData,
+    TResult Function(bool enable)? changeEnablTextFormField,
+    TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteAccountError != null) {
+      return deleteAccountError(statesCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(UpdateAccountInformationLoading value)
+        updateAccountInformationLoading,
+    required TResult Function(UpdateAccountInformationError value)
+        updateAccountInformationError,
+    required TResult Function(UpdateAccountInformationSuccess value)
+        updateAccountInformationSuccess,
+    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(ChangeEnablTextFormField value)
+        changeEnablTextFormField,
+    required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
+  }) {
+    return deleteAccountError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(UpdateAccountInformationLoading value)?
+        updateAccountInformationLoading,
+    TResult? Function(UpdateAccountInformationError value)?
+        updateAccountInformationError,
+    TResult? Function(UpdateAccountInformationSuccess value)?
+        updateAccountInformationSuccess,
+    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
+    TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
+  }) {
+    return deleteAccountError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(UpdateAccountInformationLoading value)?
+        updateAccountInformationLoading,
+    TResult Function(UpdateAccountInformationError value)?
+        updateAccountInformationError,
+    TResult Function(UpdateAccountInformationSuccess value)?
+        updateAccountInformationSuccess,
+    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
+    TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteAccountError != null) {
+      return deleteAccountError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteAccountError implements AccountInformationState {
+  const factory DeleteAccountError(
+      {required final int statesCode,
+      required final String errorMessage}) = _$DeleteAccountErrorImpl;
+
+  int get statesCode;
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$DeleteAccountErrorImplCopyWith<_$DeleteAccountErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteAccountSuccessImplCopyWith<$Res> {
+  factory _$$DeleteAccountSuccessImplCopyWith(_$DeleteAccountSuccessImpl value,
+          $Res Function(_$DeleteAccountSuccessImpl) then) =
+      __$$DeleteAccountSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DeleteAccountResponse data});
+}
+
+/// @nodoc
+class __$$DeleteAccountSuccessImplCopyWithImpl<$Res>
+    extends _$AccountInformationStateCopyWithImpl<$Res,
+        _$DeleteAccountSuccessImpl>
+    implements _$$DeleteAccountSuccessImplCopyWith<$Res> {
+  __$$DeleteAccountSuccessImplCopyWithImpl(_$DeleteAccountSuccessImpl _value,
+      $Res Function(_$DeleteAccountSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$DeleteAccountSuccessImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as DeleteAccountResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
+  const _$DeleteAccountSuccessImpl(this.data);
+
+  @override
+  final DeleteAccountResponse data;
+
+  @override
+  String toString() {
+    return 'AccountInformationState.deleteAccountSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteAccountSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteAccountSuccessImplCopyWith<_$DeleteAccountSuccessImpl>
+      get copyWith =>
+          __$$DeleteAccountSuccessImplCopyWithImpl<_$DeleteAccountSuccessImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() updateAccountInformationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        updateAccountInformationError,
+    required TResult Function(UpdateAccountInformationResponse data)
+        updateAccountInformationSuccess,
+    required TResult Function(
+            String userEmail, String userName, String userPhone)
+        getStorageData,
+    required TResult Function(bool enable) changeEnablTextFormField,
+    required TResult Function() noChangesDetected,
+    required TResult Function() deleteAccountLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteAccountError,
+    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+  }) {
+    return deleteAccountSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? updateAccountInformationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        updateAccountInformationError,
+    TResult? Function(UpdateAccountInformationResponse data)?
+        updateAccountInformationSuccess,
+    TResult? Function(String userEmail, String userName, String userPhone)?
+        getStorageData,
+    TResult? Function(bool enable)? changeEnablTextFormField,
+    TResult? Function()? noChangesDetected,
+    TResult? Function()? deleteAccountLoading,
+    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+  }) {
+    return deleteAccountSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? updateAccountInformationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        updateAccountInformationError,
+    TResult Function(UpdateAccountInformationResponse data)?
+        updateAccountInformationSuccess,
+    TResult Function(String userEmail, String userName, String userPhone)?
+        getStorageData,
+    TResult Function(bool enable)? changeEnablTextFormField,
+    TResult Function()? noChangesDetected,
+    TResult Function()? deleteAccountLoading,
+    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteAccountSuccess != null) {
+      return deleteAccountSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(UpdateAccountInformationLoading value)
+        updateAccountInformationLoading,
+    required TResult Function(UpdateAccountInformationError value)
+        updateAccountInformationError,
+    required TResult Function(UpdateAccountInformationSuccess value)
+        updateAccountInformationSuccess,
+    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(ChangeEnablTextFormField value)
+        changeEnablTextFormField,
+    required TResult Function(NoChangesDetected value) noChangesDetected,
+    required TResult Function(DeleteAccountLoading value) deleteAccountLoading,
+    required TResult Function(DeleteAccountError value) deleteAccountError,
+    required TResult Function(DeleteAccountSuccess value) deleteAccountSuccess,
+  }) {
+    return deleteAccountSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(UpdateAccountInformationLoading value)?
+        updateAccountInformationLoading,
+    TResult? Function(UpdateAccountInformationError value)?
+        updateAccountInformationError,
+    TResult? Function(UpdateAccountInformationSuccess value)?
+        updateAccountInformationSuccess,
+    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
+    TResult? Function(NoChangesDetected value)? noChangesDetected,
+    TResult? Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult? Function(DeleteAccountError value)? deleteAccountError,
+    TResult? Function(DeleteAccountSuccess value)? deleteAccountSuccess,
+  }) {
+    return deleteAccountSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(UpdateAccountInformationLoading value)?
+        updateAccountInformationLoading,
+    TResult Function(UpdateAccountInformationError value)?
+        updateAccountInformationError,
+    TResult Function(UpdateAccountInformationSuccess value)?
+        updateAccountInformationSuccess,
+    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(ChangeEnablTextFormField value)? changeEnablTextFormField,
+    TResult Function(NoChangesDetected value)? noChangesDetected,
+    TResult Function(DeleteAccountLoading value)? deleteAccountLoading,
+    TResult Function(DeleteAccountError value)? deleteAccountError,
+    TResult Function(DeleteAccountSuccess value)? deleteAccountSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteAccountSuccess != null) {
+      return deleteAccountSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteAccountSuccess implements AccountInformationState {
+  const factory DeleteAccountSuccess(final DeleteAccountResponse data) =
+      _$DeleteAccountSuccessImpl;
+
+  DeleteAccountResponse get data;
+  @JsonKey(ignore: true)
+  _$$DeleteAccountSuccessImplCopyWith<_$DeleteAccountSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
