@@ -152,7 +152,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
             ),
           ),
         ),
-        allProductList != null
+        allProductList != null || searchList != null
             ? const SizedBox()
             : Image.asset(
                 ImageAsset.newItem,

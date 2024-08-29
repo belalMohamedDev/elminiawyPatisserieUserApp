@@ -86,7 +86,7 @@ class _SearchScreenBodyState extends State<SearchScreenBody> {
                       padding:
                           EdgeInsets.only(top: 25.h, left: 5.w, right: 5.w),
                       child: ProductGridViewSuccessState(
-                        dataList: state.getFoundData,
+                        searchList: state.getFoundData,
                       ),
                     );
                   }
