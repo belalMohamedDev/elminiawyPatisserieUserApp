@@ -48,8 +48,6 @@ class NewProductGrideView extends StatelessWidget {
           listener: (context, state) {
             state.whenOrNull(
               getProductSuccess: (data) {
-            
-
                 final wishListCubit = context.read<WishListCubit>();
 
                 for (var element in data.data!) {
@@ -59,21 +57,19 @@ class NewProductGrideView extends StatelessWidget {
                     wishListCubit.favorites.remove(element.sId!);
                   }
                 }
-
               },
             );
           },
           builder: (context, state) {
-            if (state is GetProductSuccess) {
-              return ProductGridViewSuccessState(
-                dataList: context.read<ProductCubit>().dataList,
-                grideViewIndex: 4,
-                physics: const NeverScrollableScrollPhysics(),
+            if (state is GetProductError || state is GetProductLoading) {
+              return const ProductGridViewLoadingState(
+                physics: NeverScrollableScrollPhysics(),
               );
             }
-
-            return const ProductGridViewLoadingState(
-              physics: NeverScrollableScrollPhysics(),
+            return ProductGridViewSuccessState(
+              dataList: context.read<ProductCubit>().dataList,
+              grideViewIndex: 4,
+              physics: const NeverScrollableScrollPhysics(),
             );
           },
         )

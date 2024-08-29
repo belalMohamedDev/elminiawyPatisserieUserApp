@@ -9,9 +9,14 @@ import '../../../../core/style/fonts/font_manger.dart';
 import '../../../newProduct/Cubit/product_cubit.dart';
 import '../refactor/search_body.dart';
 
-class SearchView extends StatelessWidget {
+class SearchView extends StatefulWidget {
   const SearchView({super.key});
 
+  @override
+  State<SearchView> createState() => _SearchViewState();
+}
+
+class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,15 +32,19 @@ class SearchView extends StatelessWidget {
           onPressed: () {
             context.pop();
             context.read<ProductCubit>().clearSearch();
-
           },
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-        child: const SearchScreenBody(),
+      body: PopScope(
+        canPop: true,
+        onPopInvoked: (didPop) {
+          context.read<ProductCubit>().clearSearch();
+        },
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          child: const SearchScreenBody(),
+        ),
       ),
     );
   }
 }
-

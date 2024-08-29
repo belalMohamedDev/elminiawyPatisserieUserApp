@@ -19,7 +19,7 @@ import '../../style/images/asset_manger.dart';
 
 class ProductGridViewSuccessState extends StatelessWidget {
   final List<DataProductResponse>? dataList;
-  final List<DataProductResponse>? searchList;
+  final bool isSearchActive;
   final List<WishListProductData>? wishListData;
   final List<Products>? allProductList;
 
@@ -29,7 +29,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
   const ProductGridViewSuccessState({
     super.key,
     this.dataList,
-    this.searchList,
+    this.isSearchActive = false,
     this.grideViewIndex,
     this.physics,
     this.wishListData,
@@ -38,12 +38,8 @@ class ProductGridViewSuccessState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isSearchActive = searchList != null;
 
-// Determine which list to use for display
-    final List displayList = isSearchActive
-        ? searchList!
-        : (dataList ?? wishListData ?? allProductList ?? []);
+    final List displayList = (dataList ?? wishListData ?? allProductList ?? []);
 
     final int maxItemCount = displayList.length;
 
@@ -152,7 +148,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
             ),
           ),
         ),
-        allProductList != null || searchList != null
+        allProductList != null || isSearchActive==true
             ? const SizedBox()
             : Image.asset(
                 ImageAsset.newItem,

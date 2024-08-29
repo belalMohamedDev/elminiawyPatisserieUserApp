@@ -9,14 +9,9 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../newProduct/Cubit/product_cubit.dart';
 import '../widget/filter_bottom_sheet.dart';
 
-class SearchScreenBody extends StatefulWidget {
+class SearchScreenBody extends StatelessWidget {
   const SearchScreenBody({super.key});
 
-  @override
-  State<SearchScreenBody> createState() => _SearchScreenBodyState();
-}
-
-class _SearchScreenBodyState extends State<SearchScreenBody> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductCubit, ProductState>(
@@ -86,7 +81,8 @@ class _SearchScreenBodyState extends State<SearchScreenBody> {
                       padding:
                           EdgeInsets.only(top: 25.h, left: 5.w, right: 5.w),
                       child: ProductGridViewSuccessState(
-                        searchList: state.getFoundData,
+                        dataList: state.getFoundData,
+                        isSearchActive: true,
                       ),
                     );
                   }
