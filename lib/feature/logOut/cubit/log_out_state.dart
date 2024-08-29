@@ -8,6 +8,8 @@ class LogOutState with _$LogOutState {
   const factory LogOutState.logOutError(
       {required int statesCode, required String errorMessage}) = LogOutError;
 
-  const factory LogOutState.logOutSuccess(
-      { required String successMessage}) = LogOutSuccess;
+  const factory LogOutState.logOutSuccess({required String successMessage}) =
+      LogOutSuccess;
+
+  const factory LogOutState.getStorageData(String userName) = GetStorageData;
 }

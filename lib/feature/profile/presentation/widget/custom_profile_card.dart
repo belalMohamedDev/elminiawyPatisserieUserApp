@@ -7,14 +7,18 @@ import '../../../../core/style/fonts/font_manger.dart';
 
 class CustomProfileCard extends StatelessWidget {
   final String title;
+  final String? subTitle;
   final IconData leadingIcon;
   final GestureTapCallback tap;
+  final Widget? actionWidget;
 
   const CustomProfileCard({
     super.key,
     required this.title,
     required this.leadingIcon,
     required this.tap,
+    this.subTitle,
+    this.actionWidget,
   });
 
   @override
@@ -44,11 +48,23 @@ class CustomProfileCard extends StatelessWidget {
                         color: ColorManger.brun,
                         fontSize: 12.sp)),
                 const Spacer(),
-                Icon(
-                  IconlyBroken.arrowRight2,
-                  color: ColorManger.brun,
-                  size: 18.sp,
+                Text(subTitle ?? '',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontFamily: FontConsistent.fontFamilyAcme,
+                        color: ColorManger.brun,
+                        fontSize: 13.sp)),
+                SizedBox(
+                  width: 7.w,
                 ),
+                actionWidget == null
+                    ? subTitle != null
+                        ? const SizedBox()
+                        : Icon(
+                            IconlyBroken.arrowRight2,
+                            color: ColorManger.brun,
+                            size: 18.sp,
+                          )
+                    : actionWidget!,
               ],
             ),
           ),
