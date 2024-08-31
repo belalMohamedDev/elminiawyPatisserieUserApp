@@ -13,7 +13,7 @@ class LoadingCartScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: Padding(
         padding:
-            EdgeInsets.only(top: 10.h, left: 20.w, right: 25.w, bottom: 10.h),
+            EdgeInsets.only(top: 10.h, left: 15.w, right: 15.w, bottom: 10.h),
         child: Column(
           children: [
             _cardItemLoading(),
@@ -128,7 +128,6 @@ class LoadingCartScreen extends StatelessWidget {
           ),
           Image.asset(
             ImageAsset.picture,
-            //    width: 100.w,
             height: 60.h,
           ),
           SizedBox(

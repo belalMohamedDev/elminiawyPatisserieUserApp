@@ -9,14 +9,15 @@ class CartState with _$CartState {
       {required int statesCode,
       required String errorMessage}) = AddItemToCartError;
 
-  const factory CartState.addItemToCartSuccess(CartResponse data,int quantity ) =
-      AddItemToCartSuccess;
+  const factory CartState.addItemToCartSuccess(
+      CartResponse data, int quantity) = AddItemToCartSuccess;
 
   const factory CartState.updateQuantityNumber(int quantity) =
       UpdateQuantityNumber;
 
   //get Cart  item State
   const factory CartState.getCartItemLoading() = GetCartItemLoading;
+
   const factory CartState.getCartItemError(
       {required int statesCode,
       required String errorMessage}) = GetCartItemError;
@@ -30,7 +31,7 @@ class CartState with _$CartState {
   const factory CartState.deleteCartItemError(
       {required int statesCode,
       required String errorMessage}) = DeleteCartItemError;
-
-  const factory CartState.updateQuantityItemLoading(int quantity) =
+  const factory CartState.deleteCartItemLoading() = DeleteCartItemLoading;
+  const factory CartState.updateQuantityItemLoading(String id, int quantity) =
       UpdateQuantityItemLoading;
 }

@@ -6,9 +6,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-import '../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/style/images/asset_manger.dart';
 import '../../cubit/cart_cubit.dart';
 import '../../data/model/response/get_cart.dart';
 
@@ -19,7 +19,7 @@ class ProductCartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100.h,
+      height: 80.h,
       child: Slidable(
         endActionPane: ActionPane(
           motion: const ScrollMotion(),
@@ -29,7 +29,7 @@ class ProductCartItem extends StatelessWidget {
                 context.read<CartCubit>().removeItem(cartItems.sId!);
               },
               backgroundColor: ColorManger.redError,
-              foregroundColor: ColorManger.white,
+              foregroundColor: ColorManger.backgroundItem,
               icon: IconlyBold.delete,
               label: 'Delete',
             ),
@@ -37,9 +37,9 @@ class ProductCartItem extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          height: 100.h,
+          height: 80.h,
           decoration: BoxDecoration(
-            color: ColorManger.white,
+            color: ColorManger.backgroundItem,
             borderRadius: BorderRadius.circular(14.r),
           ),
           child: Row(
@@ -49,13 +49,16 @@ class ProductCartItem extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: ColorManger.backgroundItem,
+                  color: ColorManger.brownLight,
                   borderRadius: BorderRadius.circular(14.r),
                 ),
                 child: CachedNetworkImage(
                   imageUrl: cartItems.product?.image ?? '',
-                  height: 70.h,
-                  placeholder: (context, url) => const LoadingShimmer(),
+                  height: 60.h,
+                  placeholder: (context, url) => Image.asset(
+                    ImageAsset.picture,
+                    height: 60.h,
+                  ),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
@@ -82,9 +85,10 @@ class ProductCartItem extends StatelessWidget {
                                   .updateQuantityToItem(cartItems.sId!, -1),
                               child: CircleAvatar(
                                 backgroundColor: ColorManger.brownLight,
-                                maxRadius: 15.r,
+                                maxRadius: 12.r,
                                 child: state is UpdateQuantityItemLoading
-                                    ? (state).quantity == -1
+                                    ? (state).quantity == -1 &&
+                                            (state).id == cartItems.sId
                                         ? CircularProgressIndicator(
                                             color: ColorManger.brown,
                                           )
@@ -101,7 +105,7 @@ class ProductCartItem extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              width: 10.h,
+                              width: 5.h,
                             ),
                             Text(
                               '${cartItems.quantity!}',
@@ -111,20 +115,21 @@ class ProductCartItem extends StatelessWidget {
                                   .copyWith(
                                       fontFamily: FontConsistent.fontFamilyAcme,
                                       color: ColorManger.brown,
-                                      fontSize: 15.sp),
+                                      fontSize: 11.sp),
                             ),
                             SizedBox(
-                              width: 10.h,
+                              width: 5.h,
                             ),
                             GestureDetector(
                               onTap: () => context
                                   .read<CartCubit>()
                                   .updateQuantityToItem(cartItems.sId!, 1),
                               child: CircleAvatar(
-                                maxRadius: 15.r,
+                                maxRadius: 12.r,
                                 backgroundColor: ColorManger.brun,
                                 child: state is UpdateQuantityItemLoading
-                                    ? (state).quantity == 1
+                                    ? (state).quantity == 1 &&
+                                            (state).id == cartItems.sId
                                         ? CircularProgressIndicator(
                                             color: ColorManger.white,
                                           )
@@ -168,41 +173,44 @@ class ProductCartItem extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               fontFamily: FontConsistent.fontFamilyAcme,
               color: ColorManger.brun,
-              fontSize: 14.sp),
+              fontSize: 12.sp),
         ),
         SizedBox(
-          height: 10.h,
+          height: 5.h,
         ),
-        RatingBar(
-            initialRating: 3,
-            direction: Axis.horizontal,
-            itemSize: 13.sp,
-            itemCount: 5,
-            allowHalfRating: true,
-            itemPadding: EdgeInsets.symmetric(horizontal: 2.w),
-            onRatingUpdate: (rating) {},
-            ratingWidget: RatingWidget(
-                full: Icon(
-                  IconlyBold.star,
-                  color: ColorManger.brown,
-                ),
-                half: Icon(
-                  IconlyBold.star,
-                  color: ColorManger.brun,
-                ),
-                empty: Icon(
-                  IconlyBroken.star,
-                  color: ColorManger.brunLight,
-                ))),
+        IgnorePointer(
+          ignoring: true,
+          child: RatingBar(
+              initialRating: cartItems.product!.ratingsAverage!,
+              direction: Axis.horizontal,
+              itemSize: 11.sp,
+              itemCount: 5,
+              allowHalfRating: true,
+              itemPadding: EdgeInsets.symmetric(horizontal: 2.w),
+              onRatingUpdate: (rating) {},
+              ratingWidget: RatingWidget(
+                  full: Icon(
+                    IconlyBold.star,
+                    color: ColorManger.brown,
+                  ),
+                  half: Icon(
+                    IconlyBold.star,
+                    color: ColorManger.brun,
+                  ),
+                  empty: Icon(
+                    IconlyBroken.star,
+                    color: ColorManger.brunLight,
+                  ))),
+        ),
         SizedBox(
-          height: 10.h,
+          height: 5.h,
         ),
         Text(
           'Total Price:     ${cartItems.totalItemPrice!}.00  \$',
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               fontFamily: FontConsistent.fontFamilyAcme,
               color: ColorManger.brun,
-              fontSize: 13.sp),
+              fontSize: 11.sp),
         ),
       ],
     );

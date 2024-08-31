@@ -74,8 +74,14 @@ class GetCartItems {
   String? sId;
   int? totalItemPrice;
 
+
   GetCartItems(
-      {this.product, this.quantity, this.price, this.sId, this.totalItemPrice});
+      {this.product,
+      this.quantity,
+      this.price,
+      this.sId,
+      this.totalItemPrice,
+      });
 
   //from json
   factory GetCartItems.fromJson(Map<String, dynamic> json) =>

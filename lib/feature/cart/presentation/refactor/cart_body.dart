@@ -1,7 +1,9 @@
 import 'package:elminiawy/feature/cart/presentation/screen/empty_cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/style/color/color_manger.dart';
 import '../../cubit/cart_cubit.dart';
 import '../screen/cart_loading_screen.dart';
 import '../screen/cart_success_screen.dart';
@@ -15,6 +17,7 @@ class CartBody extends StatelessWidget {
       builder: (context, state) {
         if (state is GetCartItemSuccess ||
             state is UpdateQuantityItemLoading ||
+            state is DeleteCartItemLoading ||
             state is AddItemToCartSuccess) {
           final cartData = context.read<CartCubit>().cartData;
 
@@ -22,7 +25,29 @@ class CartBody extends StatelessWidget {
             return const EmptyCartScreen();
           }
 
-          return SuccessCartScreen(cartData: cartData);
+          return Stack(
+            children: [
+              SuccessCartScreen(cartData: cartData),
+              if (state is DeleteCartItemLoading)
+                Center(
+                  child: Container(
+                      height: 70.h,
+                      width: 70.w,
+                      decoration: BoxDecoration(
+                          color: ColorManger.brun,
+                          borderRadius: BorderRadius.circular(12.r)),
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(20.r),
+                          child: CircularProgressIndicator(
+                            color: ColorManger.white,
+                            strokeWidth: 3.sp,
+                          ),
+                        ),
+                      )),
+                ),
+            ],
+          );
         }
         return const LoadingCartScreen();
       },

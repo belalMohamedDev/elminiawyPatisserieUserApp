@@ -85,6 +85,8 @@ class CartCubit extends Cubit<CartState> {
   //------------------------------------------------------------------------
 
   Future<void> removeItem(String id) async {
+    emit(const CartState.deleteCartItemLoading());
+
     final response = await _cartRepositoryImplement.removeItemFromCart(id);
 
     response.when(
@@ -105,7 +107,7 @@ class CartCubit extends Cubit<CartState> {
   }
 
   Future<void> updateQuantityToItem(String id, int quantity) async {
-    emit(CartState.updateQuantityItemLoading(quantity));
+    emit(CartState.updateQuantityItemLoading(id, quantity));
 
     final response =
         await _cartRepositoryImplement.updateItemQuantityFromCart(id, quantity);
