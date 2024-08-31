@@ -9,7 +9,7 @@ class CartState with _$CartState {
       {required int statesCode,
       required String errorMessage}) = AddItemToCartError;
 
-  const factory CartState.addItemToCartSuccess(AddItemToCartResponse data) =
+  const factory CartState.addItemToCartSuccess(CartResponse data,int quantity ) =
       AddItemToCartSuccess;
 
   const factory CartState.updateQuantityNumber(int quantity) =
@@ -22,7 +22,7 @@ class CartState with _$CartState {
       required String errorMessage}) = GetCartItemError;
 
   const factory CartState.getCartItemSuccess(
-    GetCartResponse? data,
+    CartResponse? data,
   ) = GetCartItemSuccess;
 
   //delete item from Cart  State

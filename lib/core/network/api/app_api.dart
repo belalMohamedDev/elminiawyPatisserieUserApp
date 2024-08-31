@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:elminiawy/feature/cart/data/model/response/get_cart.dart';
 import 'package:elminiawy/feature/changePassword/data/model/request/change_my_password_request.dart';
 import 'package:elminiawy/feature/changePassword/data/model/response/change_my_password_response.dart';
 import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
@@ -12,7 +11,7 @@ import '../../../feature/accountInfo/data/model/response/delete_account.dart';
 import '../../../feature/accountInfo/data/model/response/update_account_information.dart';
 import '../../../feature/address/data/model/response/get_store_address_response.dart';
 import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
-import '../../../feature/cart/data/model/response/add_item.dart';
+import '../../../feature/cart/data/model/response/get_cart.dart';
 import '../../../feature/changeEmailAddress/data/model/request/change_email_request.dart';
 import '../../../feature/changeEmailAddress/data/model/response/change_email_response.dart';
 import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
@@ -111,26 +110,26 @@ abstract class AppServiceClient {
   );
 
   @POST(ApiConstants.cart)
-  Future<AddItemToCartResponse> addItemToCart(
+  Future<CartResponse> addItemToCart(
     @Body() AddItemToCartRequestBody addItemToCartRequestBody,
   );
 
   @GET(ApiConstants.cart)
-  Future<GetCartResponse> getCartItem();
+  Future<CartResponse> getCartItem();
 
   @DELETE('${ApiConstants.cart}/{id}')
-  Future<GetCartResponse> removeItemFromCart(
+  Future<CartResponse> removeItemFromCart(
     @Path("id") String id,
   );
 
   @PUT('${ApiConstants.cart}/{id}')
-  Future<GetCartResponse> updateItemQuantityFromCart(
+  Future<CartResponse> updateItemQuantityFromCart(
     @Path("id") String id,
     @Field("quantity") int quantity,
   );
 
   @PUT('${ApiConstants.cart}/applyCoupon')
-  Future<GetCartResponse> applyCouponToCart(
+  Future<CartResponse> applyCouponToCart(
     @Field("coupon") String coupon,
   );
 

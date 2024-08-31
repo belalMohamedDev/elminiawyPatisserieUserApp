@@ -1,8 +1,6 @@
 import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/address/logic/userAddressCubit/user_address_cubit.dart';
 import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,19 +10,8 @@ import '../../../../core/style/images/asset_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../refactor/user_address_body.dart';
 
-class UserAddressView extends StatefulWidget {
+class UserAddressView extends StatelessWidget {
   const UserAddressView({super.key});
-
-  @override
-  State<UserAddressView> createState() => _UserAddressViewState();
-}
-
-class _UserAddressViewState extends State<UserAddressView> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<UserAddressCubit>().getUserAddress();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -5,22 +5,21 @@ import '../../../../core/network/apiResult/api_reuslt.dart';
 import '../../../../core/network/error_handler/api_error_handler.dart';
 import '../../../../core/network/network_connectivity/connectivity_controller.dart';
 import '../model/bodyRequest/add_item.dart';
-import '../model/response/add_item.dart';
 
 abstract class CartRepository {
-  Future<ApiResult<AddItemToCartResponse>> addItemToCart(
+  Future<ApiResult<CartResponse>> addItemToCart(
       AddItemToCartRequestBody addItemToCartRequestBody);
 
-  Future<ApiResult<GetCartResponse>> getCartItem();
+  Future<ApiResult<CartResponse>> getCartItem();
 
-  Future<ApiResult<GetCartResponse>> removeItemFromCart(String id);
+  Future<ApiResult<CartResponse>> removeItemFromCart(String id);
 
-  Future<ApiResult<GetCartResponse>> updateItemQuantityFromCart(
+  Future<ApiResult<CartResponse>> updateItemQuantityFromCart(
     String id,
     int quantity,
   );
 
-  Future<ApiResult<GetCartResponse>> applyCouponToCart(String coupon);
+  Future<ApiResult<CartResponse>> applyCouponToCart(String coupon);
 }
 
 class CartRepositoryImplement implements CartRepository {
@@ -29,7 +28,7 @@ class CartRepositoryImplement implements CartRepository {
   late final NetworkInfo _networkInfo;
 
   @override
-  Future<ApiResult<AddItemToCartResponse>> addItemToCart(
+  Future<ApiResult<CartResponse>> addItemToCart(
       AddItemToCartRequestBody addItemToCartRequestBody) async {
     if (await _networkInfo.isConnected) {
       try {
@@ -46,7 +45,7 @@ class CartRepositoryImplement implements CartRepository {
   }
 
   @override
-  Future<ApiResult<GetCartResponse>> getCartItem() async {
+  Future<ApiResult<CartResponse>> getCartItem() async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.getCartItem();
@@ -61,7 +60,7 @@ class CartRepositoryImplement implements CartRepository {
   }
 
   @override
-  Future<ApiResult<GetCartResponse>> removeItemFromCart(String id) async {
+  Future<ApiResult<CartResponse>> removeItemFromCart(String id) async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.removeItemFromCart(id);
@@ -76,7 +75,7 @@ class CartRepositoryImplement implements CartRepository {
   }
 
   @override
-  Future<ApiResult<GetCartResponse>> updateItemQuantityFromCart(
+  Future<ApiResult<CartResponse>> updateItemQuantityFromCart(
       String id, int quantity) async {
     if (await _networkInfo.isConnected) {
       try {
@@ -93,7 +92,7 @@ class CartRepositoryImplement implements CartRepository {
   }
 
   @override
-  Future<ApiResult<GetCartResponse>> applyCouponToCart(String coupon) async {
+  Future<ApiResult<CartResponse>> applyCouponToCart(String coupon) async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.applyCouponToCart(coupon);

@@ -156,6 +156,25 @@ class UserAddressCubit extends Cubit<UserAddressState> {
 
     response.when(
       success: (dataResponse) {
+        if (dataResponse.data != null) {
+          addressDataList.add(GetAddressResponseData(
+            sId: dataResponse.data!.sId,
+            alias: dataResponse.data!.alias,
+            buildingName: dataResponse.data!.buildingName,
+            apartmentNumber: dataResponse.data!.apartmentNumber,
+            floor: dataResponse.data!.floor,
+            region: dataResponse.data!.region,
+            additionalDirections: dataResponse.data!.additionalDirections,
+            streetName: dataResponse.data!.streetName,
+            phone: dataResponse.data!.phone,
+            addressLabel: dataResponse.data!.addressLabel,
+            location: GetAddressResponseLocation(
+              type: dataResponse.data!.location!.type,
+              coordinates: dataResponse.data!.location!.coordinates,
+            ),
+          ));
+        }
+
         emit(UserAddressState.createNewAddressSuccess(dataResponse));
       },
       failure: (error) {
@@ -204,6 +223,28 @@ class UserAddressCubit extends Cubit<UserAddressState> {
 
     response.when(
       success: (dataResponse) {
+        addressDataList = addressDataList.map((address) {
+          if (address.sId == id) {
+            return GetAddressResponseData(
+              sId: id,
+              alias: dataResponse.data!.alias,
+              buildingName: dataResponse.data!.buildingName,
+              apartmentNumber: dataResponse.data!.apartmentNumber,
+              floor: dataResponse.data!.floor,
+              region: dataResponse.data!.region,
+              additionalDirections: dataResponse.data!.additionalDirections,
+              streetName: dataResponse.data!.streetName,
+              phone: dataResponse.data!.phone,
+              addressLabel: dataResponse.data!.addressLabel,
+              location: GetAddressResponseLocation(
+                type: dataResponse.data!.location!.type,
+                coordinates: dataResponse.data!.location!.coordinates,
+              ),
+            );
+          }
+          return address;
+        }).toList();
+
         emit(UserAddressState.updateAddressSuccess(dataResponse));
       },
       failure: (error) {

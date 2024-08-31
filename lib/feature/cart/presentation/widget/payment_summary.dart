@@ -57,7 +57,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${cartData!.totalCartPrice} \$',
+                      '${cartData!.data!.totalCartPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brown,
@@ -93,7 +93,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${cartData.totalPriceAfterDiscount} \$',
+                      '${cartData.data!.totalPriceAfterDiscount} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: Colors.green,
@@ -125,7 +125,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${cartData.taxPrice} \$',
+                      '${cartData.data!.taxPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brunLight,
@@ -157,7 +157,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${cartData.shippingPrice} \$',
+                      '${cartData.data!.shippingPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brunLight,
@@ -193,7 +193,7 @@ class PaymentSummary extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '${cartData.totalOrderPrice} \$',
+                      '${cartData.data!.totalOrderPrice} \$',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brun,

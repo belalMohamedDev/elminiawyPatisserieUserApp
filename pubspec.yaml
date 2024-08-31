@@ -124,16 +124,9 @@ flutter:
     - asset/image/facebook.png
     - asset/image/google.png
     - asset/image/onBoarding.jpg
-    - asset/image/banner.jpg
-    - asset/image/banner2.jpg
-    - asset/image/banner3.jpg
-    - asset/image/banner4.jpg
-    - asset/image/cake.jpg
-    - asset/image/cakeItem.png
     - asset/image/newItem.png
-    - asset/image/search.png
-    - asset/image/guest_icon.png
     - asset/image/guest_icon_light.png
+    - asset/image/guest_icon.png
     - asset/image/pick_marker.png
     - asset/image/storeLocation.png
     - asset/image/navigation.png
@@ -142,6 +135,9 @@ flutter:
     - asset/image/home.png
     - asset/image/bag.png
     - asset/image/location.png
+    - asset/image/picture1.png
+    - asset/image/picture.png
+    - asset/image/picture.jpg
 
     
 

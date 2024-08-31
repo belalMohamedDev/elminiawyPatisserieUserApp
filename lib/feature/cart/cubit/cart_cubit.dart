@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../data/model/bodyRequest/add_item.dart';
-import '../data/model/response/add_item.dart';
+
 import '../data/model/response/get_cart.dart';
 
 part 'cart_state.dart';
@@ -13,7 +13,7 @@ part 'cart_cubit.freezed.dart';
 class CartCubit extends Cubit<CartState> {
   CartCubit(this._cartRepositoryImplement) : super(const CartState.initial());
   final CartRepositoryImplement _cartRepositoryImplement;
-  GetCartDataResponse? cartData;
+  CartResponse? cartData;
 
   int quantityItem = 1;
   static const int _retryLimit = 3;
@@ -29,8 +29,10 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
-        quantityItem = 0;
-        emit(CartState.addItemToCartSuccess(dataResponse));
+        quantityItem = 1;
+        cartData = dataResponse;
+
+        emit(CartState.addItemToCartSuccess(dataResponse, quantityItem));
       },
       failure: (error) {
         if (error.statusCode != 401) {
@@ -60,8 +62,7 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
-        cartData = dataResponse.data;
-
+        cartData = dataResponse;
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) async {
@@ -88,7 +89,7 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
-        cartData = dataResponse.data;
+        cartData = dataResponse;
 
         emit(CartState.getCartItemSuccess(dataResponse));
       },
@@ -111,7 +112,7 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
-        cartData = dataResponse.data;
+        cartData = dataResponse;
 
         emit(CartState.getCartItemSuccess(dataResponse));
       },
@@ -127,7 +128,7 @@ class CartCubit extends Cubit<CartState> {
 
     response.when(
       success: (dataResponse) {
-        cartData = dataResponse.data;
+        cartData = dataResponse;
 
         applyCouponController.clear();
 

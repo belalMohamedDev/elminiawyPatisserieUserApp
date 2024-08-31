@@ -178,7 +178,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
               index: index,
               displayList: displayList,
             )).then((value) {
-      context.read<CartCubit>().quantityItem = 0;
+      context.read<CartCubit>().quantityItem = 1;
     });
   }
 }

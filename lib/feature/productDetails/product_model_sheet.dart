@@ -71,8 +71,9 @@ class ProductBottomSheet extends StatelessWidget {
           addItemToCartError: (statesCode, errorMessage) =>
               ShowToast.showToastErrorTop(
                   errorMessage: errorMessage, context: context),
-          addItemToCartSuccess: (data) => ShowToast.showToastSuccessTop(
-              message: data.message!, context: context),
+          addItemToCartSuccess: (data, quantity) =>
+              ShowToast.showToastSuccessTop(
+                  message: data.message!, context: context),
         );
       },
       builder: (context, state) {

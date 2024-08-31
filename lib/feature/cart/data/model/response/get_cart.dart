@@ -3,19 +3,19 @@ import 'package:json_annotation/json_annotation.dart';
 part 'get_cart.g.dart';
 
 @JsonSerializable()
-class GetCartResponse {
+class CartResponse {
   bool? status;
   String? message;
   int? numOfCartItems;
   GetCartDataResponse? data;
 
-  GetCartResponse({this.status, this.message, this.numOfCartItems, this.data});
+  CartResponse({this.status, this.message, this.numOfCartItems, this.data});
   //from json
-  factory GetCartResponse.fromJson(Map<String, dynamic> json) =>
-      _$GetCartResponseFromJson(json);
+  factory CartResponse.fromJson(Map<String, dynamic> json) =>
+      _$CartResponseFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$GetCartResponseToJson(this);
+  Map<String, dynamic> toJson() => _$CartResponseToJson(this);
 }
 
 @JsonSerializable()
