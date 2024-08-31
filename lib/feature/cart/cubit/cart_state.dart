@@ -5,9 +5,6 @@ class CartState with _$CartState {
   const factory CartState.initial() = _Initial;
   //add  product to Cart State
   const factory CartState.addItemToCartLoading() = AddItemToCartLoading;
-  const factory CartState.addItemToCartError(
-      {required int statesCode,
-      required String errorMessage}) = AddItemToCartError;
 
   const factory CartState.addItemToCartSuccess(
       CartResponse data, int quantity) = AddItemToCartSuccess;
@@ -17,10 +14,6 @@ class CartState with _$CartState {
 
   //get Cart  item State
   const factory CartState.getCartItemLoading() = GetCartItemLoading;
-
-  const factory CartState.getCartItemError(
-      {required int statesCode,
-      required String errorMessage}) = GetCartItemError;
 
   const factory CartState.getCartItemSuccess(
     CartResponse? data,
@@ -32,6 +25,9 @@ class CartState with _$CartState {
       {required int statesCode,
       required String errorMessage}) = DeleteCartItemError;
   const factory CartState.deleteCartItemLoading() = DeleteCartItemLoading;
+
+  const factory CartState.applyCouponLoading() = ApplyCouponLoading;
+
   const factory CartState.updateQuantityItemLoading(String id, int quantity) =
       UpdateQuantityItemLoading;
 }

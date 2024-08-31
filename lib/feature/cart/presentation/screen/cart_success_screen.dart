@@ -22,7 +22,7 @@ class SuccessCartScreen extends StatelessWidget {
       padding: EdgeInsets.only(
         left: 15.w,
         right: 15.w,
-        top: 5.h,
+        top: 20.h,
       ),
       child: CustomScrollView(
         slivers: [

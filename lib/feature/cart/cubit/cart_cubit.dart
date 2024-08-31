@@ -37,7 +37,7 @@ class CartCubit extends Cubit<CartState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.addItemToCartError(
+            CartState.deleteCartItemError(
                 errorMessage: error.message!, statesCode: error.statusCode!),
           );
         }
@@ -72,7 +72,7 @@ class CartCubit extends Cubit<CartState> {
             await getCartItem(); // Retry the request
           } else {
             emit(
-              CartState.getCartItemError(
+              CartState.deleteCartItemError(
                   errorMessage: error.message!, statesCode: error.statusCode!),
             );
             _retryCount = 0;
@@ -118,25 +118,45 @@ class CartCubit extends Cubit<CartState> {
 
         emit(CartState.getCartItemSuccess(dataResponse));
       },
-      failure: (error) {},
+      failure: (error) {
+        if (error.statusCode != 401) {
+          emit(
+            CartState.deleteCartItemError(
+                errorMessage: error.message!, statesCode: error.statusCode!),
+          );
+        }
+      },
     );
   }
 
   //------------------------------------------------------------------------
 
   Future<void> applyCoupon() async {
-    final response = await _cartRepositoryImplement
-        .applyCouponToCart(applyCouponController.text.trim());
+    if (applyCouponController.text.isNotEmpty) {
+      emit(const CartState.applyCouponLoading());
 
-    response.when(
-      success: (dataResponse) {
-        cartData = dataResponse;
+      final response = await _cartRepositoryImplement
+          .applyCouponToCart(applyCouponController.text.trim());
 
-        applyCouponController.clear();
+      response.when(
+        success: (dataResponse) {
+          cartData = dataResponse;
 
-        emit(CartState.getCartItemSuccess(dataResponse));
-      },
-      failure: (error) {},
-    );
+          applyCouponController.clear();
+
+          emit(CartState.getCartItemSuccess(dataResponse));
+        },
+        failure: (error) {
+          applyCouponController.clear();
+
+          if (error.statusCode != 401) {
+            emit(
+              CartState.deleteCartItemError(
+                  errorMessage: error.message!, statesCode: error.statusCode!),
+            );
+          }
+        },
+      );
+    }
   }
 }
