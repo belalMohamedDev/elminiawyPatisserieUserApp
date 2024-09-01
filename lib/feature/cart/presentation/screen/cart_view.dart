@@ -1,4 +1,7 @@
+import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/style/color/color_manger.dart';
@@ -18,11 +21,48 @@ class CartView extends StatelessWidget {
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,
                 fontSize: 16.sp)),
+        actions: [
+          BlocBuilder<CartCubit, CartState>(
+            builder: (context, state) {
+              if (state is GetCartItemError ||
+                  state is GetCartItemLoading ||
+                  context.read<CartCubit>().cartData == null ||
+                  context
+                      .read<CartCubit>()
+                      .cartData!
+                      .data!
+                      .cartItems!
+                      .isEmpty) {
+                return const SizedBox();
+              }
+              return state is DeleteCartLoading
+                  ? Center(
+                      child: SizedBox(
+                        height: 22.h,
+                        width: 22.w,
+                        child: CircularProgressIndicator(
+                          color: ColorManger.brunLight,
+                          strokeWidth: 3,
+                        ),
+                      ),
+                    )
+                  : InkWell(
+                      onTap: () {
+                        context.read<CartCubit>().removeCartLogic();
+                      },
+                      child: Icon(
+                        IconlyBold.delete,
+                        color: ColorManger.brunLight,
+                      ),
+                    );
+            },
+          ),
+          SizedBox(
+            width: 35.w,
+          )
+        ],
       ),
       body: const CartBody(),
-
     );
   }
-
-
 }

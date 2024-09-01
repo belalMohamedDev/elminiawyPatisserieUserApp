@@ -72,7 +72,7 @@ class CartCubit extends Cubit<CartState> {
             await getCartItem(); // Retry the request
           } else {
             emit(
-              CartState.deleteCartItemError(
+              CartState.getCartItemError(
                   errorMessage: error.message!, statesCode: error.statusCode!),
             );
             _retryCount = 0;
@@ -111,6 +111,32 @@ class CartCubit extends Cubit<CartState> {
 
     final response =
         await _cartRepositoryImplement.updateItemQuantityFromCart(id, quantity);
+
+    response.when(
+      success: (dataResponse) {
+        cartData = dataResponse;
+
+        emit(CartState.getCartItemSuccess(dataResponse));
+      },
+      failure: (error) {
+        if (error.statusCode != 401) {
+          emit(
+            CartState.deleteCartItemError(
+                errorMessage: error.message!, statesCode: error.statusCode!),
+          );
+        }
+      },
+    );
+  }
+
+  //------------------------------------------------------------------------
+
+
+    Future<void> removeCartLogic() async {
+    emit(const CartState.deleteCartLoading());
+
+    final response =
+        await _cartRepositoryImplement.removeCartRepo();
 
     response.when(
       success: (dataResponse) {

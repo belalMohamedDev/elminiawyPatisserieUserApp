@@ -68,7 +68,7 @@ class ProductBottomSheet extends StatelessWidget {
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         state.whenOrNull(
-          addItemToCartError: (statesCode, errorMessage) =>
+          deleteCartItemError: (statesCode, errorMessage) =>
               ShowToast.showToastErrorTop(
                   errorMessage: errorMessage, context: context),
           addItemToCartSuccess: (data, quantity) =>

@@ -12,16 +12,14 @@ class LayoutBuilderPointLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      final boxWidth = constraints.constrainWidth();
-      final dashWidth = 10.w;
-      final dashCount = (boxWidth / (2 * dashWidth)).floor();
+      final dashWidth = 1.w;
       return Flex(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        direction: Axis.horizontal,
-        children: List.generate(dashCount, (_) {
+        direction: Axis.vertical,
+        children: List.generate(10, (_) {
           return SizedBox(
             width: dashWidth,
-            height: 1.h,
+            height: 12.h,
             child: DecoratedBox(
               decoration: BoxDecoration(color: ColorManger.brown),
             ),
@@ -31,3 +29,4 @@ class LayoutBuilderPointLine extends StatelessWidget {
     });
   }
 }
+

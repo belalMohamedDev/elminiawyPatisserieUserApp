@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../cubit/cart_cubit.dart';
@@ -14,7 +15,14 @@ class ApplyCouponCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartCubit, CartState>(
+    return BlocConsumer<CartCubit, CartState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          deleteCartItemError: (statesCode, errorMessage) =>
+              ShowToast.showToastErrorTop(
+                  errorMessage: errorMessage, context: context),
+        );
+      },
       builder: (context, state) {
         return Container(
           height: 70.h,

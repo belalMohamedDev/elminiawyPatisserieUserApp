@@ -20,6 +20,8 @@ abstract class CartRepository {
   );
 
   Future<ApiResult<CartResponse>> applyCouponToCart(String coupon);
+
+  Future<ApiResult<CartResponse>> removeCartRepo();
 }
 
 class CartRepositoryImplement implements CartRepository {
@@ -96,6 +98,21 @@ class CartRepositoryImplement implements CartRepository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.applyCouponToCart(coupon);
+        return ApiResult.success(response);
+      } catch (error) {
+        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+      }
+    } else {
+      //return  internet connection error
+      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+    }
+  }
+  
+  @override
+  Future<ApiResult<CartResponse>> removeCartRepo() async{
+     if (await _networkInfo.isConnected) {
+      try {
+        final response = await _apiService.deleteCartService();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);

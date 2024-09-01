@@ -1,9 +1,11 @@
-import 'package:elminiawy/feature/cart/data/model/response/get_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:coupon_uikit/coupon_uikit.dart';
 
+import '../../../../core/common/sharedWidget/layout_builder_point_line.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import 'package:elminiawy/feature/cart/data/model/response/get_cart.dart';
 
 class PaymentSummary extends StatelessWidget {
   final GetCartDataResponse cartData;
@@ -15,21 +17,20 @@ class PaymentSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final cartData = context.read<CartCubit>().cartData;
-
-    return Container(
-      height: 180.h,
-      decoration: BoxDecoration(
-        color: ColorManger.backgroundItem,
-        borderRadius: BorderRadius.circular(14.r),
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(left: 18.w, right: 18.w, top: 30.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
+    return CouponCard(
+      backgroundColor: ColorManger.backgroundItem,
+      curveAxis: Axis.vertical,
+      curvePosition: 150.w,
+      borderRadius: 14.r,
+      curveRadius: 55.r,
+      height: 190.h,
+      firstChild: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 20.w, top: 25.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Sub Total',
@@ -38,21 +39,7 @@ class PaymentSummary extends StatelessWidget {
                       color: ColorManger.brown,
                       fontSize: 14.sp),
                 ),
-                const Spacer(),
-                Text(
-                  'EGP  ${cartData.totalCartPrice} ',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brown,
-                      fontSize: 14.sp),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              children: [
+                SizedBox(height: 8.h),
                 Text(
                   'Price After Discount',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -60,21 +47,7 @@ class PaymentSummary extends StatelessWidget {
                       color: ColorManger.brown,
                       fontSize: 14.sp),
                 ),
-                const Spacer(),
-                Text(
-                  'EGP  ${cartData.totalPriceAfterDiscount}',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: Colors.green,
-                      fontSize: 14.sp),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              children: [
+                SizedBox(height: 8.h),
                 Text(
                   'Tax',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -82,21 +55,7 @@ class PaymentSummary extends StatelessWidget {
                       color: ColorManger.brown,
                       fontSize: 14.sp),
                 ),
-                const Spacer(),
-                Text(
-                  'EGP  ${cartData.taxPrice}',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
-                      fontSize: 14.sp),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              children: [
+                SizedBox(height: 8.h),
                 Text(
                   'Shipping',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -104,21 +63,7 @@ class PaymentSummary extends StatelessWidget {
                       color: ColorManger.brown,
                       fontSize: 14.sp),
                 ),
-                const Spacer(),
-                Text(
-                  'EGP  ${cartData.shippingPrice}',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
-                      fontSize: 14.sp),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Row(
-              children: [
+                SizedBox(height: 15.h),
                 Text(
                   'Total Amount',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -126,15 +71,56 @@ class PaymentSummary extends StatelessWidget {
                       color: ColorManger.brown,
                       fontSize: 18.sp),
                 ),
-                const Spacer(),
-                Text(
-                  'EGP  ${cartData.totalOrderPrice}',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 16.sp),
-                ),
               ],
+            ),
+          ),
+          const LayoutBuilderPointLine(),
+        ],
+      ),
+      secondChild: Padding(
+        padding: EdgeInsets.only(
+            left: 10.w, right: 20.w, top: 20.w), // Adjusted padding
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              'EGP ${cartData.totalCartPrice}',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brown,
+                  fontSize: 14.sp),
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              'EGP ${cartData.totalPriceAfterDiscount}',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brown,
+                  fontSize: 14.sp),
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              'EGP ${cartData.taxPrice}',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brown,
+                  fontSize: 14.sp),
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              'EGP ${cartData.shippingPrice}',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brown,
+                  fontSize: 14.sp),
+            ),
+            SizedBox(height: 15.h),
+            Text(
+              'EGP ${cartData.totalOrderPrice}',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brown,
+                  fontSize: 18.sp),
             ),
           ],
         ),

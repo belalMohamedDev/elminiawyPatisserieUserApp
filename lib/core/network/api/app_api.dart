@@ -122,6 +122,9 @@ abstract class AppServiceClient {
     @Path("id") String id,
   );
 
+  @DELETE('${ApiConstants.cart}/clearAllItems')
+  Future<CartResponse> deleteCartService();
+
   @PUT('${ApiConstants.cart}/{id}')
   Future<CartResponse> updateItemQuantityFromCart(
     @Path("id") String id,
