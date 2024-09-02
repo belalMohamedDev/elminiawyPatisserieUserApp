@@ -21,7 +21,7 @@ class LayoutBuilderPointLine extends StatelessWidget {
             width: dashWidth,
             height: 12.h,
             child: DecoratedBox(
-              decoration: BoxDecoration(color: ColorManger.brown),
+              decoration: BoxDecoration(color: ColorManger.brownLight),
             ),
           );
         }),
@@ -29,4 +29,3 @@ class LayoutBuilderPointLine extends StatelessWidget {
     });
   }
 }
-

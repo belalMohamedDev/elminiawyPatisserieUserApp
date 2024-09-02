@@ -9,6 +9,7 @@ import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import '../../../core/application/di.dart';
 import '../../../core/style/color/color_manger.dart';
 import '../../../core/style/fonts/strings_manger.dart';
+import '../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../address/logic/userAddressCubit/user_address_cubit.dart';
 import '../../cart/cubit/cart_cubit.dart';
 import '../../category/presentation/screen/category_view.dart';
@@ -61,7 +62,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
             duration: Duration(milliseconds: 200),
           ),
 
+          onTabChanged: (index) {
+            if (index == 2) {
+              NavBarNavigator.push(context,
+                  screen: const CartView(), withNavBar: false);
+              context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
+            }
+          },
+
           tabs: _navBarsItems(),
+
           navBarBuilder: (navBarConfig) => Style8BottomNavBar(
             navBarConfig: navBarConfig,
             itemAnimationProperties: const ItemAnimation(
@@ -71,13 +81,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               duration: Duration(milliseconds: 200),
             ),
             navBarDecoration: NavBarDecoration(
-              color:
-                  // context.read<AppLogicCubit>().bottomNavBarController.index ==
-                  //         2
-                  //     ? ColorManger.lightWhite
-                  //     :
-                  ColorManger.backgroundItem,
-              //  padding: const EdgeInsets.all(12.0),
+              color: ColorManger.backgroundItem,
               borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30),
@@ -113,7 +117,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
       ),
       PersistentTabConfig(
-        screen: const CartView(),
+        screen: Container(),
         item: ItemConfig(
           icon: Icon(IconlyBold.bag, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.bag, size: 20.sp),

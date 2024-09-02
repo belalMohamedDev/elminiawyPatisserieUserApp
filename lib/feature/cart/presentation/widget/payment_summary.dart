@@ -21,8 +21,9 @@ class PaymentSummary extends StatelessWidget {
       backgroundColor: ColorManger.backgroundItem,
       curveAxis: Axis.vertical,
       curvePosition: 150.w,
-      borderRadius: 14.r,
-      curveRadius: 55.r,
+      clockwise: true,
+      borderRadius: 18.r,
+      curveRadius: 40.r,
       height: 190.h,
       firstChild: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
