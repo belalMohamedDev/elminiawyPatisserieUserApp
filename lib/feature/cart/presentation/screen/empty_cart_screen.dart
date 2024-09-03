@@ -51,14 +51,14 @@ class ErrorInfo extends StatelessWidget {
     required this.description,
     this.button,
     this.btnText,
-    required this.press,
+    this.press,
   });
 
   final String title;
   final String description;
   final Widget? button;
   final String? btnText;
-  final VoidCallback press;
+  final VoidCallback? press;
 
   @override
   Widget build(BuildContext context) {
@@ -82,17 +82,19 @@ class ErrorInfo extends StatelessWidget {
               style: TextStyle(color: ColorManger.brunLight),
             ),
             const SizedBox(height: 16 * 2.5),
-            button ??
-                ElevatedButton(
-                  onPressed: press,
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 48),
-                      backgroundColor: ColorManger.brun,
-                      foregroundColor: ColorManger.white,
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)))),
-                  child: Text(btnText ?? "Retry".toUpperCase()),
-                ),
+            button == null
+                ? const SizedBox()
+                : ElevatedButton(
+                    onPressed: press,
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(double.infinity, 48),
+                        backgroundColor: ColorManger.brun,
+                        foregroundColor: ColorManger.white,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8)))),
+                    child: Text(btnText ?? "Retry".toUpperCase()),
+                  ),
             const SizedBox(height: 16),
           ],
         ),

@@ -28,7 +28,7 @@ class CartBody extends StatelessWidget {
         return Stack(
           children: [
             SuccessCartScreen(cartData: cartData),
-            if (state is DeleteCartItemLoading)
+            if (state is DeleteCartItemLoading || state is DeleteCartLoading)
               Center(
                 child: Container(
                     height: 70.h,

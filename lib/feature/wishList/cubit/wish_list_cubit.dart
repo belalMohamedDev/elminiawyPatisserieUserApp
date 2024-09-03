@@ -59,9 +59,15 @@ class WishListCubit extends Cubit<WishListState> {
 
     response.when(
       success: (dataResponse) {
-        if (isFavorite == true) {
-          // Remove the product from dataList if it was unfavorited
-          dataList.removeWhere((product) => product.sId == productId);
+        dataList = [];
+        favorites = {};
+
+        dataList.addAll(dataResponse.data!);
+
+        for (var element in dataResponse.data!) {
+          if (element.inWishlist == true) {
+            favorites[element.sId!] = element.inWishlist!;
+          }
         }
         emit(WishListState.addOrRemoveProductFromWishListSuccess(dataResponse));
       },

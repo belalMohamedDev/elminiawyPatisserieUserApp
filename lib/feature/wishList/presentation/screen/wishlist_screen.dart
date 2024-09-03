@@ -1,7 +1,5 @@
 import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,20 +7,8 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../refactor/wishlist_body.dart';
 
-class WishListView extends StatefulWidget {
+class WishListView extends StatelessWidget {
   const WishListView({super.key});
-
-  @override
-  State<WishListView> createState() => _WishListViewState();
-}
-
-class _WishListViewState extends State<WishListView> {
-  @override
-  void initState() {
-    super.initState();
-
-    context.read<WishListCubit>().getWishList();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'package:elminiawy/core/common/sharedWidget/custom_button.dart';
 import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,55 +15,77 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("My Cart",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 16.sp)),
-        actions: [
-          BlocBuilder<CartCubit, CartState>(
-            builder: (context, state) {
-              if (state is GetCartItemError ||
-                  state is GetCartItemLoading ||
-                  context.read<CartCubit>().cartData == null ||
-                  context
-                      .read<CartCubit>()
-                      .cartData!
-                      .data!
-                      .cartItems!
-                      .isEmpty) {
-                return const SizedBox();
-              }
-              return state is DeleteCartLoading
-                  ? Center(
-                      child: SizedBox(
-                        height: 22.h,
-                        width: 22.w,
-                        child: CircularProgressIndicator(
-                          color: ColorManger.brunLight,
-                          strokeWidth: 3,
-                        ),
-                      ),
-                    )
-                  : InkWell(
-                      onTap: () {
-                        context.read<CartCubit>().removeCartLogic();
-                      },
-                      child: Icon(
-                        IconlyBold.delete,
-                        color: ColorManger.brunLight,
-                      ),
-                    );
-            },
-          ),
-          SizedBox(
-            width: 35.w,
-          )
-        ],
-      ),
+      appBar: _cartViewAppBar(context),
       body: const CartBody(),
+      bottomNavigationBar: _cartViewBottomNavigationBar(),
+    );
+  }
+
+  BlocBuilder<CartCubit, CartState> _cartViewBottomNavigationBar() {
+    return BlocBuilder<CartCubit, CartState>(
+      builder: (context, state) {
+        if (state is GetCartItemError ||
+            state is GetCartItemLoading ||
+            context.read<CartCubit>().cartData == null ||
+            context.read<CartCubit>().cartData!.data!.cartItems!.isEmpty) {
+          return const SizedBox();
+        }
+        return Padding(
+          padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 25.h),
+          child: SizedBox(
+            height: 50.h,
+            child: Expanded(
+              child: CustomButton(
+                height: 45.h,
+                radius: 14.r,
+                onPressed: () {},
+                widget: Text(
+                  'CheckOut',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontSize: 16.sp,
+                      color: ColorManger.white,
+                      fontWeight: FontWeightManger.semiBold),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  AppBar _cartViewAppBar(BuildContext context) {
+    return AppBar(
+      centerTitle: true,
+      title: Text("My Cart",
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontFamily: FontConsistent.fontFamilyAcme,
+              color: ColorManger.brun,
+              fontSize: 16.sp)),
+      actions: [
+        BlocBuilder<CartCubit, CartState>(
+          builder: (context, state) {
+            if (state is GetCartItemError ||
+                state is GetCartItemLoading ||
+                context.read<CartCubit>().cartData == null ||
+                context.read<CartCubit>().cartData!.data!.cartItems!.isEmpty) {
+              return const SizedBox();
+            }
+            return InkWell(
+              onTap: () {
+                context.read<CartCubit>().removeCartLogic();
+              },
+              child: Icon(
+                IconlyBold.delete,
+                color: ColorManger.brunLight,
+              ),
+            );
+          },
+        ),
+        SizedBox(
+          width: 35.w,
+        )
+      ],
     );
   }
 }

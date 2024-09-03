@@ -5,6 +5,7 @@ import '../../../../core/common/sharedWidget/product_grid_view_loading.dart';
 import '../../../../core/common/sharedWidget/product_grid_view_success.dart';
 import '../../../../core/common/toast/show_toast.dart';
 import '../../cubit/wish_list_cubit.dart';
+import '../screen/empty_screen.dart';
 
 class WishListBody extends StatelessWidget {
   const WishListBody({super.key});
@@ -22,6 +23,9 @@ class WishListBody extends StatelessWidget {
       builder: (context, state) {
         if (state is GetWishListError || state is GetWishListLoading) {
           return const ProductGridViewLoadingState();
+        }
+        if (context.read<WishListCubit>().dataList.isEmpty) {
+          return const EmptyWishListScreen();
         }
         return ProductGridViewSuccessState(
           wishListData: context.read<WishListCubit>().dataList,

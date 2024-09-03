@@ -19,6 +19,7 @@ import '../../home/logic/categoryCubit/category_cubit.dart';
 import '../../home/presentation/screen/home_screen.dart';
 import '../../newProduct/Cubit/product_cubit.dart';
 import '../../profile/presentation/screen/profile_view.dart';
+import '../../wishList/cubit/wish_list_cubit.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -39,6 +40,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         context.read<ProductCubit>().getProduct(),
         context.read<UserAddressCubit>().getUserAddress(),
         context.read<CartCubit>().getCartItem(),
+        context.read<WishListCubit>().getWishList(),
       ]);
     });
   }
