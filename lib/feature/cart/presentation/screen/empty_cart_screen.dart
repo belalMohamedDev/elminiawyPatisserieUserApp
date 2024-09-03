@@ -82,19 +82,20 @@ class ErrorInfo extends StatelessWidget {
               style: TextStyle(color: ColorManger.brunLight),
             ),
             const SizedBox(height: 16 * 2.5),
-            button == null
+            btnText == null
                 ? const SizedBox()
-                : ElevatedButton(
-                    onPressed: press,
-                    style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(double.infinity, 48),
-                        backgroundColor: ColorManger.brun,
-                        foregroundColor: ColorManger.white,
-                        shape: const RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(8)))),
-                    child: Text(btnText ?? "Retry".toUpperCase()),
-                  ),
+                : button ??
+                    ElevatedButton(
+                      onPressed: press,
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(double.infinity, 48),
+                          backgroundColor: ColorManger.brun,
+                          foregroundColor: ColorManger.white,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)))),
+                      child: Text(btnText ?? "Retry".toUpperCase()),
+                    ),
             const SizedBox(height: 16),
           ],
         ),

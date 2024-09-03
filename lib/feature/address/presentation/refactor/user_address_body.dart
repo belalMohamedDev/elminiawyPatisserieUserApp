@@ -13,6 +13,7 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../logic/userAddressCubit/user_address_cubit.dart';
 import '../screen/add_new_address_screen.dart';
+import '../screen/empty_address_screen.dart';
 
 class UserAddressBody extends StatelessWidget {
   const UserAddressBody({super.key});
@@ -35,6 +36,9 @@ class UserAddressBody extends StatelessWidget {
       builder: (context, state) {
         if (state is GetAllAddressError || state is GetAllAddressLoading) {
           return _userAddressErrorAndLoadingState();
+        }
+        if (context.read<UserAddressCubit>().addressDataList.isEmpty) {
+          return const EmptyAddressScreen();
         }
 
         return _userAddressSuccessState(context);

@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,6 +9,7 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/images/asset_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
+import '../../logic/userAddressCubit/user_address_cubit.dart';
 import '../refactor/user_address_body.dart';
 
 class UserAddressView extends StatelessWidget {
@@ -30,20 +32,24 @@ class UserAddressView extends StatelessWidget {
           },
         ),
         actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 15.w),
-            child: InkWell(
-                onTap: () {
-                  NavBarNavigator.push(context,
-                      screen: const MapScreen(),
-                      withNavBar: false);
-                },
-                child: Image.asset(
-                  ImageAsset.addLocation,
-                  height: 22.h,
-                )),
-
-    
+          BlocBuilder<UserAddressCubit, UserAddressState>(
+            builder: (context, state) {
+              return context.read<UserAddressCubit>().addressDataList.isEmpty ||
+                      state is GetAllAddressLoading
+                  ? const SizedBox()
+                  : Padding(
+                      padding: EdgeInsets.only(right: 15.w),
+                      child: InkWell(
+                          onTap: () {
+                            NavBarNavigator.push(context,
+                                screen: const MapScreen(), withNavBar: false);
+                          },
+                          child: Image.asset(
+                            ImageAsset.addLocation,
+                            height: 22.h,
+                          )),
+                    );
+            },
           ),
         ],
       ),
