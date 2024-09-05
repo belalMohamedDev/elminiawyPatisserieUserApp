@@ -7,6 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
+import '../../../payment/presentation/screen/shipping_address.dart';
 import '../refactor/cart_body.dart';
 
 class CartView extends StatelessWidget {
@@ -38,7 +40,18 @@ class CartView extends StatelessWidget {
               child: CustomButton(
                 height: 45.h,
                 radius: 14.r,
-                onPressed: () {},
+                onPressed: () {
+                  // if (context
+                  //     .read<UserAddressCubit>()
+                  //     .addressDataList
+                  //     .isNotEmpty) {
+                  //   NavBarNavigator.push(context,
+                  //       screen: const ShippingAddress(), withNavBar: false);
+                  // }
+
+                  NavBarNavigator.push(context,
+                      screen: const ShippingAddress(), withNavBar: false);
+                },
                 widget: Text(
                   'CheckOut',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(

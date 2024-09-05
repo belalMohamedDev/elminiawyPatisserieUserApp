@@ -4,7 +4,6 @@ import 'package:elminiawy/core/application/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'core/routing/route_manger.dart';
 import 'core/routing/routes.dart';
 import 'core/services/app_storage_key.dart';
 import 'core/services/shared_pref_helper.dart';
@@ -18,6 +17,7 @@ import 'feature/cart/cubit/cart_cubit.dart';
 import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
+import 'feature/payment/presentation/screen/shipping_address.dart';
 import 'feature/wishList/cubit/wish_list_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -81,9 +81,9 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                  initialRoute: snapshot.data,
-                  onGenerateRoute: RouteGenerator.getRoute,
-                  // home: const ChangePasswordScreen(),
+                  //  initialRoute: snapshot.data,
+                  //  onGenerateRoute: RouteGenerator.getRoute,
+                  home: const ShippingAddress(),
                   theme: getApplicationTheme(),
                 );
               },
