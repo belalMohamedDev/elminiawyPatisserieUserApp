@@ -39,7 +39,9 @@ class ShippingAddressBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const CheckOutProcessing(),
+          const CheckOutProcessing(
+            screenIndex:1,
+          ),
           SizedBox(
             height: 30.h,
           ),
@@ -220,10 +222,10 @@ class ShippingAddressBody extends StatelessWidget {
                     )),
             Positioned(
               bottom: 8.w,
-              right: 90.w,
+              right: 100.w,
               child: Container(
                 height: 40.h,
-                width: 140.w,
+                width: 120.w,
                 decoration: BoxDecoration(
                     color: ColorManger.white,
                     borderRadius: BorderRadius.circular(8.r)),
@@ -239,7 +241,7 @@ class ShippingAddressBody extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.brun,
-                          fontSize: 16.sp),
+                          fontSize: 14.sp),
                     ),
                   ],
                 ),

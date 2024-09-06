@@ -17,7 +17,7 @@ import 'feature/cart/cubit/cart_cubit.dart';
 import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
-import 'feature/payment/presentation/screen/shipping_address.dart';
+import 'feature/payment/presentation/screen/review_screen.dart';
 import 'feature/wishList/cubit/wish_list_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   //  initialRoute: snapshot.data,
                   //  onGenerateRoute: RouteGenerator.getRoute,
-                  home: const ShippingAddress(),
+                  home: const ReviewPaymentScreen(),
                   theme: getApplicationTheme(),
                 );
               },

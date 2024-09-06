@@ -5,8 +5,10 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 
 class CheckOutProcessing extends StatelessWidget {
+  final int screenIndex;
   const CheckOutProcessing({
     super.key,
+    required this.screenIndex,
   });
 
   @override
@@ -48,13 +50,17 @@ class CheckOutProcessing extends StatelessWidget {
               ),
             ),
             child: CircleAvatar(
-              backgroundColor: ColorManger.white,
+              backgroundColor: screenIndex == 2 || screenIndex == 3
+                  ? ColorManger.brun
+                  : ColorManger.white,
               maxRadius: 10.r,
               child: Text(
                 '2',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.brown,
+                    color: screenIndex == 2 || screenIndex == 3
+                        ? ColorManger.white
+                        : ColorManger.brun,
                     fontSize: 12.sp),
               ),
             ),
@@ -79,13 +85,15 @@ class CheckOutProcessing extends StatelessWidget {
               ),
             ),
             child: CircleAvatar(
-              backgroundColor: ColorManger.white,
+              backgroundColor:
+                  screenIndex == 3 ? ColorManger.brun : ColorManger.white,
               maxRadius: 10.r,
               child: Text(
                 '3',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.brun,
+                    color:
+                        screenIndex == 3 ? ColorManger.white : ColorManger.brun,
                     fontSize: 12.sp),
               ),
             ),
