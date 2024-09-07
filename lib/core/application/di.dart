@@ -11,6 +11,7 @@ import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
 import 'package:elminiawy/feature/logOut/data/repository/log_out_repo.dart';
+import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
 import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product_category_repo.dart';
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 
@@ -63,7 +64,8 @@ Future<void> initAppModule() async {
     _initCart(),
     _initAccoutInformation(),
     _initChangeEmailAddress(),
-    _initChangeMyPassword()
+    _initChangeMyPassword(),
+    _initPayment()
   ]);
 }
 
@@ -234,4 +236,8 @@ Future<void> _initChangeMyPassword() async {
     ..registerFactory<ChangeMyPasswordCubit>(() => ChangeMyPasswordCubit(
           instance(),
         ));
+}
+
+Future<void> _initPayment() async {
+  instance.registerFactory<PaymentCubit>(() => PaymentCubit());
 }

@@ -4,30 +4,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback? onPressed;
-  final Color color;
+  final Color? color;
   final Widget? widget;
   final double? height;
   final double? width;
   final double? radius;
 
-  CustomButton(
+  const CustomButton(
       {super.key,
-      color,
+      this.color,
       required this.onPressed,
       required this.widget,
       this.height = 40,
       this.width = double.infinity,
-      this.radius = 12})
-      : color =
-            onPressed == null ? ColorManger.unselectedButton : ColorManger.brun;
+      this.radius = 12});
 
   @override
   Widget build(BuildContext context) {
+    final buttonColor = color ??
+        (onPressed == null ? ColorManger.unselectedButton : ColorManger.brun);
     return Container(
       height: height!.h,
       width: width,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius!.r), color: color),
+          borderRadius: BorderRadius.circular(radius!.r), color: buttonColor),
       child: TextButton(onPressed: onPressed, child: widget!),
     );
   }

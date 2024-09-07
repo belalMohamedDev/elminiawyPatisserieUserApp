@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
+import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
 import '../../../payment/presentation/screen/shipping_address_screen.dart';
 import '../refactor/cart_body.dart';
 
@@ -36,29 +37,26 @@ class CartView extends StatelessWidget {
           padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 25.h),
           child: SizedBox(
             height: 50.h,
-            child: Expanded(
-              child: CustomButton(
-                height: 45.h,
-                radius: 14.r,
-                onPressed: () {
-                  // if (context
-                  //     .read<UserAddressCubit>()
-                  //     .addressDataList
-                  //     .isNotEmpty) {
-                  //   NavBarNavigator.push(context,
-                  //       screen: const ShippingAddress(), withNavBar: false);
-                  // }
-
+            child: CustomButton(
+              height: 45.h,
+              radius: 14.r,
+              onPressed: () {
+                if (context
+                    .read<UserAddressCubit>()
+                    .addressDataList
+                    .isNotEmpty) {
                   NavBarNavigator.push(context,
                       screen: const ShippingAddress(), withNavBar: false);
-                },
-                widget: Text(
-                  'CheckOut',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 16.sp,
-                      color: ColorManger.white,
-                      fontWeight: FontWeightManger.semiBold),
-                ),
+                }
+
+             
+              },
+              widget: Text(
+                'CheckOut',
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontSize: 16.sp,
+                    color: ColorManger.white,
+                    fontWeight: FontWeightManger.semiBold),
               ),
             ),
           ),
