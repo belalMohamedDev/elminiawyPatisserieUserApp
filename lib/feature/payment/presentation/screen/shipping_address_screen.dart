@@ -8,6 +8,7 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../address/logic/mapCubit/map_cubit.dart';
 import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
+import '../../cubit/payment_cubit.dart';
 import '../refactor/shipping_screen_body.dart';
 
 class ShippingAddress extends StatefulWidget {
@@ -25,11 +26,20 @@ class _ShippingAddressState extends State<ShippingAddress> {
     final mapCubit = context.read<MapCubit>();
 
     LatLng latLng = LatLng(
-        userAddressCubit.addressDataList.first.location!.coordinates!.last,
-        userAddressCubit.addressDataList.first.location!.coordinates!.first);
+        userAddressCubit
+            .addressDataList[context.read<PaymentCubit>().selectedIndex]
+            .location!
+            .coordinates!
+            .last,
+        userAddressCubit
+            .addressDataList[context.read<PaymentCubit>().selectedIndex]
+            .location!
+            .coordinates!
+            .first);
+
 
     mapCubit.addCurrentLocationMarkerToMap(latLng);
-    markerData= mapCubit.markers;
+
     super.initState();
   }
 
@@ -44,7 +54,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                 color: ColorManger.brun,
                 fontSize: 16.sp)),
       ),
-      body:  ShippingAddressBody(markerData: markerData,),
+      body: const ShippingAddressBody(),
     );
   }
 }

@@ -164,6 +164,7 @@ class MapCubit extends Cubit<MapState> {
 
       // Add a marker at the new position
       addCurrentLocationMarkerToMap(position);
+
       emit(MapState.loaded(position, markers as Map<String, Marker>));
     } catch (e) {
       emit(MapState.error("Error moving to location: $e"));

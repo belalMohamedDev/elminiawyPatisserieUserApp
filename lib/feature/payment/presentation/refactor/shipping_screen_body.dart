@@ -10,12 +10,12 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../../../../core/common/sharedWidget/custom_button.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../address/logic/mapCubit/map_cubit.dart';
 import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
 import '../widget/check_out_processing.dart';
 
 class ShippingAddressBody extends StatefulWidget {
-  final List<MarkerData>? markerData;
-  const ShippingAddressBody({super.key, this.markerData});
+  const ShippingAddressBody({super.key});
 
   @override
   State<ShippingAddressBody> createState() => _ShippingAddressBodyState();
@@ -49,7 +49,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           SizedBox(
             height: 14.h,
           ),
-          _mapWidget(context, widget.markerData!),
+          _mapWidget(context),
           SizedBox(
             height: 30.h,
           ),
@@ -261,10 +261,8 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
     );
   }
 
-  BlocBuilder _mapWidget(BuildContext context, List<MarkerData> markerData) {
-    final userAddressCubit = context.read<UserAddressCubit>();
-
-    return BlocBuilder<UserAddressCubit, UserAddressState>(
+  BlocBuilder _mapWidget(BuildContext context) {
+    return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
         return Stack(
           children: [
@@ -274,16 +272,15 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                     height: 140.h,
                     width: double.infinity,
                     child: CustomGoogleMapMarkerBuilder(
-                        customMarkers: markerData,
+                        customMarkers: context.read<MapCubit>().markers,
                         builder: (p0, Set<Marker>? markers) {
                           return GoogleMap(
+                            onMapCreated: (controller) => context
+                                .read<MapCubit>()
+                                .setMapController(controller),
                             zoomControlsEnabled: false,
                             initialCameraPosition: CameraPosition(
-                                target: LatLng(
-                                    userAddressCubit.addressDataList.first
-                                        .location!.coordinates!.last,
-                                    userAddressCubit.addressDataList.first
-                                        .location!.coordinates!.first),
+                                target: context.read<MapCubit>().targetPosition,
                                 zoom: 18),
                             markers: markers ?? {},
                           );
@@ -359,7 +356,6 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
       barrierColor: Colors.black54,
       elevation: 20.r,
       context: context,
-      
       builder: (context) => StatefulBuilder(
           builder: (BuildContext context, StateSetter setState) {
         return Padding(
@@ -448,7 +444,26 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   ),
                 ),
                 CustomButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    final userAddressCubit = context.read<UserAddressCubit>();
+                    final mapCubit = context.read<MapCubit>();
+
+                    LatLng latLng = LatLng(
+                        userAddressCubit
+                            .addressDataList[
+                                context.read<PaymentCubit>().selectedIndex]
+                            .location!
+                            .coordinates!
+                            .last,
+                        userAddressCubit
+                            .addressDataList[
+                                context.read<PaymentCubit>().selectedIndex]
+                            .location!
+                            .coordinates!
+                            .first);
+
+                    await mapCubit.moveToLocation(latLng);
+
                     Navigator.pop(context);
                   },
                   radius: 8.r,
@@ -459,7 +474,6 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           fontSize: 13.sp)),
                 ),
                 SizedBox(height: 10.h),
-
                 CustomButton(
                   onPressed: () {},
                   color: ColorManger.brownLight,
@@ -470,16 +484,6 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           color: ColorManger.brun,
                           fontSize: 15.sp)),
                 ),
-                // InkWell(
-                //   onTap: () {},
-                //   child: Center(
-                //     child: Text('',
-                //         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                //             fontFamily: FontConsistent.fontFamilyAcme,
-                //             color: ColorManger.brun,
-                //             fontSize: 15.sp)),
-                //   ),
-                // ),
               ],
             ),
           ),
