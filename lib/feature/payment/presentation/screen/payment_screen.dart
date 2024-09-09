@@ -1,9 +1,13 @@
+import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
+import 'package:elminiawy/feature/payment/presentation/screen/review_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common/sharedWidget/custom_button.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../../cart/presentation/widget/apply_coupon.dart';
 import '../widget/check_out_processing.dart';
 
@@ -32,7 +36,8 @@ class PaymentBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 15.h, right: 25.w, left: 25.w),
+      padding:
+          EdgeInsets.only(top: 30.h, right: 25.w, left: 25.w, bottom: 45.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -65,11 +70,12 @@ class PaymentBody extends StatelessWidget {
             height: 14.h,
           ),
           const ApplyCouponCode(),
-          SizedBox(
-            height: 45.h,
-          ),
+          const Spacer(),
           CustomButton(
-            onPressed: () {},
+            onPressed: () {
+              NavBarNavigator.push(context,
+                  screen: const ReviewPaymentScreen(), withNavBar: false);
+            },
             radius: 8.r,
             widget: Text(
               'Save and Continue',
@@ -84,94 +90,121 @@ class PaymentBody extends StatelessWidget {
     );
   }
 
-  Column _choosePaymentMethod(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 50.h,
-          decoration: BoxDecoration(
-            color: ColorManger.brownLight,
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(
-              color: ColorManger.brownLight,
-              width: 0.5.w,
+  BlocBuilder _choosePaymentMethod(BuildContext context) {
+    final paymentCubit = context.read<PaymentCubit>();
+    return BlocBuilder<PaymentCubit, PaymentState>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            InkWell(
+              onTap: () {
+                paymentCubit.changePaymentMethod('Cash on delivery');
+              },
+              child: Container(
+                width: double.infinity,
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color: paymentCubit.choosePaymentMethod == 'Cash on delivery'
+                      ? ColorManger.brownLight
+                      : ColorManger.backgroundItem,
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(
+                    color:
+                        paymentCubit.choosePaymentMethod == 'Cash on delivery'
+                            ? ColorManger.brownLight
+                            : ColorManger.backgroundItem,
+                    width: 0.5.w,
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10.w),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.handshake_rounded,
+                        color: ColorManger.brun,
+                      ),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Text(
+                        'Cash on delivery',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontFamily: FontConsistent.fontFamilyAcme,
+                            color: ColorManger.brun,
+                            fontSize: 15.sp),
+                      ),
+                      const Spacer(),
+                      Radio<String>(
+                        value: 'Cash on delivery',
+                        groupValue: paymentCubit.choosePaymentMethod,
+                        onChanged: (value) {},
+                        activeColor: ColorManger.brun,
+                        hoverColor: ColorManger.brun,
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.only(left: 10.w),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.handshake_rounded,
-                  color: ColorManger.brun,
-                ),
-                SizedBox(
-                  width: 20.w,
-                ),
-                Text(
-                  'Cash on delivey',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 15.sp),
-                ),
-                const Spacer(),
-                Radio(
-                  value: 'Cash on delivey',
-                  groupValue: const [],
-                  onChanged: (value) {},
-                  activeColor: ColorManger.brun,
-                  hoverColor: ColorManger.brun,
-                )
-              ],
+            SizedBox(
+              height: 14.h,
             ),
-          ),
-        ),
-        SizedBox(
-          height: 14.h,
-        ),
-        Container(
-          width: double.infinity,
-          height: 50.h,
-          decoration: BoxDecoration(
-            color: ColorManger.backgroundItem,
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(
-              color: ColorManger.brownLight,
-              width: 0.5.w,
+            InkWell(
+              onTap: () {
+                paymentCubit.changePaymentMethod('Credit or debit card');
+              },
+              child: Container(
+                width: double.infinity,
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color:
+                      paymentCubit.choosePaymentMethod == 'Credit or debit card'
+                          ? ColorManger.brownLight
+                          : ColorManger.backgroundItem,
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(
+                    color: paymentCubit.choosePaymentMethod ==
+                            'Credit or debit card'
+                        ? ColorManger.brownLight
+                        : ColorManger.backgroundItem,
+                    width: 0.5.w,
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10.w),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.credit_card,
+                        color: ColorManger.brun,
+                      ),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Text(
+                        'Credit or debit Card',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontFamily: FontConsistent.fontFamilyAcme,
+                            color: ColorManger.brun,
+                            fontSize: 15.sp),
+                      ),
+                      const Spacer(),
+                      Radio<String>(
+                        value: 'Credit or debit card',
+                        groupValue: paymentCubit.choosePaymentMethod,
+                        onChanged: (value) {},
+                        activeColor: ColorManger.brun,
+                        hoverColor: ColorManger.brun,
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.only(left: 10.w),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.credit_card,
-                  color: ColorManger.brun,
-                ),
-                SizedBox(
-                  width: 20.w,
-                ),
-                Text(
-                  'Credit or debit Card',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 15.sp),
-                ),
-                const Spacer(),
-                Radio(
-                  value: 'Credit or debit Card',
-                  groupValue: const [],
-                  onChanged: (value) {},
-                  activeColor: ColorManger.brun,
-                )
-              ],
-            ),
-          ),
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 }

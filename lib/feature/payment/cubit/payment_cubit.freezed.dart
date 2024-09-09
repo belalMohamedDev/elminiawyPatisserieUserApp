@@ -20,18 +20,21 @@ mixin _$PaymentState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(int index) changeShippingIndex,
+    required TResult Function(String choosePayment) choosePayment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(int index)? changeShippingIndex,
+    TResult? Function(String choosePayment)? choosePayment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(int index)? changeShippingIndex,
+    TResult Function(String choosePayment)? choosePayment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$PaymentState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(ChangeShippingIndex value) changeShippingIndex,
+    required TResult Function(ChoosePayment value) choosePayment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult? Function(ChoosePayment value)? choosePayment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult Function(ChoosePayment value)? choosePayment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +120,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(int index) changeShippingIndex,
+    required TResult Function(String choosePayment) choosePayment,
   }) {
     return initial();
   }
@@ -123,6 +130,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(int index)? changeShippingIndex,
+    TResult? Function(String choosePayment)? choosePayment,
   }) {
     return initial?.call();
   }
@@ -132,6 +140,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(int index)? changeShippingIndex,
+    TResult Function(String choosePayment)? choosePayment,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -145,6 +154,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(ChangeShippingIndex value) changeShippingIndex,
+    required TResult Function(ChoosePayment value) choosePayment,
   }) {
     return initial(this);
   }
@@ -154,6 +164,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult? Function(ChoosePayment value)? choosePayment,
   }) {
     return initial?.call(this);
   }
@@ -163,6 +174,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult Function(ChoosePayment value)? choosePayment,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -243,6 +255,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(int index) changeShippingIndex,
+    required TResult Function(String choosePayment) choosePayment,
   }) {
     return changeShippingIndex(index);
   }
@@ -252,6 +265,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(int index)? changeShippingIndex,
+    TResult? Function(String choosePayment)? choosePayment,
   }) {
     return changeShippingIndex?.call(index);
   }
@@ -261,6 +275,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(int index)? changeShippingIndex,
+    TResult Function(String choosePayment)? choosePayment,
     required TResult orElse(),
   }) {
     if (changeShippingIndex != null) {
@@ -274,6 +289,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(ChangeShippingIndex value) changeShippingIndex,
+    required TResult Function(ChoosePayment value) choosePayment,
   }) {
     return changeShippingIndex(this);
   }
@@ -283,6 +299,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult? Function(ChoosePayment value)? choosePayment,
   }) {
     return changeShippingIndex?.call(this);
   }
@@ -292,6 +309,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult Function(ChoosePayment value)? choosePayment,
     required TResult orElse(),
   }) {
     if (changeShippingIndex != null) {
@@ -308,5 +326,145 @@ abstract class ChangeShippingIndex implements PaymentState {
   int get index;
   @JsonKey(ignore: true)
   _$$ChangeShippingIndexImplCopyWith<_$ChangeShippingIndexImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChoosePaymentImplCopyWith<$Res> {
+  factory _$$ChoosePaymentImplCopyWith(
+          _$ChoosePaymentImpl value, $Res Function(_$ChoosePaymentImpl) then) =
+      __$$ChoosePaymentImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String choosePayment});
+}
+
+/// @nodoc
+class __$$ChoosePaymentImplCopyWithImpl<$Res>
+    extends _$PaymentStateCopyWithImpl<$Res, _$ChoosePaymentImpl>
+    implements _$$ChoosePaymentImplCopyWith<$Res> {
+  __$$ChoosePaymentImplCopyWithImpl(
+      _$ChoosePaymentImpl _value, $Res Function(_$ChoosePaymentImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? choosePayment = null,
+  }) {
+    return _then(_$ChoosePaymentImpl(
+      null == choosePayment
+          ? _value.choosePayment
+          : choosePayment // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChoosePaymentImpl implements ChoosePayment {
+  const _$ChoosePaymentImpl(this.choosePayment);
+
+  @override
+  final String choosePayment;
+
+  @override
+  String toString() {
+    return 'PaymentState.choosePayment(choosePayment: $choosePayment)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChoosePaymentImpl &&
+            (identical(other.choosePayment, choosePayment) ||
+                other.choosePayment == choosePayment));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, choosePayment);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChoosePaymentImplCopyWith<_$ChoosePaymentImpl> get copyWith =>
+      __$$ChoosePaymentImplCopyWithImpl<_$ChoosePaymentImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeShippingIndex,
+    required TResult Function(String choosePayment) choosePayment,
+  }) {
+    return choosePayment(this.choosePayment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeShippingIndex,
+    TResult? Function(String choosePayment)? choosePayment,
+  }) {
+    return choosePayment?.call(this.choosePayment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeShippingIndex,
+    TResult Function(String choosePayment)? choosePayment,
+    required TResult orElse(),
+  }) {
+    if (choosePayment != null) {
+      return choosePayment(this.choosePayment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ChangeShippingIndex value) changeShippingIndex,
+    required TResult Function(ChoosePayment value) choosePayment,
+  }) {
+    return choosePayment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult? Function(ChoosePayment value)? choosePayment,
+  }) {
+    return choosePayment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult Function(ChoosePayment value)? choosePayment,
+    required TResult orElse(),
+  }) {
+    if (choosePayment != null) {
+      return choosePayment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChoosePayment implements PaymentState {
+  const factory ChoosePayment(final String choosePayment) = _$ChoosePaymentImpl;
+
+  String get choosePayment;
+  @JsonKey(ignore: true)
+  _$$ChoosePaymentImplCopyWith<_$ChoosePaymentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,10 +1,14 @@
+import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common/sharedWidget/custom_button.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
+import '../../cubit/payment_cubit.dart';
 import '../widget/check_out_processing.dart';
 
 class ReviewPaymentScreen extends StatelessWidget {
@@ -27,6 +31,8 @@ class ReviewPaymentScreen extends StatelessWidget {
   }
 
   Container _orderSummary(BuildContext context) {
+    final cartData = context.read<CartCubit>().cartData;
+
     return Container(
       height: 280.h,
       color: ColorManger.backgroundItem,
@@ -48,7 +54,7 @@ class ReviewPaymentScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Cart SubTotal',
+                  'Cart Total',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brun,
@@ -56,7 +62,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '3,000.00 EGP',
+                  '${cartData!.data!.totalCartPrice!} EGP',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brunLight,
@@ -78,7 +84,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '45.00 EGP',
+                  '${cartData.data!.taxPrice!} EGP',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brunLight,
@@ -103,7 +109,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '3,045.00',
+                  '${cartData.data!.totalOrderPrice!} EGP',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brun,
@@ -224,6 +230,8 @@ class ReviewPaymentBody extends StatelessWidget {
   }
 
   Container _paymentMethodContainer(BuildContext context) {
+    final paymentCubit = context.read<PaymentCubit>();
+
     return Container(
       height: 90.h,
       width: double.infinity,
@@ -269,7 +277,7 @@ class ReviewPaymentBody extends StatelessWidget {
                   width: 8.w,
                 ),
                 Text(
-                  'Credit or debit card',
+                  paymentCubit.choosePaymentMethod,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brunLight,
@@ -284,6 +292,10 @@ class ReviewPaymentBody extends StatelessWidget {
   }
 
   Container _shippingAddresssContainer(BuildContext context) {
+    final addressData = context
+        .read<UserAddressCubit>()
+        .addressDataList[context.read<PaymentCubit>().selectedIndex];
+
     return Container(
       height: 90.h,
       width: double.infinity,
@@ -334,7 +346,7 @@ class ReviewPaymentBody extends StatelessWidget {
                   width: 8.w,
                 ),
                 Text(
-                  'fakous,elsharqid,ffjkkkkkk',
+                  addressData.buildingName!,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brunLight,

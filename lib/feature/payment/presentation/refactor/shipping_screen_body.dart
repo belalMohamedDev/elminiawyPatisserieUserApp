@@ -1,5 +1,6 @@
 import 'package:custom_map_markers/custom_map_markers.dart';
 import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
+import 'package:elminiawy/feature/payment/presentation/screen/payment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -10,6 +11,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../../../../core/common/sharedWidget/custom_button.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../../address/logic/mapCubit/map_cubit.dart';
 import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
 import '../widget/check_out_processing.dart';
@@ -25,7 +27,8 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 15.h, right: 25.w, left: 25.w),
+      padding:
+          EdgeInsets.only(top: 15.h, right: 25.w, left: 25.w, bottom: 45.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -69,11 +72,14 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   context: context, isSippingAddressCheckOut: true);
             },
           ),
-          SizedBox(
-            height: 35.h,
-          ),
+          const Spacer(),
           CustomButton(
-            onPressed: () {},
+            onPressed: () {
+          
+
+              NavBarNavigator.push(context,
+                  screen: const PaymentScreen(), withNavBar: false);
+            },
             radius: 8.r,
             widget: Text(
               'Save and Continue',

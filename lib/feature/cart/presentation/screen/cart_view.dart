@@ -34,30 +34,23 @@ class CartView extends StatelessWidget {
           return const SizedBox();
         }
         return Padding(
-          padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 25.h),
-          child: SizedBox(
-            height: 50.h,
-            child: CustomButton(
-              height: 45.h,
-              radius: 14.r,
-              onPressed: () {
-                if (context
-                    .read<UserAddressCubit>()
-                    .addressDataList
-                    .isNotEmpty) {
-                  NavBarNavigator.push(context,
-                      screen: const ShippingAddress(), withNavBar: false);
-                }
+          padding: EdgeInsets.only(left: 25.w, right: 25.w, bottom: 45.h),
+          child: CustomButton(
+            // height: 45.h,
+            radius: 8.r,
 
-             
-              },
-              widget: Text(
-                'CheckOut',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 16.sp,
-                    color: ColorManger.white,
-                    fontWeight: FontWeightManger.semiBold),
-              ),
+            onPressed: () {
+              if (context.read<UserAddressCubit>().addressDataList.isNotEmpty) {
+                NavBarNavigator.push(context,
+                    screen: const ShippingAddress(), withNavBar: false);
+              }
+            },
+            widget: Text(
+              'CheckOut',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 16.sp,
+                  color: ColorManger.white,
+                  fontWeight: FontWeightManger.semiBold),
             ),
           ),
         );
