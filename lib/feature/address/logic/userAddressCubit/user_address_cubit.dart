@@ -31,6 +31,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   final formKey = GlobalKey<FormState>();
 
   List<GetAddressResponseData> addressDataList = [];
+  
   int regionAreaIndex = 0;
   String aliasData = "Apartment";
   List<Map<String, dynamic>> regionArea = [

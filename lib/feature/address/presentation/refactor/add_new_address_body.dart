@@ -1,5 +1,6 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:custom_map_markers/custom_map_markers.dart';
+import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -23,6 +24,7 @@ class AddNewAddressBody extends StatefulWidget {
   final List<MarkerData>? markerData;
   final String? addressAreaInformation;
   final GetAddressResponseData? getAddressResponseData;
+  final bool? isPaymentAddress;
 
   const AddNewAddressBody({
     super.key,
@@ -30,6 +32,7 @@ class AddNewAddressBody extends StatefulWidget {
     this.markerData,
     this.addressAreaInformation,
     this.getAddressResponseData,
+    this.isPaymentAddress,
   });
 
   @override
@@ -94,10 +97,20 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
               if (context.mounted) {
                 userAddressCubit.clearAllControllers();
 
-                Navigator.pushReplacementNamed(
-                  context,
-                  Routes.address,
-                );
+                if (widget.isPaymentAddress == true) {
+                  final index = userAddressCubit.addressDataList
+                      .indexWhere((element) => element.sId == data.data!.sId);
+
+                  if (index != -1) {
+                    context.read<PaymentCubit>().changeShippingIndex(index);
+                    Navigator.pop(context);
+                  }
+                } else {
+                  Navigator.pushReplacementNamed(
+                    context,
+                    Routes.address,
+                  );
+                }
               }
             },
             updateAddressSuccess: (data) {

@@ -17,11 +17,13 @@ class AddNewAddressScreen extends StatefulWidget {
   final List<MarkerData>? markerData;
   final String? addressAreaInformation;
   final GetAddressResponseData? getAddressResponseData;
+  final bool isPaymentAddress;
 
   const AddNewAddressScreen(
       {super.key,
       this.latLng,
       this.markerData,
+      this.isPaymentAddress = false,
       this.addressAreaInformation,
       this.getAddressResponseData});
 
@@ -88,6 +90,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
         latLng: widget.latLng!,
         markerData: widget.markerData!,
         addressAreaInformation: widget.addressAreaInformation!,
+        isPaymentAddress: widget.isPaymentAddress,
       ),
     );
   }

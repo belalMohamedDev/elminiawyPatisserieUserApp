@@ -14,6 +14,7 @@ import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../../address/logic/mapCubit/map_cubit.dart';
 import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
+import '../../../address/presentation/screen/add_new_address_screen.dart';
 import '../widget/check_out_processing.dart';
 
 class ShippingAddressBody extends StatefulWidget {
@@ -75,8 +76,6 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           const Spacer(),
           CustomButton(
             onPressed: () {
-          
-
               NavBarNavigator.push(context,
                   screen: const PaymentScreen(), withNavBar: false);
             },
@@ -112,7 +111,9 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
         color: ColorManger.backgroundItem,
         borderRadius: BorderRadius.circular(8.r),
         border: Border.all(
-          color: isChosseAddress ? ColorManger.brun : ColorManger.brunLight,
+          color: isChosseAddress
+              ? ColorManger.backgroundItem
+              : ColorManger.backgroundItem,
           width: 0.5.w,
         ),
       ),
@@ -131,7 +132,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           width: 80.w,
                           decoration: BoxDecoration(
                             color: ColorManger.brun,
-                            borderRadius: BorderRadius.circular(8.r),
+                            borderRadius: BorderRadius.circular(4.r),
                           ),
                           child: Center(
                             child: Text(
@@ -481,7 +482,24 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                 ),
                 SizedBox(height: 10.h),
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    final mapCubit = context.read<MapCubit>();
+                    mapCubit.getCurrentLocation(context);
+                    final address = await mapCubit.getAddressFromLatLng(
+                        mapCubit.targetPosition.latitude,
+                        mapCubit.targetPosition.longitude);
+
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                AddNewAddressScreen(
+                                  latLng: mapCubit.targetPosition,
+                                  markerData: mapCubit.markers,
+                                  addressAreaInformation: address,
+                                  isPaymentAddress: true,
+                                )));
+                  },
                   color: ColorManger.brownLight,
                   radius: 8.r,
                   widget: Text('Add New',

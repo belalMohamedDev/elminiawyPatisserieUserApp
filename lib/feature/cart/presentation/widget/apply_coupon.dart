@@ -21,6 +21,8 @@ class ApplyCouponCode extends StatelessWidget {
           deleteCartItemError: (statesCode, errorMessage) =>
               ShowToast.showToastErrorTop(
                   errorMessage: errorMessage, context: context),
+          getCartItemSuccess: (data) => ShowToast.showToastSuccessTop(
+              message: data!.message!, context: context),
         );
       },
       builder: (context, state) {
