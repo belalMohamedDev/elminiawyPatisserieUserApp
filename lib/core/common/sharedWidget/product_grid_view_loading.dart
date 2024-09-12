@@ -17,8 +17,8 @@ class ProductGridViewLoadingState extends StatelessWidget {
         shrinkWrap: true,
         physics: physics,
         crossAxisCount: 2,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+        crossAxisSpacing: 10.w,
+        mainAxisSpacing: 10.h,
         childAspectRatio: 0.75,
         children: List.generate(
             8,

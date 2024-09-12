@@ -23,11 +23,10 @@ class BannerCarouselSlider extends StatelessWidget {
         if (state is GetBannersSuccess) {
           return _bannersSuccessState(state);
         }
-        return Padding(
-          padding: EdgeInsets.only(left: 17.w),
+        return Center(
           child: LoadingShimmer(
             height: 130.h,
-            width: 300.w,
+            width: double.infinity,
             borderRadius: 12.r,
           ),
         );

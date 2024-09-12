@@ -3,6 +3,8 @@ import 'package:elminiawy/feature/changePassword/data/model/request/change_my_pa
 import 'package:elminiawy/feature/changePassword/data/model/response/change_my_password_response.dart';
 import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
 import 'package:elminiawy/feature/address/data/model/response/create_address_response.dart';
+import 'package:elminiawy/feature/payment/data/model/requestBody/create_order_request.dart';
+import 'package:elminiawy/feature/payment/data/model/response/create_order.dart';
 
 import 'package:retrofit/retrofit.dart';
 
@@ -157,4 +159,10 @@ abstract class AppServiceClient {
 
   @DELETE(ApiConstants.deleteMyAccount)
   Future<DeleteAccountResponse> deleteMyAccountService();
+
+  @POST(ApiConstants.order)
+  Future<CreateOrderResponse> createCashOrderService(
+        @Body() CreateOrderRequestBody createOrderRequestBody ,
+
+  );
 }

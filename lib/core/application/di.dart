@@ -12,6 +12,7 @@ import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
 import 'package:elminiawy/feature/logOut/data/repository/log_out_repo.dart';
 import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
+import 'package:elminiawy/feature/payment/data/repository/order_repo.dart';
 import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product_category_repo.dart';
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
 
@@ -239,5 +240,8 @@ Future<void> _initChangeMyPassword() async {
 }
 
 Future<void> _initPayment() async {
-  instance.registerFactory<PaymentCubit>(() => PaymentCubit());
+    instance
+    ..registerLazySingleton<OrderRepositoryImplement>(
+        () => OrderRepositoryImplement(instance(), instance()))
+  ..registerFactory<PaymentCubit>(() => PaymentCubit(instance()));
 }

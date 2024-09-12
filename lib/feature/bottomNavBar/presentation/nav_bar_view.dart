@@ -55,7 +55,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
           controller: context.read<AppLogicCubit>().bottomNavBarController,
 
-          margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 30.h),
+          margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 12.h),
 
           backgroundColor: ColorManger.brun,
 

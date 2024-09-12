@@ -195,7 +195,9 @@ class ChangeUserPasswordBody extends StatelessWidget {
               height: 25.h,
             ),
             _instructionsTextColumn(context),
-            const Spacer(),
+            SizedBox(
+              height: 50.h,
+            ),
             _submitPasswordChangeButton(context)
           ],
         ),
@@ -216,7 +218,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               context.read<ChangeMyPasswordCubit>().submitPasswordChange();
             }
           },
-          radius: 10.r,
+          radius: 8.r,
           widget: state.maybeWhen(
             changeMyPasswordLoading: () => Row(
               mainAxisAlignment: MainAxisAlignment.center,

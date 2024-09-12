@@ -33,18 +33,17 @@ Padding _categoryLoadingAndErrorState() {
   return Padding(
     padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 50.h),
     child: GridView.count(
-        addAutomaticKeepAlives: true,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 3,
-        childAspectRatio: 0.72,
+        crossAxisSpacing: 8.w,
+        mainAxisSpacing: 8.h,
+        childAspectRatio: 0.7.h,
         children: List.generate(
-            9,
+            12,
             (index) => Column(
                   children: [
                     LoadingShimmer(
-                      height: 100.h,
-                      width: 100.w,
+                      height: 70.h,
+                      width: 80.w,
                       borderRadius: 12.r,
                     ),
                     SizedBox(
@@ -52,7 +51,7 @@ Padding _categoryLoadingAndErrorState() {
                     ),
                     LoadingShimmer(
                       width: 50.w,
-                      height: 10.h,
+                      height: 5.h,
                       borderRadius: 12.r,
                     ),
                     SizedBox(
