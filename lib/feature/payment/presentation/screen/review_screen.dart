@@ -1,12 +1,17 @@
+import 'package:elminiawy/feature/address/logic/userAddressCubit/user_address_cubit.dart';
 import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
+import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common/sharedWidget/custom_button.dart';
+import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../core/style/fonts/strings_manger.dart';
 import '../refactor/review_body_screen.dart';
+import 'order_placed_screen.dart';
 
 class ReviewPaymentScreen extends StatelessWidget {
   const ReviewPaymentScreen({super.key});
@@ -28,7 +33,9 @@ class ReviewPaymentScreen extends StatelessWidget {
   }
 
   Container _orderSummary(BuildContext context) {
-    final cartData = context.read<CartCubit>().cartData;
+    final cart = context.read<CartCubit>();
+    final paymentCuibt = context.read<PaymentCubit>();
+    final userAddressCubit = context.read<UserAddressCubit>();
 
     return Container(
       height: 280.h,
@@ -59,7 +66,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '${cartData!.data!.totalCartPrice!} EGP',
+                  '${cart.cartData!.data!.totalCartPrice!} EGP',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brunLight,
@@ -81,7 +88,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '${cartData.data!.taxPrice!} EGP',
+                  '${cart.cartData!.data!.taxPrice!} EGP',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brunLight,
@@ -106,7 +113,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '${cartData.data!.totalOrderPrice!} EGP',
+                  '${cart.cartData!.data!.totalOrderPrice!} EGP',
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brun,
@@ -117,16 +124,71 @@ class ReviewPaymentScreen extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            CustomButton(
-              onPressed: () {},
-              radius: 8.r,
-              widget: Text(
-                'Summit Order',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.white,
-                    fontSize: 13.sp),
-              ),
+            BlocConsumer<PaymentCubit, PaymentState>(
+              listener: (context, state) {
+                state.whenOrNull(
+                    createCashOrderError: (statesCode, errorMessage) =>
+                        ShowToast.showToastErrorTop(
+                            errorMessage: errorMessage, context: context),
+                    createCashOrderSuccess: (data) {
+                      ShowToast.showToastSuccessTop(
+                          message: data.message!, context: context);
+
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OrderPlaced()),
+                        (route) => false,
+                      );
+                    });
+              },
+              builder: (context, state) {
+                return CustomButton(
+                    onPressed: () {
+                      if (paymentCuibt.choosePaymentMethod.startsWith('Cash')) {
+                        paymentCuibt.createCashOrderSummit(userAddressCubit
+                            .addressDataList[paymentCuibt.selectedIndex].sId!);
+                      }
+                    },
+                    radius: 8.r,
+                    widget: state.maybeWhen(
+                      createCashOrderLoading: () => Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 20.h,
+                            width: 20.w,
+                            child: const CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 2.0,
+                              strokeAlign: 0.01,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          Text(
+                            AppStrings.loading,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(
+                                    fontSize: 16.sp,
+                                    color: ColorManger.white,
+                                    fontWeight: FontWeightManger.semiBold),
+                          ),
+                        ],
+                      ),
+                      orElse: () => Text(
+                        'Summit Order',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontFamily: FontConsistent.fontFamilyAcme,
+                            color: ColorManger.white,
+                            fontSize: 13.sp),
+                      ),
+                    ));
+              },
             ),
             SizedBox(
               height: 15.h,
@@ -156,4 +218,3 @@ class ReviewPaymentScreen extends StatelessWidget {
     );
   }
 }
-

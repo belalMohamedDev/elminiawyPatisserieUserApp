@@ -55,7 +55,7 @@ class ReviewPaymentBody extends StatelessWidget {
           height: 5.h,
         ),
         TextFormField(
-          // controller: context.read<CartCubit>().applyCouponController,
+          controller: context.read<PaymentCubit>().notesController,
           keyboardType: TextInputType.text,
           minLines: 3,
           maxLines: 10,

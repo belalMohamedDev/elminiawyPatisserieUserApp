@@ -27,7 +27,7 @@ Map<String, dynamic> _$CreateOrderResponseToJson(
 CreateOrderResponseData _$CreateOrderResponseDataFromJson(
         Map<String, dynamic> json) =>
     CreateOrderResponseData(
-      sId: json['sId'] as String?,
+      sId: json['_id'] as String?,
       user: json['user'] == null
           ? null
           : UserOrderData.fromJson(json['user'] as Map<String, dynamic>),
@@ -50,7 +50,7 @@ CreateOrderResponseData _$CreateOrderResponseDataFromJson(
 Map<String, dynamic> _$CreateOrderResponseDataToJson(
         CreateOrderResponseData instance) =>
     <String, dynamic>{
-      'sId': instance.sId,
+      '_id': instance.sId,
       'user': instance.user,
       'notes': instance.notes,
       'status': instance.status,
@@ -65,7 +65,7 @@ Map<String, dynamic> _$CreateOrderResponseDataToJson(
 
 UserOrderData _$UserOrderDataFromJson(Map<String, dynamic> json) =>
     UserOrderData(
-      sId: json['sId'] as String?,
+      sId: json['_id'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
       phone: json['phone'] as String?,
@@ -73,7 +73,7 @@ UserOrderData _$UserOrderDataFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UserOrderDataToJson(UserOrderData instance) =>
     <String, dynamic>{
-      'sId': instance.sId,
+      '_id': instance.sId,
       'name': instance.name,
       'email': instance.email,
       'phone': instance.phone,

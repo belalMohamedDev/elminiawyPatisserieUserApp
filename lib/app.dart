@@ -2,7 +2,6 @@ import 'package:device_preview/device_preview.dart';
 import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
 import 'package:elminiawy/core/application/di.dart';
 import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
-import 'package:elminiawy/feature/payment/presentation/screen/shipping_address_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +19,7 @@ import 'feature/cart/cubit/cart_cubit.dart';
 import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
+import 'feature/payment/presentation/screen/order_placed_screen.dart';
 import 'feature/wishList/cubit/wish_list_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => instance<StoreAddressCuibt>(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (context) => instance<PaymentCubit>(),
         ),
       ],
@@ -86,9 +86,9 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                  initialRoute: snapshot.data,
-                  onGenerateRoute: RouteGenerator.getRoute,
-                  home: const ShippingAddress(),
+                  // initialRoute: snapshot.data,
+                  // onGenerateRoute: RouteGenerator.getRoute,
+                  home: const OrderPlaced(),
                   theme: getApplicationTheme(),
                 );
               },

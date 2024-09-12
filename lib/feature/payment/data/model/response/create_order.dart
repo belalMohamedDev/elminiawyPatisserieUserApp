@@ -9,7 +9,7 @@ class CreateOrderResponse {
 
   CreateOrderResponse({this.status, this.message, this.data});
 
-    //from json
+  //from json
   factory CreateOrderResponse.fromJson(Map<String, dynamic> json) =>
       _$CreateOrderResponseFromJson(json);
 
@@ -19,6 +19,7 @@ class CreateOrderResponse {
 
 @JsonSerializable()
 class CreateOrderResponseData {
+  @JsonKey(name: "_id")
   String? sId;
   UserOrderData? user;
   String? notes;
@@ -45,7 +46,7 @@ class CreateOrderResponseData {
     this.isPaid,
   });
 
-    //from json
+  //from json
   factory CreateOrderResponseData.fromJson(Map<String, dynamic> json) =>
       _$CreateOrderResponseDataFromJson(json);
 
@@ -55,13 +56,14 @@ class CreateOrderResponseData {
 
 @JsonSerializable()
 class UserOrderData {
+  @JsonKey(name: "_id")
   String? sId;
   String? name;
   String? email;
   String? phone;
 
   UserOrderData({this.sId, this.name, this.email, this.phone});
-      //from json
+  //from json
   factory UserOrderData.fromJson(Map<String, dynamic> json) =>
       _$UserOrderDataFromJson(json);
 
@@ -80,7 +82,7 @@ class CartOrderItems {
   CartOrderItems(
       {this.product, this.quantity, this.price, this.totalItemPrice, this.sId});
 
-        //from json
+  //from json
   factory CartOrderItems.fromJson(Map<String, dynamic> json) =>
       _$CartOrderItemsFromJson(json);
 
@@ -96,7 +98,7 @@ class ProductOrder {
 
   ProductOrder({this.title, this.sId, this.image});
 
-    //from json
+  //from json
   factory ProductOrder.fromJson(Map<String, dynamic> json) =>
       _$ProductOrderFromJson(json);
 
@@ -130,7 +132,7 @@ class OrderShippingAddress {
     this.user,
   });
 
-    //from json
+  //from json
   factory OrderShippingAddress.fromJson(Map<String, dynamic> json) =>
       _$OrderShippingAddressFromJson(json);
 
@@ -145,8 +147,7 @@ class OrderLocation {
 
   OrderLocation({this.type, this.coordinates});
 
-
-    //from json
+  //from json
   factory OrderLocation.fromJson(Map<String, dynamic> json) =>
       _$OrderLocationFromJson(json);
 

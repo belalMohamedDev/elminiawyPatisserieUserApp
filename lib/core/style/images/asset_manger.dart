@@ -1,4 +1,5 @@
 const String imagePath = "asset/image";
+const String jsonPath = "asset/json";
 
 class ImageAsset {
   //onBoading screen
@@ -27,3 +28,10 @@ class ImageAsset {
 
 }
 
+
+class JsonAsset {
+  //onBoading screen
+  static const String congrat = "$jsonPath/cong.json";
+
+
+}

@@ -1,6 +1,7 @@
 import 'package:elminiawy/feature/payment/data/model/requestBody/create_order_request.dart';
 import 'package:elminiawy/feature/payment/data/model/response/create_order.dart';
 import 'package:elminiawy/feature/payment/data/repository/order_repo.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,6 +14,8 @@ class PaymentCubit extends Cubit<PaymentState> {
   int selectedIndex = 0;
   String choosePaymentMethod = 'Cash on delivery';
   final OrderRepositoryImplement _orderRepositoryImplement;
+  TextEditingController notesController = TextEditingController();
+  CreateOrderResponseData? createOrderResponseData;
 
   void changeShippingIndex(int index) {
     selectedIndex = index;
@@ -24,14 +27,17 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(PaymentState.choosePayment(choosePaymentMethod));
   }
 
-  Future<void> createCashOrderSummit(String refreshToken) async {
+  Future<void> createCashOrderSummit(String shippingAddressId) async {
     emit(const PaymentState.createCashOrderLoading());
 
     final response = await _orderRepositoryImplement.createCashOrder(
-        CreateOrderRequestBody(shippingAddress: '', notes: ''));
+        CreateOrderRequestBody(
+            shippingAddress: shippingAddressId,
+            notes: notesController.text.trim()));
 
     response.when(
       success: (response) {
+        createOrderResponseData = response.data;
         emit(PaymentState.createCashOrderSuccess(response));
       },
       failure: (error) {
