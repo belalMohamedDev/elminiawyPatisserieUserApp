@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/sharedWidget/custom_button.dart';
 import 'package:elminiawy/core/style/images/asset_manger.dart';
 import 'package:elminiawy/core/utils/extensions.dart';
+import 'package:elminiawy/feature/payment/presentation/screen/order_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,7 +72,13 @@ class OrderPlacedBody extends StatelessWidget {
           ),
           CustomButton(
             color: ColorManger.brunLight,
-            onPressed: () {},
+            onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const OrderDetails()),
+                (route) => false,
+              );
+            },
             radius: 8.r,
             widget: Text('Track Order',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(

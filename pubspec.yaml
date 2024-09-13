@@ -141,6 +141,8 @@ flutter:
     - asset/image/picture.png
     - asset/image/whishList.png
     - asset/image/address.png
+    - asset/image/basket.png
+    - asset/image/shopping-bag.png
     - asset/json/cong.json
 
     

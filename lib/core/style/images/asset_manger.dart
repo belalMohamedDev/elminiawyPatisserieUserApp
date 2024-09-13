@@ -23,6 +23,9 @@ class ImageAsset {
   static const String picture = "$imagePath/picture.png";
   static const String whishList = "$imagePath/whishList.png";
   static const String address = "$imagePath/address.png";
+
+  static const String shoppingBag = "$imagePath/shopping-bag.png";
+  static const String basket = "$imagePath/basket.png";
   
 
 
