@@ -103,13 +103,14 @@ ProductOrder _$ProductOrderFromJson(Map<String, dynamic> json) => ProductOrder(
       title: json['title'] as String?,
       sId: json['sId'] as String?,
       image: json['image'] as String?,
-    );
+    )..ratingsAverage = (json['ratingsAverage'] as num?)?.toDouble();
 
 Map<String, dynamic> _$ProductOrderToJson(ProductOrder instance) =>
     <String, dynamic>{
       'title': instance.title,
       'sId': instance.sId,
       'image': instance.image,
+      'ratingsAverage': instance.ratingsAverage,
     };
 
 OrderShippingAddress _$OrderShippingAddressFromJson(

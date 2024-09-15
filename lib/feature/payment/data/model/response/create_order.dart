@@ -95,6 +95,7 @@ class ProductOrder {
   String? title;
   String? sId;
   String? image;
+  double? ratingsAverage;
 
   ProductOrder({this.title, this.sId, this.image});
 

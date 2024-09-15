@@ -20,7 +20,6 @@ import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
 import 'feature/payment/presentation/screen/order_details_screen.dart';
-import 'feature/payment/presentation/screen/order_placed_screen.dart';
 import 'feature/wishList/cubit/wish_list_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -87,8 +86,8 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                  // initialRoute: snapshot.data,
-                  // onGenerateRoute: RouteGenerator.getRoute,
+                 // initialRoute: snapshot.data,
+                 // onGenerateRoute: RouteGenerator.getRoute,
                   home: const OrderDetails(),
                   theme: getApplicationTheme(),
                 );
