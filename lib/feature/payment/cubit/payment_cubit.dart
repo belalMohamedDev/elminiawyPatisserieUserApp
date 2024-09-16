@@ -48,4 +48,24 @@ class PaymentCubit extends Cubit<PaymentState> {
       },
     );
   }
+
+  Future<void> ordercancelSummit(String id) async {
+    emit(const PaymentState.createCashOrderLoading());
+
+    final response =
+        await _orderRepositoryImplement.orderCancelledRepository(id);
+
+    response.when(
+      success: (response) {
+        createOrderResponseData = response.data;
+        emit(PaymentState.createCashOrderSuccess(response));
+      },
+      failure: (error) {
+        emit(
+          PaymentState.createCashOrderError(
+              errorMessage: error.message!, statesCode: error.statusCode!),
+        );
+      },
+    );
+  }
 }

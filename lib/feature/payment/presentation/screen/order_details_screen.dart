@@ -11,6 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../../../../core/common/toast/show_toast.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../cubit/payment_cubit.dart';
@@ -32,7 +34,7 @@ class OrderDetails extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(IconlyBroken.arrowLeft),
           onPressed: () {
-            context.pop();
+            context.pushReplacementNamed(Routes.bottomNavBarRoute);
           },
         ),
         actions: [
@@ -84,7 +86,12 @@ class OrderDetails extends StatelessWidget {
                       height: 20.h,
                     ),
                     CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<PaymentCubit>().ordercancelSummit(context
+                            .read<PaymentCubit>()
+                            .createOrderResponseData!
+                            .sId!);
+                      },
                       radius: 8.r,
                       widget: Text('Yes, Cancel',
                           style: Theme.of(context)
@@ -125,34 +132,70 @@ class OrderDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final createOrderResponse =
-        context.read<PaymentCubit>().createOrderResponseData;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                _orderIdContainer(context),
-                SizedBox(
-                  height: 10.h,
+    return BlocConsumer<PaymentCubit, PaymentState>(
+      listener: (context, state) {
+        state.whenOrNull(
+            createCashOrderLoading: () => context.pop(),
+            createCashOrderError: (statesCode, errorMessage) =>
+                ShowToast.showToastErrorTop(
+                    errorMessage: errorMessage, context: context),
+            createCashOrderSuccess: (data) {
+              ShowToast.showToastSuccessTop(
+                  message: data.message!, context: context);
+            });
+      },
+      builder: (context, state) {
+        final createOrderResponse =
+            context.read<PaymentCubit>().createOrderResponseData;
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          child: Stack(
+            children: [
+              CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        _orderIdContainer(context),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        _orderStautsStepper(context, createOrderResponse),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        _orderShippingInformation(context, createOrderResponse),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                      ],
+                    ),
+                  ),
+                  _productItemSliverList(createOrderResponse),
+                ],
+              ),
+              if (state is CreateCashOrderLoading)
+                Center(
+                  child: Container(
+                      height: 70.h,
+                      width: 70.w,
+                      decoration: BoxDecoration(
+                          color: ColorManger.brun,
+                          borderRadius: BorderRadius.circular(12.r)),
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(20.r),
+                          child: CircularProgressIndicator(
+                            color: ColorManger.white,
+                            strokeWidth: 3.sp,
+                          ),
+                        ),
+                      )),
                 ),
-                _orderStautsStepper(context, createOrderResponse),
-                SizedBox(
-                  height: 10.h,
-                ),
-                _orderShippingInformation(context, createOrderResponse),
-                SizedBox(
-                  height: 10.h,
-                ),
-              ],
-            ),
+            ],
           ),
-          _productItemSliverList(createOrderResponse),
-        ],
-      ),
+        );
+      },
     );
   }
 

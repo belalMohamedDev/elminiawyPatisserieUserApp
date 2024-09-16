@@ -9,6 +9,8 @@ import '../../../../core/network/network_connectivity/connectivity_controller.da
 abstract class OrderRepository {
   Future<ApiResult<CreateOrderResponse>> createCashOrder(
       CreateOrderRequestBody createOrderRequestBody);
+
+  Future<ApiResult<CreateOrderResponse>> orderCancelledRepository(String id);
 }
 
 class OrderRepositoryImplement implements OrderRepository {
@@ -23,6 +25,22 @@ class OrderRepositoryImplement implements OrderRepository {
       try {
         final response =
             await _apiService.createCashOrderService(createOrderRequestBody);
+        return ApiResult.success(response);
+      } catch (error) {
+        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+      }
+    } else {
+      //return  internet connection error
+      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<ApiResult<CreateOrderResponse>> orderCancelledRepository(
+      String id) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _apiService.orderCancellService(id);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
