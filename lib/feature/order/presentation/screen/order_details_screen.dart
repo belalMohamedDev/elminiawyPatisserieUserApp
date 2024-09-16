@@ -135,14 +135,11 @@ class OrderDetailsBody extends StatelessWidget {
     return BlocConsumer<PaymentCubit, PaymentState>(
       listener: (context, state) {
         state.whenOrNull(
-            createCashOrderLoading: () => context.pop(),
-            createCashOrderError: (statesCode, errorMessage) =>
-                ShowToast.showToastErrorTop(
-                    errorMessage: errorMessage, context: context),
-            createCashOrderSuccess: (data) {
-              ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
-            });
+          createCashOrderLoading: () => context.pop(),
+          createCashOrderError: (statesCode, errorMessage) =>
+              ShowToast.showToastErrorTop(
+                  errorMessage: errorMessage, context: context),
+        );
       },
       builder: (context, state) {
         final createOrderResponse =

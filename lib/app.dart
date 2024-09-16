@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
 import 'package:elminiawy/core/application/di.dart';
-import 'package:elminiawy/feature/payment/cubit/payment_cubit.dart';
+import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +19,7 @@ import 'feature/cart/cubit/cart_cubit.dart';
 import 'feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
-import 'feature/payment/presentation/screen/order_details_screen.dart';
+import 'feature/order/presentation/screen/order_details_screen.dart';
 import 'feature/wishList/cubit/wish_list_cubit.dart';
 
 class MyApp extends StatelessWidget {

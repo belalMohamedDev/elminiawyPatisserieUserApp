@@ -1,7 +1,7 @@
 import 'package:elminiawy/core/common/sharedWidget/custom_button.dart';
 import 'package:elminiawy/core/style/images/asset_manger.dart';
 import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/payment/presentation/screen/order_details_screen.dart';
+import 'package:elminiawy/feature/order/presentation/screen/order_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

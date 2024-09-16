@@ -9,7 +9,7 @@ import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
-import '../../../payment/presentation/screen/shipping_address_screen.dart';
+import '../../../order/presentation/screen/shipping_address_screen.dart';
 import '../refactor/cart_body.dart';
 
 class CartView extends StatelessWidget {

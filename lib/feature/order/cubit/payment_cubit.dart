@@ -1,6 +1,7 @@
-import 'package:elminiawy/feature/payment/data/model/requestBody/create_order_request.dart';
-import 'package:elminiawy/feature/payment/data/model/response/create_order.dart';
-import 'package:elminiawy/feature/payment/data/repository/order_repo.dart';
+import 'package:elminiawy/feature/order/data/model/requestBody/create_order_request.dart';
+import 'package:elminiawy/feature/order/data/model/response/create_order.dart';
+import 'package:elminiawy/feature/order/data/model/response/get_order.dart';
+import 'package:elminiawy/feature/order/data/repository/order_repo.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -63,6 +64,44 @@ class PaymentCubit extends Cubit<PaymentState> {
       failure: (error) {
         emit(
           PaymentState.createCashOrderError(
+              errorMessage: error.message!, statesCode: error.statusCode!),
+        );
+      },
+    );
+  }
+
+  Future<void> getCompleteOrdersSummit() async {
+    emit(const PaymentState.getCompleteOrdersLoading());
+
+    final response =
+        await _orderRepositoryImplement.getAllOrderCompleteRepository();
+
+    response.when(
+      success: (response) {
+        emit(PaymentState.getCompleteOrdersSuccess(response));
+      },
+      failure: (error) {
+        emit(
+          PaymentState.getCompleteOrdersError(
+              errorMessage: error.message!, statesCode: error.statusCode!),
+        );
+      },
+    );
+  }
+
+  Future<void> getOrdersPendingSummit() async {
+    emit(const PaymentState.getPendingOrdersLoading());
+
+    final response =
+        await _orderRepositoryImplement.getAllOrderPendingRepository();
+
+    response.when(
+      success: (response) {
+        emit(PaymentState.getPendingOrdersSuccess(response));
+      },
+      failure: (error) {
+        emit(
+          PaymentState.getPendingOrdersError(
               errorMessage: error.message!, statesCode: error.statusCode!),
         );
       },

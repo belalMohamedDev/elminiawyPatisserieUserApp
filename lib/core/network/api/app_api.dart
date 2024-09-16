@@ -3,8 +3,8 @@ import 'package:elminiawy/feature/changePassword/data/model/request/change_my_pa
 import 'package:elminiawy/feature/changePassword/data/model/response/change_my_password_response.dart';
 import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
 import 'package:elminiawy/feature/address/data/model/response/create_address_response.dart';
-import 'package:elminiawy/feature/payment/data/model/requestBody/create_order_request.dart';
-import 'package:elminiawy/feature/payment/data/model/response/create_order.dart';
+import 'package:elminiawy/feature/order/data/model/requestBody/create_order_request.dart';
+import 'package:elminiawy/feature/order/data/model/response/create_order.dart';
 
 import 'package:retrofit/retrofit.dart';
 
@@ -24,6 +24,7 @@ import '../../../feature/newProduct/model/response/product_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
+import '../../../feature/order/data/model/response/get_order.dart';
 import '../../../feature/productBasedOnCategory/data/response/product_category.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
 import '../../../feature/address/data/model/response/get_address_response.dart';
@@ -169,4 +170,10 @@ abstract class AppServiceClient {
   Future<CreateOrderResponse> orderCancellService(
     @Path("id") String id,
   );
+
+  @GET('${ApiConstants.order}/user')
+  Future<GetOrdersResponse> getAllOrderCompleteService();
+
+   @GET('${ApiConstants.order}/user/pending')
+  Future<GetOrdersResponse> getAllOrderPendingService();
 }
