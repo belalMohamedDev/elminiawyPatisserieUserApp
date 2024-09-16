@@ -12,7 +12,7 @@ class PaymentCubit extends Cubit<PaymentState> {
   PaymentCubit(this._orderRepositoryImplement)
       : super(const PaymentState.initial());
   int selectedIndex = 0;
-  String choosePaymentMethod = 'Cash on delivery';
+  String choosePaymentMethod = 'Cash';
   final OrderRepositoryImplement _orderRepositoryImplement;
   TextEditingController notesController = TextEditingController();
   CreateOrderResponseData? createOrderResponseData;

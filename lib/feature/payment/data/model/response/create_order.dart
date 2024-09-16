@@ -23,28 +23,31 @@ class CreateOrderResponseData {
   String? sId;
   UserOrderData? user;
   String? notes;
-  String? status;
+  int? status;
   List<CartOrderItems>? cartItems;
-  int? taxPrice;
-  int? shippingPrice;
+  double? taxPrice;
+  double? shippingPrice;
   OrderShippingAddress? shippingAddress;
-  int? totalOrderPrice;
+  double? totalOrderPrice;
   String? paymentMethodType;
+  String? createdAt;
+  String? updatedAt;
   bool? isPaid;
 
-  CreateOrderResponseData({
-    this.sId,
-    this.user,
-    this.notes,
-    this.status,
-    this.cartItems,
-    this.taxPrice,
-    this.shippingPrice,
-    this.shippingAddress,
-    this.totalOrderPrice,
-    this.paymentMethodType,
-    this.isPaid,
-  });
+  CreateOrderResponseData(
+      {this.sId,
+      this.user,
+      this.notes,
+      this.status,
+      this.cartItems,
+      this.taxPrice,
+      this.shippingPrice,
+      this.shippingAddress,
+      this.totalOrderPrice,
+      this.paymentMethodType,
+      this.isPaid,
+      this.createdAt,
+      this.updatedAt});
 
   //from json
   factory CreateOrderResponseData.fromJson(Map<String, dynamic> json) =>

@@ -162,7 +162,11 @@ abstract class AppServiceClient {
 
   @POST(ApiConstants.order)
   Future<CreateOrderResponse> createCashOrderService(
-        @Body() CreateOrderRequestBody createOrderRequestBody ,
+    @Body() CreateOrderRequestBody createOrderRequestBody,
+  );
 
+  @PUT('${ApiConstants.order}/{id}/cancelled')
+  Future<CreateOrderResponse> orderCancellService(
+    @Path("id") String id,
   );
 }

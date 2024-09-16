@@ -86,8 +86,8 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                 // initialRoute: snapshot.data,
-                 // onGenerateRoute: RouteGenerator.getRoute,
+                  //  initialRoute: snapshot.data,
+                  //onGenerateRoute: RouteGenerator.getRoute,
                   home: const OrderDetails(),
                   theme: getApplicationTheme(),
                 );

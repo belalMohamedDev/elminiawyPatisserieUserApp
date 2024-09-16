@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:elminiawy/core/common/sharedWidget/custom_button.dart';
 import 'package:elminiawy/core/style/images/asset_manger.dart';
+import 'package:elminiawy/core/utils/date_extension.dart';
 import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -119,20 +120,14 @@ class OrderDetails extends StatelessWidget {
   }
 }
 
-class OrderDetailsBody extends StatefulWidget {
+class OrderDetailsBody extends StatelessWidget {
   const OrderDetailsBody({super.key});
-
-  @override
-  State<OrderDetailsBody> createState() => _OrderDetailsBodyState();
-}
-
-class _OrderDetailsBodyState extends State<OrderDetailsBody> {
-  final int orderStatus = 0;
 
   @override
   Widget build(BuildContext context) {
     final createOrderResponse =
         context.read<PaymentCubit>().createOrderResponseData;
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       child: CustomScrollView(
@@ -368,7 +363,13 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
     );
   }
 
-  Column _buildStep(bool isCompleted, String title, String subTitle) {
+  Column _buildStep(
+      {required BuildContext context,
+      required bool isCompleted,
+      bool isCancelled = false,
+      required String title,
+      required String subTitle,
+      String imagePath = ImageAsset.orderDelivered}) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -378,9 +379,19 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
               width: isCompleted ? 0 : 6.w,
             ),
             CircleAvatar(
-                radius: isCompleted ? 11.r : 5.r,
-                backgroundColor: ColorManger.brownLight,
-                child: isCompleted ? Image.asset(ImageAsset.basket) : null),
+                radius: isCompleted
+                    ? isCancelled
+                        ? 15.r
+                        : 11.r
+                    : 5.r,
+                backgroundColor: isCancelled
+                    ? ColorManger.backgroundItem
+                    : ColorManger.brownLight,
+                child: isCompleted
+                    ? Image.asset(
+                        imagePath,
+                      )
+                    : null),
             Padding(
               padding: EdgeInsets.only(left: 20.w),
               child: Column(
@@ -471,6 +482,8 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
 
   Container _orderStautsStepper(
       BuildContext context, CreateOrderResponseData? createOrderResponse) {
+    int orderStatus = createOrderResponse!.status!;
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -490,22 +503,56 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
             SizedBox(
               height: 15.h,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildStep(orderStatus >= 0, "Order Placed",
-                    'order has been placed at 11:09 PM'),
-                _buildLine(orderStatus > 0),
-                _buildStep(orderStatus >= 1, "Preparing",
-                    'order has been placed at 11:09 PM'),
-                _buildLine(orderStatus > 1),
-                _buildStep(orderStatus >= 2, "On its way",
-                    'order has been placed at 11:09 PM'),
-                _buildLine(orderStatus > 2),
-                _buildStep(orderStatus >= 3, "Delivered",
-                    'order has been placed at 11:09 PM'),
-              ],
-            )
+            orderStatus != 4
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _buildStep(
+                          context: context,
+                          isCompleted: orderStatus >= 0,
+                          title: "Order Placed",
+                          subTitle:
+                              'order has been placed at ${createOrderResponse.createdAt!.getFormattedDate()} .'),
+                      _buildLine(orderStatus > 0),
+                      _buildStep(
+                          context: context,
+                          isCompleted: orderStatus >= 1,
+                          title: "Preparing",
+                          subTitle: 'Your order is being prepared.'),
+                      _buildLine(orderStatus > 1),
+                      _buildStep(
+                          context: context,
+                          isCompleted: orderStatus >= 2,
+                          title: "On its way",
+                          subTitle: 'Your order is on its way.'),
+                      _buildLine(orderStatus > 2),
+                      _buildStep(
+                        context: context,
+                        isCompleted: orderStatus >= 3,
+                        title: "Delivered",
+                        subTitle: 'Your order was delivered successfully.',
+                      ),
+                    ],
+                  )
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _buildStep(
+                          context: context,
+                          isCompleted: orderStatus == 4,
+                          title: "Order Placed",
+                          subTitle:
+                              'order has been placed at ${createOrderResponse.createdAt!.getFormattedDate()}'),
+                      _buildLine(orderStatus == 4),
+                      _buildStep(
+                          isCancelled: true,
+                          context: context,
+                          isCompleted: orderStatus == 4,
+                          title: "Cancelled",
+                          subTitle: 'Your order was cancelled.',
+                          imagePath: ImageAsset.orderCancel),
+                    ],
+                  )
           ],
         ),
       ),
@@ -513,6 +560,8 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
   }
 
   Container _orderIdContainer(BuildContext context) {
+    int orderStatus =
+        context.read<PaymentCubit>().createOrderResponseData!.status!;
     return Container(
       height: 60.h,
       decoration: BoxDecoration(
@@ -524,8 +573,12 @@ class _OrderDetailsBodyState extends State<OrderDetailsBody> {
             width: 20.w,
           ),
           Image.asset(
-            ImageAsset.shoppingBag,
-            height: 35.h,
+            orderStatus == 4
+                ? ImageAsset.orderCancel
+                : orderStatus == 3
+                    ? ImageAsset.orderDelivered
+                    : ImageAsset.shoppingBag,
+            height: orderStatus == 3 ? 30.h : 35.h,
           ),
           SizedBox(
             width: 15.w,

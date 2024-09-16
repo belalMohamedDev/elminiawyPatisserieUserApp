@@ -26,15 +26,12 @@ class ImageAsset {
 
   static const String shoppingBag = "$imagePath/shopping-bag.png";
   static const String basket = "$imagePath/basket.png";
-  
 
-
+  static const String orderCancel = "$imagePath/cancel.png";
+  static const String orderDelivered = "$imagePath/order_delivered.png";
 }
-
 
 class JsonAsset {
   //onBoading screen
   static const String congrat = "$jsonPath/cong.json";
-
-
 }

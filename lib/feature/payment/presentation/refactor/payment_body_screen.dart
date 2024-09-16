@@ -79,19 +79,19 @@ class PaymentBody extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                paymentCubit.changePaymentMethod('Cash on delivery');
+                paymentCubit.changePaymentMethod('Cash');
               },
               child: Container(
                 width: double.infinity,
                 height: 50.h,
                 decoration: BoxDecoration(
-                  color: paymentCubit.choosePaymentMethod == 'Cash on delivery'
+                  color: paymentCubit.choosePaymentMethod == 'Cash'
                       ? ColorManger.brownLight
                       : ColorManger.backgroundItem,
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
                     color:
-                        paymentCubit.choosePaymentMethod == 'Cash on delivery'
+                        paymentCubit.choosePaymentMethod == 'Cash'
                             ? ColorManger.brownLight
                             : ColorManger.backgroundItem,
                     width: 0.5.w,
@@ -117,7 +117,7 @@ class PaymentBody extends StatelessWidget {
                       ),
                       const Spacer(),
                       Radio<String>(
-                        value: 'Cash on delivery',
+                        value: 'Cash',
                         groupValue: paymentCubit.choosePaymentMethod,
                         onChanged: (value) {},
                         activeColor: ColorManger.brun,
@@ -133,20 +133,20 @@ class PaymentBody extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                paymentCubit.changePaymentMethod('Credit or debit card');
+                paymentCubit.changePaymentMethod('card');
               },
               child: Container(
                 width: double.infinity,
                 height: 50.h,
                 decoration: BoxDecoration(
                   color:
-                      paymentCubit.choosePaymentMethod == 'Credit or debit card'
+                      paymentCubit.choosePaymentMethod == 'card'
                           ? ColorManger.brownLight
                           : ColorManger.backgroundItem,
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
                     color: paymentCubit.choosePaymentMethod ==
-                            'Credit or debit card'
+                            'card'
                         ? ColorManger.brownLight
                         : ColorManger.backgroundItem,
                     width: 0.5.w,
@@ -172,7 +172,7 @@ class PaymentBody extends StatelessWidget {
                       ),
                       const Spacer(),
                       Radio<String>(
-                        value: 'Credit or debit card',
+                        value: 'card',
                         groupValue: paymentCubit.choosePaymentMethod,
                         onChanged: (value) {},
                         activeColor: ColorManger.brun,

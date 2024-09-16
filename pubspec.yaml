@@ -143,6 +143,8 @@ flutter:
     - asset/image/address.png
     - asset/image/basket.png
     - asset/image/shopping-bag.png
+    - asset/image/cancel.png
+    - asset/image/order_delivered.png
     - asset/json/cong.json
 
     

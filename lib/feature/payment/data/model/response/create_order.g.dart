@@ -32,19 +32,21 @@ CreateOrderResponseData _$CreateOrderResponseDataFromJson(
           ? null
           : UserOrderData.fromJson(json['user'] as Map<String, dynamic>),
       notes: json['notes'] as String?,
-      status: json['status'] as String?,
+      status: (json['status'] as num?)?.toInt(),
       cartItems: (json['cartItems'] as List<dynamic>?)
           ?.map((e) => CartOrderItems.fromJson(e as Map<String, dynamic>))
           .toList(),
-      taxPrice: (json['taxPrice'] as num?)?.toInt(),
-      shippingPrice: (json['shippingPrice'] as num?)?.toInt(),
+      taxPrice: (json['taxPrice'] as num?)?.toDouble(),
+      shippingPrice: (json['shippingPrice'] as num?)?.toDouble(),
       shippingAddress: json['shippingAddress'] == null
           ? null
           : OrderShippingAddress.fromJson(
               json['shippingAddress'] as Map<String, dynamic>),
-      totalOrderPrice: (json['totalOrderPrice'] as num?)?.toInt(),
+      totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
       paymentMethodType: json['paymentMethodType'] as String?,
       isPaid: json['isPaid'] as bool?,
+      createdAt: json['createdAt'] as String?,
+      updatedAt: json['updatedAt'] as String?,
     );
 
 Map<String, dynamic> _$CreateOrderResponseDataToJson(
@@ -60,6 +62,8 @@ Map<String, dynamic> _$CreateOrderResponseDataToJson(
       'shippingAddress': instance.shippingAddress,
       'totalOrderPrice': instance.totalOrderPrice,
       'paymentMethodType': instance.paymentMethodType,
+      'createdAt': instance.createdAt,
+      'updatedAt': instance.updatedAt,
       'isPaid': instance.isPaid,
     };
 
