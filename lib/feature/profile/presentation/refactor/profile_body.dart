@@ -1,5 +1,6 @@
 import 'package:elminiawy/core/routing/routes.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
+import 'package:elminiawy/feature/order/presentation/screen/my_orders_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -140,7 +141,10 @@ class ProfileBody extends StatelessWidget {
                   CustomProfileCard(
                     title: "My Orders",
                     leadingIcon: IconlyBold.bag,
-                    tap: () {},
+                    tap: () {
+                      NavBarNavigator.push(context,
+                          screen: const MyOrdersScreen(), withNavBar: false);
+                    },
                   ),
                   CustomProfileCard(
                     title: "My WishList",

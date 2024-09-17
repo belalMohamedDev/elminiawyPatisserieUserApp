@@ -33,7 +33,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // Fetch banners, categories, and products
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
         context.read<CategoryCubit>().getCategories(),

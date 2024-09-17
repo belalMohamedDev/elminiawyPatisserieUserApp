@@ -49,16 +49,17 @@ Map<String, dynamic> _$PaginationRusltToJson(PaginationRuslt instance) =>
 GetOrdersResponseData _$GetOrdersResponseDataFromJson(
         Map<String, dynamic> json) =>
     GetOrdersResponseData(
-      sId: json['sId'] as String?,
+      sId: json['_id'] as String?,
       user: json['user'] == null
           ? null
           : GetOrdersUser.fromJson(json['user'] as Map<String, dynamic>),
       notes: json['notes'] as String?,
+      status: (json['status'] as num?)?.toInt(),
       cartItems: (json['cartItems'] as List<dynamic>?)
           ?.map((e) => OrdersCartItems.fromJson(e as Map<String, dynamic>))
           .toList(),
       taxPrice: (json['taxPrice'] as num?)?.toDouble(),
-      shippingPrice: (json['shippingPrice'] as num?)?.toInt(),
+      shippingPrice: (json['shippingPrice'] as num?)?.toDouble(),
       shippingAddress: json['shippingAddress'] == null
           ? null
           : OrdersShippingAddress.fromJson(
@@ -73,9 +74,10 @@ GetOrdersResponseData _$GetOrdersResponseDataFromJson(
 Map<String, dynamic> _$GetOrdersResponseDataToJson(
         GetOrdersResponseData instance) =>
     <String, dynamic>{
-      'sId': instance.sId,
+      '_id': instance.sId,
       'user': instance.user,
       'notes': instance.notes,
+      'status': instance.status,
       'cartItems': instance.cartItems,
       'taxPrice': instance.taxPrice,
       'shippingPrice': instance.shippingPrice,
@@ -109,8 +111,8 @@ OrdersCartItems _$OrdersCartItemsFromJson(Map<String, dynamic> json) =>
           ? null
           : OrdersProduct.fromJson(json['product'] as Map<String, dynamic>),
       quantity: (json['quantity'] as num?)?.toInt(),
-      price: (json['price'] as num?)?.toInt(),
-      totalItemPrice: (json['totalItemPrice'] as num?)?.toInt(),
+      price: (json['price'] as num?)?.toDouble(),
+      totalItemPrice: (json['totalItemPrice'] as num?)?.toDouble(),
       sId: json['sId'] as String?,
     );
 

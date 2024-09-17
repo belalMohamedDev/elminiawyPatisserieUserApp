@@ -17,6 +17,8 @@ class PaymentCubit extends Cubit<PaymentState> {
   final OrderRepositoryImplement _orderRepositoryImplement;
   TextEditingController notesController = TextEditingController();
   CreateOrderResponseData? createOrderResponseData;
+  List<GetOrdersResponseData> getCurrentOrders = [];
+  List<GetOrdersResponseData> getPerviousOrders = [];
 
   void changeShippingIndex(int index) {
     selectedIndex = index;
@@ -78,6 +80,9 @@ class PaymentCubit extends Cubit<PaymentState> {
 
     response.when(
       success: (response) {
+        getPerviousOrders = [];
+        getPerviousOrders = response.data ?? []; // Ensure non-null
+
         emit(PaymentState.getCompleteOrdersSuccess(response));
       },
       failure: (error) {
@@ -90,18 +95,21 @@ class PaymentCubit extends Cubit<PaymentState> {
   }
 
   Future<void> getOrdersPendingSummit() async {
-    emit(const PaymentState.getPendingOrdersLoading());
+    emit(const PaymentState.getCompleteOrdersLoading());
 
     final response =
         await _orderRepositoryImplement.getAllOrderPendingRepository();
 
     response.when(
       success: (response) {
-        emit(PaymentState.getPendingOrdersSuccess(response));
+        getCurrentOrders = [];
+        getCurrentOrders = response.data ?? []; // Ensure non-null
+
+        emit(PaymentState.getCompleteOrdersSuccess(response));
       },
       failure: (error) {
         emit(
-          PaymentState.getPendingOrdersError(
+          PaymentState.getCompleteOrdersError(
               errorMessage: error.message!, statesCode: error.statusCode!),
         );
       },

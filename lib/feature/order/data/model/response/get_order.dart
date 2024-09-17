@@ -11,7 +11,7 @@ class GetOrdersResponse {
   GetOrdersResponse(
       {this.status, this.message, this.paginationRuslt, this.data});
 
-        //from json
+  //from json
   factory GetOrdersResponse.fromJson(Map<String, dynamic> json) =>
       _$GetOrdersResponseFromJson(json);
 
@@ -30,7 +30,7 @@ class PaginationRuslt {
   PaginationRuslt(
       {this.currentPage, this.limit, this.skip, this.numberOfPages, this.next});
 
-        //from json
+  //from json
   factory PaginationRuslt.fromJson(Map<String, dynamic> json) =>
       _$PaginationRusltFromJson(json);
 
@@ -40,12 +40,14 @@ class PaginationRuslt {
 
 @JsonSerializable()
 class GetOrdersResponseData {
+  @JsonKey(name: "_id")
   String? sId;
   GetOrdersUser? user;
   String? notes;
+  int? status;
   List<OrdersCartItems>? cartItems;
   double? taxPrice;
-  int? shippingPrice;
+  double? shippingPrice;
   OrdersShippingAddress? shippingAddress;
   double? totalOrderPrice;
   String? paymentMethodType;
@@ -57,6 +59,7 @@ class GetOrdersResponseData {
       {this.sId,
       this.user,
       this.notes,
+      this.status,
       this.cartItems,
       this.taxPrice,
       this.shippingPrice,
@@ -67,7 +70,7 @@ class GetOrdersResponseData {
       this.createdAt,
       this.updatedAt});
 
-        //from json
+  //from json
   factory GetOrdersResponseData.fromJson(Map<String, dynamic> json) =>
       _$GetOrdersResponseDataFromJson(json);
 
@@ -83,7 +86,7 @@ class GetOrdersUser {
   String? phone;
 
   GetOrdersUser({this.sId, this.name, this.email, this.phone});
-         //from json
+  //from json
   factory GetOrdersUser.fromJson(Map<String, dynamic> json) =>
       _$GetOrdersUserFromJson(json);
 
@@ -95,14 +98,14 @@ class GetOrdersUser {
 class OrdersCartItems {
   OrdersProduct? product;
   int? quantity;
-  int? price;
-  int? totalItemPrice;
+  double? price;
+  double? totalItemPrice;
   String? sId;
 
   OrdersCartItems(
       {this.product, this.quantity, this.price, this.totalItemPrice, this.sId});
 
-        //from json
+  //from json
   factory OrdersCartItems.fromJson(Map<String, dynamic> json) =>
       _$OrdersCartItemsFromJson(json);
 
@@ -119,15 +122,13 @@ class OrdersProduct {
 
   OrdersProduct({this.title, this.ratingsAverage, this.sId, this.image});
 
-    //from json
+  //from json
   factory OrdersProduct.fromJson(Map<String, dynamic> json) =>
       _$OrdersProductFromJson(json);
 
   //to json
   Map<String, dynamic> toJson() => _$OrdersProductToJson(this);
 }
-
-
 
 @JsonSerializable()
 class OrdersShippingAddress {
@@ -159,7 +160,7 @@ class OrdersShippingAddress {
     this.updatedAt,
   });
 
-    //from json
+  //from json
   factory OrdersShippingAddress.fromJson(Map<String, dynamic> json) =>
       _$OrdersShippingAddressFromJson(json);
 
@@ -174,7 +175,7 @@ class OrdersLocation {
 
   OrdersLocation({this.type, this.coordinates});
 
-    //from json
+  //from json
   factory OrdersLocation.fromJson(Map<String, dynamic> json) =>
       _$OrdersLocationFromJson(json);
 
