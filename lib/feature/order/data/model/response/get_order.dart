@@ -116,7 +116,7 @@ class OrdersCartItems {
 @JsonSerializable()
 class OrdersProduct {
   String? title;
-  int? ratingsAverage;
+  double? ratingsAverage;
   String? sId;
   String? image;
 

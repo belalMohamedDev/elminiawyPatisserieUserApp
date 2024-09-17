@@ -128,7 +128,7 @@ Map<String, dynamic> _$OrdersCartItemsToJson(OrdersCartItems instance) =>
 OrdersProduct _$OrdersProductFromJson(Map<String, dynamic> json) =>
     OrdersProduct(
       title: json['title'] as String?,
-      ratingsAverage: (json['ratingsAverage'] as num?)?.toInt(),
+      ratingsAverage: (json['ratingsAverage'] as num?)?.toDouble(),
       sId: json['sId'] as String?,
       image: json['image'] as String?,
     );

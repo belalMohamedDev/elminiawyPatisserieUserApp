@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:elminiawy/core/style/images/asset_manger.dart';
 import 'package:elminiawy/core/utils/date_extension.dart';
 import 'package:elminiawy/core/utils/extensions.dart';
+import 'package:elminiawy/feature/order/data/model/response/get_order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -16,7 +17,8 @@ import '../../cubit/payment_cubit.dart';
 import '../../data/model/response/create_order.dart';
 
 class OrderDetailsBody extends StatelessWidget {
-  const OrderDetailsBody({super.key});
+  final GetOrdersResponseData? order;
+  const OrderDetailsBody({super.key, this.order});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class OrderDetailsBody extends StatelessWidget {
       builder: (context, state) {
         final createOrderResponse =
             context.read<PaymentCubit>().createOrderResponseData;
+
         return Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           child: Stack(
@@ -41,22 +44,24 @@ class OrderDetailsBody extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: Column(
                       children: [
-                        _orderIdContainer(context),
+                        _orderIdContainer(context, createOrderResponse, order),
                         SizedBox(
                           height: 10.h,
                         ),
-                        _orderStautsStepper(context, createOrderResponse),
+                        _orderStautsStepper(
+                            context, createOrderResponse, order),
                         SizedBox(
                           height: 10.h,
                         ),
-                        _orderShippingInformation(context, createOrderResponse),
+                        _orderShippingInformation(
+                            context, createOrderResponse, order),
                         SizedBox(
                           height: 10.h,
                         ),
                       ],
                     ),
                   ),
-                  _productItemSliverList(createOrderResponse),
+                  _productItemSliverList(createOrderResponse, order),
                 ],
               ),
               if (state is CreateCashOrderLoading)
@@ -85,10 +90,12 @@ class OrderDetailsBody extends StatelessWidget {
   }
 
   SliverList _productItemSliverList(
-      CreateOrderResponseData? createOrderResponse) {
+      CreateOrderResponseData? createOrderResponse,
+      GetOrdersResponseData? order) {
+    final cartItems = order?.cartItems ?? createOrderResponse?.cartItems;
+
     return SliverList(
-        delegate: SliverChildBuilderDelegate(
-            childCount: createOrderResponse!.cartItems!.length,
+        delegate: SliverChildBuilderDelegate(childCount: cartItems!.length,
             (context, index) {
       return Padding(
           padding: EdgeInsets.only(bottom: 15.h),
@@ -111,8 +118,9 @@ class OrderDetailsBody extends StatelessWidget {
                       borderRadius: BorderRadius.circular(14.r),
                     ),
                     child: CachedNetworkImage(
-                      imageUrl: createOrderResponse
-                              .cartItems![index].product?.image ??
+                      imageUrl: order?.cartItems?[index].product?.image ??
+                          createOrderResponse
+                              ?.cartItems?[index].product?.image ??
                           '',
                       height: 60.h,
                       placeholder: (context, url) => Image.asset(
@@ -127,7 +135,7 @@ class OrderDetailsBody extends StatelessWidget {
                     width: 15.w,
                   ),
                   _namePriceAndRatingColumn(
-                      context, createOrderResponse.cartItems![index]),
+                      order, index, createOrderResponse, context),
                   const Spacer(),
                 ],
               ),
@@ -136,8 +144,68 @@ class OrderDetailsBody extends StatelessWidget {
     }));
   }
 
+  Column _namePriceAndRatingColumn(GetOrdersResponseData? order, int index,
+      CreateOrderResponseData? createOrderResponse, BuildContext context) {
+    dynamic response = order ?? createOrderResponse;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          response!.cartItems![index].product!.title,
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontFamily: FontConsistent.fontFamilyAcme,
+              color: ColorManger.brun,
+              fontSize: 12.sp),
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        IgnorePointer(
+          ignoring: true,
+          child: RatingBar(
+              initialRating: response.cartItems![index].product!.ratingsAverage,
+              direction: Axis.horizontal,
+              itemSize: 11.sp,
+              itemCount: 5,
+              allowHalfRating: true,
+              itemPadding: EdgeInsets.symmetric(horizontal: 2.w),
+              onRatingUpdate: (rating) {},
+              ratingWidget: RatingWidget(
+                  full: Icon(
+                    IconlyBold.star,
+                    color: ColorManger.brown,
+                  ),
+                  half: Icon(
+                    IconlyBold.star,
+                    color: ColorManger.brun,
+                  ),
+                  empty: Icon(
+                    IconlyBroken.star,
+                    color: ColorManger.brunLight,
+                  ))),
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        Text(
+          'Total Price:     ${response.cartItems![index].totalItemPrice}.00  \$',
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              fontFamily: FontConsistent.fontFamilyAcme,
+              color: ColorManger.brun,
+              fontSize: 11.sp),
+        ),
+      ],
+    );
+  }
+
   Container _orderShippingInformation(
-      BuildContext context, CreateOrderResponseData? createOrderResponse) {
+      BuildContext context,
+      CreateOrderResponseData? createOrderResponse,
+      GetOrdersResponseData? order) {
+    dynamic response = order ?? createOrderResponse;
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -160,7 +228,7 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 5.w,
                 ),
-                Text("${createOrderResponse!.totalOrderPrice}  EGP",
+                Text("${response!.totalOrderPrice}  EGP",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brun,
@@ -182,7 +250,7 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 20.w,
                 ),
-                Text("${createOrderResponse.paymentMethodType}",
+                Text("${response.paymentMethodType}",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brun,
@@ -208,7 +276,7 @@ class OrderDetailsBody extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                      "${createOrderResponse.shippingAddress!.phone},   ${createOrderResponse.shippingAddress!.region}",
+                      "${response.shippingAddress!.phone},   ${response.shippingAddress!.region}",
                       softWrap: true,
                       maxLines: null,
                       overflow: TextOverflow.visible,
@@ -237,7 +305,7 @@ class OrderDetailsBody extends StatelessWidget {
                         color: ColorManger.brun,
                         fontSize: 12.sp)),
                 const Spacer(),
-                Text("${createOrderResponse.shippingPrice}  EGP",
+                Text("${response.shippingPrice}  EGP",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brunLight,
@@ -256,7 +324,7 @@ class OrderDetailsBody extends StatelessWidget {
                         color: ColorManger.brun,
                         fontSize: 12.sp)),
                 const Spacer(),
-                Text("${createOrderResponse.taxPrice}  EGP",
+                Text("${response.taxPrice}  EGP",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brunLight,
@@ -354,63 +422,14 @@ class OrderDetailsBody extends StatelessWidget {
     );
   }
 
-  Column _namePriceAndRatingColumn(
-      BuildContext context, CartOrderItems cartOrderItems) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          cartOrderItems.product!.title!,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 12.sp),
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
-        IgnorePointer(
-          ignoring: true,
-          child: RatingBar(
-              initialRating: cartOrderItems.product!.ratingsAverage ?? 0,
-              direction: Axis.horizontal,
-              itemSize: 11.sp,
-              itemCount: 5,
-              allowHalfRating: true,
-              itemPadding: EdgeInsets.symmetric(horizontal: 2.w),
-              onRatingUpdate: (rating) {},
-              ratingWidget: RatingWidget(
-                  full: Icon(
-                    IconlyBold.star,
-                    color: ColorManger.brown,
-                  ),
-                  half: Icon(
-                    IconlyBold.star,
-                    color: ColorManger.brun,
-                  ),
-                  empty: Icon(
-                    IconlyBroken.star,
-                    color: ColorManger.brunLight,
-                  ))),
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
-        Text(
-          'Total Price:     ${cartOrderItems.totalItemPrice!}.00  \$',
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 11.sp),
-        ),
-      ],
-    );
-  }
-
   Container _orderStautsStepper(
-      BuildContext context, CreateOrderResponseData? createOrderResponse) {
-    int orderStatus = createOrderResponse!.status!;
+      BuildContext context,
+      CreateOrderResponseData? createOrderResponse,
+      GetOrdersResponseData? order) {
+    dynamic response = order ?? createOrderResponse;
+
+    int orderStatus = response!.status;
+    String createAt = response.createdAt;
 
     return Container(
       width: double.infinity,
@@ -440,7 +459,7 @@ class OrderDetailsBody extends StatelessWidget {
                           isCompleted: orderStatus >= 0,
                           title: "Order Placed",
                           subTitle:
-                              'order has been placed at ${createOrderResponse.createdAt!.getFormattedDate()} .'),
+                              'order has been placed at ${createAt.getFormattedDate()} .'),
                       _buildLine(orderStatus > 0),
                       _buildStep(
                           context: context,
@@ -470,7 +489,7 @@ class OrderDetailsBody extends StatelessWidget {
                           isCompleted: orderStatus == 4,
                           title: "Order Placed",
                           subTitle:
-                              'order has been placed at ${createOrderResponse.createdAt!.getFormattedDate()}'),
+                              'order has been placed at ${createAt.getFormattedDate()}'),
                       _buildLine(orderStatus == 4),
                       _buildStep(
                           isCancelled: true,
@@ -487,9 +506,13 @@ class OrderDetailsBody extends StatelessWidget {
     );
   }
 
-  Container _orderIdContainer(BuildContext context) {
-    int orderStatus =
-        context.read<PaymentCubit>().createOrderResponseData!.status!;
+  Container _orderIdContainer(
+      BuildContext context,
+      CreateOrderResponseData? createOrderResponse,
+      GetOrdersResponseData? order) {
+    dynamic response = order ?? createOrderResponse;
+
+    int orderStatus = response!.status!;
     return Container(
       height: 60.h,
       decoration: BoxDecoration(
@@ -523,8 +546,7 @@ class OrderDetailsBody extends StatelessWidget {
               SizedBox(
                 height: 5.h,
               ),
-              Text(
-                  "# ${context.read<PaymentCubit>().createOrderResponseData!.sId ?? ''}",
+              Text("# ${response!.sId ?? ''}",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontFamily: FontConsistent.fontFamilyAcme,
                       color: ColorManger.brunLight,
