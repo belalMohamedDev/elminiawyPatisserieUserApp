@@ -131,9 +131,6 @@ class ReviewPaymentScreen extends StatelessWidget {
                         ShowToast.showToastErrorTop(
                             errorMessage: errorMessage, context: context),
                     createCashOrderSuccess: (data) {
-                      ShowToast.showToastSuccessTop(
-                          message: data.message!, context: context);
-
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(

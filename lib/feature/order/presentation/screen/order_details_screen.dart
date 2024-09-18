@@ -39,18 +39,32 @@ class OrderDetails extends StatelessWidget {
           },
         ),
         actions: [
-          order!.status == 0 || order!.status == 1
-              ? TextButton(
+          order != null
+              ? order!.status == 0 || order!.status == 1
+                  ? TextButton(
+                      onPressed: () {
+                        cancelBottomSheet(context, order);
+                      },
+                      child: Text("Cancel",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(
+                                  fontFamily: FontConsistent.fontFamilyAcme,
+                                  color: ColorManger.redError,
+                                  fontSize: 16.sp)),
+                    )
+                  : const SizedBox()
+              : TextButton(
                   onPressed: () {
-                    cancelBottomSheet(context);
+                    cancelBottomSheet(context, order);
                   },
                   child: Text("Cancel",
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontFamily: FontConsistent.fontFamilyAcme,
                           color: ColorManger.redError,
                           fontSize: 16.sp)),
-                )
-              : const SizedBox(),
+                ),
           SizedBox(
             width: 10.w,
           )
@@ -60,7 +74,7 @@ class OrderDetails extends StatelessWidget {
     );
   }
 
-  void cancelBottomSheet(BuildContext context) {
+  void cancelBottomSheet(BuildContext context, GetOrdersResponseData? order) {
     showCupertinoModalBottomSheet(
         useRootNavigator: true,
         barrierColor: Colors.black54,
@@ -90,10 +104,12 @@ class OrderDetails extends StatelessWidget {
                     ),
                     CustomButton(
                       onPressed: () {
-                        context.read<PaymentCubit>().ordercancelSummit(context
-                            .read<PaymentCubit>()
-                            .createOrderResponseData!
-                            .sId!);
+                        context.read<PaymentCubit>().ordercancelSummit(
+                            order!.sId ??
+                                context
+                                    .read<PaymentCubit>()
+                                    .createOrderResponseData!
+                                    .sId!);
                       },
                       radius: 8.r,
                       widget: Text('Yes, Cancel',

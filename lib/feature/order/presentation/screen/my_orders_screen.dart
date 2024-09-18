@@ -42,7 +42,6 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,
                 fontSize: 16.sp)),
-    
       ),
       body: const MyOrdersBody(),
     );
@@ -75,7 +74,7 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
       children: [
         Padding(
           padding:
-              EdgeInsets.only(left: 55.w, right: 55.w, top: 20.h, bottom: 20.h),
+              EdgeInsets.only(left: 55.w, right: 55.w, top: 20.h, bottom: 30.h),
           child: Container(
             decoration: BoxDecoration(
                 color: ColorManger.brunLight,
@@ -123,11 +122,11 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
                   }
 
                   return ListView.builder(
-                      itemCount: 5,
+                      itemCount: 7,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: EdgeInsets.only(
-                              left: 10.w, right: 10.w, bottom: 15.h),
+                              left: 20.w, right: 20.w, bottom: 15.h),
                           child: _cardItemLoading(),
                         );
                       });
@@ -143,7 +142,7 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
                   }
 
                   return ListView.builder(
-                      itemCount: 5,
+                      itemCount: 7,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: EdgeInsets.only(
@@ -168,11 +167,11 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
 
   Container _cardItemLoading() {
     return Container(
-      height: 80.h,
+      height: 60.h,
       width: double.infinity,
       decoration: BoxDecoration(
         color: ColorManger.backgroundItem,
-        borderRadius: BorderRadius.circular(14.r),
+        borderRadius: BorderRadius.circular(10.r),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -182,7 +181,7 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
           ),
           Image.asset(
             ImageAsset.picture,
-            height: 60.h,
+            height: 40.h,
           ),
           SizedBox(
             width: 10.w,
@@ -232,7 +231,7 @@ class OrdersTab extends StatelessWidget {
       itemBuilder: (context, index) {
         final order = getOrdersResponseData[index];
         return Padding(
-          padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 15.h),
+          padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 15.h),
           child: InkWell(
             onTap: () {
               NavBarNavigator.push(context,
@@ -246,7 +245,7 @@ class OrdersTab extends StatelessWidget {
               height: 80.h,
               decoration: BoxDecoration(
                 color: ColorManger.backgroundItem,
-                borderRadius: BorderRadius.circular(14.r),
+                borderRadius: BorderRadius.circular(10.r),
               ),
               child: Row(
                 children: [

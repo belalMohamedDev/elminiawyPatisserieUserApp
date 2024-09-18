@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../../../core/common/toast/show_toast.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../cubit/payment_cubit.dart';
@@ -29,6 +30,14 @@ class OrderDetailsBody extends StatelessWidget {
           createCashOrderError: (statesCode, errorMessage) =>
               ShowToast.showToastErrorTop(
                   errorMessage: errorMessage, context: context),
+          createCashOrderSuccess: (createOrderResponse) {
+            if (order != null) {
+              ShowToast.showToastSuccessTop(
+                  message: 'success to cancel order', context: context);
+              context.pop();
+              context.pop();
+            }
+          },
         );
       },
       builder: (context, state) {
@@ -276,7 +285,7 @@ class OrderDetailsBody extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                      "${response.shippingAddress!.phone},   ${response.shippingAddress!.region}",
+                      "${response!.shippingAddress!.phone},   ${response.shippingAddress!.region}",
                       softWrap: true,
                       maxLines: null,
                       overflow: TextOverflow.visible,
