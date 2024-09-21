@@ -15,9 +15,11 @@ import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
 import 'package:elminiawy/feature/order/data/repository/order_repo.dart';
 import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product_category_repo.dart';
 import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_google_maps_webservices/places.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -39,6 +41,7 @@ import '../../feature/address/logic/userAddressCubit/user_address_cubit.dart';
 import '../../feature/address/data/repository/address_repo.dart';
 import '../../feature/verifyCode/data/repository/verify_code_repo.dart';
 import '../../feature/wishList/data/repository/repository.dart';
+import '../../firebase_options.dart';
 import '../network/api/app_api.dart';
 import '../network/dio_factory/dio_factory.dart';
 import '../network/network_connectivity/connectivity_controller.dart';
@@ -72,6 +75,13 @@ Future<void> initAppModule() async {
 
 Future<void> _initAppModule() async {
   // app module ,its a module where we put all generic dependencies
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await ScreenUtil.ensureScreenSize();
+
   Bloc.observer = AppBlocObserver();
 
   instance.registerLazySingleton<NetworkInfo>(
@@ -240,8 +250,8 @@ Future<void> _initChangeMyPassword() async {
 }
 
 Future<void> _initPayment() async {
-    instance
+  instance
     ..registerLazySingleton<OrderRepositoryImplement>(
         () => OrderRepositoryImplement(instance(), instance()))
-  ..registerFactory<PaymentCubit>(() => PaymentCubit(instance()));
+    ..registerFactory<PaymentCubit>(() => PaymentCubit(instance()));
 }

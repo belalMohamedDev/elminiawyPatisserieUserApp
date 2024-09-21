@@ -42,7 +42,7 @@ dependencies:
   freezed: ^2.4.5
   freezed_annotation: ^2.4.1
   # for dependency injection
-  get_it: ^7.6.4
+  get_it: ^8.0.0
   # Automatically generate code for converting to and from JSON by annotating Dart classes
   json_serializable: ^6.7.1
   json_annotation: ^4.8.1
@@ -70,7 +70,7 @@ dependencies:
   #show toast message
   toastification: ^2.0.0
   # internet_connection_checker
-  internet_connection_checker: ^1.0.0+1
+  internet_connection_checker: ^2.0.0
   # animation
   animate_do: ^3.3.4
   # splash screen
@@ -84,13 +84,13 @@ dependencies:
   navigation_view: ^1.0.6
   persistent_bottom_nav_bar_v2: ^5.3.0
   fan_carousel_image_slider: ^1.0.1
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   device_preview: ^1.2.0
   modal_bottom_sheet: ^3.0.0
   flutter_slidable: ^3.1.1
   flutter_rating_bar: ^4.0.1
   google_maps_flutter: ^2.9.0
-  geolocator: ^12.0.0
+  geolocator: ^13.0.1
   flutter_google_maps_webservices: ^1.1.1
   geocoding: ^3.0.0
   http: ^1.2.2

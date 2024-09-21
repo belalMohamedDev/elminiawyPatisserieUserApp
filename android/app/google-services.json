@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "274043185653",
+    "project_id": "elminiawypatisserie",
+    "storage_bucket": "elminiawypatisserie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274043185653:android:70c64f456ccece1eb798bc",
+        "android_client_info": {
+          "package_name": "com.elminiawy.patisserie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBsADXjnjR0Wv0pnl2rzmONBwoSvE7TJs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
