@@ -90,11 +90,13 @@ class ChangeMyPasswordCubit extends Cubit<ChangeMyPasswordState> {
         clearAllControllers();
         validatePassword("");
         await saveUserToken(
-            dataResponse.accessToken!,
-            dataResponse.data!.refreshToken!,
-            dataResponse.data!.name!,
-            dataResponse.data!.phone!,
-            dataResponse.data!.email!);
+          dataResponse.accessToken!,
+          dataResponse.data!.refreshToken!,
+          dataResponse.data!.name!,
+          dataResponse.data!.phone!,
+          dataResponse.data!.email!,
+          dataResponse.data!.sId!,
+        );
       },
       failure: (error) {
         if (error.statusCode != 401) {
@@ -119,10 +121,12 @@ class ChangeMyPasswordCubit extends Cubit<ChangeMyPasswordState> {
     String userName,
     String userPhone,
     String userEmail,
+    String userId,
   ) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
 
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(

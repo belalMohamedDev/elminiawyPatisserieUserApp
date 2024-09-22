@@ -20,6 +20,7 @@ class AuthResponse {
 
 @JsonSerializable()
 class DataAuthResponse {
+  @JsonKey(name: "_id")
   String? sId;
   String? name;
   String? email;

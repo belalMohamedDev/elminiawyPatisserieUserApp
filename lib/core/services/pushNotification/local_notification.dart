@@ -17,7 +17,7 @@ class LocalNotificationService {
 
   static Future<void> showSimpleNotification({required String title,required String body}) async {
     const notificationDetails = NotificationDetails(
-        android: AndroidNotificationDetails("finder-id", "finder-name",
+        android: AndroidNotificationDetails("elminiawy-id", "elminiawy-name",
             importance: Importance.max, priority: Priority.high));
 
     await flutterLocalNotificationsPlugin.show(

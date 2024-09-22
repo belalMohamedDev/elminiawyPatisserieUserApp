@@ -50,7 +50,8 @@ class ChangeEmailAddressCubit extends Cubit<ChangeEmailAddressState> {
             dataResponse.data!.refreshToken!,
             dataResponse.data!.name!,
             dataResponse.data!.phone!,
-            dataResponse.data!.email!);
+            dataResponse.data!.email!,
+            dataResponse.data!.sId!,);
       },
       failure: (error) {
         if (error.statusCode != 401) {
@@ -75,10 +76,12 @@ class ChangeEmailAddressCubit extends Cubit<ChangeEmailAddressState> {
     String userName,
     String userPhone,
     String userEmail,
+    String userId,
   ) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
 
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(

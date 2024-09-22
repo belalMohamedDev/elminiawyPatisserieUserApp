@@ -879,30 +879,30 @@ class __$$ChangeMyPasswordTextColorUpdatedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lengthTextColor = freezed,
-    Object? upperCaseTextColor = freezed,
-    Object? lowerCaseTextColor = freezed,
-    Object? numberTextColor = freezed,
-    Object? specialCharTextColor = freezed,
+    Object? lengthTextColor = null,
+    Object? upperCaseTextColor = null,
+    Object? lowerCaseTextColor = null,
+    Object? numberTextColor = null,
+    Object? specialCharTextColor = null,
   }) {
     return _then(_$ChangeMyPasswordTextColorUpdatedImpl(
-      freezed == lengthTextColor
+      null == lengthTextColor
           ? _value.lengthTextColor
           : lengthTextColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      freezed == upperCaseTextColor
+      null == upperCaseTextColor
           ? _value.upperCaseTextColor
           : upperCaseTextColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      freezed == lowerCaseTextColor
+      null == lowerCaseTextColor
           ? _value.lowerCaseTextColor
           : lowerCaseTextColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      freezed == numberTextColor
+      null == numberTextColor
           ? _value.numberTextColor
           : numberTextColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      freezed == specialCharTextColor
+      null == specialCharTextColor
           ? _value.specialCharTextColor
           : specialCharTextColor // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -942,26 +942,26 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeMyPasswordTextColorUpdatedImpl &&
-            const DeepCollectionEquality()
-                .equals(other.lengthTextColor, lengthTextColor) &&
-            const DeepCollectionEquality()
-                .equals(other.upperCaseTextColor, upperCaseTextColor) &&
-            const DeepCollectionEquality()
-                .equals(other.lowerCaseTextColor, lowerCaseTextColor) &&
-            const DeepCollectionEquality()
-                .equals(other.numberTextColor, numberTextColor) &&
-            const DeepCollectionEquality()
-                .equals(other.specialCharTextColor, specialCharTextColor));
+            (identical(other.lengthTextColor, lengthTextColor) ||
+                other.lengthTextColor == lengthTextColor) &&
+            (identical(other.upperCaseTextColor, upperCaseTextColor) ||
+                other.upperCaseTextColor == upperCaseTextColor) &&
+            (identical(other.lowerCaseTextColor, lowerCaseTextColor) ||
+                other.lowerCaseTextColor == lowerCaseTextColor) &&
+            (identical(other.numberTextColor, numberTextColor) ||
+                other.numberTextColor == numberTextColor) &&
+            (identical(other.specialCharTextColor, specialCharTextColor) ||
+                other.specialCharTextColor == specialCharTextColor));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(lengthTextColor),
-      const DeepCollectionEquality().hash(upperCaseTextColor),
-      const DeepCollectionEquality().hash(lowerCaseTextColor),
-      const DeepCollectionEquality().hash(numberTextColor),
-      const DeepCollectionEquality().hash(specialCharTextColor));
+      lengthTextColor,
+      upperCaseTextColor,
+      lowerCaseTextColor,
+      numberTextColor,
+      specialCharTextColor);
 
   @JsonKey(ignore: true)
   @override

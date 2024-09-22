@@ -219,12 +219,13 @@ class ForgetPasswordBloc
         response.when(
           success: (newPasswordResponse) async {
             emit(ForgetPasswordState.newPasswordSuceess(newPasswordResponse));
-           await saveUserToken(
+            await saveUserToken(
                 newPasswordResponse.accessToken!,
                 newPasswordResponse.data!.refreshToken!,
                 newPasswordResponse.data!.name!,
                 newPasswordResponse.data!.phone!,
-                newPasswordResponse.data!.email!);
+                newPasswordResponse.data!.email!,
+                newPasswordResponse.data!.sId!);
           },
           failure: (error) {
             emit(
@@ -237,17 +238,17 @@ class ForgetPasswordBloc
     );
   }
 
-
   Future<void> saveUserToken(
-    String accessToken,
-    String refreshToken,
-    String userName,
-    String userPhone,
-    String userEmail,
-  ) async {
+      String accessToken,
+      String refreshToken,
+      String userName,
+      String userPhone,
+      String userEmail,
+      String userId) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
+    await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
 
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(

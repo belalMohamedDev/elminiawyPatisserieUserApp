@@ -93,7 +93,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
                 loginResponse.data!.refreshToken!,
                 loginResponse.data!.name!,
                 loginResponse.data!.phone!,
-                loginResponse.data!.email!);
+                loginResponse.data!.email!,
+                loginResponse.data!.sId!,
+                );
           },
           failure: (error) {
             emit(
@@ -116,10 +118,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     String userName,
     String userPhone,
     String userEmail,
+    String userId
   ) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
+
+    await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
 
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(

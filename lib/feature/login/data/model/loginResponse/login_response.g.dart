@@ -25,7 +25,7 @@ Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>
 
 DataAuthResponse _$DataAuthResponseFromJson(Map<String, dynamic> json) =>
     DataAuthResponse(
-      sId: json['sId'] as String?,
+      sId: json['_id'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
       phone: json['phone'] as String?,
@@ -34,7 +34,7 @@ DataAuthResponse _$DataAuthResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$DataAuthResponseToJson(DataAuthResponse instance) =>
     <String, dynamic>{
-      'sId': instance.sId,
+      '_id': instance.sId,
       'name': instance.name,
       'email': instance.email,
       'phone': instance.phone,

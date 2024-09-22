@@ -45,6 +45,8 @@ import '../../firebase_options.dart';
 import '../network/api/app_api.dart';
 import '../network/dio_factory/dio_factory.dart';
 import '../network/network_connectivity/connectivity_controller.dart';
+import '../services/pushNotification/firebase_cloud_messaging.dart';
+import '../services/pushNotification/local_notification.dart';
 import 'bloc_observer.dart';
 import 'constant_manger.dart';
 import 'cubit/app_logic_cubit.dart';
@@ -79,6 +81,10 @@ Future<void> _initAppModule() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await FirebaseCloudMessaging().init();
+
+  await LocalNotificationService.init();
 
   await ScreenUtil.ensureScreenSize();
 
