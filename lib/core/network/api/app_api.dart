@@ -24,6 +24,7 @@ import '../../../feature/newProduct/model/response/product_response.dart';
 import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 import '../../../feature/login/data/model/loginResponse/login_response.dart';
 import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
+import '../../../feature/notification/data/model/user_notification_resp.dart';
 import '../../../feature/order/data/model/response/get_order.dart';
 import '../../../feature/productBasedOnCategory/data/response/product_category.dart';
 import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
@@ -176,4 +177,8 @@ abstract class AppServiceClient {
 
    @GET('${ApiConstants.order}/user/pending')
   Future<GetOrdersResponse> getAllOrderPendingService();
+
+  
+  @GET('${ApiConstants.notification}/user')
+  Future<UserNotificationResponse> getAllNotificationToUserService();
 }

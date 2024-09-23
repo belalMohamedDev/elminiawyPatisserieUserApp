@@ -6,9 +6,9 @@ part of 'user_notification_resp.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserNotificationModel _$UserNotificationModelFromJson(
+UserNotificationResponse _$UserNotificationResponseFromJson(
         Map<String, dynamic> json) =>
-    UserNotificationModel(
+    UserNotificationResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       data: (json['data'] as List<dynamic>?)
@@ -16,8 +16,8 @@ UserNotificationModel _$UserNotificationModelFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$UserNotificationModelToJson(
-        UserNotificationModel instance) =>
+Map<String, dynamic> _$UserNotificationResponseToJson(
+        UserNotificationResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,

@@ -2,24 +2,22 @@ import 'package:json_annotation/json_annotation.dart';
 part 'user_notification_resp.g.dart';
 
 @JsonSerializable()
-class UserNotificationModel {
+class UserNotificationResponse {
   bool? status;
   String? message;
   List<UserNotificationData>? data;
 
-  UserNotificationModel({this.status, this.message, this.data});
+  UserNotificationResponse({this.status, this.message, this.data});
 
   //from json
-  factory UserNotificationModel.fromJson(Map<String, dynamic> json) =>
-      _$UserNotificationModelFromJson(json);
+  factory UserNotificationResponse.fromJson(Map<String, dynamic> json) =>
+      _$UserNotificationResponseFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$UserNotificationModelToJson(this);
-
+  Map<String, dynamic> toJson() => _$UserNotificationResponseToJson(this);
 }
 
 @JsonSerializable()
-
 class UserNotificationData {
   bool? isSeen;
   String? sId;
@@ -36,19 +34,16 @@ class UserNotificationData {
 }
 
 @JsonSerializable()
-
 class NotificationId {
   String? sId;
   String? title;
   String? description;
- 
-  NotificationId(
-      {this.sId,
-      this.title,
-      this.description,
 
-    });
-
+  NotificationId({
+    this.sId,
+    this.title,
+    this.description,
+  });
 
   //from json
   factory NotificationId.fromJson(Map<String, dynamic> json) =>
@@ -56,5 +51,4 @@ class NotificationId {
 
   //to json
   Map<String, dynamic> toJson() => _$NotificationIdToJson(this);
-
 }

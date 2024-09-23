@@ -11,6 +11,7 @@ import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
 import 'package:elminiawy/feature/logOut/data/repository/log_out_repo.dart';
+import 'package:elminiawy/feature/notification/data/repository/user_notification_repo.dart';
 import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
 import 'package:elminiawy/feature/order/data/repository/order_repo.dart';
 import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product_category_repo.dart';
@@ -34,6 +35,7 @@ import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/data/repository/login_repo.dart';
 import '../../feature/newPassword/data/repository/new_password_repo.dart';
 import '../../feature/newProduct/model/repository/repositry.dart';
+import '../../feature/notification/logic/notification_service.dart';
 import '../../feature/productBasedOnCategory/cubit/product_based_on_category_cubit.dart';
 import '../../feature/signUp/bloc/sign_up_bloc.dart';
 import '../../feature/signUp/data/repository/sign_up_repo.dart';
@@ -71,7 +73,8 @@ Future<void> initAppModule() async {
     _initAccoutInformation(),
     _initChangeEmailAddress(),
     _initChangeMyPassword(),
-    _initPayment()
+    _initPayment(),
+    _initNotification()
   ]);
 }
 
@@ -260,4 +263,12 @@ Future<void> _initPayment() async {
     ..registerLazySingleton<OrderRepositoryImplement>(
         () => OrderRepositoryImplement(instance(), instance()))
     ..registerFactory<PaymentCubit>(() => PaymentCubit(instance()));
+}
+
+Future<void> _initNotification() async {
+  instance
+    ..registerLazySingleton<UserNotificationRepository>(
+        () => UserNotificationRepository(instance(), instance()))
+    ..registerFactory<NotificationService>(
+        () => NotificationService(instance()));
 }

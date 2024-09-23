@@ -1,14 +1,40 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/application/di.dart';
+import '../../../notification/data/model/user_notification_resp.dart';
+import '../../../notification/logic/notification_service.dart';
 import '../refactor/home_body.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late final NotificationService _notificationService;
+  late final Stream<UserNotificationResponse> _notificationStream;
+  @override
+  void initState() {
+    super.initState();
+    _notificationService = instance<NotificationService>();
+    _notificationStream = _notificationService.notificationStream;
+    _notificationService.fetchNotificationsContinuously();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: HomeBody(),
+    return Scaffold(
+      body: HomeBody(
+          notificationService: _notificationService,
+          notificationStream: _notificationStream),
     );
+  }
+
+  @override
+  void dispose() {
+    _notificationService.stopFetchingNotifications();
+    super.dispose();
   }
 }
