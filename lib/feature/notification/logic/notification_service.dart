@@ -4,7 +4,7 @@ import '../data/model/user_notification_resp.dart';
 
 class NotificationService {
   NotificationService(this._repository);
-  final UserNotificationRepository _repository;
+  final UserNotificationRepositoryImplement _repository;
 
   final StreamController<UserNotificationResponse> _notificationController =
       StreamController<UserNotificationResponse>.broadcast();

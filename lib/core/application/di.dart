@@ -12,6 +12,7 @@ import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
 import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
 import 'package:elminiawy/feature/logOut/data/repository/log_out_repo.dart';
 import 'package:elminiawy/feature/notification/data/repository/user_notification_repo.dart';
+import 'package:elminiawy/feature/notification/logic/cubit/user_notification_cubit.dart';
 import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
 import 'package:elminiawy/feature/order/data/repository/order_repo.dart';
 import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product_category_repo.dart';
@@ -267,8 +268,10 @@ Future<void> _initPayment() async {
 
 Future<void> _initNotification() async {
   instance
-    ..registerLazySingleton<UserNotificationRepository>(
-        () => UserNotificationRepository(instance(), instance()))
+    ..registerLazySingleton<UserNotificationRepositoryImplement>(
+        () => UserNotificationRepositoryImplement(instance(), instance()))
     ..registerFactory<NotificationService>(
-        () => NotificationService(instance()));
+        () => NotificationService(instance()))
+    ..registerFactory<UserNotificationCubit>(
+        () => UserNotificationCubit(instance()));
 }

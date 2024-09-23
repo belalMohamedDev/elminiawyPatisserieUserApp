@@ -181,4 +181,8 @@ abstract class AppServiceClient {
   
   @GET('${ApiConstants.notification}/user')
   Future<UserNotificationResponse> getAllNotificationToUserService();
+
+    
+  @PUT('${ApiConstants.notification}/user/seen')
+  Future<UserNotificationResponse> updateAllNotificationToSeenService();
 }
