@@ -109,7 +109,6 @@ class HomeBody extends StatelessWidget {
                     .length;
                 return badges.Badge(
                   onTap: () {
-                    // instance<UserNotificationCubit>()
                     context
                         .read<UserNotificationCubit>()
                         .updateAllNotificationsToSeen();

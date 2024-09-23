@@ -12,6 +12,7 @@ class UserNotificationCubit extends Cubit<UserNotificationState> {
       : super(const UserNotificationState.initial());
 
   final UserNotificationRepositoryImplement _repository;
+  List<UserNotificationData> dataList = [];
 
   Future<void> fetchNotifications() async {
     emit(const UserNotificationState.userNotificationLoading());
@@ -20,6 +21,8 @@ class UserNotificationCubit extends Cubit<UserNotificationState> {
 
     result.when(
       success: (data) {
+        dataList = [];
+        dataList.addAll(data.data!);
         emit(UserNotificationState.userNotificationLoaded(data));
       },
       failure: (error) {
