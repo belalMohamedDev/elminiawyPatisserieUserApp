@@ -8,16 +8,17 @@ part 'user_notification_state.dart';
 part 'user_notification_cubit.freezed.dart';
 
 class UserNotificationCubit extends Cubit<UserNotificationState> {
+  List<UserNotificationData> dataList = [];
+
   UserNotificationCubit(this._repository)
       : super(const UserNotificationState.initial());
 
   final UserNotificationRepositoryImplement _repository;
-  List<UserNotificationData> dataList = [];
 
-  Future<void> fetchNotifications() async {
+  Future<void> updateAllNotificationsToSeen() async {
     emit(const UserNotificationState.userNotificationLoading());
 
-    final result = await _repository.getAllUserNotificationRepo();
+    final result = await _repository.updateAllUserNotificationToSeenRepo();
 
     result.when(
       success: (data) {
@@ -32,17 +33,20 @@ class UserNotificationCubit extends Cubit<UserNotificationState> {
     );
   }
 
-  Future<void> updateAllNotificationsToSeen() async {
-    emit(const UserNotificationState.userNotificationLoading());
+  Future<void> deleteUserNotification(String id) async {
+    emit(const UserNotificationState.deleteUserNotificationLoading());
 
-    final result = await _repository.updateAllUserNotificationToSeenRepo();
+    final result = await _repository.deleteUserNotificationRepo(id);
 
     result.when(
       success: (data) {
-        emit(UserNotificationState.userNotificationLoaded(data));
+        dataList = [];
+        dataList.addAll(data.data!);
+
+        emit(UserNotificationState.deleteUserNotificationLoaded(data));
       },
       failure: (error) {
-        emit(UserNotificationState.userNotificationError(
+        emit(UserNotificationState.deleteUserNotificationError(
             errorMessage: error.message!, statesCode: error.statusCode!));
       },
     );

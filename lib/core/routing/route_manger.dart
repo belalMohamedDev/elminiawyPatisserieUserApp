@@ -5,6 +5,7 @@ import 'package:elminiawy/feature/changeEmailAddress/presentation/screen/change_
 import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.dart';
 import 'package:elminiawy/feature/changePassword/presentation/screen/change_password_screen.dart';
 import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
+import 'package:elminiawy/feature/notification/presentation/screen/notification_screen.dart';
 import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ import '../../feature/forgetPassword/presntation/screen/forget_password_screen.d
 import '../../feature/login/bloc/login_bloc.dart';
 import '../../feature/login/presentation/screen/login_view.dart';
 import '../../feature/newPassword/presentation/screen/new_password_view.dart';
+import '../../feature/notification/logic/cubit/user_notification_cubit.dart';
 import '../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import '../../feature/signUp/presentation/screen/sign_up_view.dart';
 import '../../feature/address/presentation/screen/user_address_screen.dart';
@@ -103,6 +105,16 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const BottomNavBar(),
         );
+
+        case Routes.notification:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<UserNotificationCubit>(),
+            child: const UserNotificationScreen(),
+          ),
+        );
+
+
 
       case Routes.newProduct:
         return MaterialPageRoute(builder: (_) => const NewProductView());

@@ -185,4 +185,9 @@ abstract class AppServiceClient {
     
   @PUT('${ApiConstants.notification}/user/seen')
   Future<UserNotificationResponse> updateAllNotificationToSeenService();
+
+  @DELETE('${ApiConstants.notification}/user/{id}')
+  Future<UserNotificationResponse> deleteUserNotificationService(
+     @Path("id") String id,
+  );
 }

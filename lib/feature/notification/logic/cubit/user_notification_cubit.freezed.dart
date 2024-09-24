@@ -24,6 +24,11 @@ mixin _$UserNotificationState {
         userNotificationLoaded,
     required TResult Function(int statesCode, String errorMessage)
         userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +39,11 @@ mixin _$UserNotificationState {
         userNotificationLoaded,
     TResult? Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +54,11 @@ mixin _$UserNotificationState {
         userNotificationLoaded,
     TResult Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +71,12 @@ mixin _$UserNotificationState {
         userNotificationLoaded,
     required TResult Function(UserNotificationError value)
         userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +85,12 @@ mixin _$UserNotificationState {
     TResult? Function(UserNotificationLoading value)? userNotificationLoading,
     TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +99,12 @@ mixin _$UserNotificationState {
     TResult Function(UserNotificationLoading value)? userNotificationLoading,
     TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +173,11 @@ class _$InitialImpl implements _Initial {
         userNotificationLoaded,
     required TResult Function(int statesCode, String errorMessage)
         userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
   }) {
     return initial();
   }
@@ -153,6 +191,11 @@ class _$InitialImpl implements _Initial {
         userNotificationLoaded,
     TResult? Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
   }) {
     return initial?.call();
   }
@@ -166,6 +209,11 @@ class _$InitialImpl implements _Initial {
         userNotificationLoaded,
     TResult Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -184,6 +232,12 @@ class _$InitialImpl implements _Initial {
         userNotificationLoaded,
     required TResult Function(UserNotificationError value)
         userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
   }) {
     return initial(this);
   }
@@ -195,6 +249,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(UserNotificationLoading value)? userNotificationLoading,
     TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
   }) {
     return initial?.call(this);
   }
@@ -206,6 +266,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(UserNotificationLoading value)? userNotificationLoading,
     TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -267,6 +333,11 @@ class _$UserNotificationLoadingImpl implements UserNotificationLoading {
         userNotificationLoaded,
     required TResult Function(int statesCode, String errorMessage)
         userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
   }) {
     return userNotificationLoading();
   }
@@ -280,6 +351,11 @@ class _$UserNotificationLoadingImpl implements UserNotificationLoading {
         userNotificationLoaded,
     TResult? Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
   }) {
     return userNotificationLoading?.call();
   }
@@ -293,6 +369,11 @@ class _$UserNotificationLoadingImpl implements UserNotificationLoading {
         userNotificationLoaded,
     TResult Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (userNotificationLoading != null) {
@@ -311,6 +392,12 @@ class _$UserNotificationLoadingImpl implements UserNotificationLoading {
         userNotificationLoaded,
     required TResult Function(UserNotificationError value)
         userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
   }) {
     return userNotificationLoading(this);
   }
@@ -322,6 +409,12 @@ class _$UserNotificationLoadingImpl implements UserNotificationLoading {
     TResult? Function(UserNotificationLoading value)? userNotificationLoading,
     TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
   }) {
     return userNotificationLoading?.call(this);
   }
@@ -333,6 +426,12 @@ class _$UserNotificationLoadingImpl implements UserNotificationLoading {
     TResult Function(UserNotificationLoading value)? userNotificationLoading,
     TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (userNotificationLoading != null) {
@@ -422,6 +521,11 @@ class _$UserNotificationLoadedImpl implements UserNotificationLoaded {
         userNotificationLoaded,
     required TResult Function(int statesCode, String errorMessage)
         userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
   }) {
     return userNotificationLoaded(userNotificationResponse);
   }
@@ -435,6 +539,11 @@ class _$UserNotificationLoadedImpl implements UserNotificationLoaded {
         userNotificationLoaded,
     TResult? Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
   }) {
     return userNotificationLoaded?.call(userNotificationResponse);
   }
@@ -448,6 +557,11 @@ class _$UserNotificationLoadedImpl implements UserNotificationLoaded {
         userNotificationLoaded,
     TResult Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (userNotificationLoaded != null) {
@@ -466,6 +580,12 @@ class _$UserNotificationLoadedImpl implements UserNotificationLoaded {
         userNotificationLoaded,
     required TResult Function(UserNotificationError value)
         userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
   }) {
     return userNotificationLoaded(this);
   }
@@ -477,6 +597,12 @@ class _$UserNotificationLoadedImpl implements UserNotificationLoaded {
     TResult? Function(UserNotificationLoading value)? userNotificationLoading,
     TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
   }) {
     return userNotificationLoaded?.call(this);
   }
@@ -488,6 +614,12 @@ class _$UserNotificationLoadedImpl implements UserNotificationLoaded {
     TResult Function(UserNotificationLoading value)? userNotificationLoading,
     TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (userNotificationLoaded != null) {
@@ -592,6 +724,11 @@ class _$UserNotificationErrorImpl implements UserNotificationError {
         userNotificationLoaded,
     required TResult Function(int statesCode, String errorMessage)
         userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
   }) {
     return userNotificationError(statesCode, errorMessage);
   }
@@ -605,6 +742,11 @@ class _$UserNotificationErrorImpl implements UserNotificationError {
         userNotificationLoaded,
     TResult? Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
   }) {
     return userNotificationError?.call(statesCode, errorMessage);
   }
@@ -618,6 +760,11 @@ class _$UserNotificationErrorImpl implements UserNotificationError {
         userNotificationLoaded,
     TResult Function(int statesCode, String errorMessage)?
         userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (userNotificationError != null) {
@@ -636,6 +783,12 @@ class _$UserNotificationErrorImpl implements UserNotificationError {
         userNotificationLoaded,
     required TResult Function(UserNotificationError value)
         userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
   }) {
     return userNotificationError(this);
   }
@@ -647,6 +800,12 @@ class _$UserNotificationErrorImpl implements UserNotificationError {
     TResult? Function(UserNotificationLoading value)? userNotificationLoading,
     TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
   }) {
     return userNotificationError?.call(this);
   }
@@ -658,6 +817,12 @@ class _$UserNotificationErrorImpl implements UserNotificationError {
     TResult Function(UserNotificationLoading value)? userNotificationLoading,
     TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
     TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
     required TResult orElse(),
   }) {
     if (userNotificationError != null) {
@@ -676,5 +841,570 @@ abstract class UserNotificationError implements UserNotificationState {
   String get errorMessage;
   @JsonKey(ignore: true)
   _$$UserNotificationErrorImplCopyWith<_$UserNotificationErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserNotificationLoadedImplCopyWith<$Res> {
+  factory _$$DeleteUserNotificationLoadedImplCopyWith(
+          _$DeleteUserNotificationLoadedImpl value,
+          $Res Function(_$DeleteUserNotificationLoadedImpl) then) =
+      __$$DeleteUserNotificationLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserNotificationResponse userNotificationResponse});
+}
+
+/// @nodoc
+class __$$DeleteUserNotificationLoadedImplCopyWithImpl<$Res>
+    extends _$UserNotificationStateCopyWithImpl<$Res,
+        _$DeleteUserNotificationLoadedImpl>
+    implements _$$DeleteUserNotificationLoadedImplCopyWith<$Res> {
+  __$$DeleteUserNotificationLoadedImplCopyWithImpl(
+      _$DeleteUserNotificationLoadedImpl _value,
+      $Res Function(_$DeleteUserNotificationLoadedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userNotificationResponse = null,
+  }) {
+    return _then(_$DeleteUserNotificationLoadedImpl(
+      null == userNotificationResponse
+          ? _value.userNotificationResponse
+          : userNotificationResponse // ignore: cast_nullable_to_non_nullable
+              as UserNotificationResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteUserNotificationLoadedImpl
+    implements DeleteUserNotificationLoaded {
+  const _$DeleteUserNotificationLoadedImpl(this.userNotificationResponse);
+
+  @override
+  final UserNotificationResponse userNotificationResponse;
+
+  @override
+  String toString() {
+    return 'UserNotificationState.deleteUserNotificationLoaded(userNotificationResponse: $userNotificationResponse)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserNotificationLoadedImpl &&
+            (identical(
+                    other.userNotificationResponse, userNotificationResponse) ||
+                other.userNotificationResponse == userNotificationResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userNotificationResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteUserNotificationLoadedImplCopyWith<
+          _$DeleteUserNotificationLoadedImpl>
+      get copyWith => __$$DeleteUserNotificationLoadedImplCopyWithImpl<
+          _$DeleteUserNotificationLoadedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() userNotificationLoading,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        userNotificationLoaded,
+    required TResult Function(int statesCode, String errorMessage)
+        userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoaded(userNotificationResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? userNotificationLoading,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        userNotificationLoaded,
+    TResult? Function(int statesCode, String errorMessage)?
+        userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoaded?.call(userNotificationResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? userNotificationLoading,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        userNotificationLoaded,
+    TResult Function(int statesCode, String errorMessage)?
+        userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
+    required TResult orElse(),
+  }) {
+    if (deleteUserNotificationLoaded != null) {
+      return deleteUserNotificationLoaded(userNotificationResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(UserNotificationLoading value)
+        userNotificationLoading,
+    required TResult Function(UserNotificationLoaded value)
+        userNotificationLoaded,
+    required TResult Function(UserNotificationError value)
+        userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
+    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
+    TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(UserNotificationLoading value)? userNotificationLoading,
+    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
+    TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
+    required TResult orElse(),
+  }) {
+    if (deleteUserNotificationLoaded != null) {
+      return deleteUserNotificationLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteUserNotificationLoaded implements UserNotificationState {
+  const factory DeleteUserNotificationLoaded(
+          final UserNotificationResponse userNotificationResponse) =
+      _$DeleteUserNotificationLoadedImpl;
+
+  UserNotificationResponse get userNotificationResponse;
+  @JsonKey(ignore: true)
+  _$$DeleteUserNotificationLoadedImplCopyWith<
+          _$DeleteUserNotificationLoadedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserNotificationLoadingImplCopyWith<$Res> {
+  factory _$$DeleteUserNotificationLoadingImplCopyWith(
+          _$DeleteUserNotificationLoadingImpl value,
+          $Res Function(_$DeleteUserNotificationLoadingImpl) then) =
+      __$$DeleteUserNotificationLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteUserNotificationLoadingImplCopyWithImpl<$Res>
+    extends _$UserNotificationStateCopyWithImpl<$Res,
+        _$DeleteUserNotificationLoadingImpl>
+    implements _$$DeleteUserNotificationLoadingImplCopyWith<$Res> {
+  __$$DeleteUserNotificationLoadingImplCopyWithImpl(
+      _$DeleteUserNotificationLoadingImpl _value,
+      $Res Function(_$DeleteUserNotificationLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteUserNotificationLoadingImpl
+    implements DeleteUserNotificationLoading {
+  const _$DeleteUserNotificationLoadingImpl();
+
+  @override
+  String toString() {
+    return 'UserNotificationState.deleteUserNotificationLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserNotificationLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() userNotificationLoading,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        userNotificationLoaded,
+    required TResult Function(int statesCode, String errorMessage)
+        userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? userNotificationLoading,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        userNotificationLoaded,
+    TResult? Function(int statesCode, String errorMessage)?
+        userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? userNotificationLoading,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        userNotificationLoaded,
+    TResult Function(int statesCode, String errorMessage)?
+        userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
+    required TResult orElse(),
+  }) {
+    if (deleteUserNotificationLoading != null) {
+      return deleteUserNotificationLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(UserNotificationLoading value)
+        userNotificationLoading,
+    required TResult Function(UserNotificationLoaded value)
+        userNotificationLoaded,
+    required TResult Function(UserNotificationError value)
+        userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
+    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
+    TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(UserNotificationLoading value)? userNotificationLoading,
+    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
+    TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
+    required TResult orElse(),
+  }) {
+    if (deleteUserNotificationLoading != null) {
+      return deleteUserNotificationLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteUserNotificationLoading implements UserNotificationState {
+  const factory DeleteUserNotificationLoading() =
+      _$DeleteUserNotificationLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserNotificationErrorImplCopyWith<$Res> {
+  factory _$$DeleteUserNotificationErrorImplCopyWith(
+          _$DeleteUserNotificationErrorImpl value,
+          $Res Function(_$DeleteUserNotificationErrorImpl) then) =
+      __$$DeleteUserNotificationErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int statesCode, String errorMessage});
+}
+
+/// @nodoc
+class __$$DeleteUserNotificationErrorImplCopyWithImpl<$Res>
+    extends _$UserNotificationStateCopyWithImpl<$Res,
+        _$DeleteUserNotificationErrorImpl>
+    implements _$$DeleteUserNotificationErrorImplCopyWith<$Res> {
+  __$$DeleteUserNotificationErrorImplCopyWithImpl(
+      _$DeleteUserNotificationErrorImpl _value,
+      $Res Function(_$DeleteUserNotificationErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? statesCode = null,
+    Object? errorMessage = null,
+  }) {
+    return _then(_$DeleteUserNotificationErrorImpl(
+      statesCode: null == statesCode
+          ? _value.statesCode
+          : statesCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteUserNotificationErrorImpl implements DeleteUserNotificationError {
+  const _$DeleteUserNotificationErrorImpl(
+      {required this.statesCode, required this.errorMessage});
+
+  @override
+  final int statesCode;
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'UserNotificationState.deleteUserNotificationError(statesCode: $statesCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserNotificationErrorImpl &&
+            (identical(other.statesCode, statesCode) ||
+                other.statesCode == statesCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteUserNotificationErrorImplCopyWith<_$DeleteUserNotificationErrorImpl>
+      get copyWith => __$$DeleteUserNotificationErrorImplCopyWithImpl<
+          _$DeleteUserNotificationErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() userNotificationLoading,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        userNotificationLoaded,
+    required TResult Function(int statesCode, String errorMessage)
+        userNotificationError,
+    required TResult Function(UserNotificationResponse userNotificationResponse)
+        deleteUserNotificationLoaded,
+    required TResult Function() deleteUserNotificationLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationError(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? userNotificationLoading,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        userNotificationLoaded,
+    TResult? Function(int statesCode, String errorMessage)?
+        userNotificationError,
+    TResult? Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult? Function()? deleteUserNotificationLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationError?.call(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? userNotificationLoading,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        userNotificationLoaded,
+    TResult Function(int statesCode, String errorMessage)?
+        userNotificationError,
+    TResult Function(UserNotificationResponse userNotificationResponse)?
+        deleteUserNotificationLoaded,
+    TResult Function()? deleteUserNotificationLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        deleteUserNotificationError,
+    required TResult orElse(),
+  }) {
+    if (deleteUserNotificationError != null) {
+      return deleteUserNotificationError(statesCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(UserNotificationLoading value)
+        userNotificationLoading,
+    required TResult Function(UserNotificationLoaded value)
+        userNotificationLoaded,
+    required TResult Function(UserNotificationError value)
+        userNotificationError,
+    required TResult Function(DeleteUserNotificationLoaded value)
+        deleteUserNotificationLoaded,
+    required TResult Function(DeleteUserNotificationLoading value)
+        deleteUserNotificationLoading,
+    required TResult Function(DeleteUserNotificationError value)
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
+    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
+    TResult? Function(UserNotificationError value)? userNotificationError,
+    TResult? Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult? Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult? Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
+  }) {
+    return deleteUserNotificationError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(UserNotificationLoading value)? userNotificationLoading,
+    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
+    TResult Function(UserNotificationError value)? userNotificationError,
+    TResult Function(DeleteUserNotificationLoaded value)?
+        deleteUserNotificationLoaded,
+    TResult Function(DeleteUserNotificationLoading value)?
+        deleteUserNotificationLoading,
+    TResult Function(DeleteUserNotificationError value)?
+        deleteUserNotificationError,
+    required TResult orElse(),
+  }) {
+    if (deleteUserNotificationError != null) {
+      return deleteUserNotificationError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteUserNotificationError implements UserNotificationState {
+  const factory DeleteUserNotificationError(
+      {required final int statesCode,
+      required final String errorMessage}) = _$DeleteUserNotificationErrorImpl;
+
+  int get statesCode;
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$DeleteUserNotificationErrorImplCopyWith<_$DeleteUserNotificationErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -15,4 +15,5 @@ class Routes {
   static const String accountInfomation = "AccountInfomation";
   static const String changeMyEmail = "changeMyEmail";
   static const String changeMyPassword = "changeMyPassword";
+  static const String notification = "notification";
 }

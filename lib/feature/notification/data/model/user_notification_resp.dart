@@ -20,6 +20,7 @@ class UserNotificationResponse {
 @JsonSerializable()
 class UserNotificationData {
   bool? isSeen;
+  @JsonKey(name: "_id")
   String? sId;
   NotificationId? notificationId;
 

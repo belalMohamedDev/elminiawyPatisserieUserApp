@@ -63,6 +63,7 @@ class CartCubit extends Cubit<CartState> {
     response.when(
       success: (dataResponse) {
         cartData = dataResponse;
+     
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) async {
@@ -131,12 +132,10 @@ class CartCubit extends Cubit<CartState> {
 
   //------------------------------------------------------------------------
 
-
-    Future<void> removeCartLogic() async {
+  Future<void> removeCartLogic() async {
     emit(const CartState.deleteCartLoading());
 
-    final response =
-        await _cartRepositoryImplement.removeCartRepo();
+    final response = await _cartRepositoryImplement.removeCartRepo();
 
     response.when(
       success: (dataResponse) {

@@ -6,7 +6,10 @@ import '../model/user_notification_resp.dart';
 
 abstract class UserNotificationRepository {
   Future<ApiResult<UserNotificationResponse>> getAllUserNotificationRepo();
-  Future<ApiResult<UserNotificationResponse>> updateAllUserNotificationToSeenRepo();
+  Future<ApiResult<UserNotificationResponse>>
+      updateAllUserNotificationToSeenRepo();
+  Future<ApiResult<UserNotificationResponse>> deleteUserNotificationRepo(
+      String id);
 }
 
 class UserNotificationRepositoryImplement
@@ -30,12 +33,29 @@ class UserNotificationRepositoryImplement
       return ApiResult.failure(DataSource.noInternetConnection.getFailure());
     }
   }
-  
+
   @override
-  Future<ApiResult<UserNotificationResponse>> updateAllUserNotificationToSeenRepo() async{
+  Future<ApiResult<UserNotificationResponse>>
+      updateAllUserNotificationToSeenRepo() async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.updateAllNotificationToSeenService();
+        return ApiResult.success(response);
+      } catch (error) {
+        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+      }
+    } else {
+      //return  internet connection error
+      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<ApiResult<UserNotificationResponse>> deleteUserNotificationRepo(
+      String id) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _apiService.deleteUserNotificationService(id);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);

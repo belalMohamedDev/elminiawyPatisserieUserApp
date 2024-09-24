@@ -28,7 +28,7 @@ UserNotificationData _$UserNotificationDataFromJson(
         Map<String, dynamic> json) =>
     UserNotificationData(
       isSeen: json['isSeen'] as bool?,
-      sId: json['sId'] as String?,
+      sId: json['_id'] as String?,
       notificationId: json['notificationId'] == null
           ? null
           : NotificationId.fromJson(
@@ -39,7 +39,7 @@ Map<String, dynamic> _$UserNotificationDataToJson(
         UserNotificationData instance) =>
     <String, dynamic>{
       'isSeen': instance.isSeen,
-      'sId': instance.sId,
+      '_id': instance.sId,
       'notificationId': instance.notificationId,
     };
 
