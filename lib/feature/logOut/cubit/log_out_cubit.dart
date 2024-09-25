@@ -15,13 +15,13 @@ class LogOutCubit extends Cubit<LogOutState> {
   LogOutCubit(this._logOutRepository) : super(const LogOutState.initial());
   final LogOutRepository _logOutRepository;
 
-  String initialUserName = 'Guest User';
+  String initialUserToken = 'Guest User';
 
   Future<void> getUserName() async {
-    initialUserName =
-        await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+    initialUserToken =
+        await SharedPrefHelper.getSecuredString(PrefKeys.refreshToken);
 
-    emit(LogOutState.getStorageData(initialUserName));
+    emit(LogOutState.getStorageData(initialUserToken));
   }
 
   Future<void> logOut(String refreshToken) async {

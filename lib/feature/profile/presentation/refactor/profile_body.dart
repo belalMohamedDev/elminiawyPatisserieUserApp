@@ -10,6 +10,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../../../core/application/cubit/app_logic_cubit.dart';
 import '../../../../core/common/toast/show_toast.dart';
+import '../../../../core/services/pushNotification/firebase_cloud_messaging.dart';
 import '../../../../core/services/shared_pref_helper.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
@@ -35,7 +36,7 @@ class ProfileBody extends StatelessWidget {
                   SizedBox(
                     width: 20.w,
                   ),
-                  context.read<LogOutCubit>().initialUserName == 'Guest User'
+                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
                       ? Image.asset(
                           ImageAsset.guestIconGreen,
                           color: ColorManger.white,
@@ -51,7 +52,7 @@ class ProfileBody extends StatelessWidget {
                             child: Text(
                                 context
                                     .read<LogOutCubit>()
-                                    .initialUserName[0]
+                                    .initialUserToken[0]
                                     .toUpperCase(),
                                 style: Theme.of(context)
                                     .textTheme
@@ -66,7 +67,7 @@ class ProfileBody extends StatelessWidget {
                   SizedBox(
                     width: 20.w,
                   ),
-                  context.read<LogOutCubit>().initialUserName == 'Guest User'
+                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -123,37 +124,47 @@ class ProfileBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: Column(
                 children: [
-                  CustomProfileCard(
-                    title: "My Profile",
-                    leadingIcon: IconlyBold.profile,
-                    tap: () {
-                      _chaneProfileDataaBottomSheet(context);
-                    },
-                  ),
-                  CustomProfileCard(
-                    title: "My Address",
-                    leadingIcon: IconlyBold.location,
-                    tap: () {
-                      Navigator.of(context, rootNavigator: !false)
-                          .pushNamed(Routes.address);
-                    },
-                  ),
-                  CustomProfileCard(
-                    title: "My Orders",
-                    leadingIcon: IconlyBold.bag,
-                    tap: () {
-                      NavBarNavigator.push(context,
-                          screen: const MyOrdersScreen(), withNavBar: false);
-                    },
-                  ),
-                  CustomProfileCard(
-                    title: "My WishList",
-                    leadingIcon: IconlyBold.heart,
-                    tap: () {
-                      NavBarNavigator.push(context,
-                          screen: const WishListView(), withNavBar: false);
-                    },
-                  ),
+                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
+                      ? const SizedBox()
+                      : CustomProfileCard(
+                          title: "My Profile",
+                          leadingIcon: IconlyBold.profile,
+                          tap: () {
+                            _chaneProfileDataaBottomSheet(context);
+                          },
+                        ),
+                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
+                      ? const SizedBox()
+                      : CustomProfileCard(
+                          title: "My Address",
+                          leadingIcon: IconlyBold.location,
+                          tap: () {
+                            Navigator.of(context, rootNavigator: !false)
+                                .pushNamed(Routes.address);
+                          },
+                        ),
+                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
+                      ? const SizedBox()
+                      : CustomProfileCard(
+                          title: "My Orders",
+                          leadingIcon: IconlyBold.bag,
+                          tap: () {
+                            NavBarNavigator.push(context,
+                                screen: const MyOrdersScreen(),
+                                withNavBar: false);
+                          },
+                        ),
+                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
+                      ? const SizedBox()
+                      : CustomProfileCard(
+                          title: "My WishList",
+                          leadingIcon: IconlyBold.heart,
+                          tap: () {
+                            NavBarNavigator.push(context,
+                                screen: const WishListView(),
+                                withNavBar: false);
+                          },
+                        ),
                   CustomProfileCard(
                     title: "Settings",
                     leadingIcon: IconlyBold.setting,
@@ -194,7 +205,7 @@ class ProfileBody extends StatelessWidget {
         elevation: 20.r,
         context: context,
         builder: (context) => SizedBox(
-              height: 400.h,
+              height: 320.h,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 35.h),
                 child: Material(
@@ -202,32 +213,31 @@ class ProfileBody extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        CustomProfileCard(
-                          title: "Notification",
-                          actionWidget: Transform.scale(
-                            scale: 0.75,
-                            child: CupertinoSwitch(
-                              value: false,
-                              activeColor: ColorManger.brun,
-                              onChanged: (value) {},
-                            ),
-                          ),
-                          leadingIcon: IconlyBold.notification,
-                          tap: () {},
-                        ),
-                        CustomProfileCard(
-                          title: "Location",
-                          actionWidget: Transform.scale(
-                            scale: 0.75,
-                            child: CupertinoSwitch(
-                              value: true,
-                              activeColor: ColorManger.brun,
-                              onChanged: (value) {},
-                            ),
-                          ),
-                          leadingIcon: IconlyBold.location,
-                          tap: () {},
-                        ),
+                        ValueListenableBuilder(
+                            valueListenable: FirebaseCloudMessaging()
+                                .isNotificationSubscribe,
+                            builder: (_, value, __) {
+                              return CustomProfileCard(
+                                title: "Notification",
+                                actionWidget: Transform.scale(
+                                  scale: 0.75,
+                                  child: CupertinoSwitch(
+                                    value: value,
+                                    activeColor: ColorManger.brun,
+                                    trackColor: ColorManger.brunLight,
+                                    onChanged: (value) async {
+                                      await FirebaseCloudMessaging()
+                                          .toggleNotificationSubscription();
+                                    },
+                                  ),
+                                ),
+                                leadingIcon: IconlyBold.notification,
+                                tap: () async {
+                                  await FirebaseCloudMessaging()
+                                      .toggleNotificationSubscription();
+                                },
+                              );
+                            }),
                         CustomProfileCard(
                           title: "Language",
                           subTitle: 'English',
@@ -289,73 +299,86 @@ class ProfileBody extends StatelessWidget {
       child: CustomProfileCard(
         title: "Log Out",
         leadingIcon: IconlyBold.logout,
-        tap: () async {
-          // Show confirmation dialog before logging out
-          final shouldLogOut = await showDialog<bool>(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.r),
-                ),
-                backgroundColor: ColorManger.backgroundItem,
-                contentPadding: EdgeInsets.only(left: 16.w),
-                titlePadding: EdgeInsets.only(top: 25.h, left: 16.w),
-                title: const Text('Confirm Logout'),
-                content: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 5.h,
-                      width: 350.w,
-                    ),
-                    Text('Are you sure you want to log out?',
-                        style: TextStyle(
-                            fontSize: 15.sp, color: ColorManger.brunLight)),
-                  ],
-                ),
-                actionsPadding:
-                    EdgeInsets.only(top: 20.h, right: 22.w, bottom: 20.h),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                    child: Text('Cancel',
-                        style: TextStyle(
-                            fontSize: 15.sp, color: ColorManger.brun)),
-                  ),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  Container(
-                    height: 38.h,
-                    width: 85.w,
-                    decoration: BoxDecoration(
-                        color: ColorManger.brun,
-                        borderRadius: BorderRadius.circular(8.r)),
-                    child: Center(
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop(true);
-                        },
-                        child: Text('Log Out',
-                            style: TextStyle(
-                                fontSize: 12.sp, color: ColorManger.white)),
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            },
-          );
+        tap: context.read<LogOutCubit>().initialUserToken == 'Guest User'
+            ? () {
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamedAndRemoveUntil(
+                        Routes.loginRoute, (Route route) => false);
 
-          // Proceed with logout if confirmed
-          if (shouldLogOut == true) {
-            context.read<LogOutCubit>().checkTokenThenDoLogOut(context);
-          }
-        },
+                context
+                    .read<AppLogicCubit>()
+                    .bottomNavBarController
+                    .jumpToTab(0);
+              }
+            : () async {
+                // Show confirmation dialog before logging out
+                final shouldLogOut = await showDialog<bool>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.r),
+                      ),
+                      backgroundColor: ColorManger.backgroundItem,
+                      contentPadding: EdgeInsets.only(left: 16.w),
+                      titlePadding: EdgeInsets.only(top: 25.h, left: 16.w),
+                      title: const Text('Confirm Logout'),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 5.h,
+                            width: 350.w,
+                          ),
+                          Text('Are you sure you want to log out?',
+                              style: TextStyle(
+                                  fontSize: 15.sp,
+                                  color: ColorManger.brunLight)),
+                        ],
+                      ),
+                      actionsPadding:
+                          EdgeInsets.only(top: 20.h, right: 22.w, bottom: 20.h),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(false);
+                          },
+                          child: Text('Cancel',
+                              style: TextStyle(
+                                  fontSize: 15.sp, color: ColorManger.brun)),
+                        ),
+                        SizedBox(
+                          width: 5.w,
+                        ),
+                        Container(
+                          height: 38.h,
+                          width: 85.w,
+                          decoration: BoxDecoration(
+                              color: ColorManger.brun,
+                              borderRadius: BorderRadius.circular(8.r)),
+                          child: Center(
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(true);
+                              },
+                              child: Text('Log Out',
+                                  style: TextStyle(
+                                      fontSize: 12.sp,
+                                      color: ColorManger.white)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                );
+
+                // Proceed with logout if confirmed
+                if (shouldLogOut == true) {
+                  context.read<LogOutCubit>().checkTokenThenDoLogOut(context);
+                }
+              },
       ),
     );
   }

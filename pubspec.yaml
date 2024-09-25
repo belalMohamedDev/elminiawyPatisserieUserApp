@@ -134,22 +134,24 @@ flutter:
     - asset/image/guest_icon_light.png
     - asset/image/guest_icon.png
     - asset/image/pick_marker.png
-    - asset/image/storeLocation.png
     - asset/image/navigation.png
     - asset/image/map.png
     - asset/image/building.png
     - asset/image/home.png
     - asset/image/bag.png
     - asset/image/location.png
-    - asset/image/picture1.png
     - asset/image/picture.png
-    - asset/image/whishList.png
-    - asset/image/address.png
     - asset/image/basket.png
     - asset/image/shopping-bag.png
     - asset/image/cancel.png
     - asset/image/order_delivered.png
     - asset/json/cong.json
+    - asset/image/noCart.svg
+    - asset/image/noOrder.svg
+    - asset/image/whishList.svg
+    - asset/image/noAddress.svg
+    - asset/image/noNotification.svg
+    - asset/image/noSearch.svg
 
     
 

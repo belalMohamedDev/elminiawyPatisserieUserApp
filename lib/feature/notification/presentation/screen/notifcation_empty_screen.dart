@@ -1,7 +1,9 @@
-import 'package:elminiawy/core/style/color/color_manger.dart';
+import 'package:elminiawy/core/style/images/asset_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../core/common/sharedWidget/error_info.dart';
 
 class EmptyNotificationsScreen extends StatelessWidget {
   const EmptyNotificationsScreen({super.key});
@@ -14,66 +16,31 @@ class EmptyNotificationsScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 40.h,
-              ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: AspectRatio(
                   aspectRatio: 1,
-                  child: SvgPicture.string(
-                    noNotificationIllistration,
+                  child: SvgPicture.asset(
+                    ImageAsset.noNotification,
                     fit: BoxFit.scaleDown,
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20.h,
               ),
               const ErrorInfo(
                 title: "Empty Notifications",
                 description:
                     "It looks like you don't have any notifications right now. We'll let you know when there's something new.",
               ),
+              SizedBox(
+                height: 50.h,
+              ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class ErrorInfo extends StatelessWidget {
-  const ErrorInfo({
-    super.key,
-    required this.title,
-    required this.description,
-  });
-
-  final String title;
-  final String description;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        constraints: const BoxConstraints(maxWidth: 400),
-        alignment: Alignment.center,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  fontWeight: FontWeight.bold, color: ColorManger.brun),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              description,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: ColorManger.brunLight),
-            ),
-            const SizedBox(height: 16 * 2.5),
-          ],
         ),
       ),
     );

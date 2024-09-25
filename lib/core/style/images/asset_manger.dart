@@ -22,13 +22,20 @@ class ImageAsset {
   static const String addLocation = "$imagePath/location.png";
   static const String picture = "$imagePath/picture.png";
   static const String whishList = "$imagePath/whishList.png";
-  static const String address = "$imagePath/address.png";
+  static const String noAddress = "$imagePath/noAddress.svg";
 
   static const String shoppingBag = "$imagePath/shopping-bag.png";
   static const String basket = "$imagePath/basket.png";
 
   static const String orderCancel = "$imagePath/cancel.png";
   static const String orderDelivered = "$imagePath/order_delivered.png";
+
+
+  static const String noCart = "$imagePath/noCart.svg";
+  static const String noSearch = "$imagePath/noSearch.svg";
+  static const String noOrder = "$imagePath/noOrder.svg";
+  static const String noWishList = "$imagePath/whishList.svg";
+  static const String noNotification = "$imagePath/noNotification.svg";
 }
 
 class JsonAsset {

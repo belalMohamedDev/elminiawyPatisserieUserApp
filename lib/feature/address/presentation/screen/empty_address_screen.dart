@@ -1,10 +1,11 @@
 import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../../../core/common/sharedWidget/error_info.dart';
 import '../../../../core/style/images/asset_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../../cart/presentation/screen/empty_cart_screen.dart';
 
 class EmptyAddressScreen extends StatelessWidget {
   const EmptyAddressScreen({super.key});
@@ -22,8 +23,8 @@ class EmptyAddressScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: AspectRatio(
                   aspectRatio: 1,
-                  child: Image.asset(
-                    ImageAsset.address,
+                  child: SvgPicture.asset(
+                    ImageAsset.noAddress,
                     fit: BoxFit.scaleDown,
                   ),
                 ),

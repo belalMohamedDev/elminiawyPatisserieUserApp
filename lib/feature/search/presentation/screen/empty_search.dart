@@ -5,8 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/common/sharedWidget/error_info.dart';
 import '../../../../core/style/images/asset_manger.dart';
 
-class EmptyCartScreen extends StatelessWidget {
-  const EmptyCartScreen({super.key});
+class EmptySearchScreen extends StatelessWidget {
+  const EmptySearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,14 @@ class EmptyCartScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
+                height: 40.h,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: SvgPicture.asset(
-                    ImageAsset.noCart,
+                    ImageAsset.noSearch,
                     fit: BoxFit.scaleDown,
                   ),
                 ),
@@ -31,16 +34,10 @@ class EmptyCartScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              ErrorInfo(
-                title: "Empty Cart!",
+              const ErrorInfo(
+                title: "No Results Found!",
                 description:
-                    "It seems like you haven't added anything to your cart yet. Let's find some great items to fill it up!",
-                // button: you can pass your custom button,
-                //  btnText: "Discover Products",
-                press: () {},
-              ),
-              SizedBox(
-                height: 100.h,
+                    "We couldn't find any matching results for your search. Please try again with different keywords.",
               ),
             ],
           ),
@@ -49,4 +46,3 @@ class EmptyCartScreen extends StatelessWidget {
     );
   }
 }
-

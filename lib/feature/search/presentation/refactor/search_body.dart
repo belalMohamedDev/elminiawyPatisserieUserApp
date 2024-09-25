@@ -7,6 +7,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../../../../core/common/sharedWidget/product_grid_view_success.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../newProduct/Cubit/product_cubit.dart';
+import '../screen/empty_search.dart';
 import '../widget/filter_bottom_sheet.dart';
 
 class SearchScreenBody extends StatelessWidget {
@@ -77,6 +78,9 @@ class SearchScreenBody extends StatelessWidget {
               child: BlocBuilder<ProductCubit, ProductState>(
                 builder: (context, state) {
                   if (state is AddItemToList) {
+                    if (state.getFoundData.isEmpty) {
+                      return const EmptySearchScreen();
+                    }
                     return Padding(
                       padding:
                           EdgeInsets.only(top: 25.h, left: 5.w, right: 5.w),

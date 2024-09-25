@@ -14,7 +14,7 @@ class FirebaseCloudMessaging {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
   ValueNotifier<bool> isNotificationSubscribe = ValueNotifier(false);
-  ValueNotifier<bool> hasNotificationPermission = ValueNotifier(false);
+  bool hasNotificationPermission = false;
 
   late final String _subscribeKey;
 
@@ -43,13 +43,13 @@ class FirebaseCloudMessaging {
   /// controller for the notification if user subscribe or unsubscribed
   /// or accpeted the permission or not
   Future<void> toggleNotificationSubscription() async {
-    if (!hasNotificationPermission.value) {
+    if (hasNotificationPermission == false) {
       await _requestNotificationPermissions();
     } else {
-      if (isNotificationSubscribe.value) {
-        await _unsubscribeFromNotifications();
-      } else {
+      if (isNotificationSubscribe.value == false) {
         await _subscribeToNotifications();
+      } else {
+        await _unsubscribeFromNotifications();
       }
     }
   }
@@ -61,11 +61,11 @@ class FirebaseCloudMessaging {
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
       /// subscribe to notifications topic
 
-      hasNotificationPermission.value = true;
+      hasNotificationPermission = true;
       await _subscribeToNotifications();
       debugPrint('🔔 User accepted notification permissions');
     } else {
-      hasNotificationPermission.value = false;
+      hasNotificationPermission = false;
       isNotificationSubscribe.value = false;
       debugPrint('🔕 User denied notification permissions');
     }
@@ -73,24 +73,15 @@ class FirebaseCloudMessaging {
 
   /// subscribe notification
   Future<void> _subscribeToNotifications() async {
-    if (_subscribeKey.isNotEmpty) {
-      await _firebaseMessaging.subscribeToTopic(_subscribeKey);
-      isNotificationSubscribe.value = true;
-      debugPrint('🔔 Subscribed to notifications for topic: $_subscribeKey');
-    } else {
-      debugPrint('⚠️ Invalid subscribe key, cannot subscribe');
-    }
+    isNotificationSubscribe.value = true;
+    await FirebaseMessaging.instance.subscribeToTopic(_subscribeKey);
+    debugPrint('====🔔 Notification Subscribed 🔔=====');
   }
 
   /// unsubscribe notification
   Future<void> _unsubscribeFromNotifications() async {
-    if (_subscribeKey.isNotEmpty) {
-      await _firebaseMessaging.unsubscribeFromTopic(_subscribeKey);
-      isNotificationSubscribe.value = false;
-      debugPrint(
-          '🔕 Unsubscribed from notifications for topic: $_subscribeKey');
-    } else {
-      debugPrint('⚠️ Invalid subscribe key, cannot unsubscribe');
-    }
+    isNotificationSubscribe.value = false;
+    await FirebaseMessaging.instance.unsubscribeFromTopic(_subscribeKey);
+    debugPrint('====🔕 Notification Unsubscribed 🔕=====');
   }
 }
