@@ -11,6 +11,8 @@ import 'package:retrofit/retrofit.dart';
 import '../../../feature/accountInfo/data/model/request/update_account_information.dart';
 import '../../../feature/accountInfo/data/model/response/delete_account.dart';
 import '../../../feature/accountInfo/data/model/response/update_account_information.dart';
+import '../../../feature/address/data/model/request/check_address_available.dart';
+import '../../../feature/address/data/model/response/check_address_available.dart';
 import '../../../feature/address/data/model/response/get_store_address_response.dart';
 import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
 import '../../../feature/cart/data/model/response/get_cart.dart';
@@ -93,6 +95,12 @@ abstract class AppServiceClient {
   Future<CreateAddressResponse> createAddress(
     @Body() Map<String, dynamic> createAddressRequestBody,
   );
+
+    @POST("${ApiConstants.address}/isAvailable")
+  Future<CheckLocationAvailableResponse> checkAddressAvaliableService(
+    @Body() CheckAddressAvailableRequestBody checkAddressAvailableRequestBody,
+  );
+
 
   @GET(ApiConstants.address)
   Future<GetAddressResponse> getAllAddress();

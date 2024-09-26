@@ -3,79 +3,88 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_google_maps_webservices/places.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../../core/utils/map.dart';
+import '../../data/model/request/check_address_available.dart';
+import '../../data/model/response/check_address_available.dart';
+import '../../data/repository/address_repo.dart';
 import '../../presentation/widget/custom_store_map_marker.dart';
 
 part 'map_state.dart';
 part 'map_cubit.freezed.dart';
 
 class MapCubit extends Cubit<MapState> {
-  MapCubit(this.places) : super(const MapState.initial());
+  MapCubit(this.places, this._userAddressRepository)
+      : super(const MapState.initial());
+  final UserAddressRepositoryImplement _userAddressRepository;
 
   final GoogleMapsPlaces
       places; // Instance of GoogleMapsPlaces for search functionality
   late GoogleMapController mapController; // Controller to manage Google Map
   List<MarkerData> markers = []; // List to hold custom markers
-  LatLng? nearestBranch; // Stores the nearest branch's location
-  double nearestDistance =
-      double.infinity; // Tracks the shortest distance to a branch
 
   // Default starting position on the map
   LatLng targetPosition = const LatLng(30.73148352751841, 31.79803739729101);
 
-  // Initialize the map by adding the current location marker
-  Future<void> init(BuildContext context) async {
-    addCurrentLocationMarkerToMap(targetPosition);
-  }
-
-  Future<void> onTapFunction() async {}
-
-  // Calculate the distance between the user location and a branch location
-  double calculateDistance(LatLng userLocation, LatLng branchLocation) {
-    var lat1 = userLocation.latitude;
-    var lon1 = userLocation.longitude;
-    var lat2 = branchLocation.latitude;
-    var lon2 = branchLocation.longitude;
-
-    double distanceInMeters =
-        Geolocator.distanceBetween(lat1, lon1, lat2, lon2);
-
-    // Update the nearest branch if the current branch is closer
-    if (distanceInMeters < nearestDistance) {
-      nearestDistance = distanceInMeters;
-      nearestBranch = branchLocation;
-    }
-
-    return distanceInMeters;
-  }
-
-  // Set the map controller
-  void setMapController(GoogleMapController controller) {
-    mapController = controller;
-  }
-
-  // Get the current location of the user
-  Future<void> getCurrentLocation(BuildContext context) async {
+  // Move the map to the location selected from the search results
+  Future<void> moveToLocationInTextFormField(Prediction prediction) async {
     emit(const MapState.loading());
 
-    Position? position = await _determinePosition(context);
-    if (position != null) {
-      LatLng currentPosition = LatLng(position.latitude, position.longitude);
-      addCurrentLocationMarkerToMap(currentPosition);
-      targetPosition = currentPosition;
-      await moveToLocation(currentPosition);
+    try {
+      // Fetch place details using place ID
+      PlacesDetailsResponse response =
+          await places.getDetailsByPlaceId(prediction.placeId!);
 
-      emit(MapState.loaded(currentPosition, {}));
+      if (response.isOkay) {
+        double lat = response.result.geometry!.location.lat;
+        double lng = response.result.geometry!.location.lng;
+        LatLng newPosition = LatLng(lat, lng);
+
+        // Animate the map camera to the new location
+        await _animateCameraToPosition(newPosition);
+
+        // Add a marker for the new location
+        await _addMarkerAndCheckAddress(newPosition);
+
+        emit(MapState.loaded(
+          newPosition,
+          state.maybeWhen(
+            loaded: (_, markers) => markers,
+            orElse: () => {},
+          ),
+        ));
+      } else {
+        emit(const MapState.error("Error moving to location."));
+      }
+    } catch (e) {
+      emit(MapState.error("Error moving to location: $e"));
     }
   }
 
-  // Add a marker for the current location on the map
-  void addCurrentLocationMarkerToMap(LatLng position) async {
+// Private method to animate the camera
+  Future<void> _animateCameraToPosition(LatLng position) async {
+    mapController.animateCamera(
+      CameraUpdate.newCameraPosition(
+        CameraPosition(target: position, zoom: 18),
+      ),
+    );
+  }
+
+// Private method to add a marker and check the address availability
+  Future<void> _addMarkerAndCheckAddress(LatLng position) async {
+    // Add the current location marker
+    addCurrentLocationMarkerToMap(position);
+
+    // Check if the address is available
+    await checkAddressAvailableFetch(position);
+  }
+
+// Add a marker for the current location
+  void addCurrentLocationMarkerToMap(LatLng position) {
     targetPosition = position;
+
     final marker = MarkerData(
       marker: Marker(
         markerId: const MarkerId('currentLocation'),
@@ -84,10 +93,85 @@ class MapCubit extends Cubit<MapState> {
       child: const TextOnImage(currentLocation: true),
     );
 
-    // Remove any existing current location marker and add the new one
-    markers.removeWhere((markerData) =>
-        markerData.marker.markerId == const MarkerId('currentLocation'));
+    // Remove any existing marker for the current location and add the new one
+    markers.removeWhere(
+      (markerData) =>
+          markerData.marker.markerId == const MarkerId('currentLocation'),
+    );
+
     markers.add(marker);
+  }
+
+// Check if the address is available
+  Future<void> checkAddressAvailableFetch(LatLng currentLocation) async {
+    emit(const MapState.checkAddressAvailableLoading());
+
+    final response = await _userAddressRepository.checkAddressAvailable(
+      CheckAddressAvailableRequestBody(
+        latitude: currentLocation.latitude.toString(),
+        longitude: currentLocation.longitude.toString(),
+      ),
+    );
+
+    response.when(
+      success: (dataResponse) {
+        emit(MapState.checkAddressAvailableSuccess(dataResponse));
+      },
+      failure: (error) {
+        if (error.statusCode != 401) {
+          emit(
+            MapState.checkAddressAvailableError(
+              errorMessage: error.message!,
+              statesCode: error.statusCode!,
+            ),
+          );
+        }
+      },
+    );
+  }
+
+  // Set the map controller
+  void setMapController(GoogleMapController controller) {
+    mapController = controller;
+  }
+
+  // // Get the current location of the user
+  // Future<void> getCurrentLocation(BuildContext context) async {
+  //   emit(const MapState.loading());
+
+  //   Position? position = await _determinePosition(context);
+  //   if (position != null) {
+  //     LatLng currentPosition = LatLng(position.latitude, position.longitude);
+  //     addCurrentLocationMarkerToMap(currentPosition);
+  //     targetPosition = currentPosition;
+  //     await moveToLocation(currentPosition);
+
+  //     emit(MapState.loaded(currentPosition, {}));
+  //   }
+  // }
+
+  Future<void> getCurrentLocation(BuildContext context) async {
+    emit(const MapState.loading());
+
+    try {
+      Position? position = await _determinePosition(context).timeout(
+        const Duration(seconds: 10), // Set a time limit to prevent long waits
+        onTimeout: () {
+          throw Exception("Location request timed out.");
+        },
+      );
+
+      if (position != null) {
+        LatLng currentPosition = LatLng(position.latitude, position.longitude);
+        addCurrentLocationMarkerToMap(currentPosition);
+        targetPosition = currentPosition;
+        await moveToLocation(currentPosition);
+
+        emit(MapState.loaded(currentPosition, {}));
+      }
+    } catch (e) {
+      emit(MapState.error("Failed to get current location: $e"));
+    }
   }
 
   // Search for locations based on the user's query
@@ -116,41 +200,6 @@ class MapCubit extends Cubit<MapState> {
     }
   }
 
-  // Move the map to the location selected from the search results
-  Future<void> moveToLocationInTextFormField(Prediction prediction) async {
-    emit(const MapState.loading());
-
-    try {
-      PlacesDetailsResponse response =
-          await places.getDetailsByPlaceId(prediction.placeId!);
-      if (response.isOkay) {
-        double lat = response.result.geometry!.location.lat;
-        double lng = response.result.geometry!.location.lng;
-        LatLng newPosition = LatLng(lat, lng);
-
-        // Animate the camera to the new position
-        mapController.animateCamera(
-          CameraUpdate.newCameraPosition(
-            CameraPosition(target: newPosition, zoom: 18),
-          ),
-        );
-
-        // Update the map with the new location marker
-        addCurrentLocationMarkerToMap(newPosition);
-        emit(MapState.loaded(
-            newPosition,
-            state.maybeWhen(
-              loaded: (_, markers) => markers,
-              orElse: () => {},
-            )));
-      } else {
-        emit(const MapState.error("Error moving to location."));
-      }
-    } catch (e) {
-      emit(MapState.error("Error moving to location: $e"));
-    }
-  }
-
   // Move the map camera to the specified position
   Future<void> moveToLocation(LatLng position) async {
     emit(const MapState.loading());
@@ -174,23 +223,5 @@ class MapCubit extends Cubit<MapState> {
   // Determine the user's current position using Geolocator
   Future<Position?> _determinePosition(BuildContext context) async {
     return await AppUtils.determinePosition(context);
-  }
-
-  // Get the address from the latitude and longitude
-  Future<String> getAddressFromLatLng(double latitude, double longitude) async {
-    try {
-      List<Placemark> placemarks = await placemarkFromCoordinates(
-        latitude,
-        longitude,
-      );
-
-      Placemark place = placemarks[0];
-      String address =
-          "${place.street}, ${place.locality}, ${place.administrativeArea}, ${place.country}";
-
-      return address;
-    } catch (e) {
-      return 'Failed to get address: $e';
-    }
   }
 }

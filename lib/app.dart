@@ -5,7 +5,6 @@ import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'core/routing/route_manger.dart';
 import 'core/routing/routes.dart';
 import 'core/services/app_storage_key.dart';
 import 'core/services/shared_pref_helper.dart';
@@ -15,11 +14,9 @@ import 'core/utils/extensions.dart';
 import 'feature/address/logic/mapCubit/map_cubit.dart';
 import 'feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 import 'feature/address/logic/userAddressCubit/user_address_cubit.dart';
+import 'feature/address/presentation/screen/map_screen.dart';
 import 'feature/cart/cubit/cart_cubit.dart';
-import 'feature/home/logic/bannerCubit/banner_cubit.dart';
-import 'feature/home/logic/categoryCubit/category_cubit.dart';
 import 'feature/newProduct/Cubit/product_cubit.dart';
-import 'feature/order/presentation/screen/my_orders_screen.dart';
 import 'feature/wishList/cubit/wish_list_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -37,12 +34,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => instance<AppLogicCubit>(),
         ),
-        BlocProvider(
-          create: (context) => instance<BannerCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => instance<CategoryCubit>(),
-        ),
+
         BlocProvider(
           create: (context) => instance<ProductCubit>(),
         ),
@@ -52,6 +44,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => instance<CartCubit>(),
         ),
+
+        ////////////////////////////////////
         BlocProvider(
           create: (context) => instance<MapCubit>(),
         ),
@@ -86,9 +80,9 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                  initialRoute: snapshot.data,
-                  onGenerateRoute: RouteGenerator.getRoute,
-                  home: const MyOrdersScreen(),
+                  // initialRoute: snapshot.data,
+                  // onGenerateRoute: RouteGenerator.getRoute,
+                  home: const MapScreen(),
                   theme: getApplicationTheme(),
                 );
               },

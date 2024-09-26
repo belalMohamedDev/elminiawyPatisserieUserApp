@@ -6,6 +6,8 @@ import '../../../../core/network/apiResult/api_reuslt.dart';
 import '../../../../core/network/error_handler/api_error_handler.dart';
 import '../../../../core/network/network_connectivity/connectivity_controller.dart';
 import '../../../../core/network/success/api_success_general.dart';
+import '../model/request/check_address_available.dart';
+import '../model/response/check_address_available.dart';
 import '../model/response/get_address_response.dart';
 
 abstract class UserAddressRepository {
@@ -18,6 +20,9 @@ abstract class UserAddressRepository {
       String id, CreateAddressRequestBody createAddressRequestBody);
 
   Future<ApiResult<ApiSuccessGeneralModel>> removeAddress(String id);
+
+  Future<ApiResult<CheckLocationAvailableResponse>> checkAddressAvailable(
+      CheckAddressAvailableRequestBody checkAddressAvailableRequestBody);
 }
 
 class UserAddressRepositoryImplement implements UserAddressRepository {
@@ -41,7 +46,6 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
       return ApiResult.failure(DataSource.noInternetConnection.getFailure());
     }
   }
-
 
   @override
   Future<ApiResult<GetAddressResponse>> getAllAddress() async {
@@ -78,8 +82,25 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
       String id, CreateAddressRequestBody createAddressRequestBody) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response =
-            await _apiService.updateAddress(id, createAddressRequestBody.toFilteredJson());
+        final response = await _apiService.updateAddress(
+            id, createAddressRequestBody.toFilteredJson());
+        return ApiResult.success(response);
+      } catch (error) {
+        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+      }
+    } else {
+      //return  internet connection error
+      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+    }
+  }
+
+  @override
+  Future<ApiResult<CheckLocationAvailableResponse>> checkAddressAvailable(
+      CheckAddressAvailableRequestBody checkAddressAvailableRequestBody) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _apiService
+            .checkAddressAvaliableService(checkAddressAvailableRequestBody);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);

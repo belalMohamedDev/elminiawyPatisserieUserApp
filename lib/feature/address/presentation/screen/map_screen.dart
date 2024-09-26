@@ -12,7 +12,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../logic/storeAddressCubit/store_address_cuibt_cubit.dart';
-import 'add_new_address_screen.dart';
 
 class MapScreen extends StatefulWidget {
   final bool isUpdateMap;
@@ -28,30 +27,38 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   void initState() {
+    final mapCuibt = context.read<MapCubit>();
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await Future.wait([
-        context.read<StoreAddressCuibt>().getAllStoreAddress().then(
-          (value) {
-            context.read<MapCubit>().getCurrentLocation(context);
-            for (var store
-                in context.read<StoreAddressCuibt>().addressDataList) {
-              LatLng position = LatLng(store.location!.coordinates![1],
-                  store.location!.coordinates![0]);
+    mapCuibt.getCurrentLocation(context).then(
+      (value) {
+        context
+            .read<MapCubit>()
+            .checkAddressAvailableFetch(mapCuibt.targetPosition);
+      },
+    );
+    // WidgetsBinding.instance.addPostFrameCallback((_) async {
+    //   await Future.wait([
+    //     context.read<StoreAddressCuibt>().getAllStoreAddress().then(
+    //       (value) {
+    //         context.read<MapCubit>().getCurrentLocation(context);
+    //         for (var store
+    //             in context.read<StoreAddressCuibt>().addressDataList) {
+    //           LatLng position = LatLng(store.location!.coordinates![1],
+    //               store.location!.coordinates![0]);
 
-              context.read<MapCubit>().calculateDistance(
-                  context.read<MapCubit>().targetPosition, position);
-            }
-            if (context.read<MapCubit>().nearestDistance <= 5000) {
-              buttonText = "Pick Location";
-            } else {
-              buttonText = "Service not available in this area";
-            }
-          },
-        ),
-        context.read<MapCubit>().init(context)
-      ]);
-    });
+    //           context.read<MapCubit>().calculateDistance(
+    //               context.read<MapCubit>().targetPosition, position);
+    //         }
+    //         if (context.read<MapCubit>().nearestDistance <= 5000) {
+    //           buttonText = "Pick Location";
+    //         } else {
+    //           buttonText = "Service not available in this area";
+    //         }
+    //       },
+    //     ),
+
+    //   ]);
+    // });
   }
 
   @override
@@ -67,7 +74,7 @@ class _MapScreenState extends State<MapScreen> {
 
           return Stack(
             children: [
-              _mapWidget(context, mapCuibt, storeAddressCuibt),
+              _mapWidget(context, mapCuibt),
               Positioned(
                 top: 45.h,
                 right: 20.w,
@@ -91,8 +98,7 @@ class _MapScreenState extends State<MapScreen> {
               Positioned(
                 bottom: 165.h,
                 right: 25.w,
-                child: _currentLocationButton(
-                    mapCuibt, context, storeAddressCuibt),
+                child: _currentLocationButton(mapCuibt, context),
               ),
               Positioned(
                 bottom: 105.h,
@@ -112,74 +118,95 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  CustomButton _pickLocationButton(BuildContext context, MapCubit mapCubit) {
-    return CustomButton(
-      onPressed: () async {
-        if (mapCubit.nearestDistance <= 5000) {
-          try {
-            // Perform the async operation without using the context directly.
-            final value = await mapCubit.getAddressFromLatLng(
-              mapCubit.targetPosition.latitude,
-              mapCubit.targetPosition.longitude,
-            );
+  BlocBuilder _pickLocationButton(BuildContext context, MapCubit mapCubit) {
+    return BlocBuilder<MapCubit, MapState>(
+      builder: (context, state) {
+        return CustomButton(
+          onPressed: () async {
+            // if (mapCubit.nearestDistance <= 5000) {
+            //   try {
+            //     // Perform the async operation without using the context directly.
+            //     final value = await mapCubit.getAddressFromLatLng(
+            //       mapCubit.targetPosition.latitude,
+            //       mapCubit.targetPosition.longitude,
+            //     );
 
-            if (!mounted) return; // Ensure the widget is still mounted.
+            //     if (!mounted) return; // Ensure the widget is still mounted.
 
-            if (widget.isUpdateMap == true) {
-              var resultData = {
-                'latLng': mapCubit.targetPosition,
-                'markerData': mapCubit.markers,
-                'addressAreaInformation': value,
-              };
+            //     if (widget.isUpdateMap == true) {
+            //       var resultData = {
+            //         'latLng': mapCubit.targetPosition,
+            //         'markerData': mapCubit.markers,
+            //         'addressAreaInformation': value,
+            //       };
 
-              // Use the context only if the widget is still mounted.
-              if (mounted) {
-                Navigator.pop(context, resultData);
-              }
-            } else {
-              // Use the context only if the widget is still mounted.
-              if (mounted) {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AddNewAddressScreen(
-                      latLng: mapCubit.targetPosition,
-                      markerData: mapCubit.markers,
-                      addressAreaInformation: value,
+            //       // Use the context only if the widget is still mounted.
+            //       if (mounted) {
+            //         Navigator.pop(context, resultData);
+            //       }
+            //     } else {
+            //       // Use the context only if the widget is still mounted.
+            //       if (mounted) {
+            //         Navigator.pushAndRemoveUntil(
+            //           context,
+            //           MaterialPageRoute(
+            //             builder: (context) => AddNewAddressScreen(
+            //               latLng: mapCubit.targetPosition,
+            //               markerData: mapCubit.markers,
+            //               addressAreaInformation: value,
+            //             ),
+            //           ),
+            //           (route) => route.isFirst,
+            //         );
+            //       }
+            //     }
+            //   } catch (error) {
+            //     if (mounted) {
+            //       ScaffoldMessenger.of(context).showSnackBar(
+            //         const SnackBar(
+            //           content: Text('An error occurred. Please try again.'),
+            //         ),
+            //       );
+
+            //       // Retry the operation if necessary.
+            //       await Future.delayed(const Duration(seconds: 2));
+            //       if (mounted) {
+            //         _pickLocationButton(context, mapCubit).onPressed!();
+            //       }
+            //     }
+            //   }
+            // }
+          },
+          widget: state is CheckAddressAvailableLoading
+              ? SizedBox(
+                  height: 30.h,
+                  width: 30.w,
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2.5.w,
+                      color: ColorManger.white,
                     ),
                   ),
-                  (route) => route.isFirst,
-                );
-              }
-            }
-          } catch (error) {
-            if (mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('An error occurred. Please try again.'),
+                )
+              : Text(
+                  state is CheckAddressAvailableSuccess
+                      ? state.data.storeAddressAvailable == true &&
+                              state.data.isAddressAvailable == true
+                          ? "Pick Location"
+                          : state.data.isAddressAvailable == false
+                              ? "Address not found in this area"
+                              : "Service not available in this area"
+                      : "Enter Complete address",
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontSize: 16.sp,
+                        color: ColorManger.white,
+                        fontWeight: FontWeightManger.semiBold,
+                      ),
                 ),
-              );
-
-              // Retry the operation if necessary.
-              await Future.delayed(const Duration(seconds: 2));
-              if (mounted) {
-                _pickLocationButton(context, mapCubit).onPressed!();
-              }
-            }
-          }
-        }
+        );
       },
-      widget: Text(
-        buttonText.isEmpty ? "Enter Complete address" : buttonText,
-        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-            fontSize: 16.sp,
-            color: ColorManger.white,
-            fontWeight: FontWeightManger.semiBold),
-      ),
     );
   }
-
-
 
   InkWell _togelMapType() {
     return InkWell(
@@ -202,22 +229,19 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  InkWell _currentLocationButton(MapCubit mapCuibt, BuildContext context,
-      StoreAddressCuibt storeAddressCuibt) {
+  InkWell _currentLocationButton(
+    MapCubit mapCuibt,
+    BuildContext context,
+  ) {
     return InkWell(
       onTap: () {
-        mapCuibt.getCurrentLocation(context);
-        for (var store in storeAddressCuibt.addressDataList) {
-          LatLng position = LatLng(
-              store.location!.coordinates![1], store.location!.coordinates![0]);
-
-          mapCuibt.calculateDistance(mapCuibt.targetPosition, position);
-        }
-        if (mapCuibt.nearestDistance <= 5000) {
-          buttonText = "Pick Location";
-        } else {
-          buttonText = "Service not available in this area";
-        }
+        mapCuibt.getCurrentLocation(context).then(
+          (value) {
+            context
+                .read<MapCubit>()
+                .checkAddressAvailableFetch(mapCuibt.targetPosition);
+          },
+        );
       },
       child: CircleAvatar(
         maxRadius: 22.r,
@@ -230,38 +254,22 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  CustomGoogleMapMarkerBuilder _mapWidget(BuildContext context,
-      MapCubit mapCuibt, StoreAddressCuibt storeAddressCuibt) {
+  CustomGoogleMapMarkerBuilder _mapWidget(
+      BuildContext context, MapCubit mapCuibt) {
     return CustomGoogleMapMarkerBuilder(
-      customMarkers: context.read<MapCubit>().markers,
+      customMarkers: mapCuibt.markers,
       builder: (p0, Set<Marker>? markers) {
         return GoogleMap(
           zoomControlsEnabled: false,
-          initialCameraPosition: CameraPosition(
-              target: context.read<MapCubit>().targetPosition, zoom: 16),
-          onMapCreated: (controller) =>
-              context.read<MapCubit>().setMapController(controller),
+          initialCameraPosition:
+              CameraPosition(target: mapCuibt.targetPosition, zoom: 16),
+          onMapCreated: (controller) => mapCuibt.setMapController(controller),
           markers: markers ?? {},
           mapType: mapType,
           onTap: (argument) async {
-            mapCuibt.nearestDistance = double.infinity;
+            mapCuibt.checkAddressAvailableFetch(argument);
 
             mapCuibt.addCurrentLocationMarkerToMap(argument);
-
-            for (var store in storeAddressCuibt.addressDataList) {
-              LatLng position = LatLng(store.location!.coordinates![1],
-                  store.location!.coordinates![0]);
-
-              mapCuibt.calculateDistance(argument, position);
-            }
-
-            setState(() {
-              if (mapCuibt.nearestDistance <= 5000) {
-                buttonText = "Pick Location";
-              } else {
-                buttonText = "Service not available in this area";
-              }
-            });
           },
         );
       },
@@ -322,6 +330,9 @@ class _MapScreenState extends State<MapScreen> {
                 context
                     .read<MapCubit>()
                     .moveToLocationInTextFormField(predictions[index]);
+
+                
+                    // .(predictions[index]);
               },
             );
           },

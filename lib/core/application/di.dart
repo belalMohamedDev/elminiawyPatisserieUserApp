@@ -200,6 +200,7 @@ Future<void> _initAddress() async {
         () => UserAddressRepositoryImplement(instance(), instance()))
     ..registerFactory<MapCubit>(() => MapCubit(
           instance(),
+          instance(),
         ))
     ..registerFactory<UserAddressCubit>(() => UserAddressCubit(
           instance(),

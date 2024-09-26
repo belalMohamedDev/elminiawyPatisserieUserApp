@@ -483,22 +483,24 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                 SizedBox(height: 10.h),
                 CustomButton(
                   onPressed: () async {
-                    final mapCubit = context.read<MapCubit>();
-                    mapCubit.getCurrentLocation(context);
-                    final address = await mapCubit.getAddressFromLatLng(
-                        mapCubit.targetPosition.latitude,
-                        mapCubit.targetPosition.longitude);
+                 // TODO: Optimize the maxDistance calculation based on dynamic input
 
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                AddNewAddressScreen(
-                                  latLng: mapCubit.targetPosition,
-                                  markerData: mapCubit.markers,
-                                  addressAreaInformation: address,
-                                  isPaymentAddress: true,
-                                )));
+                    // final mapCubit = context.read<MapCubit>();
+                    // mapCubit.getCurrentLocation(context);
+                    // final address = await mapCubit.getAddressFromLatLng(
+                    //     mapCubit.targetPosition.latitude,
+                    //     mapCubit.targetPosition.longitude);
+
+                    // Navigator.pushReplacement(
+                    //     context,
+                    //     MaterialPageRoute<void>(
+                    //         builder: (BuildContext context) =>
+                    //             AddNewAddressScreen(
+                    //               latLng: mapCubit.targetPosition,
+                    //               markerData: mapCubit.markers,
+                    //               addressAreaInformation: address,
+                    //               isPaymentAddress: true,
+                    //             )));
                   },
                   color: ColorManger.brownLight,
                   radius: 8.r,

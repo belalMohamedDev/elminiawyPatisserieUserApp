@@ -7,10 +7,12 @@ class LoadingShimmer extends StatelessWidget {
     this.height,
     this.width,
     this.borderRadius,
+    this.widget,
   });
   final double? height;
   final double? width;
   final double? borderRadius;
+  final Widget? widget;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class LoadingShimmer extends StatelessWidget {
             Radius.circular(borderRadius ?? 14),
           ),
         ),
+        child: widget,
       ),
     );
   }

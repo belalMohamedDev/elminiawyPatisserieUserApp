@@ -25,6 +25,11 @@ mixin _$MapState {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +40,11 @@ mixin _$MapState {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +55,11 @@ mixin _$MapState {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +70,12 @@ mixin _$MapState {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +85,12 @@ mixin _$MapState {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +100,12 @@ mixin _$MapState {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +173,11 @@ class _$InitialImpl implements Initial {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
   }) {
     return initial();
   }
@@ -153,6 +191,11 @@ class _$InitialImpl implements Initial {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
   }) {
     return initial?.call();
   }
@@ -166,6 +209,11 @@ class _$InitialImpl implements Initial {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -182,6 +230,12 @@ class _$InitialImpl implements Initial {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
   }) {
     return initial(this);
   }
@@ -194,6 +248,12 @@ class _$InitialImpl implements Initial {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
   }) {
     return initial?.call(this);
   }
@@ -206,6 +266,12 @@ class _$InitialImpl implements Initial {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -264,6 +330,11 @@ class _$LoadingImpl implements Loading {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
   }) {
     return loading();
   }
@@ -277,6 +348,11 @@ class _$LoadingImpl implements Loading {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
   }) {
     return loading?.call();
   }
@@ -290,6 +366,11 @@ class _$LoadingImpl implements Loading {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -306,6 +387,12 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
   }) {
     return loading(this);
   }
@@ -318,6 +405,12 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
   }) {
     return loading?.call(this);
   }
@@ -330,6 +423,12 @@ class _$LoadingImpl implements Loading {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -430,6 +529,11 @@ class _$LoadedImpl implements Loaded {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
   }) {
     return loaded(currentPosition, markers);
   }
@@ -443,6 +547,11 @@ class _$LoadedImpl implements Loaded {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
   }) {
     return loaded?.call(currentPosition, markers);
   }
@@ -456,6 +565,11 @@ class _$LoadedImpl implements Loaded {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -472,6 +586,12 @@ class _$LoadedImpl implements Loaded {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
   }) {
     return loaded(this);
   }
@@ -484,6 +604,12 @@ class _$LoadedImpl implements Loaded {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
   }) {
     return loaded?.call(this);
   }
@@ -496,6 +622,12 @@ class _$LoadedImpl implements Loaded {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -596,6 +728,11 @@ class _$SearchResultsImpl implements SearchResults {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
   }) {
     return searchResults(predictions);
   }
@@ -609,6 +746,11 @@ class _$SearchResultsImpl implements SearchResults {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
   }) {
     return searchResults?.call(predictions);
   }
@@ -622,6 +764,11 @@ class _$SearchResultsImpl implements SearchResults {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (searchResults != null) {
@@ -638,6 +785,12 @@ class _$SearchResultsImpl implements SearchResults {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
   }) {
     return searchResults(this);
   }
@@ -650,6 +803,12 @@ class _$SearchResultsImpl implements SearchResults {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
   }) {
     return searchResults?.call(this);
   }
@@ -662,6 +821,12 @@ class _$SearchResultsImpl implements SearchResults {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (searchResults != null) {
@@ -752,6 +917,11 @@ class _$ErrorImpl implements Error {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
   }) {
     return error(message);
   }
@@ -765,6 +935,11 @@ class _$ErrorImpl implements Error {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
   }) {
     return error?.call(message);
   }
@@ -778,6 +953,11 @@ class _$ErrorImpl implements Error {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -794,6 +974,12 @@ class _$ErrorImpl implements Error {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
   }) {
     return error(this);
   }
@@ -806,6 +992,12 @@ class _$ErrorImpl implements Error {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
   }) {
     return error?.call(this);
   }
@@ -818,6 +1010,12 @@ class _$ErrorImpl implements Error {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -834,4 +1032,567 @@ abstract class Error implements MapState {
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckAddressAvailableLoadingImplCopyWith<$Res> {
+  factory _$$CheckAddressAvailableLoadingImplCopyWith(
+          _$CheckAddressAvailableLoadingImpl value,
+          $Res Function(_$CheckAddressAvailableLoadingImpl) then) =
+      __$$CheckAddressAvailableLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckAddressAvailableLoadingImplCopyWithImpl<$Res>
+    extends _$MapStateCopyWithImpl<$Res, _$CheckAddressAvailableLoadingImpl>
+    implements _$$CheckAddressAvailableLoadingImplCopyWith<$Res> {
+  __$$CheckAddressAvailableLoadingImplCopyWithImpl(
+      _$CheckAddressAvailableLoadingImpl _value,
+      $Res Function(_$CheckAddressAvailableLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckAddressAvailableLoadingImpl
+    implements CheckAddressAvailableLoading {
+  const _$CheckAddressAvailableLoadingImpl();
+
+  @override
+  String toString() {
+    return 'MapState.checkAddressAvailableLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckAddressAvailableLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(
+            LatLng currentPosition, Map<String, Marker> markers)
+        loaded,
+    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (checkAddressAvailableLoading != null) {
+      return checkAddressAvailableLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(SearchResults value) searchResults,
+    required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(SearchResults value)? searchResults,
+    TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(SearchResults value)? searchResults,
+    TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (checkAddressAvailableLoading != null) {
+      return checkAddressAvailableLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckAddressAvailableLoading implements MapState {
+  const factory CheckAddressAvailableLoading() =
+      _$CheckAddressAvailableLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$CheckAddressAvailableErrorImplCopyWith<$Res> {
+  factory _$$CheckAddressAvailableErrorImplCopyWith(
+          _$CheckAddressAvailableErrorImpl value,
+          $Res Function(_$CheckAddressAvailableErrorImpl) then) =
+      __$$CheckAddressAvailableErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int statesCode, String errorMessage});
+}
+
+/// @nodoc
+class __$$CheckAddressAvailableErrorImplCopyWithImpl<$Res>
+    extends _$MapStateCopyWithImpl<$Res, _$CheckAddressAvailableErrorImpl>
+    implements _$$CheckAddressAvailableErrorImplCopyWith<$Res> {
+  __$$CheckAddressAvailableErrorImplCopyWithImpl(
+      _$CheckAddressAvailableErrorImpl _value,
+      $Res Function(_$CheckAddressAvailableErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? statesCode = null,
+    Object? errorMessage = null,
+  }) {
+    return _then(_$CheckAddressAvailableErrorImpl(
+      statesCode: null == statesCode
+          ? _value.statesCode
+          : statesCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
+  const _$CheckAddressAvailableErrorImpl(
+      {required this.statesCode, required this.errorMessage});
+
+  @override
+  final int statesCode;
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'MapState.checkAddressAvailableError(statesCode: $statesCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckAddressAvailableErrorImpl &&
+            (identical(other.statesCode, statesCode) ||
+                other.statesCode == statesCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckAddressAvailableErrorImplCopyWith<_$CheckAddressAvailableErrorImpl>
+      get copyWith => __$$CheckAddressAvailableErrorImplCopyWithImpl<
+          _$CheckAddressAvailableErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(
+            LatLng currentPosition, Map<String, Marker> markers)
+        loaded,
+    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableError(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableError?.call(statesCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (checkAddressAvailableError != null) {
+      return checkAddressAvailableError(statesCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(SearchResults value) searchResults,
+    required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(SearchResults value)? searchResults,
+    TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(SearchResults value)? searchResults,
+    TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (checkAddressAvailableError != null) {
+      return checkAddressAvailableError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckAddressAvailableError implements MapState {
+  const factory CheckAddressAvailableError(
+      {required final int statesCode,
+      required final String errorMessage}) = _$CheckAddressAvailableErrorImpl;
+
+  int get statesCode;
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$CheckAddressAvailableErrorImplCopyWith<_$CheckAddressAvailableErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckAddressAvailableSuccessImplCopyWith<$Res> {
+  factory _$$CheckAddressAvailableSuccessImplCopyWith(
+          _$CheckAddressAvailableSuccessImpl value,
+          $Res Function(_$CheckAddressAvailableSuccessImpl) then) =
+      __$$CheckAddressAvailableSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CheckLocationAvailableResponse data});
+}
+
+/// @nodoc
+class __$$CheckAddressAvailableSuccessImplCopyWithImpl<$Res>
+    extends _$MapStateCopyWithImpl<$Res, _$CheckAddressAvailableSuccessImpl>
+    implements _$$CheckAddressAvailableSuccessImplCopyWith<$Res> {
+  __$$CheckAddressAvailableSuccessImplCopyWithImpl(
+      _$CheckAddressAvailableSuccessImpl _value,
+      $Res Function(_$CheckAddressAvailableSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$CheckAddressAvailableSuccessImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CheckLocationAvailableResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckAddressAvailableSuccessImpl
+    implements CheckAddressAvailableSuccess {
+  const _$CheckAddressAvailableSuccessImpl(this.data);
+
+  @override
+  final CheckLocationAvailableResponse data;
+
+  @override
+  String toString() {
+    return 'MapState.checkAddressAvailableSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckAddressAvailableSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckAddressAvailableSuccessImplCopyWith<
+          _$CheckAddressAvailableSuccessImpl>
+      get copyWith => __$$CheckAddressAvailableSuccessImplCopyWithImpl<
+          _$CheckAddressAvailableSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(
+            LatLng currentPosition, Map<String, Marker> markers)
+        loaded,
+    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(String message) error,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(String message)? error,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(String message)? error,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (checkAddressAvailableSuccess != null) {
+      return checkAddressAvailableSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(SearchResults value) searchResults,
+    required TResult Function(Error value) error,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(SearchResults value)? searchResults,
+    TResult? Function(Error value)? error,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+  }) {
+    return checkAddressAvailableSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(SearchResults value)? searchResults,
+    TResult Function(Error value)? error,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (checkAddressAvailableSuccess != null) {
+      return checkAddressAvailableSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckAddressAvailableSuccess implements MapState {
+  const factory CheckAddressAvailableSuccess(
+          final CheckLocationAvailableResponse data) =
+      _$CheckAddressAvailableSuccessImpl;
+
+  CheckLocationAvailableResponse get data;
+  @JsonKey(ignore: true)
+  _$$CheckAddressAvailableSuccessImplCopyWith<
+          _$CheckAddressAvailableSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
