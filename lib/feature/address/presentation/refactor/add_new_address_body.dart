@@ -7,6 +7,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../../../core/application/di.dart';
 import '../../../../core/common/sharedWidget/custom_button.dart';
 import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/routing/routes.dart';
@@ -15,42 +16,20 @@ import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/style/fonts/strings_manger.dart';
 import '../../../../core/utils/app_regex.dart';
 import '../../data/model/response/get_address_response.dart';
+import '../../logic/mapCubit/map_cubit.dart';
 import '../../logic/userAddressCubit/user_address_cubit.dart';
 import '../screen/map_screen.dart';
 import '../widget/region_area_widget.dart';
 
-class AddNewAddressBody extends StatefulWidget {
-  final LatLng? latLng;
-  final List<MarkerData>? markerData;
-  final String? addressAreaInformation;
+class AddNewAddressBody extends StatelessWidget {
   final GetAddressResponseData? getAddressResponseData;
   final bool? isPaymentAddress;
 
   const AddNewAddressBody({
     super.key,
-    this.latLng,
-    this.markerData,
-    this.addressAreaInformation,
     this.getAddressResponseData,
     this.isPaymentAddress,
   });
-
-  @override
-  State<AddNewAddressBody> createState() => _AddNewAddressBodyState();
-}
-
-class _AddNewAddressBodyState extends State<AddNewAddressBody> {
-  late LatLng? latLng;
-  late List<MarkerData>? markerData;
-  late String? addressAreaInformation;
-
-  @override
-  void initState() {
-    super.initState();
-    latLng = widget.latLng;
-    markerData = widget.markerData;
-    addressAreaInformation = widget.addressAreaInformation;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,11 +39,11 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _mapWidget(context, widget.latLng!, widget.markerData!),
+            _mapWidget(context),
             SizedBox(
               height: 10.h,
             ),
-            _cardArea(context, widget.addressAreaInformation!),
+            _cardArea(context),
             SizedBox(
               height: 15.h,
             ),
@@ -97,7 +76,12 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
               if (context.mounted) {
                 userAddressCubit.clearAllControllers();
 
-                if (widget.isPaymentAddress == true) {
+                context.read<MapCubit>().checkLocationAvailableResponse = null;
+
+                context.read<MapCubit>().textEditingSearchText =
+                    'Find Your Location';
+
+                if (isPaymentAddress == true) {
                   final index = userAddressCubit.addressDataList
                       .indexWhere((element) => element.sId == data.data!.sId);
 
@@ -128,6 +112,7 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
         return BlocBuilder<UserAddressCubit, UserAddressState>(
           builder: (context, state) {
             final userAddressCubit = context.read<UserAddressCubit>();
+            final mapCuibt = context.read<MapCubit>();
 
             return Form(
               key: userAddressCubit.formKey,
@@ -283,29 +268,23 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
                   CustomButton(
                       onPressed: () async {
                         if (userAddressCubit.formKey.currentState!.validate()) {
-                          if (widget.getAddressResponseData != null) {
+                          if (getAddressResponseData != null) {
                             await userAddressCubit.updateAddress(
-                                widget.getAddressResponseData!.sId!,
-                                state is UpdateAddressRegion
-                                    ? state.message
-                                    : addressAreaInformation!,
-                                state is UpdateAddressRegion
-                                    ? '${state.latLng.latitude}'
-                                    : '${latLng!.latitude}',
-                                state is UpdateAddressRegion
-                                    ? '${state.latLng.longitude}'
-                                    : '${latLng!.longitude}');
+                                id: getAddressResponseData!.sId!,
+                                latitude:
+                                    mapCuibt.targetPosition.latitude.toString(),
+                                longitude: mapCuibt.targetPosition.longitude
+                                    .toString(),
+                                region: mapCuibt
+                                    .checkLocationAvailableResponse!.address!);
                           } else {
                             await userAddressCubit.addNewAddress(
-                                state is UpdateAddressRegion
-                                    ? state.message
-                                    : addressAreaInformation!,
-                                state is UpdateAddressRegion
-                                    ? '${state.latLng.latitude}'
-                                    : '${latLng!.latitude}',
-                                state is UpdateAddressRegion
-                                    ? '${state.latLng.longitude}'
-                                    : '${latLng!.longitude}');
+                                latitude:
+                                    mapCuibt.targetPosition.latitude.toString(),
+                                longitude: mapCuibt.targetPosition.longitude
+                                    .toString(),
+                                region: mapCuibt
+                                    .checkLocationAvailableResponse!.address!);
                           }
                         }
                       },
@@ -422,9 +401,22 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
     );
   }
 
-  BlocBuilder _cardArea(BuildContext context, String addressAreaInformation) {
-    return BlocBuilder<UserAddressCubit, UserAddressState>(
+  BlocBuilder _cardArea(BuildContext context) {
+    return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
+        final mapCuibt = context.read<MapCubit>();
+        String regionAddress = '';
+
+        if (mapCuibt.checkLocationAvailableResponse != null &&
+            mapCuibt.checkLocationAvailableResponse!.address != null) {
+          regionAddress = mapCuibt.checkLocationAvailableResponse!.address!;
+        } else if (getAddressResponseData != null &&
+            getAddressResponseData!.region != null) {
+          regionAddress = getAddressResponseData!.region!;
+        } else {
+          regionAddress = 'Unknown Region';
+        }
+
         return Card(
           elevation: 1.8,
           shadowColor: ColorManger.brownLight,
@@ -466,11 +458,13 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
                         ],
                       ),
                     ),
+                    //   mapCubit.checkLocationAvailableResponse!.address =
+
                     Padding(
                       padding: EdgeInsets.only(left: 20.w, top: 5.h),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(maxWidth: 250.w),
-                        child: Text(addressAreaInformation,
+                        child: Text(regionAddress,
                             maxLines: 1,
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.ellipsis,
@@ -490,30 +484,17 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
                   padding: EdgeInsets.only(right: 20.w, top: 2.h),
                   child: InkWell(
                     onTap: () async {
-                      var result = await Navigator.push(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MapScreen(
-                            isUpdateMap: true,
+                          builder: (context) => BlocProvider.value(
+                            value: instance<MapCubit>(),
+                            child: const MapScreen(
+                              isUpdateMap: true,
+                            ),
                           ),
                         ),
                       );
-
-                      if (result != null) {
-                        // Process the returned data
-                        if (!context.mounted) return;
-
-                        latLng = result['latLng'];
-                        markerData = result['markerData'];
-                        addressAreaInformation =
-                            result['addressAreaInformation'];
-                        context
-                            .read<UserAddressCubit>()
-                            .updateAddressAreaInformation(
-                                addressAreaInformation, latLng!, markerData!);
-
-                        // Do something with the data
-                      }
                     },
                     child: Text("Change",
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -530,22 +511,25 @@ class _AddNewAddressBodyState extends State<AddNewAddressBody> {
     );
   }
 
-  BlocBuilder _mapWidget(
-      BuildContext context, LatLng latLng, List<MarkerData> markerData) {
-    return BlocBuilder<UserAddressCubit, UserAddressState>(
+  BlocBuilder _mapWidget(BuildContext context) {
+    return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
+        final mapCuibt = context.read<MapCubit>();
+
         return ClipRRect(
             borderRadius: BorderRadius.circular(8.r),
             child: SizedBox(
               height: 100.h,
               width: double.infinity,
               child: CustomGoogleMapMarkerBuilder(
-                customMarkers: markerData,
+                customMarkers: mapCuibt.markers,
                 builder: (p0, Set<Marker>? markers) {
                   return GoogleMap(
+                    onMapCreated: (controller) =>
+                        mapCuibt.setNewAddressMapController(controller),
                     zoomControlsEnabled: false,
-                    initialCameraPosition:
-                        CameraPosition(target: latLng, zoom: 13),
+                    initialCameraPosition: CameraPosition(
+                        target: mapCuibt.targetPosition, zoom: 12),
                     markers: markers ?? {},
                   );
                 },

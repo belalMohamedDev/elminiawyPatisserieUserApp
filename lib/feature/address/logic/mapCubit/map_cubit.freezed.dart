@@ -25,6 +25,7 @@ mixin _$MapState {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -40,6 +41,7 @@ mixin _$MapState {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -55,6 +57,7 @@ mixin _$MapState {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -70,6 +73,7 @@ mixin _$MapState {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -85,6 +89,7 @@ mixin _$MapState {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -100,6 +105,7 @@ mixin _$MapState {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -173,6 +179,7 @@ class _$InitialImpl implements Initial {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -191,6 +198,7 @@ class _$InitialImpl implements Initial {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -209,6 +217,7 @@ class _$InitialImpl implements Initial {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -230,6 +239,7 @@ class _$InitialImpl implements Initial {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -248,6 +258,7 @@ class _$InitialImpl implements Initial {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -266,6 +277,7 @@ class _$InitialImpl implements Initial {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -330,6 +342,7 @@ class _$LoadingImpl implements Loading {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -348,6 +361,7 @@ class _$LoadingImpl implements Loading {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -366,6 +380,7 @@ class _$LoadingImpl implements Loading {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -387,6 +402,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -405,6 +421,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -423,6 +440,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -529,6 +547,7 @@ class _$LoadedImpl implements Loaded {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -547,6 +566,7 @@ class _$LoadedImpl implements Loaded {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -565,6 +585,7 @@ class _$LoadedImpl implements Loaded {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -586,6 +607,7 @@ class _$LoadedImpl implements Loaded {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -604,6 +626,7 @@ class _$LoadedImpl implements Loaded {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -622,6 +645,7 @@ class _$LoadedImpl implements Loaded {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -728,6 +752,7 @@ class _$SearchResultsImpl implements SearchResults {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -746,6 +771,7 @@ class _$SearchResultsImpl implements SearchResults {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -764,6 +790,7 @@ class _$SearchResultsImpl implements SearchResults {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -785,6 +812,7 @@ class _$SearchResultsImpl implements SearchResults {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -803,6 +831,7 @@ class _$SearchResultsImpl implements SearchResults {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -821,6 +850,7 @@ class _$SearchResultsImpl implements SearchResults {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -917,6 +947,7 @@ class _$ErrorImpl implements Error {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -935,6 +966,7 @@ class _$ErrorImpl implements Error {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -953,6 +985,7 @@ class _$ErrorImpl implements Error {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -974,6 +1007,7 @@ class _$ErrorImpl implements Error {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -992,6 +1026,7 @@ class _$ErrorImpl implements Error {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -1010,6 +1045,7 @@ class _$ErrorImpl implements Error {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -1031,6 +1067,201 @@ abstract class Error implements MapState {
   String get message;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ToggleMapStateImplCopyWith<$Res> {
+  factory _$$ToggleMapStateImplCopyWith(_$ToggleMapStateImpl value,
+          $Res Function(_$ToggleMapStateImpl) then) =
+      __$$ToggleMapStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MapType mapType});
+}
+
+/// @nodoc
+class __$$ToggleMapStateImplCopyWithImpl<$Res>
+    extends _$MapStateCopyWithImpl<$Res, _$ToggleMapStateImpl>
+    implements _$$ToggleMapStateImplCopyWith<$Res> {
+  __$$ToggleMapStateImplCopyWithImpl(
+      _$ToggleMapStateImpl _value, $Res Function(_$ToggleMapStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? mapType = null,
+  }) {
+    return _then(_$ToggleMapStateImpl(
+      null == mapType
+          ? _value.mapType
+          : mapType // ignore: cast_nullable_to_non_nullable
+              as MapType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ToggleMapStateImpl implements ToggleMapState {
+  const _$ToggleMapStateImpl(this.mapType);
+
+  @override
+  final MapType mapType;
+
+  @override
+  String toString() {
+    return 'MapState.toggleMapState(mapType: $mapType)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ToggleMapStateImpl &&
+            (identical(other.mapType, mapType) || other.mapType == mapType));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, mapType);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ToggleMapStateImplCopyWith<_$ToggleMapStateImpl> get copyWith =>
+      __$$ToggleMapStateImplCopyWithImpl<_$ToggleMapStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(
+            LatLng currentPosition, Map<String, Marker> markers)
+        loaded,
+    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
+    required TResult Function() checkAddressAvailableLoading,
+    required TResult Function(int statesCode, String errorMessage)
+        checkAddressAvailableError,
+    required TResult Function(CheckLocationAvailableResponse data)
+        checkAddressAvailableSuccess,
+  }) {
+    return toggleMapState(mapType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
+    TResult? Function()? checkAddressAvailableLoading,
+    TResult? Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult? Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+  }) {
+    return toggleMapState?.call(mapType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
+        loaded,
+    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
+    TResult Function()? checkAddressAvailableLoading,
+    TResult Function(int statesCode, String errorMessage)?
+        checkAddressAvailableError,
+    TResult Function(CheckLocationAvailableResponse data)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (toggleMapState != null) {
+      return toggleMapState(mapType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(SearchResults value) searchResults,
+    required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
+    required TResult Function(CheckAddressAvailableLoading value)
+        checkAddressAvailableLoading,
+    required TResult Function(CheckAddressAvailableError value)
+        checkAddressAvailableError,
+    required TResult Function(CheckAddressAvailableSuccess value)
+        checkAddressAvailableSuccess,
+  }) {
+    return toggleMapState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(SearchResults value)? searchResults,
+    TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
+    TResult? Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult? Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult? Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+  }) {
+    return toggleMapState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(SearchResults value)? searchResults,
+    TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
+    TResult Function(CheckAddressAvailableLoading value)?
+        checkAddressAvailableLoading,
+    TResult Function(CheckAddressAvailableError value)?
+        checkAddressAvailableError,
+    TResult Function(CheckAddressAvailableSuccess value)?
+        checkAddressAvailableSuccess,
+    required TResult orElse(),
+  }) {
+    if (toggleMapState != null) {
+      return toggleMapState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ToggleMapState implements MapState {
+  const factory ToggleMapState(final MapType mapType) = _$ToggleMapStateImpl;
+
+  MapType get mapType;
+  @JsonKey(ignore: true)
+  _$$ToggleMapStateImplCopyWith<_$ToggleMapStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1083,6 +1314,7 @@ class _$CheckAddressAvailableLoadingImpl
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -1101,6 +1333,7 @@ class _$CheckAddressAvailableLoadingImpl
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -1119,6 +1352,7 @@ class _$CheckAddressAvailableLoadingImpl
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -1140,6 +1374,7 @@ class _$CheckAddressAvailableLoadingImpl
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -1158,6 +1393,7 @@ class _$CheckAddressAvailableLoadingImpl
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -1176,6 +1412,7 @@ class _$CheckAddressAvailableLoadingImpl
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -1281,6 +1518,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -1299,6 +1537,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -1317,6 +1556,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -1338,6 +1578,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -1356,6 +1597,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -1374,6 +1616,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?
@@ -1477,6 +1720,7 @@ class _$CheckAddressAvailableSuccessImpl
         loaded,
     required TResult Function(List<Prediction> predictions) searchResults,
     required TResult Function(String message) error,
+    required TResult Function(MapType mapType) toggleMapState,
     required TResult Function() checkAddressAvailableLoading,
     required TResult Function(int statesCode, String errorMessage)
         checkAddressAvailableError,
@@ -1495,6 +1739,7 @@ class _$CheckAddressAvailableSuccessImpl
         loaded,
     TResult? Function(List<Prediction> predictions)? searchResults,
     TResult? Function(String message)? error,
+    TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function()? checkAddressAvailableLoading,
     TResult? Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -1513,6 +1758,7 @@ class _$CheckAddressAvailableSuccessImpl
         loaded,
     TResult Function(List<Prediction> predictions)? searchResults,
     TResult Function(String message)? error,
+    TResult Function(MapType mapType)? toggleMapState,
     TResult Function()? checkAddressAvailableLoading,
     TResult Function(int statesCode, String errorMessage)?
         checkAddressAvailableError,
@@ -1534,6 +1780,7 @@ class _$CheckAddressAvailableSuccessImpl
     required TResult Function(Loaded value) loaded,
     required TResult Function(SearchResults value) searchResults,
     required TResult Function(Error value) error,
+    required TResult Function(ToggleMapState value) toggleMapState,
     required TResult Function(CheckAddressAvailableLoading value)
         checkAddressAvailableLoading,
     required TResult Function(CheckAddressAvailableError value)
@@ -1552,6 +1799,7 @@ class _$CheckAddressAvailableSuccessImpl
     TResult? Function(Loaded value)? loaded,
     TResult? Function(SearchResults value)? searchResults,
     TResult? Function(Error value)? error,
+    TResult? Function(ToggleMapState value)? toggleMapState,
     TResult? Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult? Function(CheckAddressAvailableError value)?
@@ -1570,6 +1818,7 @@ class _$CheckAddressAvailableSuccessImpl
     TResult Function(Loaded value)? loaded,
     TResult Function(SearchResults value)? searchResults,
     TResult Function(Error value)? error,
+    TResult Function(ToggleMapState value)? toggleMapState,
     TResult Function(CheckAddressAvailableLoading value)?
         checkAddressAvailableLoading,
     TResult Function(CheckAddressAvailableError value)?

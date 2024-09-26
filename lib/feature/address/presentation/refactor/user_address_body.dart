@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:iconly/iconly.dart';
 
 import '../../../../core/application/di.dart';
@@ -41,7 +40,28 @@ class UserAddressBody extends StatelessWidget {
           return const EmptyAddressScreen();
         }
 
-        return _userAddressSuccessState(context);
+        return Stack(
+          children: [
+            _userAddressSuccessState(context),
+            state is RemoveAddressLoading
+                ? Center(
+                    child: Container(
+                      height: 60.h,
+                      width: 60.w,
+                      decoration: BoxDecoration(
+                          color: ColorManger.brun,
+                          borderRadius: BorderRadius.circular(8.r)),
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2.w,
+                          color: ColorManger.white,
+                        ),
+                      ),
+                    ),
+                  )
+                : const SizedBox()
+          ],
+        );
       },
     );
   }
@@ -73,25 +93,19 @@ class UserAddressBody extends StatelessWidget {
                       ),
                       SlidableAction(
                         onPressed: (context) {
-                          LatLng latLng = LatLng(
-                              userAddress.addressDataList[index].location!
-                                  .coordinates![1],
-                              userAddress.addressDataList[index].location!
-                                  .coordinates![0]);
-
-                          final mapCubit = context.read<MapCubit>();
-                          mapCubit.addCurrentLocationMarkerToMap(latLng);
-
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => BlocProvider.value(
-                                value: instance<UserAddressCubit>(),
+                              builder: (context) => MultiBlocProvider(
+                                providers: [
+                                  BlocProvider.value(
+                                    value: instance<UserAddressCubit>(),
+                                  ),
+                                  BlocProvider.value(
+                                    value: instance<MapCubit>(),
+                                  ),
+                                ],
                                 child: AddNewAddressScreen(
-                                  latLng: latLng,
-                                  markerData: mapCubit.markers,
-                                  addressAreaInformation: userAddress
-                                      .addressDataList[index].region!,
                                   getAddressResponseData:
                                       userAddress.addressDataList[index],
                                 ),

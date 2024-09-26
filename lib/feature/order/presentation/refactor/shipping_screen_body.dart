@@ -14,7 +14,6 @@ import '../../../../core/style/fonts/font_manger.dart';
 import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../../address/logic/mapCubit/map_cubit.dart';
 import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
-import '../../../address/presentation/screen/add_new_address_screen.dart';
 import '../widget/check_out_processing.dart';
 
 class ShippingAddressBody extends StatefulWidget {
@@ -469,7 +468,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                             .coordinates!
                             .first);
 
-                    await mapCubit.moveToLocation(latLng);
+                    await mapCubit.moveToLocation(position: latLng);
 
                     Navigator.pop(context);
                   },
@@ -483,7 +482,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                 SizedBox(height: 10.h),
                 CustomButton(
                   onPressed: () async {
-                 // TODO: Optimize the maxDistance calculation based on dynamic input
+                    // TODO: Optimize the maxDistance calculation based on dynamic input
 
                     // final mapCubit = context.read<MapCubit>();
                     // mapCubit.getCurrentLocation(context);

@@ -16,4 +16,6 @@ class Routes {
   static const String changeMyEmail = "changeMyEmail";
   static const String changeMyPassword = "changeMyPassword";
   static const String notification = "notification";
+  static const String map = "Map";
+  static const String addNewAddress = "AddNewAddress";
 }

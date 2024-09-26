@@ -122,7 +122,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   }
 
   Future<void> addNewAddress(
-      String region, String latitude, String longitude) async {
+      {required String region, required String latitude, required String longitude}) async {
     emit(const UserAddressState.createNewAddressLoading());
 
     final createAddressRequestBody = CreateAddressRequestBody(
@@ -190,7 +190,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   }
 
   Future<void> updateAddress(
-      String id, String region, String latitude, String longitude) async {
+      {required String id, required String region, required String latitude, required String longitude}) async {
     emit(const UserAddressState.updateAddressLoading());
     final createAddressRequestBody = CreateAddressRequestBody(
       additionalDirections: additionalDirectionsContoller.text.trim().isNotEmpty

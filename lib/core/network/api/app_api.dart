@@ -13,7 +13,6 @@ import '../../../feature/accountInfo/data/model/response/delete_account.dart';
 import '../../../feature/accountInfo/data/model/response/update_account_information.dart';
 import '../../../feature/address/data/model/request/check_address_available.dart';
 import '../../../feature/address/data/model/response/check_address_available.dart';
-import '../../../feature/address/data/model/response/get_store_address_response.dart';
 import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
 import '../../../feature/cart/data/model/response/get_cart.dart';
 import '../../../feature/changeEmailAddress/data/model/request/change_email_request.dart';
@@ -148,8 +147,6 @@ abstract class AppServiceClient {
     @Field("coupon") String coupon,
   );
 
-  @GET(ApiConstants.storeAddress)
-  Future<GetStoreAddressResponse> getAllStoreBranch();
 
   @PUT(ApiConstants.updateMyData)
   Future<UpdateAccountInformationResponse> updateMyData(

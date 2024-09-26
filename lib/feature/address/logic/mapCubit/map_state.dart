@@ -13,6 +13,8 @@ class MapState with _$MapState {
 
   const factory MapState.error(String message) = Error;
 
+  const factory MapState.toggleMapState(final MapType mapType) = ToggleMapState;
+
 
 
   

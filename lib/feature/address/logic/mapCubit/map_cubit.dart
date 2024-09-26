@@ -23,10 +23,29 @@ class MapCubit extends Cubit<MapState> {
   final GoogleMapsPlaces
       places; // Instance of GoogleMapsPlaces for search functionality
   late GoogleMapController mapController; // Controller to manage Google Map
+  late GoogleMapController
+      newAddressMapController; // Controller to manage Google Map
   List<MarkerData> markers = []; // List to hold custom markers
+
+  String textEditingSearchText = 'Find Your Location';
+  final TextEditingController searchConroller = TextEditingController();
 
   // Default starting position on the map
   LatLng targetPosition = const LatLng(30.73148352751841, 31.79803739729101);
+
+  MapType mapType = MapType.normal;
+
+  CheckLocationAvailableResponse? checkLocationAvailableResponse;
+
+  void toggleMapType() {
+    if (mapType == MapType.normal) {
+      mapType = MapType.hybrid;
+    } else {
+      mapType = MapType.normal;
+    }
+
+    emit(MapState.toggleMapState(mapType));
+  }
 
   // Move the map to the location selected from the search results
   Future<void> moveToLocationInTextFormField(Prediction prediction) async {
@@ -47,14 +66,6 @@ class MapCubit extends Cubit<MapState> {
 
         // Add a marker for the new location
         await _addMarkerAndCheckAddress(newPosition);
-
-        emit(MapState.loaded(
-          newPosition,
-          state.maybeWhen(
-            loaded: (_, markers) => markers,
-            orElse: () => {},
-          ),
-        ));
       } else {
         emit(const MapState.error("Error moving to location."));
       }
@@ -79,6 +90,8 @@ class MapCubit extends Cubit<MapState> {
 
     // Check if the address is available
     await checkAddressAvailableFetch(position);
+
+    searchConroller.clear();
   }
 
 // Add a marker for the current location
@@ -115,6 +128,8 @@ class MapCubit extends Cubit<MapState> {
 
     response.when(
       success: (dataResponse) {
+        textEditingSearchText = dataResponse.address!;
+        checkLocationAvailableResponse = dataResponse;
         emit(MapState.checkAddressAvailableSuccess(dataResponse));
       },
       failure: (error) {
@@ -135,20 +150,10 @@ class MapCubit extends Cubit<MapState> {
     mapController = controller;
   }
 
-  // // Get the current location of the user
-  // Future<void> getCurrentLocation(BuildContext context) async {
-  //   emit(const MapState.loading());
-
-  //   Position? position = await _determinePosition(context);
-  //   if (position != null) {
-  //     LatLng currentPosition = LatLng(position.latitude, position.longitude);
-  //     addCurrentLocationMarkerToMap(currentPosition);
-  //     targetPosition = currentPosition;
-  //     await moveToLocation(currentPosition);
-
-  //     emit(MapState.loaded(currentPosition, {}));
-  //   }
-  // }
+  // Set the map controller
+  void setNewAddressMapController(GoogleMapController controller) {
+    newAddressMapController = controller;
+  }
 
   Future<void> getCurrentLocation(BuildContext context) async {
     emit(const MapState.loading());
@@ -165,7 +170,7 @@ class MapCubit extends Cubit<MapState> {
         LatLng currentPosition = LatLng(position.latitude, position.longitude);
         addCurrentLocationMarkerToMap(currentPosition);
         targetPosition = currentPosition;
-        await moveToLocation(currentPosition);
+        await moveToLocation(position: currentPosition);
 
         emit(MapState.loaded(currentPosition, {}));
       }
@@ -189,7 +194,8 @@ class MapCubit extends Cubit<MapState> {
 
     try {
       // Perform the location search
-      PlacesAutocompleteResponse response = await places.autocomplete(query);
+      PlacesAutocompleteResponse response =
+          await places.autocomplete(query.trim());
       if (response.isOkay) {
         emit(MapState.searchResults(response.predictions));
       } else {
@@ -201,20 +207,18 @@ class MapCubit extends Cubit<MapState> {
   }
 
   // Move the map camera to the specified position
-  Future<void> moveToLocation(LatLng position) async {
+  Future<void> moveToLocation(
+      {required LatLng position, GoogleMapController? controller}) async {
     emit(const MapState.loading());
 
+    GoogleMapController googleController = controller ?? mapController;
+
     try {
-      mapController.animateCamera(
+      googleController.animateCamera(
         CameraUpdate.newCameraPosition(
-          CameraPosition(target: position, zoom: 18),
+          CameraPosition(target: position, zoom: controller == null ? 18 : 12),
         ),
       );
-
-      // Add a marker at the new position
-      addCurrentLocationMarkerToMap(position);
-
-      emit(MapState.loaded(position, markers as Map<String, Marker>));
     } catch (e) {
       emit(MapState.error("Error moving to location: $e"));
     }

@@ -1,5 +1,7 @@
 import 'package:elminiawy/feature/accountInfo/cubit/account_information_cubit.dart';
 import 'package:elminiawy/feature/accountInfo/presentation/screen/account_info_screen.dart';
+import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
+import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
 import 'package:elminiawy/feature/changeEmailAddress/cubit/change_email_address_cubit.dart';
 import 'package:elminiawy/feature/changeEmailAddress/presentation/screen/change_email.dart';
 import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.dart';
@@ -11,6 +13,8 @@ import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../feature/address/logic/userAddressCubit/user_address_cubit.dart';
+import '../../feature/address/presentation/screen/add_new_address_screen.dart';
 import '../../feature/bottomNavBar/presentation/nav_bar_view.dart';
 import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
 import '../../feature/forgetPassword/presntation/screen/forget_password_screen.dart';
@@ -77,7 +81,33 @@ class RouteGenerator {
 
       case Routes.address:
         return MaterialPageRoute(
-          builder: (_) => const UserAddressView(),
+          builder: (_) => BlocProvider.value(
+            value: instance<UserAddressCubit>(),
+            child: const UserAddressView(),
+          ),
+        );
+
+      case Routes.addNewAddress:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: instance<UserAddressCubit>(),
+              ),
+              BlocProvider.value(
+                value: instance<MapCubit>(),
+              ),
+            ],
+            child: const AddNewAddressScreen(),
+          ),
+        );
+
+      case Routes.map:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: instance<MapCubit>(),
+            child: const MapScreen(),
+          ),
         );
 
       case Routes.accountInfomation:
@@ -107,13 +137,15 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
+              BlocProvider.value(
+                value: instance<UserAddressCubit>(),
+              ),
               BlocProvider(
                 create: (context) => instance<BannerCubit>(),
               ),
               BlocProvider(
                 create: (context) => instance<CategoryCubit>(),
               ),
-              
             ],
             child: const BottomNavBar(),
           ),

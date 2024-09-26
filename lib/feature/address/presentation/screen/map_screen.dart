@@ -9,9 +9,10 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../../../core/common/toast/show_toast.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
-import '../../logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 
 class MapScreen extends StatefulWidget {
   final bool isUpdateMap;
@@ -22,9 +23,6 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  String buttonText = "";
-  MapType mapType = MapType.normal;
-
   @override
   void initState() {
     final mapCuibt = context.read<MapCubit>();
@@ -36,41 +34,24 @@ class _MapScreenState extends State<MapScreen> {
             .checkAddressAvailableFetch(mapCuibt.targetPosition);
       },
     );
-    // WidgetsBinding.instance.addPostFrameCallback((_) async {
-    //   await Future.wait([
-    //     context.read<StoreAddressCuibt>().getAllStoreAddress().then(
-    //       (value) {
-    //         context.read<MapCubit>().getCurrentLocation(context);
-    //         for (var store
-    //             in context.read<StoreAddressCuibt>().addressDataList) {
-    //           LatLng position = LatLng(store.location!.coordinates![1],
-    //               store.location!.coordinates![0]);
-
-    //           context.read<MapCubit>().calculateDistance(
-    //               context.read<MapCubit>().targetPosition, position);
-    //         }
-    //         if (context.read<MapCubit>().nearestDistance <= 5000) {
-    //           buttonText = "Pick Location";
-    //         } else {
-    //           buttonText = "Service not available in this area";
-    //         }
-    //       },
-    //     ),
-
-    //   ]);
-    // });
   }
 
   @override
   Widget build(BuildContext context) {
-    final mapCuibt = context.read<MapCubit>();
-    final storeAddressCuibt = context.read<StoreAddressCuibt>();
     return Scaffold(
-      body: BlocBuilder<MapCubit, MapState>(
+      body: BlocConsumer<MapCubit, MapState>(
+        listener: (context, state) {
+          state.whenOrNull(
+              checkAddressAvailableError: (statesCode, errorMessage) =>
+                  ShowToast.showToastErrorTop(
+                      errorMessage: errorMessage, context: context),
+              error: (message) {
+                ShowToast.showToastErrorTop(
+                    errorMessage: message, context: context);
+              });
+        },
         builder: (context, state) {
-          if (state is Error) {
-            return Center(child: Text(state.message));
-          }
+          final mapCuibt = context.read<MapCubit>();
 
           return Stack(
             children: [
@@ -79,7 +60,7 @@ class _MapScreenState extends State<MapScreen> {
                 top: 45.h,
                 right: 20.w,
                 left: 20.w,
-                child: _buildSearchBar(context),
+                child: _buildSearchBar(context, mapCuibt),
               ),
               BlocBuilder<MapCubit, MapState>(
                 builder: (context, state) {
@@ -88,7 +69,8 @@ class _MapScreenState extends State<MapScreen> {
                       top: 100.h,
                       right: 10.w,
                       left: 10.w,
-                      child: _buildSearchResults(state.predictions, context),
+                      child: _buildSearchResults(
+                          state.predictions, context, mapCuibt),
                     );
                   }
 
@@ -109,7 +91,7 @@ class _MapScreenState extends State<MapScreen> {
                 bottom: 30.h,
                 left: 20.w,
                 right: 20.w,
-                child: _pickLocationButton(context, mapCuibt),
+                child: _pickLocationButton(context, mapCuibt, state),
               )
             ],
           );
@@ -118,105 +100,73 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  BlocBuilder _pickLocationButton(BuildContext context, MapCubit mapCubit) {
-    return BlocBuilder<MapCubit, MapState>(
-      builder: (context, state) {
-        return CustomButton(
-          onPressed: () async {
-            // if (mapCubit.nearestDistance <= 5000) {
-            //   try {
-            //     // Perform the async operation without using the context directly.
-            //     final value = await mapCubit.getAddressFromLatLng(
-            //       mapCubit.targetPosition.latitude,
-            //       mapCubit.targetPosition.longitude,
-            //     );
-
-            //     if (!mounted) return; // Ensure the widget is still mounted.
-
-            //     if (widget.isUpdateMap == true) {
-            //       var resultData = {
-            //         'latLng': mapCubit.targetPosition,
-            //         'markerData': mapCubit.markers,
-            //         'addressAreaInformation': value,
-            //       };
-
-            //       // Use the context only if the widget is still mounted.
-            //       if (mounted) {
-            //         Navigator.pop(context, resultData);
-            //       }
-            //     } else {
-            //       // Use the context only if the widget is still mounted.
-            //       if (mounted) {
-            //         Navigator.pushAndRemoveUntil(
-            //           context,
-            //           MaterialPageRoute(
-            //             builder: (context) => AddNewAddressScreen(
-            //               latLng: mapCubit.targetPosition,
-            //               markerData: mapCubit.markers,
-            //               addressAreaInformation: value,
-            //             ),
-            //           ),
-            //           (route) => route.isFirst,
-            //         );
-            //       }
-            //     }
-            //   } catch (error) {
-            //     if (mounted) {
-            //       ScaffoldMessenger.of(context).showSnackBar(
-            //         const SnackBar(
-            //           content: Text('An error occurred. Please try again.'),
-            //         ),
-            //       );
-
-            //       // Retry the operation if necessary.
-            //       await Future.delayed(const Duration(seconds: 2));
-            //       if (mounted) {
-            //         _pickLocationButton(context, mapCubit).onPressed!();
-            //       }
-            //     }
-            //   }
-            // }
-          },
-          widget: state is CheckAddressAvailableLoading
-              ? SizedBox(
-                  height: 30.h,
-                  width: 30.w,
-                  child: Center(
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2.5.w,
-                      color: ColorManger.white,
-                    ),
-                  ),
-                )
-              : Text(
-                  state is CheckAddressAvailableSuccess
-                      ? state.data.storeAddressAvailable == true &&
-                              state.data.isAddressAvailable == true
-                          ? "Pick Location"
-                          : state.data.isAddressAvailable == false
-                              ? "Address not found in this area"
-                              : "Service not available in this area"
-                      : "Enter Complete address",
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: 16.sp,
-                        color: ColorManger.white,
-                        fontWeight: FontWeightManger.semiBold,
-                      ),
-                ),
-        );
+  CustomButton _pickLocationButton(
+      BuildContext context, MapCubit mapCubit, MapState state) {
+    return CustomButton(
+      onPressed: () async {
+        if (mapCubit.checkLocationAvailableResponse != null) {
+          if (mapCubit.checkLocationAvailableResponse!.storeAddressAvailable ==
+                  true &&
+              mapCubit.checkLocationAvailableResponse!.isAddressAvailable ==
+                  true) {
+            if (widget.isUpdateMap == true) {
+              if (mounted) {
+                mapCubit.moveToLocation(
+                    position: mapCubit.targetPosition,
+                    controller: mapCubit.newAddressMapController);
+                Navigator.pop(context);
+              }
+            } else {
+              // Use the context only if the widget is still mounted.
+              if (mounted) {
+                Navigator.popAndPushNamed(
+                  context,
+                  Routes.addNewAddress,
+                );
+              }
+            }
+          }
+        }
       },
+      widget: state is CheckAddressAvailableLoading
+          ? SizedBox(
+              height: 25.h,
+              width: 25.w,
+              child: Center(
+                child: CircularProgressIndicator(
+                  strokeWidth: 2.5.w,
+                  color: ColorManger.white,
+                ),
+              ),
+            )
+          : Text(
+              mapCubit.checkLocationAvailableResponse != null
+                  ? mapCubit.checkLocationAvailableResponse!
+                                  .storeAddressAvailable ==
+                              true &&
+                          mapCubit.checkLocationAvailableResponse!
+                                  .isAddressAvailable ==
+                              true
+                      ? "Pick Location"
+                      : mapCubit.checkLocationAvailableResponse!
+                                  .isAddressAvailable ==
+                              false
+                          ? "Address not found in this area"
+                          : "Service not available in this area"
+                  : "Enter Complete address",
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontSize: 16.sp,
+                    color: ColorManger.white,
+                    fontWeight: FontWeightManger.semiBold,
+                  ),
+            ),
     );
   }
 
   InkWell _togelMapType() {
     return InkWell(
       onTap: () {
-        setState(() {});
-        if (mapType == MapType.normal) {
-          mapType = MapType.hybrid;
-        } else {
-          mapType = MapType.normal;
-        }
+        context.read<MapCubit>().toggleMapType();
       },
       child: CircleAvatar(
         maxRadius: 22.r,
@@ -265,7 +215,7 @@ class _MapScreenState extends State<MapScreen> {
               CameraPosition(target: mapCuibt.targetPosition, zoom: 16),
           onMapCreated: (controller) => mapCuibt.setMapController(controller),
           markers: markers ?? {},
-          mapType: mapType,
+          mapType: mapCuibt.mapType,
           onTap: (argument) async {
             mapCuibt.checkAddressAvailableFetch(argument);
 
@@ -276,20 +226,21 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  Widget _buildSearchBar(BuildContext context) {
+  Widget _buildSearchBar(BuildContext context, MapCubit mapCuibt) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.8,
       height: 50,
       child: TextFormField(
         onChanged: (value) {
-          context.read<MapCubit>().searchLocation(value);
+          mapCuibt.searchLocation(value);
         },
         style: TextStyle(color: ColorManger.white),
+        controller: mapCuibt.searchConroller,
         decoration: InputDecoration(
-            hintText: 'Find Your Location',
+            hintText: mapCuibt.textEditingSearchText,
             prefixIcon: Icon(IconlyBroken.search,
                 size: 18.sp, color: ColorManger.white),
-            hintStyle: TextStyle(color: ColorManger.white),
+            hintStyle: const TextStyle(color: Colors.white60),
             fillColor: ColorManger.brunLight,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -308,7 +259,7 @@ class _MapScreenState extends State<MapScreen> {
   }
 
   Widget _buildSearchResults(
-      List<Prediction> predictions, BuildContext context) {
+      List<Prediction> predictions, BuildContext context, MapCubit mapCuibt) {
     return InkWell(
       onTap: () {
         Navigator.of(context).pop();
@@ -317,7 +268,9 @@ class _MapScreenState extends State<MapScreen> {
         decoration: BoxDecoration(
             color: ColorManger.brunLight,
             borderRadius: BorderRadius.circular(10.r)),
-        height: 100.h,
+        constraints: BoxConstraints(
+          maxHeight: 320.h,
+        ),
         child: ListView.builder(
           itemCount: predictions.length,
           itemBuilder: (BuildContext context, int index) {
@@ -327,12 +280,9 @@ class _MapScreenState extends State<MapScreen> {
                 style: TextStyle(color: ColorManger.white),
               ),
               onTap: () {
-                context
-                    .read<MapCubit>()
-                    .moveToLocationInTextFormField(predictions[index]);
+                mapCuibt.moveToLocationInTextFormField(predictions[index]);
 
-                
-                    // .(predictions[index]);
+                // .(predictions[index]);
               },
             );
           },

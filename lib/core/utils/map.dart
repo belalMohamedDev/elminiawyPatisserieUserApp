@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
-import 'package:geolocator/geolocator.dart';
 
 class AppUtils {
   static Future<Position?> determinePosition(BuildContext context) async {

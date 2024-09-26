@@ -1,4 +1,3 @@
-import 'package:custom_map_markers/custom_map_markers.dart';
 import 'package:elminiawy/core/utils/extensions.dart';
 import 'package:elminiawy/feature/address/logic/userAddressCubit/user_address_cubit.dart';
 import 'package:flutter/material.dart';
@@ -10,22 +9,15 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../data/model/response/get_address_response.dart';
+import '../../logic/mapCubit/map_cubit.dart';
 import '../refactor/add_new_address_body.dart';
 
 class AddNewAddressScreen extends StatefulWidget {
-  final LatLng? latLng;
-  final List<MarkerData>? markerData;
-  final String? addressAreaInformation;
   final GetAddressResponseData? getAddressResponseData;
   final bool isPaymentAddress;
 
   const AddNewAddressScreen(
-      {super.key,
-      this.latLng,
-      this.markerData,
-      this.isPaymentAddress = false,
-      this.addressAreaInformation,
-      this.getAddressResponseData});
+      {super.key, this.isPaymentAddress = false, this.getAddressResponseData});
 
   @override
   State<AddNewAddressScreen> createState() => _AddNewAddressScreenState();
@@ -35,6 +27,13 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
   @override
   void initState() {
     if (widget.getAddressResponseData != null) {
+      LatLng latLng = LatLng(
+          widget.getAddressResponseData!.location!.coordinates![1],
+          widget.getAddressResponseData!.location!.coordinates![0]);
+
+      final mapCubit = context.read<MapCubit>();
+      mapCubit.addCurrentLocationMarkerToMap(latLng);
+
       final userAddressCubit = context.read<UserAddressCubit>();
       userAddressCubit.aliasData =
           widget.getAddressResponseData!.alias ?? 'Apartment';
@@ -63,6 +62,12 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
 
       userAddressCubit.addressLabel.text =
           widget.getAddressResponseData?.addressLabel ?? '';
+    } else {
+      final userAddressCubit = context.read<UserAddressCubit>();
+
+      userAddressCubit.clearAllControllers();
+      userAddressCubit.regionAreaIndex = userAddressCubit.regionArea
+          .indexWhere((element) => element['text'] == ('Apartment'));
     }
 
     super.initState();
@@ -81,15 +86,17 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
         leading: IconButton(
           icon: const Icon(IconlyBroken.arrowLeft),
           onPressed: () {
+            context.read<MapCubit>().checkLocationAvailableResponse = null;
+
+             context.read<MapCubit>().textEditingSearchText =
+                'Find Your Location';
+
             context.pop();
           },
         ),
       ),
       body: AddNewAddressBody(
         getAddressResponseData: widget.getAddressResponseData,
-        latLng: widget.latLng!,
-        markerData: widget.markerData!,
-        addressAreaInformation: widget.addressAreaInformation!,
         isPaymentAddress: widget.isPaymentAddress,
       ),
     );

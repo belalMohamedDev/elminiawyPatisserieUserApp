@@ -26,8 +26,6 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../../feature/accountInfo/data/repository/update_account_information.dart';
-import '../../feature/address/data/repository/store_address_repo.dart';
-import '../../feature/address/logic/storeAddressCubit/store_address_cuibt_cubit.dart';
 import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
 import '../../feature/forgetPassword/data/repository/forget_password_repo.dart';
 import '../../feature/home/data/repository/repositry.dart';
@@ -198,20 +196,15 @@ Future<void> _initAddress() async {
   instance
     ..registerLazySingleton<UserAddressRepositoryImplement>(
         () => UserAddressRepositoryImplement(instance(), instance()))
-    ..registerFactory<MapCubit>(() => MapCubit(
+    ..registerLazySingleton<MapCubit>(() => MapCubit(
           instance(),
           instance(),
         ))
-    ..registerFactory<UserAddressCubit>(() => UserAddressCubit(
+    ..registerLazySingleton<UserAddressCubit>(() => UserAddressCubit(
           instance(),
         ));
 
-  instance
-    ..registerLazySingleton<StoreAddressRepositoryImplement>(
-        () => StoreAddressRepositoryImplement(instance(), instance()))
-    ..registerFactory<StoreAddressCuibt>(() => StoreAddressCuibt(
-          instance(),
-        ));
+ 
 }
 
 Future<void> _initProductBasedOnCategory() async {
