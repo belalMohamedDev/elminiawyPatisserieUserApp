@@ -1,11 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/color/color_manger.dart';
-import 'custom_profile_card.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 void chaneProfileDataBottomSheet(BuildContext context) {
   showCupertinoModalBottomSheet(

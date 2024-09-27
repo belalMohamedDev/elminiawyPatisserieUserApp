@@ -1,6 +1,4 @@
-import 'package:elminiawy/core/style/color/color_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class CircleAvatarIconButton extends StatelessWidget {
   final String imagePath;

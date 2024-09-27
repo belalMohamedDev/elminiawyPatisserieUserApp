@@ -152,6 +152,7 @@ flutter:
     - asset/image/noAddress.svg
     - asset/image/noNotification.svg
     - asset/image/noSearch.svg
+    - asset/image/noRoute.svg
 
     
 

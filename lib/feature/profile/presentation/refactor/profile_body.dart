@@ -1,12 +1,7 @@
-import 'package:elminiawy/feature/profile/cubit/log_out_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/style/images/asset_manger.dart';
-import '../widget/profile_column_card.dart';
+
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
@@ -60,30 +55,44 @@ class ProfileBody extends StatelessWidget {
                     width: 20.w,
                   ),
                   initUserNameCheck
-                      ? Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Guest User",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
-                                        fontFamily:
-                                            FontConsistent.fontFamilyAcme,
-                                        color: Colors.white70,
-                                        fontSize: 12.sp)),
-                            Text("Login to View all the features",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
-                                        fontFamily:
-                                            FontConsistent.fontFamilyAcme,
-                                        color: Colors.white60,
-                                        fontSize: 12.sp)),
-                          ],
-                        )
+                      ? InkWell(
+                        onTap: () async{
+                                 Navigator.of(context, rootNavigator: !false)
+                                .pushNamedAndRemoveUntil(
+                                    Routes.loginRoute, (Route route) => false);
+
+                            context
+                                .read<AppLogicCubit>()
+                                .bottomNavBarController
+                                .jumpToTab(0);
+
+                            await SharedPrefHelper.clearAllSecuredData();
+                        },
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Guest User",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                          fontFamily:
+                                              FontConsistent.fontFamilyAcme,
+                                          color: Colors.white70,
+                                          fontSize: 13.sp)),
+                              Text("Login to View all the features",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                          fontFamily:
+                                              FontConsistent.fontFamilyAcme,
+                                          color: Colors.white60,
+                                          fontSize: 13.sp)),
+                            ],
+                          ),
+                      )
                       : Text(
                           "Welcome back! Let's achieve\n great things today!",
                           style:

@@ -20,4 +20,6 @@ class Routes {
   static const String addNewAddress = "AddNewAddress";
   static const String myOrder = "MyOrder";
   static const String wishList = "wishList";
+  static const String cart = "Cart";
+  static const String noRoute = "noRoute";
 }

@@ -1,21 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:elminiawy/core/common/loading/loading_shimmer.dart';
-import 'package:elminiawy/core/common/toast/show_toast.dart';
-import 'package:elminiawy/feature/productBasedOnCategory/data/response/product_category.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-import '../../../feature/cart/cubit/cart_cubit.dart';
-import '../../../feature/newProduct/model/response/product_response.dart';
-import '../../../feature/productDetails/product_model_sheet.dart';
-import '../../../feature/wishList/cubit/wish_list_cubit.dart';
-import '../../../feature/wishList/data/model/getWishListResponse/response.dart';
-import '../../style/color/color_manger.dart';
-import '../../style/fonts/font_manger.dart';
-import '../../style/images/asset_manger.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+
 
 class ProductGridViewSuccessState extends StatelessWidget {
   final List<DataProductResponse>? dataList;

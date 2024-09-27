@@ -1,12 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-import '../../../../core/services/pushNotification/firebase_cloud_messaging.dart';
-import '../../../../core/style/color/color_manger.dart';
-import 'custom_profile_card.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+
 
 Future<dynamic> settingChangeBottomSheet(BuildContext context) {
   return showCupertinoModalBottomSheet(

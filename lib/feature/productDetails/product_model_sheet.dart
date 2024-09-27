@@ -6,8 +6,8 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/common/loading/loading_shimmer.dart';
 import '../../core/common/sharedWidget/custom_button.dart';
+import '../../core/common/statsScreen/loading_shimmer.dart';
 import '../../core/common/toast/show_toast.dart';
 import '../../core/style/color/color_manger.dart';
 import '../../core/style/fonts/font_manger.dart';

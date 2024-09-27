@@ -1,18 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/application/cubit/app_logic_cubit.dart';
-import '../../../../core/application/di.dart';
-import '../../../../core/common/loading/loading_shimmer.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../../productBasedOnCategory/cubit/product_based_on_category_cubit.dart';
-import '../../../productBasedOnCategory/presentation/screen/get_product_based_on_category.dart';
-import '../../logic/categoryCubit/category_cubit.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class CategoryListViewBuilder extends StatelessWidget {
   const CategoryListViewBuilder({

@@ -1,39 +1,6 @@
-import 'package:elminiawy/feature/accountInfo/cubit/account_information_cubit.dart';
-import 'package:elminiawy/feature/accountInfo/presentation/screen/account_info_screen.dart';
-import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
-import 'package:elminiawy/feature/address/presentation/screen/map_screen.dart';
-import 'package:elminiawy/feature/changeEmailAddress/cubit/change_email_address_cubit.dart';
-import 'package:elminiawy/feature/changeEmailAddress/presentation/screen/change_email.dart';
-import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.dart';
-import 'package:elminiawy/feature/changePassword/presentation/screen/change_password_screen.dart';
-import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
-import 'package:elminiawy/feature/notification/presentation/screen/notification_screen.dart';
-import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
-import 'package:elminiawy/feature/order/presentation/screen/my_orders_screen.dart';
-import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
-import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../feature/address/logic/userAddressCubit/user_address_cubit.dart';
-import '../../feature/address/presentation/screen/add_new_address_screen.dart';
-import '../../feature/bottomNavBar/presentation/nav_bar_view.dart';
-import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
-import '../../feature/forgetPassword/presntation/screen/forget_password_screen.dart';
-import '../../feature/home/logic/bannerCubit/banner_cubit.dart';
-import '../../feature/home/logic/categoryCubit/category_cubit.dart';
-import '../../feature/login/bloc/login_bloc.dart';
-import '../../feature/login/presentation/screen/login_view.dart';
-import '../../feature/newPassword/presentation/screen/new_password_view.dart';
-import '../../feature/notification/logic/cubit/user_notification_cubit.dart';
-import '../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
-import '../../feature/signUp/presentation/screen/sign_up_view.dart';
-import '../../feature/address/presentation/screen/user_address_screen.dart';
-import '../../feature/verifyCode/presentation/screen/verification_code.dart';
-import '../../feature/wishList/presentation/screen/wishlist_screen.dart';
-import '../application/di.dart';
-import '../style/fonts/strings_manger.dart';
-import 'routes.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
@@ -175,8 +142,14 @@ class RouteGenerator {
       case Routes.wishList:
         return MaterialPageRoute(builder: (_) => const WishListView());
 
+        case Routes.cart:
+        return MaterialPageRoute(builder: (_) => const CartView());
+
       case Routes.search:
         return MaterialPageRoute(builder: (_) => const SearchView());
+
+            case Routes.noRoute:
+        return MaterialPageRoute(builder: (_) => const RouteStatesScreen());
 
       default:
         return unDefinedRoute();

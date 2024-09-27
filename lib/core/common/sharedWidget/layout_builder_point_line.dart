@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../style/color/color_manger.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class LayoutBuilderPointLine extends StatelessWidget {
   const LayoutBuilderPointLine({

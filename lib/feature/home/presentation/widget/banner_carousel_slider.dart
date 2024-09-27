@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/common/loading/loading_shimmer.dart';
+import '../../../../core/common/statsScreen/loading_shimmer.dart';
 import '../../logic/bannerCubit/banner_cubit.dart';
 
 class BannerCarouselSlider extends StatelessWidget {

@@ -1,28 +1,4 @@
-import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
-import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
-import 'package:elminiawy/feature/profile/cubit/log_out_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
-
-import '../../../core/application/di.dart';
-import '../../../core/services/app_storage_key.dart';
-import '../../../core/services/shared_pref_helper.dart';
-import '../../../core/style/color/color_manger.dart';
-import '../../../core/style/fonts/strings_manger.dart';
-import '../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../address/logic/userAddressCubit/user_address_cubit.dart';
-import '../../cart/cubit/cart_cubit.dart';
-import '../../category/presentation/screen/category_view.dart';
-import '../../cart/presentation/screen/cart_view.dart';
-import '../../home/logic/bannerCubit/banner_cubit.dart';
-import '../../home/logic/categoryCubit/category_cubit.dart';
-import '../../home/presentation/screen/home_screen.dart';
-import '../../newProduct/Cubit/product_cubit.dart';
-import '../../profile/presentation/screen/profile_view.dart';
-import '../../wishList/cubit/wish_list_cubit.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -32,12 +8,13 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+  late String initialUserName;
   @override
-  void initState()  {
+  void initState() {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      String initialUserName =
+      initialUserName =
           await SharedPrefHelper.getSecuredString(PrefKeys.userName);
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
@@ -73,8 +50,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
           onTabChanged: (index) {
             if (index == 2) {
-              NavBarNavigator.push(context,
-                  screen: const CartView(), withNavBar: false);
+              if (initialUserName.isEmpty) {
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamed(Routes.noRoute);
+              } else {
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamed(Routes.cart);
+              }
+
               context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
             }
           },

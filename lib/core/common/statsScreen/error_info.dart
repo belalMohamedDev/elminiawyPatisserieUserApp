@@ -1,6 +1,4 @@
-import 'package:elminiawy/core/style/color/color_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class ErrorInfo extends StatelessWidget {
   const ErrorInfo({
@@ -46,8 +44,8 @@ class ErrorInfo extends StatelessWidget {
                     ElevatedButton(
                       onPressed: press,
                       style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(double.infinity, 48),
-                          backgroundColor: ColorManger.brownLight,
+                          minimumSize: const Size(double.infinity, 50),
+                          backgroundColor: ColorManger.primary,
                           foregroundColor: ColorManger.white,
                           shape: const RoundedRectangleBorder(
                               borderRadius:

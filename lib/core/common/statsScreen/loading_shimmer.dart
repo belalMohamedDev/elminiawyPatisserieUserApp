@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class LoadingShimmer extends StatelessWidget {
   const LoadingShimmer({

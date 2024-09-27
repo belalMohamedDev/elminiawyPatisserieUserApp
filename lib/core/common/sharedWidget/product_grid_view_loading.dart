@@ -1,6 +1,6 @@
-import 'package:elminiawy/core/common/loading/loading_shimmer.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class ProductGridViewLoadingState extends StatelessWidget {
   final ScrollPhysics? physics;

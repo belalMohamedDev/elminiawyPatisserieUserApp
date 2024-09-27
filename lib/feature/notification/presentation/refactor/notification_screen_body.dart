@@ -6,7 +6,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-import '../../../../core/common/loading/loading_shimmer.dart';
+import '../../../../core/common/statsScreen/loading_shimmer.dart';
 import '../../../../core/style/color/color_manger.dart';
 import '../../../../core/style/fonts/font_manger.dart';
 import '../../logic/cubit/user_notification_cubit.dart';

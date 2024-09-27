@@ -1,11 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../order/cubit/payment_cubit.dart';
-import '../../cubit/log_out_cubit.dart';
-import '../refactor/profile_body.dart';
+
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});

@@ -1,15 +1,6 @@
-import 'package:elminiawy/feature/profile/presentation/widget/chane_profile_data_bottom_sheet.dart';
-import 'package:elminiawy/feature/profile/presentation/widget/log_out_logic.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../cubit/log_out_cubit.dart';
-import 'custom_profile_card.dart';
-import 'setting_change_bottom_sheet.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 BlocBuilder profileColumnCard(BuildContext context) {
   return BlocBuilder<LogOutCubit, LogOutState>(
@@ -28,7 +19,8 @@ BlocBuilder profileColumnCard(BuildContext context) {
                   leadingIcon: IconlyBold.profile,
                   tap: initUserNameCheck
                       ? () {
-                          context.read<LogOutCubit>().logInSnackBar(context);
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.noRoute);
                         }
                       : () {
                           chaneProfileDataBottomSheet(context);
@@ -39,7 +31,8 @@ BlocBuilder profileColumnCard(BuildContext context) {
                   leadingIcon: IconlyBold.location,
                   tap: initUserNameCheck
                       ? () {
-                          context.read<LogOutCubit>().logInSnackBar(context);
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.noRoute);
                         }
                       : () {
                           Navigator.of(context, rootNavigator: !false)
@@ -51,7 +44,8 @@ BlocBuilder profileColumnCard(BuildContext context) {
                   leadingIcon: IconlyBold.bag,
                   tap: initUserNameCheck
                       ? () {
-                          context.read<LogOutCubit>().logInSnackBar(context);
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.noRoute);
                         }
                       : () {
                           Navigator.of(context, rootNavigator: !false)
@@ -63,7 +57,8 @@ BlocBuilder profileColumnCard(BuildContext context) {
                   leadingIcon: IconlyBold.heart,
                   tap: initUserNameCheck
                       ? () {
-                          context.read<LogOutCubit>().logInSnackBar(context);
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.noRoute);
                         }
                       : () {
                           Navigator.of(context, rootNavigator: !false)

@@ -47,12 +47,13 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
           : "Log Out",
       leadingIcon: IconlyBold.logout,
       tap: context.read<LogOutCubit>().initialUserName == 'Guest User'
-          ? () {
+          ? () async {
               Navigator.of(context, rootNavigator: !false)
                   .pushNamedAndRemoveUntil(
                       Routes.loginRoute, (Route route) => false);
 
               context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
+              await SharedPrefHelper.clearAllSecuredData();
             }
           : () async {
               // Show confirmation dialog before logging out

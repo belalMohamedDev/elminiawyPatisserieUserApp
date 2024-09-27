@@ -1,10 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../feature/search/presentation/screen/search_screen.dart';
-import '../../style/color/color_manger.dart';
-import '../../utils/persistent_nav_bar_navigator.dart.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class SearchRow extends StatelessWidget {
   const SearchRow({
