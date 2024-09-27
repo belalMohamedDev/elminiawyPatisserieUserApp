@@ -18,4 +18,6 @@ class Routes {
   static const String notification = "notification";
   static const String map = "Map";
   static const String addNewAddress = "AddNewAddress";
+  static const String myOrder = "MyOrder";
+  static const String wishList = "wishList";
 }

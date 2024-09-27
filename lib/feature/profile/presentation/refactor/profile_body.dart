@@ -20,12 +20,14 @@ class ProfileBody extends StatelessWidget {
           color: ColorManger.brun,
           child: BlocBuilder<LogOutCubit, LogOutState>(
             builder: (context, state) {
+              bool initUserNameCheck =
+                  context.read<LogOutCubit>().initialUserName == 'Guest User';
               return Row(
                 children: [
                   SizedBox(
                     width: 20.w,
                   ),
-                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
+                  initUserNameCheck
                       ? Image.asset(
                           ImageAsset.guestIconGreen,
                           color: ColorManger.white,
@@ -41,7 +43,8 @@ class ProfileBody extends StatelessWidget {
                             child: Text(
                                 context
                                     .read<LogOutCubit>()
-                                    .initialUserToken[0]
+                                    .initialUserName
+                                    .substring(0, 2)
                                     .toUpperCase(),
                                 style: Theme.of(context)
                                     .textTheme
@@ -56,7 +59,7 @@ class ProfileBody extends StatelessWidget {
                   SizedBox(
                     width: 20.w,
                   ),
-                  context.read<LogOutCubit>().initialUserToken == 'Guest User'
+                  initUserNameCheck
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +105,4 @@ class ProfileBody extends StatelessWidget {
       ],
     );
   }
-
-
-
 }

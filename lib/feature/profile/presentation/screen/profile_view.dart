@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/style/color/color_manger.dart';
+import '../../../order/cubit/payment_cubit.dart';
 import '../../cubit/log_out_cubit.dart';
 import '../refactor/profile_body.dart';
 
@@ -15,6 +18,18 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: ColorManger.brun,
+        statusBarIconBrightness: Brightness.light,
+      ),
+    );
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future.wait([
+        context.read<PaymentCubit>().getCompleteOrdersSummit(),
+        context.read<PaymentCubit>().getOrdersPendingSummit(),
+      ]);
+    });
     context.read<LogOutCubit>().getUserName();
   }
 
@@ -23,5 +38,17 @@ class _ProfileViewState extends State<ProfileView> {
     return const Scaffold(
       body: ProfileBody(),
     );
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: ColorManger.white,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
+
+    super.dispose();
   }
 }

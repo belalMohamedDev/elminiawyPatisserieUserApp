@@ -253,5 +253,6 @@ class ForgetPasswordBloc
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);
+
   }
 }

@@ -1,7 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
 import 'package:elminiawy/core/application/di.dart';
-import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,17 +42,7 @@ class MyApp extends StatelessWidget {
           create: (context) => instance<CartCubit>(),
         ),
 
-        ////////////////////////////////////
-        // BlocProvider(
-        //   create: (context) => instance<MapCubit>(),
-        // ),
-        // BlocProvider(
-        //   create: (context) => instance<UserAddressCubit>(),
-        // ),
-
-        BlocProvider(
-          create: (context) => instance<PaymentCubit>(),
-        ),
+      
       ],
       child: FutureBuilder<String>(
         future: checkIfLoggedInUser(),

@@ -46,12 +46,13 @@ class ChangeEmailAddressCubit extends Cubit<ChangeEmailAddressState> {
         emit(ChangeEmailAddressState.changeEmailAddressSuccess(dataResponse));
         clearAllControllers();
         await saveUserToken(
-            dataResponse.accessToken!,
-            dataResponse.data!.refreshToken!,
-            dataResponse.data!.name!,
-            dataResponse.data!.phone!,
-            dataResponse.data!.email!,
-            dataResponse.data!.sId!,);
+          dataResponse.accessToken!,
+          dataResponse.data!.refreshToken!,
+          dataResponse.data!.name!,
+          dataResponse.data!.phone!,
+          dataResponse.data!.email!,
+          dataResponse.data!.sId!,
+        );
       },
       failure: (error) {
         if (error.statusCode != 401) {
@@ -86,5 +87,6 @@ class ChangeEmailAddressCubit extends Cubit<ChangeEmailAddressState> {
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);
+        
   }
 }

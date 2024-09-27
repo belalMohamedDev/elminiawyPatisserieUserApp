@@ -203,8 +203,6 @@ Future<void> _initAddress() async {
     ..registerLazySingleton<UserAddressCubit>(() => UserAddressCubit(
           instance(),
         ));
-
- 
 }
 
 Future<void> _initProductBasedOnCategory() async {
@@ -257,7 +255,7 @@ Future<void> _initPayment() async {
   instance
     ..registerLazySingleton<OrderRepositoryImplement>(
         () => OrderRepositoryImplement(instance(), instance()))
-    ..registerFactory<PaymentCubit>(() => PaymentCubit(instance()));
+    ..registerLazySingleton<PaymentCubit>(() => PaymentCubit(instance()));
 }
 
 Future<void> _initNotification() async {

@@ -8,6 +8,8 @@ import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.
 import 'package:elminiawy/feature/changePassword/presentation/screen/change_password_screen.dart';
 import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
 import 'package:elminiawy/feature/notification/presentation/screen/notification_screen.dart';
+import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
+import 'package:elminiawy/feature/order/presentation/screen/my_orders_screen.dart';
 import 'package:elminiawy/feature/search/presentation/screen/search_screen.dart';
 import 'package:elminiawy/feature/signUp/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +30,7 @@ import '../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
 import '../../feature/signUp/presentation/screen/sign_up_view.dart';
 import '../../feature/address/presentation/screen/user_address_screen.dart';
 import '../../feature/verifyCode/presentation/screen/verification_code.dart';
+import '../../feature/wishList/presentation/screen/wishlist_screen.dart';
 import '../application/di.dart';
 import '../style/fonts/strings_manger.dart';
 import 'routes.dart';
@@ -161,6 +164,16 @@ class RouteGenerator {
 
       case Routes.newProduct:
         return MaterialPageRoute(builder: (_) => const NewProductView());
+
+      case Routes.myOrder:
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider.value(
+                  value: instance<PaymentCubit>(),
+                  child: const MyOrdersScreen(),
+                ));
+
+      case Routes.wishList:
+        return MaterialPageRoute(builder: (_) => const WishListView());
 
       case Routes.search:
         return MaterialPageRoute(builder: (_) => const SearchView());

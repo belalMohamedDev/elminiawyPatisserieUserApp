@@ -89,13 +89,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             emit(LoginState.suceess(loginResponse));
 
             await saveUserToken(
-                loginResponse.accessToken!,
-                loginResponse.data!.refreshToken!,
-                loginResponse.data!.name!,
-                loginResponse.data!.phone!,
-                loginResponse.data!.email!,
-                loginResponse.data!.sId!,
-                );
+              loginResponse.accessToken!,
+              loginResponse.data!.refreshToken!,
+              loginResponse.data!.name!,
+              loginResponse.data!.phone!,
+              loginResponse.data!.email!,
+              loginResponse.data!.sId!,
+            );
           },
           failure: (error) {
             emit(
@@ -113,13 +113,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   //////////////////////////////////
 
   Future<void> saveUserToken(
-    String accessToken,
-    String refreshToken,
-    String userName,
-    String userPhone,
-    String userEmail,
-    String userId
-  ) async {
+      String accessToken,
+      String refreshToken,
+      String userName,
+      String userPhone,
+      String userEmail,
+      String userId) async {
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
@@ -129,5 +128,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);
+
   }
 }

@@ -7,16 +7,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/routing/routes.dart';
 import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
 import '../../cubit/log_out_cubit.dart';
-import '../../../order/presentation/screen/my_orders_screen.dart';
-import '../../../wishList/presentation/screen/wishlist_screen.dart';
 import 'custom_profile_card.dart';
 import 'setting_change_bottom_sheet.dart';
 
 BlocBuilder profileColumnCard(BuildContext context) {
   return BlocBuilder<LogOutCubit, LogOutState>(
     builder: (context, state) {
+      bool initUserNameCheck =
+          context.read<LogOutCubit>().initialUserName == 'Guest User';
       return Stack(
         alignment: Alignment.center,
         children: [
@@ -24,46 +23,53 @@ BlocBuilder profileColumnCard(BuildContext context) {
             padding: EdgeInsets.symmetric(horizontal: 25.w),
             child: Column(
               children: [
-                context.read<LogOutCubit>().initialUserToken == 'Guest User'
-                    ? const SizedBox()
-                    : CustomProfileCard(
-                        title: "My Profile",
-                        leadingIcon: IconlyBold.profile,
-                        tap: () {
+                CustomProfileCard(
+                  title: "My Profile",
+                  leadingIcon: IconlyBold.profile,
+                  tap: initUserNameCheck
+                      ? () {
+                          context.read<LogOutCubit>().logInSnackBar(context);
+                        }
+                      : () {
                           chaneProfileDataBottomSheet(context);
                         },
-                      ),
-                context.read<LogOutCubit>().initialUserToken == 'Guest User'
-                    ? const SizedBox()
-                    : CustomProfileCard(
-                        title: "My Address",
-                        leadingIcon: IconlyBold.location,
-                        tap: () {
+                ),
+                CustomProfileCard(
+                  title: "My Address",
+                  leadingIcon: IconlyBold.location,
+                  tap: initUserNameCheck
+                      ? () {
+                          context.read<LogOutCubit>().logInSnackBar(context);
+                        }
+                      : () {
                           Navigator.of(context, rootNavigator: !false)
                               .pushNamed(Routes.address);
                         },
-                      ),
-                context.read<LogOutCubit>().initialUserToken == 'Guest User'
-                    ? const SizedBox()
-                    : CustomProfileCard(
-                        title: "My Orders",
-                        leadingIcon: IconlyBold.bag,
-                        tap: () {
-                          NavBarNavigator.push(context,
-                              screen: const MyOrdersScreen(),
-                              withNavBar: false);
+                ),
+                CustomProfileCard(
+                  title: "My Orders",
+                  leadingIcon: IconlyBold.bag,
+                  tap: initUserNameCheck
+                      ? () {
+                          context.read<LogOutCubit>().logInSnackBar(context);
+                        }
+                      : () {
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.myOrder);
                         },
-                      ),
-                context.read<LogOutCubit>().initialUserToken == 'Guest User'
-                    ? const SizedBox()
-                    : CustomProfileCard(
-                        title: "My WishList",
-                        leadingIcon: IconlyBold.heart,
-                        tap: () {
-                          NavBarNavigator.push(context,
-                              screen: const WishListView(), withNavBar: false);
+                ),
+                CustomProfileCard(
+                  title: "My WishList",
+                  leadingIcon: IconlyBold.heart,
+                  tap: initUserNameCheck
+                      ? () {
+                          context.read<LogOutCubit>().logInSnackBar(context);
+                        }
+                      : () {
+                          Navigator.of(context, rootNavigator: !false)
+                              .pushNamed(Routes.wishList);
                         },
-                      ),
+                ),
                 CustomProfileCard(
                   title: "Settings",
                   leadingIcon: IconlyBold.setting,

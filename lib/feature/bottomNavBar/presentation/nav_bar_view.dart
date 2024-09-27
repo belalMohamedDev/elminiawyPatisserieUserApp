@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
+import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
 import 'package:elminiawy/feature/profile/cubit/log_out_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,6 +33,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   void initState() {
     super.initState();
+
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
@@ -128,8 +130,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
       ),
       PersistentTabConfig(
-        screen: BlocProvider(
-          create: (context) => instance<LogOutCubit>(),
+        screen: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => instance<LogOutCubit>(),
+            ),
+            BlocProvider.value(
+              value: instance<PaymentCubit>(),
+            ),
+          ],
           child: const ProfileView(),
         ),
         item: ItemConfig(

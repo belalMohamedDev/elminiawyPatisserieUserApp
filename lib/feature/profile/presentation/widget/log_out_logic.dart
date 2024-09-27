@@ -44,7 +44,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
     child: CustomProfileCard(
       title: "Log Out",
       leadingIcon: IconlyBold.logout,
-      tap: context.read<LogOutCubit>().initialUserToken == 'Guest User'
+      tap: context.read<LogOutCubit>().initialUserName == 'Guest User'
           ? () {
               Navigator.of(context, rootNavigator: !false)
                   .pushNamedAndRemoveUntil(

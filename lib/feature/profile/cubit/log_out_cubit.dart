@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../core/common/toast/show_toast.dart';
 import '../../../core/routing/routes.dart';
 import '../../../core/services/app_storage_key.dart';
 import '../../../core/services/shared_pref_helper.dart';
@@ -15,13 +16,13 @@ class LogOutCubit extends Cubit<LogOutState> {
   LogOutCubit(this._logOutRepository) : super(const LogOutState.initial());
   final LogOutRepository _logOutRepository;
 
-  String initialUserToken = 'Guest User';
+  String initialUserName = 'Guest User';
 
   Future<void> getUserName() async {
-    initialUserToken =
-        await SharedPrefHelper.getSecuredString(PrefKeys.refreshToken);
+    initialUserName =
+        await SharedPrefHelper.getSecuredString(PrefKeys.userName);
 
-    emit(LogOutState.getStorageData(initialUserToken));
+    emit(LogOutState.getStorageData(initialUserName));
   }
 
   Future<void> logOut(String refreshToken) async {
@@ -40,6 +41,12 @@ class LogOutCubit extends Cubit<LogOutState> {
         );
       },
     );
+  }
+
+  void logInSnackBar(BuildContext context) {
+    ShowToast.showToastErrorTop(
+        errorMessage: 'You are not logged in ,please login to continue',
+        context: context);
   }
 
   void checkTokenThenDoLogOut(BuildContext context) async {
