@@ -42,7 +42,9 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
       }
     },
     child: CustomProfileCard(
-      title: "Log Out",
+      title: context.read<LogOutCubit>().initialUserName == 'Guest User'
+          ? "Log In"
+          : "Log Out",
       leadingIcon: IconlyBold.logout,
       tap: context.read<LogOutCubit>().initialUserName == 'Guest User'
           ? () {

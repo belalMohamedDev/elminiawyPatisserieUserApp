@@ -20,7 +20,9 @@ class LogOutCubit extends Cubit<LogOutState> {
 
   Future<void> getUserName() async {
     initialUserName =
-        await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+        await SharedPrefHelper.getSecuredString(PrefKeys.userName) == ''
+            ? 'Guest User'
+            : await SharedPrefHelper.getSecuredString(PrefKeys.userName);
 
     emit(LogOutState.getStorageData(initialUserName));
   }

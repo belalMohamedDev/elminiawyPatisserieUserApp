@@ -23,8 +23,8 @@ class GetStartedButton extends StatelessWidget {
 
           SharedPrefHelper.setData(PrefKeys.prefsKeyOnBoardingScreenView, true);
 
-          // await SharedPrefHelper.setSecuredString(
-          //     PrefKeys.refreshToken, 'Guest User');
+          await SharedPrefHelper.setSecuredString(
+              PrefKeys.refreshToken, 'Guest User');
         },
         child: Text(AppStrings.letsGetStarted,
             style: Theme.of(context)

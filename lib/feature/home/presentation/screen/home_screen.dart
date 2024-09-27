@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/application/di.dart';
+import '../../../../core/services/app_storage_key.dart';
+import '../../../../core/services/shared_pref_helper.dart';
 import '../../../notification/data/model/user_notification_resp.dart';
 import '../../../notification/logic/notification_service.dart';
 import '../refactor/home_body.dart';
@@ -20,7 +22,14 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _notificationService = instance<NotificationService>();
     _notificationStream = _notificationService.notificationStream;
-    _notificationService.fetchNotificationsContinuously();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      String initialUserName =
+          await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+      if (initialUserName.isNotEmpty) {
+        _notificationService.fetchNotificationsContinuously();
+      }
+    });
   }
 
   @override

@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 import '../../../core/application/di.dart';
+import '../../../core/services/app_storage_key.dart';
+import '../../../core/services/shared_pref_helper.dart';
 import '../../../core/style/color/color_manger.dart';
 import '../../../core/style/fonts/strings_manger.dart';
 import '../../../core/utils/persistent_nav_bar_navigator.dart.dart';
@@ -31,17 +33,21 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   @override
-  void initState() {
+  void initState()  {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      String initialUserName =
+          await SharedPrefHelper.getSecuredString(PrefKeys.userName);
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
         context.read<CategoryCubit>().getCategories(),
         context.read<ProductCubit>().getProduct(),
-        context.read<UserAddressCubit>().getUserAddress(),
-        context.read<CartCubit>().getCartItem(),
-        context.read<WishListCubit>().getWishList(),
+        if (initialUserName.isNotEmpty) ...[
+          context.read<UserAddressCubit>().getUserAddress(),
+          context.read<CartCubit>().getCartItem(),
+          context.read<WishListCubit>().getWishList(),
+        ],
       ]);
     });
   }
