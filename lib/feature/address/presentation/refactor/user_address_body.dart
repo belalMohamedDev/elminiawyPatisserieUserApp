@@ -1,18 +1,13 @@
-import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:iconly/iconly.dart';
 
-import '../../../../core/application/di.dart';
-import '../../../../core/common/loading/loading_shimmer.dart';
 import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
 import '../../logic/userAddressCubit/user_address_cubit.dart';
-import '../screen/add_new_address_screen.dart';
 import '../screen/empty_address_screen.dart';
+import '../widget/UserAddressScreenWidget/error_and_loading_state_widget.dart';
+import '../widget/UserAddressScreenWidget/success_state_widget.dart';
 
 class UserAddressBody extends StatelessWidget {
   const UserAddressBody({super.key});
@@ -34,7 +29,7 @@ class UserAddressBody extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is GetAllAddressError || state is GetAllAddressLoading) {
-          return _userAddressErrorAndLoadingState();
+          return const UserAddressErrorAndLoadingStateWidget();
         }
         if (context.read<UserAddressCubit>().addressDataList.isEmpty) {
           return const EmptyAddressScreen();
@@ -42,7 +37,7 @@ class UserAddressBody extends StatelessWidget {
 
         return Stack(
           children: [
-            _userAddressSuccessState(context),
+            const UserAddressSuccessStateWidget(),
             state is RemoveAddressLoading
                 ? Center(
                     child: Container(
@@ -66,185 +61,8 @@ class UserAddressBody extends StatelessWidget {
     );
   }
 
-  ListView _userAddressSuccessState(BuildContext context) {
-    final userAddress = context.read<UserAddressCubit>();
-    return ListView.builder(
-      addAutomaticKeepAlives: true,
-      itemCount: userAddress.addressDataList.length,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) {
-        return Column(
-          children: [
-            SizedBox(
-              height: 70.h,
-              child: Slidable(
-                  endActionPane: ActionPane(
-                    motion: const ScrollMotion(),
-                    children: [
-                      SlidableAction(
-                        onPressed: (_) {
-                          userAddress.deleteUserAddress(
-                              userAddress.addressDataList[index].sId!);
-                        },
-                        backgroundColor: ColorManger.redError,
-                        foregroundColor: ColorManger.white,
-                        icon: IconlyBold.delete,
-                        label: 'Delete',
-                      ),
-                      SlidableAction(
-                        onPressed: (context) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MultiBlocProvider(
-                                providers: [
-                                  BlocProvider.value(
-                                    value: instance<UserAddressCubit>(),
-                                  ),
-                                  BlocProvider.value(
-                                    value: instance<MapCubit>(),
-                                  ),
-                                ],
-                                child: AddNewAddressScreen(
-                                  getAddressResponseData:
-                                      userAddress.addressDataList[index],
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                        backgroundColor: ColorManger.backgroundItem,
-                        foregroundColor: ColorManger.brown,
-                        icon: IconlyBold.edit,
-                        label: 'Edite',
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 10.h),
-                        child: Icon(
-                          IconlyBold.location,
-                          color: ColorManger.brown,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20.h,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            userAddress.addressDataList[index].buildingName!,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.brun,
-                                    fontSize: 16.sp),
-                          ),
-                          Text(
-                            userAddress.addressDataList[index].phone!,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.grey,
-                                    fontSize: 11.sp),
-                            maxLines: 1,
-                            textAlign: TextAlign.start,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          ConstrainedBox(
-                            constraints: BoxConstraints(maxWidth: 300.w),
-                            child: Text(
-                              userAddress.addressDataList[index].region!,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .copyWith(
-                                      fontFamily: FontConsistent.fontFamilyAcme,
-                                      color: ColorManger.grey,
-                                      fontSize: 11.sp),
-                              maxLines: 1,
-                              textAlign: TextAlign.start,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
-            ),
-            SizedBox(
-              height: 15.h,
-            )
-          ],
-        );
-      },
-    );
-  }
 
-  Padding _userAddressErrorAndLoadingState() {
-    return Padding(
-      padding: EdgeInsets.only(
-        right: 40.w,
-        top: 10.h,
-      ),
-      child: ListView.builder(
-        itemCount: 12,
-        scrollDirection: Axis.vertical,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(
-              //   right: 40.w,
-              bottom: 25.h,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  IconlyBold.location,
-                  color: ColorManger.brown,
-                ),
-                SizedBox(
-                  width: 5.w,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      LoadingShimmer(
-                        height: 5.h,
-                        width: double.infinity,
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      LoadingShimmer(
-                        height: 5.h,
-                        width: 180.w,
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      LoadingShimmer(
-                        height: 5.h,
-                        width: 80.w,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
+ 
 }
+
+

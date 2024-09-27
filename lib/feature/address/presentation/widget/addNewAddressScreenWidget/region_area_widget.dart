@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../logic/userAddressCubit/user_address_cubit.dart';
+import '../../../../../core/style/color/color_manger.dart';
+import '../../../../../core/style/fonts/font_manger.dart';
+import '../../../logic/userAddressCubit/user_address_cubit.dart';
 
 class RegionAreaWidget extends StatelessWidget {
   final String imagePath;

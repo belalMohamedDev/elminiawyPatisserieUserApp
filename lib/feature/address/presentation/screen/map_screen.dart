@@ -6,11 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common/toast/show_toast.dart';
 import '../../../../core/style/color/color_manger.dart';
-import '../widget/mapWidget/build_search_bar.dart';
-import '../widget/mapWidget/build_search_results.dart';
-import '../widget/mapWidget/current_location_button.dart';
-import '../widget/mapWidget/google_map_widget.dart';
-import '../widget/mapWidget/pick_location_button.dart';
+import '../widget/mapScreenWidget/build_search_bar.dart';
+import '../widget/mapScreenWidget/build_search_results.dart';
+import '../widget/mapScreenWidget/current_location_button.dart';
+import '../widget/mapScreenWidget/google_map_widget.dart';
+import '../widget/mapScreenWidget/pick_location_button.dart';
 
 class MapScreen extends StatefulWidget {
   final bool isUpdateMap;

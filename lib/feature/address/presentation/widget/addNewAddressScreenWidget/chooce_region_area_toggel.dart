@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../logic/userAddressCubit/user_address_cubit.dart';
-import '../region_area_widget.dart';
+import 'region_area_widget.dart';
 
 class ChooceRegionAreaFromToggel extends StatelessWidget {
   const ChooceRegionAreaFromToggel({

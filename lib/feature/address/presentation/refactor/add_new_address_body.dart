@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../data/model/response/get_address_response.dart';
-import '../widget/addNewAddressWidget/add_information_text_form_field.dart';
-import '../widget/addNewAddressWidget/chooce_region_area_toggel.dart';
-import '../widget/addNewAddressWidget/information_card_area.dart';
-import '../widget/addNewAddressWidget/new_address_map.dart';
+import '../widget/addNewAddressScreenWidget/add_information_text_form_field.dart';
+import '../widget/addNewAddressScreenWidget/chooce_region_area_toggel.dart';
+import '../widget/addNewAddressScreenWidget/information_card_area.dart';
+import '../widget/addNewAddressScreenWidget/new_address_map.dart';
 
 class AddNewAddressBody extends StatelessWidget {
   final GetAddressResponseData? getAddressResponseData;
