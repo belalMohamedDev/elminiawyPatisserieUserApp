@@ -1,5 +1,5 @@
 import 'package:elminiawy/core/application/cubit/app_logic_cubit.dart';
-import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
+import 'package:elminiawy/feature/profile/cubit/log_out_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';

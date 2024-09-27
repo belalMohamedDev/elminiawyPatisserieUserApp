@@ -9,8 +9,8 @@ import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.
 import 'package:elminiawy/feature/changePassword/data/repository/change_password_repo.dart';
 import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
 import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
-import 'package:elminiawy/feature/logOut/cubit/log_out_cubit.dart';
-import 'package:elminiawy/feature/logOut/data/repository/log_out_repo.dart';
+import 'package:elminiawy/feature/profile/cubit/log_out_cubit.dart';
+import 'package:elminiawy/feature/profile/data/repository/log_out_repo.dart';
 import 'package:elminiawy/feature/notification/data/repository/user_notification_repo.dart';
 import 'package:elminiawy/feature/notification/logic/cubit/user_notification_cubit.dart';
 import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';

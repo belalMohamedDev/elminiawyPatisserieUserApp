@@ -19,6 +19,7 @@ import '../../data/model/response/get_address_response.dart';
 import '../../logic/mapCubit/map_cubit.dart';
 import '../../logic/userAddressCubit/user_address_cubit.dart';
 import '../screen/map_screen.dart';
+import '../widget/addNewAddressWidget/new_address_map.dart';
 import '../widget/region_area_widget.dart';
 
 class AddNewAddressBody extends StatelessWidget {
@@ -39,7 +40,7 @@ class AddNewAddressBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _mapWidget(context),
+            const NewAddressGoogleMapWidget(),
             SizedBox(
               height: 10.h,
             ),
@@ -511,31 +512,6 @@ class AddNewAddressBody extends StatelessWidget {
     );
   }
 
-  BlocBuilder _mapWidget(BuildContext context) {
-    return BlocBuilder<MapCubit, MapState>(
-      builder: (context, state) {
-        final mapCuibt = context.read<MapCubit>();
-
-        return ClipRRect(
-            borderRadius: BorderRadius.circular(8.r),
-            child: SizedBox(
-              height: 100.h,
-              width: double.infinity,
-              child: CustomGoogleMapMarkerBuilder(
-                customMarkers: mapCuibt.markers,
-                builder: (p0, Set<Marker>? markers) {
-                  return GoogleMap(
-                    onMapCreated: (controller) =>
-                        mapCuibt.setNewAddressMapController(controller),
-                    zoomControlsEnabled: false,
-                    initialCameraPosition: CameraPosition(
-                        target: mapCuibt.targetPosition, zoom: 12),
-                    markers: markers ?? {},
-                  );
-                },
-              ),
-            ));
-      },
-    );
-  }
+ 
 }
+

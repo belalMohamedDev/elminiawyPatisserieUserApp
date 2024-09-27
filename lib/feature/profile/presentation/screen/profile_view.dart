@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../logOut/cubit/log_out_cubit.dart';
+import '../../cubit/log_out_cubit.dart';
 import '../refactor/profile_body.dart';
 
 class ProfileView extends StatefulWidget {

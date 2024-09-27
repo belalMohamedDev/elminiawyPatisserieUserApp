@@ -10,7 +10,7 @@ import '../../../../core/utils/map.dart';
 import '../../data/model/request/check_address_available.dart';
 import '../../data/model/response/check_address_available.dart';
 import '../../data/repository/address_repo.dart';
-import '../../presentation/widget/custom_store_map_marker.dart';
+import '../../presentation/widget/mapWidget/custom_map_marker.dart';
 
 part 'map_state.dart';
 part 'map_cubit.freezed.dart';

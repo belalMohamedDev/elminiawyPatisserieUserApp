@@ -26,6 +26,40 @@ class AddNewAddressScreen extends StatefulWidget {
 class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
   @override
   void initState() {
+    super.initState();
+    _addNewAddressInitFunction();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("New Address",
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontFamily: FontConsistent.fontFamilyAcme,
+                color: ColorManger.brun,
+                fontSize: 16.sp)),
+        leading: IconButton(
+          icon: const Icon(IconlyBroken.arrowLeft),
+          onPressed: () {
+            context.read<MapCubit>().checkLocationAvailableResponse = null;
+
+            context.read<MapCubit>().textEditingSearchText =
+                'Find Your Location';
+
+            context.pop();
+          },
+        ),
+      ),
+      body: AddNewAddressBody(
+        getAddressResponseData: widget.getAddressResponseData,
+        isPaymentAddress: widget.isPaymentAddress,
+      ),
+    );
+  }
+
+  void _addNewAddressInitFunction() {
     if (widget.getAddressResponseData != null) {
       LatLng latLng = LatLng(
           widget.getAddressResponseData!.location!.coordinates![1],
@@ -69,36 +103,5 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
       userAddressCubit.regionAreaIndex = userAddressCubit.regionArea
           .indexWhere((element) => element['text'] == ('Apartment'));
     }
-
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("New Address",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 16.sp)),
-        leading: IconButton(
-          icon: const Icon(IconlyBroken.arrowLeft),
-          onPressed: () {
-            context.read<MapCubit>().checkLocationAvailableResponse = null;
-
-             context.read<MapCubit>().textEditingSearchText =
-                'Find Your Location';
-
-            context.pop();
-          },
-        ),
-      ),
-      body: AddNewAddressBody(
-        getAddressResponseData: widget.getAddressResponseData,
-        isPaymentAddress: widget.isPaymentAddress,
-      ),
-    );
   }
 }

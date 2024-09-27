@@ -1,5 +1,5 @@
 import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/logOut/data/repository/log_out_repo.dart';
+import 'package:elminiawy/feature/profile/data/repository/log_out_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
