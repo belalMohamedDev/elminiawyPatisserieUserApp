@@ -1,6 +1,4 @@
-
-
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import '../../../../core/common/shared/shared_imports.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
@@ -65,6 +63,9 @@ class RouteGenerator {
                 value: instance<UserAddressCubit>(),
               ),
               BlocProvider.value(
+                value: instance<PaymentCubit>(),
+              ),
+              BlocProvider.value(
                 value: instance<MapCubit>(),
               ),
             ],
@@ -116,6 +117,12 @@ class RouteGenerator {
               BlocProvider(
                 create: (context) => instance<CategoryCubit>(),
               ),
+              BlocProvider.value(
+                value: instance<CartCubit>(),
+              ),
+              BlocProvider.value(
+                value: instance<ProductCubit>(),
+              ),
             ],
             child: const BottomNavBar(),
           ),
@@ -142,14 +149,73 @@ class RouteGenerator {
       case Routes.wishList:
         return MaterialPageRoute(builder: (_) => const WishListView());
 
-        case Routes.cart:
-        return MaterialPageRoute(builder: (_) => const CartView());
+      case Routes.cart:
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: instance<UserAddressCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<CartCubit>(),
+                    ),
+                  ],
+                  child: const CartView(),
+                ));
 
       case Routes.search:
         return MaterialPageRoute(builder: (_) => const SearchView());
 
-            case Routes.noRoute:
+      case Routes.noRoute:
         return MaterialPageRoute(builder: (_) => const RouteStatesScreen());
+
+      case Routes.shippingAddress:
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: instance<MapCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<PaymentCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<UserAddressCubit>(),
+                    ),
+                  ],
+                  child: const ShippingAddress(),
+                ));
+
+      case Routes.shippingPayment:
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: instance<PaymentCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<CartCubit>(),
+                    ),
+                  ],
+                  child: const PaymentScreen(),
+                ));
+
+      case Routes.shippingReviewScreen:
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: instance<PaymentCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<CartCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<UserAddressCubit>(),
+                    ),
+                  ],
+                  child: const ReviewPaymentScreen(),
+                ));
 
       default:
         return unDefinedRoute();

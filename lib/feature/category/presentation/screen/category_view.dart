@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 
-import '../refactor/category_body.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});

@@ -1,10 +1,5 @@
-import 'package:elminiawy/feature/cart/data/model/response/get_cart.dart';
 
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../model/bodyRequest/add_item.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class CartRepository {
   Future<ApiResult<CartResponse>> addItemToCart(

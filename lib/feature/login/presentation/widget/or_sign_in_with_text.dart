@@ -1,6 +1,4 @@
-import 'package:elminiawy/core/style/color/color_manger.dart';
-import 'package:elminiawy/core/style/fonts/strings_manger.dart';
-import 'package:flutter/material.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class OrSignInWithText extends StatelessWidget {
   const OrSignInWithText({

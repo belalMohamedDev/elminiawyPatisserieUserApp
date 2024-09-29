@@ -1,14 +1,5 @@
-import 'package:elminiawy/core/services/shared_pref_helper.dart';
-import 'package:elminiawy/feature/login/data/model/loginResponse/login_response.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/services/app_storage_key.dart';
-import '../../../core/style/fonts/strings_manger.dart';
-import '../../../core/utils/app_regex.dart';
-import '../data/model/bodyRequest/login_body_request.dart';
-import '../data/repository/login_repo.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'login_event.dart';
 part 'login_state.dart';

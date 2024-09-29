@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 
-import '../refactor/forget_password_body.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});

@@ -1,10 +1,5 @@
 
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../model/bodyRequest/forget_password_body_request.dart';
-import '../model/loginResponse/forget_password_response.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ForgetPasswordRepository {
   ForgetPasswordRepository(this._apiService, this._networkInfo);

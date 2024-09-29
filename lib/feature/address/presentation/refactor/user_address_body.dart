@@ -1,13 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/common/toast/show_toast.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../logic/userAddressCubit/user_address_cubit.dart';
-import '../screen/empty_address_screen.dart';
-import '../widget/UserAddressScreenWidget/error_and_loading_state_widget.dart';
-import '../widget/UserAddressScreenWidget/success_state_widget.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class UserAddressBody extends StatelessWidget {
   const UserAddressBody({super.key});

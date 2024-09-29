@@ -1,11 +1,7 @@
-import 'package:flutter/material.dart';
 
-import '../../../../core/application/di.dart';
-import '../../../../core/services/app_storage_key.dart';
-import '../../../../core/services/shared_pref_helper.dart';
-import '../../../notification/data/model/user_notification_resp.dart';
-import '../../../notification/logic/notification_service.dart';
-import '../refactor/home_body.dart';
+
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -1,12 +1,7 @@
 
 
-import 'package:elminiawy/feature/login/data/model/loginResponse/login_response.dart';
 
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../model/bodyRequest/sign_up_body_request.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class RegisterRepository {
   RegisterRepository(this._apiService, this._networkInfo);

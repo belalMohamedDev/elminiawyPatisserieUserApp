@@ -1,13 +1,6 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../newProduct/Cubit/product_cubit.dart';
-import '../refactor/search_body.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});

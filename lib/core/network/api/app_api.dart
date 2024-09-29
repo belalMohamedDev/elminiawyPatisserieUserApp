@@ -1,40 +1,9 @@
-import 'package:dio/dio.dart';
-import 'package:elminiawy/feature/changePassword/data/model/request/change_my_password_request.dart';
-import 'package:elminiawy/feature/changePassword/data/model/response/change_my_password_response.dart';
-import 'package:elminiawy/feature/home/data/model/response/category_response.dart';
-import 'package:elminiawy/feature/address/data/model/response/create_address_response.dart';
-import 'package:elminiawy/feature/order/data/model/requestBody/create_order_request.dart';
-import 'package:elminiawy/feature/order/data/model/response/create_order.dart';
+
 
 import 'package:retrofit/retrofit.dart';
 
-import '../../../feature/accountInfo/data/model/request/update_account_information.dart';
-import '../../../feature/accountInfo/data/model/response/delete_account.dart';
-import '../../../feature/accountInfo/data/model/response/update_account_information.dart';
-import '../../../feature/address/data/model/request/check_address_available.dart';
-import '../../../feature/address/data/model/response/check_address_available.dart';
-import '../../../feature/cart/data/model/bodyRequest/add_item.dart';
-import '../../../feature/cart/data/model/response/get_cart.dart';
-import '../../../feature/changeEmailAddress/data/model/request/change_email_request.dart';
-import '../../../feature/changeEmailAddress/data/model/response/change_email_response.dart';
-import '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
-import '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
-import '../../../feature/home/data/model/response/banner_response.dart';
-import '../../../feature/profile/data/model/response/log_out_response.dart';
-import '../../../feature/newProduct/model/response/product_response.dart';
-import '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
-import '../../../feature/login/data/model/loginResponse/login_response.dart';
-import '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
-import '../../../feature/notification/data/model/user_notification_resp.dart';
-import '../../../feature/order/data/model/response/get_order.dart';
-import '../../../feature/productBasedOnCategory/data/response/product_category.dart';
-import '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
-import '../../../feature/address/data/model/response/get_address_response.dart';
-import '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_request.dart';
-import '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
-import '../../../feature/wishList/data/model/getWishListResponse/response.dart';
-import '../api_constant/api_constant.dart';
-import '../success/api_success_general.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 part 'app_api.g.dart';
 

@@ -1,9 +1,6 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/material.dart';
 
-import '../app_storage_key.dart';
-import '../shared_pref_helper.dart';
-import 'firebase_messaging_navig.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class FirebaseCloudMessaging {
   factory FirebaseCloudMessaging() => _instance;

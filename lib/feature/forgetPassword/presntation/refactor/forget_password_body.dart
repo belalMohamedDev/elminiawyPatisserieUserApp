@@ -1,13 +1,6 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../../bloc/forget_password_bloc.dart';
-import '../widget/email_forget_password_text_form_field.dart';
-import '../widget/forget_password_button.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ForgetPasswordBody extends StatelessWidget {
   const ForgetPasswordBody({

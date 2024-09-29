@@ -1,15 +1,5 @@
-import 'package:elminiawy/core/style/color/color_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
-import '../../../../core/application/cubit/app_logic_cubit.dart';
-import '../../../../core/common/toast/show_toast.dart';
-import '../../../../core/routing/routes.dart';
-import '../../../../core/services/shared_pref_helper.dart';
-import '../../cubit/log_out_cubit.dart';
-import 'custom_profile_card.dart';
 
 BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
   return BlocListener<LogOutCubit, LogOutState>(

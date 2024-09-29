@@ -1,16 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../../bloc/sign_up_bloc.dart';
-import '../widget/agree_with_terms_condition.dart';
-import '../widget/already_have_an_account_text.dart';
-import '../widget/email_sign_up_text_form_field.dart';
-import '../widget/name_text_form_field.dart';
-import '../widget/password_sign_up_text_form_field.dart';
-import '../widget/phone_text_form_field.dart';
-import '../widget/sign_up_button.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({

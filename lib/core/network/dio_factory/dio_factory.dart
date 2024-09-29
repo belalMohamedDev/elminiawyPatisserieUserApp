@@ -1,9 +1,7 @@
-import 'package:dio/dio.dart';
-import 'package:elminiawy/core/network/api_constant/api_constant.dart';
-import 'package:elminiawy/core/network/dio_factory/api_client.dart';
 
-import 'package:flutter/foundation.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 const String applicationJson = 'application/json';
 const String contentType = 'contentType';

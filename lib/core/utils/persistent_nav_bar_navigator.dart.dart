@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class NavBarNavigator {
   static Future<T?> push<T>(

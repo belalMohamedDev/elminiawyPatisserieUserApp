@@ -1,9 +1,4 @@
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../model/request/change_email_request.dart';
-import '../model/response/change_email_response.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ChangeEmailAddressRepository {
   ChangeEmailAddressRepository(this._apiService, this._networkInfo);

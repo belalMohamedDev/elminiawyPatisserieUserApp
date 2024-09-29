@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 
-import '../refactor/new_password_body.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class NewPasswordView extends StatelessWidget {
   const NewPasswordView({super.key});

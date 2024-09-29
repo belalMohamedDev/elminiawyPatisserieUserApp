@@ -1,16 +1,4 @@
-import 'package:elminiawy/core/common/sharedWidget/custom_button.dart';
-import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
-import '../../../order/presentation/screen/shipping_address_screen.dart';
-import '../refactor/cart_body.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -41,8 +29,8 @@ class CartView extends StatelessWidget {
 
             onPressed: () {
               if (context.read<UserAddressCubit>().addressDataList.isNotEmpty) {
-                NavBarNavigator.push(context,
-                    screen: const ShippingAddress(), withNavBar: false);
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamed(Routes.shippingAddress);
               }
             },
             widget: Text(

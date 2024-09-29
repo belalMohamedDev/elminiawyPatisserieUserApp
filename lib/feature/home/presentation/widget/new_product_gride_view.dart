@@ -1,15 +1,6 @@
-import 'package:elminiawy/feature/newProduct/presentation/screen/new_product_screen.dart';
-import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/common/sharedWidget/product_grid_view_loading.dart';
-import '../../../../core/common/sharedWidget/product_grid_view_success.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../../newProduct/Cubit/product_cubit.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class NewProductGrideView extends StatelessWidget {
   const NewProductGrideView({

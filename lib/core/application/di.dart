@@ -1,56 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:elminiawy/feature/accountInfo/cubit/account_information_cubit.dart';
-import 'package:elminiawy/feature/address/logic/mapCubit/map_cubit.dart';
-import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
-import 'package:elminiawy/feature/cart/data/repository/cart_repo.dart';
-import 'package:elminiawy/feature/changeEmailAddress/cubit/change_email_address_cubit.dart';
-import 'package:elminiawy/feature/changeEmailAddress/data/repository/change_email_repo.dart';
-import 'package:elminiawy/feature/changePassword/cubit/change_my_password_cubit.dart';
-import 'package:elminiawy/feature/changePassword/data/repository/change_password_repo.dart';
-import 'package:elminiawy/feature/home/logic/bannerCubit/banner_cubit.dart';
-import 'package:elminiawy/feature/home/logic/categoryCubit/category_cubit.dart';
-import 'package:elminiawy/feature/profile/cubit/log_out_cubit.dart';
-import 'package:elminiawy/feature/profile/data/repository/log_out_repo.dart';
-import 'package:elminiawy/feature/notification/data/repository/user_notification_repo.dart';
-import 'package:elminiawy/feature/notification/logic/cubit/user_notification_cubit.dart';
-import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
-import 'package:elminiawy/feature/order/data/repository/order_repo.dart';
-import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product_category_repo.dart';
-import 'package:elminiawy/feature/wishList/cubit/wish_list_cubit.dart';
-import 'package:firebase_core/firebase_core.dart';
-
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_google_maps_webservices/places.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_it/get_it.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-
-import '../../feature/accountInfo/data/repository/update_account_information.dart';
-import '../../feature/forgetPassword/bloc/forget_password_bloc.dart';
-import '../../feature/forgetPassword/data/repository/forget_password_repo.dart';
-import '../../feature/home/data/repository/repositry.dart';
-import '../../feature/newProduct/Cubit/product_cubit.dart';
-import '../../feature/login/bloc/login_bloc.dart';
-import '../../feature/login/data/repository/login_repo.dart';
-import '../../feature/newPassword/data/repository/new_password_repo.dart';
-import '../../feature/newProduct/model/repository/repositry.dart';
-import '../../feature/notification/logic/notification_service.dart';
-import '../../feature/productBasedOnCategory/cubit/product_based_on_category_cubit.dart';
-import '../../feature/signUp/bloc/sign_up_bloc.dart';
-import '../../feature/signUp/data/repository/sign_up_repo.dart';
-import '../../feature/address/logic/userAddressCubit/user_address_cubit.dart';
-import '../../feature/address/data/repository/address_repo.dart';
-import '../../feature/verifyCode/data/repository/verify_code_repo.dart';
-import '../../feature/wishList/data/repository/repository.dart';
-import '../../firebase_options.dart';
-import '../network/api/app_api.dart';
-import '../network/dio_factory/dio_factory.dart';
-import '../network/network_connectivity/connectivity_controller.dart';
-import '../services/pushNotification/firebase_cloud_messaging.dart';
-import '../services/pushNotification/local_notification.dart';
-import 'bloc_observer.dart';
-import 'constant_manger.dart';
-import 'cubit/app_logic_cubit.dart';
+import '../../../../core/common/shared/shared_imports.dart';
 
 final instance = GetIt.instance;
 
@@ -219,7 +167,7 @@ Future<void> _initCart() async {
   instance
     ..registerLazySingleton<CartRepositoryImplement>(
         () => CartRepositoryImplement(instance(), instance()))
-    ..registerFactory<CartCubit>(() => CartCubit(
+    ..registerLazySingleton<CartCubit>(() => CartCubit(
           instance(),
         ));
 }

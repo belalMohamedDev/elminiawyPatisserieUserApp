@@ -1,23 +1,9 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/address/logic/userAddressCubit/user_address_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../data/model/response/get_address_response.dart';
-import '../../logic/mapCubit/map_cubit.dart';
-import '../refactor/add_new_address_body.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class AddNewAddressScreen extends StatefulWidget {
   final GetAddressResponseData? getAddressResponseData;
-  final bool isPaymentAddress;
 
-  const AddNewAddressScreen(
-      {super.key, this.isPaymentAddress = false, this.getAddressResponseData});
+  const AddNewAddressScreen({super.key, this.getAddressResponseData});
 
   @override
   State<AddNewAddressScreen> createState() => _AddNewAddressScreenState();
@@ -54,7 +40,6 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
       ),
       body: AddNewAddressBody(
         getAddressResponseData: widget.getAddressResponseData,
-        isPaymentAddress: widget.isPaymentAddress,
       ),
     );
   }

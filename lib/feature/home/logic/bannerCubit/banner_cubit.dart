@@ -1,10 +1,6 @@
-import 'dart:async';
 
-import 'package:elminiawy/feature/home/data/repository/repositry.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/model/response/banner_response.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'banner_state.dart';
 part 'banner_cubit.freezed.dart';

@@ -1,14 +1,6 @@
-import 'package:elminiawy/feature/address/data/model/request/create_address_request.dart';
-import 'package:elminiawy/feature/address/data/model/response/create_address_response.dart';
 
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../../../../core/network/success/api_success_general.dart';
-import '../model/request/check_address_available.dart';
-import '../model/response/check_address_available.dart';
-import '../model/response/get_address_response.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 abstract class UserAddressRepository {
   Future<ApiResult<CreateAddressResponse>> createANewAddress(

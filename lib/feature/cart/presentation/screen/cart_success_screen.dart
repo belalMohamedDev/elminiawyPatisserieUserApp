@@ -1,12 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../data/model/response/get_cart.dart';
-import '../widget/apply_coupon.dart';
-import '../widget/payment_summary.dart';
-import '../widget/product_cart_item.dart';
+
+
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+
 
 class SuccessCartScreen extends StatelessWidget {
   const SuccessCartScreen({

@@ -1,9 +1,4 @@
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../model/request/change_my_password_request.dart';
-import '../model/response/change_my_password_response.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ChangeMyPasswordRepository {
   ChangeMyPasswordRepository(this._apiService, this._networkInfo);

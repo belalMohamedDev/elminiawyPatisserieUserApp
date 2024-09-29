@@ -1,16 +1,8 @@
-import 'package:custom_map_markers/custom_map_markers.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_google_maps_webservices/places.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../../core/utils/map.dart';
-import '../../data/model/request/check_address_available.dart';
-import '../../data/model/response/check_address_available.dart';
-import '../../data/repository/address_repo.dart';
-import '../../presentation/widget/mapScrrenWidget/custom_map_marker.dart';
+
+
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'map_state.dart';
 part 'map_cubit.freezed.dart';
@@ -20,11 +12,14 @@ class MapCubit extends Cubit<MapState> {
       : super(const MapState.initial());
   final UserAddressRepositoryImplement _userAddressRepository;
 
+
   final GoogleMapsPlaces
       places; // Instance of GoogleMapsPlaces for search functionality
   late GoogleMapController mapController; // Controller to manage Google Map
   late GoogleMapController
       newAddressMapController; // Controller to manage Google Map
+  late GoogleMapController
+      checkOutMapController; // Controller to manage Google Map
   List<MarkerData> markers = []; // List to hold custom markers
 
   String textEditingSearchText = 'Find Your Location';
@@ -98,18 +93,18 @@ class MapCubit extends Cubit<MapState> {
   void addCurrentLocationMarkerToMap(LatLng position) {
     targetPosition = position;
 
+    // Remove any existing marker for the current location and add the new one
+    markers.removeWhere(
+      (markerData) =>
+          markerData.marker.markerId == const MarkerId('currentLocation'),
+    );
+
     final marker = MarkerData(
       marker: Marker(
         markerId: const MarkerId('currentLocation'),
         position: position,
       ),
       child: const TextOnImage(currentLocation: true),
-    );
-
-    // Remove any existing marker for the current location and add the new one
-    markers.removeWhere(
-      (markerData) =>
-          markerData.marker.markerId == const MarkerId('currentLocation'),
     );
 
     markers.add(marker);
@@ -153,6 +148,11 @@ class MapCubit extends Cubit<MapState> {
   // Set the map controller
   void setNewAddressMapController(GoogleMapController controller) {
     newAddressMapController = controller;
+  }
+
+  // Set the map controller
+  void setCheckOutMapController(GoogleMapController controller) {
+    checkOutMapController = controller;
   }
 
   Future<void> getCurrentLocation(BuildContext context) async {
@@ -216,7 +216,7 @@ class MapCubit extends Cubit<MapState> {
     try {
       googleController.animateCamera(
         CameraUpdate.newCameraPosition(
-          CameraPosition(target: position, zoom: controller == null ? 18 : 12),
+          CameraPosition(target: position, zoom: controller == null ? 18 : 14),
         ),
       );
     } catch (e) {

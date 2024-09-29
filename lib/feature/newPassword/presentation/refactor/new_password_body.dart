@@ -1,11 +1,5 @@
 
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../widget/confirm_new_password_text_form_field.dart';
-import '../widget/new_password_button.dart';
-import '../widget/new_password_text_form_field.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class NewPasswordBody extends StatelessWidget {
   const NewPasswordBody({

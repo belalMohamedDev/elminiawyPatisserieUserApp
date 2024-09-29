@@ -1,14 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/common/sharedWidget/product_grid_view_loading.dart';
-import '../../../../core/common/sharedWidget/product_grid_view_success.dart';
-import '../../../../core/common/sharedWidget/search_row.dart';
-import '../../../../core/common/statsScreen/loading_shimmer.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../cubit/product_based_on_category_cubit.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ProductBaseOnCategoryBody extends StatelessWidget {
   const ProductBaseOnCategoryBody({super.key});

@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/common/sharedWidget/custom_button.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../../cart/presentation/widget/apply_coupon.dart';
-import '../../cubit/payment_cubit.dart';
-import '../screen/review_screen.dart';
-import '../widget/check_out_processing.dart';
+import '../../../../core/common/shared/shared_imports.dart';
 
 class PaymentBody extends StatelessWidget {
   const PaymentBody({super.key});
@@ -54,8 +43,8 @@ class PaymentBody extends StatelessWidget {
           const Spacer(),
           CustomButton(
             onPressed: () {
-              NavBarNavigator.push(context,
-                  screen: const ReviewPaymentScreen(), withNavBar: false);
+              Navigator.of(context, rootNavigator: !false)
+                  .pushNamed(Routes.shippingReviewScreen);
             },
             radius: 8.r,
             widget: Text(
@@ -90,10 +79,9 @@ class PaymentBody extends StatelessWidget {
                       : ColorManger.backgroundItem,
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
-                    color:
-                        paymentCubit.choosePaymentMethod == 'Cash'
-                            ? ColorManger.brownLight
-                            : ColorManger.backgroundItem,
+                    color: paymentCubit.choosePaymentMethod == 'Cash'
+                        ? ColorManger.brownLight
+                        : ColorManger.backgroundItem,
                     width: 0.5.w,
                   ),
                 ),
@@ -139,14 +127,12 @@ class PaymentBody extends StatelessWidget {
                 width: double.infinity,
                 height: 50.h,
                 decoration: BoxDecoration(
-                  color:
-                      paymentCubit.choosePaymentMethod == 'card'
-                          ? ColorManger.brownLight
-                          : ColorManger.backgroundItem,
+                  color: paymentCubit.choosePaymentMethod == 'card'
+                      ? ColorManger.brownLight
+                      : ColorManger.backgroundItem,
                   borderRadius: BorderRadius.circular(8.r),
                   border: Border.all(
-                    color: paymentCubit.choosePaymentMethod ==
-                            'card'
+                    color: paymentCubit.choosePaymentMethod == 'card'
                         ? ColorManger.brownLight
                         : ColorManger.backgroundItem,
                     width: 0.5.w,

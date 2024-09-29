@@ -1,15 +1,7 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/style/images/asset_manger.dart';
-import '../../logic/userAddressCubit/user_address_cubit.dart';
-import '../refactor/user_address_body.dart';
+
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class UserAddressView extends StatelessWidget {
   const UserAddressView({super.key});

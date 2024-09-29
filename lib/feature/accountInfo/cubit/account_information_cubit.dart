@@ -1,13 +1,6 @@
-import 'package:elminiawy/feature/accountInfo/data/model/response/update_account_information.dart';
-import 'package:elminiawy/feature/accountInfo/data/repository/update_account_information.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/services/app_storage_key.dart';
-import '../../../core/services/shared_pref_helper.dart';
-import '../data/model/request/update_account_information.dart';
-import '../data/model/response/delete_account.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 part 'account_information_state.dart';
 part 'account_information_cubit.freezed.dart';

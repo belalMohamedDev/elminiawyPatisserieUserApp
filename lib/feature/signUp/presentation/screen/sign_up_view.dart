@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 
-import '../refactor/sign_up_body.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

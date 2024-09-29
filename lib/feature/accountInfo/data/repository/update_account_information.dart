@@ -1,10 +1,6 @@
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../model/request/update_account_information.dart';
-import '../model/response/delete_account.dart';
-import '../model/response/update_account_information.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 abstract class AccountInformationRepository {
   Future<ApiResult<UpdateAccountInformationResponse>> updateAccountInformation(

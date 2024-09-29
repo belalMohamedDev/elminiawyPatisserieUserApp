@@ -1,5 +1,5 @@
-import 'package:elminiawy/core/network/failure/api_error_model.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'api_reuslt.freezed.dart';
 

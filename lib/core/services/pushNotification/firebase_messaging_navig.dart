@@ -1,6 +1,6 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 
-import 'local_notification.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class FirebaseMessagingNavigator {
   //forground

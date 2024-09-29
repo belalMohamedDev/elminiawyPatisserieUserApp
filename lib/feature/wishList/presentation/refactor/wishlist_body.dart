@@ -1,10 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
-import '../../../../core/common/sharedWidget/product_grid_view_loading.dart';
-import '../../../../core/common/sharedWidget/product_grid_view_success.dart';
-import '../../../../core/common/toast/show_toast.dart';
-import '../../cubit/wish_list_cubit.dart';
 import '../screen/empty_screen.dart';
 
 class WishListBody extends StatelessWidget {

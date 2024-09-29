@@ -1,11 +1,6 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../refactor/wishlist_body.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class WishListView extends StatelessWidget {
   const WishListView({super.key});

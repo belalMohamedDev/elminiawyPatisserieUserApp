@@ -1,12 +1,5 @@
-import 'package:elminiawy/feature/changeEmailAddress/data/model/request/change_email_request.dart';
-import 'package:elminiawy/feature/changeEmailAddress/data/repository/change_email_repo.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/services/app_storage_key.dart';
-import '../../../core/services/shared_pref_helper.dart';
-import '../data/model/response/change_email_response.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'change_email_address_state.dart';
 part 'change_email_address_cubit.freezed.dart';

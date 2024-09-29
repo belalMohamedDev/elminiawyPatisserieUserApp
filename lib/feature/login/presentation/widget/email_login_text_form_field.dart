@@ -1,10 +1,5 @@
-import 'package:elminiawy/core/style/fonts/strings_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
-import '../../bloc/login_bloc.dart';
 
 class EmailLoginTextFormField extends StatelessWidget {
   const EmailLoginTextFormField({

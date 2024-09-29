@@ -1,17 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/application/cubit/app_logic_cubit.dart';
-import '../../../../core/common/toast/show_toast.dart';
-import '../../../../core/routing/routes.dart';
-import '../../../../core/services/shared_pref_helper.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../../../../core/utils/app_regex.dart';
-import '../../cubit/account_information_cubit.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class AccountInfomationBody extends StatelessWidget {
   const AccountInfomationBody({super.key});

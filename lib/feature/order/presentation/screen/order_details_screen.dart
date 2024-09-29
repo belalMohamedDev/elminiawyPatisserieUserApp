@@ -1,18 +1,8 @@
-import 'package:elminiawy/core/common/sharedWidget/custom_button.dart';
-import 'package:elminiawy/core/style/images/asset_manger.dart';
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/order/data/model/response/get_order.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../cubit/payment_cubit.dart';
-import '../refactor/order_details_body.dart';
+
+
+
+import '../../../../../core/common/shared/shared_imports.dart'; // 
 
 class OrderDetails extends StatelessWidget {
   final GetOrdersResponseData? order;

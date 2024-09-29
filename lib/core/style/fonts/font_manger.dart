@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class FontConsistent {
   static const String fontFamilyAcme = "Acme";

@@ -1,7 +1,5 @@
-import 'package:elminiawy/core/common/sharedWidget/circle_avatar_icon_button.dart';
-import 'package:elminiawy/core/style/images/asset_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class SignInWithAppleFaceBookAndGoogleButton extends StatelessWidget {
   const SignInWithAppleFaceBookAndGoogleButton({

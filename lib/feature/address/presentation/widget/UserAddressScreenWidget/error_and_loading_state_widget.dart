@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/common/statsScreen/loading_shimmer.dart';
-import '../../../../../core/style/color/color_manger.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class UserAddressErrorAndLoadingStateWidget extends StatelessWidget {
   const UserAddressErrorAndLoadingStateWidget({

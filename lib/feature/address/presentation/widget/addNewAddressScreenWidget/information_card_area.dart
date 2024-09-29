@@ -1,14 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:iconly/iconly.dart';
 
-import '../../../../../core/application/di.dart';
-import '../../../../../core/style/color/color_manger.dart';
-import '../../../../../core/style/fonts/font_manger.dart';
-import '../../../data/model/response/get_address_response.dart';
-import '../../../logic/mapCubit/map_cubit.dart';
-import '../../screen/map_screen.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+
 
 class InformationCardArea extends StatelessWidget {
   const InformationCardArea({

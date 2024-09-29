@@ -1,18 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:elminiawy/feature/cart/cubit/cart_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/common/sharedWidget/custom_button.dart';
-import '../../core/common/statsScreen/loading_shimmer.dart';
-import '../../core/common/toast/show_toast.dart';
-import '../../core/style/color/color_manger.dart';
-import '../../core/style/fonts/font_manger.dart';
-import '../../core/style/fonts/strings_manger.dart';
-import '../wishList/cubit/wish_list_cubit.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ProductBottomSheet extends StatelessWidget {
   const ProductBottomSheet(

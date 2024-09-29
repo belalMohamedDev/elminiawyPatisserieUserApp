@@ -1,15 +1,7 @@
-import 'package:custom_map_markers/custom_map_markers.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../address/logic/mapCubit/map_cubit.dart';
-import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
-import '../../cubit/payment_cubit.dart';
-import '../refactor/shipping_screen_body.dart';
+
+
+import '../../../../core/common/shared/shared_imports.dart';
 
 class ShippingAddress extends StatefulWidget {
   const ShippingAddress({super.key});
@@ -19,7 +11,6 @@ class ShippingAddress extends StatefulWidget {
 }
 
 class _ShippingAddressState extends State<ShippingAddress> {
-  List<MarkerData>? markerData;
   @override
   void initState() {
     final userAddressCubit = context.read<UserAddressCubit>();

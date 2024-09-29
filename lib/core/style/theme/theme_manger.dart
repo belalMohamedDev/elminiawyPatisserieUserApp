@@ -1,13 +1,8 @@
-import 'package:elminiawy/core/style/fonts/font_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../color/color_manger.dart';
-import 'package:flutter/services.dart';
 
-import '../fonts/styles_manger.dart';
 
-//
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 ThemeData getApplicationTheme() {
   return ThemeData(
       scaffoldBackgroundColor: ColorManger.white,

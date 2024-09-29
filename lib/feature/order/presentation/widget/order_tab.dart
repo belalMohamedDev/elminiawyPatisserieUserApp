@@ -1,14 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:elminiawy/core/utils/date_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/style/images/asset_manger.dart';
-import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../data/model/response/get_order.dart';
-import '../screen/order_details_screen.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class OrdersTab extends StatelessWidget {
   final List<GetOrdersResponseData> getOrdersResponseData;

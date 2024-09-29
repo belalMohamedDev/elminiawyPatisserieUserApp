@@ -1,10 +1,5 @@
-import 'package:elminiawy/feature/newProduct/model/repository/repositry.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
-import '../../../core/enums/filter_button_enum.dart';
-import '../model/response/product_response.dart';
 
 part 'product_state.dart';
 part 'product_cubit.freezed.dart';

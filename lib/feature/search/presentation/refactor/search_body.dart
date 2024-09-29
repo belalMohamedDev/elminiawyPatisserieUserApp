@@ -1,14 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-import '../../../../core/common/sharedWidget/product_grid_view_success.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../newProduct/Cubit/product_cubit.dart';
-import '../screen/empty_search.dart';
-import '../widget/filter_bottom_sheet.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
+
 
 class SearchScreenBody extends StatelessWidget {
   const SearchScreenBody({super.key});

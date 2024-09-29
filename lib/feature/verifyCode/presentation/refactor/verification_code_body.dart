@@ -1,13 +1,7 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../../../forgetPassword/bloc/forget_password_bloc.dart';
-import '../widget/verification_code_button.dart';
-import '../widget/verify_code_text_form_field.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
+
 
 class VerificationCodeBody extends StatelessWidget {
   const VerificationCodeBody({

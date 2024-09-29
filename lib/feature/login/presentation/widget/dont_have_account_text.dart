@@ -1,11 +1,5 @@
-import 'package:elminiawy/core/style/fonts/strings_manger.dart';
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/fonts/font_manger.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class DontHaveAnAccountText extends StatelessWidget {
   const DontHaveAnAccountText({

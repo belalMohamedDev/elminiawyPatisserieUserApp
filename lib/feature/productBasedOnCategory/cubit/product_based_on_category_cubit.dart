@@ -1,8 +1,5 @@
-import 'package:elminiawy/feature/productBasedOnCategory/data/repository/product_category_repo.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../data/response/product_category.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'product_based_on_category_state.dart';
 part 'product_based_on_category_cubit.freezed.dart';

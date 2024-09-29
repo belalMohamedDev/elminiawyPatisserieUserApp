@@ -1,15 +1,5 @@
-import 'package:elminiawy/core/style/color/color_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/common/sharedWidget/custom_button.dart';
-import '../../../../core/common/toast/show_toast.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../../../../core/utils/app_regex.dart';
-import '../../cubit/change_email_address_cubit.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ChangeEmailBody extends StatelessWidget {
   const ChangeEmailBody({super.key});

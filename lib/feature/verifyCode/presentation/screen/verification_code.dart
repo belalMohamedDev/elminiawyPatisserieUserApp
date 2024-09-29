@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 
-import '../refactor/verification_code_body.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class VerificationCodeView extends StatelessWidget {
   const VerificationCodeView({super.key});

@@ -1,12 +1,7 @@
-import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/common/statsScreen/loading_shimmer.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/images/asset_manger.dart';
-import '../screen/empty_order_screen.dart';
-import '../widget/order_tab.dart';
+
+
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class MyOrdersBody extends StatefulWidget {
   const MyOrdersBody({super.key});

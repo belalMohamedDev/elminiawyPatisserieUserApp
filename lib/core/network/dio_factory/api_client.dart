@@ -1,12 +1,6 @@
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
-import '../../common/toast/show_toast.dart';
-import '../../routing/routes.dart';
-import '../../services/app_storage_key.dart';
-import '../../services/shared_pref_helper.dart';
-import '../../style/fonts/strings_manger.dart';
-import '../api_constant/api_constant.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 
 class TokenInterceptor extends Interceptor {
   final Dio dio;

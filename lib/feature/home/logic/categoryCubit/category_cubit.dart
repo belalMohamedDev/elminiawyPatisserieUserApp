@@ -1,8 +1,5 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/model/response/category_response.dart';
-import '../../data/repository/repositry.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'category_state.dart';
 part 'category_cubit.freezed.dart';

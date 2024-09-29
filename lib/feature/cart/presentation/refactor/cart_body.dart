@@ -1,12 +1,7 @@
-import 'package:elminiawy/feature/cart/presentation/screen/empty_cart_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../cubit/cart_cubit.dart';
-import '../screen/cart_loading_screen.dart';
-import '../screen/cart_success_screen.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+
 
 class CartBody extends StatelessWidget {
   const CartBody({super.key});

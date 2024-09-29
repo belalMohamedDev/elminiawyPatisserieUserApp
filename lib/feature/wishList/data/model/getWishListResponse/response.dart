@@ -1,4 +1,4 @@
-import 'package:json_annotation/json_annotation.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'response.g.dart';
 

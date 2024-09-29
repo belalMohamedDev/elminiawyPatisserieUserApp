@@ -1,9 +1,5 @@
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
 
-import '../../../newProduct/model/response/product_response.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ProductRepository {
   ProductRepository(this._networkInfo, this._apiService);

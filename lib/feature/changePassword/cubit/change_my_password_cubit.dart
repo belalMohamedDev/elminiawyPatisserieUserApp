@@ -1,13 +1,6 @@
-import 'package:elminiawy/feature/changePassword/data/model/request/change_my_password_request.dart';
-import 'package:elminiawy/feature/changePassword/data/model/response/change_my_password_response.dart';
-import 'package:elminiawy/feature/changePassword/data/repository/change_password_repo.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../core/services/app_storage_key.dart';
-import '../../../core/services/shared_pref_helper.dart';
-import '../../../core/style/color/color_manger.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'change_my_password_state.dart';
 part 'change_my_password_cubit.freezed.dart';

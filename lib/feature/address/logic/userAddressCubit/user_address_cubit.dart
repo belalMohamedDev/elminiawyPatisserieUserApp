@@ -1,15 +1,5 @@
-import 'package:custom_map_markers/custom_map_markers.dart';
-import 'package:elminiawy/feature/address/data/model/response/get_address_response.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../../core/network/success/api_success_general.dart';
-import '../../../../core/style/images/asset_manger.dart';
-import '../../data/model/request/create_address_request.dart';
-import '../../data/model/response/create_address_response.dart';
-import '../../data/repository/address_repo.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'user_address_state.dart';
 part 'user_address_cubit.freezed.dart';
@@ -30,8 +20,10 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   final TextEditingController addressLabel = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
+  bool isPaymentAddress = false;
+
   List<GetAddressResponseData> addressDataList = [];
-  
+
   int regionAreaIndex = 0;
   String aliasData = "Apartment";
   List<Map<String, dynamic>> regionArea = [
@@ -122,7 +114,9 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   }
 
   Future<void> addNewAddress(
-      {required String region, required String latitude, required String longitude}) async {
+      {required String region,
+      required String latitude,
+      required String longitude}) async {
     emit(const UserAddressState.createNewAddressLoading());
 
     final createAddressRequestBody = CreateAddressRequestBody(
@@ -190,7 +184,10 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   }
 
   Future<void> updateAddress(
-      {required String id, required String region, required String latitude, required String longitude}) async {
+      {required String id,
+      required String region,
+      required String latitude,
+      required String longitude}) async {
     emit(const UserAddressState.updateAddressLoading());
     final createAddressRequestBody = CreateAddressRequestBody(
       additionalDirections: additionalDirectionsContoller.text.trim().isNotEmpty

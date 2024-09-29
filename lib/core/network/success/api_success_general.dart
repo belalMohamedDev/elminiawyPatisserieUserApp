@@ -1,5 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
+
 part 'api_success_general.g.dart';
+
 
 @JsonSerializable()
 class ApiSuccessGeneralModel {

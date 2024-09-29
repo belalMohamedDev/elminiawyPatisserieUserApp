@@ -1,11 +1,5 @@
-import 'package:elminiawy/feature/cart/data/repository/cart_repo.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../data/model/bodyRequest/add_item.dart';
-
-import '../data/model/response/get_cart.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'cart_state.dart';
 part 'cart_cubit.freezed.dart';

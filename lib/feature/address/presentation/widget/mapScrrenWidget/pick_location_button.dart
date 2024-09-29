@@ -1,11 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/common/sharedWidget/custom_button.dart';
-import '../../../../../core/routing/routes.dart';
-import '../../../../../core/style/color/color_manger.dart';
-import '../../../../../core/style/fonts/font_manger.dart';
-import '../../../logic/mapCubit/map_cubit.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class PickLocationButton extends StatelessWidget {
   const PickLocationButton({

@@ -1,16 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/style/images/asset_manger.dart';
-import '../../cubit/cart_cubit.dart';
-import '../../data/model/response/get_cart.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class ProductCartItem extends StatelessWidget {
   final GetCartItems cartItems;

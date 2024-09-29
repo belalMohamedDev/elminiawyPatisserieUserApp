@@ -1,10 +1,6 @@
-import 'package:custom_map_markers/custom_map_markers.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../logic/mapCubit/map_cubit.dart';
+
+import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class NewAddressGoogleMapWidget extends StatelessWidget {
   const NewAddressGoogleMapWidget({

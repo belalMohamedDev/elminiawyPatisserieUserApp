@@ -1,28 +1,11 @@
-import 'package:country_code_picker/country_code_picker.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../core/common/sharedWidget/custom_button.dart';
-import '../../../../../core/common/toast/show_toast.dart';
-import '../../../../../core/routing/routes.dart';
-import '../../../../../core/style/color/color_manger.dart';
-import '../../../../../core/style/fonts/font_manger.dart';
-import '../../../../../core/style/fonts/strings_manger.dart';
-import '../../../../../core/utils/app_regex.dart';
-import '../../../../order/cubit/payment_cubit.dart';
-import '../../../data/model/response/get_address_response.dart';
-import '../../../logic/mapCubit/map_cubit.dart';
-import '../../../logic/userAddressCubit/user_address_cubit.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class AddAddressInformationFromTextFormField extends StatelessWidget {
   const AddAddressInformationFromTextFormField({
     super.key,
-    required this.isPaymentAddress,
     required this.getAddressResponseData,
   });
 
-  final bool? isPaymentAddress;
   final GetAddressResponseData? getAddressResponseData;
 
   @override
@@ -49,13 +32,14 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                 context.read<MapCubit>().textEditingSearchText =
                     'Find Your Location';
 
-                if (isPaymentAddress == true) {
+                if (userAddressCubit.isPaymentAddress == true) {
                   final index = userAddressCubit.addressDataList
                       .indexWhere((element) => element.sId == data.data!.sId);
 
                   if (index != -1) {
                     context.read<PaymentCubit>().changeShippingIndex(index);
-                    Navigator.pop(context);
+                    Navigator.of(context, rootNavigator: !false)
+                        .popAndPushNamed(Routes.shippingPayment);
                   }
                 } else {
                   Navigator.pushReplacementNamed(

@@ -1,13 +1,7 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:elminiawy/feature/accountInfo/cubit/account_information_cubit.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../refactor/account_info_body.dart';
+
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class AccountInfomation extends StatefulWidget {
   const AccountInfomation({super.key});

@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/common/statsScreen/error_info.dart';
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/images/asset_manger.dart';
+
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class EmptyAddressScreen extends StatelessWidget {
   const EmptyAddressScreen({super.key});

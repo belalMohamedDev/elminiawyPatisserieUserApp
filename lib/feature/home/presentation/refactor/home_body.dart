@@ -1,16 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 import 'package:badges/badges.dart' as badges;
-import '../../../../core/common/sharedWidget/search_row.dart';
-import '../../../../core/routing/routes.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../notification/data/model/user_notification_resp.dart';
-import '../../../notification/logic/notification_service.dart';
-import '../widget/banner_carousel_slider.dart';
-import '../widget/category_list_view_builder.dart';
-import '../widget/new_product_gride_view.dart';
+
 
 class HomeBody extends StatelessWidget {
   final NotificationService notificationService;

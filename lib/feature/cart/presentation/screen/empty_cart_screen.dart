@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/common/statsScreen/error_info.dart';
-import '../../../../core/style/images/asset_manger.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class EmptyCartScreen extends StatelessWidget {
   const EmptyCartScreen({super.key});

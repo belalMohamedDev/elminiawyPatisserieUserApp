@@ -1,11 +1,6 @@
 
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../../bloc/sign_up_bloc.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class AgreeWithTermsCondition extends StatelessWidget {
   const AgreeWithTermsCondition({

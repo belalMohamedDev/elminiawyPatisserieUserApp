@@ -1,20 +1,4 @@
-import 'package:custom_map_markers/custom_map_markers.dart';
-import 'package:elminiawy/feature/order/cubit/payment_cubit.dart';
-import 'package:elminiawy/feature/order/presentation/screen/payment_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-
-import '../../../../core/common/sharedWidget/custom_button.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/utils/persistent_nav_bar_navigator.dart.dart';
-import '../../../address/logic/mapCubit/map_cubit.dart';
-import '../../../address/logic/userAddressCubit/user_address_cubit.dart';
-import '../widget/check_out_processing.dart';
+import '../../../../core/common/shared/shared_imports.dart';
 
 class ShippingAddressBody extends StatefulWidget {
   const ShippingAddressBody({super.key});
@@ -75,8 +59,8 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           const Spacer(),
           CustomButton(
             onPressed: () {
-              NavBarNavigator.push(context,
-                  screen: const PaymentScreen(), withNavBar: false);
+              Navigator.of(context, rootNavigator: !false)
+                  .pushNamed(Routes.shippingPayment);
             },
             radius: 8.r,
             widget: Text(
@@ -250,14 +234,20 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                 SizedBox(
                   width: 8.w,
                 ),
-                Text(
-                  userAddressCubit.region!,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: isChosseAddress
-                          ? ColorManger.brun
-                          : ColorManger.brunLight,
-                      fontSize: 10.sp),
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 250.w),
+                  child: Text(
+                    maxLines: 1,
+                    textAlign: TextAlign.start,
+                    overflow: TextOverflow.ellipsis,
+                    userAddressCubit.region!,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontFamily: FontConsistent.fontFamilyAcme,
+                        color: isChosseAddress
+                            ? ColorManger.brun
+                            : ColorManger.brunLight,
+                        fontSize: 10.sp),
+                  ),
                 ),
               ],
             ),
@@ -270,27 +260,29 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
   BlocBuilder _mapWidget(BuildContext context) {
     return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
+        final mapCuibt = context.read<MapCubit>();
+
         return Stack(
           children: [
             ClipRRect(
                 borderRadius: BorderRadius.circular(5.r),
                 child: SizedBox(
-                    height: 140.h,
-                    width: double.infinity,
-                    child: CustomGoogleMapMarkerBuilder(
-                        customMarkers: context.read<MapCubit>().markers,
-                        builder: (p0, Set<Marker>? markers) {
-                          return GoogleMap(
-                            onMapCreated: (controller) => context
-                                .read<MapCubit>()
-                                .setMapController(controller),
-                            zoomControlsEnabled: false,
-                            initialCameraPosition: CameraPosition(
-                                target: context.read<MapCubit>().targetPosition,
-                                zoom: 18),
-                            markers: markers ?? {},
-                          );
-                        }))),
+                  height: 140.h,
+                  width: double.infinity,
+                  child: CustomGoogleMapMarkerBuilder(
+                    customMarkers: mapCuibt.markers,
+                    builder: (p0, Set<Marker>? markers) {
+                      return GoogleMap(
+                        onMapCreated: (controller) =>
+                            mapCuibt.setCheckOutMapController(controller),
+                        zoomControlsEnabled: false,
+                        initialCameraPosition: CameraPosition(
+                            target: mapCuibt.targetPosition, zoom: 12),
+                        markers: markers ?? {},
+                      );
+                    },
+                  ),
+                )),
             Positioned(
               bottom: 8.w,
               right: 100.w,
@@ -355,165 +347,147 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
   }
 
   void _chaneProfileDataaBottomSheet(BuildContext context) {
-    final userAddressCubit = context.read<UserAddressCubit>().addressDataList;
-
     showCupertinoModalBottomSheet(
       useRootNavigator: true,
       barrierColor: Colors.black54,
       elevation: 20.r,
       context: context,
-      builder: (context) => StatefulBuilder(
-          builder: (BuildContext context, StateSetter setState) {
-        return Padding(
-          padding:
-              EdgeInsets.only(right: 18.w, left: 18.w, top: 35.h, bottom: 30.h),
-          child: Material(
-            color: ColorManger.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      height: 50.h,
-                      width: 2.w,
-                      color: ColorManger.brunLight,
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Choose Address',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.brun,
-                                  fontSize: 16.sp),
-                        ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        Text(
-                          'You can edit your address from your settings',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.brunLight,
-                                  fontSize: 12.sp),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 25.h,
-                ),
-                Expanded(
-                  child: BlocBuilder<PaymentCubit, PaymentState>(
-                    builder: (context, state) {
-                      return ListView.builder(
-                        itemCount: userAddressCubit.length,
-                        addAutomaticKeepAlives: true,
-                        itemBuilder: (context, index) {
-                          final isSelected =
-                              context.read<PaymentCubit>().selectedIndex !=
-                                  index;
-                          final isChosseAddress =
-                              context.read<PaymentCubit>().selectedIndex ==
-                                  index;
-
-                          return Padding(
-                            padding: EdgeInsets.only(bottom: 10.h),
-                            child: GestureDetector(
-                              onTap: () {
-                                context
-                                    .read<PaymentCubit>()
-                                    .changeShippingIndex(index);
-                              },
-                              child: _shippingAddresssContainer(
-                                  context: context,
-                                  isChosseAddress: isChosseAddress,
-                                  isSelected: isSelected,
-                                  index: index),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
-                ),
-                CustomButton(
-                  onPressed: () async {
-                    final userAddressCubit = context.read<UserAddressCubit>();
-                    final mapCubit = context.read<MapCubit>();
-
-                    LatLng latLng = LatLng(
-                        userAddressCubit
-                            .addressDataList[
-                                context.read<PaymentCubit>().selectedIndex]
-                            .location!
-                            .coordinates!
-                            .last,
-                        userAddressCubit
-                            .addressDataList[
-                                context.read<PaymentCubit>().selectedIndex]
-                            .location!
-                            .coordinates!
-                            .first);
-
-                    await mapCubit.moveToLocation(position: latLng);
-
-                    Navigator.pop(context);
-                  },
-                  radius: 8.r,
-                  widget: Text('Save Changes',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.white,
-                          fontSize: 13.sp)),
-                ),
-                SizedBox(height: 10.h),
-                CustomButton(
-                  onPressed: () async {
-                    // TODO: Optimize the maxDistance calculation based on dynamic input
-
-                    // final mapCubit = context.read<MapCubit>();
-                    // mapCubit.getCurrentLocation(context);
-                    // final address = await mapCubit.getAddressFromLatLng(
-                    //     mapCubit.targetPosition.latitude,
-                    //     mapCubit.targetPosition.longitude);
-
-                    // Navigator.pushReplacement(
-                    //     context,
-                    //     MaterialPageRoute<void>(
-                    //         builder: (BuildContext context) =>
-                    //             AddNewAddressScreen(
-                    //               latLng: mapCubit.targetPosition,
-                    //               markerData: mapCubit.markers,
-                    //               addressAreaInformation: address,
-                    //               isPaymentAddress: true,
-                    //             )));
-                  },
-                  color: ColorManger.brownLight,
-                  radius: 8.r,
-                  widget: Text('Add New',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brun,
-                          fontSize: 15.sp)),
-                ),
-              ],
-            ),
+      builder: (context) => MultiBlocProvider(
+        providers: [
+          BlocProvider.value(
+            value: instance<PaymentCubit>(),
           ),
-        );
-      }),
+          BlocProvider.value(
+            value: instance<UserAddressCubit>(),
+          ),
+          BlocProvider.value(
+            value: instance<MapCubit>(),
+          ),
+        ],
+        child: StatefulBuilder(
+            builder: (BuildContext context, StateSetter setState) {
+          final userAddressCubit =
+              context.read<UserAddressCubit>().addressDataList;
+
+          return Padding(
+            padding: EdgeInsets.only(
+                right: 18.w, left: 18.w, top: 35.h, bottom: 30.h),
+            child: Material(
+              color: ColorManger.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        height: 50.h,
+                        width: 2.w,
+                        color: ColorManger.brunLight,
+                      ),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Choose Address',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(
+                                    fontFamily: FontConsistent.fontFamilyAcme,
+                                    color: ColorManger.brun,
+                                    fontSize: 16.sp),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(
+                            'You can edit your address from your settings',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(
+                                    fontFamily: FontConsistent.fontFamilyAcme,
+                                    color: ColorManger.brunLight,
+                                    fontSize: 12.sp),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25.h,
+                  ),
+                  Expanded(
+                    child: BlocBuilder<PaymentCubit, PaymentState>(
+                      builder: (context, state) {
+                        return ListView.builder(
+                          itemCount: userAddressCubit.length,
+                          addAutomaticKeepAlives: true,
+                          itemBuilder: (context, index) {
+                            final isSelected =
+                                context.read<PaymentCubit>().selectedIndex !=
+                                    index;
+                            final isChosseAddress =
+                                context.read<PaymentCubit>().selectedIndex ==
+                                    index;
+
+                            return Padding(
+                              padding: EdgeInsets.only(bottom: 10.h),
+                              child: GestureDetector(
+                                onTap: () {
+                                  context
+                                      .read<PaymentCubit>()
+                                      .changeShippingIndex(index);
+                                },
+                                child: _shippingAddresssContainer(
+                                    context: context,
+                                    isChosseAddress: isChosseAddress,
+                                    isSelected: isSelected,
+                                    index: index),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                  CustomButton(
+                    onPressed: () async {
+                      Navigator.of(context, rootNavigator: !false)
+                          .popAndPushNamed(Routes.shippingPayment);
+                    },
+                    radius: 8.r,
+                    widget: Text('Save Changes',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontFamily: FontConsistent.fontFamilyAcme,
+                            color: ColorManger.white,
+                            fontSize: 13.sp)),
+                  ),
+                  SizedBox(height: 10.h),
+                  CustomButton(
+                    onPressed: () async {
+                      context.read<UserAddressCubit>().isPaymentAddress = true;
+
+                      Navigator.of(context, rootNavigator: !false)
+                          .popAndPushNamed(Routes.map);
+                    },
+                    color: ColorManger.brownLight,
+                    radius: 8.r,
+                    widget: Text('Add New',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontFamily: FontConsistent.fontFamilyAcme,
+                            color: ColorManger.brun,
+                            fontSize: 15.sp)),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }),
+      ),
     );
   }
 }
