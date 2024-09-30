@@ -31,6 +31,11 @@ class CartView extends StatelessWidget {
               if (context.read<UserAddressCubit>().addressDataList.isNotEmpty) {
                 Navigator.of(context, rootNavigator: !false)
                     .pushNamed(Routes.shippingAddress);
+              } else {
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamed(Routes.map);
+
+                context.read<UserAddressCubit>().isPaymentAddress = true;
               }
             },
             widget: Text(

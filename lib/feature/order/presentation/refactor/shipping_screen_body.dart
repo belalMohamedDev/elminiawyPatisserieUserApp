@@ -456,8 +456,9 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   ),
                   CustomButton(
                     onPressed: () async {
+                      Navigator.pop(context);
                       Navigator.of(context, rootNavigator: !false)
-                          .popAndPushNamed(Routes.shippingPayment);
+                          .popAndPushNamed(Routes.shippingAddress);
                     },
                     radius: 8.r,
                     widget: Text('Save Changes',

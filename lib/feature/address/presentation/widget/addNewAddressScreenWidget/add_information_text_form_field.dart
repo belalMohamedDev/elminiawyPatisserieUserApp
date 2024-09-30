@@ -32,14 +32,14 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                 context.read<MapCubit>().textEditingSearchText =
                     'Find Your Location';
 
-                if (userAddressCubit.isPaymentAddress == true) {
+                if (userAddressCubit.isPaymentAddress == true )  {
                   final index = userAddressCubit.addressDataList
                       .indexWhere((element) => element.sId == data.data!.sId);
 
                   if (index != -1) {
                     context.read<PaymentCubit>().changeShippingIndex(index);
                     Navigator.of(context, rootNavigator: !false)
-                        .popAndPushNamed(Routes.shippingPayment);
+                        .popAndPushNamed(Routes.shippingAddress);
                   }
                 } else {
                   Navigator.pushReplacementNamed(
