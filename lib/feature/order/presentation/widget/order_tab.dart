@@ -1,7 +1,4 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
-
 
 class OrdersTab extends StatelessWidget {
   final List<GetOrdersResponseData> getOrdersResponseData;
@@ -18,11 +15,15 @@ class OrdersTab extends StatelessWidget {
           padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 15.h),
           child: InkWell(
             onTap: () {
-              NavBarNavigator.push(context,
-                  screen: OrderDetails(
-                    order: order,
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BlocProvider.value(
+                    value: instance<PaymentCubit>(),
+                    child: OrderDetails(order: order),
                   ),
-                  withNavBar: false);
+                ),
+              );
             },
             child: Container(
               width: double.infinity,

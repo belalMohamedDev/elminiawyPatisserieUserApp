@@ -1,6 +1,4 @@
-
-
-import '../../../../../core/common/shared/shared_imports.dart'; // 
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class OrderPlaced extends StatelessWidget {
   const OrderPlaced({super.key});
@@ -63,9 +61,9 @@ class OrderPlacedBody extends StatelessWidget {
           CustomButton(
             color: ColorManger.brunLight,
             onPressed: () {
-                  Navigator.pushAndRemoveUntil(
+              Navigator.pushNamedAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => const OrderDetails()),
+                Routes.orderDetails,
                 (route) => false,
               );
             },

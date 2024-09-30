@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => instance<AppLogicCubit>(),
         ),
-        // BlocProvider(
-        //   create: (context) => instance<ProductCubit>(),
-        // ),
+        BlocProvider(
+          create: (context) => instance<ProductCubit>(),
+        ),
         BlocProvider(
           create: (context) => instance<WishListCubit>(),
         ),

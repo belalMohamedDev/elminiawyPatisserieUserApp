@@ -1,10 +1,7 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'payment_state.dart';
 part 'payment_cubit.freezed.dart';
-
-
 
 class PaymentCubit extends Cubit<PaymentState> {
   PaymentCubit(this._orderRepositoryImplement)

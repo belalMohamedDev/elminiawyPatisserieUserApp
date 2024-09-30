@@ -136,6 +136,20 @@ class RouteGenerator {
           ),
         );
 
+      case Routes.orderPlaced:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: instance<PaymentCubit>(),
+            child: const OrderPlaced(),
+          ),
+        );
+      case Routes.orderDetails:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: instance<PaymentCubit>(),
+            child: const OrderDetails(),
+          ),
+        );
       case Routes.newProduct:
         return MaterialPageRoute(builder: (_) => const NewProductView());
 

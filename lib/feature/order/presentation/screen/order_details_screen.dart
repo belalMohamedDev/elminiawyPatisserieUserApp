@@ -1,8 +1,4 @@
-
-
-
-
-import '../../../../../core/common/shared/shared_imports.dart'; // 
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class OrderDetails extends StatelessWidget {
   final GetOrdersResponseData? order;
@@ -33,7 +29,8 @@ class OrderDetails extends StatelessWidget {
               ? order!.status == 0 || order!.status == 1
                   ? TextButton(
                       onPressed: () {
-                        cancelBottomSheet(context, order);
+                        cancelBottomSheet(
+                            context, order, context.read<PaymentCubit>());
                       },
                       child: Text("Cancel",
                           style: Theme.of(context)
@@ -47,7 +44,8 @@ class OrderDetails extends StatelessWidget {
                   : const SizedBox()
               : TextButton(
                   onPressed: () {
-                    cancelBottomSheet(context, order);
+                    cancelBottomSheet(
+                        context, order, context.read<PaymentCubit>());
                   },
                   child: Text("Cancel",
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -64,7 +62,8 @@ class OrderDetails extends StatelessWidget {
     );
   }
 
-  void cancelBottomSheet(BuildContext context, GetOrdersResponseData? order) {
+  void cancelBottomSheet(BuildContext context, GetOrdersResponseData? order,
+      PaymentCubit paymentCubit) {
     showCupertinoModalBottomSheet(
         useRootNavigator: true,
         barrierColor: Colors.black54,
@@ -94,12 +93,12 @@ class OrderDetails extends StatelessWidget {
                     ),
                     CustomButton(
                       onPressed: () {
-                        context.read<PaymentCubit>().ordercancelSummit(
-                            order!.sId ??
-                                context
-                                    .read<PaymentCubit>()
-                                    .createOrderResponseData!
-                                    .sId!);
+                      
+                        final orderId = order?.sId ??
+                            paymentCubit.createOrderResponseData?.sId;
+                        if (orderId != null) {
+                          paymentCubit.ordercancelSummit(orderId);
+                        }
                       },
                       radius: 8.r,
                       widget: Text('Yes, Cancel',

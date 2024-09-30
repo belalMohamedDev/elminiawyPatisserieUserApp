@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ReviewPaymentScreen extends StatelessWidget {
@@ -119,10 +118,9 @@ class ReviewPaymentScreen extends StatelessWidget {
                         ShowToast.showToastErrorTop(
                             errorMessage: errorMessage, context: context),
                     createCashOrderSuccess: (data) {
-                      Navigator.pushAndRemoveUntil(
+                      Navigator.pushNamedAndRemoveUntil(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const OrderPlaced()),
+                        Routes.orderPlaced,
                         (route) => false,
                       );
                     });

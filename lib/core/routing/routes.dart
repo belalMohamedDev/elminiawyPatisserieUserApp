@@ -25,5 +25,7 @@ class Routes {
   static const String shippingAddress = "ShippingAddress";
   static const String shippingPayment = "ShippingPayment";
   static const String shippingReviewScreen = "ReviewPaymentScreen";
+  static const String orderPlaced = "OrderPlaced";
+  static const String orderDetails = "OrderDetails";
   
 }
