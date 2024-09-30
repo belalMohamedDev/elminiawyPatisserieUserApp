@@ -1,5 +1,3 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class OrderDetailsBody extends StatelessWidget {
@@ -20,7 +18,12 @@ class OrderDetailsBody extends StatelessWidget {
               ShowToast.showToastSuccessTop(
                   message: 'success to cancel order', context: context);
               context.pop();
-              context.pop();
+              WidgetsBinding.instance.addPostFrameCallback((_) async {
+                await Future.wait([
+                  context.read<PaymentCubit>().getCompleteOrdersSummit(),
+                  context.read<PaymentCubit>().getOrdersPendingSummit(),
+                ]);
+              });
             }
           },
         );
@@ -222,7 +225,7 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 5.w,
                 ),
-                Text("${response!.totalOrderPrice}  EGP",
+                Text("${response.totalOrderPrice ?? ''}  EGP",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brun,
@@ -244,7 +247,7 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 20.w,
                 ),
-                Text("${response.paymentMethodType}",
+                Text("${response.paymentMethodType ?? ""}",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brun,
@@ -256,37 +259,44 @@ class OrderDetailsBody extends StatelessWidget {
               color: ColorManger.brownLight,
             ),
             SizedBox(
-              height: 10.h,
+              height: response.shippingAddress != null ? 10.h : 0,
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  IconlyBold.location,
-                  color: ColorManger.brun,
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                Expanded(
-                  child: Text(
-                      "${response!.shippingAddress!.phone},   ${response.shippingAddress!.region}",
-                      softWrap: true,
-                      maxLines: null,
-                      overflow: TextOverflow.visible,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brun,
-                          fontSize: 12.sp)),
-                ),
-              ],
-            ),
+            response.shippingAddress != null
+                ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(
+                        IconlyBold.location,
+                        color: ColorManger.brun,
+                      ),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Expanded(
+                        child: Text(
+                            "${response.shippingAddress?.phone ?? ''},   ${response.shippingAddress?.region ?? ''}",
+                            softWrap: true,
+                            maxLines: null,
+                            overflow: TextOverflow.visible,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(
+                                    fontFamily: FontConsistent.fontFamilyAcme,
+                                    color: ColorManger.brun,
+                                    fontSize: 12.sp)),
+                      ),
+                    ],
+                  )
+                : const SizedBox(),
             SizedBox(
               height: 5.h,
             ),
-            Divider(
-              color: ColorManger.brownLight,
-            ),
+            response.shippingAddress != null
+                ? Divider(
+                    color: ColorManger.brownLight,
+                  )
+                : const SizedBox(),
             SizedBox(
               height: 10.h,
             ),
@@ -299,7 +309,7 @@ class OrderDetailsBody extends StatelessWidget {
                         color: ColorManger.brun,
                         fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.shippingPrice}  EGP",
+                Text("${response.shippingPrice ?? ''}  EGP",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brunLight,
@@ -318,7 +328,7 @@ class OrderDetailsBody extends StatelessWidget {
                         color: ColorManger.brun,
                         fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.taxPrice}  EGP",
+                Text("${response.taxPrice ?? ""}  EGP",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
                         color: ColorManger.brunLight,

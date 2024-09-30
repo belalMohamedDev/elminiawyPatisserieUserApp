@@ -32,7 +32,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                 context.read<MapCubit>().textEditingSearchText =
                     'Find Your Location';
 
-                if (userAddressCubit.isPaymentAddress == true )  {
+                if (userAddressCubit.isPaymentAddress == true) {
                   final index = userAddressCubit.addressDataList
                       .indexWhere((element) => element.sId == data.data!.sId);
 
@@ -42,6 +42,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                         .popAndPushNamed(Routes.shippingAddress);
                   }
                 } else {
+                  Navigator.pop(context);
                   Navigator.pushReplacementNamed(
                     context,
                     Routes.address,
@@ -227,8 +228,9 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                     mapCuibt.targetPosition.latitude.toString(),
                                 longitude: mapCuibt.targetPosition.longitude
                                     .toString(),
-                                region: mapCuibt
-                                    .checkLocationAvailableResponse!.address!);
+                                region: mapCuibt.checkLocationAvailableResponse!
+                                        .address ??
+                                    '');
                           } else {
                             await userAddressCubit.addNewAddress(
                                 latitude:
