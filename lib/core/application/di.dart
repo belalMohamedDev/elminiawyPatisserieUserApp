@@ -210,8 +210,6 @@ Future<void> _initNotification() async {
   instance
     ..registerLazySingleton<UserNotificationRepositoryImplement>(
         () => UserNotificationRepositoryImplement(instance(), instance()))
-    ..registerFactory<NotificationService>(
-        () => NotificationService(instance()))
     ..registerFactory<UserNotificationCubit>(
         () => UserNotificationCubit(instance()));
 }

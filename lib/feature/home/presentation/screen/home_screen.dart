@@ -1,6 +1,3 @@
-
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class HomeScreen extends StatefulWidget {
@@ -12,17 +9,23 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late final NotificationService _notificationService;
-  late final Stream<UserNotificationResponse> _notificationStream;
   @override
   void initState() {
     super.initState();
-    _notificationService = instance<NotificationService>();
-    _notificationStream = _notificationService.notificationStream;
+
+    final FirebaseCloudMessaging firebaseCloudMessaging =
+        FirebaseCloudMessaging();
+
+    _notificationService = NotificationService(
+      instance<UserNotificationRepositoryImplement>(),
+      firebaseCloudMessaging.recieveNotification,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       String initialUserName =
           await SharedPrefHelper.getSecuredString(PrefKeys.userName);
       if (initialUserName.isNotEmpty) {
+        _notificationService.listenToNotificationChanges();
         _notificationService.fetchNotificationsContinuously();
       }
     });
@@ -32,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: HomeBody(
-          notificationService: _notificationService,
-          notificationStream: _notificationStream),
+        notificationService: _notificationService,
+      ),
     );
   }
 
