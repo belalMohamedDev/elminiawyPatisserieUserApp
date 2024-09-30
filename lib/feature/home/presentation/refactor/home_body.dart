@@ -42,28 +42,42 @@ class HomeBody extends StatelessWidget {
     );
   }
 
-  Row _locationName(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Icon(IconlyBold.location, color: ColorManger.brown),
-        SizedBox(
-          width: 5.w,
-        ),
-        Text("New York, USA",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 14.sp)),
-        SizedBox(
-          width: 5.w,
-        ),
-        Icon(
-          IconlyBold.arrowDown2,
-          color: ColorManger.brown,
-          size: 15.sp,
-        ),
-      ],
+  InkWell _locationName(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context, rootNavigator: true).push(
+          MaterialPageRoute(
+            builder: (context) => BlocProvider.value(
+              value: instance<MapCubit>(),
+              child: const MapScreen(
+                isHomeMap: true,
+              ),
+            ),
+          ),
+        );
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Icon(IconlyBold.location, color: ColorManger.brown),
+          SizedBox(
+            width: 5.w,
+          ),
+          Text("New York, USA",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.brun,
+                  fontSize: 14.sp)),
+          SizedBox(
+            width: 5.w,
+          ),
+          Icon(
+            IconlyBold.arrowDown2,
+            color: ColorManger.brown,
+            size: 15.sp,
+          ),
+        ],
+      ),
     );
   }
 

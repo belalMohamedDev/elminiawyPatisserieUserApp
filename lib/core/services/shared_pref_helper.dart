@@ -79,6 +79,7 @@ class SharedPrefHelper {
         'FlutterSecureStorage: Setting secured string with key: $key and value: $value');
     await flutterSecureStorage.write(key: key, value: value);
   }
+  
 
   /// Gets a String value from FlutterSecureStorage with the given [key].
   static Future<String> getSecuredString(String key) async {
@@ -87,6 +88,25 @@ class SharedPrefHelper {
     return await flutterSecureStorage.read(key: key) ?? '';
   }
 
+/// Saves a [double] value with a [key] in FlutterSecureStorage.
+  static Future<void> setSecuredDouble(String key, double value) async {
+    const FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+    String stringValue = value.toString(); // Convert double to String
+    debugPrint(
+        'FlutterSecureStorage: Setting secured double with key: $key and value: $stringValue');
+    await flutterSecureStorage.write(key: key, value: stringValue);
+  }
+  /// Gets a double value from FlutterSecureStorage with the given [key].
+  static Future<double?> getSecuredDouble(String key) async {
+    const FlutterSecureStorage flutterSecureStorage = FlutterSecureStorage();
+    debugPrint('FlutterSecureStorage: Getting secured double with key: $key');
+    String? stringValue = await flutterSecureStorage.read(key: key);
+
+    if (stringValue != null && stringValue.isNotEmpty) {
+      return double.tryParse(stringValue); // Convert String back to double
+    }
+    return null; // Return null if not found or invalid
+  }
   /// Removes all keys and values from FlutterSecureStorage.
   static Future<void> clearAllSecuredData() async {
     debugPrint('FlutterSecureStorage: Clearing all secured data');

@@ -1,15 +1,18 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class PickLocationButton extends StatelessWidget {
   const PickLocationButton({
     super.key,
-    required this.isUpdateMap, required this.mapCubit, required this.mapState,
+    required this.isUpdateMap,
+    required this.mapCubit,
+    required this.mapState,
+    required this.isHomeMap,
   });
 
   final bool isUpdateMap;
   final MapCubit mapCubit;
   final MapState mapState;
+  final bool isHomeMap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,15 @@ class PickLocationButton extends StatelessWidget {
                 mapCubit.moveToLocation(
                     position: mapCubit.targetPosition,
                     controller: mapCubit.newAddressMapController);
+                Navigator.pop(context);
+              } else if (isHomeMap == true) {
+                await SharedPrefHelper.setSecuredString(PrefKeys.locationArea,
+                    mapCubit.checkLocationAvailableResponse!.address!);
+                await SharedPrefHelper.setData(
+                    PrefKeys.latAddressHome, mapCubit.targetPosition.latitude);
+                await SharedPrefHelper.setData(
+                    PrefKeys.longAddressHome,
+                    mapCubit.targetPosition.longitude);
                 Navigator.pop(context);
               } else {
                 // Use the context only if the widget is still mounted.

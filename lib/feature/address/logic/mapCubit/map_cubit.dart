@@ -1,7 +1,3 @@
-
-
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'map_state.dart';
@@ -11,7 +7,6 @@ class MapCubit extends Cubit<MapState> {
   MapCubit(this.places, this._userAddressRepository)
       : super(const MapState.initial());
   final UserAddressRepositoryImplement _userAddressRepository;
-
 
   final GoogleMapsPlaces
       places; // Instance of GoogleMapsPlaces for search functionality
@@ -176,6 +171,26 @@ class MapCubit extends Cubit<MapState> {
       }
     } catch (e) {
       emit(MapState.error("Failed to get current location: $e"));
+    }
+  }
+
+  Future<void> addLocationToMap(BuildContext context) async {
+    emit(const MapState.loading());
+    try {
+      final lat = await SharedPrefHelper.getDouble(PrefKeys.latAddressHome);
+      final long = await SharedPrefHelper.getDouble(PrefKeys.longAddressHome);
+
+      LatLng currentPosition = LatLng(lat, long);
+
+      targetPosition = currentPosition;
+
+      addCurrentLocationMarkerToMap(currentPosition);
+
+      // await moveToLocation(position: currentPosition);
+
+      emit(MapState.loaded(currentPosition, {}));
+    } catch (e) {
+      emit(MapState.error("Failed to load location: $e"));
     }
   }
 

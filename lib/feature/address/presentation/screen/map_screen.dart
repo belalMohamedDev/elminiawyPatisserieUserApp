@@ -1,12 +1,10 @@
-
-
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class MapScreen extends StatefulWidget {
   final bool isUpdateMap;
-  const MapScreen({super.key, this.isUpdateMap = false});
+  final bool isHomeMap;
+  const MapScreen(
+      {super.key, this.isUpdateMap = false, this.isHomeMap = false});
 
   @override
   State<MapScreen> createState() => _MapScreenState();
@@ -15,15 +13,20 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   @override
   void initState() {
-    final mapCuibt = context.read<MapCubit>();
     super.initState();
-    mapCuibt.getCurrentLocation(context).then(
-      (value) {
-        context
-            .read<MapCubit>()
-            .checkAddressAvailableFetch(mapCuibt.targetPosition);
-      },
-    );
+    final mapCuibt = context.read<MapCubit>();
+
+    if (widget.isHomeMap == false) {
+      mapCuibt.getCurrentLocation(context).then(
+        (value) {
+          mapCuibt.checkAddressAvailableFetch(mapCuibt.targetPosition);
+        },
+      );
+    } else {
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        mapCuibt.addLocationToMap(context);
+      });
+    }
   }
 
   @override
@@ -60,6 +63,7 @@ class _MapScreenState extends State<MapScreen> {
                 isUpdateMap: widget.isUpdateMap,
                 mapCubit: mapCuibt,
                 mapState: state,
+                isHomeMap: widget.isHomeMap,
               ),
             ],
           );
