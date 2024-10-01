@@ -15,6 +15,8 @@ class MapState with _$MapState {
 
   const factory MapState.toggleMapState(final MapType mapType) = ToggleMapState;
 
+  const factory MapState.setStringHomeLocationState(String homeLocation) = SetStringHomeLocationState;
+
 
 
   

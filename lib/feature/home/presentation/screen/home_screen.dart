@@ -24,6 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       String initialUserName =
           await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+
+      context.read<MapCubit>().setLocationToHome();
+
       if (initialUserName.isNotEmpty) {
         _notificationService.listenToNotificationChanges();
         _notificationService.fetchNotificationsContinuously();

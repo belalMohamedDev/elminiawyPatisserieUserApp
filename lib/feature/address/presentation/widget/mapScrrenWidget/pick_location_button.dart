@@ -38,9 +38,10 @@ class PickLocationButton extends StatelessWidget {
                     mapCubit.checkLocationAvailableResponse!.address!);
                 await SharedPrefHelper.setData(
                     PrefKeys.latAddressHome, mapCubit.targetPosition.latitude);
-                await SharedPrefHelper.setData(
-                    PrefKeys.longAddressHome,
+                await SharedPrefHelper.setData(PrefKeys.longAddressHome,
                     mapCubit.targetPosition.longitude);
+
+                mapCubit.setLocationToHome();
                 Navigator.pop(context);
               } else {
                 // Use the context only if the widget is still mounted.

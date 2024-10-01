@@ -8,6 +8,7 @@ part 'banner_cubit.freezed.dart';
 class BannerCubit extends Cubit<BannerState> {
   BannerCubit(this._homeRepository) : super(const BannerState.initial());
   final HomeRepositoryImplement _homeRepository;
+  
   static const int _retryLimit = 3;
   int _retryCount = 0;
 

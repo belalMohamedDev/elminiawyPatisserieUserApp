@@ -63,11 +63,21 @@ class HomeBody extends StatelessWidget {
           SizedBox(
             width: 5.w,
           ),
-          Text("New York, USA",
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brun,
-                  fontSize: 14.sp)),
+          BlocBuilder<MapCubit, MapState>(
+            builder: (context, state) {
+              return ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 200.w),
+                child: Text(context.read<MapCubit>().homeScreenCurrentAddress,
+                    maxLines: 1,
+                    textAlign: TextAlign.start,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontFamily: FontConsistent.fontFamilyAcme,
+                        color: ColorManger.brun,
+                        fontSize: 12.sp)),
+              );
+            },
+          ),
           SizedBox(
             width: 5.w,
           ),
@@ -84,6 +94,9 @@ class HomeBody extends StatelessWidget {
   Row _locationAndNotificationRow(BuildContext context) {
     return Row(
       children: [
+        SizedBox(
+          width: 5.w,
+        ),
         Text("Location",
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,

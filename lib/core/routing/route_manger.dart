@@ -117,6 +117,9 @@ class RouteGenerator {
               BlocProvider(
                 create: (context) => instance<CategoryCubit>(),
               ),
+              BlocProvider(
+                create: (context) => instance<MapCubit>(),
+              ),
               BlocProvider.value(
                 value: instance<CartCubit>(),
               ),

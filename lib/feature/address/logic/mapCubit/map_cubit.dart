@@ -20,6 +20,7 @@ class MapCubit extends Cubit<MapState> {
   bool isHomeScreenLocation = false;
 
   String textEditingSearchText = 'Find Your Location';
+  String homeScreenCurrentAddress = '';
   final TextEditingController searchConroller = TextEditingController();
 
   // Default starting position on the map
@@ -153,6 +154,13 @@ class MapCubit extends Cubit<MapState> {
   // Set the map controller
   void setCheckOutMapController(GoogleMapController controller) {
     checkOutMapController = controller;
+  }
+
+  // Set the location String
+  void setLocationToHome() async {
+    homeScreenCurrentAddress =
+        await SharedPrefHelper.getSecuredString(PrefKeys.locationArea);
+    emit(MapState.setStringHomeLocationState(homeScreenCurrentAddress));
   }
 
   Future<void> getCurrentLocation(BuildContext context) async {
