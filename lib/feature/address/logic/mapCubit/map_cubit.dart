@@ -17,6 +17,8 @@ class MapCubit extends Cubit<MapState> {
       checkOutMapController; // Controller to manage Google Map
   List<MarkerData> markers = []; // List to hold custom markers
 
+  bool isHomeScreenLocation = false;
+
   String textEditingSearchText = 'Find Your Location';
   final TextEditingController searchConroller = TextEditingController();
 
@@ -136,8 +138,11 @@ class MapCubit extends Cubit<MapState> {
   }
 
   // Set the map controller
-  void setMapController(GoogleMapController controller) {
+  void setMapController(GoogleMapController controller) async {
     mapController = controller;
+    if (isHomeScreenLocation == true) {
+      await moveToLocation(position: targetPosition);
+    }
   }
 
   // Set the map controller
@@ -186,7 +191,7 @@ class MapCubit extends Cubit<MapState> {
 
       addCurrentLocationMarkerToMap(currentPosition);
 
-      // await moveToLocation(position: currentPosition);
+      isHomeScreenLocation = true;
 
       emit(MapState.loaded(currentPosition, {}));
     } catch (e) {
@@ -226,7 +231,7 @@ class MapCubit extends Cubit<MapState> {
       {required LatLng position, GoogleMapController? controller}) async {
     emit(const MapState.loading());
 
-    GoogleMapController googleController = controller ?? mapController;
+    final googleController = controller ?? mapController;
 
     try {
       googleController.animateCamera(
