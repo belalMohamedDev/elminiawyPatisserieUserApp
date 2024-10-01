@@ -16,17 +16,19 @@ class _MapScreenState extends State<MapScreen> {
     super.initState();
     final mapCuibt = context.read<MapCubit>();
 
-    if (widget.isHomeMap == false) {
-      mapCuibt.getCurrentLocation(context).then(
-        (value) {
-          mapCuibt.checkAddressAvailableFetch(mapCuibt.targetPosition);
-        },
-      );
-    } else {
-      WidgetsBinding.instance.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+     
+
+      if (widget.isHomeMap == false) {
+        mapCuibt.getCurrentLocation(context).then(
+          (value) {
+            mapCuibt.checkAddressAvailableFetch(mapCuibt.targetPosition);
+          },
+        );
+      } else {
         mapCuibt.addLocationToMap(context);
-      });
-    }
+      }
+    });
   }
 
   @override

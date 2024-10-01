@@ -28,6 +28,8 @@ class PickLocationButton extends StatelessWidget {
                     true &&
                 mapCubit.checkLocationAvailableResponse!.isAddressAvailable ==
                     true) {
+              bool loginMap =
+                  await SharedPrefHelper.getBool(PrefKeys.prefsSetLoginMap);
               if (isUpdateMap == true) {
                 mapCubit.moveToLocation(
                     position: mapCubit.targetPosition,
@@ -43,6 +45,19 @@ class PickLocationButton extends StatelessWidget {
 
                 mapCubit.setLocationToHome();
                 Navigator.pop(context);
+              } else if (loginMap == true) {
+                await SharedPrefHelper.setSecuredString(PrefKeys.locationArea,
+                    mapCubit.checkLocationAvailableResponse!.address!);
+                await SharedPrefHelper.setData(
+                    PrefKeys.latAddressHome, mapCubit.targetPosition.latitude);
+                await SharedPrefHelper.setData(PrefKeys.longAddressHome,
+                    mapCubit.targetPosition.longitude);
+
+                await SharedPrefHelper.setData(
+                    PrefKeys.prefsSetLoginMap, false);
+
+                // mapCubit.setLocationToHome();
+                context.pushNamedAndRemoveUntil(Routes.bottomNavBarRoute);
               } else {
                 // Use the context only if the widget is still mounted.
 

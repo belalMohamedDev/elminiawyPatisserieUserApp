@@ -59,21 +59,21 @@ class HomeBody extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Icon(IconlyBold.location, color: ColorManger.brown),
+          Icon(IconlyBold.location, color: ColorManger.brunLight),
           SizedBox(
             width: 5.w,
           ),
           BlocBuilder<MapCubit, MapState>(
             builder: (context, state) {
               return ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 200.w),
+                constraints: BoxConstraints(maxWidth: 180.w),
                 child: Text(context.read<MapCubit>().homeScreenCurrentAddress,
                     maxLines: 1,
                     textAlign: TextAlign.start,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
+                        color: ColorManger.brunLight,
                         fontSize: 12.sp)),
               );
             },
@@ -83,7 +83,7 @@ class HomeBody extends StatelessWidget {
           ),
           Icon(
             IconlyBold.arrowDown2,
-            color: ColorManger.brown,
+            color: ColorManger.brunLight,
             size: 15.sp,
           ),
         ],
@@ -100,7 +100,7 @@ class HomeBody extends StatelessWidget {
         Text("Location",
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brunLight,
+                color: ColorManger.brun,
                 fontSize: 14.sp)),
         const Spacer(),
         ValueListenableBuilder(

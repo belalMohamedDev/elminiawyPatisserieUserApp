@@ -19,12 +19,13 @@ class GetStartedButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () async {
-          context.pushNamedAndRemoveUntil(Routes.bottomNavBarRoute);
+          context.pushNamedAndRemoveUntil(Routes.map);
 
           SharedPrefHelper.setData(PrefKeys.prefsKeyOnBoardingScreenView, true);
+          SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, true);
+          SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
 
-          await SharedPrefHelper.setSecuredString(
-              PrefKeys.refreshToken, 'Guest User');
+       
         },
         child: Text(AppStrings.letsGetStarted,
             style: Theme.of(context)

@@ -13,4 +13,6 @@ class PrefKeys {
   static const String locationArea = 'locationArea';
   static const String latAddressHome = 'latAddressHome';
   static const String longAddressHome = 'longAddressHome';
+  static const String prefsKeyAnonymousUser = 'prefsKeyAnonymousUser';
+  static const String prefsSetLoginMap = 'prefsSetLoginMap';
 }

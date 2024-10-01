@@ -63,17 +63,58 @@ class MyApp extends StatelessWidget {
 }
 
 Future<String> checkIfLoggedInUser() async {
+  // String? userToken =
+  //     await SharedPrefHelper.getSecuredString(PrefKeys.refreshToken);
+
+  // String? locationArea =
+  //     await SharedPrefHelper.getSecuredString(PrefKeys.locationArea);
+
+  // bool? isOnBoardingScreenView =
+  //     await SharedPrefHelper.getBool(PrefKeys.prefsKeyOnBoardingScreenView);
+
+  // if (!userToken.isNullOrEmpty()) {
+  //   return Routes.bottomNavBarRoute;
+  // } else if (isOnBoardingScreenView == true) {
+  //   return Routes.loginRoute;
+  // } else {
+  //   return Routes.onBoardingRoute;
+  // }
+
   String? userToken =
       await SharedPrefHelper.getSecuredString(PrefKeys.refreshToken);
 
   bool? isOnBoardingScreenView =
       await SharedPrefHelper.getBool(PrefKeys.prefsKeyOnBoardingScreenView);
 
-  if (!userToken.isNullOrEmpty()) {
-    return Routes.bottomNavBarRoute;
-  } else if (isOnBoardingScreenView == true) {
-    return Routes.loginRoute;
+  bool? isAnonymousUser =
+      await SharedPrefHelper.getBool(PrefKeys.prefsKeyAnonymousUser);
+
+  String? locationArea =
+      await SharedPrefHelper.getSecuredString(PrefKeys.locationArea);
+
+  if (isOnBoardingScreenView == true) {
+    if (locationArea == '' || locationArea.isEmpty) {
+      return Routes.map;
+    } else {
+     
+      if (isAnonymousUser == true) {
+        
+        return Routes.bottomNavBarRoute; 
+      } else if (!userToken.isNullOrEmpty()) {
+       
+        return Routes
+            .bottomNavBarRoute; 
+      } else {
+        return Routes.loginRoute; 
+      }
+    }
+  } else if (!userToken.isNullOrEmpty()) {
+    if (locationArea == '' || locationArea.isEmpty) {
+      return Routes.map;
+    } else {
+      return Routes.bottomNavBarRoute;
+    }
   } else {
-    return Routes.onBoardingRoute;
+    return Routes.onBoardingRoute; 
   }
 }
