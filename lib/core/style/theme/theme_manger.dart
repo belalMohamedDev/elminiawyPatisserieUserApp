@@ -64,7 +64,7 @@ ThemeData getApplicationTheme(BuildContext context) {
           fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
-        titleMedium: getSemiBoldStyle(
+        titleMedium: getMediumStyle(
           fontSize: responsive.setTextSize(5),
           color: ColorManger.brunLight,
           fontFamily: FontConsistent.fontFamilyAcme,

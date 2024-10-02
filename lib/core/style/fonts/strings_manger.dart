@@ -13,7 +13,11 @@ class AppStrings {
       "Discover our wonderful selection of fresh pastries and baked goods,crafted with love and passion.";
   static const String letsGetStarted = "let’s Get Started";
   static const String alreadyHaveAnAccount = "Already have an account?";
-  static const String signIn = "Sign In";
+  static const String signInWithGoogle = "Sign in with Google";
+  static const String signInWithApple = "Sign in with Apple";
+  static const String signIn = "Sign in ";
+  static const String welcomeBack = "Welcome Back!";
+  static const String toGetStartedSignInToYourAccount = "To get started, sign in to your account.";
 
   ///////// auth screen
   static const String orSignInWith = "Or sign in with";

@@ -32,9 +32,13 @@ class AlreadyAccountTextSpan extends StatelessWidget {
           // "Sign In" text with a tap gesture recognizer to handle the navigation action
           TextSpan(
             recognizer: TapGestureRecognizer()
-              ..onTap = () {
+              ..onTap = () async {
                 // Navigate to the login screen and remove all previous routes
                 context.pushNamedAndRemoveUntil(Routes.loginRoute);
+
+                // Store user progress in shared preferences to mark onboarding as completed
+                await SharedPrefHelper.setData(
+                    PrefKeys.prefsKeyOnBoardingScreenView, true);
               },
 
             // Display the text "Sign In"

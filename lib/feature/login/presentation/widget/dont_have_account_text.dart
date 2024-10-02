@@ -1,34 +1,52 @@
+import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
-import '../../../../../core/common/shared/shared_imports.dart'; //
-
+/// The [DontHaveAnAccountText] widget displays a message prompting users
+/// who do not have an account to sign up. It includes a clickable link
+/// that navigates to the registration page.
+///
+/// This widget includes:
+/// - A message indicating the user does not have an account.
+/// - A clickable "Sign Up" text that redirects users to the registration route.
 class DontHaveAnAccountText extends StatelessWidget {
-  const DontHaveAnAccountText({
-    super.key,
-  });
+  const DontHaveAnAccountText({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
+    return Align(
+      alignment:
+          Alignment.topCenter, // Align the text at the top center of its parent
+      child: Text.rich(
         TextSpan(
-            text: AppStrings.dontHaveAnAccount,
-            style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  fontSize: 14.sp,
-                ),
-            children: [
-              WidgetSpan(
-                  child: SizedBox(
-                width: 10.w,
-              )),
-              TextSpan(
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      context.pushReplacementNamed(Routes.registerRoute);
-                    },
-                  text: AppStrings.signUp,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      fontSize: 18.sp,
-                      fontFamily: FontConsistent.fontFamilyAcme))
-            ]),
-        style: Theme.of(context).textTheme.bodyLarge);
+          text: AppStrings.dontHaveAnAccount, // Default text message
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                fontSize: responsive.setTextSize(4), // Responsive font size
+              ),
+          children: [
+            // Space between the two texts
+            WidgetSpan(
+              child: SizedBox(
+                width: responsive.setWidth(3), // Responsive width for spacing
+              ),
+            ),
+            // Sign Up link with tap gesture
+            TextSpan(
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  // Navigate to the registration route when tapped
+                  context.pushReplacementNamed(Routes.registerRoute);
+                },
+              text: AppStrings.signUp, // Link text
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize:
+                      responsive.setTextSize(4.5)), // Responsive font size
+            ),
+          ],
+        ),
+        style: Theme.of(context).textTheme.bodyLarge, // Overall text style
+      ),
+    );
   }
 }

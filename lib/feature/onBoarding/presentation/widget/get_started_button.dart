@@ -20,8 +20,10 @@ class GetStartedButton extends StatelessWidget {
       // Set the height dynamically based on screen height for responsiveness
       height: responsive.screenHeight * 0.052,
 
+
       // Main button widget
       child: ElevatedButton(
+        
         // Action to be performed when the button is pressed
         onPressed: () async {
           // Navigate to the next screen (e.g., Map screen) and remove all previous routes

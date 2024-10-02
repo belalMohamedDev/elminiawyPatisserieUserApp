@@ -14,7 +14,7 @@ class OnBoardingView extends StatelessWidget {
     return Scaffold(
       body: Padding(
         // Dynamically apply padding based on the screen size using the responsive utility
-        padding: responsive.setPadding(left: 5, top: 10, right: 5),
+        padding: responsive.setPadding(left: 5, top: 8.8, right: 5),
 
         // SingleChildScrollView allows the content to be scrollable in case it overflows
         child: SingleChildScrollView(

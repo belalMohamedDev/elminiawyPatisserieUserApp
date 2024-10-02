@@ -1,4 +1,4 @@
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import 'package:flutter/material.dart';
 
 class ResponsiveUtils {
   final BuildContext context;
@@ -19,6 +19,11 @@ class ResponsiveUtils {
 
   /// Adjust the text size based on the device's screen size.
   double setTextSize(double size) {
+    return (size * blockSizeWidth);
+  }
+
+  /// Adjust the icon size based on the device's screen size.
+  double setIconSize(double size) {
     return (size * blockSizeWidth);
   }
 
@@ -52,5 +57,10 @@ class ResponsiveUtils {
       right: setWidth(right ?? 0),
       bottom: setHeight(bottom ?? 0),
     );
+  }
+
+  /// Adjust border radius based on the device's screen size.
+  double setBorderRadius(double radius) {
+    return (radius * blockSizeWidth);
   }
 }
