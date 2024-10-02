@@ -39,7 +39,9 @@ class MyApp extends StatelessWidget {
           } else {
             // Build the MaterialApp with the initial route based on the future result
             return ScreenUtilInit(
-              designSize: const Size(375, 812),
+                  // Initialize ScreenUtil to support different screen sizes and resolutions
+
+      designSize: const Size(360, 690), // Base size for screen scaling
               minTextAdapt: true,
               useInheritedMediaQuery: true,
               builder: (context, child) {
@@ -50,8 +52,8 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   initialRoute: snapshot.data,
                   onGenerateRoute: RouteGenerator.getRoute,
-                  home: const RouteStatesScreen(),
-                  theme: getApplicationTheme(),
+                  // home: const RouteStatesScreen(),
+                  theme: getApplicationTheme(context),
                 );
               },
             );
@@ -63,23 +65,6 @@ class MyApp extends StatelessWidget {
 }
 
 Future<String> checkIfLoggedInUser() async {
-  // String? userToken =
-  //     await SharedPrefHelper.getSecuredString(PrefKeys.refreshToken);
-
-  // String? locationArea =
-  //     await SharedPrefHelper.getSecuredString(PrefKeys.locationArea);
-
-  // bool? isOnBoardingScreenView =
-  //     await SharedPrefHelper.getBool(PrefKeys.prefsKeyOnBoardingScreenView);
-
-  // if (!userToken.isNullOrEmpty()) {
-  //   return Routes.bottomNavBarRoute;
-  // } else if (isOnBoardingScreenView == true) {
-  //   return Routes.loginRoute;
-  // } else {
-  //   return Routes.onBoardingRoute;
-  // }
-
   String? userToken =
       await SharedPrefHelper.getSecuredString(PrefKeys.refreshToken);
 
@@ -93,28 +78,22 @@ Future<String> checkIfLoggedInUser() async {
       await SharedPrefHelper.getSecuredString(PrefKeys.locationArea);
 
   if (isOnBoardingScreenView == true) {
-    if (locationArea == '' || locationArea.isEmpty) {
-      return Routes.map;
-    } else {
-     
-      if (isAnonymousUser == true) {
-        
-        return Routes.bottomNavBarRoute; 
-      } else if (!userToken.isNullOrEmpty()) {
-       
-        return Routes
-            .bottomNavBarRoute; 
+    if (isAnonymousUser == true) {
+      if (locationArea == '' || locationArea.isEmpty) {
+        return Routes.map;
       } else {
-        return Routes.loginRoute; 
+        return Routes.bottomNavBarRoute;
       }
-    }
-  } else if (!userToken.isNullOrEmpty()) {
-    if (locationArea == '' || locationArea.isEmpty) {
-      return Routes.map;
+    } else if (!userToken.isNullOrEmpty()) {
+      if (locationArea == '' || locationArea.isEmpty) {
+        return Routes.map;
+      } else {
+        return Routes.bottomNavBarRoute;
+      }
     } else {
-      return Routes.bottomNavBarRoute;
+      return Routes.loginRoute;
     }
   } else {
-    return Routes.onBoardingRoute; 
+    return Routes.onBoardingRoute;
   }
 }

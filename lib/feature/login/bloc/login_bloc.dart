@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'login_event.dart';
@@ -113,12 +112,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
-
+    SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
     await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
 
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);
-
   }
 }

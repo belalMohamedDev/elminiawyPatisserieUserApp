@@ -13,6 +13,8 @@ class SharedPrefHelper {
     await sharedPreferences.remove(key);
   }
 
+
+
   /// Removes all keys and values from SharedPreferences.
   static Future<void> clearAllData() async {
     debugPrint('SharedPrefHelper: Clearing all data');

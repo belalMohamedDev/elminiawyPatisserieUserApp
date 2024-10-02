@@ -1,44 +1,50 @@
-import 'package:elminiawy/core/routing/routes.dart';
-import 'package:elminiawy/core/style/fonts/font_manger.dart';
-import 'package:elminiawy/core/style/fonts/strings_manger.dart';
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/common/shared/shared_imports.dart'; // Import the shared dependencies and utilities
 
-import '../../../../core/services/app_storage_key.dart';
-import '../../../../core/services/shared_pref_helper.dart';
-
+/// The [AlreadyAccountTextSpan] widget displays a prompt for users who already have an account.
+/// It shows a "Sign In" link that navigates to the login screen when tapped.
 class AlreadyAccountTextSpan extends StatelessWidget {
-  const AlreadyAccountTextSpan({
-    super.key,
-  });
+  const AlreadyAccountTextSpan({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
-        TextSpan(
-            text: AppStrings.alreadyHaveAnAccount,
-            style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                fontSize: 15.sp, fontFamily: FontConsistent.fontFamilyAcme),
-            children: [
-              WidgetSpan(
-                  child: SizedBox(
-                width: 10.w,
-              )),
-              TextSpan(
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    context.pushNamedAndRemoveUntil(Routes.loginRoute);
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
 
-                    SharedPrefHelper.setData(
-                        PrefKeys.prefsKeyOnBoardingScreenView, true);
-                  },
-                text: AppStrings.signIn,
-                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    fontSize: 18.sp, fontFamily: FontConsistent.fontFamilyAcme),
-              )
-            ]),
-        style: Theme.of(context).textTheme.bodyLarge);
+    // Text.rich allows combining multiple text styles and spans into one text widget
+    return Text.rich(
+      TextSpan(
+        // Display the text "Already have an account?"
+        text: AppStrings.alreadyHaveAnAccount,
+
+        // Apply the bodySmall style and adjust the font size responsively
+        style: Theme.of(context)
+            .textTheme
+            .bodySmall!
+            .copyWith(fontSize: responsive.setTextSize(4)),
+
+        children: [
+          // Add a small horizontal space between the regular text and the sign-in link
+          WidgetSpan(
+            child: SizedBox(
+                width: responsive.setWidth(3)), // 10 width units of spacing
+          ),
+
+          // "Sign In" text with a tap gesture recognizer to handle the navigation action
+          TextSpan(
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                // Navigate to the login screen and remove all previous routes
+                context.pushNamedAndRemoveUntil(Routes.loginRoute);
+              },
+
+            // Display the text "Sign In"
+            text: AppStrings.signIn,
+
+            // Apply the titleLarge style from the theme to the "Sign In" text
+            style: Theme.of(context).textTheme.titleLarge!,
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -1,4 +1,6 @@
 export '../../../../feature/order/presentation/screen/review_screen.dart';
+export '../../../../core/utils/responsive_utils.dart';
+
 export '../../../../core/style/fonts/styles_manger.dart';
 export '../../../../feature/accountInfo/presentation/refactor/account_info_body.dart';
 export '../../../../feature/address/data/model/request/create_address_request.dart';
@@ -325,3 +327,9 @@ export '../../../core/services/pushNotification/firebase_messaging_navig.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
 
 export 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+
+
+export '../../../feature/onBoarding/presentation/widget/get_started_button.dart';
+export '../../../feature/onBoarding/presentation/widget/sign_in_text_span.dart';
+export '../../../feature/onBoarding/presentation/widget/title_and_head_line_text.dart';

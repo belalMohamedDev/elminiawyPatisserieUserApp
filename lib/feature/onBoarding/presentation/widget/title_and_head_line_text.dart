@@ -1,43 +1,44 @@
-import 'package:elminiawy/core/style/fonts/font_manger.dart';
-import 'package:elminiawy/core/style/fonts/strings_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
+/// The [TitleAndHeadLineText] widget displays the main titles and headlines on the onboarding screen.
+/// It consists of two main parts: a welcome title and a sub-headline to guide the user through the onboarding process.
 class TitleAndHeadLineText extends StatelessWidget {
-  const TitleAndHeadLineText({
-    super.key,
-  });
+  const TitleAndHeadLineText({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return Column(
+      // Display elements in a vertical layout
       children: [
+        // Main title: "Welcome to Elminiawy Patisserie"
         Text(
-          AppStrings.welcomeToElminiawyPatisserie,
+          AppStrings.welcomeToElminiawyPatisserie, // Main title text
+          textAlign: TextAlign.center, // Align the text in the center
           style: Theme.of(context)
               .textTheme
-              .titleLarge!
-              .copyWith(fontFamily: FontConsistent.fontFamilyAcme),
+              .titleLarge!, // Apply the 'titleLarge' theme style
         ),
+
+        // Add vertical spacing between the title and sub-headline
         SizedBox(
-          height: 10.h,
+          height: responsive
+              .setHeight(2), // Dynamic height spacing based on the screen size
         ),
+
+        // Sub-headline: "Discover Our Wonderful Selection"
         Text(
-          AppStrings.tasteHappiness,
-          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
+          AppStrings.discoverOurWonderfulSelection, // Sub-headline text
+
+          // Apply the 'bodySmall' theme style with an adjusted font size
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                fontSize: responsive.setTextSize(
+                    3.5), // Adjusted font size for better readability
               ),
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        Text(
-          AppStrings.discoverOurWonderfulSelection,
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall!
-              .copyWith(fontFamily: FontConsistent.fontFamilyAcme),
-          textAlign: TextAlign.center,
+
+          textAlign: TextAlign.center, // Center-align the sub-headline text
         ),
       ],
     );

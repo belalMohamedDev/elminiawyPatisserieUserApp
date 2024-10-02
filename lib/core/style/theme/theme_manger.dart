@@ -1,9 +1,8 @@
-
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
-ThemeData getApplicationTheme() {
+ThemeData getApplicationTheme(BuildContext context) {
+  final responsive = ResponsiveUtils(context);
+
   return ThemeData(
       scaffoldBackgroundColor: ColorManger.white,
       pageTransitionsTheme: const PageTransitionsTheme(builders: {
@@ -35,33 +34,41 @@ ThemeData getApplicationTheme() {
       textTheme: TextTheme(
 // using in text on boarding
         titleLarge: getMediumStyle(
-          fontSize: 22.sp,
+          fontSize: responsive.setTextSize(5),
           color: ColorManger.brun,
+          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         //using in profile page
         headlineSmall: getMediumStyle(
-          fontSize: 16.sp,
-          color: ColorManger.brun,
+          fontSize: responsive.setTextSize(5),
+          color: ColorManger.white,
+          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         bodySmall: getMediumStyle(
-          fontSize: 12.sp,
+          fontSize: responsive.setTextSize(5),
           color: Colors.grey.shade500,
+          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         titleSmall: getMediumStyle(
-          fontSize: 14.sp,
+          fontSize: responsive.setTextSize(5),
           color: ColorManger.black,
+          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         bodyLarge: TextStyle(
-          fontSize: 13.sp,
+          fontSize: responsive.setTextSize(5),
           color: ColorManger.brunLight,
+          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
-        titleMedium:
-            getSemiBoldStyle(fontSize: 12.sp, color: ColorManger.brunLight),
+        titleMedium: getSemiBoldStyle(
+          fontSize: responsive.setTextSize(5),
+          color: ColorManger.brunLight,
+          fontFamily: FontConsistent.fontFamilyAcme,
+        ),
       ),
 
 //

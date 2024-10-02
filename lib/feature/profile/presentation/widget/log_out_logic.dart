@@ -9,6 +9,12 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
             message: state.successMessage, context: context);
         await SharedPrefHelper.clearAllSecuredData();
 
+        
+
+        SharedPrefHelper.removeData(PrefKeys.locationArea);
+        SharedPrefHelper.removeData(PrefKeys.longAddressHome);
+        SharedPrefHelper.removeData(PrefKeys.latAddressHome);
+
         if (context.mounted) {
           Navigator.of(context, rootNavigator: !false).pushNamedAndRemoveUntil(
               Routes.loginRoute, (Route route) => false);
@@ -20,6 +26,10 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
             errorMessage: state.errorMessage, context: context);
         if (state.statesCode == 400) {
           await SharedPrefHelper.clearAllSecuredData();
+          
+          SharedPrefHelper.removeData(PrefKeys.locationArea);
+          SharedPrefHelper.removeData(PrefKeys.longAddressHome);
+          SharedPrefHelper.removeData(PrefKeys.latAddressHome);
 
           if (context.mounted) {
             Navigator.of(context, rootNavigator: !false)
@@ -44,6 +54,11 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
 
               context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
               await SharedPrefHelper.clearAllSecuredData();
+              
+              SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
+              SharedPrefHelper.removeData(PrefKeys.locationArea);
+              SharedPrefHelper.removeData(PrefKeys.longAddressHome);
+              SharedPrefHelper.removeData(PrefKeys.latAddressHome);
             }
           : () async {
               // Show confirmation dialog before logging out

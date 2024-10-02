@@ -41,6 +41,11 @@ class RouteStatesScreen extends StatelessWidget {
                     .jumpToTab(0);
 
                 await SharedPrefHelper.clearAllSecuredData();
+
+                SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
+                SharedPrefHelper.removeData(PrefKeys.locationArea);
+                SharedPrefHelper.removeData(PrefKeys.longAddressHome);
+                SharedPrefHelper.removeData(PrefKeys.latAddressHome);
               },
             ),
             SizedBox(
