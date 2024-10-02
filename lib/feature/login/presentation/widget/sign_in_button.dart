@@ -53,7 +53,7 @@ class SignInButton extends StatelessWidget {
                 // Circular progress indicator with dynamic sizing
                 SizedBox(
                   height: responsive.setHeight(2),
-                  width: responsive.setWidth(2),
+                  width: responsive.setWidth(4),
                   child: const CircularProgressIndicator(
                     color: Colors.white, // Indicator color
                     strokeWidth: 2.0, // Line thickness of the indicator
@@ -63,14 +63,14 @@ class SignInButton extends StatelessWidget {
                 ),
                 SizedBox(
                   width: responsive
-                      .setHeight(3), // Spacing between the indicator and text
+                      .setHeight(2), // Spacing between the indicator and text
                 ),
                 // Loading text displayed next to the progress indicator
                 Text(
                   AppStrings.loading,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize:
-                            responsive.setTextSize(4.5), // Dynamic text size
+                            responsive.setTextSize(3.8), // Dynamic text size
                       ),
                 ),
               ],
@@ -80,7 +80,7 @@ class SignInButton extends StatelessWidget {
               AppStrings.signIn,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(
-                        4.2), // Adjusted font size for responsiveness
+                        3.8), // Adjusted font size for responsiveness
                   ),
             ),
           ),

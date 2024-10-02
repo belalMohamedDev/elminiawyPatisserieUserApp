@@ -37,7 +37,6 @@ export '../../../../feature/signUp/presentation/widget/name_text_form_field.dart
 export '../../../../feature/signUp/presentation/widget/password_sign_up_text_form_field.dart';
 export '../../../../feature/signUp/presentation/widget/phone_text_form_field.dart';
 export '../../../../feature/signUp/presentation/widget/sign_up_button.dart';
-export '../../../../feature/signUp/presentation/refactor/sign_up_body.dart';
 export '../../../../feature/verifyCode/presentation/widget/verification_code_button.dart';
 export '../../../../feature/verifyCode/presentation/widget/verify_code_text_form_field.dart';
 export '../../../../feature/verifyCode/presentation/refactor/verification_code_body.dart';

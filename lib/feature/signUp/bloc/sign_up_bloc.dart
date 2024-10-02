@@ -1,27 +1,37 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
-
+import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 part 'sign_up_bloc.freezed.dart';
 
+/// The `SignUpBloc` class handles all the logic and state management for the sign-up process.
+/// It manages user inputs (email, password, etc.), validates the input data, and triggers user registration.
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
+  // Controllers to manage form input fields
   final TextEditingController userSignUpEmailAddress = TextEditingController();
   final TextEditingController userSignUpPassword = TextEditingController();
   final TextEditingController userSignUpFirstName = TextEditingController();
   final TextEditingController userSignUpLastName = TextEditingController();
   final TextEditingController userSignUpPhone = TextEditingController();
+
+  // Repository for handling the registration process
   final RegisterRepository _registerRepository;
 
-  bool showPass = true;
-  bool agreeWithTerms = true;
-  String countryCode = "+20";
-  bool isButtonInVaildator = false;
+  // UI-related flags
+  bool showPass = true; // Toggles the visibility of the password field
+  bool agreeWithTerms = true; // Tracks the user's agreement with terms
+  String countryCode = "+20"; // Default country code for phone numbers
+  bool isButtonInVaildator =
+      false; // Validates whether the sign-up button is enabled
 
-  final signUpFormKey = GlobalKey<FormState>();
+  final signUpFormKey = GlobalKey<FormState>(); // Form key for validation
+
+  /// Constructor initializes the repository and adds event listeners
   SignUpBloc(this._registerRepository) : super(const _Initial()) {
+    // Register button press event
     on<UserRegisterButtonEvent>(registerButton);
 
+    // General event handler
     on<SignUpEvent>((event, emit) {
       if (event is UserSignUFirstNameEvent) {
         registerButtonValidator(event, emit);
@@ -35,7 +45,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
       if (event is UserSignUpLastNameEvent) {
         registerButtonValidator(event, emit);
-
         if (!AppRegex.isNameValid(event.value)) {
           emit(const SignUpState.userSignUpLastName(
               AppStrings.pleaseEnterValidLastName));
@@ -46,7 +55,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
       if (event is UserSignUpPhoneEvent) {
         registerButtonValidator(event, emit);
-
         if (!AppRegex.isPhoneNumberValid(event.value)) {
           emit(const SignUpState.userSignUpPhone(
               AppStrings.pleaseEnterValidPhoneNumber));
@@ -56,20 +64,17 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       }
 
       if (event is UserSignUpEmailAddressEvent) {
+        registerButtonValidator(event, emit);
         if (!AppRegex.isEmailValid(event.value)) {
-          registerButtonValidator(event, emit);
-
           emit(const SignUpState.userSignUpEmailAddress(
               AppStrings.pleaseEnterValidEmail));
         } else {
           emit(const SignUpState.userSignUpEmailAddress(""));
-          registerButtonValidator(event, emit);
         }
       }
 
       if (event is UserSignUpPasswordEvent) {
         registerButtonValidator(event, emit);
-
         if (!AppRegex.isPasswordValid(event.value)) {
           emit(const SignUpState.userSignUpPassword(
               AppStrings.pleaseEnterValidSignUpPhoneNumber));
@@ -79,55 +84,56 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       }
 
       if (event is UserShowSignUpPasswordEvent) {
+        // Toggle password visibility
         showPass = !showPass;
-
-        emit(
-          SignUpState.showUserSignUpPassword(showPass),
-        );
+        emit(SignUpState.showUserSignUpPassword(showPass));
       }
 
       if (event is UserSignUpAgreeWithEvent) {
         registerButtonValidator(event, emit);
-
+        // Toggle agreement with terms and conditions
         agreeWithTerms = !agreeWithTerms;
-
-        emit(
-          SignUpState.signUpAgreeWith(agreeWithTerms),
-        );
+        emit(SignUpState.signUpAgreeWith(agreeWithTerms));
       }
     });
   }
 
-////////////////////////////////////////
-/////////////
-//////////////////////////////////////////
+  ////////////////////////////////////////
+  // Register Button Validation
+  ////////////////////////////////////////
+
+  /// Validates if the sign-up button should be enabled based on the input fields.
   Future<void> registerButtonValidator(
       SignUpEvent event, Emitter<SignUpState> emit) async {
+    // Checks if all input fields have valid values
     if (!AppRegex.isNameValid(userSignUpFirstName.text) ||
         !AppRegex.isNameValid(userSignUpLastName.text) ||
         !AppRegex.isEmailValid(userSignUpEmailAddress.text) ||
         !AppRegex.isPasswordValid(userSignUpPassword.text) ||
         !AppRegex.isPhoneNumberValid(userSignUpPhone.text)) {
+      // Disable the button if validation fails
       isButtonInVaildator = false;
-      emit(SignUpState.buttonSignUpVaildation(isButtonInVaildator));
     } else {
+      // Enable the button if all fields are valid
       isButtonInVaildator = true;
-      emit(SignUpState.buttonSignUpVaildation(isButtonInVaildator));
     }
+    // Emit the button validation state
+    emit(SignUpState.buttonSignUpVaildation(isButtonInVaildator));
   }
 
-////////////////////////////////////////
-/////////////
-//////////////////////////////////////////
+  ////////////////////////////////////////
+  // Register Button Logic
+  ////////////////////////////////////////
 
+  /// Handles the registration process when the user clicks the sign-up button.
   Future<void> registerButton(
       SignUpEvent event, Emitter<SignUpState> emit) async {
     await event.whenOrNull(
       userRegisterButton: () async {
-        emit(
-          const SignUpState.loading(),
-        );
+        // Emit loading state
+        emit(const SignUpState.loading());
 
+        // Call the repository to handle user registration
         final response = await _registerRepository.register(
           RegisterRequestBody(
             name:
@@ -138,10 +144,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           ),
         );
 
+        // Handle the response from the registration API
         response.when(
           success: (registerResponse) async {
+            // Emit success state
             emit(SignUpState.suceess(registerResponse));
 
+            // Save the user token securely in shared preferences
             await saveUserToken(
               registerResponse.accessToken!,
               registerResponse.data!.refreshToken!,
@@ -152,16 +161,20 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             );
           },
           failure: (error) {
-            emit(
-              SignUpState.error(
-                  errorMessage: error.message!, statesCode: error.statusCode!),
-            );
+            // Emit error state in case of failure
+            emit(SignUpState.error(
+                errorMessage: error.message!, statesCode: error.statusCode!));
           },
         );
       },
     );
   }
 
+  ////////////////////////////////////////
+  // Save User Token
+  ////////////////////////////////////////
+
+  /// Saves the user token and other important data in secured storage.
   Future<void> saveUserToken(
     String accessToken,
     String refreshToken,
@@ -170,14 +183,15 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     String userEmail,
     String userId,
   ) async {
+    // Save user details in secured storage
     await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
     await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
 
+    // Save authentication tokens in secured storage
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(
         PrefKeys.refreshToken, refreshToken);
-
   }
 }

@@ -1,65 +1,84 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
-
+/// A custom sign-up button widget that triggers the user registration process.
+/// It handles different states such as loading, success, and error using BlocConsumer.
 class SignUpButton extends StatelessWidget {
-  const SignUpButton({
-    super.key,
-  });
+  const SignUpButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return BlocConsumer<SignUpBloc, SignUpState>(
       listener: (context, state) {
+        // Handle different state changes such as error and success
         state.whenOrNull(
-            error: (statesCode, errorMessage) => ShowToast.showToastErrorTop(
-                errorMessage: errorMessage, context: context),
-            suceess: (data) {
-              ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
-              context.pushReplacementNamed(Routes.bottomNavBarRoute);
-            });
+          // Show error message when state contains an error
+          error: (statesCode, errorMessage) => ShowToast.showToastErrorTop(
+            errorMessage: errorMessage,
+            context: context,
+          ),
+          // On successful registration, show success message and navigate to home
+          suceess: (data) {
+            ShowToast.showToastSuccessTop(
+              message: data.message!,
+              context: context,
+            );
+            context.pushReplacementNamed(
+                Routes.bottomNavBarRoute); // Navigate to the main screen
+          },
+        );
       },
       builder: (context, state) {
         return CustomButton(
+          // Enable the button only if the sign-up form is valid
           onPressed: context.read<SignUpBloc>().isButtonInVaildator
               ? () {
+                  // Trigger user registration event when the button is pressed
                   context
                       .read<SignUpBloc>()
                       .add(const UserRegisterButtonEvent());
                 }
-              : null,
+              : null, // Disable button if form is invalid
+
+          // Change button appearance based on loading state
           widget: state.maybeWhen(
             loading: () => Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // Show loading spinner during registration
                 SizedBox(
-                  height: 20.h,
-                  width: 20.w,
+                  height: responsive.setHeight(2),
+                  width: responsive.setWidth(4),
                   child: const CircularProgressIndicator(
-                    color: Colors.white,
-                    strokeWidth: 2.0,
-                    strokeAlign: 0.01,
+                    color: Colors.white, // White spinner color
+                    strokeWidth: 2.0, // Spinner stroke width
+                    strokeAlign: 0.01, // Spinner alignment
                   ),
                 ),
                 SizedBox(
-                  width: 15.w,
+                  width: responsive
+                      .setHeight(2), // Spacer between spinner and text
                 ),
+                // Show loading text next to the spinner
                 Text(
-                  AppStrings.loading,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 16.sp,
-                      color: ColorManger.white,
-                      fontWeight: FontWeightManger.semiBold),
+                  AppStrings.loading, // "Loading" text during registration
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        fontSize:
+                            responsive.setTextSize(3.8), // Responsive text size
+                      ),
                 ),
               ],
             ),
+            // Default button text if not in loading state
             orElse: () => Text(
-              AppStrings.signUp,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 16.sp,
-                  color: ColorManger.white,
-                  fontWeight: FontWeightManger.semiBold),
+              AppStrings.signUp, // "Sign Up" text for the button
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontSize:
+                        responsive.setTextSize(3.8), // Responsive text size
+                  ),
             ),
           ),
         );
@@ -67,6 +86,3 @@ class SignUpButton extends StatelessWidget {
     );
   }
 }
-
-
-

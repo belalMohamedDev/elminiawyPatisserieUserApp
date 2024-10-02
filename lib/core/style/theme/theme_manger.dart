@@ -59,9 +59,8 @@ ThemeData getApplicationTheme(BuildContext context) {
         ),
 
         bodyLarge: TextStyle(
-          fontSize: responsive.setTextSize(5),
+          fontSize: responsive.setTextSize(3),
           color: ColorManger.brunLight,
-          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         titleMedium: getMediumStyle(
@@ -109,16 +108,16 @@ ThemeData getApplicationTheme(BuildContext context) {
         fillColor: ColorManger.white,
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: ColorManger.selected),
-            borderRadius: BorderRadius.circular(12.r)),
+            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2))),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
             borderSide:
                 BorderSide(color: ColorManger.unselected, width: 0.4.w)),
         errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
             borderSide: BorderSide(color: ColorManger.redError, width: 0.4.w)),
         focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
             borderSide: BorderSide(color: ColorManger.redError, width: 0.4.w)),
       ));
 }

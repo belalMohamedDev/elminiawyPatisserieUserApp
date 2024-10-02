@@ -17,7 +17,8 @@ class AppStrings {
   static const String signInWithApple = "Sign in with Apple";
   static const String signIn = "Sign in ";
   static const String welcomeBack = "Welcome Back!";
-  static const String toGetStartedSignInToYourAccount = "To get started, sign in to your account.";
+  static const String toGetStartedSignInToYourAccount =
+      "To get started, sign in to your account.";
 
   ///////// auth screen
   static const String orSignInWith = "Or sign in with";
