@@ -188,7 +188,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
     await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
     await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
-
+    SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
     // Save authentication tokens in secured storage
     await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
     await SharedPrefHelper.setSecuredString(

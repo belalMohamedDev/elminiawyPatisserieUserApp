@@ -30,6 +30,8 @@ class AppStrings {
   static const String emailExample = "Example@gmail.com";
   static const String password = "Password";
   static const String enterYourPassword = "Enter your password";
+  static const String enterNewPassword = "Enter new password";
+  static const String enterConfirmNewPassword = "confirm new password";
   static const String pleaseEnterValidEmail = "Please Enter Valid Email";
   static const String pleaseEnterValidPassword = "Please Enter Valid Password";
   static const String loading = 'Loading ....';
@@ -54,9 +56,9 @@ class AppStrings {
   static const String orSignUpWith = "Or sign up with";
   static const String phone = "Phone";
   static const String enterPhoneNumber = "Enter Phone Number";
-  static const String createAccount = "Create Account";
+  static const String createAccount = "Create Your Account!";
   static const String fillYouInformation =
-      "Fill your information below or register \n with your social account.";
+      "To get started, please fill in your details below.";
 
 //forget password
   static const String continueText = "Continue";
@@ -67,7 +69,7 @@ class AppStrings {
   static const String restYourPassword = "Reset Your Password";
   static const String newPassword = "New Password";
   static const String youNewPasswordMustBeDifferent =
-      "you new password must be different \n from previously used password.";
+      "you new password must be different from previously\n used password.";
 
   static const String confirmPasswordNotEqualNewPassword =
       "Confirm Password not equal new Password";

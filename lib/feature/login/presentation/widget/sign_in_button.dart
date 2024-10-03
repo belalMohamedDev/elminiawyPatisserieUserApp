@@ -29,8 +29,8 @@ class SignInButton extends StatelessWidget {
             // Show a success toast when login is successful
             ShowToast.showToastSuccessTop(
                 message: data.message!, context: context);
-            // Navigate to the bottom navigation bar screen after a successful login
-            context.pushReplacementNamed(Routes.bottomNavBarRoute);
+            // Navigate to the map screen after a successful login
+            context.pushReplacementNamed(Routes.map);
           },
         );
       },

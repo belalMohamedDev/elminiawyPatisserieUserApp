@@ -1,17 +1,17 @@
 
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../../../core/common/shared/shared_imports.dart'; //
 
-class VerifyCodeRepository {
-  VerifyCodeRepository(this._apiService, this._networkInfo);
+class NewPasswordRepository {
+  NewPasswordRepository(this._apiService, this._networkInfo);
   final AppServiceClient _apiService;
   late final NetworkInfo _networkInfo;
 
-  Future<ApiResult<VerifyCodeResponse>> verifyCode(
-    VerifyCodeRequestBody verifyCodeRequestBody,
+  Future<ApiResult<AuthResponse>> newPassword(
+    NewPasswordRequestBody newPasswordRequestBody,
   ) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response = await _apiService.verifyCode(verifyCodeRequestBody);
+        final response = await _apiService.newPassword(newPasswordRequestBody);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);

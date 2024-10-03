@@ -1,4 +1,4 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../../../core/common/shared/shared_imports.dart'; //
 part 'verifiy_code_body_request.g.dart';
 
 @JsonSerializable()

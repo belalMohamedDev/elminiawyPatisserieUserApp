@@ -26,7 +26,7 @@ class SignUpButton extends StatelessWidget {
               context: context,
             );
             context.pushReplacementNamed(
-                Routes.bottomNavBarRoute); // Navigate to the main screen
+                Routes.map); // Navigate to the map screen
           },
         );
       },

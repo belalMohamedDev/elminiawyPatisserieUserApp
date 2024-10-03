@@ -25,7 +25,10 @@ class SignUpView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: responsive.setPadding(left: 5, right: 5, top: 5),
+          padding: responsive.setPadding(
+            left: 5.5,
+            right: 5,
+          ),
           child: Form(
             key: context
                 .read<SignUpBloc>()
@@ -35,7 +38,10 @@ class SignUpView extends StatelessWidget {
               children: [
                 // Display the "Create Account" title
                 Text(AppStrings.createAccount,
-                    style: Theme.of(context).textTheme.titleLarge),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4.2))),
                 SizedBox(
                   height: responsive.setHeight(1),
                 ),
@@ -44,7 +50,7 @@ class SignUpView extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall!
-                        .copyWith(fontSize: responsive.setTextSize(3.8))),
+                        .copyWith(fontSize: responsive.setTextSize(3.2))),
                 SizedBox(
                   height: responsive.setHeight(3),
                 ),
@@ -75,6 +81,21 @@ class SignUpView extends StatelessWidget {
                 ),
                 // Sign-up button
                 const SignUpButton(),
+
+                SizedBox(
+                  height: responsive
+                      .setHeight(4), // Spacing before the divider text
+                ),
+
+                // Divider text for alternative sign-in methods
+                const OrSignInWithText(),
+                SizedBox(
+                  height: responsive
+                      .setHeight(3), // Spacing before social sign-in buttons
+                ),
+
+                // Social sign-in buttons (Apple, Facebook, Google)
+                const SignInWithAppleFaceBookAndGoogleButton(),
               ],
             ),
           ),

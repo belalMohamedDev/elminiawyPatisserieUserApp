@@ -108,16 +108,20 @@ ThemeData getApplicationTheme(BuildContext context) {
         fillColor: ColorManger.white,
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: ColorManger.selected),
-            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2))),
+            borderRadius:
+                BorderRadius.circular(responsive.setBorderRadius(2.5))),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
+            borderRadius:
+                BorderRadius.circular(responsive.setBorderRadius(2.5)),
             borderSide:
                 BorderSide(color: ColorManger.unselected, width: 0.4.w)),
         errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
+            borderRadius:
+                BorderRadius.circular(responsive.setBorderRadius(2.5)),
             borderSide: BorderSide(color: ColorManger.redError, width: 0.4.w)),
         focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
+            borderRadius:
+                BorderRadius.circular(responsive.setBorderRadius(2.5)),
             borderSide: BorderSide(color: ColorManger.redError, width: 0.4.w)),
       ));
 }

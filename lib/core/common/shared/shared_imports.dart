@@ -8,9 +8,8 @@ export '../../../../feature/address/presentation/widget/mapScrrenWidget/custom_m
 export '../../../../feature/category/presentation/refactor/category_body.dart';
 export '../../../../feature/changeEmailAddress/presentation/refactor/change_email_body.dart';
 export '../../../../feature/changePassword/presentation/refactor/change_password_body.dart';
-export '../../../../feature/forgetPassword/presntation/widget/email_forget_password_text_form_field.dart';
-export '../../../../feature/forgetPassword/presntation/widget/forget_password_button.dart';
-export '../../../../feature/forgetPassword/presntation/refactor/forget_password_body.dart';
+export '../../../feature/forgetPassword/presntation/widget/restEmailWidget/email_forget_password_text_form_field.dart';
+export '../../../feature/forgetPassword/presntation/widget/restEmailWidget/forget_password_button.dart';
 export '../../../../feature/home/presentation/refactor/home_body.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export '../../../../core/common/sharedWidget/product_grid_view_loading.dart';
@@ -23,7 +22,6 @@ export '../../../../feature/login/presentation/widget/sign_in_button.dart';
 export '../../../../feature/login/presentation/widget/sign_in_with_apple_face_book_and_google_button.dart';
 export 'package:flutter/gestures.dart';
 export '../../../../core/common/sharedWidget/circle_avatar_icon_button.dart';
-export '../../../../feature/newPassword/presentation/refactor/new_password_body.dart';
 export '../../../core/enums/filter_button_enum.dart';
 export '../../../../feature/newProduct/presentation/refactor/new_product_body.dart';
 export '../../../../feature/productBasedOnCategory/presentation/refactor/get_product_based_on_category_body.dart';
@@ -37,16 +35,16 @@ export '../../../../feature/signUp/presentation/widget/name_text_form_field.dart
 export '../../../../feature/signUp/presentation/widget/password_sign_up_text_form_field.dart';
 export '../../../../feature/signUp/presentation/widget/phone_text_form_field.dart';
 export '../../../../feature/signUp/presentation/widget/sign_up_button.dart';
-export '../../../../feature/verifyCode/presentation/widget/verification_code_button.dart';
-export '../../../../feature/verifyCode/presentation/widget/verify_code_text_form_field.dart';
-export '../../../../feature/verifyCode/presentation/refactor/verification_code_body.dart';
+export '../../../feature/forgetPassword/presntation/widget/verificationCodeWidget/verification_code_button.dart';
+export '../../../feature/forgetPassword/presntation/widget/verificationCodeWidget/verify_code_text_form_field.dart';
 export 'package:flutter_verification_code/flutter_verification_code.dart';
 export '../../../../feature/wishList/presentation/refactor/wishlist_body.dart';
 export '../../../../app.dart';
 
-export '../../../../feature/newPassword/presentation/widget/confirm_new_password_text_form_field.dart';
-export '../../../../feature/newPassword/presentation/widget/new_password_button.dart';
-export '../../../../feature/newPassword/presentation/widget/new_password_text_form_field.dart';
+export '../../../feature/forgetPassword/presntation/widget/newPasswordWidget/confirm_new_password_text_form_field.dart';
+export '../../../../feature/forgetPassword/presntation/widget/newPasswordWidget/new_password_button.dart';
+
+export '../../../feature/forgetPassword/presntation/widget/newPasswordWidget/new_password_text_form_field.dart';
 
 export '../../../../core/common/sharedWidget/search_row.dart';
 export '../../../../feature/home/presentation/widget/banner_carousel_slider.dart';
@@ -143,12 +141,12 @@ export '../../../../feature/forgetPassword/bloc/forget_password_bloc.dart';
 export '../../../../feature/forgetPassword/presntation/screen/forget_password_screen.dart';
 export '../../../../feature/login/bloc/login_bloc.dart';
 export '../../../../feature/login/presentation/screen/login_view.dart';
-export '../../../../feature/newPassword/presentation/screen/new_password_view.dart';
+export '../../../feature/forgetPassword/presntation/screen/new_password_screen.dart';
 export '../../../../feature/notification/logic/cubit/user_notification_cubit.dart';
 export '../../../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
 export '../../../../feature/signUp/presentation/screen/sign_up_view.dart';
 export '../../../../feature/address/presentation/screen/user_address_screen.dart';
-export '../../../../feature/verifyCode/presentation/screen/verification_code.dart';
+export '../../../feature/forgetPassword/presntation/screen/verification_code_screen.dart';
 export '../../../../feature/wishList/presentation/screen/wishlist_screen.dart';
 
 export '../../../../feature/accountInfo/cubit/account_information_cubit.dart'
@@ -231,15 +229,15 @@ export 'package:get_it/get_it.dart';
 export 'package:internet_connection_checker/internet_connection_checker.dart';
 
 export '../../../../feature/accountInfo/data/repository/update_account_information.dart';
-export '../../../../../../feature/forgetPassword/data/repository/forget_password_repo.dart';
+export '../../../feature/forgetPassword/data/repository/forgetPasswordRespoitory/forget_password_repo.dart';
 export '../../../../feature/home/data/repository/repositry.dart';
 export '../../../../../../feature/login/data/repository/login_repo.dart';
-export '../../../../feature/newPassword/data/repository/new_password_repo.dart';
+export '../../../feature/forgetPassword/data/repository/newPasswordrepository/new_password_repo.dart';
 export '../../../../feature/newProduct/model/repository/repositry.dart';
 export '../../../../feature/notification/logic/notification_service.dart';
 export '../../../../feature/signUp/data/repository/sign_up_repo.dart';
 export '../../../../feature/address/data/repository/address_repo.dart';
-export '../../../../feature/verifyCode/data/repository/verify_code_repo.dart';
+export '../../../feature/forgetPassword/data/repository/verificationRepository/verify_code_repo.dart';
 export '../../../../feature/wishList/data/repository/repository.dart';
 export '../../../../firebase_options.dart';
 
@@ -298,17 +296,17 @@ export '../../../feature/address/data/model/response/check_address_available.dar
 export '../../../feature/cart/data/model/bodyRequest/add_item.dart';
 export '../../../feature/changeEmailAddress/data/model/request/change_email_request.dart';
 export '../../../feature/changeEmailAddress/data/model/response/change_email_response.dart';
-export '../../../feature/forgetPassword/data/model/bodyRequest/forget_password_body_request.dart';
-export '../../../feature/forgetPassword/data/model/loginResponse/forget_password_response.dart';
+export '../../../feature/forgetPassword/data/model/restEmailModel/bodyRequest/forget_password_body_request.dart';
+export '../../../feature/forgetPassword/data/model/restEmailModel/loginResponse/forget_password_response.dart';
 export '../../../feature/home/data/model/response/banner_response.dart';
 export '../../../feature/profile/data/model/response/log_out_response.dart';
 export '../../../feature/login/data/model/bodyRequest/login_body_request.dart';
 export '../../../feature/login/data/model/loginResponse/login_response.dart';
-export '../../../feature/newPassword/data/model/bodyRequest/new_password_body_request.dart';
+export '../../../feature/forgetPassword/data/model/newPasswordModel/bodyRequest/new_password_body_request.dart';
 export '../../../feature/notification/data/model/user_notification_resp.dart';
 export '../../../feature/signUp/data/model/bodyRequest/sign_up_body_request.dart';
-export '../../../feature/verifyCode/data/model/bodyRequest/verifiy_code_body_request.dart';
-export '../../../feature/verifyCode/data/model/verifiyCodeResponse/verifiy_code_response.dart';
+export '../../../feature/forgetPassword/data/model/verificationModel/bodyRequest/verifiy_code_body_request.dart';
+export '../../../feature/forgetPassword/data/model/verificationModel/verifiyCodeResponse/verifiy_code_response.dart';
 
 export '../../../core/network/api_constant/api_constant.dart';
 
@@ -325,8 +323,6 @@ export '../../../core/services/pushNotification/firebase_messaging_navig.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
 
 export 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
-
 
 export '../../../feature/onBoarding/presentation/widget/get_started_button.dart';
 export '../../../feature/onBoarding/presentation/widget/sign_in_text_span.dart';

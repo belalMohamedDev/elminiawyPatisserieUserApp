@@ -2090,20 +2090,20 @@ mixin _$ForgetPasswordState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -2115,18 +2115,18 @@ mixin _$ForgetPasswordState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -2138,18 +2138,18 @@ mixin _$ForgetPasswordState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -2163,7 +2163,7 @@ mixin _$ForgetPasswordState {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -2171,7 +2171,7 @@ mixin _$ForgetPasswordState {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -2179,7 +2179,7 @@ mixin _$ForgetPasswordState {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -2195,18 +2195,18 @@ mixin _$ForgetPasswordState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -2220,18 +2220,18 @@ mixin _$ForgetPasswordState {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -2301,20 +2301,20 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -2329,18 +2329,18 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -2355,18 +2355,18 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -2386,7 +2386,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -2394,7 +2394,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -2402,7 +2402,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -2421,18 +2421,18 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -2449,18 +2449,18 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -2524,20 +2524,20 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -2552,18 +2552,18 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -2578,18 +2578,18 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -2609,7 +2609,7 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -2617,7 +2617,7 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -2625,7 +2625,7 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -2644,18 +2644,18 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -2672,18 +2672,18 @@ class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -2710,7 +2710,7 @@ abstract class _$$ForgetPasswordButtonErrorDataImplCopyWith<$Res> {
           $Res Function(_$ForgetPasswordButtonErrorDataImpl) then) =
       __$$ForgetPasswordButtonErrorDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({int statusCode, String errorMessage});
 }
 
 /// @nodoc
@@ -2726,13 +2726,13 @@ class __$$ForgetPasswordButtonErrorDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
+    Object? statusCode = null,
     Object? errorMessage = null,
   }) {
     return _then(_$ForgetPasswordButtonErrorDataImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
+      statusCode: null == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
               as int,
       errorMessage: null == errorMessage
           ? _value.errorMessage
@@ -2747,16 +2747,16 @@ class __$$ForgetPasswordButtonErrorDataImplCopyWithImpl<$Res>
 class _$ForgetPasswordButtonErrorDataImpl
     implements ForgetPasswordButtonErrorData {
   const _$ForgetPasswordButtonErrorDataImpl(
-      {required this.statesCode, required this.errorMessage});
+      {required this.statusCode, required this.errorMessage});
 
   @override
-  final int statesCode;
+  final int statusCode;
   @override
   final String errorMessage;
 
   @override
   String toString() {
-    return 'ForgetPasswordState.error(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'ForgetPasswordState.error(statusCode: $statusCode, errorMessage: $errorMessage)';
   }
 
   @override
@@ -2764,14 +2764,14 @@ class _$ForgetPasswordButtonErrorDataImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ForgetPasswordButtonErrorDataImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
+            (identical(other.statusCode, statusCode) ||
+                other.statusCode == statusCode) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, statusCode, errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -2786,27 +2786,27 @@ class _$ForgetPasswordButtonErrorDataImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
     required TResult Function(bool value) showConfirmNewPassword,
     required TResult Function(bool value) createNewPasswordValidator,
   }) {
-    return error(statesCode, errorMessage);
+    return error(statusCode, errorMessage);
   }
 
   @override
@@ -2814,25 +2814,25 @@ class _$ForgetPasswordButtonErrorDataImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
     TResult? Function(bool value)? showConfirmNewPassword,
     TResult? Function(bool value)? createNewPasswordValidator,
   }) {
-    return error?.call(statesCode, errorMessage);
+    return error?.call(statusCode, errorMessage);
   }
 
   @override
@@ -2840,18 +2840,18 @@ class _$ForgetPasswordButtonErrorDataImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -2860,7 +2860,7 @@ class _$ForgetPasswordButtonErrorDataImpl
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(statesCode, errorMessage);
+      return error(statusCode, errorMessage);
     }
     return orElse();
   }
@@ -2871,7 +2871,7 @@ class _$ForgetPasswordButtonErrorDataImpl
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -2879,7 +2879,7 @@ class _$ForgetPasswordButtonErrorDataImpl
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -2887,7 +2887,7 @@ class _$ForgetPasswordButtonErrorDataImpl
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -2906,18 +2906,18 @@ class _$ForgetPasswordButtonErrorDataImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -2934,18 +2934,18 @@ class _$ForgetPasswordButtonErrorDataImpl
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -2963,10 +2963,10 @@ class _$ForgetPasswordButtonErrorDataImpl
 
 abstract class ForgetPasswordButtonErrorData implements ForgetPasswordState {
   const factory ForgetPasswordButtonErrorData(
-          {required final int statesCode, required final String errorMessage}) =
+          {required final int statusCode, required final String errorMessage}) =
       _$ForgetPasswordButtonErrorDataImpl;
 
-  int get statesCode;
+  int get statusCode;
   String get errorMessage;
   @JsonKey(ignore: true)
   _$$ForgetPasswordButtonErrorDataImplCopyWith<
@@ -3019,7 +3019,7 @@ class _$ForgetPasswordButtonSuccessDataImpl
 
   @override
   String toString() {
-    return 'ForgetPasswordState.suceess(data: $data)';
+    return 'ForgetPasswordState.success(data: $data)';
   }
 
   @override
@@ -3046,27 +3046,27 @@ class _$ForgetPasswordButtonSuccessDataImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
     required TResult Function(bool value) showConfirmNewPassword,
     required TResult Function(bool value) createNewPasswordValidator,
   }) {
-    return suceess(data);
+    return success(data);
   }
 
   @override
@@ -3074,25 +3074,25 @@ class _$ForgetPasswordButtonSuccessDataImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
     TResult? Function(bool value)? showConfirmNewPassword,
     TResult? Function(bool value)? createNewPasswordValidator,
   }) {
-    return suceess?.call(data);
+    return success?.call(data);
   }
 
   @override
@@ -3100,18 +3100,18 @@ class _$ForgetPasswordButtonSuccessDataImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -3119,8 +3119,8 @@ class _$ForgetPasswordButtonSuccessDataImpl
     TResult Function(bool value)? createNewPasswordValidator,
     required TResult orElse(),
   }) {
-    if (suceess != null) {
-      return suceess(data);
+    if (success != null) {
+      return success(data);
     }
     return orElse();
   }
@@ -3131,7 +3131,7 @@ class _$ForgetPasswordButtonSuccessDataImpl
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -3139,7 +3139,7 @@ class _$ForgetPasswordButtonSuccessDataImpl
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -3147,7 +3147,7 @@ class _$ForgetPasswordButtonSuccessDataImpl
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -3157,7 +3157,7 @@ class _$ForgetPasswordButtonSuccessDataImpl
     required TResult Function(CreateNewPasswordValidator value)
         createNewPasswordValidator,
   }) {
-    return suceess(this);
+    return success(this);
   }
 
   @override
@@ -3166,18 +3166,18 @@ class _$ForgetPasswordButtonSuccessDataImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -3185,7 +3185,7 @@ class _$ForgetPasswordButtonSuccessDataImpl
     TResult? Function(CreateNewPasswordValidator value)?
         createNewPasswordValidator,
   }) {
-    return suceess?.call(this);
+    return success?.call(this);
   }
 
   @override
@@ -3194,18 +3194,18 @@ class _$ForgetPasswordButtonSuccessDataImpl
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -3214,8 +3214,8 @@ class _$ForgetPasswordButtonSuccessDataImpl
         createNewPasswordValidator,
     required TResult orElse(),
   }) {
-    if (suceess != null) {
-      return suceess(this);
+    if (success != null) {
+      return success(this);
     }
     return orElse();
   }
@@ -3303,20 +3303,20 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -3331,18 +3331,18 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -3357,18 +3357,18 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -3388,7 +3388,7 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -3396,7 +3396,7 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -3404,7 +3404,7 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -3423,18 +3423,18 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -3451,18 +3451,18 @@ class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -3560,20 +3560,20 @@ class _$ContinueForgetButtonValidatorImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -3588,18 +3588,18 @@ class _$ContinueForgetButtonValidatorImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -3614,18 +3614,18 @@ class _$ContinueForgetButtonValidatorImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -3645,7 +3645,7 @@ class _$ContinueForgetButtonValidatorImpl
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -3653,7 +3653,7 @@ class _$ContinueForgetButtonValidatorImpl
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -3661,7 +3661,7 @@ class _$ContinueForgetButtonValidatorImpl
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -3680,18 +3680,18 @@ class _$ContinueForgetButtonValidatorImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -3708,18 +3708,18 @@ class _$ContinueForgetButtonValidatorImpl
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -3788,20 +3788,20 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -3816,18 +3816,18 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -3842,18 +3842,18 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -3873,7 +3873,7 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -3881,7 +3881,7 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -3889,7 +3889,7 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -3908,18 +3908,18 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -3936,18 +3936,18 @@ class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -3974,7 +3974,7 @@ abstract class _$$VerifyCodeButtonErrorDataImplCopyWith<$Res> {
           $Res Function(_$VerifyCodeButtonErrorDataImpl) then) =
       __$$VerifyCodeButtonErrorDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({int statusCode, String errorMessage});
 }
 
 /// @nodoc
@@ -3990,13 +3990,13 @@ class __$$VerifyCodeButtonErrorDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
+    Object? statusCode = null,
     Object? errorMessage = null,
   }) {
     return _then(_$VerifyCodeButtonErrorDataImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
+      statusCode: null == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
               as int,
       errorMessage: null == errorMessage
           ? _value.errorMessage
@@ -4010,16 +4010,16 @@ class __$$VerifyCodeButtonErrorDataImplCopyWithImpl<$Res>
 
 class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
   const _$VerifyCodeButtonErrorDataImpl(
-      {required this.statesCode, required this.errorMessage});
+      {required this.statusCode, required this.errorMessage});
 
   @override
-  final int statesCode;
+  final int statusCode;
   @override
   final String errorMessage;
 
   @override
   String toString() {
-    return 'ForgetPasswordState.verifyCodeError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'ForgetPasswordState.verifyCodeError(statusCode: $statusCode, errorMessage: $errorMessage)';
   }
 
   @override
@@ -4027,14 +4027,14 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VerifyCodeButtonErrorDataImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
+            (identical(other.statusCode, statusCode) ||
+                other.statusCode == statusCode) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, statusCode, errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -4048,27 +4048,27 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
     required TResult Function(bool value) showConfirmNewPassword,
     required TResult Function(bool value) createNewPasswordValidator,
   }) {
-    return verifyCodeError(statesCode, errorMessage);
+    return verifyCodeError(statusCode, errorMessage);
   }
 
   @override
@@ -4076,25 +4076,25 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
     TResult? Function(bool value)? showConfirmNewPassword,
     TResult? Function(bool value)? createNewPasswordValidator,
   }) {
-    return verifyCodeError?.call(statesCode, errorMessage);
+    return verifyCodeError?.call(statusCode, errorMessage);
   }
 
   @override
@@ -4102,18 +4102,18 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -4122,7 +4122,7 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
     required TResult orElse(),
   }) {
     if (verifyCodeError != null) {
-      return verifyCodeError(statesCode, errorMessage);
+      return verifyCodeError(statusCode, errorMessage);
     }
     return orElse();
   }
@@ -4133,7 +4133,7 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -4141,7 +4141,7 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -4149,7 +4149,7 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -4168,18 +4168,18 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -4196,18 +4196,18 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -4225,10 +4225,10 @@ class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
 
 abstract class VerifyCodeButtonErrorData implements ForgetPasswordState {
   const factory VerifyCodeButtonErrorData(
-      {required final int statesCode,
+      {required final int statusCode,
       required final String errorMessage}) = _$VerifyCodeButtonErrorDataImpl;
 
-  int get statesCode;
+  int get statusCode;
   String get errorMessage;
   @JsonKey(ignore: true)
   _$$VerifyCodeButtonErrorDataImplCopyWith<_$VerifyCodeButtonErrorDataImpl>
@@ -4279,7 +4279,7 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
 
   @override
   String toString() {
-    return 'ForgetPasswordState.verifyCodeSuceess(data: $data)';
+    return 'ForgetPasswordState.verifyCodeSuccess(data: $data)';
   }
 
   @override
@@ -4305,27 +4305,27 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
     required TResult Function(bool value) showConfirmNewPassword,
     required TResult Function(bool value) createNewPasswordValidator,
   }) {
-    return verifyCodeSuceess(data);
+    return verifyCodeSuccess(data);
   }
 
   @override
@@ -4333,25 +4333,25 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
     TResult? Function(bool value)? showConfirmNewPassword,
     TResult? Function(bool value)? createNewPasswordValidator,
   }) {
-    return verifyCodeSuceess?.call(data);
+    return verifyCodeSuccess?.call(data);
   }
 
   @override
@@ -4359,18 +4359,18 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -4378,8 +4378,8 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     TResult Function(bool value)? createNewPasswordValidator,
     required TResult orElse(),
   }) {
-    if (verifyCodeSuceess != null) {
-      return verifyCodeSuceess(data);
+    if (verifyCodeSuccess != null) {
+      return verifyCodeSuccess(data);
     }
     return orElse();
   }
@@ -4390,7 +4390,7 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -4398,7 +4398,7 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -4406,7 +4406,7 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -4416,7 +4416,7 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     required TResult Function(CreateNewPasswordValidator value)
         createNewPasswordValidator,
   }) {
-    return verifyCodeSuceess(this);
+    return verifyCodeSuccess(this);
   }
 
   @override
@@ -4425,18 +4425,18 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -4444,7 +4444,7 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     TResult? Function(CreateNewPasswordValidator value)?
         createNewPasswordValidator,
   }) {
-    return verifyCodeSuceess?.call(this);
+    return verifyCodeSuccess?.call(this);
   }
 
   @override
@@ -4453,18 +4453,18 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -4473,8 +4473,8 @@ class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
         createNewPasswordValidator,
     required TResult orElse(),
   }) {
-    if (verifyCodeSuceess != null) {
-      return verifyCodeSuceess(this);
+    if (verifyCodeSuccess != null) {
+      return verifyCodeSuccess(this);
     }
     return orElse();
   }
@@ -4556,20 +4556,20 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -4584,18 +4584,18 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -4610,18 +4610,18 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -4641,7 +4641,7 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -4649,7 +4649,7 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -4657,7 +4657,7 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -4676,18 +4676,18 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -4704,18 +4704,18 @@ class _$OtpVerifyCodeImpl implements OtpVerifyCode {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -4808,20 +4808,20 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -4836,18 +4836,18 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -4862,18 +4862,18 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -4893,7 +4893,7 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -4901,7 +4901,7 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -4909,7 +4909,7 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -4928,18 +4928,18 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -4956,18 +4956,18 @@ class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -5037,20 +5037,20 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -5065,18 +5065,18 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -5091,18 +5091,18 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -5122,7 +5122,7 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -5130,7 +5130,7 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -5138,7 +5138,7 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -5157,18 +5157,18 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -5185,18 +5185,18 @@ class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -5223,7 +5223,7 @@ abstract class _$$NewPasswordButtonErrorDataImplCopyWith<$Res> {
           $Res Function(_$NewPasswordButtonErrorDataImpl) then) =
       __$$NewPasswordButtonErrorDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({int statusCode, String errorMessage});
 }
 
 /// @nodoc
@@ -5239,13 +5239,13 @@ class __$$NewPasswordButtonErrorDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
+    Object? statusCode = null,
     Object? errorMessage = null,
   }) {
     return _then(_$NewPasswordButtonErrorDataImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
+      statusCode: null == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
               as int,
       errorMessage: null == errorMessage
           ? _value.errorMessage
@@ -5259,16 +5259,16 @@ class __$$NewPasswordButtonErrorDataImplCopyWithImpl<$Res>
 
 class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
   const _$NewPasswordButtonErrorDataImpl(
-      {required this.statesCode, required this.errorMessage});
+      {required this.statusCode, required this.errorMessage});
 
   @override
-  final int statesCode;
+  final int statusCode;
   @override
   final String errorMessage;
 
   @override
   String toString() {
-    return 'ForgetPasswordState.newPasswordError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'ForgetPasswordState.newPasswordError(statusCode: $statusCode, errorMessage: $errorMessage)';
   }
 
   @override
@@ -5276,14 +5276,14 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewPasswordButtonErrorDataImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
+            (identical(other.statusCode, statusCode) ||
+                other.statusCode == statusCode) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, statusCode, errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -5297,27 +5297,27 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
     required TResult Function(bool value) showConfirmNewPassword,
     required TResult Function(bool value) createNewPasswordValidator,
   }) {
-    return newPasswordError(statesCode, errorMessage);
+    return newPasswordError(statusCode, errorMessage);
   }
 
   @override
@@ -5325,25 +5325,25 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
     TResult? Function(bool value)? showConfirmNewPassword,
     TResult? Function(bool value)? createNewPasswordValidator,
   }) {
-    return newPasswordError?.call(statesCode, errorMessage);
+    return newPasswordError?.call(statusCode, errorMessage);
   }
 
   @override
@@ -5351,18 +5351,18 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -5371,7 +5371,7 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
     required TResult orElse(),
   }) {
     if (newPasswordError != null) {
-      return newPasswordError(statesCode, errorMessage);
+      return newPasswordError(statusCode, errorMessage);
     }
     return orElse();
   }
@@ -5382,7 +5382,7 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -5390,7 +5390,7 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -5398,7 +5398,7 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -5417,18 +5417,18 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -5445,18 +5445,18 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -5474,10 +5474,10 @@ class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
 
 abstract class NewPasswordButtonErrorData implements ForgetPasswordState {
   const factory NewPasswordButtonErrorData(
-      {required final int statesCode,
+      {required final int statusCode,
       required final String errorMessage}) = _$NewPasswordButtonErrorDataImpl;
 
-  int get statesCode;
+  int get statusCode;
   String get errorMessage;
   @JsonKey(ignore: true)
   _$$NewPasswordButtonErrorDataImplCopyWith<_$NewPasswordButtonErrorDataImpl>
@@ -5529,7 +5529,7 @@ class _$NewPasswordButtonSuccessDataImpl
 
   @override
   String toString() {
-    return 'ForgetPasswordState.newPasswordSuceess(data: $data)';
+    return 'ForgetPasswordState.newPasswordSuccess(data: $data)';
   }
 
   @override
@@ -5556,27 +5556,27 @@ class _$NewPasswordButtonSuccessDataImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
     required TResult Function(bool value) showConfirmNewPassword,
     required TResult Function(bool value) createNewPasswordValidator,
   }) {
-    return newPasswordSuceess(data);
+    return newPasswordSuccess(data);
   }
 
   @override
@@ -5584,25 +5584,25 @@ class _$NewPasswordButtonSuccessDataImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
     TResult? Function(bool value)? showConfirmNewPassword,
     TResult? Function(bool value)? createNewPasswordValidator,
   }) {
-    return newPasswordSuceess?.call(data);
+    return newPasswordSuccess?.call(data);
   }
 
   @override
@@ -5610,18 +5610,18 @@ class _$NewPasswordButtonSuccessDataImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -5629,8 +5629,8 @@ class _$NewPasswordButtonSuccessDataImpl
     TResult Function(bool value)? createNewPasswordValidator,
     required TResult orElse(),
   }) {
-    if (newPasswordSuceess != null) {
-      return newPasswordSuceess(data);
+    if (newPasswordSuccess != null) {
+      return newPasswordSuccess(data);
     }
     return orElse();
   }
@@ -5641,7 +5641,7 @@ class _$NewPasswordButtonSuccessDataImpl
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -5649,7 +5649,7 @@ class _$NewPasswordButtonSuccessDataImpl
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -5657,7 +5657,7 @@ class _$NewPasswordButtonSuccessDataImpl
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -5667,7 +5667,7 @@ class _$NewPasswordButtonSuccessDataImpl
     required TResult Function(CreateNewPasswordValidator value)
         createNewPasswordValidator,
   }) {
-    return newPasswordSuceess(this);
+    return newPasswordSuccess(this);
   }
 
   @override
@@ -5676,18 +5676,18 @@ class _$NewPasswordButtonSuccessDataImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -5695,7 +5695,7 @@ class _$NewPasswordButtonSuccessDataImpl
     TResult? Function(CreateNewPasswordValidator value)?
         createNewPasswordValidator,
   }) {
-    return newPasswordSuceess?.call(this);
+    return newPasswordSuccess?.call(this);
   }
 
   @override
@@ -5704,18 +5704,18 @@ class _$NewPasswordButtonSuccessDataImpl
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -5724,8 +5724,8 @@ class _$NewPasswordButtonSuccessDataImpl
         createNewPasswordValidator,
     required TResult orElse(),
   }) {
-    if (newPasswordSuceess != null) {
-      return newPasswordSuceess(this);
+    if (newPasswordSuccess != null) {
+      return newPasswordSuccess(this);
     }
     return orElse();
   }
@@ -5809,20 +5809,20 @@ class _$UserNewPasswordImpl implements UserNewPassword {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -5837,18 +5837,18 @@ class _$UserNewPasswordImpl implements UserNewPassword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -5863,18 +5863,18 @@ class _$UserNewPasswordImpl implements UserNewPassword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -5894,7 +5894,7 @@ class _$UserNewPasswordImpl implements UserNewPassword {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -5902,7 +5902,7 @@ class _$UserNewPasswordImpl implements UserNewPassword {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -5910,7 +5910,7 @@ class _$UserNewPasswordImpl implements UserNewPassword {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -5929,18 +5929,18 @@ class _$UserNewPasswordImpl implements UserNewPassword {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -5957,18 +5957,18 @@ class _$UserNewPasswordImpl implements UserNewPassword {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -6063,20 +6063,20 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -6091,18 +6091,18 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -6117,18 +6117,18 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -6148,7 +6148,7 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -6156,7 +6156,7 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -6164,7 +6164,7 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -6183,18 +6183,18 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -6211,18 +6211,18 @@ class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -6315,20 +6315,20 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -6343,18 +6343,18 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -6369,18 +6369,18 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -6400,7 +6400,7 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -6408,7 +6408,7 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -6416,7 +6416,7 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -6435,18 +6435,18 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -6463,18 +6463,18 @@ class _$ShowNewPasswordImpl implements ShowNewPassword {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -6569,20 +6569,20 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -6597,18 +6597,18 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -6623,18 +6623,18 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -6654,7 +6654,7 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -6662,7 +6662,7 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -6670,7 +6670,7 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -6689,18 +6689,18 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -6717,18 +6717,18 @@ class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,
@@ -6824,20 +6824,20 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
-    required TResult Function(ForgetPasswordResponse data) suceess,
+    required TResult Function(int statusCode, String errorMessage) error,
+    required TResult Function(ForgetPasswordResponse data) success,
     required TResult Function(String value) userForgetEmailAddress,
     required TResult Function(bool value) userForgetButtonValidator,
     required TResult Function() verifyCodeLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         verifyCodeError,
-    required TResult Function(VerifyCodeResponse data) verifyCodeSuceess,
+    required TResult Function(VerifyCodeResponse data) verifyCodeSuccess,
     required TResult Function(String? value) otpVerifyCode,
     required TResult Function(bool value) verifyButtonValidator,
     required TResult Function() newPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(int statusCode, String errorMessage)
         newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuceess,
+    required TResult Function(AuthResponse data) newPasswordSuccess,
     required TResult Function(String value) userNewPassword,
     required TResult Function(String value) userConfirmNewPassword,
     required TResult Function(bool value) showNewPassword,
@@ -6852,18 +6852,18 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
-    TResult? Function(ForgetPasswordResponse data)? suceess,
+    TResult? Function(int statusCode, String errorMessage)? error,
+    TResult? Function(ForgetPasswordResponse data)? success,
     TResult? Function(String value)? userForgetEmailAddress,
     TResult? Function(bool value)? userForgetButtonValidator,
     TResult? Function()? verifyCodeLoading,
-    TResult? Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult? Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult? Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult? Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult? Function(String? value)? otpVerifyCode,
     TResult? Function(bool value)? verifyButtonValidator,
     TResult? Function()? newPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuceess,
+    TResult? Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult? Function(AuthResponse data)? newPasswordSuccess,
     TResult? Function(String value)? userNewPassword,
     TResult? Function(String value)? userConfirmNewPassword,
     TResult? Function(bool value)? showNewPassword,
@@ -6878,18 +6878,18 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
-    TResult Function(ForgetPasswordResponse data)? suceess,
+    TResult Function(int statusCode, String errorMessage)? error,
+    TResult Function(ForgetPasswordResponse data)? success,
     TResult Function(String value)? userForgetEmailAddress,
     TResult Function(bool value)? userForgetButtonValidator,
     TResult Function()? verifyCodeLoading,
-    TResult Function(int statesCode, String errorMessage)? verifyCodeError,
-    TResult Function(VerifyCodeResponse data)? verifyCodeSuceess,
+    TResult Function(int statusCode, String errorMessage)? verifyCodeError,
+    TResult Function(VerifyCodeResponse data)? verifyCodeSuccess,
     TResult Function(String? value)? otpVerifyCode,
     TResult Function(bool value)? verifyButtonValidator,
     TResult Function()? newPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuceess,
+    TResult Function(int statusCode, String errorMessage)? newPasswordError,
+    TResult Function(AuthResponse data)? newPasswordSuccess,
     TResult Function(String value)? userNewPassword,
     TResult Function(String value)? userConfirmNewPassword,
     TResult Function(bool value)? showNewPassword,
@@ -6909,7 +6909,7 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
     required TResult Function(_Initial value) initial,
     required TResult Function(ForgetPasswordLoadingData value) loading,
     required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) suceess,
+    required TResult Function(ForgetPasswordButtonSuccessData value) success,
     required TResult Function(UserForgetEmailAddress value)
         userForgetEmailAddress,
     required TResult Function(ContinueForgetButtonValidator value)
@@ -6917,7 +6917,7 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
     required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
     required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
     required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuceess,
+        verifyCodeSuccess,
     required TResult Function(OtpVerifyCode value) otpVerifyCode,
     required TResult Function(VerifyButtonValidator value)
         verifyButtonValidator,
@@ -6925,7 +6925,7 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
     required TResult Function(NewPasswordButtonErrorData value)
         newPasswordError,
     required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuceess,
+        newPasswordSuccess,
     required TResult Function(UserNewPassword value) userNewPassword,
     required TResult Function(UserConfirmNewPassword value)
         userConfirmNewPassword,
@@ -6944,18 +6944,18 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
     TResult? Function(_Initial value)? initial,
     TResult? Function(ForgetPasswordLoadingData value)? loading,
     TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
     TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult? Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult? Function(OtpVerifyCode value)? otpVerifyCode,
     TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult? Function(UserNewPassword value)? userNewPassword,
     TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult? Function(ShowNewPassword value)? showNewPassword,
@@ -6972,18 +6972,18 @@ class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
     TResult Function(_Initial value)? initial,
     TResult Function(ForgetPasswordLoadingData value)? loading,
     TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? suceess,
+    TResult Function(ForgetPasswordButtonSuccessData value)? success,
     TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
     TResult Function(ContinueForgetButtonValidator value)?
         userForgetButtonValidator,
     TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
     TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuceess,
+    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
     TResult Function(OtpVerifyCode value)? otpVerifyCode,
     TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
     TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
     TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuceess,
+    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
     TResult Function(UserNewPassword value)? userNewPassword,
     TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
     TResult Function(ShowNewPassword value)? showNewPassword,

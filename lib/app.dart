@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
           } else {
             // Build the MaterialApp with the initial route based on the future result
             return ScreenUtilInit(
-                  // Initialize ScreenUtil to support different screen sizes and resolutions
+              // Initialize ScreenUtil to support different screen sizes and resolutions
 
-      designSize: const Size(360, 690), // Base size for screen scaling
+              designSize: const Size(360, 690), // Base size for screen scaling
               minTextAdapt: true,
               useInheritedMediaQuery: true,
               builder: (context, child) {
@@ -50,9 +50,12 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                  initialRoute: snapshot.data,
-                  onGenerateRoute: RouteGenerator.getRoute,
-                  // home: const RouteStatesScreen(),
+                  //  initialRoute: snapshot.data,
+                  //onGenerateRoute: RouteGenerator.getRoute,
+                  home: BlocProvider(
+                    create: (context) => instance<ForgetPasswordBloc>(),
+                    child: const NewPasswordView(),
+                  ),
                   theme: getApplicationTheme(context),
                 );
               },
