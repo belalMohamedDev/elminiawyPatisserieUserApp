@@ -38,8 +38,12 @@ class ResponsiveUtils {
   }
 
   /// Adjust padding using block size.
-  EdgeInsetsGeometry setPadding(
-      {double? left, double? top, double? right, double? bottom}) {
+  EdgeInsetsGeometry setPadding({
+    double? left,
+    double? top,
+    double? right,
+    double? bottom,
+  }) {
     return EdgeInsets.only(
       left: setWidth(left ?? 0),
       top: setHeight(top ?? 0),
@@ -49,8 +53,12 @@ class ResponsiveUtils {
   }
 
   /// Adjust margin using block size.
-  EdgeInsetsGeometry setMargin(
-      {double? left, double? top, double? right, double? bottom}) {
+  EdgeInsetsGeometry setMargin({
+    double? left,
+    double? top,
+    double? right,
+    double? bottom,
+  }) {
     return EdgeInsets.only(
       left: setWidth(left ?? 0),
       top: setHeight(top ?? 0),
@@ -62,5 +70,13 @@ class ResponsiveUtils {
   /// Adjust border radius based on the device's screen size.
   double setBorderRadius(double radius) {
     return (radius * blockSizeWidth);
+  }
+
+  /// Create a SizedBox with a specified height or width.
+  SizedBox setSizeBox({double? width, double? height}) {
+    return SizedBox(
+      width: width != null ? setWidth(width) : null,
+      height: height != null ? setHeight(height) : null,
+    );
   }
 }

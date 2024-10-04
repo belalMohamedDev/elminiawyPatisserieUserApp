@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ProductBottomSheet extends StatelessWidget {
@@ -10,48 +9,46 @@ class ProductBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     final product = displayList[index];
 
     return Padding(
-      padding: EdgeInsets.only(left: 20.w, right: 20.w),
+      padding: responsive.setPadding(left: 5, right: 5, bottom: 3),
       child: SizedBox(
-        height: 350.h,
+        height: responsive.setHeight(35),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            _productImageRatingNameAndFavoritRow(product, context),
-            SizedBox(
-              height: 20.h,
-            ),
+            _productImageRatingNameAndFavoritRow(product, context, responsive),
+            responsive.setSizeBox(height: 2),
             Text(
-              '  Description',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brown,
-                  fontSize: 15.sp),
+              AppStrings.description,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: responsive.setTextSize(4)),
             ),
-            SizedBox(
-              height: 5.h,
-            ),
+            responsive.setSizeBox(height: 0.5),
             Text(
               '  ${displayList[index].description!}',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brunLight,
-                  fontSize: 15.sp),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(fontSize: responsive.setTextSize(3.5)),
             ),
-            SizedBox(
-              height: 40.h,
-            ),
-            _addRemoveAndAddToCartButton(context)
+            const Spacer(),
+            _addRemoveAndAddToCartButton(context, responsive)
           ],
         ),
       ),
     );
   }
 
-  BlocConsumer _addRemoveAndAddToCartButton(BuildContext context) {
+  BlocConsumer _addRemoveAndAddToCartButton(
+      BuildContext context, ResponsiveUtils responsive) {
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         state.whenOrNull(
@@ -67,7 +64,7 @@ class ProductBottomSheet extends StatelessWidget {
         return Row(
           children: [
             SizedBox(
-              width: 10.w,
+              width: responsive.setWidth(1), // Spacer between spinner and text
             ),
             GestureDetector(
               onTap: () => context.read<CartCubit>().decreaseQuantity(),
@@ -80,17 +77,14 @@ class ProductBottomSheet extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 10.w,
+              width: responsive.setWidth(2), // Spacer between spinner and text
             ),
             Text(
               '${context.read<CartCubit>().quantityItem}',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brown,
-                  fontSize: 15.sp),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(),
             ),
             SizedBox(
-              width: 10.w,
+              width: responsive.setWidth(2), // Spacer between spinner and text
             ),
             GestureDetector(
               onTap: () => context.read<CartCubit>().increaseQuantity(),
@@ -104,21 +98,21 @@ class ProductBottomSheet extends StatelessWidget {
             ),
             const Spacer(),
             CustomButton(
-              height: 50.h,
-              width: 190.w,
+              height: 5,
+              width: 55,
               onPressed: () {
                 context
                     .read<CartCubit>()
                     .addItemToCart(displayList[index].sId!);
               },
               widget: state.maybeWhen(
-                addItemToCartLoading: () => Row(
+                addItemToCartLoading: (id) => Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 20.h,
-                      width: 20.w,
+                      height: responsive.setHeight(2),
+                      width: responsive.setWidth(4),
                       child: const CircularProgressIndicator(
                         color: Colors.white,
                         strokeWidth: 2.0,
@@ -126,23 +120,24 @@ class ProductBottomSheet extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 15.w,
+                      width: responsive
+                          .setWidth(3), // Spacer between spinner and text
                     ),
+                    
                     Text(
                       AppStrings.loading,
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          fontSize: 14.sp,
-                          color: ColorManger.white,
-                          fontWeight: FontWeightManger.semiBold),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: responsive.setTextSize(3.8),
+                              ),
                     ),
                   ],
                 ),
                 orElse: () => Text(
-                  'Add To Cart',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 14.sp,
-                      color: ColorManger.white,
-                      fontWeight: FontWeightManger.semiBold),
+                  AppStrings.addToCart,
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        fontSize: responsive.setTextSize(3.8),
+                      ),
                 ),
               ),
             ),
@@ -152,92 +147,93 @@ class ProductBottomSheet extends StatelessWidget {
     );
   }
 
-  Row _productImageRatingNameAndFavoritRow(product, BuildContext context) {
+  Row _productImageRatingNameAndFavoritRow(
+      product, BuildContext context, ResponsiveUtils responsive) {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 40.h),
+          padding: responsive.setPadding(top: 3),
           child: Container(
             decoration: BoxDecoration(
               color: ColorManger.backgroundItem,
-              borderRadius: BorderRadius.circular(14.r),
+              borderRadius:
+                  BorderRadius.circular(responsive.setBorderRadius(2.5)),
             ),
             child: CachedNetworkImage(
               imageUrl: product.image!,
-              height: 120.h,
+              height: responsive.setHeight(12),
               placeholder: (context, url) => const LoadingShimmer(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
         ),
-        SizedBox(
-          width: 15.w,
-        ),
-        _namePriceAndRatingColumn(context),
+        responsive.setSizeBox(width: 4),
+        _namePriceAndRatingColumn(context, responsive),
         const Spacer(),
-        _wishListContainer(context, product),
+        _wishListContainer(context, product, responsive),
       ],
     );
   }
 
-  Padding _namePriceAndRatingColumn(BuildContext context) {
+  Padding _namePriceAndRatingColumn(
+      BuildContext context, ResponsiveUtils responsive) {
     return Padding(
-      padding: EdgeInsets.only(top: 50.h),
+      padding: responsive.setPadding(top: 3),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             displayList[index].title!,
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 15.sp),
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
           ),
-          SizedBox(
-            height: 10.h,
+          responsive.setSizeBox(height: 1.2),
+          IgnorePointer(
+            ignoring: true,
+            child: RatingBar(
+                initialRating: displayList[index].ratingsAverage!,
+                direction: Axis.horizontal,
+                itemSize: responsive.setIconSize(4),
+                itemCount: 5,
+                allowHalfRating: true,
+                itemPadding: responsive.setPadding(right: 0.5),
+                onRatingUpdate: (rating) {},
+                ratingWidget: RatingWidget(
+                    full: Icon(
+                      IconlyBold.star,
+                      color: ColorManger.brown,
+                    ),
+                    half: Icon(
+                      IconlyBold.star,
+                      color: ColorManger.brun,
+                    ),
+                    empty: Icon(
+                      IconlyBroken.star,
+                      color: ColorManger.brunLight,
+                    ))),
           ),
-          RatingBar(
-              initialRating: displayList[index].ratingsAverage!,
-              direction: Axis.horizontal,
-              itemSize: 15.sp,
-              itemCount: 5,
-              allowHalfRating: true,
-              itemPadding: EdgeInsets.symmetric(horizontal: 2.w),
-              onRatingUpdate: (rating) {},
-              ratingWidget: RatingWidget(
-                  full: Icon(
-                    IconlyBold.star,
-                    color: ColorManger.brown,
-                  ),
-                  half: Icon(
-                    IconlyBold.star,
-                    color: ColorManger.brun,
-                  ),
-                  empty: Icon(
-                    IconlyBroken.star,
-                    color: ColorManger.brunLight,
-                  ))),
-          SizedBox(
-            height: 10.h,
-          ),
+          responsive.setSizeBox(height: 1.2),
           Text(
-            'Price:   ${displayList[index].price!}',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brunLight,
-                fontSize: 15.sp),
+            '${AppStrings.price}   ${displayList[index].price!}  ${AppStrings.egy}',
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontSize: responsive.setTextSize(3.5)),
           ),
         ],
       ),
     );
   }
 
-  Container _wishListContainer(BuildContext context, product) {
+  Container _wishListContainer(
+      BuildContext context, product, ResponsiveUtils responsive) {
     return Container(
       decoration: BoxDecoration(
         color: ColorManger.backgroundItem,
-        borderRadius: BorderRadius.circular(14.r),
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(2.5)),
       ),
       child: IconButton(
         onPressed: () {

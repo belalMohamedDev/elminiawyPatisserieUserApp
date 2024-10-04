@@ -60,7 +60,7 @@ class SignUpButton extends StatelessWidget {
                 ),
                 SizedBox(
                   width: responsive
-                      .setHeight(2), // Spacer between spinner and text
+                      .setWidth(3), // Spacer between spinner and text
                 ),
                 // Show loading text next to the spinner
                 Text(

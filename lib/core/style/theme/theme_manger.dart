@@ -68,6 +68,13 @@ ThemeData getApplicationTheme(BuildContext context) {
           color: ColorManger.brunLight,
           fontFamily: FontConsistent.fontFamilyAcme,
         ),
+
+        bodyMedium: getMediumStyle(
+          fontSize: responsive.setTextSize(5),
+          color: Colors.black38,
+          fontFamily: FontConsistent.fontFamilyAcme,
+        ),
+
       ),
 
 //

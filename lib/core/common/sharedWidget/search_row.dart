@@ -1,4 +1,3 @@
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class SearchRow extends StatelessWidget {
@@ -8,6 +7,9 @@ class SearchRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return InkWell(
       onTap: () {
         NavBarNavigator.push(context,
@@ -17,35 +19,44 @@ class SearchRow extends StatelessWidget {
         children: [
           Expanded(
             child: SizedBox(
-              height: 40.h,
+              height: responsive.setHeight(5.5),
               child: TextFormField(
                 enabled: false,
                 decoration: InputDecoration(
-                  hintText: 'Find Your Patisserie',
+                  hintText: AppStrings.findYourPatisserie,
                   prefixIcon: Icon(IconlyBroken.search,
-                      size: 18.sp, color: ColorManger.brunLight),
-                  hintStyle: TextStyle(color: ColorManger.brunLight),
+                      size: responsive.setIconSize(5),
+                      color: ColorManger.brunLight),
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: responsive.setTextSize(3.5)),
                   fillColor: ColorManger.backgroundItem,
                   disabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: ColorManger.backgroundItem,
                     ),
-                    borderRadius:
-                        BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                    borderRadius: BorderRadius.all(Radius.elliptical(
+                        responsive.setBorderRadius(2),
+                        responsive.setBorderRadius(2))),
                   ),
                 ),
               ),
             ),
           ),
           Container(
-            height: 41.h,
-            margin: EdgeInsets.only(left: 10.w, right: 5.w),
+            height: responsive.setHeight(5.5),
+            margin: responsive.setMargin(left: 3, right: 2),
             decoration: BoxDecoration(
               color: ColorManger.brun,
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius:
+                  BorderRadius.circular(responsive.setBorderRadius(2)),
             ),
             child: IconButton(
-              icon: Icon(IconlyBroken.filter, color: ColorManger.white),
+              icon: Icon(
+                IconlyBroken.filter,
+                color: ColorManger.white,
+              ),
               onPressed: () {
                 NavBarNavigator.push(context,
                     screen: const SearchView(), withNavBar: false);

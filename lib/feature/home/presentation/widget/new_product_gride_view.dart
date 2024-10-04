@@ -1,5 +1,3 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class NewProductGrideView extends StatelessWidget {
@@ -9,32 +7,33 @@ class NewProductGrideView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return Column(
       children: [
         Row(
           children: [
-            Text("New Products in Store",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.brun,
-                    fontSize: 16.sp)),
+            Text(AppStrings.newProductsInStore,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontSize: responsive.setTextSize(4))),
             const Spacer(),
             InkWell(
               onTap: () {
                 NavBarNavigator.push(context,
                     screen: const NewProductView(), withNavBar: false);
               },
-              child: Text("See all",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 14.sp)),
+              child: Text(AppStrings.seeAll,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4))),
             ),
           ],
         ),
-        SizedBox(
-          height: 30.h,
-        ),
+        responsive.setSizeBox(height: 3),
         BlocConsumer<ProductCubit, ProductState>(
           listener: (context, state) {
             state.whenOrNull(

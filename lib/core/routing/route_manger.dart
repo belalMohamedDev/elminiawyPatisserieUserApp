@@ -126,6 +126,9 @@ class RouteGenerator {
               BlocProvider.value(
                 value: instance<ProductCubit>(),
               ),
+              BlocProvider.value(
+                value: instance<WishListCubit>(),
+              ),
             ],
             child: const BottomNavBar(),
           ),

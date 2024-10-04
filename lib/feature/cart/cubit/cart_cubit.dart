@@ -16,7 +16,7 @@ class CartCubit extends Cubit<CartState> {
   final TextEditingController applyCouponController = TextEditingController();
 
   Future<void> addItemToCart(String productId) async {
-    emit(const CartState.addItemToCartLoading());
+    emit( CartState.addItemToCartLoading(productId));
 
     final response = await _cartRepositoryImplement.addItemToCart(
         AddItemToCartRequestBody(product: productId, quantity: quantityItem));

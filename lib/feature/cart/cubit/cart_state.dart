@@ -4,7 +4,7 @@ part of 'cart_cubit.dart';
 class CartState with _$CartState {
   const factory CartState.initial() = _Initial;
   //add  product to Cart State
-  const factory CartState.addItemToCartLoading() = AddItemToCartLoading;
+  const factory CartState.addItemToCartLoading(String id) = AddItemToCartLoading;
 
   const factory CartState.addItemToCartSuccess(
       CartResponse data, int quantity) = AddItemToCartSuccess;

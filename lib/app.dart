@@ -17,15 +17,15 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => instance<AppLogicCubit>(),
         ),
-        BlocProvider(
-          create: (context) => instance<ProductCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => instance<WishListCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => instance<CartCubit>(),
-        ),
+        // BlocProvider(
+        //   create: (context) => instance<ProductCubit>(),
+        // ),
+        // BlocProvider(
+        //   create: (context) => instance<WishListCubit>(),
+        // ),
+        // BlocProvider(
+        //   create: (context) => instance<CartCubit>(),
+        // ),
       ],
       child: FutureBuilder<String>(
         future: checkIfLoggedInUser(),
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             return ScreenUtilInit(
               // Initialize ScreenUtil to support different screen sizes and resolutions
 
-              designSize: const Size(360, 690), // Base size for screen scaling
+              designSize: const Size(375, 812), // Base size for screen scaling
               minTextAdapt: true,
               useInheritedMediaQuery: true,
               builder: (context, child) {
@@ -50,8 +50,8 @@ class MyApp extends StatelessWidget {
                   builder: DevicePreview.appBuilder,
                   title: AppStrings.appName,
                   debugShowCheckedModeBanner: false,
-                  //  initialRoute: snapshot.data,
-                  //onGenerateRoute: RouteGenerator.getRoute,
+                  initialRoute: snapshot.data,
+                  onGenerateRoute: RouteGenerator.getRoute,
                   home: BlocProvider(
                     create: (context) => instance<ForgetPasswordBloc>(),
                     child: const NewPasswordView(),

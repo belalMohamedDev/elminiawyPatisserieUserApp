@@ -93,4 +93,14 @@ class AppStrings {
   static const String categories = 'Categories';
   static const String shopping = 'Shopping';
   static const String profile = 'Profile';
+  static const String location = 'Location';
+  static const String findYourPatisserie = 'Find Your Patisserie';
+  static const String category = 'Category';
+  static const String viewAll = 'View all';
+  static const String newProductsInStore = 'New Products in Store';
+  static const String seeAll = 'See all';
+  static const String description = '  Description';
+  static const String    addToCart =    'Add To Cart';
+  static const String    price =    'Price:';
+  static const String egy = 'Egy';
 }

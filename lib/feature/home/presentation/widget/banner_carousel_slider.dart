@@ -1,6 +1,5 @@
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
-
 class BannerCarouselSlider extends StatelessWidget {
   const BannerCarouselSlider({
     super.key,
@@ -8,6 +7,9 @@ class BannerCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return BlocBuilder<BannerCubit, BannerState>(
       buildWhen: (previous, current) =>
           current is GetBannersLoading ||
@@ -15,23 +17,24 @@ class BannerCarouselSlider extends StatelessWidget {
           current is GetBannersError,
       builder: (context, state) {
         if (state is GetBannersSuccess) {
-          return _bannersSuccessState(state);
+          return _bannersSuccessState(state, responsive);
         }
         return Center(
           child: LoadingShimmer(
-            height: 130.h,
+            height: responsive.setHeight(15),
             width: double.infinity,
-            borderRadius: 12.r,
+            borderRadius: responsive.setBorderRadius(2),
           ),
         );
       },
     );
   }
 
-  CarouselSlider _bannersSuccessState(GetBannersSuccess state) {
+  CarouselSlider _bannersSuccessState(
+      GetBannersSuccess state, ResponsiveUtils responsive) {
     return CarouselSlider(
       options: CarouselOptions(
-          height: 130.h,
+          height: responsive.setHeight(15),
           enableInfiniteScroll: true,
           autoPlay: true,
           viewportFraction: 1.1,
@@ -41,15 +44,16 @@ class BannerCarouselSlider extends StatelessWidget {
           scrollDirection: Axis.horizontal),
       items: state.data.data!
           .map((banner) => ClipRRect(
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius:
+                    BorderRadius.circular(responsive.setBorderRadius(2)),
                 child: CachedNetworkImage(
                   imageUrl: banner.image!,
-                  width: 300.w,
+                  width: responsive.setWidth(89),
                   fit: BoxFit.fill,
                   placeholder: (context, url) => LoadingShimmer(
-                    height: 130.h,
-                    width: 300.w,
-                    borderRadius: 12.r,
+                    height: responsive.setHeight(15),
+                    width: responsive.setWidth(89),
+                    borderRadius: responsive.setBorderRadius(2),
                   ),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),

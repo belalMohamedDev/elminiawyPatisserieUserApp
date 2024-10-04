@@ -1,18 +1,14 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class BuildSearchBar extends StatelessWidget {
-
   const BuildSearchBar({
-    super.key, required this.mapCubit,
- 
+    super.key,
+    required this.mapCubit,
   });
-    final MapCubit mapCubit;
+  final MapCubit mapCubit;
 
   @override
   Widget build(BuildContext context) {
-
     return Positioned(
       top: 45.h,
       right: 20.w,
