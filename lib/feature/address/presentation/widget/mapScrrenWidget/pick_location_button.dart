@@ -16,10 +16,12 @@ class PickLocationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
     return Positioned(
-      bottom: 30.h,
-      left: 20.w,
-      right: 20.w,
+      bottom: responsive.setHeight(4),
+      left: responsive.setWidth(5),
+      right: responsive.setWidth(5),
       child: CustomButton(
         onPressed: () async {
           if (mapCubit.checkLocationAvailableResponse != null) {
@@ -71,13 +73,12 @@ class PickLocationButton extends StatelessWidget {
         },
         widget: mapState is CheckAddressAvailableLoading
             ? SizedBox(
-                height: 25.h,
-                width: 25.w,
-                child: Center(
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2.5.w,
-                    color: ColorManger.white,
-                  ),
+                height: responsive.setHeight(2),
+                width: responsive.setWidth(4),
+                child: CircularProgressIndicator(
+                  color: ColorManger.white, // Indicator color
+                  strokeWidth: 2.0, // Line thickness of the indicator
+                  strokeAlign: 0.01, // Alignment of the stroke (indicator line)
                 ),
               )
             : Text(
@@ -88,17 +89,15 @@ class PickLocationButton extends StatelessWidget {
                             mapCubit.checkLocationAvailableResponse!
                                     .isAddressAvailable ==
                                 true
-                        ? "Pick Location"
+                        ? AppStrings.pickLocation
                         : mapCubit.checkLocationAvailableResponse!
                                     .isAddressAvailable ==
                                 false
-                            ? "Address not found in this area"
-                            : "Service not available in this area"
-                    : "Enter Complete address",
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 16.sp,
-                      color: ColorManger.white,
-                      fontWeight: FontWeightManger.semiBold,
+                            ? AppStrings.addressNotFoundInThisArea
+                            : AppStrings.serviceNotAvailableInThisArea
+                    : AppStrings.enterCompleteAddress,
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                      fontSize: responsive.setTextSize(3.8),
                     ),
               ),
       ),

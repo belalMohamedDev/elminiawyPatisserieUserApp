@@ -1,16 +1,7 @@
-import 'package:elminiawy/core/utils/extensions.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-import '../../../../core/services/app_storage_key.dart';
-import '../../../../core/services/shared_pref_helper.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../logic/cubit/user_notification_cubit.dart';
-import '../refactor/notification_screen_body.dart';
-
+/// [UserNotificationScreen] is a StatefulWidget that displays user notifications.
+/// It fetches notifications when the screen is initialized and marks all as seen.
 class UserNotificationScreen extends StatefulWidget {
   const UserNotificationScreen({super.key});
 
@@ -19,13 +10,18 @@ class UserNotificationScreen extends StatefulWidget {
 }
 
 class _UserNotificationScreenState extends State<UserNotificationScreen> {
+  /// Initializes the state and triggers the notifications fetching and update.
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {});
+
+    // Using a post frame callback to ensure it runs after the first frame is rendered.
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // Fetch the user name from shared preferences.
       String initialUserName =
           await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+
+      // If the user name is not empty, mark all notifications as seen.
       if (initialUserName.isNotEmpty) {
         await Future.wait([
           context.read<UserNotificationCubit>().updateAllNotificationsToSeen()
@@ -34,23 +30,30 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
     });
   }
 
+  /// Builds the main structure of the notification screen, including the app bar and body.
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Notification",
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brun,
-                  fontSize: 16.sp)),
-          leading: IconButton(
-            icon: const Icon(IconlyBroken.arrowLeft),
-            onPressed: () {
-              context.pop();
-            },
-          ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          AppStrings.notification,
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+              fontSize: responsive.setTextSize(4)), // Responsive font size
         ),
-        body: const UserNotificationBody());
+        // Back button in the app bar to navigate back to the previous screen.
+        leading: IconButton(
+          icon: const Icon(IconlyBroken.arrowLeft),
+          onPressed: () {
+            context.pop(); // Navigate back when the icon is pressed.
+          },
+        ),
+      ),
+      // Body content of the screen, showing notifications to the user.
+      body: const UserNotificationBody(),
+    );
   }
 }

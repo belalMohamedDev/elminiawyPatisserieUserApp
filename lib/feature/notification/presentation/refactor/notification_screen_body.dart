@@ -1,63 +1,67 @@
-import 'package:elminiawy/core/style/images/asset_manger.dart';
-import 'package:elminiawy/feature/notification/data/model/user_notification_resp.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-import '../../../../core/common/statsScreen/loading_shimmer.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../logic/cubit/user_notification_cubit.dart';
-import '../screen/notifcation_empty_screen.dart';
-
+/// [UserNotificationBody] is a StatelessWidget responsible for displaying the list of notifications.
+/// It also handles the loading, error, and deletion states of user notifications.
 class UserNotificationBody extends StatelessWidget {
   const UserNotificationBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return BlocBuilder<UserNotificationCubit, UserNotificationState>(
       builder: (context, state) {
+        // Handle loading and error states with a common method
         if (state is UserNotificationLoading ||
             state is UserNotificationError) {
-          return _userNotificationErrorAndLoadingState();
+          return _userNotificationErrorAndLoadingState(responsive);
         }
+
+        // Handle the case when the notification list is empty
         if (context.read<UserNotificationCubit>().dataList.isEmpty) {
           return const EmptyNotificationsScreen();
         }
+
+        // Get the notification data list from the UserNotificationCubit
         final userNotification = context.read<UserNotificationCubit>().dataList;
 
         return Stack(
           children: [
-            _userNotificationLoadedState(userNotification),
+            // Display the list of notifications
+            _userNotificationLoadedState(userNotification, responsive),
+
+            // Show a loading indicator when a notification is being deleted
             state is DeleteUserNotificationLoading
                 ? Center(
                     child: Container(
-                      height: 60.h,
-                      width: 60.w,
+                      height: responsive.setHeight(10),
+                      width: responsive.setWidth(22),
                       decoration: BoxDecoration(
                           color: ColorManger.brun,
-                          borderRadius: BorderRadius.circular(8.r)),
+                          borderRadius: BorderRadius.circular(
+                              responsive.setBorderRadius(2))),
                       child: Center(
                         child: CircularProgressIndicator(
-                          strokeWidth: 2.w,
+                          strokeWidth: 2.5,
                           color: ColorManger.white,
                         ),
                       ),
                     ),
                   )
-                : const SizedBox()
+                : const SizedBox(),
           ],
         );
       },
     );
   }
 
+  /// Displays the list of loaded notifications using a ListView.builder.
+  /// Each notification can be slid to the left to reveal a delete action.
   Padding _userNotificationLoadedState(
-      List<UserNotificationData> userNotification) {
+      List<UserNotificationData> userNotification, ResponsiveUtils responsive) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+      padding: responsive.setPadding(left: 4, right: 4, top: 2),
       child: ListView.builder(
         addAutomaticKeepAlives: true,
         itemCount: userNotification.length,
@@ -66,90 +70,90 @@ class UserNotificationBody extends StatelessWidget {
           return Column(
             children: [
               SizedBox(
-                height: 50.h,
+                height: responsive.setHeight(8),
                 child: Slidable(
-                    endActionPane: ActionPane(
-                      motion: const ScrollMotion(),
-                      children: [
-                        SlidableAction(
-                          onPressed: (_) {
-                            context
-                                .read<UserNotificationCubit>()
-                                .deleteUserNotification(
-                                    userNotification[index].sId!);
-                          },
-                          backgroundColor: ColorManger.redError,
-                          foregroundColor: ColorManger.white,
-                          icon: IconlyBold.delete,
-                          label: 'Delete',
+                  endActionPane: ActionPane(
+                    motion: const ScrollMotion(),
+                    children: [
+                      // Slidable action for deleting a notification
+                      SlidableAction(
+                        onPressed: (_) {
+                          // Trigger the deletion of a notification
+                          context
+                              .read<UserNotificationCubit>()
+                              .deleteUserNotification(
+                                  userNotification[index].sId!);
+                        },
+                        backgroundColor: ColorManger.redError,
+                        foregroundColor: ColorManger.white,
+                        icon: IconlyBold.delete,
+                        label: AppStrings.delete,
+                      ),
+                    ],
+                  ),
+                  // Display notification content
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: responsive.setHeight(5),
+                        width: responsive.setWidth(11),
+                        decoration: BoxDecoration(
+                          color: ColorManger.brownLight,
+                          borderRadius: BorderRadius.circular(
+                              responsive.setBorderRadius(10)),
                         ),
-                      ],
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                            height: 40.h,
-                            width: 40.w,
-                            decoration: BoxDecoration(
-                                color: ColorManger.brownLight,
-                                borderRadius: BorderRadius.circular(100.r)),
-                            child: Center(
-                              child: Image.asset(
-                                ImageAsset.orderDelivered,
-                                height: 29.h,
-                              ),
-                            )),
-                        SizedBox(
-                          width: 15.w,
+                        child: Center(
+                          child: Image.asset(
+                            ImageAsset.orderDelivered,
+                            height: responsive.setHeight(4),
+                          ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
+                      ),
+                      responsive.setSizeBox(width: 3),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Notification title
+                          Text(
+                            userNotification[index].notificationId == null
+                                ? ""
+                                : userNotification[index]
+                                    .notificationId!
+                                    .title!,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(fontSize: responsive.setTextSize(4)),
+                          ),
+                          // Notification description
+                          ConstrainedBox(
+                            constraints: BoxConstraints(
+                                maxWidth: responsive.setWidth(80)),
+                            child: Text(
                               userNotification[index].notificationId == null
                                   ? ""
                                   : userNotification[index]
                                       .notificationId!
-                                      .title!,
+                                      .description!,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyLarge!
+                                  .bodySmall!
                                   .copyWith(
-                                      fontFamily: FontConsistent.fontFamilyAcme,
-                                      color: ColorManger.brun,
-                                      fontSize: 16.sp),
+                                      fontSize: responsive.setTextSize(3)),
+                              maxLines: 1,
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.ellipsis,
                             ),
-                            ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: 300.w),
-                              child: Text(
-                                userNotification[index].notificationId == null
-                                    ? ""
-                                    : userNotification[index]
-                                        .notificationId!
-                                        .description!,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
-                                        fontFamily:
-                                            FontConsistent.fontFamilyAcme,
-                                        color: ColorManger.grey,
-                                        fontSize: 11.sp),
-                                maxLines: 1,
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    )),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              SizedBox(
-                height: 20.h,
-              )
+              responsive.setSizeBox(height: 2),
             ],
           );
         },
@@ -157,60 +161,57 @@ class UserNotificationBody extends StatelessWidget {
     );
   }
 
-  Padding _userNotificationErrorAndLoadingState() {
+  /// Displays a shimmer effect for loading states or an error placeholder.
+  Padding _userNotificationErrorAndLoadingState(ResponsiveUtils responsive) {
     return Padding(
-      padding: EdgeInsets.only(
-        left: 20.w,
-        top: 20.h,
-      ),
+      padding: responsive.setPadding(left: 4, right: 4, top: 2),
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: 11, // Arbitrary count for loading placeholders
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(
-              right: 30.w,
-              bottom: 15.h,
+              right: responsive.setWidth(30),
+              bottom: responsive.setHeight(1.5),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                    height: 40.h,
-                    width: 40.w,
-                    decoration: BoxDecoration(
-                        color: ColorManger.brownLight,
-                        borderRadius: BorderRadius.circular(100.r)),
-                    child: Center(
-                      child: Image.asset(
-                        ImageAsset.orderDelivered,
-                        height: 29.h,
-                      ),
-                    )),
-                SizedBox(
-                  width: 10.w,
+                  height: responsive.setHeight(5),
+                  width: responsive.setWidth(11),
+                  decoration: BoxDecoration(
+                    color: ColorManger.brownLight,
+                    borderRadius:
+                        BorderRadius.circular(responsive.setBorderRadius(10)),
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      ImageAsset.orderDelivered,
+                      height: responsive.setHeight(4),
+                    ),
+                  ),
                 ),
+                responsive.setSizeBox(width: 3),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Shimmer effect for loading title
                       LoadingShimmer(
-                        height: 5.h,
+                        height: responsive.setHeight(0.7),
                         width: double.infinity,
                       ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
+                      responsive.setSizeBox(height: 0.5),
+                      // Shimmer effect for loading description
                       LoadingShimmer(
-                        height: 5.h,
-                        width: 180.w,
+                        height: responsive.setHeight(0.7),
+                        width: responsive.setWidth(50),
                       ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
+                      responsive.setSizeBox(height: 0.5),
                       LoadingShimmer(
-                        height: 5.h,
-                        width: 80.w,
+                        height: responsive.setHeight(0.7),
+                        width: responsive.setWidth(30),
                       ),
                     ],
                   ),

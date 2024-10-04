@@ -103,4 +103,15 @@ class AppStrings {
   static const String    addToCart =    'Add To Cart';
   static const String    price =    'Price:';
   static const String egy = 'Egy';
+  static const String pickLocation = 'Pick Location';
+  static const String addressNotFoundInThisArea = 'Address not found in this area';
+  static const String serviceNotAvailableInThisArea = 'Service not available in this area';
+  static const String enterCompleteAddress =
+      'Enter Complete address';
+
+        static const String notification = 'Notification';
+  static const String delete = 'Delete';
+  static const String retry = 'Retry';
+  static const String emptyNotifications = "Empty Notifications";
+  static const String  itLooksLikeYouNotifications   =  "It looks like you don't have any notifications right now. We'll let you know when there's something new.";
 }

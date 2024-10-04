@@ -52,8 +52,8 @@ class SignUpButton extends StatelessWidget {
                 SizedBox(
                   height: responsive.setHeight(2),
                   width: responsive.setWidth(4),
-                  child: const CircularProgressIndicator(
-                    color: Colors.white, // White spinner color
+                  child:  CircularProgressIndicator(
+                    color: ColorManger.white, // White spinner color
                     strokeWidth: 2.0, // Spinner stroke width
                     strokeAlign: 0.01, // Spinner alignment
                   ),

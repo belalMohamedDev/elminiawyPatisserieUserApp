@@ -1,13 +1,15 @@
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import '../../../../core/common/shared/shared_imports.dart'; // Import the shared dependencies
 
+/// A stateless widget that displays a grid view of products.
+/// This widget is used when the product list is successfully retrieved.
 class ProductGridViewSuccessState extends StatelessWidget {
-  final List<DataProductResponse>? dataList;
-  final bool isSearchActive;
-  final List<WishListProductData>? wishListData;
-  final List<Products>? allProductList;
+  final List<DataProductResponse>? dataList; // List of products from the API
+  final bool isSearchActive; // Indicates if the search is active
+  final List<WishListProductData>? wishListData; // Wishlist product data
+  final List<Products>? allProductList; // Complete list of products
 
-  final int? grideViewIndex;
-  final ScrollPhysics? physics;
+  final int? grideViewIndex; // Index for how many items to show
+  final ScrollPhysics? physics; // Scroll physics for the grid view
 
   const ProductGridViewSuccessState({
     super.key,
@@ -24,135 +26,146 @@ class ProductGridViewSuccessState extends StatelessWidget {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
+    // Determine which list to display (dataList, wishListData, or allProductList)
     final List displayList = (dataList ?? wishListData ?? allProductList ?? []);
 
     final int maxItemCount = displayList.length;
 
+    // If grideViewIndex is provided and less than max items, show limited items
     final int itemCount =
         (grideViewIndex != null && grideViewIndex! <= maxItemCount)
             ? grideViewIndex!
             : maxItemCount;
 
     return GridView.count(
-        addAutomaticKeepAlives: true,
-        shrinkWrap: true,
-        physics: physics,
-        crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 15,
-        childAspectRatio: 0.7,
-        children: List.generate(
-          itemCount,
-          (index) => InkWell(
-            onTap: () =>
-                showSortBottomSheet(context, index, displayList, responsive),
-            child: Container(
-              decoration: BoxDecoration(
-                color: ColorManger.backgroundItem,
-                borderRadius:
-                    BorderRadius.circular(responsive.setBorderRadius(2)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _wishListAndImageStack(
-                      context, index, displayList, responsive),
-                  _productTitleAndSomeInformationText(
-                      responsive, displayList, index, context)
-                ],
-              ),
+      addAutomaticKeepAlives: true,
+      shrinkWrap: true,
+      physics: physics,
+      crossAxisCount: 2, // Number of columns in the grid
+      crossAxisSpacing: 12, // Spacing between grid items
+      mainAxisSpacing: 15, // Spacing between grid rows
+      childAspectRatio: 0.7, // Aspect ratio for grid items
+      children: List.generate(
+        itemCount,
+        (index) => InkWell(
+          onTap: () =>
+              showSortBottomSheet(context, index, displayList, responsive),
+          child: Container(
+            decoration: BoxDecoration(
+              color: ColorManger.backgroundItem, // Background color of the item
+              borderRadius:
+                  BorderRadius.circular(responsive.setBorderRadius(2)),
             ),
-          ),
-        ));
-  }
-
-  SizedBox _productTitleAndSomeInformationText(ResponsiveUtils responsive,
-      List<dynamic> displayList, int index, BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: responsive.setHeight(10),
-      child: Stack(
-        children: [
-          Padding(
-            padding: responsive.setPadding(left: 4, top: 2),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Stack(
               children: [
-                Text(
-                  displayList[index].title!,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Image and wishlist icon
+                    _wishListAndImageStack(
+                        context, index, displayList, responsive),
+                    // Product title and information
+                    _productTitleAndSomeInformationText(
+                        responsive, displayList, index, context)
+                  ],
                 ),
-                responsive.setSizeBox(height: 0.2),
-                Text(
-                  displayList[index].description!,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(fontSize: responsive.setTextSize(3)),
-                ),
-                responsive.setSizeBox(height: 0.5),
-                Text(
-                  " ${displayList[index].price!} ${AppStrings.egy}",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(fontSize: responsive.setTextSize(3)),
-                ),
+                // Add to order button
+                _addOrderButton(context, displayList, index, responsive)
               ],
             ),
           ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: InkWell(
-              onTap: () {
-                context
-                    .read<CartCubit>()
-                    .addItemToCart(displayList[index].sId!);
-              },
-              child: Container(
-                height: responsive.setHeight(4),
-                width: responsive.setWidth(8),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        bottomRight:
-                            Radius.circular(responsive.setBorderRadius(2))),
-                    color: ColorManger.brun),
-                child: BlocBuilder<CartCubit, CartState>(
-                  builder: (context, state) {
-                    return state.maybeWhen(
-                        addItemToCartLoading: (id) {
-                          if (id == displayList[index].sId!) {
-                            return Center(
-                              child: SizedBox(
-                                height: responsive.setHeight(2),
-                                width: responsive.setWidth(4),
-                                child: const CircularProgressIndicator(
-                                  color: Colors.white,
-                                  strokeWidth: 2.0,
-                                  strokeAlign: 0.01,
-                                ),
-                              ),
-                            );
-                          } else {
-                            return Icon(Icons.add, color: ColorManger.white);
-                          }
-                        },
-                        orElse: () =>
-                            Icon(Icons.add, color: ColorManger.white));
-                  },
-                ),
-              ),
-            ),
-          )
+        ),
+      ),
+    );
+  }
+
+  /// Builds the add-to-cart button and handles the loading state for the add-to-cart action.
+  Positioned _addOrderButton(BuildContext context, List<dynamic> displayList,
+      int index, ResponsiveUtils responsive) {
+    return Positioned(
+      bottom: 0,
+      right: 0,
+      child: InkWell(
+        onTap: () {
+          // Add product to cart using CartCubit
+          context.read<CartCubit>().addItemToCart(displayList[index].sId!);
+        },
+        child: Container(
+          height: responsive.setHeight(4),
+          width: responsive.setWidth(8),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(responsive.setBorderRadius(2))),
+              color: ColorManger.brun),
+          child: BlocBuilder<CartCubit, CartState>(
+            builder: (context, state) {
+              // Show loading spinner if the product is being added to cart
+              return state.maybeWhen(
+                addItemToCartLoading: (id) {
+                  if (id == displayList[index].sId!) {
+                    return Center(
+                      child: SizedBox(
+                        height: responsive.setHeight(2),
+                        width: responsive.setWidth(4),
+                        child: const CircularProgressIndicator(
+                          color: Colors.white,
+                          strokeWidth: 2.0,
+                        ),
+                      ),
+                    );
+                  } else {
+                    return Icon(Icons.add, color: ColorManger.white);
+                  }
+                },
+                orElse: () => Icon(Icons.add, color: ColorManger.white),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Displays product title, description, and price information.
+  Padding _productTitleAndSomeInformationText(ResponsiveUtils responsive,
+      List<dynamic> displayList, int index, BuildContext context) {
+    return Padding(
+      padding: responsive.setPadding(left: 4, top: 2),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Display product title
+          Text(
+            displayList[index].title!,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
+          ),
+          responsive.setSizeBox(height: 0.2),
+          // Display product description
+          Text(
+            displayList[index].description!,
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontSize: responsive.setTextSize(3)),
+          ),
+          responsive.setSizeBox(height: 0.5),
+          // Display product price
+          Text(
+            " ${displayList[index].price!} ${AppStrings.egy}",
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontSize: responsive.setTextSize(3)),
+          ),
         ],
       ),
     );
   }
 
+  /// Displays the product image and wishlist button.
   Container _wishListAndImageStack(BuildContext context, int index,
       List displayList, ResponsiveUtils responsive) {
     final product = displayList[index];
@@ -167,17 +180,20 @@ class ProductGridViewSuccessState extends StatelessWidget {
           color: ColorManger.brownLight),
       child: Stack(
         children: [
+          // Wishlist button
           Positioned(
             right: 0,
             top: 2,
             child: IconButton(
               onPressed: () {
+                // Add or remove product from wishlist using WishListCubit
                 context
                     .read<WishListCubit>()
                     .addOrRemoveProductFromWish(product.sId!);
               },
               icon: BlocConsumer<WishListCubit, WishListState>(
                 listener: (context, state) {
+                  // Show error message if failed to add/remove from wishlist
                   state.whenOrNull(
                     addOrRemoveProductFromWishListError:
                         (statesCode, errorMessage) =>
@@ -186,6 +202,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
                   );
                 },
                 builder: (context, state) {
+                  // Check if the product is in the wishlist
                   bool isInWishlist = context
                           .read<WishListCubit>()
                           .favorites
@@ -207,6 +224,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
               ),
             ),
           ),
+          // Product image
           Padding(
             padding: responsive.setPadding(top: 2.5, right: 5),
             child: CachedNetworkImage(
@@ -220,30 +238,28 @@ class ProductGridViewSuccessState extends StatelessWidget {
     );
   }
 
+  /// Shows the product sorting bottom sheet with a list of products.
   void showSortBottomSheet(BuildContext context, int index, List displayList,
       ResponsiveUtils responsive) {
     showCupertinoModalBottomSheet(
-        useRootNavigator: true,
-        barrierColor: Colors.black54,
-        elevation: responsive.setBorderRadius(2),
-        context: context,
-        builder: (context) => MultiBlocProvider(
-              providers: [
-                BlocProvider.value(
-                  value: instance<ProductCubit>(),
-                ),
-                BlocProvider.value(
-                  value: instance<WishListCubit>(),
-                ),
-                BlocProvider.value(
-                  value: instance<CartCubit>(),
-                ),
-              ],
-              child: ProductBottomSheet(
-                index: index,
-                displayList: displayList,
-              ),
-            )).then((value) {
+      useRootNavigator: true,
+      barrierColor: Colors.black54,
+      elevation: responsive.setBorderRadius(2),
+      context: context,
+      builder: (context) => MultiBlocProvider(
+        providers: [
+          // Provide instances of ProductCubit, WishListCubit, and CartCubit
+          BlocProvider.value(value: instance<ProductCubit>()),
+          BlocProvider.value(value: instance<WishListCubit>()),
+          BlocProvider.value(value: instance<CartCubit>()),
+        ],
+        child: ProductBottomSheet(
+          index: index,
+          displayList: displayList,
+        ),
+      ),
+    ).then((value) {
+      // Reset the cart item quantity when the bottom sheet is closed
       context.read<CartCubit>().quantityItem = 1;
     });
   }

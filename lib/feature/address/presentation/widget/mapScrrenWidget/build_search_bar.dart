@@ -9,36 +9,48 @@ class BuildSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 45.h,
-      right: 20.w,
-      left: 20.w,
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
+    return Padding(
+      padding: responsive.setPadding(
+        top: 7,
+        left: 6,
+      ),
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.8,
-        height: 50,
+        width: responsive.screenWidth * 0.9,
+        height: responsive.setHeight(5),
         child: TextFormField(
           onChanged: (value) {
             mapCubit.searchLocation(value);
           },
-          style: TextStyle(color: ColorManger.white),
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                fontSize: responsive.setTextSize(3.5),
+              ),
           controller: mapCubit.searchConroller,
           decoration: InputDecoration(
               hintText: mapCubit.textEditingSearchText,
               prefixIcon: Icon(IconlyBroken.search,
-                  size: 18.sp, color: ColorManger.white),
-              hintStyle: const TextStyle(color: Colors.white60),
+                  size: responsive.setIconSize(5), color: ColorManger.white),
+              hintStyle: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
               fillColor: ColorManger.brunLight,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: ColorManger.brunLight,
                 ),
-                borderRadius: BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                borderRadius: BorderRadius.all(Radius.elliptical(
+                    responsive.setBorderRadius(2),
+                    responsive.setBorderRadius(2))),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: ColorManger.brunLight,
                 ),
-                borderRadius: BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                borderRadius: BorderRadius.all(Radius.elliptical(
+                    responsive.setBorderRadius(2),
+                    responsive.setBorderRadius(2))),
               )),
         ),
       ),

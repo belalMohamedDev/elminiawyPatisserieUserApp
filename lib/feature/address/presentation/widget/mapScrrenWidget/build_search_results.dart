@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class BuildSearchResults extends StatelessWidget {
@@ -8,15 +7,16 @@ class BuildSearchResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
         final mapCuibt = context.read<MapCubit>();
 
         if (state is SearchResults) {
-          return Positioned(
-            top: 100.h,
-            right: 10.w,
-            left: 10.w,
+          return Padding(
+            padding: responsive.setPadding(top: 14, left: 6, right: 4),
             child: InkWell(
               onTap: () {
                 Navigator.of(context).pop();
@@ -24,9 +24,10 @@ class BuildSearchResults extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     color: ColorManger.brunLight,
-                    borderRadius: BorderRadius.circular(10.r)),
+                    borderRadius:
+                        BorderRadius.circular(responsive.setBorderRadius(2))),
                 constraints: BoxConstraints(
-                  maxHeight: 320.h,
+                  maxHeight: responsive.setHeight(40),
                 ),
                 child: ListView.builder(
                   itemCount: state.predictions.length,
@@ -34,7 +35,10 @@ class BuildSearchResults extends StatelessWidget {
                     return ListTile(
                       title: Text(
                         state.predictions[index].description!,
-                        style: TextStyle(color: ColorManger.white),
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  fontSize: responsive.setTextSize(3.5),
+                                ),
                       ),
                       onTap: () {
                         mapCuibt.moveToLocationInTextFormField(

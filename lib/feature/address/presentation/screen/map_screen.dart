@@ -17,8 +17,6 @@ class _MapScreenState extends State<MapScreen> {
     final mapCuibt = context.read<MapCubit>();
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-     
-
       if (widget.isHomeMap == false) {
         mapCuibt.getCurrentLocation(context).then(
           (value) {
@@ -33,6 +31,9 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return Scaffold(
       body: BlocConsumer<MapCubit, MapState>(
         listener: (context, state) {
@@ -60,7 +61,7 @@ class _MapScreenState extends State<MapScreen> {
               CurrentLocationButton(
                 mapCubit: mapCuibt,
               ),
-              _togelMapType(),
+              _togelMapType(responsive),
               PickLocationButton(
                 isUpdateMap: widget.isUpdateMap,
                 mapCubit: mapCuibt,
@@ -74,7 +75,7 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  Positioned _togelMapType() {
+  Positioned _togelMapType(ResponsiveUtils responsive) {
     return Positioned(
       bottom: 105.h,
       right: 25.w,
@@ -83,11 +84,11 @@ class _MapScreenState extends State<MapScreen> {
           context.read<MapCubit>().toggleMapType();
         },
         child: CircleAvatar(
-          maxRadius: 22.r,
+          maxRadius: responsive.setBorderRadius(6),
           backgroundColor: ColorManger.brown,
           child: Image.asset(
             ImageAsset.map,
-            height: 20.h,
+            height: responsive.setHeight(3),
           ),
         ),
       ),

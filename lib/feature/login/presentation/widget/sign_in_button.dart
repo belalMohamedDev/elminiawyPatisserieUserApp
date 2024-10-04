@@ -54,8 +54,8 @@ class SignInButton extends StatelessWidget {
                 SizedBox(
                   height: responsive.setHeight(2),
                   width: responsive.setWidth(4),
-                  child: const CircularProgressIndicator(
-                    color: Colors.white, // Indicator color
+                  child:  CircularProgressIndicator(
+                    color: ColorManger.white, // Indicator color
                     strokeWidth: 2.0, // Line thickness of the indicator
                     strokeAlign:
                         0.01, // Alignment of the stroke (indicator line)
