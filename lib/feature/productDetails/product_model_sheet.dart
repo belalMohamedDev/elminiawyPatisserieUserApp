@@ -15,9 +15,9 @@ class ProductBottomSheet extends StatelessWidget {
     final product = displayList[index];
 
     return Padding(
-      padding: responsive.setPadding(left: 5, right: 5, bottom: 3),
+      padding: responsive.setPadding(left: 5, right: 5, bottom: 4),
       child: SizedBox(
-        height: responsive.setHeight(35),
+        height: responsive.setHeight(32),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -123,7 +123,6 @@ class ProductBottomSheet extends StatelessWidget {
                       width: responsive
                           .setWidth(3), // Spacer between spinner and text
                     ),
-                    
                     Text(
                       AppStrings.loading,
                       style:

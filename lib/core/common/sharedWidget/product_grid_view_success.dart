@@ -57,7 +57,6 @@ class ProductGridViewSuccessState extends StatelessWidget {
                 children: [
                   _wishListAndImageStack(
                       context, index, displayList, responsive),
-                  responsive.setSizeBox(height: 2),
                   _productTitleAndSomeInformationText(
                       responsive, displayList, index, context)
                 ],
@@ -67,15 +66,16 @@ class ProductGridViewSuccessState extends StatelessWidget {
         ));
   }
 
-  Padding _productTitleAndSomeInformationText(ResponsiveUtils responsive,
+  SizedBox _productTitleAndSomeInformationText(ResponsiveUtils responsive,
       List<dynamic> displayList, int index, BuildContext context) {
-    return Padding(
-      padding: responsive.setPadding(left: 4),
-      child: SizedBox(
-        width: double.infinity,
-        child: Stack(
-          children: [
-            Column(
+    return SizedBox(
+      width: double.infinity,
+      height: responsive.setHeight(10),
+      child: Stack(
+        children: [
+          Padding(
+            padding: responsive.setPadding(left: 4, top: 2),
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -103,54 +103,52 @@ class ProductGridViewSuccessState extends StatelessWidget {
                 ),
               ],
             ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-
-      
-              child: InkWell(
-                onTap: () {
-                  context
-                      .read<CartCubit>()
-                      .addItemToCart(displayList[index].sId!);
-                },
-                child: Container(
-                  height: responsive.setHeight(4),
-                  width: responsive.setWidth(8),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomRight:
-                              Radius.circular(responsive.setBorderRadius(2))),
-                      color: ColorManger.brun),
-                  child: BlocBuilder<CartCubit, CartState>(
-                    builder: (context, state) {
-                      return state.maybeWhen(
-                          addItemToCartLoading: (id) {
-                            if (id == displayList[index].sId!) {
-                              return Center(
-                                child: SizedBox(
-                                  height: responsive.setHeight(2),
-                                  width: responsive.setWidth(4),
-                                  child: const CircularProgressIndicator(
-                                    color: Colors.white,
-                                    strokeWidth: 2.0,
-                                    strokeAlign: 0.01,
-                                  ),
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: InkWell(
+              onTap: () {
+                context
+                    .read<CartCubit>()
+                    .addItemToCart(displayList[index].sId!);
+              },
+              child: Container(
+                height: responsive.setHeight(4),
+                width: responsive.setWidth(8),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomRight:
+                            Radius.circular(responsive.setBorderRadius(2))),
+                    color: ColorManger.brun),
+                child: BlocBuilder<CartCubit, CartState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                        addItemToCartLoading: (id) {
+                          if (id == displayList[index].sId!) {
+                            return Center(
+                              child: SizedBox(
+                                height: responsive.setHeight(2),
+                                width: responsive.setWidth(4),
+                                child: const CircularProgressIndicator(
+                                  color: Colors.white,
+                                  strokeWidth: 2.0,
+                                  strokeAlign: 0.01,
                                 ),
-                              );
-                            } else {
-                              return Icon(Icons.add, color: ColorManger.white);
-                            }
-                          },
-                          orElse: () =>
-                              Icon(Icons.add, color: ColorManger.white));
-                    },
-                  ),
+                              ),
+                            );
+                          } else {
+                            return Icon(Icons.add, color: ColorManger.white);
+                          }
+                        },
+                        orElse: () =>
+                            Icon(Icons.add, color: ColorManger.white));
+                  },
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

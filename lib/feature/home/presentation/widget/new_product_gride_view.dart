@@ -1,5 +1,8 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
+/// A widget that displays new products in a grid view layout.
+/// It manages product states (loading, success, and error) using a [BlocConsumer]
+/// for the [ProductCubit]. The listener updates the wishlist state when products are loaded.
 class NewProductGrideView extends StatelessWidget {
   const NewProductGrideView({
     super.key,
@@ -12,18 +15,25 @@ class NewProductGrideView extends StatelessWidget {
 
     return Column(
       children: [
+        // Header Row: New Products title and 'See All' button
         Row(
           children: [
+            // New Products title
             Text(AppStrings.newProductsInStore,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
                     .copyWith(fontSize: responsive.setTextSize(4))),
-            const Spacer(),
+            const Spacer(), // Spacer to push 'See All' button to the right
+
+            // 'See All' button, navigates to the NewProductView page when tapped
             InkWell(
               onTap: () {
                 NavBarNavigator.push(context,
-                    screen: const NewProductView(), withNavBar: false);
+                    screen:
+                        const NewProductView(), // Navigate to NewProductView screen
+                    withNavBar:
+                        false); // Disable bottom navigation bar on this screen
               },
               child: Text(AppStrings.seeAll,
                   style: Theme.of(context)
@@ -33,13 +43,18 @@ class NewProductGrideView extends StatelessWidget {
             ),
           ],
         ),
-        responsive.setSizeBox(height: 3),
+        responsive.setSizeBox(
+            height: 3), // Spacing between title and product grid
+
+        // BlocConsumer to handle product state (success, loading, error)
         BlocConsumer<ProductCubit, ProductState>(
           listener: (context, state) {
+            // Update the wishlist when products are successfully loaded
             state.whenOrNull(
               getProductSuccess: (data) {
                 final wishListCubit = context.read<WishListCubit>();
 
+                // Iterate through the loaded products and update the wishlist state
                 for (var element in data.data!) {
                   if (element.inWishlist == true) {
                     wishListCubit.favorites[element.sId!] = element.inWishlist!;
@@ -51,18 +66,25 @@ class NewProductGrideView extends StatelessWidget {
             );
           },
           builder: (context, state) {
+            // If state is loading or error, show a loading grid view
             if (state is GetProductError || state is GetProductLoading) {
               return const ProductGridViewLoadingState(
-                physics: NeverScrollableScrollPhysics(),
+                physics:
+                    NeverScrollableScrollPhysics(), // Prevent scrolling while loading
               );
             }
+
+            // If state is success, show the grid view of products
             return ProductGridViewSuccessState(
-              dataList: context.read<ProductCubit>().dataList,
-              grideViewIndex: 4,
-              physics: const NeverScrollableScrollPhysics(),
+              dataList: context
+                  .read<ProductCubit>()
+                  .dataList, // Pass the loaded product data
+              grideViewIndex: 4, // Number of grid items per row
+              physics:
+                  const NeverScrollableScrollPhysics(), // Disable scrolling in this widget
             );
           },
-        )
+        ),
       ],
     );
   }

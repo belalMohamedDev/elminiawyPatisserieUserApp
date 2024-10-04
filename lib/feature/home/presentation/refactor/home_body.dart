@@ -1,7 +1,12 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../../core/common/shared/shared_imports.dart'; // Shared imports for project utilities
 import 'package:badges/badges.dart' as badges;
 
+/// `HomeBody` is a `StatelessWidget` that provides the main content of the home screen.
+/// It includes location details, a notification icon with a badge for unread notifications,
+/// a search bar, and product display sections.
+
 class HomeBody extends StatelessWidget {
+  // The notification service to handle receiving and displaying notifications
   final NotificationService notificationService;
   const HomeBody({
     super.key,
@@ -20,15 +25,17 @@ class HomeBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Display the location and notification row at the top
               _locationAndNotificationRow(context),
+              // Show the location name for the home screen
               _locationName(context),
-              responsive.setSizeBox(height: 3),
-              const SearchRow(),
-              responsive.setSizeBox(height: 4),
-              const BannerCarouselSlider(),
-              responsive.setSizeBox(height: 4),
-              const CategoryListViewBuilder(),
-              const NewProductGrideView(),
+              responsive.setSizeBox(height: 3), // Adds vertical space
+              const SearchRow(), // Search bar row
+              responsive.setSizeBox(height: 4), // Adds vertical space
+              const BannerCarouselSlider(), // Image carousel for banners
+              responsive.setSizeBox(height: 4), // Adds vertical space
+              const CategoryListViewBuilder(), // Horizontal list view for categories
+              const NewProductGrideView(), // Grid view for displaying new products
             ],
           ),
         ),
@@ -36,18 +43,20 @@ class HomeBody extends StatelessWidget {
     );
   }
 
+  /// Widget to display the user's current location with an option to navigate
+  /// to the `MapScreen` to select a new location.
   InkWell _locationName(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
+
     return InkWell(
       onTap: () {
+        // Navigate to the MapScreen to select a new location
         Navigator.of(context, rootNavigator: true).push(
           MaterialPageRoute(
             builder: (context) => BlocProvider.value(
-              value: instance<MapCubit>(),
-              child: const MapScreen(
-                isHomeMap: true,
-              ),
+              value: instance<MapCubit>(), // Provide MapCubit to the MapScreen
+              child: const MapScreen(isHomeMap: true), // Display home map
             ),
           ),
         );
@@ -55,28 +64,30 @@ class HomeBody extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Icon(IconlyBold.location, color: ColorManger.brunLight),
-          SizedBox(
-            width: responsive.setWidth(1),
-          ),
+          Icon(IconlyBold.location,
+              color: ColorManger.brunLight), // Location icon
+          SizedBox(width: responsive.setWidth(1)), // Horizontal spacing
+          // Display the current address from the MapCubit
           BlocBuilder<MapCubit, MapState>(
             builder: (context, state) {
               return ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: responsive.setWidth(35)),
-                child: Text(context.read<MapCubit>().homeScreenCurrentAddress,
-                    maxLines: 1,
-                    textAlign: TextAlign.start,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(fontSize: responsive.setTextSize(3.5))),
+                child: Text(
+                  context
+                      .read<MapCubit>()
+                      .homeScreenCurrentAddress, // Display address
+                  maxLines: 1,
+                  textAlign: TextAlign.start,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        fontSize: responsive.setTextSize(3.5),
+                      ),
+                ),
               );
             },
           ),
-          SizedBox(
-            width: responsive.setWidth(1),
-          ),
+          SizedBox(width: responsive.setWidth(1)), // Horizontal spacing
+          // Icon to indicate dropdown or expandable content
           Icon(
             IconlyBold.arrowDown2,
             color: ColorManger.brunLight,
@@ -87,75 +98,93 @@ class HomeBody extends StatelessWidget {
     );
   }
 
+  /// Widget that displays the location label and the notification icon.
+  /// The notification icon shows a badge if there are unread notifications.
   Row _locationAndNotificationRow(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
     return Row(
       children: [
-        SizedBox(
-          width: responsive.setWidth(2),
+        SizedBox(width: responsive.setWidth(2)), // Horizontal space
+        // Display the location label
+        Text(
+          AppStrings.location,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(4)),
         ),
-        Text(AppStrings.location,
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(fontSize: responsive.setTextSize(4))),
-        const Spacer(),
+        const Spacer(), // Spacer to push the notification icon to the right
+        // ValueListenableBuilder to listen for notification updates
         ValueListenableBuilder(
-            valueListenable: notificationService.recieveNotification,
-            builder: (context, value, child) {
-              return StreamBuilder<UserNotificationResponse>(
-                  stream: notificationService.notificationStream,
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData || snapshot.data == null) {
-                      return IconButton(
-                        onPressed: () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.notification);
-                        },
-                        icon: Icon(IconlyBold.notification,
-                            color: ColorManger.brun),
-                      );
-                    }
-                    final numberOfNotification = snapshot.data!.data!
-                        .where(
-                          (element) => element.isSeen == false,
-                        )
-                        .length;
-                    return badges.Badge(
-                      showBadge: numberOfNotification != 0 ? true : false,
-                      badgeAnimation: const badges.BadgeAnimation.scale(),
-                      position: badges.BadgePosition.topEnd(
-                          end: numberOfNotification >= 9 ? 8.w : 10.w,
-                          top: numberOfNotification >= 9 ? 4.h : 5.h),
-                      badgeStyle: badges.BadgeStyle(
-                          padding: EdgeInsets.all(
-                              numberOfNotification >= 9 ? 4.h : 5.5.h)),
-                      badgeContent: Text(
-                          numberOfNotification >= 9
-                              ? '+9'
-                              : '$numberOfNotification',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.white,
-                                  fontSize: numberOfNotification >= 9
-                                      ? 8.sp
-                                      : 10.sp)),
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.notification);
-                        },
-                        icon: Icon(IconlyBold.notification,
-                            color: ColorManger.brun),
-                      ),
-                    );
-                  });
-            }),
+          valueListenable: notificationService
+              .recieveNotification, // Listen for notification changes
+          builder: (context, value, child) {
+            return StreamBuilder<UserNotificationResponse>(
+              stream:
+                  notificationService.notificationStream, // Notification stream
+              builder: (context, snapshot) {
+                if (!snapshot.hasData || snapshot.data == null) {
+                  // If no notifications, show a plain notification icon
+                  return IconButton(
+                    onPressed: () {
+                      Navigator.of(context, rootNavigator: !false).pushNamed(
+                          Routes
+                              .notification); // Navigate to notification screen
+                    },
+                    icon: Icon(
+                      IconlyBold.notification,
+                      color: ColorManger.brun,
+                    ),
+                  );
+                }
+
+                // Calculate the number of unread notifications
+                final numberOfNotification = snapshot.data!.data!
+                    .where((element) => element.isSeen == false)
+                    .length;
+
+                // Display a badge with the count of unread notifications
+                return badges.Badge(
+                  showBadge: numberOfNotification !=
+                      0, // Show badge if there are unread notifications
+                  badgeAnimation: const badges.BadgeAnimation.scale(),
+                  position: badges.BadgePosition.topEnd(
+                    end: numberOfNotification >= 9 ? 8.w : 10.w,
+                    top: numberOfNotification >= 9 ? 4.h : 5.h,
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    padding: EdgeInsets.all(
+                      numberOfNotification >= 9 ? 4.h : 5.5.h,
+                    ),
+                  ),
+                  // Show "+9" if more than 9 unread notifications, else show the count
+                  badgeContent: Text(
+                    numberOfNotification >= 9 ? '+9' : '$numberOfNotification',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontFamily: FontConsistent.fontFamilyAcme,
+                          color: ColorManger.white,
+                          fontSize: numberOfNotification >= 9 ? 8.sp : 10.sp,
+                        ),
+                  ),
+                  // Notification icon button
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context, rootNavigator: !false).pushNamed(
+                          Routes
+                              .notification); // Navigate to notification screen
+                    },
+                    icon: Icon(
+                      IconlyBold.notification,
+                      color: ColorManger.brun,
+                    ),
+                  ),
+                );
+              },
+            );
+          },
+        ),
       ],
     );
   }

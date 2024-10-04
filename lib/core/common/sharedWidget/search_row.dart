@@ -1,5 +1,7 @@
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
+/// A widget that provides a search input field and a filter button.
+/// When tapped, it navigates to the search screen.
 class SearchRow extends StatelessWidget {
   const SearchRow({
     super.key,
@@ -12,54 +14,72 @@ class SearchRow extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        NavBarNavigator.push(context,
-            screen: const SearchView(), withNavBar: false);
+        // Navigate to the search screen when the row is tapped
+        NavBarNavigator.push(
+          context,
+          screen: const SearchView(),
+          withNavBar: false,
+        );
       },
       child: Row(
         children: [
+          // The search input field which is disabled but acts as a visual element
           Expanded(
             child: SizedBox(
               height: responsive.setHeight(5.5),
               child: TextFormField(
-                enabled: false,
+                enabled: false, // Disable the field since it's just for display
                 decoration: InputDecoration(
-                  hintText: AppStrings.findYourPatisserie,
-                  prefixIcon: Icon(IconlyBroken.search,
-                      size: responsive.setIconSize(5),
-                      color: ColorManger.brunLight),
+                  hintText: AppStrings.findYourPatisserie, // Placeholder text
+                  prefixIcon: Icon(
+                    IconlyBroken.search,
+                    size: responsive.setIconSize(5),
+                    color: ColorManger.brunLight, // Icon color for the search
+                  ),
                   hintStyle: Theme.of(context)
                       .textTheme
                       .titleMedium!
-                      .copyWith(fontSize: responsive.setTextSize(3.5)),
-                  fillColor: ColorManger.backgroundItem,
+                      .copyWith(fontSize: responsive.setTextSize(3.2)),
+                  fillColor: ColorManger
+                      .backgroundItem, // Background color for the input field
                   disabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: ColorManger.backgroundItem,
                     ),
-                    borderRadius: BorderRadius.all(Radius.elliptical(
+                    borderRadius: BorderRadius.all(
+                      Radius.elliptical(
                         responsive.setBorderRadius(2),
-                        responsive.setBorderRadius(2))),
+                        responsive.setBorderRadius(2),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
           ),
+          // A container holding the filter button
           Container(
-            height: responsive.setHeight(5.5),
-            margin: responsive.setMargin(left: 3, right: 2),
+            height: responsive.setHeight(5.5), // Match the search field height
+            margin:
+                responsive.setMargin(left: 3, right: 2), // Margin for spacing
             decoration: BoxDecoration(
-              color: ColorManger.brun,
-              borderRadius:
-                  BorderRadius.circular(responsive.setBorderRadius(2)),
+              color: ColorManger.brun, // Background color for the filter button
+              borderRadius: BorderRadius.circular(
+                responsive.setBorderRadius(2),
+              ),
             ),
             child: IconButton(
               icon: Icon(
-                IconlyBroken.filter,
-                color: ColorManger.white,
+                IconlyBroken.filter, // Icon representing the filter
+                color: ColorManger.white, // White color for the filter icon
               ),
               onPressed: () {
-                NavBarNavigator.push(context,
-                    screen: const SearchView(), withNavBar: false);
+                // Navigate to the search screen when the filter button is tapped
+                NavBarNavigator.push(
+                  context,
+                  screen: const SearchView(),
+                  withNavBar: false,
+                );
               },
             ),
           ),

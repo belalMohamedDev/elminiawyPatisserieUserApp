@@ -1,5 +1,8 @@
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
+/// A widget that builds a list view of categories in a horizontal scrollable list.
+/// It handles the category states (loading, success, and error) using a [BlocBuilder]
+/// for the [CategoryCubit].
 class CategoryListViewBuilder extends StatelessWidget {
   const CategoryListViewBuilder({
     super.key,
@@ -12,20 +15,24 @@ class CategoryListViewBuilder extends StatelessWidget {
 
     return Column(
       children: [
+        // Header Row: Category title and 'View All' button
         Row(
           children: [
+            // Category title
             Text(AppStrings.category,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
                     .copyWith(fontSize: responsive.setTextSize(4))),
-            const Spacer(),
+            const Spacer(), // Spacer to push 'View All' button to the right
+
+            // 'View All' button, navigates to category page when tapped
             GestureDetector(
               onTap: () {
                 context
                     .read<AppLogicCubit>()
                     .bottomNavBarController
-                    .jumpToTab(1);
+                    .jumpToTab(1); // Switches to the category tab
               },
               child: Text(AppStrings.viewAll,
                   style: Theme.of(context)
@@ -35,13 +42,16 @@ class CategoryListViewBuilder extends StatelessWidget {
             ),
           ],
         ),
-        responsive.setSizeBox(height: 3),
+        responsive.setSizeBox(height: 3), // Spacing between title and content
+
+        // BlocBuilder to handle category states
         BlocBuilder<CategoryCubit, CategoryState>(
           builder: (context, state) {
             if (state is GetCategoriesSuccess) {
+              // If categories are successfully loaded, display the category list
               return _categorySuccessState(state, responsive);
             }
-
+            // If the state is loading or error, show loading shimmer effect
             return _categoryLoadingAndErrorState(responsive);
           },
         ),
@@ -49,27 +59,35 @@ class CategoryListViewBuilder extends StatelessWidget {
     );
   }
 
+  /// Builds a loading shimmer effect for the category list while categories are being loaded.
+  /// It mimics the appearance of categories and their titles while loading.
   SizedBox _categoryLoadingAndErrorState(ResponsiveUtils responsive) {
     return SizedBox(
-      height: responsive.setHeight(15),
+      height: responsive.setHeight(15), // Height of the loading shimmer list
       child: ListView.builder(
-        itemCount: 8,
-        scrollDirection: Axis.horizontal,
+        itemCount: 8, // Display 8 shimmer placeholders
+        scrollDirection: Axis.horizontal, // Horizontal scrolling for categories
         itemBuilder: (context, index) {
           return Padding(
-            padding: responsive.setPadding(right: 4),
+            padding: responsive.setPadding(right: 4), // Padding between items
             child: Column(
               children: [
+                // Loading shimmer for category image
                 LoadingShimmer(
-                  height: responsive.setHeight(8),
-                  width: responsive.setWidth(18),
-                  borderRadius: responsive.setBorderRadius(2),
+                  height: responsive.setHeight(8), // Image height
+                  width: responsive.setWidth(18), // Image width
+                  borderRadius:
+                      responsive.setBorderRadius(2), // Rounded corners
                 ),
-                responsive.setSizeBox(height: 1.5),
+                responsive.setSizeBox(
+                    height: 1.5), // Space between image and title
+
+                // Loading shimmer for category title
                 LoadingShimmer(
-                  width: responsive.setWidth(13),
-                  height: responsive.setHeight(1),
-                  borderRadius: responsive.setBorderRadius(2),
+                  width: responsive.setWidth(13), // Title width
+                  height: responsive.setHeight(1), // Title height
+                  borderRadius:
+                      responsive.setBorderRadius(2), // Rounded corners
                 ),
               ],
             ),
@@ -79,62 +97,79 @@ class CategoryListViewBuilder extends StatelessWidget {
     );
   }
 
+  /// Builds the success state for the category list. It displays the categories
+  /// in a horizontal scrollable list with their images and titles.
   SizedBox _categorySuccessState(
       GetCategoriesSuccess state, ResponsiveUtils responsive) {
     return SizedBox(
-      height: responsive.setHeight(15),
+      height: responsive.setHeight(15), // Height of the category list
       child: ListView.builder(
-        addAutomaticKeepAlives: true,
-        itemCount: state.data.data!.length,
-        scrollDirection: Axis.horizontal,
+        addAutomaticKeepAlives: true, // Keep items alive when scrolling
+        itemCount: state.data.data!.length, // Number of categories to display
+        scrollDirection: Axis.horizontal, // Horizontal scrolling for categories
         itemBuilder: (context, index) {
           return Padding(
-            padding: responsive.setPadding(right: 4),
+            padding: responsive.setPadding(right: 4), // Padding between items
             child: InkWell(
               onTap: () {
+                // Navigate to the ProductBaseOnCategory screen when a category is tapped
                 NavBarNavigator.push(context,
                     screen: BlocProvider(
                       create: (context) =>
                           instance<ProductBasedOnCategoryCubit>(),
                       child: ProductBaseOnCategory(
-                        categoryId: state.data.data![index].sId!,
-                        categoryName: state.data.data![index].title!,
+                        categoryId:
+                            state.data.data![index].sId!, // Pass category ID
+                        categoryName: state
+                            .data.data![index].title!, // Pass category name
                       ),
                     ),
-                    withNavBar: false);
+                    withNavBar:
+                        false); // Disable bottom navigation bar on this screen
               },
               child: Column(
                 children: [
+                  // Category image container
                   InkWell(
                     child: Container(
-                      height: responsive.setHeight(8),
-                      width: responsive.setHeight(8.5),
+                      height: responsive.setHeight(8), // Image container height
+                      width: responsive.setHeight(8.5), // Image container width
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                              responsive.setBorderRadius(2)),
-                          color: ColorManger.backgroundItem),
+                        borderRadius: BorderRadius.circular(responsive
+                            .setBorderRadius(2)), // Rounded corners for image
+                        color: ColorManger.backgroundItem, // Background color
+                      ),
                       child: Padding(
                         padding: responsive.setPadding(
-                            top: 1, bottom: 1, left: 1, right: 1),
+                            top: 1,
+                            bottom: 1,
+                            left: 1,
+                            right: 1), // Padding inside container
                         child: CachedNetworkImage(
-                          imageUrl: state.data.data![index].image!,
+                          imageUrl: state.data.data![index]
+                              .image!, // Load category image from network
                           placeholder: (context, url) => LoadingShimmer(
-                            height: responsive.setHeight(9),
-                            width: responsive.setWidth(9),
-                            borderRadius: responsive.setBorderRadius(2),
+                            height: responsive
+                                .setHeight(9), // Placeholder image height
+                            width: responsive
+                                .setWidth(9), // Placeholder image width
+                            borderRadius: responsive.setBorderRadius(
+                                2), // Rounded corners for placeholder
                           ),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
+                          errorWidget: (context, url, error) => const Icon(Icons
+                              .error), // Display error icon if image fails to load
                         ),
                       ),
                     ),
                   ),
-                  responsive.setSizeBox(height: 1.5),
+                  responsive.setSizeBox(
+                      height: 1.5), // Space between image and title
+
+                  // Category title
                   Text(state.data.data![index].title!,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(fontSize: responsive.setTextSize(3.2))),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: responsive.setTextSize(
+                              3.2))), // Category title with responsive text size
                 ],
               ),
             ),

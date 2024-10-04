@@ -5,7 +5,6 @@ export '../../../../core/style/fonts/styles_manger.dart';
 export '../../../../feature/accountInfo/presentation/refactor/account_info_body.dart';
 export '../../../../feature/address/data/model/request/create_address_request.dart';
 export '../../../../feature/address/presentation/widget/mapScrrenWidget/custom_map_marker.dart';
-export '../../../../feature/category/presentation/refactor/category_body.dart';
 export '../../../../feature/changeEmailAddress/presentation/refactor/change_email_body.dart';
 export '../../../../feature/changePassword/presentation/refactor/change_password_body.dart';
 export '../../../feature/forgetPassword/presntation/widget/restEmailWidget/email_forget_password_text_form_field.dart';
