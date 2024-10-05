@@ -5,60 +5,24 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     return Scaffold(
       appBar: _cartViewAppBar(context),
       body: const CartBody(),
-      bottomNavigationBar: _cartViewBottomNavigationBar(),
-    );
-  }
-
-  BlocBuilder<CartCubit, CartState> _cartViewBottomNavigationBar() {
-    return BlocBuilder<CartCubit, CartState>(
-      builder: (context, state) {
-        if (state is GetCartItemError ||
-            state is GetCartItemLoading ||
-            context.read<CartCubit>().cartData == null ||
-            context.read<CartCubit>().cartData!.data!.cartItems!.isEmpty) {
-          return const SizedBox();
-        }
-        return Padding(
-          padding: EdgeInsets.only(left: 25.w, right: 25.w, bottom: 45.h),
-          child: CustomButton(
-            // height: 45.h,
-            radius: 8.r,
-
-            onPressed: () {
-              if (context.read<UserAddressCubit>().addressDataList.isNotEmpty) {
-                Navigator.of(context, rootNavigator: !false)
-                    .pushNamed(Routes.shippingAddress);
-              } else {
-                Navigator.of(context, rootNavigator: !false)
-                    .pushNamed(Routes.map);
-
-                context.read<UserAddressCubit>().isPaymentAddress = true;
-              }
-            },
-            widget: Text(
-              'CheckOut',
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 16.sp,
-                  color: ColorManger.white,
-                  fontWeight: FontWeightManger.semiBold),
-            ),
-          ),
-        );
-      },
+   
     );
   }
 
   AppBar _cartViewAppBar(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return AppBar(
       centerTitle: true,
-      title: Text("My Cart",
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 16.sp)),
+      title: Text(
+        AppStrings.myCart,
+        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+            fontSize: responsive.setTextSize(4)), // Responsive font size
+      ),
       actions: [
         BlocBuilder<CartCubit, CartState>(
           builder: (context, state) {
@@ -79,9 +43,40 @@ class CartView extends StatelessWidget {
             );
           },
         ),
-        SizedBox(
-          width: 35.w,
-        )
+        responsive.setSizeBox(width: 5),
+        BlocBuilder<CartCubit, CartState>(
+          builder: (context, state) {
+            if (state is GetCartItemError ||
+                state is GetCartItemLoading ||
+                context.read<CartCubit>().cartData == null ||
+                context.read<CartCubit>().cartData!.data!.cartItems!.isEmpty) {
+              return const SizedBox();
+            }
+            return Padding(
+              padding: responsive.setPadding(bottom: 1),
+              child: InkWell(
+                  onTap: () {
+                    if (context
+                        .read<UserAddressCubit>()
+                        .addressDataList
+                        .isNotEmpty) {
+                      Navigator.of(context, rootNavigator: !false)
+                          .pushNamed(Routes.shippingAddress);
+                    } else {
+                      Navigator.of(context, rootNavigator: !false)
+                          .pushNamed(Routes.map);
+
+                      context.read<UserAddressCubit>().isPaymentAddress = true;
+                    }
+                  },
+                  child: Image.asset(
+                    ImageAsset.checkOut,
+                    height: responsive.setHeight(3.5),
+                  )),
+            );
+          },
+        ),
+        responsive.setSizeBox(width: 6),
       ],
     );
   }

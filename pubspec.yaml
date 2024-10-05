@@ -153,6 +153,7 @@ flutter:
     - asset/image/noNotification.svg
     - asset/image/noSearch.svg
     - asset/image/noRoute.svg
+    - asset/image/checkOut.png
 
     
 

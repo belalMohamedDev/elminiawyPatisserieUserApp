@@ -101,21 +101,32 @@ Padding _categorySuccessState(GetCategoriesSuccess state, BuildContext context,
             InkWell(
               onTap: () {
                 // Navigate to product list screen for the selected category
-                NavBarNavigator.push(
-                  context,
-                  screen: BlocProvider(
-                    create: (context) => instance<
-                        ProductBasedOnCategoryCubit>(), // Create ProductBasedOnCategoryCubit
-                    child: ProductBaseOnCategory(
-                      categoryId:
-                          state.data.data![index].sId!, // Pass category ID
-                      categoryName:
-                          state.data.data![index].title!, // Pass category name
+                Navigator.of(context, rootNavigator: !false).push(
+                  MaterialPageRoute(
+                    builder: (context) => MultiBlocProvider(
+                      providers: [
+                        BlocProvider(
+                          create: (context) => instance<
+                              ProductBasedOnCategoryCubit>(), // Create the cubit
+                        ),
+                        BlocProvider.value(
+                          value: instance<CartCubit>(),
+                        ),
+                        BlocProvider.value(
+                          value: instance<WishListCubit>(),
+                        ),
+                      ],
+                      child: ProductBaseOnCategory(
+                        categoryId:
+                            state.data.data![index].sId!, // Pass category ID
+                        categoryName: state
+                            .data.data![index].title!, // Pass category name
+                      ),
                     ),
                   ),
-                  withNavBar:
-                      false, // Navigate without the bottom navigation bar
                 );
+
+    
               },
               child: Container(
                 height: responsive.setHeight(

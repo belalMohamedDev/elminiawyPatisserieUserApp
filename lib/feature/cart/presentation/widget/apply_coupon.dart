@@ -1,5 +1,3 @@
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class ApplyCouponCode extends StatelessWidget {
@@ -9,6 +7,9 @@ class ApplyCouponCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         state.whenOrNull(
@@ -21,16 +22,16 @@ class ApplyCouponCode extends StatelessWidget {
       },
       builder: (context, state) {
         return Container(
-          height: 70.h,
+          height: responsive.setHeight(9),
           decoration: BoxDecoration(
             color: ColorManger.brownLight,
-            borderRadius: BorderRadius.circular(14.r),
+            borderRadius: BorderRadius.circular(responsive.setBorderRadius(4)),
           ),
           child: Padding(
-            padding: EdgeInsets.only(left: 15.w, right: 15.w),
+            padding: responsive.setPadding(left: 4.5, right: 5),
             child: Center(
               child: SizedBox(
-                height: 40.h,
+                height: responsive.setHeight(5),
                 child: TextFormField(
                   controller: context.read<CartCubit>().applyCouponController,
                   keyboardType: TextInputType.text,
@@ -45,16 +46,17 @@ class ApplyCouponCode extends StatelessWidget {
                       suffixIcon: InkWell(
                         onTap: () => context.read<CartCubit>().applyCoupon(),
                         child: Container(
-                          width: 70.w,
+                          width: responsive.setWidth(18),
                           decoration: BoxDecoration(
                             color: ColorManger.brun,
-                            borderRadius: BorderRadius.circular(8.r),
+                            borderRadius: BorderRadius.circular(
+                                responsive.setBorderRadius(1.8)),
                           ),
                           child: state is ApplyCouponLoading
                               ? Center(
                                   child: SizedBox(
-                                    height: 20.h,
-                                    width: 20.w,
+                                    height: responsive.setHeight(2),
+                                    width: responsive.setWidth(4),
                                     child: CircularProgressIndicator(
                                       color: ColorManger.white,
                                       strokeWidth: 2,
@@ -63,35 +65,39 @@ class ApplyCouponCode extends StatelessWidget {
                                 )
                               : Center(
                                   child: Text(
-                                    'Apply',
+                                    AppStrings.apply,
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodyLarge!
-                                        .copyWith(
-                                            fontFamily:
-                                                FontConsistent.fontFamilyAcme,
-                                            color: ColorManger.white,
-                                            fontSize: 12.sp),
+                                        .headlineSmall
+                                        ?.copyWith(
+                                          fontSize: responsive.setTextSize(
+                                              3), // Dynamic text size
+                                        ),
                                   ),
                                 ),
                         ),
                       ),
-                      hintText: 'Enter Voucher code',
-                      hintStyle: TextStyle(color: ColorManger.brunLight),
+                      hintText: AppStrings.enterVoucherCode,
+                      hintStyle: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontSize: responsive.setTextSize(3)),
                       fillColor: ColorManger.backgroundItem,
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: ColorManger.backgroundItem,
                         ),
-                        borderRadius:
-                            BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                        borderRadius: BorderRadius.all(Radius.elliptical(
+                            responsive.setBorderRadius(2),
+                            responsive.setBorderRadius(2))),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: ColorManger.backgroundItem,
                         ),
-                        borderRadius:
-                            BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                        borderRadius: BorderRadius.all(Radius.elliptical(
+                            responsive.setBorderRadius(2),
+                            responsive.setBorderRadius(2))),
                       )),
                 ),
               ),

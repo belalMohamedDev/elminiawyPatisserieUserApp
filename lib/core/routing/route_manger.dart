@@ -134,6 +134,24 @@ class RouteGenerator {
           ),
         );
 
+      case Routes.newProduct:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: instance<CartCubit>(),
+              ),
+              BlocProvider.value(
+                value: instance<ProductCubit>(),
+              ),
+              BlocProvider.value(
+                value: instance<WishListCubit>(),
+              ),
+            ],
+            child: const NewProductView(),
+          ),
+        );
+
       case Routes.notification:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -156,8 +174,6 @@ class RouteGenerator {
             child: const OrderDetails(),
           ),
         );
-      case Routes.newProduct:
-        return MaterialPageRoute(builder: (_) => const NewProductView());
 
       case Routes.myOrder:
         return MaterialPageRoute(

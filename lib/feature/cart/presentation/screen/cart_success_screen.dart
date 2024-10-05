@@ -1,9 +1,4 @@
-
-
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
-
 
 class SuccessCartScreen extends StatelessWidget {
   const SuccessCartScreen({
@@ -15,19 +10,18 @@ class SuccessCartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return Padding(
-      padding: EdgeInsets.only(
-        left: 15.w,
-        right: 15.w,
-        top: 20.h,
-      ),
+      padding: responsive.setPadding(left: 4, right: 4, top: 3),
       child: CustomScrollView(
         slivers: [
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(bottom: 15.h),
+                  padding: responsive.setPadding(bottom: 1),
                   child: ProductCartItem(
                       cartItems: cartData!.data!.cartItems![index]),
                 );
@@ -36,43 +30,32 @@ class SuccessCartScreen extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 220.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.w,
-                      top: 10.h,
-                      bottom: 15.h,
-                    ),
-                    child: Text(
-                      'Save on Your Order',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brown,
-                          fontSize: 18.sp),
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: responsive.setPadding(left: 2, top: 2, bottom: 2),
+                  child: Text(
+                    AppStrings.saveOnYourOrder,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4.2)),
                   ),
-                  const ApplyCouponCode(),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.w,
-                      top: 25.h,
-                      bottom: 15.h,
-                    ),
-                    child: Text(
-                      'Payment Summary',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brown,
-                          fontSize: 18.sp),
-                    ),
+                ),
+                const ApplyCouponCode(),
+                Padding(
+                  padding: responsive.setPadding(left: 2, top: 2, bottom: 2),
+                  child: Text(
+                    AppStrings.paymentSummary,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4.2)),
                   ),
-                  PaymentSummary(cartData: cartData!.data!)
-                ],
-              ),
+                ),
+                PaymentSummary(cartData: cartData!.data!)
+              ],
             ),
           ),
         ], // Other slivrs for remaining widgets

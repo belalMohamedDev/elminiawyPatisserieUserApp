@@ -144,7 +144,7 @@ Future<void> _initAddress() async {
   instance
     ..registerLazySingleton<UserAddressRepositoryImplement>(
         () => UserAddressRepositoryImplement(instance(), instance()))
-    ..registerFactory<MapCubit>(() => MapCubit(
+    ..registerLazySingleton<MapCubit>(() => MapCubit(
           instance(),
           instance(),
         ))

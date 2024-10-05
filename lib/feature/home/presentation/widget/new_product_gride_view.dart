@@ -29,11 +29,10 @@ class NewProductGrideView extends StatelessWidget {
             // 'See All' button, navigates to the NewProductView page when tapped
             InkWell(
               onTap: () {
-                NavBarNavigator.push(context,
-                    screen:
-                        const NewProductView(), // Navigate to NewProductView screen
-                    withNavBar:
-                        false); // Disable bottom navigation bar on this screen
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamed(// Disable bottom navigation bar on this screen
+                        Routes.newProduct // Navigate to NewProductView screen
+                        );
               },
               child: Text(AppStrings.seeAll,
                   style: Theme.of(context)

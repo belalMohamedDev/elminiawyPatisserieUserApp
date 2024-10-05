@@ -113,10 +113,22 @@ class CategoryListViewBuilder extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 // Navigate to the ProductBaseOnCategory screen when a category is tapped
-                NavBarNavigator.push(context,
-                    screen: BlocProvider(
-                      create: (context) =>
-                          instance<ProductBasedOnCategoryCubit>(),
+
+                Navigator.of(context, rootNavigator: !false).push(
+                  MaterialPageRoute(
+                    builder: (context) => MultiBlocProvider(
+                      providers: [
+                        BlocProvider(
+                          create: (context) => instance<
+                              ProductBasedOnCategoryCubit>(), // Create the cubit
+                        ),
+                        BlocProvider.value(
+                          value: instance<CartCubit>(),
+                        ),
+                        BlocProvider.value(
+                          value: instance<WishListCubit>(),
+                        ),
+                      ],
                       child: ProductBaseOnCategory(
                         categoryId:
                             state.data.data![index].sId!, // Pass category ID
@@ -124,8 +136,8 @@ class CategoryListViewBuilder extends StatelessWidget {
                             .data.data![index].title!, // Pass category name
                       ),
                     ),
-                    withNavBar:
-                        false); // Disable bottom navigation bar on this screen
+                  ),
+                );
               },
               child: Column(
                 children: [

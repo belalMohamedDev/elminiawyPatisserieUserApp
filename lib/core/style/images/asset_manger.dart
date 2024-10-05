@@ -37,6 +37,7 @@ class ImageAsset {
   static const String noWishList = "$imagePath/whishList.svg";
   static const String noNotification = "$imagePath/noNotification.svg";
   static const String noRoute = "$imagePath/noRoute.svg";
+  static const String checkOut = "$imagePath/checkOut.png";
 }
 
 class JsonAsset {

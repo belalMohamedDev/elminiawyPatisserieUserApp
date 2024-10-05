@@ -10,13 +10,15 @@ class PaymentSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return CouponCard(
       curveAxis: Axis.vertical,
-      curvePosition: 200.w,
+      curvePosition: responsive.setWidth(55),
       clockwise: true,
-      borderRadius: 15.r,
-      curveRadius: 25.r,
-      height: 150.h,
+      borderRadius: responsive.setBorderRadius(5),
+      curveRadius: responsive.setBorderRadius(6),
+      height: responsive.setHeight(20),
       decoration: BoxDecoration(
         color: ColorManger.brunLight,
       ),
@@ -24,49 +26,48 @@ class PaymentSummary extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 20.w, top: 15.w),
+            padding: responsive.setPadding(left: 5, top: 3),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Sub Total',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.backgroundItem,
-                      fontSize: 14.sp),
+                  AppStrings.subTotal,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.5)),
                 ),
-                SizedBox(height: 5.h),
+                responsive.setSizeBox(height: 1),
                 Text(
-                  'Price After Discount',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.backgroundItem,
-                      fontSize: 14.sp),
+                  AppStrings.priceAfterDiscount,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.5)),
                 ),
-                SizedBox(height: 5.h),
+                responsive.setSizeBox(height: 1),
                 Text(
-                  'Tax',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.backgroundItem,
-                      fontSize: 14.sp),
+                  AppStrings.tax,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.5)),
                 ),
-                SizedBox(height: 5.h),
+                responsive.setSizeBox(height: 1),
                 Text(
-                  'Shipping',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.backgroundItem,
-                      fontSize: 14.sp),
+                  AppStrings.shipping,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.5)),
                 ),
-              
-                SizedBox(height: 10.h),
+                responsive.setSizeBox(height: 1),
                 Text(
-                  'Total Amount',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.backgroundItem,
-                      fontSize: 14.sp),
+                  AppStrings.totalAmount,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.5)),
                 ),
               ],
             ),
@@ -83,44 +84,43 @@ class PaymentSummary extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'EGP  ${cartData.totalCartPrice}',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.backgroundItem,
-                    fontSize: 14.sp),
+                '${cartData.totalCartPrice}   ${AppStrings.egy}',
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(fontSize: responsive.setTextSize(3.5)),
               ),
-              SizedBox(height: 5.h),
+              responsive.setSizeBox(height: 1),
               Text(
-                'EGP  ${cartData.totalPriceAfterDiscount}',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.backgroundItem,
-                    fontSize: 14.sp),
+                '${cartData.totalPriceAfterDiscount}   ${AppStrings.egy}',
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(fontSize: responsive.setTextSize(3.5)),
               ),
-              SizedBox(height: 5.h),
+              responsive.setSizeBox(height: 1),
               Text(
-                'EGP  ${cartData.taxPrice}',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.backgroundItem,
-                    fontSize: 14.sp),
+                '${cartData.taxPrice}   ${AppStrings.egy}',
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(fontSize: responsive.setTextSize(3.5)),
               ),
-              SizedBox(height: 5.h),
+              responsive.setSizeBox(height: 1),
               Text(
-                'EGP  ${cartData.shippingPrice}',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.backgroundItem,
-                    fontSize: 14.sp),
+                '${cartData.shippingPrice}   ${AppStrings.egy}',
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(fontSize: responsive.setTextSize(3.5)),
               ),
-              SizedBox(height: 10.h),
-            
+              responsive.setSizeBox(height: 1),
               Text(
-                'EGP  ${cartData.totalOrderPrice}',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.backgroundItem,
-                    fontSize: 14.sp),
+                '${cartData.totalOrderPrice}   ${AppStrings.egy}',
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(fontSize: responsive.setTextSize(3.5)),
               ),
             ],
           ),

@@ -1,13 +1,13 @@
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
-
 
 class CartBody extends StatelessWidget {
   const CartBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
         if (state is GetCartItemError || state is GetCartItemLoading) {
@@ -26,18 +26,16 @@ class CartBody extends StatelessWidget {
             if (state is DeleteCartItemLoading || state is DeleteCartLoading)
               Center(
                 child: Container(
-                    height: 70.h,
-                    width: 70.w,
+                    height: responsive.setHeight(10),
+                    width: responsive.setWidth(22),
                     decoration: BoxDecoration(
                         color: ColorManger.brun,
-                        borderRadius: BorderRadius.circular(12.r)),
+                        borderRadius: BorderRadius.circular(
+                            responsive.setBorderRadius(2))),
                     child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(20.r),
-                        child: CircularProgressIndicator(
-                          color: ColorManger.white,
-                          strokeWidth: 3.sp,
-                        ),
+                      child: CircularProgressIndicator(
+                        color: ColorManger.white,
+                        strokeWidth: 3,
                       ),
                     )),
               ),

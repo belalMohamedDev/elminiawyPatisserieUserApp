@@ -109,9 +109,21 @@ class AppStrings {
   static const String enterCompleteAddress =
       'Enter Complete address';
 
-        static const String notification = 'Notification';
+  static const String notification = 'Notification';
+  static const String subTotal = 'Sub Total';
+  static const String priceAfterDiscount = 'Price After Discount';
+  static const String tax = 'Tax';
+  static const String shipping = 'Shipping';
+  static const String totalAmount = 'Total Amount';
+
+  static const String apply = 'Apply';
+  static const String enterVoucherCode = 'Enter Voucher code';
   static const String delete = 'Delete';
   static const String retry = 'Retry';
+  static const String checkOut = 'CheckOut';
+  static const String myCart = 'My Cart';
+  static const String saveOnYourOrder = 'Save on Your Order';
+  static const String paymentSummary = 'Payment Summary';
   static const String emptyNotifications = "Empty Notifications";
   static const String  itLooksLikeYouNotifications   =  "It looks like you don't have any notifications right now. We'll let you know when there's something new.";
 }

@@ -18,11 +18,13 @@ class _MapScreenState extends State<MapScreen> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (widget.isHomeMap == false) {
-        mapCuibt.getCurrentLocation(context).then(
-          (value) {
-            mapCuibt.checkAddressAvailableFetch(mapCuibt.targetPosition);
-          },
-        );
+        if (!context.read<MapCubit>().isClosed) {
+          mapCuibt.getCurrentLocation(context).then(
+            (value) {
+              mapCuibt.checkAddressAvailableFetch(mapCuibt.targetPosition);
+            },
+          );
+        }
       } else {
         mapCuibt.addLocationToMap(context);
       }
