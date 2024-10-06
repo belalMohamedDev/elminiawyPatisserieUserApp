@@ -43,11 +43,9 @@ class ProfileBody extends StatelessWidget {
                                     .toUpperCase(),
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyLarge!
+                                    .titleLarge!
                                     .copyWith(
-                                        fontFamily:
-                                            FontConsistent.fontFamilyAcme,
-                                        color: ColorManger.brun,
+                                       
                                         fontSize: 60.sp)),
                           ),
                         ),
@@ -72,33 +70,30 @@ class ProfileBody extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Guest User",
+                              Text(AppStrings.guestUser,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyLarge!
+                                      .headlineSmall!
                                       .copyWith(
-                                          fontFamily:
-                                              FontConsistent.fontFamilyAcme,
+                                      
                                           color: Colors.white70,
                                           fontSize: 13.sp)),
-                              Text("Login to View all the features",
+                              Text(AppStrings.loginToViewAllTheFeatures,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyLarge!
+                                      .headlineSmall!
                                       .copyWith(
-                                          fontFamily:
-                                              FontConsistent.fontFamilyAcme,
+                                   
                                           color: Colors.white60,
                                           fontSize: 13.sp)),
                             ],
                           ),
                       )
                       : Text(
-                          "Welcome back! Let's achieve\n great things today!",
+                          AppStrings.welcomeBackLetsAchieveGreatThingsToday,
                           style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: Colors.white,
+                              Theme.of(context).textTheme.headlineSmall!.copyWith(
+                              
                                     fontSize: 13.sp,
                                   ),
                         ),

@@ -1,5 +1,3 @@
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 void chaneProfileDataBottomSheet(BuildContext context) {
@@ -17,7 +15,7 @@ void chaneProfileDataBottomSheet(BuildContext context) {
                 child: Column(
                   children: [
                     CustomProfileCard(
-                      title: "Account Information",
+                      title: AppStrings.accountInformation,
                       leadingIcon: IconlyBold.infoCircle,
                       tap: () {
                         Navigator.of(context, rootNavigator: !false)
@@ -25,7 +23,7 @@ void chaneProfileDataBottomSheet(BuildContext context) {
                       },
                     ),
                     CustomProfileCard(
-                      title: "Change Email Address",
+                      title: AppStrings.changeEmailAddress,
                       leadingIcon: IconlyBold.message,
                       tap: () {
                         Navigator.of(context, rootNavigator: !false)
@@ -33,7 +31,7 @@ void chaneProfileDataBottomSheet(BuildContext context) {
                       },
                     ),
                     CustomProfileCard(
-                      title: "Change Password",
+                      title: AppStrings.changePassword,
                       leadingIcon: IconlyBold.lock,
                       tap: () {
                         Navigator.of(context, rootNavigator: !false)

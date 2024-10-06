@@ -10,10 +10,9 @@ class ChangePasswordScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Change User Password",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
+        title: Text(AppStrings.changeUserPassword,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+          
                 fontSize: 16.sp)),
         leading: IconButton(
           icon: const Icon(IconlyBroken.arrowLeft),

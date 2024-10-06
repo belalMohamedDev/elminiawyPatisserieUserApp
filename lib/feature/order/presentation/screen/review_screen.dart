@@ -5,14 +5,18 @@ class ReviewPaymentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("CheckOut",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 16.sp)),
+        title: Text(
+          AppStrings.checkOut,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(4)),
+        ),
       ),
       body: const ReviewPaymentBody(),
       bottomNavigationBar: _orderSummary(context),
@@ -24,87 +28,83 @@ class ReviewPaymentScreen extends StatelessWidget {
     final paymentCuibt = context.read<PaymentCubit>();
     final userAddressCubit = context.read<UserAddressCubit>();
 
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return Container(
-      height: 280.h,
+      height: responsive.setHeight(32),
       color: ColorManger.backgroundItem,
       child: Padding(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
+        padding: responsive.setPadding(left: 5, right: 5, top: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Order Summary',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brun,
-                  fontSize: 15.sp),
+              AppStrings.orderSummary,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: responsive.setTextSize(4)),
             ),
-            SizedBox(
-              height: 10.h,
-            ),
+            responsive.setSizeBox(height: 1),
             Row(
               children: [
                 Text(
-                  'Cart Total',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 15.sp),
+                  AppStrings.cartTotal,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
                 const Spacer(),
                 Text(
-                  '${cart.cartData!.data!.totalCartPrice!} EGP',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
-                      fontSize: 15.sp),
+                  '${cart.cartData!.data!.totalCartPrice!}   ${AppStrings.egy}',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
               ],
             ),
-            SizedBox(
-              height: 10.h,
-            ),
+            responsive.setSizeBox(height: 1),
             Row(
               children: [
                 Text(
-                  'Delivery Fee',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 15.sp),
+                  AppStrings.deliveryFee,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
                 const Spacer(),
                 Text(
-                  '${cart.cartData!.data!.taxPrice!} EGP',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
-                      fontSize: 15.sp),
+                  '${cart.cartData!.data!.taxPrice!}   ${AppStrings.egy}',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
               ],
             ),
             Divider(
               color: ColorManger.brownLight,
             ),
-            SizedBox(
-              height: 10.h,
-            ),
+            responsive.setSizeBox(height: 1),
             Row(
               children: [
                 Text(
-                  'Total',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 15.sp),
+                  AppStrings.total,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
                 const Spacer(),
                 Text(
-                  '${cart.cartData!.data!.totalOrderPrice!} EGP',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 15.sp),
+                  '${cart.cartData!.data!.totalOrderPrice!}   ${AppStrings.egy}',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
               ],
             ),
@@ -133,49 +133,48 @@ class ReviewPaymentScreen extends StatelessWidget {
                             .addressDataList[paymentCuibt.selectedIndex].sId!);
                       }
                     },
-                    radius: 8.r,
                     widget: state.maybeWhen(
                       createCashOrderLoading: () => Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 20.h,
-                            width: 20.w,
-                            child: const CircularProgressIndicator(
-                              color: Colors.white,
+                            height: responsive.setHeight(2),
+                            width: responsive.setWidth(4),
+                            child: CircularProgressIndicator(
+                              color: ColorManger.white,
                               strokeWidth: 2.0,
                               strokeAlign: 0.01,
                             ),
                           ),
                           SizedBox(
-                            width: 15.w,
+                            width: responsive.setHeight(
+                                2), // Spacing between the indicator and text
                           ),
                           Text(
                             AppStrings.loading,
                             style: Theme.of(context)
                                 .textTheme
-                                .titleLarge
+                                .headlineSmall
                                 ?.copyWith(
-                                    fontSize: 16.sp,
-                                    color: ColorManger.white,
-                                    fontWeight: FontWeightManger.semiBold),
+                                  fontSize: responsive
+                                      .setTextSize(3.8), // Dynamic text size
+                                ),
                           ),
                         ],
                       ),
                       orElse: () => Text(
-                        'Summit Order',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.white,
-                            fontSize: 13.sp),
+                        AppStrings.summitOrder,
+                        style:
+                            Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                  fontSize: responsive.setTextSize(
+                                      3.8), // Adjusted font size for responsiveness
+                                ),
                       ),
                     ));
               },
             ),
-            SizedBox(
-              height: 15.h,
-            ),
+            responsive.setSizeBox(height: 2),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -183,15 +182,13 @@ class ReviewPaymentScreen extends StatelessWidget {
                   Icons.car_rental_outlined,
                   color: ColorManger.brun,
                 ),
-                SizedBox(
-                  width: 10.w,
-                ),
+                responsive.setSizeBox(width: 2),
                 Text(
-                  'Order Will be delivered in 90 min - 120 min',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 12.sp),
+                  AppStrings.orderWillBeDelivered,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
               ],
             ),

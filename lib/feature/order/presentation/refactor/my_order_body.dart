@@ -1,6 +1,3 @@
-
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class MyOrdersBody extends StatefulWidget {
@@ -25,6 +22,8 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return Column(
       children: [
         Padding(
@@ -38,12 +37,20 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
               controller: _tabController,
               tabs: const [
                 Tab(
-                  text: 'Current Orders',
+                  text: AppStrings.currentOrders,
                 ),
-                Tab(text: 'Previous Orders'),
+                Tab(text: AppStrings.previousOrders),
               ],
               labelColor: ColorManger.white, // Text color of selected tab
               unselectedLabelColor: ColorManger.white,
+              unselectedLabelStyle: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: responsive.setTextSize(4)),
+              labelStyle: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: responsive.setTextSize(4)),
 
               indicatorSize: TabBarIndicatorSize.tab,
               dividerColor: ColorManger.white,

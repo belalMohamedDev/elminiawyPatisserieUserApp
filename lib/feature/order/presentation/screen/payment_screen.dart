@@ -8,14 +8,19 @@ class PaymentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("CheckOut",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 16.sp)),
+        title: Text(
+          AppStrings.checkOut,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(4)),
+        ),
       ),
       body: const PaymentBody(),
     );

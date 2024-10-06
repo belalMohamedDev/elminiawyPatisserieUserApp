@@ -32,7 +32,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                             backgroundColor: ColorManger.redError,
                             foregroundColor: ColorManger.white,
                             icon: IconlyBold.delete,
-                            label: 'Delete',
+                            label: AppStrings.delete,
                           ),
                           SlidableAction(
                             onPressed: (context) {
@@ -59,7 +59,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                             backgroundColor: ColorManger.backgroundItem,
                             foregroundColor: ColorManger.brown,
                             icon: IconlyBold.edit,
-                            label: 'Edite',
+                            label:AppStrings.edit ,
                           ),
                         ],
                       ),
@@ -85,22 +85,18 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                                     .addressDataList[index].buildingName!,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyLarge!
+                                    .titleLarge!
                                     .copyWith(
-                                        fontFamily:
-                                            FontConsistent.fontFamilyAcme,
-                                        color: ColorManger.brun,
+                                     
                                         fontSize: 16.sp),
                               ),
                               Text(
                                 userAddress.addressDataList[index].phone!,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyLarge!
+                                    .titleLarge!
                                     .copyWith(
-                                        fontFamily:
-                                            FontConsistent.fontFamilyAcme,
-                                        color: ColorManger.grey,
+                                      
                                         fontSize: 11.sp),
                                 maxLines: 1,
                                 textAlign: TextAlign.start,
@@ -112,10 +108,9 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                                   userAddress.addressDataList[index].region!,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .bodyLarge!
+                                      .titleLarge!
                                       .copyWith(
-                                          fontFamily:
-                                              FontConsistent.fontFamilyAcme,
+                                        
                                           color: ColorManger.grey,
                                           fontSize: 11.sp),
                                   maxLines: 1,

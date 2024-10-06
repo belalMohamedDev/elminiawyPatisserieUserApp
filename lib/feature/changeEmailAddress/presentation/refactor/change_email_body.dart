@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ChangeEmailBody extends StatelessWidget {
@@ -20,12 +19,12 @@ class ChangeEmailBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isEmailValid(value)) {
-                  return 'Please enter a valid email address';
+                  return AppStrings.pleaseEnterAValidEmailAddress;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: 'New Email Address',
+                hintText: AppStrings.newEmailAddress,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -41,7 +40,10 @@ class ChangeEmailBody extends StatelessWidget {
                 prefixIcon: Icon(IconlyBroken.message,
                     size: 18.sp, color: ColorManger.brunLight),
                 fillColor: ColorManger.backgroundItem,
-                hintStyle: TextStyle(color: ColorManger.brunLight),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: 12.sp),
               ),
             ),
             SizedBox(
@@ -56,19 +58,19 @@ class ChangeEmailBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isEmailValid(value)) {
-                  return 'Please enter a valid email address';
+                  return AppStrings.pleaseEnterAValidEmailAddress;
                 } else if (value.trim() !=
                     context
                         .read<ChangeEmailAddressCubit>()
                         .newEmailAddressController
                         .text
                         .trim()) {
-                  return 'Email Address And Confirm Email Not Matching';
+                  return AppStrings.emailAddressAndConfirmEmailNotMatching;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: 'Confirm New Email Address',
+                hintText: AppStrings.confirmNewEmailAddress,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -84,7 +86,10 @@ class ChangeEmailBody extends StatelessWidget {
                 prefixIcon: Icon(IconlyBroken.message,
                     size: 18.sp, color: ColorManger.brunLight),
                 fillColor: ColorManger.backgroundItem,
-                hintStyle: TextStyle(color: ColorManger.brunLight),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: 12.sp),
               ),
             ),
             SizedBox(
@@ -101,12 +106,12 @@ class ChangeEmailBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isPasswordValid(value)) {
-                  return 'Please enter a valid password';
+                  return AppStrings.pleaseEnterValidPassword;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: 'Current Password',
+                hintText: AppStrings.currentPassword,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -136,7 +141,10 @@ class ChangeEmailBody extends StatelessWidget {
                   },
                 ),
                 fillColor: ColorManger.backgroundItem,
-                hintStyle: TextStyle(color: ColorManger.brunLight),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: 12.sp),
               ),
             ),
             SizedBox(
@@ -174,7 +182,6 @@ class ChangeEmailBody extends StatelessWidget {
                   .submitEmailAddressChange();
             }
           },
-          radius: 10.r,
           widget: state.maybeWhen(
             changeEmailAddressLoading: () => Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -194,19 +201,17 @@ class ChangeEmailBody extends StatelessWidget {
                 ),
                 Text(
                   AppStrings.loading,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 16.sp,
-                      color: ColorManger.white,
-                      fontWeight: FontWeightManger.semiBold),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        fontSize: 16.sp,
+                      ),
                 ),
               ],
             ),
             orElse: () => Text(
-              "Submit",
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 16.sp,
-                  color: ColorManger.white,
-                  fontWeight: FontWeightManger.semiBold),
+              AppStrings.submit,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontSize: 16.sp,
+                  ),
             ),
           ),
         );

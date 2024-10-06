@@ -61,24 +61,24 @@ class OrdersTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Order No #${order.sId}',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brun,
-                            fontSize: 12.sp),
+                        '${AppStrings.orderNum}${order.sId}',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(fontSize: 12.sp),
                       ),
                       SizedBox(
-                        height: 5.h,
+                        height: 3.h,
                       ),
                       Text(
                         order.createdAt!.getFormattedDate(),
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brunLight,
-                            fontSize: 12.sp),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(fontSize: 12.sp),
                       ),
                       SizedBox(
-                        height: 5.h,
+                        height: 3.h,
                       ),
                       Row(
                         children: [
@@ -96,26 +96,22 @@ class OrdersTab extends StatelessWidget {
                                                 : '',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyLarge!
+                                .titleLarge!
                                 .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
                                     color: order.status == 4
                                         ? ColorManger.redError
                                         : Colors.green,
                                     fontSize: 12.sp),
                           ),
                           SizedBox(
-                            width: 130.w,
+                            width: 110.w,
                           ),
                           Text(
                             '${order.totalOrderPrice}',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.brun,
-                                    fontSize: 18.sp),
+                                .titleLarge!
+                                .copyWith(fontSize: 18.sp),
                           ),
                         ],
                       ),

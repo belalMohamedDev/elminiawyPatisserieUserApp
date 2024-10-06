@@ -25,7 +25,7 @@ class InformationCardArea extends StatelessWidget {
             getAddressResponseData!.region != null) {
           regionAddress = getAddressResponseData!.region!;
         } else {
-          regionAddress = 'Unknown Region';
+          regionAddress = AppStrings.unknownRegion;
         }
 
         return Card(
@@ -58,13 +58,12 @@ class InformationCardArea extends StatelessWidget {
                           SizedBox(
                             width: 2.w,
                           ),
-                          Text("Area",
+                          Text(AppStrings.area,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyLarge!
+                                  .titleLarge!
                                   .copyWith(
-                                      fontFamily: FontConsistent.fontFamilyAcme,
-                                      color: ColorManger.brun,
+                                    
                                       fontSize: 12.sp)),
                         ],
                       ),
@@ -81,10 +80,9 @@ class InformationCardArea extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyLarge!
+                                .titleMedium!
                                 .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.brunLight,
+                                
                                     fontSize: 10.sp)),
                       ),
                     )
@@ -107,10 +105,9 @@ class InformationCardArea extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text("Change",
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brun,
+                    child: Text(AppStrings.change,
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        
                             fontSize: 13.sp)),
                   ),
                 )

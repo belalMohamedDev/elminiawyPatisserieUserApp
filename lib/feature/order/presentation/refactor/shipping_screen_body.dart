@@ -10,46 +10,38 @@ class ShippingAddressBody extends StatefulWidget {
 class _ShippingAddressBodyState extends State<ShippingAddressBody> {
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return Padding(
-      padding:
-          EdgeInsets.only(top: 15.h, right: 25.w, left: 25.w, bottom: 45.h),
+      padding: responsive.setPadding(top: 3, right: 6, left: 6, bottom: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CheckOutProcessing(
             screenIndex: 1,
           ),
-          SizedBox(
-            height: 30.h,
-          ),
-          _changingAddressText(context),
-          SizedBox(
-            height: 30.h,
-          ),
+          responsive.setSizeBox(height: 4),
+          _changingAddressText(context, responsive),
+          responsive.setSizeBox(height: 4),
           Text(
-            'Current Location',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 15.sp),
+            AppStrings.currentLocation,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
           ),
-          SizedBox(
-            height: 14.h,
-          ),
-          _mapWidget(context),
-          SizedBox(
-            height: 30.h,
-          ),
+          responsive.setSizeBox(height: 2),
+          _mapWidget(context, responsive),
+          responsive.setSizeBox(height: 4),
           Text(
-            'Shipping Address',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 15.sp),
+            AppStrings.shippingAddress,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
           ),
-          SizedBox(
-            height: 14.h,
-          ),
+          responsive.setSizeBox(height: 2),
           BlocBuilder<PaymentCubit, PaymentState>(
             builder: (context, state) {
               return _shippingAddresssContainer(
@@ -62,13 +54,12 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
               Navigator.of(context, rootNavigator: !false)
                   .pushNamed(Routes.shippingPayment);
             },
-            radius: 8.r,
             widget: Text(
-              'Save and Continue',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.white,
-                  fontSize: 13.sp),
+              AppStrings.saveAndContinue,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontSize: responsive.setTextSize(
+                        3.8), // Adjusted font size for responsiveness
+                  ),
             ),
           )
         ],
@@ -86,23 +77,26 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
         isSippingAddressCheckOut
             ? context.read<PaymentCubit>().selectedIndex
             : index];
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
 
     return Container(
-      height: isSelected ? 100.h : 145.h,
+      height:
+          isSelected ? responsive.setHeight(14.2) : responsive.setHeight(18),
       width: double.infinity,
       decoration: BoxDecoration(
         color: ColorManger.backgroundItem,
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
         border: Border.all(
           color: isChosseAddress
               ? ColorManger.backgroundItem
               : ColorManger.backgroundItem,
-          width: 0.5.w,
+          width: responsive.setWidth(0.2),
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.only(
-            top: isSelected ? 0.h : 18.h, left: 10.w, right: 15.w),
+        padding:
+            responsive.setPadding(top: isSelected ? 0 : 1.8, left: 3, right: 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -111,22 +105,21 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                 : Row(
                     children: [
                       Container(
-                          height: 30.h,
-                          width: 80.w,
+                          height: responsive.setHeight(4),
+                          width: responsive.setWidth(15),
                           decoration: BoxDecoration(
                             color: ColorManger.brun,
-                            borderRadius: BorderRadius.circular(4.r),
+                            borderRadius: BorderRadius.circular(
+                                responsive.setBorderRadius(1.2)),
                           ),
                           child: Center(
                             child: Text(
-                              'Default',
+                              AppStrings.defaultAddress,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyLarge!
+                                  .headlineSmall!
                                   .copyWith(
-                                      fontFamily: FontConsistent.fontFamilyAcme,
-                                      color: ColorManger.white,
-                                      fontSize: 13.sp),
+                                      fontSize: responsive.setTextSize(3)),
                             ),
                           )),
                       const Spacer(),
@@ -143,8 +136,8 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                             ),
                       isChosseAddress
                           ? const SizedBox()
-                          : SizedBox(
-                              width: 2.w,
+                          : responsive.setSizeBox(
+                              width: 1,
                             ),
                       isChosseAddress
                           ? const SizedBox()
@@ -152,23 +145,19 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                               onTap: () {
                                 _chaneProfileDataaBottomSheet(context);
                               },
-                              child: Text(
-                                'Change',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
-                                        fontFamily:
-                                            FontConsistent.fontFamilyAcme,
+                              child: Text(AppStrings.change,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge!
+                                      .copyWith(
+                                        fontSize: responsive.setTextSize(3.8),
                                         decoration: TextDecoration.underline,
-                                        color: ColorManger.brun,
-                                        fontSize: 13.sp),
-                              ),
+                                      )),
                             ),
                     ],
                   ),
-            SizedBox(
-              height: 20.h,
+            responsive.setSizeBox(
+              height: 2,
             ),
             Row(
               children: [
@@ -177,25 +166,22 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   color: isChosseAddress
                       ? ColorManger.brun
                       : ColorManger.brunLight,
-                  size: 15.sp,
+                  size: responsive.setIconSize(3),
                 ),
-                SizedBox(
-                  width: 8.w,
-                ),
+                responsive.setSizeBox(width: 2),
                 Text(
                   userAddressCubit.buildingName!,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: isChosseAddress
-                          ? ColorManger.brun
-                          : ColorManger.brunLight,
-                      fontSize: 10.sp),
+                  style: isChosseAddress
+                      ? Theme.of(context).textTheme.titleLarge!.copyWith(
+                            fontSize: responsive.setTextSize(3),
+                          )
+                      : Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontSize: responsive.setTextSize(3),
+                          ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 8.h,
-            ),
+            responsive.setSizeBox(height: 1),
             Row(
               children: [
                 Icon(
@@ -203,25 +189,22 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   color: isChosseAddress
                       ? ColorManger.brun
                       : ColorManger.brunLight,
-                  size: 15.sp,
+                  size: responsive.setIconSize(3),
                 ),
-                SizedBox(
-                  width: 8.w,
-                ),
+                responsive.setSizeBox(width: 2),
                 Text(
                   userAddressCubit.phone!,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: isChosseAddress
-                          ? ColorManger.brun
-                          : ColorManger.brunLight,
-                      fontSize: 10.sp),
+                  style: isChosseAddress
+                      ? Theme.of(context).textTheme.titleLarge!.copyWith(
+                            fontSize: responsive.setTextSize(3),
+                          )
+                      : Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontSize: responsive.setTextSize(3),
+                          ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 8.h,
-            ),
+            responsive.setSizeBox(height: 1),
             Row(
               children: [
                 Icon(
@@ -229,24 +212,24 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   color: isChosseAddress
                       ? ColorManger.brun
                       : ColorManger.brunLight,
-                  size: 15.sp,
+                  size: responsive.setIconSize(3),
                 ),
-                SizedBox(
-                  width: 8.w,
-                ),
+                responsive.setSizeBox(width: 2),
                 ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 250.w),
+                  constraints:
+                      BoxConstraints(maxWidth: responsive.setWidth(70)),
                   child: Text(
                     maxLines: 1,
                     textAlign: TextAlign.start,
                     overflow: TextOverflow.ellipsis,
                     userAddressCubit.region!,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: isChosseAddress
-                            ? ColorManger.brun
-                            : ColorManger.brunLight,
-                        fontSize: 10.sp),
+                    style: isChosseAddress
+                        ? Theme.of(context).textTheme.titleLarge!.copyWith(
+                              fontSize: responsive.setTextSize(3),
+                            )
+                        : Theme.of(context).textTheme.titleMedium!.copyWith(
+                              fontSize: responsive.setTextSize(3),
+                            ),
                   ),
                 ),
               ],
@@ -257,7 +240,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
     );
   }
 
-  BlocBuilder _mapWidget(BuildContext context) {
+  BlocBuilder _mapWidget(BuildContext context, ResponsiveUtils responsive) {
     return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
         final mapCuibt = context.read<MapCubit>();
@@ -265,9 +248,10 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
         return Stack(
           children: [
             ClipRRect(
-                borderRadius: BorderRadius.circular(5.r),
+                borderRadius:
+                    BorderRadius.circular(responsive.setBorderRadius(1.4)),
                 child: SizedBox(
-                  height: 140.h,
+                  height: responsive.setHeight(16),
                   width: double.infinity,
                   child: CustomGoogleMapMarkerBuilder(
                     customMarkers: mapCuibt.markers,
@@ -284,28 +268,25 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   ),
                 )),
             Positioned(
-              bottom: 8.w,
-              right: 100.w,
+              bottom: responsive.setHeight(1),
+              right: responsive.setWidth(28),
               child: Container(
-                height: 40.h,
-                width: 120.w,
+                height: responsive.setHeight(4),
+                width: responsive.setWidth(30),
                 decoration: BoxDecoration(
                     color: ColorManger.white,
-                    borderRadius: BorderRadius.circular(8.r)),
+                    borderRadius:
+                        BorderRadius.circular(responsive.setBorderRadius(1.4))),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(IconlyBold.location, color: ColorManger.brunLight),
-                    SizedBox(
-                      width: 8.w,
-                    ),
-                    Text(
-                      'You\'re Here',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brunLight,
-                          fontSize: 14.sp),
-                    ),
+                    responsive.setSizeBox(width: 1.2),
+                    Text(AppStrings.youreHere,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(fontSize: responsive.setTextSize(3.5))),
                   ],
                 ),
               ),
@@ -316,30 +297,27 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
     );
   }
 
-  Container _changingAddressText(BuildContext context) {
+  Container _changingAddressText(
+      BuildContext context, ResponsiveUtils responsive) {
     return Container(
-      height: 30.h,
+      height: responsive.setHeight(3),
       decoration: BoxDecoration(
           color: ColorManger.backgroundItem,
           borderRadius: BorderRadius.circular(5.r)),
       child: Row(
         children: [
-          SizedBox(
-            width: 20.w,
-          ),
+          responsive.setSizeBox(width: 4),
           Icon(
             IconlyBroken.buy,
             color: ColorManger.brunLight,
           ),
-          SizedBox(
-            width: 10.w,
-          ),
+          responsive.setSizeBox(width: 3),
           Text(
-            'Changing the address might affect your cart',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brunLight,
-                fontSize: 13.sp),
+            AppStrings.changingTheAddressMightAffectYourCart,
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium!
+                .copyWith(fontSize: responsive.setTextSize(3.5)),
           ),
         ],
       ),
@@ -347,10 +325,13 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
   }
 
   void _chaneProfileDataaBottomSheet(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     showCupertinoModalBottomSheet(
       useRootNavigator: true,
       barrierColor: Colors.black54,
-      elevation: 20.r,
+      elevation: responsive.setBorderRadius(2),
       context: context,
       builder: (context) => MultiBlocProvider(
         providers: [
@@ -370,8 +351,8 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
               context.read<UserAddressCubit>().addressDataList;
 
           return Padding(
-            padding: EdgeInsets.only(
-                right: 18.w, left: 18.w, top: 35.h, bottom: 30.h),
+            padding:
+                responsive.setPadding(top: 4, left: 5, right: 5, bottom: 2),
             child: Material(
               color: ColorManger.white,
               child: Column(
@@ -380,46 +361,34 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   Row(
                     children: [
                       Container(
-                        height: 50.h,
-                        width: 2.w,
+                        height: responsive.setHeight(8),
+                        width: responsive.setWidth(1),
                         color: ColorManger.brunLight,
                       ),
-                      SizedBox(
-                        width: 20.w,
-                      ),
+                      responsive.setSizeBox(width: 2),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Choose Address',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.brun,
-                                    fontSize: 16.sp),
-                          ),
-                          SizedBox(
-                            height: 5.h,
-                          ),
-                          Text(
-                            'You can edit your address from your settings',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.brunLight,
-                                    fontSize: 12.sp),
-                          ),
+                          Text(AppStrings.chooseAddress,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(
+                                    fontSize: responsive.setTextSize(4),
+                                  )),
+                          responsive.setSizeBox(height: 0.5),
+                          Text(AppStrings.youCanEditYourAddressFromYourSettings,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    fontSize: responsive.setTextSize(3),
+                                  )),
                         ],
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 25.h,
-                  ),
+                  responsive.setSizeBox(height: 3),
                   Expanded(
                     child: BlocBuilder<PaymentCubit, PaymentState>(
                       builder: (context, state) {
@@ -435,7 +404,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                                     index;
 
                             return Padding(
-                              padding: EdgeInsets.only(bottom: 10.h),
+                              padding: responsive.setPadding(bottom: 1),
                               child: GestureDetector(
                                 onTap: () {
                                   context
@@ -460,14 +429,16 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                       Navigator.of(context, rootNavigator: !false)
                           .popAndPushNamed(Routes.shippingAddress);
                     },
-                    radius: 8.r,
-                    widget: Text('Save Changes',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.white,
-                            fontSize: 13.sp)),
+                    widget: Text(
+                      AppStrings.saveChanges,
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: responsive
+                                    .setTextSize(3.8), // Dynamic text size
+                              ),
+                    ),
                   ),
-                  SizedBox(height: 10.h),
+                  responsive.setSizeBox(height: 1),
                   CustomButton(
                     onPressed: () async {
                       context.read<UserAddressCubit>().isPaymentAddress = true;
@@ -476,13 +447,15 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           .popAndPushNamed(Routes.map);
                     },
                     color: ColorManger.brownLight,
-                    radius: 8.r,
-                    widget: Text('Add New',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brun,
-                            fontSize: 15.sp)),
+                    widget: Text(
+                      AppStrings.addNew,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            fontSize: responsive
+                                .setTextSize(3.8), // Dynamic text size
+                          ),
+                    ),
                   ),
+                  responsive.setSizeBox(height: 2),
                 ],
               ),
             ),

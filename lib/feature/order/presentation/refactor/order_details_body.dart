@@ -6,6 +6,8 @@ class OrderDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return BlocConsumer<PaymentCubit, PaymentState>(
       listener: (context, state) {
         state.whenOrNull(
@@ -16,7 +18,7 @@ class OrderDetailsBody extends StatelessWidget {
           createCashOrderSuccess: (createOrderResponse) {
             if (order != null) {
               ShowToast.showToastSuccessTop(
-                  message: 'success to cancel order', context: context);
+                  message: AppStrings.successToCancelOrder, context: context);
               context.pop();
               WidgetsBinding.instance.addPostFrameCallback((_) async {
                 await Future.wait([
@@ -33,7 +35,7 @@ class OrderDetailsBody extends StatelessWidget {
             context.read<PaymentCubit>().createOrderResponseData;
 
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          padding: responsive.setPadding(top: 2, bottom: 5, left: 5, right: 5),
           child: Stack(
             children: [
               CustomScrollView(
@@ -41,41 +43,35 @@ class OrderDetailsBody extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: Column(
                       children: [
-                        _orderIdContainer(context, createOrderResponse, order),
-                        SizedBox(
-                          height: 10.h,
-                        ),
+                        _orderIdContainer(
+                            context, createOrderResponse, order, responsive),
+                        responsive.setSizeBox(height: 1),
                         _orderStautsStepper(
-                            context, createOrderResponse, order),
-                        SizedBox(
-                          height: 10.h,
-                        ),
+                            context, createOrderResponse, order, responsive),
+                        responsive.setSizeBox(height: 1),
                         _orderShippingInformation(
                             context, createOrderResponse, order),
-                        SizedBox(
-                          height: 10.h,
-                        ),
+                        responsive.setSizeBox(height: 1),
                       ],
                     ),
                   ),
-                  _productItemSliverList(createOrderResponse, order),
+                  _productItemSliverList(
+                      createOrderResponse, order, responsive),
                 ],
               ),
               if (state is CreateCashOrderLoading)
                 Center(
                   child: Container(
-                      height: 70.h,
-                      width: 70.w,
+                      height: responsive.setHeight(10),
+                      width: responsive.setWidth(22),
                       decoration: BoxDecoration(
                           color: ColorManger.brun,
-                          borderRadius: BorderRadius.circular(12.r)),
+                          borderRadius: BorderRadius.circular(
+                              responsive.setBorderRadius(2))),
                       child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(20.r),
-                          child: CircularProgressIndicator(
-                            color: ColorManger.white,
-                            strokeWidth: 3.sp,
-                          ),
+                        child: CircularProgressIndicator(
+                          color: ColorManger.white,
+                          strokeWidth: 3,
                         ),
                       )),
                 ),
@@ -88,51 +84,50 @@ class OrderDetailsBody extends StatelessWidget {
 
   SliverList _productItemSliverList(
       CreateOrderResponseData? createOrderResponse,
-      GetOrdersResponseData? order) {
+      GetOrdersResponseData? order,
+      ResponsiveUtils responsive) {
     final cartItems = order?.cartItems ?? createOrderResponse?.cartItems;
 
     return SliverList(
         delegate: SliverChildBuilderDelegate(childCount: cartItems!.length,
             (context, index) {
       return Padding(
-          padding: EdgeInsets.only(bottom: 15.h),
+          padding: responsive.setPadding(bottom: 5),
           child: Slidable(
             child: Container(
               width: double.infinity,
-              height: 80.h,
+              height: responsive.setHeight(10),
               decoration: BoxDecoration(
                 color: ColorManger.backgroundItem,
-                borderRadius: BorderRadius.circular(14.r),
+                borderRadius:
+                    BorderRadius.circular(responsive.setBorderRadius(3)),
               ),
               child: Row(
                 children: [
-                  SizedBox(
-                    width: 10.w,
-                  ),
+                  responsive.setSizeBox(width: 3),
                   Container(
                     decoration: BoxDecoration(
                       color: ColorManger.brownLight,
-                      borderRadius: BorderRadius.circular(14.r),
+                      borderRadius:
+                          BorderRadius.circular(responsive.setBorderRadius(3)),
                     ),
                     child: CachedNetworkImage(
                       imageUrl: order?.cartItems?[index].product?.image ??
                           createOrderResponse
                               ?.cartItems?[index].product?.image ??
                           '',
-                      height: 60.h,
+                      height: responsive.setHeight(8),
                       placeholder: (context, url) => Image.asset(
                         ImageAsset.picture,
-                        height: 60.h,
+                        height: responsive.setHeight(8),
                       ),
                       errorWidget: (context, url, error) =>
                           const Icon(Icons.error),
                     ),
                   ),
-                  SizedBox(
-                    width: 15.w,
-                  ),
+                  responsive.setSizeBox(width: 2),
                   _namePriceAndRatingColumn(
-                      order, index, createOrderResponse, context),
+                      order, index, createOrderResponse, context, responsive),
                   const Spacer(),
                 ],
               ),
@@ -141,33 +136,33 @@ class OrderDetailsBody extends StatelessWidget {
     }));
   }
 
-  Column _namePriceAndRatingColumn(GetOrdersResponseData? order, int index,
-      CreateOrderResponseData? createOrderResponse, BuildContext context) {
+  Column _namePriceAndRatingColumn(
+      GetOrdersResponseData? order,
+      int index,
+      CreateOrderResponseData? createOrderResponse,
+      BuildContext context,
+      ResponsiveUtils responsive) {
     dynamic response = order ?? createOrderResponse;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          response!.cartItems![index].product!.title,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 12.sp),
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
+        Text(response!.cartItems![index].product!.title,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(3))),
+        responsive.setSizeBox(height: 1),
         IgnorePointer(
           ignoring: true,
           child: RatingBar(
               initialRating: response.cartItems![index].product!.ratingsAverage,
               direction: Axis.horizontal,
-              itemSize: 11.sp,
+              itemSize: responsive.setIconSize(4),
               itemCount: 5,
               allowHalfRating: true,
-              itemPadding: EdgeInsets.symmetric(horizontal: 2.w),
+              itemPadding: responsive.setPadding(left: 0.2, right: 0.2),
               onRatingUpdate: (rating) {},
               ratingWidget: RatingWidget(
                   full: Icon(
@@ -183,16 +178,13 @@ class OrderDetailsBody extends StatelessWidget {
                     color: ColorManger.brunLight,
                   ))),
         ),
-        SizedBox(
-          height: 5.h,
-        ),
+        responsive.setSizeBox(height: 1),
         Text(
-          'Total Price:     ${response.cartItems![index].totalItemPrice}.00  \$',
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 11.sp),
-        ),
+            '${AppStrings.totalPrice}     ${response.cartItems![index].totalItemPrice}.00  \$',
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(3))),
       ],
     );
   }
@@ -225,11 +217,11 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 5.w,
                 ),
-                Text("${response.totalOrderPrice ?? ''}  EGP",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
-                        fontSize: 12.sp)),
+                Text("${response.totalOrderPrice ?? ''}  ${AppStrings.egy}",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 12.sp)),
                 SizedBox(
                   width: 30.w,
                 ),
@@ -248,10 +240,10 @@ class OrderDetailsBody extends StatelessWidget {
                   width: 20.w,
                 ),
                 Text("${response.paymentMethodType ?? ""}",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
-                        fontSize: 12.sp)),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 12.sp)),
                 const Spacer(),
               ],
             ),
@@ -280,11 +272,8 @@ class OrderDetailsBody extends StatelessWidget {
                             overflow: TextOverflow.visible,
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.brun,
-                                    fontSize: 12.sp)),
+                                .titleLarge!
+                                .copyWith(fontSize: 12.sp)),
                       ),
                     ],
                   )
@@ -303,17 +292,17 @@ class OrderDetailsBody extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("shipping Price",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
-                        fontSize: 12.sp)),
+                Text(AppStrings.shippingPrice,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.shippingPrice ?? ''}  EGP",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 12.sp)),
+                Text("${response.shippingPrice ?? ''}  ${AppStrings.egy}",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 12.sp)),
               ],
             ),
             SizedBox(
@@ -322,17 +311,17 @@ class OrderDetailsBody extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("tax Price",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
-                        fontSize: 12.sp)),
+                Text(AppStrings.taxPrice,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.taxPrice ?? ""}  EGP",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brunLight,
-                        fontSize: 12.sp)),
+                Text("${response.taxPrice ?? ""}  ${AppStrings.egy}",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 12.sp)),
               ],
             ),
           ],
@@ -398,8 +387,7 @@ class OrderDetailsBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: isCompleted
                               ? ColorManger.brun
                               : ColorManger.brunLight,
@@ -411,11 +399,8 @@ class OrderDetailsBody extends StatelessWidget {
                       ? Text(subTitle,
                           style: Theme.of(context)
                               .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.brunLight,
-                                  fontSize: 10.sp))
+                              .titleMedium!
+                              .copyWith(fontSize: 10.sp))
                       : const SizedBox(),
                 ],
               ),
@@ -429,7 +414,8 @@ class OrderDetailsBody extends StatelessWidget {
   Container _orderStautsStepper(
       BuildContext context,
       CreateOrderResponseData? createOrderResponse,
-      GetOrdersResponseData? order) {
+      GetOrdersResponseData? order,
+      ResponsiveUtils responsive) {
     dynamic response = order ?? createOrderResponse;
 
     int orderStatus = response!.status;
@@ -439,18 +425,18 @@ class OrderDetailsBody extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           color: ColorManger.backgroundItem,
-          borderRadius: BorderRadius.circular(20.r)),
+          borderRadius: BorderRadius.circular(responsive.setBorderRadius(3))),
       child: Padding(
         padding:
             EdgeInsets.only(top: 15.h, right: 20.w, left: 20.w, bottom: 20.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Order Status",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.brun,
-                    fontSize: 18.sp)),
+            Text(AppStrings.orderStatus,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontSize: 18.sp)),
             SizedBox(
               height: 15.h,
             ),
@@ -461,27 +447,27 @@ class OrderDetailsBody extends StatelessWidget {
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 0,
-                          title: "Order Placed",
+                          title: AppStrings.orderPlaced,
                           subTitle:
-                              'order has been placed at ${createAt.getFormattedDate()} .'),
+                              '${AppStrings.orderHasBeenPlacedAt} ${createAt.getFormattedDate()} .'),
                       _buildLine(orderStatus > 0),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 1,
-                          title: "Preparing",
-                          subTitle: 'Your order is being prepared.'),
+                          title: AppStrings.preparing,
+                          subTitle: AppStrings.yourOrderIsBeingPrepared),
                       _buildLine(orderStatus > 1),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 2,
-                          title: "On its way",
-                          subTitle: 'Your order is on its way.'),
+                          title: AppStrings.onItsWay,
+                          subTitle: AppStrings.yourOrderIsOnItsWay),
                       _buildLine(orderStatus > 2),
                       _buildStep(
                         context: context,
                         isCompleted: orderStatus >= 3,
-                        title: "Delivered",
-                        subTitle: 'Your order was delivered successfully.',
+                        title: AppStrings.delivered,
+                        subTitle: AppStrings.yourOrderWasDeliveredSuccessfully,
                       ),
                     ],
                   )
@@ -491,16 +477,16 @@ class OrderDetailsBody extends StatelessWidget {
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus == 4,
-                          title: "Order Placed",
+                          title: AppStrings.orderPlaced,
                           subTitle:
-                              'order has been placed at ${createAt.getFormattedDate()}'),
+                              '${AppStrings.orderHasBeenPlacedAt} ${createAt.getFormattedDate()}'),
                       _buildLine(orderStatus == 4),
                       _buildStep(
                           isCancelled: true,
                           context: context,
                           isCompleted: orderStatus == 4,
-                          title: "Cancelled",
-                          subTitle: 'Your order was cancelled.',
+                          title: AppStrings.cancelled,
+                          subTitle: AppStrings.yourOrderWasCancelled,
                           imagePath: ImageAsset.orderCancel),
                     ],
                   )
@@ -513,48 +499,45 @@ class OrderDetailsBody extends StatelessWidget {
   Container _orderIdContainer(
       BuildContext context,
       CreateOrderResponseData? createOrderResponse,
-      GetOrdersResponseData? order) {
+      GetOrdersResponseData? order,
+      ResponsiveUtils responsive) {
     dynamic response = order ?? createOrderResponse;
 
     int orderStatus = response!.status!;
     return Container(
-      height: 60.h,
+      height: responsive.setHeight(8),
       decoration: BoxDecoration(
           color: ColorManger.brownLight,
-          borderRadius: BorderRadius.circular(12.r)),
+          borderRadius: BorderRadius.circular(responsive.setBorderRadius(3))),
       child: Row(
         children: [
-          SizedBox(
-            width: 20.w,
-          ),
+          responsive.setSizeBox(width: 4),
           Image.asset(
             orderStatus == 4
                 ? ImageAsset.orderCancel
                 : orderStatus == 3
                     ? ImageAsset.orderDelivered
                     : ImageAsset.shoppingBag,
-            height: orderStatus == 3 ? 30.h : 35.h,
+            height: orderStatus == 3
+                ? responsive.setHeight(5)
+                : responsive.setHeight(5),
           ),
-          SizedBox(
-            width: 15.w,
-          ),
+          responsive.setSizeBox(width: 4),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Order ID",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 13.sp)),
-              SizedBox(
-                height: 5.h,
-              ),
+              Text(AppStrings.orderID,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(3.5))),
+              responsive.setSizeBox(height: 0.5),
               Text("# ${response!.sId ?? ''}",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
-                      fontSize: 12.sp)),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: responsive.setTextSize(3.5))),
             ],
           ),
         ],

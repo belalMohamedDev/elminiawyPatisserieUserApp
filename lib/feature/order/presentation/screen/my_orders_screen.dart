@@ -9,10 +9,9 @@ class MyOrdersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("My Orders",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
+        title: Text(AppStrings.myOrders,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+           
                 fontSize: 16.sp)),
       ),
       body: const MyOrdersBody(),

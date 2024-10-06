@@ -1,4 +1,3 @@
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class EmptyCartScreen extends StatelessWidget {
@@ -6,8 +5,10 @@ class EmptyCartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize ResponsiveUtils for responsive layout adjustments, such as size, padding, and spacing.
+    final responsive = ResponsiveUtils(context);
+
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(25),
@@ -15,7 +16,7 @@ class EmptyCartScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: responsive.screenWidth * 0.8,
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: SvgPicture.asset(
@@ -24,20 +25,13 @@ class EmptyCartScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20.h,
-              ),
-              ErrorInfo(
-                title: "Empty Cart!",
+              responsive.setSizeBox(height: 2),
+              const ErrorInfo(
+                title: AppStrings.emptyCart,
                 description:
-                    "It seems like you haven't added anything to your cart yet. Let's find some great items to fill it up!",
-                // button: you can pass your custom button,
-                //  btnText: "Discover Products",
-                press: () {},
+                    AppStrings.itSeemsLikeYouHaventAddedAnythingToYourCart,
               ),
-              SizedBox(
-                height: 100.h,
-              ),
+              responsive.setSizeBox(height: 10),
             ],
           ),
         ),
@@ -45,4 +39,3 @@ class EmptyCartScreen extends StatelessWidget {
     );
   }
 }
-

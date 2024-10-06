@@ -1,6 +1,3 @@
-
-
-
 import '../../../../core/common/shared/shared_imports.dart';
 
 class ShippingAddress extends StatefulWidget {
@@ -28,7 +25,6 @@ class _ShippingAddressState extends State<ShippingAddress> {
             .coordinates!
             .first);
 
-
     mapCubit.addCurrentLocationMarkerToMap(latLng);
 
     super.initState();
@@ -36,14 +32,19 @@ class _ShippingAddressState extends State<ShippingAddress> {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("CheckOut",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 16.sp)),
+        title: Text(
+          AppStrings.checkOut,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(4)),
+        ),
       ),
       body: const ShippingAddressBody(),
     );

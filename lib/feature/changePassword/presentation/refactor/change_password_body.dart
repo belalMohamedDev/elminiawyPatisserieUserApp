@@ -35,12 +35,12 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isPasswordValid(value)) {
-                  return 'Please enter a valid password';
+                  return AppStrings.pleaseEnterValidPassword;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: 'Current User Password',
+                hintText: AppStrings.currentPassword,
                 suffixIcon: IconButton(
                   icon: Icon(
                     context
@@ -72,7 +72,10 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 prefixIcon: Icon(IconlyBroken.lock,
                     size: 18.sp, color: ColorManger.brunLight),
                 fillColor: ColorManger.backgroundItem,
-                hintStyle: TextStyle(color: ColorManger.brunLight),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: 12.sp),
               ),
             ),
             SizedBox(
@@ -91,12 +94,12 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isPasswordValid(value)) {
-                  return 'Please enter a valid password';
+                  return AppStrings.pleaseEnterValidPassword;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: 'New User Password',
+                hintText: AppStrings.newPassword,
                 suffixIcon: IconButton(
                   icon: Icon(
                     context.watch<ChangeMyPasswordCubit>().isPasswordVisible
@@ -126,7 +129,10 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 prefixIcon: Icon(IconlyBroken.lock,
                     size: 18.sp, color: ColorManger.brunLight),
                 fillColor: ColorManger.backgroundItem,
-                hintStyle: TextStyle(color: ColorManger.brunLight),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: 12.sp),
               ),
             ),
             SizedBox(
@@ -144,19 +150,19 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isPasswordValid(value)) {
-                  return 'Please enter a valid password';
+                  return AppStrings.pleaseEnterValidPassword;
                 } else if (value.trim() !=
                     context
                         .read<ChangeMyPasswordCubit>()
                         .passwordController
                         .text
                         .trim()) {
-                  return 'new password And Confirm Password Not Matching';
+                  return AppStrings.newPasswordAndConfirmPasswordNotMatching;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: 'Confirm New User Password',
+                hintText: AppStrings.confirmNewUserPassword,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -188,7 +194,10 @@ class ChangeUserPasswordBody extends StatelessWidget {
                   },
                 ),
                 fillColor: ColorManger.backgroundItem,
-                hintStyle: TextStyle(color: ColorManger.brunLight),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: 12.sp),
               ),
             ),
             SizedBox(
@@ -218,7 +227,6 @@ class ChangeUserPasswordBody extends StatelessWidget {
               context.read<ChangeMyPasswordCubit>().submitPasswordChange();
             }
           },
-          radius: 8.r,
           widget: state.maybeWhen(
             changeMyPasswordLoading: () => Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -238,19 +246,17 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 ),
                 Text(
                   AppStrings.loading,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 16.sp,
-                      color: ColorManger.white,
-                      fontWeight: FontWeightManger.semiBold),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        fontSize: 16.sp,
+                      ),
                 ),
               ],
             ),
             orElse: () => Text(
-              "Submit",
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 16.sp,
-                  color: ColorManger.white,
-                  fontWeight: FontWeightManger.semiBold),
+              AppStrings.submit,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontSize: 16.sp,
+                  ),
             ),
           ),
         );
@@ -277,17 +283,16 @@ class ChangeUserPasswordBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Password must be at least 8 Characters and should include:",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
+                AppStrings.passwordMustBeAtLeast8CharactersAndShouldInclude,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color:
                         context.read<ChangeMyPasswordCubit>().lengthTextColor,
                     fontSize: 12.sp),
               ),
               SizedBox(height: 15.h),
               Text(
-                ". 1 upperCase letter (A-Z)",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                AppStrings.upperCaseLetter,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     fontFamily: FontConsistent.fontFamilyAcme,
                     color: context
                         .read<ChangeMyPasswordCubit>()
@@ -296,9 +301,8 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                ". 1 lowerCase letter (a-z)",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
+                AppStrings.lowerCaseLetter,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: context
                         .read<ChangeMyPasswordCubit>()
                         .lowerCaseTextColor,
@@ -306,18 +310,16 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                ". 1 number (0-9)",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
+                AppStrings.number,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color:
                         context.read<ChangeMyPasswordCubit>().numberTextColor,
                     fontSize: 12.sp),
               ),
               SizedBox(height: 15.h),
               Text(
-                ". 1 special character (-@#\\\$%^&*_-+=,.?/)",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
+                AppStrings.specialCharacter,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: context
                         .read<ChangeMyPasswordCubit>()
                         .specialCharTextColor,

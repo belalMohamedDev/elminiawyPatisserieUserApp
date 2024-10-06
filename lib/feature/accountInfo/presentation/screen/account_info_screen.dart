@@ -22,10 +22,9 @@ class _AccountInfomationState extends State<AccountInfomation> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Text("       My Account Information",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
+        title: Text(AppStrings.myAccountInformation,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+          
                 fontSize: 16.sp)),
         leading: IconButton(
           icon: const Icon(IconlyBroken.arrowLeft),
@@ -41,9 +40,9 @@ class _AccountInfomationState extends State<AccountInfomation> {
             },
             child: Padding(
               padding: EdgeInsets.only(right: 18.w),
-              child: Text("Edit",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
+              child: Text(AppStrings.edit,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+          
                       color: ColorManger.primary,
                       fontSize: 15.sp)),
             ),

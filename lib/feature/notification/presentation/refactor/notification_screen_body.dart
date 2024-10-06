@@ -164,14 +164,13 @@ class UserNotificationBody extends StatelessWidget {
   /// Displays a shimmer effect for loading states or an error placeholder.
   Padding _userNotificationErrorAndLoadingState(ResponsiveUtils responsive) {
     return Padding(
-      padding: responsive.setPadding(left: 4, right: 4, top: 2),
+      padding: responsive.setPadding(left: 6, right: 9, top: 2),
       child: ListView.builder(
-        itemCount: 11, // Arbitrary count for loading placeholders
+        itemCount: 12, // Arbitrary count for loading placeholders
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(
-              right: responsive.setWidth(30),
               bottom: responsive.setHeight(1.5),
             ),
             child: Row(

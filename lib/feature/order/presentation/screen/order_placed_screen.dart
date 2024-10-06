@@ -16,48 +16,41 @@ class OrderPlacedBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments
+    final responsive = ResponsiveUtils(context);
+
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: responsive.setPadding(left: 5, right: 5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset(JsonAsset.congrat),
-          SizedBox(
-            height: 20.h,
-          ),
-          Text("Order Placed",
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.brun,
-                  fontSize: 24.sp)),
-          SizedBox(
-            height: 20.h,
-          ),
+          responsive.setSizeBox(height: 3),
+          Text(AppStrings.orderPlaced,
+              style: Theme.of(context).textTheme.titleLarge),
+          responsive.setSizeBox(height: 2),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            padding: responsive.setPadding(left: 3, right: 2),
             child: Text(
-                "Thank You for Purchasing from Elminiawy You can track Your order no  #${context.read<PaymentCubit>().createOrderResponseData!.sId}",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.brunLight,
-                    fontSize: 14.sp)),
+                "${AppStrings.thankYouForPurchasingFromElminiawy}${context.read<PaymentCubit>().createOrderResponseData!.sId}",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontSize: responsive.setTextSize(4))),
           ),
-          SizedBox(
-            height: 30.h,
-          ),
+          responsive.setSizeBox(height: 3),
           CustomButton(
               onPressed: () {
                 context.pushReplacementNamed(Routes.bottomNavBarRoute);
               },
-              radius: 8.r,
-              widget: Text('Back to Home',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.white,
-                      fontSize: 14.sp))),
-          SizedBox(
-            height: 15.h,
-          ),
+              widget: Text(
+                AppStrings.backToHome,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontSize:
+                          responsive.setTextSize(3.8), // Responsive text size
+                    ),
+              )),
+          responsive.setSizeBox(height: 2),
           CustomButton(
             color: ColorManger.brunLight,
             onPressed: () {
@@ -67,12 +60,13 @@ class OrderPlacedBody extends StatelessWidget {
                 (route) => false,
               );
             },
-            radius: 8.r,
-            widget: Text('Track Order',
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.white,
-                    fontSize: 14.sp)),
+            widget: Text(
+              AppStrings.trackOrder,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontSize:
+                        responsive.setTextSize(3.8), // Responsive text size
+                  ),
+            ),
           ),
         ],
       ),

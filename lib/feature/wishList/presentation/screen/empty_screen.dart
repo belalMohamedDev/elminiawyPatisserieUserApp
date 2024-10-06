@@ -28,9 +28,9 @@ class EmptyWishListScreen extends StatelessWidget {
                 height: 20.h,
               ),
               ErrorInfo(
-                title: "Empty WishList!",
+                title: AppStrings.emptyWishList,
                 description:
-                    "It seems like you haven't added anything to your wishlist yet. Start exploring and add your favorite items now!",
+                    AppStrings.itSeemsLikeYouHavenAddedAnythingToYourWishlistYet,
                 press: () {},
               ),
               SizedBox(

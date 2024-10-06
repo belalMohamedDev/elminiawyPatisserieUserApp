@@ -117,8 +117,8 @@ class RouteGenerator {
               BlocProvider(
                 create: (context) => instance<CategoryCubit>(),
               ),
-              BlocProvider(
-                create: (context) => instance<MapCubit>(),
+              BlocProvider.value(
+                value: instance<MapCubit>(),
               ),
               BlocProvider.value(
                 value: instance<CartCubit>(),
@@ -183,7 +183,21 @@ class RouteGenerator {
                 ));
 
       case Routes.wishList:
-        return MaterialPageRoute(builder: (_) => const WishListView());
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: instance<CartCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<ProductCubit>(),
+                    ),
+                    BlocProvider.value(
+                      value: instance<WishListCubit>(),
+                    ),
+                  ],
+                  child: const WishListView(),
+                ));
 
       case Routes.cart:
         return MaterialPageRoute(

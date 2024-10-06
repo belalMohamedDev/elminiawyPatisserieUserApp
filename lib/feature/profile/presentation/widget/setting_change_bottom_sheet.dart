@@ -22,7 +22,7 @@ Future<dynamic> settingChangeBottomSheet(BuildContext context) {
                               FirebaseCloudMessaging().isNotificationSubscribe,
                           builder: (_, value, __) {
                             return CustomProfileCard(
-                              title: "Notification",
+                              title: AppStrings.notification,
                               actionWidget: Transform.scale(
                                 scale: 0.75,
                                 child: CupertinoSwitch(
@@ -43,13 +43,13 @@ Future<dynamic> settingChangeBottomSheet(BuildContext context) {
                             );
                           }),
                       CustomProfileCard(
-                        title: "Language",
-                        subTitle: 'English',
+                        title: AppStrings.language,
+                        subTitle: AppStrings.english,
                         leadingIcon: Icons.language,
                         tap: () {},
                       ),
                       CustomProfileCard(
-                        title: "Dark Mode",
+                        title: AppStrings.darkMode,
                         leadingIcon: Icons.light_mode,
                         tap: () {},
                         actionWidget: Transform.scale(

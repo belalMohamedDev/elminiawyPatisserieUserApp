@@ -40,15 +40,13 @@ class CustomProfileCard extends StatelessWidget {
                   width: 20.w,
                 ),
                 Text(title,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                   
                         fontSize: 12.sp)),
                 const Spacer(),
                 Text(subTitle ?? '',
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                 
                         fontSize: 13.sp)),
                 SizedBox(
                   width: 7.w,

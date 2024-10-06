@@ -73,11 +73,11 @@ class PickLocationButton extends StatelessWidget {
         },
         widget: mapState is CheckAddressAvailableLoading
             ? SizedBox(
-                height: responsive.setHeight(2),
-                width: responsive.setWidth(4),
+                height: responsive.setHeight(3),
+                width: responsive.setWidth(6),
                 child: CircularProgressIndicator(
                   color: ColorManger.white, // Indicator color
-                  strokeWidth: 2.0, // Line thickness of the indicator
+                  strokeWidth: 2.5, // Line thickness of the indicator
                   strokeAlign: 0.01, // Alignment of the stroke (indicator line)
                 ),
               )

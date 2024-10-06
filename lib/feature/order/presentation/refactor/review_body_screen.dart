@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ReviewPaymentBody extends StatelessWidget {
@@ -6,128 +5,129 @@ class ReviewPaymentBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return Padding(
-      padding: EdgeInsets.only(top: 15.h, right: 25.w, left: 25.w),
+      padding: responsive.setPadding(top: 5, right: 5, left: 5),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CheckOutProcessing(screenIndex: 3),
-            SizedBox(
-              height: 25.h,
+            responsive.setSizeBox(
+              height: 3,
             ),
-            _shippingAddresssContainer(context),
-            SizedBox(
-              height: 10.h,
+            _shippingAddresssContainer(context, responsive),
+            responsive.setSizeBox(
+              height: 1,
             ),
-            _paymentMethodContainer(context),
-            SizedBox(
-              height: 15.h,
+            _paymentMethodContainer(context, responsive),
+            responsive.setSizeBox(
+              height: 2,
             ),
-            _addNotes(context)
+            _addNotes(context, responsive)
           ],
         ),
       ),
     );
   }
 
-  Column _addNotes(BuildContext context) {
+  Column _addNotes(BuildContext context, ResponsiveUtils responsive) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Add Notes',
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 15.sp),
+          AppStrings.addNotes,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(4)),
         ),
-        SizedBox(
-          height: 5.h,
-        ),
+        responsive.setSizeBox(height: 1),
         TextFormField(
           controller: context.read<PaymentCubit>().notesController,
           keyboardType: TextInputType.text,
           minLines: 3,
           maxLines: 10,
           decoration: InputDecoration(
-              hintText: 'Type any note related to this order',
-              hintStyle: TextStyle(color: ColorManger.brunLight),
+              hintText: AppStrings.typeAnyNoteRelatedToThisOrder,
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(fontSize: responsive.setTextSize(4)),
               fillColor: ColorManger.backgroundItem,
               enabledBorder: OutlineInputBorder(
                 borderSide:
                     BorderSide(color: ColorManger.brownLight, width: 0.5),
-                borderRadius: BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                borderRadius: BorderRadius.all(Radius.elliptical(
+                    responsive.setBorderRadius(2),
+                    responsive.setBorderRadius(2))),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: ColorManger.backgroundItem,
                 ),
-                borderRadius: BorderRadius.all(Radius.elliptical(10.r, 10.r)),
+                borderRadius: BorderRadius.all(Radius.elliptical(
+                    responsive.setBorderRadius(2),
+                    responsive.setBorderRadius(2))),
               )),
         ),
       ],
     );
   }
 
-  Container _paymentMethodContainer(BuildContext context) {
+  Container _paymentMethodContainer(
+      BuildContext context, ResponsiveUtils responsive) {
     final paymentCubit = context.read<PaymentCubit>();
 
     return Container(
-      height: 90.h,
+      height: responsive.setHeight(12),
       width: double.infinity,
       decoration: BoxDecoration(
         color: ColorManger.backgroundItem,
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
         border: Border.all(
           color: ColorManger.brownLight,
-          width: 0.5.w,
+          width: responsive.setWidth(0.2),
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.only(top: 15.h, left: 10.w, right: 15.w),
+        padding: responsive.setPadding(top: 2, left: 5, right: 5),
+        // EdgeInsets.only(top: 15.h, left: 10.w, right: 15.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Text(
-                  'Payment',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 16.sp),
-                ),
+                Text(AppStrings.payment,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4))),
                 const Spacer(),
                 InkWell(
                   onTap: () {
                     context.pop();
                   },
-                  child: Text(
-                    'Edit',
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        color: ColorManger.brun,
-                        fontSize: 15.sp),
-                  ),
+                  child: Text(AppStrings.edit,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(fontSize: responsive.setTextSize(4))),
                 ),
               ],
             ),
-            SizedBox(
-              height: 15.h,
-            ),
+            responsive.setSizeBox(height: 2),
             Row(
               children: [
                 Icon(Icons.credit_card, color: ColorManger.brun),
-                SizedBox(
-                  width: 8.w,
-                ),
+                responsive.setSizeBox(width: 2),
                 Text(
                   paymentCubit.choosePaymentMethod,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
-                      fontSize: 13.sp),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
               ],
             ),
@@ -137,36 +137,35 @@ class ReviewPaymentBody extends StatelessWidget {
     );
   }
 
-  Container _shippingAddresssContainer(BuildContext context) {
+  Container _shippingAddresssContainer(
+      BuildContext context, ResponsiveUtils responsive) {
     final addressData = context
         .read<UserAddressCubit>()
         .addressDataList[context.read<PaymentCubit>().selectedIndex];
 
     return Container(
-      height: 90.h,
+      height: responsive.setHeight(12),
       width: double.infinity,
       decoration: BoxDecoration(
         color: ColorManger.backgroundItem,
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
         border: Border.all(
           color: ColorManger.brownLight,
-          width: 0.5.w,
+          width: responsive.setWidth(0.2),
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.only(top: 15.h, left: 10.w, right: 15.w),
+        padding: responsive.setPadding(top: 2, left: 5, right: 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Text(
-                  'Shipping Address',
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brun,
-                      fontSize: 16.sp),
-                ),
+                Text(AppStrings.shippingAddress,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4))),
                 const Spacer(),
                 InkWell(
                     onTap: () {
@@ -175,40 +174,33 @@ class ReviewPaymentBody extends StatelessWidget {
                       context.pop();
                     },
                     child: Icon(IconlyBold.location, color: ColorManger.brun)),
-                SizedBox(
-                  width: 2.w,
-                ),
+                responsive.setSizeBox(width: 1),
                 InkWell(
                   onTap: () {
                     context.pop();
                     context.pop();
                   },
                   child: Text(
-                    'Change',
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        fontFamily: FontConsistent.fontFamilyAcme,
-                        decoration: TextDecoration.underline,
-                        color: ColorManger.brunLight,
-                        fontSize: 13.sp),
+                    AppStrings.change,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(fontSize: responsive.setTextSize(4)),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 10.h,
-            ),
+            responsive.setSizeBox(height: 2),
             Row(
               children: [
                 Icon(IconlyBold.location, color: ColorManger.brun),
-                SizedBox(
-                  width: 8.w,
-                ),
+                responsive.setSizeBox(width: 1),
                 Text(
                   addressData.buildingName!,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.brunLight,
-                      fontSize: 13.sp),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontSize: responsive.setTextSize(4)),
                 ),
               ],
             ),

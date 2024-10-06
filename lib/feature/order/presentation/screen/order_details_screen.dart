@@ -6,14 +6,16 @@ class OrderDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Order Details",
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 16.sp)),
+        title: Text(AppStrings.orderDetails,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4))),
         leading: IconButton(
           icon: const Icon(IconlyBroken.arrowLeft),
           onPressed: () {
@@ -32,14 +34,13 @@ class OrderDetails extends StatelessWidget {
                         cancelBottomSheet(
                             context, order, context.read<PaymentCubit>());
                       },
-                      child: Text("Cancel",
+                      child: Text(AppStrings.cancel,
                           style: Theme.of(context)
                               .textTheme
-                              .bodyLarge!
+                              .titleLarge!
                               .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
                                   color: ColorManger.redError,
-                                  fontSize: 16.sp)),
+                                  fontSize: responsive.setTextSize(4))),
                     )
                   : const SizedBox()
               : TextButton(
@@ -47,15 +48,12 @@ class OrderDetails extends StatelessWidget {
                     cancelBottomSheet(
                         context, order, context.read<PaymentCubit>());
                   },
-                  child: Text("Cancel",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
+                  child: Text(AppStrings.cancel,
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: ColorManger.redError,
-                          fontSize: 16.sp)),
+                          fontSize: responsive.setTextSize(4))),
                 ),
-          SizedBox(
-            width: 10.w,
-          )
+          responsive.setSizeBox(width: 3)
         ],
       ),
       body: OrderDetailsBody(order: order),
@@ -64,69 +62,52 @@ class OrderDetails extends StatelessWidget {
 
   void cancelBottomSheet(BuildContext context, GetOrdersResponseData? order,
       PaymentCubit paymentCubit) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
     showCupertinoModalBottomSheet(
         useRootNavigator: true,
-        barrierColor: Colors.black54,
-        elevation: 20.r,
+        barrierColor: ColorManger.black54,
+        elevation: responsive.setBorderRadius(2),
         context: context,
         builder: (context) => SizedBox(
-              height: 350.h,
+              height: responsive.setHeight(42),
               child: Padding(
-                padding: EdgeInsets.only(top: 50.h, left: 20.w, right: 20.w),
+                padding: responsive.setPadding(top: 5, left: 6, right: 6),
                 child: Column(
                   children: [
                     Image.asset(
                       ImageAsset.basket,
-                      height: 80.h,
+                      height: responsive.setHeight(8),
                     ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Text(
-                        'Are you sure you want to cancel\n your order? This can\'t be undone',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brunLight,
-                            fontSize: 16.sp)),
-                    SizedBox(
-                      height: 20.h,
-                    ),
+                    responsive.setSizeBox(height: 2),
+                    Text(AppStrings.areYouSureYouWantToCancel,
+                        style: Theme.of(context).textTheme.titleLarge),
+                    responsive.setSizeBox(height: 3),
                     CustomButton(
                       onPressed: () {
-                      
                         final orderId = order?.sId ??
                             paymentCubit.createOrderResponseData?.sId;
                         if (orderId != null) {
                           paymentCubit.ordercancelSummit(orderId);
                         }
                       },
-                      radius: 8.r,
-                      widget: Text('Yes, Cancel',
+                      widget: Text(AppStrings.yesCancel,
                           style: Theme.of(context)
                               .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.white,
-                                  fontSize: 14.sp)),
+                              .headlineSmall!
+                              .copyWith(fontSize: responsive.setTextSize(4))),
                     ),
-                    SizedBox(
-                      height: 15.h,
-                    ),
+                    responsive.setSizeBox(height: 1.5),
                     CustomButton(
                       onPressed: () {
                         context.pop();
                       },
-                      radius: 8.r,
                       color: ColorManger.brownLight,
-                      widget: Text('No, Keep it',
+                      widget: Text(AppStrings.noKeepIt,
                           style: Theme.of(context)
                               .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontFamily: FontConsistent.fontFamilyAcme,
-                                  color: ColorManger.brun,
-                                  fontSize: 14.sp)),
+                              .titleLarge!
+                              .copyWith(fontSize: responsive.setTextSize(4))),
                     )
                   ],
                 ),

@@ -28,10 +28,10 @@ class EmptyAddressScreen extends StatelessWidget {
                 height: 20.h,
               ),
               ErrorInfo(
-                title: "Empty Address!",
+                title: AppStrings.emptyAddress,
                 description:
-                    "It seems like you haven't added any addresses yet. Please add an address to proceed with your order!",
-                btnText: "Add Address",
+                  AppStrings.itSeemsLikeYouHavenAddedAnyAddressesYet  ,
+                btnText: AppStrings.addAddress,
                 press: () {
                   Navigator.of(context, rootNavigator: !false)
                       .pushNamed(Routes.map);

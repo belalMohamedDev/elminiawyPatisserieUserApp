@@ -1,15 +1,14 @@
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
-
 BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
+  // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+  final responsive = ResponsiveUtils(context);
   return BlocListener<LogOutCubit, LogOutState>(
     listener: (context, state) async {
       if (state is LogOutSuccess) {
         ShowToast.showToastSuccessTop(
             message: state.successMessage, context: context);
         await SharedPrefHelper.clearAllSecuredData();
-
-        
 
         SharedPrefHelper.removeData(PrefKeys.locationArea);
         SharedPrefHelper.removeData(PrefKeys.longAddressHome);
@@ -26,7 +25,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
             errorMessage: state.errorMessage, context: context);
         if (state.statesCode == 400) {
           await SharedPrefHelper.clearAllSecuredData();
-          
+
           SharedPrefHelper.removeData(PrefKeys.locationArea);
           SharedPrefHelper.removeData(PrefKeys.longAddressHome);
           SharedPrefHelper.removeData(PrefKeys.latAddressHome);
@@ -43,8 +42,8 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
     },
     child: CustomProfileCard(
       title: context.read<LogOutCubit>().initialUserName == 'Guest User'
-          ? "Log In"
-          : "Log Out",
+          ? AppStrings.logIn
+          : AppStrings.logOut,
       leadingIcon: IconlyBold.logout,
       tap: context.read<LogOutCubit>().initialUserName == 'Guest User'
           ? () async {
@@ -54,7 +53,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
 
               context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
               await SharedPrefHelper.clearAllSecuredData();
-              
+
               SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
               SharedPrefHelper.removeData(PrefKeys.locationArea);
               SharedPrefHelper.removeData(PrefKeys.longAddressHome);
@@ -72,7 +71,13 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                     backgroundColor: ColorManger.backgroundItem,
                     contentPadding: EdgeInsets.only(left: 16.w),
                     titlePadding: EdgeInsets.only(top: 25.h, left: 16.w),
-                    title: const Text('Confirm Logout'),
+                    title: Text(
+                      AppStrings.confirmLogout,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(fontSize: responsive.setTextSize(4)),
+                    ),
                     content: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,9 +86,11 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                           height: 5.h,
                           width: 350.w,
                         ),
-                        Text('Are you sure you want to log out?',
-                            style: TextStyle(
-                                fontSize: 15.sp, color: ColorManger.brunLight)),
+                        Text(AppStrings.areYouSureYouWantToLogOut,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(fontSize: responsive.setTextSize(4))),
                       ],
                     ),
                     actionsPadding:
@@ -93,9 +100,11 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                         onPressed: () {
                           Navigator.of(context).pop(false);
                         },
-                        child: Text('Cancel',
-                            style: TextStyle(
-                                fontSize: 15.sp, color: ColorManger.brun)),
+                        child: Text(AppStrings.cancel,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(fontSize: responsive.setTextSize(4))),
                       ),
                       SizedBox(
                         width: 5.w,
@@ -111,9 +120,12 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                             onPressed: () {
                               Navigator.of(context).pop(true);
                             },
-                            child: Text('Log Out',
-                                style: TextStyle(
-                                    fontSize: 12.sp, color: ColorManger.white)),
+                            child: Text(AppStrings.logOut,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall!
+                                    .copyWith(
+                                        fontSize: responsive.setTextSize(4))),
                           ),
                         ),
                       ),

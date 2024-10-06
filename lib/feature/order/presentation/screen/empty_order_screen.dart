@@ -30,11 +30,11 @@ class EmptyOrderScreen extends StatelessWidget {
               ),
               ErrorInfo(
                 title: isCurrentOrder
-                    ? "No Current Orders!"
-                    : "No Previous Orders!",
+                    ?AppStrings. noCurrentOrders
+                    : AppStrings.noPreviousOrders,
                 description: isCurrentOrder
-                    ? "You don't have any active orders right now. Once you place an order, it will appear here!"
-                    : "It looks like you haven't completed any orders yet. Your past orders will be displayed here once available!",
+                    ?AppStrings. youDontHaveAnyActiveOrders
+                    :AppStrings. itLooksLikeYouHaventCompletedAnyOrdersYet,
               ),
               SizedBox(
                 height: 50.h,

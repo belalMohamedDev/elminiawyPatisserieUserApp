@@ -1,6 +1,4 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
-
 
 class AccountInfomationBody extends StatelessWidget {
   const AccountInfomationBody({super.key});
@@ -36,7 +34,10 @@ class AccountInfomationBody extends StatelessWidget {
               hintText: context.read<AccountInformationCubit>().userEmail,
               prefixIcon: Icon(IconlyBroken.message,
                   size: 18.sp, color: ColorManger.brunLight),
-              hintStyle: TextStyle(color: ColorManger.brunLight),
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(fontSize: 12.sp),
               fillColor: ColorManger.backgroundItem,
               disabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
@@ -63,7 +64,7 @@ class AccountInfomationBody extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isNameValid(value)) {
-                return 'Please enter a valid name';
+                return AppStrings.pleaseEnterAValidName;
               }
               return null;
             },
@@ -99,7 +100,7 @@ class AccountInfomationBody extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isPhoneNumberValid(value)) {
-                return 'Please enter a valid phone number';
+                return AppStrings.pleaseEnterAValidPhoneNumber;
               }
               return null;
             },
@@ -220,10 +221,9 @@ class AccountInfomationBody extends StatelessWidget {
                   ),
                   Text(
                     AppStrings.loading,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: 16.sp,
-                        color: ColorManger.white,
-                        fontWeight: FontWeightManger.semiBold),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontSize: 16.sp,
+                        ),
                   ),
                 ],
               ),
@@ -245,21 +245,19 @@ class AccountInfomationBody extends StatelessWidget {
                   ),
                   Text(
                     AppStrings.loading,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: 16.sp,
-                        color: ColorManger.white,
-                        fontWeight: FontWeightManger.semiBold),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontSize: 16.sp,
+                        ),
                   ),
                 ],
               ),
               orElse: () => Text(
                 context.read<AccountInformationCubit>().isTextFormFieldEnabl
-                    ? "Save"
-                    : "Delete account",
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 16.sp,
-                    color: ColorManger.white,
-                    fontWeight: FontWeightManger.semiBold),
+                    ? AppStrings.save
+                    : AppStrings.deleteAccount,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontSize: 16.sp,
+                    ),
               ),
             ),
           ),

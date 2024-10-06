@@ -10,7 +10,7 @@ class NewProductView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("New Products in Store",
+        title: Text(AppStrings. newProductsInStore,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,

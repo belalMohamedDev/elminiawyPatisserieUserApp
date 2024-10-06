@@ -52,10 +52,7 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   initialRoute: snapshot.data,
                   onGenerateRoute: RouteGenerator.getRoute,
-                  home: BlocProvider(
-                    create: (context) => instance<ForgetPasswordBloc>(),
-                    child: const NewPasswordView(),
-                  ),
+               
                   theme: getApplicationTheme(context),
                 );
               },

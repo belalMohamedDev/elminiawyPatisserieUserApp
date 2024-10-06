@@ -10,7 +10,7 @@ class WishListView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Wish List",
+        title: Text(AppStrings.wishList,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,

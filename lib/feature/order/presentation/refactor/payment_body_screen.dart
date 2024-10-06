@@ -5,40 +5,34 @@ class PaymentBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+
     return Padding(
-      padding:
-          EdgeInsets.only(top: 30.h, right: 25.w, left: 25.w, bottom: 45.h),
+      padding: responsive.setPadding(top: 3, right: 6, left: 6, bottom: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CheckOutProcessing(screenIndex: 2),
-          SizedBox(
-            height: 50.h,
-          ),
+          responsive.setSizeBox(height: 5),
           Text(
-            'Choose Your Payment Method',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 15.sp),
+            AppStrings.chooseYourPaymentMethod,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
           ),
-          SizedBox(
-            height: 14.h,
-          ),
-          _choosePaymentMethod(context),
-          SizedBox(
-            height: 20.h,
-          ),
+          responsive.setSizeBox(height: 2),
+          _choosePaymentMethod(context, responsive),
+          responsive.setSizeBox(height: 3),
           Text(
-            'Promo Code',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
-                fontSize: 15.sp),
+            AppStrings.promoCode,
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
           ),
-          SizedBox(
-            height: 14.h,
-          ),
+          responsive.setSizeBox(height: 2),
           const ApplyCouponCode(),
           const Spacer(),
           CustomButton(
@@ -46,13 +40,12 @@ class PaymentBody extends StatelessWidget {
               Navigator.of(context, rootNavigator: !false)
                   .pushNamed(Routes.shippingReviewScreen);
             },
-            radius: 8.r,
             widget: Text(
-              'Save and Continue',
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
-                  color: ColorManger.white,
-                  fontSize: 13.sp),
+              AppStrings.saveAndContinue,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontSize: responsive.setTextSize(
+                        3.8), // Adjusted font size for responsiveness
+                  ),
             ),
           )
         ],
@@ -60,7 +53,8 @@ class PaymentBody extends StatelessWidget {
     );
   }
 
-  BlocBuilder _choosePaymentMethod(BuildContext context) {
+  BlocBuilder _choosePaymentMethod(
+      BuildContext context, ResponsiveUtils responsive) {
     final paymentCubit = context.read<PaymentCubit>();
     return BlocBuilder<PaymentCubit, PaymentState>(
       builder: (context, state) {
@@ -72,36 +66,34 @@ class PaymentBody extends StatelessWidget {
               },
               child: Container(
                 width: double.infinity,
-                height: 50.h,
+                height: responsive.setHeight(6),
                 decoration: BoxDecoration(
                   color: paymentCubit.choosePaymentMethod == 'Cash'
                       ? ColorManger.brownLight
                       : ColorManger.backgroundItem,
-                  borderRadius: BorderRadius.circular(8.r),
+                  borderRadius:
+                      BorderRadius.circular(responsive.setBorderRadius(2)),
                   border: Border.all(
-                    color: paymentCubit.choosePaymentMethod == 'Cash'
-                        ? ColorManger.brownLight
-                        : ColorManger.backgroundItem,
-                    width: 0.5.w,
-                  ),
+                      color: paymentCubit.choosePaymentMethod == 'Cash'
+                          ? ColorManger.brownLight
+                          : ColorManger.backgroundItem,
+                      width: responsive.setWidth(0.1)),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 10.w),
+                  padding: responsive.setPadding(left: 2),
                   child: Row(
                     children: [
                       Icon(
                         Icons.handshake_rounded,
                         color: ColorManger.brun,
                       ),
-                      SizedBox(
-                        width: 20.w,
-                      ),
+                      responsive.setSizeBox(width: 3),
                       Text(
-                        'Cash on delivery',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brun,
-                            fontSize: 15.sp),
+                        AppStrings.cashOnDelivery,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(fontSize: responsive.setTextSize(4)),
                       ),
                       const Spacer(),
                       Radio<String>(
@@ -116,46 +108,41 @@ class PaymentBody extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 14.h,
-            ),
+            responsive.setSizeBox(height: 1.2),
             InkWell(
               onTap: () {
                 paymentCubit.changePaymentMethod('card');
               },
               child: Container(
                 width: double.infinity,
-                height: 50.h,
+                height: responsive.setHeight(6),
                 decoration: BoxDecoration(
                   color: paymentCubit.choosePaymentMethod == 'card'
                       ? ColorManger.brownLight
                       : ColorManger.backgroundItem,
-                  borderRadius: BorderRadius.circular(8.r),
+                  borderRadius:
+                      BorderRadius.circular(responsive.setBorderRadius(2)),
                   border: Border.all(
                     color: paymentCubit.choosePaymentMethod == 'card'
                         ? ColorManger.brownLight
                         : ColorManger.backgroundItem,
-                    width: 0.5.w,
+                    width: responsive.setWidth(0.1),
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 10.w),
+                  padding: responsive.setPadding(left: 2),
                   child: Row(
                     children: [
                       Icon(
                         Icons.credit_card,
                         color: ColorManger.brun,
                       ),
-                      SizedBox(
-                        width: 20.w,
-                      ),
-                      Text(
-                        'Credit or debit Card',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            fontFamily: FontConsistent.fontFamilyAcme,
-                            color: ColorManger.brun,
-                            fontSize: 15.sp),
-                      ),
+                      responsive.setSizeBox(width: 3),
+                      Text(AppStrings.creditOrDebitCard,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge!
+                              .copyWith(fontSize: responsive.setTextSize(4))),
                       const Spacer(),
                       Radio<String>(
                         value: 'card',

@@ -30,7 +30,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                 context.read<MapCubit>().checkLocationAvailableResponse = null;
 
                 context.read<MapCubit>().textEditingSearchText =
-                    'Find Your Location';
+                  AppStrings.findYourLocation;
 
                 if (userAddressCubit.isPaymentAddress == true) {
                   final index = userAddressCubit.addressDataList
@@ -76,7 +76,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isNameValid(value)) {
-                        return 'Please enter a valid building name';
+                        return AppStrings.pleaseEnterAValidBuildingName;
                       }
                       return null;
                     },
@@ -85,8 +85,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: userAddressCubit.regionAreaIndex == 1
-                          ? "House"
-                          : "Building name",
+                          ? AppStrings.house
+                          : AppStrings.buildingName ,
                     ),
                   ),
                   SizedBox(
@@ -102,8 +102,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return userAddressCubit.regionAreaIndex == 2
-                                        ? 'Please enter a valid company'
-                                        : 'Please enter a valid apt .no.';
+                                        ? AppStrings.pleaseEnterAValidCompany
+                                        : AppStrings.pleaseEnterAValidApt;
                                   }
                                   return null;
                                 },
@@ -112,8 +112,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 decoration: InputDecoration(
                                   hintText:
                                       userAddressCubit.regionAreaIndex == 2
-                                          ? "Company"
-                                          : "Apt. no.",
+                                          ? AppStrings.company
+                                          : AppStrings.aptNo,
                                 ),
                               ),
                             ),
@@ -126,7 +126,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 textInputAction: TextInputAction.next,
                                 keyboardType: TextInputType.text,
                                 decoration: const InputDecoration(
-                                  hintText: 'Floor (optional)',
+                                  hintText: AppStrings.floorOptional,
                                 ),
                               ),
                             ),
@@ -142,13 +142,13 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isNameValid(value)) {
-                        return 'Please enter a valid street name';
+                        return AppStrings.pleaseEnterAValidStreetName;
                       }
                       return null;
                     },
                     keyboardType: TextInputType.text,
                     decoration: const InputDecoration(
-                      hintText: "Street",
+                      hintText: AppStrings.street,
                     ),
                   ),
                   SizedBox(
@@ -159,7 +159,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
-                      hintText: 'Additional directions (optional)',
+                      hintText: AppStrings.additionalDirectionsOptional,
                     ),
                   ),
                   SizedBox(
@@ -173,12 +173,12 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isPhoneNumberValid(value)) {
-                        return 'Please enter a valid phone';
+                        return AppStrings.pleaseEnterAValidPhoneNumber;
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: "Phone number",
+                      hintText:AppStrings.phoneNumber ,
                       prefixIcon: CountryCodePicker(
                         showFlagMain: false,
                         onChanged: (value) {},
@@ -205,14 +205,14 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.text,
                     decoration: const InputDecoration(
-                      hintText: "Address label (optional)",
+                      hintText: AppStrings.addressLabelOptional,
                     ),
                   ),
                   Padding(
                     padding:
                         EdgeInsets.only(left: 8.w, top: 10.h, bottom: 10.h),
                     child: Text(
-                        "Give this address a label so you can easily choose between them (e.g. Parent's home)",
+                       AppStrings.givethisAddress,
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontFamily: FontConsistent.fontFamilyAcme,
                             color: ColorManger.brunLight,
@@ -263,11 +263,10 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                               AppStrings.loading,
                               style: Theme.of(context)
                                   .textTheme
-                                  .titleLarge
+                                  .headlineSmall
                                   ?.copyWith(
                                       fontSize: 16.sp,
-                                      color: ColorManger.white,
-                                      fontWeight: FontWeightManger.semiBold),
+                                   ),
                             ),
                           ],
                         ),
@@ -291,23 +290,21 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                               AppStrings.loading,
                               style: Theme.of(context)
                                   .textTheme
-                                  .titleLarge
+                                  .headlineSmall
                                   ?.copyWith(
                                       fontSize: 16.sp,
-                                      color: ColorManger.white,
-                                      fontWeight: FontWeightManger.semiBold),
+                                 ),
                             ),
                           ],
                         ),
                         orElse: () => Text(
-                          "Save address",
+                          AppStrings.saveAddress,
                           style: Theme.of(context)
                               .textTheme
-                              .titleLarge
+                              .headlineSmall
                               ?.copyWith(
                                   fontSize: 16.sp,
-                                  color: ColorManger.white,
-                                  fontWeight: FontWeightManger.semiBold),
+                                 ),
                         ),
                       ))
                 ],
