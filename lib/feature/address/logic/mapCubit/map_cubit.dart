@@ -129,8 +129,7 @@ class MapCubit extends Cubit<MapState> {
         if (error.statusCode != 401) {
           emit(
             MapState.checkAddressAvailableError(
-              errorMessage: error.message!,
-              statesCode: error.statusCode!,
+          error
             ),
           );
         }

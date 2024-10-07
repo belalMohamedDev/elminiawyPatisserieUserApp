@@ -8,8 +8,7 @@ class ProductBasedOnCategoryState with _$ProductBasedOnCategoryState {
   const factory ProductBasedOnCategoryState.getProductLoading() =
       GetProductBasedOnCategoryLoading;
   const factory ProductBasedOnCategoryState.getProductError(
-      {required int statesCode,
-      required String errorMessage}) = GetProductBasedOnCategoryError;
+      ApiErrorModel apiErrorModel) = GetProductBasedOnCategoryError;
   const factory ProductBasedOnCategoryState.getProductSuccess(
       GetProductsBasedOnCategory data) = GetProductBasedOnCategorySuccess;
 

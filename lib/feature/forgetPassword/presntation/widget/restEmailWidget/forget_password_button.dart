@@ -15,11 +15,8 @@ class ForgetPasswordButton extends StatelessWidget {
       listener: (context, state) {
         // Handle different states of the ForgetPasswordBloc
         state.whenOrNull(
-          error: (statesCode, errorMessage) {
-            // Show an error toast when there's an error state
-            ShowToast.showToastErrorTop(
-                errorMessage: errorMessage, context: context);
-          },
+          error: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           success: (data) {
             // Show success toast and navigate to verification code view on success
             ShowToast.showToastSuccessTop(

@@ -7,8 +7,7 @@ class ProductState with _$ProductState {
   //get product State
   const factory ProductState.getProductLoading() = GetProductLoading;
   const factory ProductState.getProductError(
-      {required int statesCode,
-      required String errorMessage}) = GetProductError;
+      ApiErrorModel apiErrorModel) = GetProductError;
 
   const factory ProductState.getProductSuccess(ProductResponse data) =
       GetProductSuccess;

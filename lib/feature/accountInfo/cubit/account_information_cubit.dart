@@ -68,7 +68,7 @@ class AccountInformationCubit extends Cubit<AccountInformationState> {
         if (error.statusCode != 401) {
           emit(
             AccountInformationState.updateAccountInformationError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
           );
         }
       },
@@ -97,7 +97,7 @@ class AccountInformationCubit extends Cubit<AccountInformationState> {
         if (error.statusCode != 401) {
           emit(
             AccountInformationState.deleteAccountError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
           );
         }
       },

@@ -122,8 +122,7 @@ class ForgetPasswordBloc
           },
           failure: (error) {
             emit(ForgetPasswordState.error(
-              errorMessage: error.message!,
-              statusCode: error.statusCode!,
+           error
             ));
           },
         );
@@ -147,8 +146,7 @@ class ForgetPasswordBloc
           },
           failure: (error) {
             emit(ForgetPasswordState.verifyCodeError(
-              errorMessage: error.message!,
-              statusCode: error.statusCode!,
+              error
             ));
           },
         );
@@ -177,8 +175,7 @@ class ForgetPasswordBloc
           },
           failure: (error) {
             emit(ForgetPasswordState.newPasswordError(
-              errorMessage: error.message!,
-              statusCode: error.statusCode!,
+             error
             ));
           },
         );

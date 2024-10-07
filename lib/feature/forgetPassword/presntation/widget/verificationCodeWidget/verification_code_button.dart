@@ -16,11 +16,8 @@ class VerificationCodeButton extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           // Handle errors during the verification process
-          verifyCodeError: (stateCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-            errorMessage: errorMessage,
-            context: context,
-          ),
+          verifyCodeError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           // Handle successful verification
           verifyCodeSuccess: (data) {
             ShowToast.showToastSuccessTop(
@@ -31,12 +28,8 @@ class VerificationCodeButton extends StatelessWidget {
             context.pushReplacementNamed(Routes.newPassword);
           },
           // Handle generic errors
-          error: (stateCode, errorMessage) {
-            ShowToast.showToastErrorTop(
-              errorMessage: errorMessage,
-              context: context,
-            );
-          },
+          error: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           // Handle generic success
           success: (data) {
             ShowToast.showToastSuccessTop(

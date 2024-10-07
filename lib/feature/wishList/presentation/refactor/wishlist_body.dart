@@ -10,9 +10,8 @@ class WishListBody extends StatelessWidget {
     return BlocConsumer<WishListCubit, WishListState>(
       listener: (context, state) {
         state.whenOrNull(
-          getWishListError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
+          getWishListError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
         );
       },
       builder: (context, state) {

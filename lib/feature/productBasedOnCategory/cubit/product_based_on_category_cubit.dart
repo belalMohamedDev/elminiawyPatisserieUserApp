@@ -40,7 +40,7 @@ class ProductBasedOnCategoryCubit extends Cubit<ProductBasedOnCategoryState> {
       failure: (error) {
         emit(
           ProductBasedOnCategoryState.getProductError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
+            error),
         );
       },
     );

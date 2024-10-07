@@ -18,8 +18,7 @@ class LoginState with _$LoginState {
       ButtonLoginVaildation;
   const factory LoginState.loading() = LoginButtonLoadingData;
   const factory LoginState.error(
-      {required int statesCode,
-      required String errorMessage}) = LoginButtonErrorData;
+      ApiErrorModel apiErrorModel) = LoginButtonErrorData;
       
   const factory LoginState.suceess(AuthResponse data) = LoginButtonSuccessData;
 }

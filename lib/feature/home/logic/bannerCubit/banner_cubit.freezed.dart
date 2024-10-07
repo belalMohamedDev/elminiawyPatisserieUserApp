@@ -20,8 +20,7 @@ mixin _$BannerState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getBannersLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getBannersError,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
     required TResult Function(BannerResponse data) getBannersSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,7 +28,7 @@ mixin _$BannerState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getBannersLoading,
-    TResult? Function(int statesCode, String errorMessage)? getBannersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult? Function(BannerResponse data)? getBannersSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,7 +36,7 @@ mixin _$BannerState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getBannersLoading,
-    TResult Function(int statesCode, String errorMessage)? getBannersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult Function(BannerResponse data)? getBannersSuccess,
     required TResult orElse(),
   }) =>
@@ -127,8 +126,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getBannersLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getBannersError,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
     required TResult Function(BannerResponse data) getBannersSuccess,
   }) {
     return initial();
@@ -139,7 +137,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getBannersLoading,
-    TResult? Function(int statesCode, String errorMessage)? getBannersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult? Function(BannerResponse data)? getBannersSuccess,
   }) {
     return initial?.call();
@@ -150,7 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getBannersLoading,
-    TResult Function(int statesCode, String errorMessage)? getBannersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult Function(BannerResponse data)? getBannersSuccess,
     required TResult orElse(),
   }) {
@@ -242,8 +240,7 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getBannersLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getBannersError,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
     required TResult Function(BannerResponse data) getBannersSuccess,
   }) {
     return getBannersLoading();
@@ -254,7 +251,7 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getBannersLoading,
-    TResult? Function(int statesCode, String errorMessage)? getBannersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult? Function(BannerResponse data)? getBannersSuccess,
   }) {
     return getBannersLoading?.call();
@@ -265,7 +262,7 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getBannersLoading,
-    TResult Function(int statesCode, String errorMessage)? getBannersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult Function(BannerResponse data)? getBannersSuccess,
     required TResult orElse(),
   }) {
@@ -323,7 +320,7 @@ abstract class _$$GetBannersErrorImplCopyWith<$Res> {
           $Res Function(_$GetBannersErrorImpl) then) =
       __$$GetBannersErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -337,18 +334,13 @@ class __$$GetBannersErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetBannersErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -356,17 +348,14 @@ class __$$GetBannersErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetBannersErrorImpl implements GetBannersError {
-  const _$GetBannersErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetBannersErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'BannerState.getBannersError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'BannerState.getBannersError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -374,14 +363,12 @@ class _$GetBannersErrorImpl implements GetBannersError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetBannersErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -395,11 +382,10 @@ class _$GetBannersErrorImpl implements GetBannersError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getBannersLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getBannersError,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
     required TResult Function(BannerResponse data) getBannersSuccess,
   }) {
-    return getBannersError(statesCode, errorMessage);
+    return getBannersError(apiErrorModel);
   }
 
   @override
@@ -407,10 +393,10 @@ class _$GetBannersErrorImpl implements GetBannersError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getBannersLoading,
-    TResult? Function(int statesCode, String errorMessage)? getBannersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult? Function(BannerResponse data)? getBannersSuccess,
   }) {
-    return getBannersError?.call(statesCode, errorMessage);
+    return getBannersError?.call(apiErrorModel);
   }
 
   @override
@@ -418,12 +404,12 @@ class _$GetBannersErrorImpl implements GetBannersError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getBannersLoading,
-    TResult Function(int statesCode, String errorMessage)? getBannersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult Function(BannerResponse data)? getBannersSuccess,
     required TResult orElse(),
   }) {
     if (getBannersError != null) {
-      return getBannersError(statesCode, errorMessage);
+      return getBannersError(apiErrorModel);
     }
     return orElse();
   }
@@ -467,12 +453,10 @@ class _$GetBannersErrorImpl implements GetBannersError {
 }
 
 abstract class GetBannersError implements BannerState {
-  const factory GetBannersError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetBannersErrorImpl;
+  const factory GetBannersError(final ApiErrorModel apiErrorModel) =
+      _$GetBannersErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetBannersErrorImplCopyWith<_$GetBannersErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -545,8 +529,7 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getBannersLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getBannersError,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
     required TResult Function(BannerResponse data) getBannersSuccess,
   }) {
     return getBannersSuccess(data);
@@ -557,7 +540,7 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getBannersLoading,
-    TResult? Function(int statesCode, String errorMessage)? getBannersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult? Function(BannerResponse data)? getBannersSuccess,
   }) {
     return getBannersSuccess?.call(data);
@@ -568,7 +551,7 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getBannersLoading,
-    TResult Function(int statesCode, String errorMessage)? getBannersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
     TResult Function(BannerResponse data)? getBannersSuccess,
     required TResult orElse(),
   }) {

@@ -51,7 +51,7 @@ class ChangeEmailAddressCubit extends Cubit<ChangeEmailAddressState> {
         if (error.statusCode != 401) {
           emit(
             ChangeEmailAddressState.changeEmailAddressError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+               error),
           );
         }
       },

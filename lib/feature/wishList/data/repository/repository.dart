@@ -21,12 +21,12 @@ class WishListRepositoryImplement implements WishListRepository {
             await _apiService.addOrRemoveProductFromWishList(product);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
-    }
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
   }
 
   @override
@@ -36,12 +36,12 @@ class WishListRepositoryImplement implements WishListRepository {
         final response = await _apiService.getWishList();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
-    }
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
   }
 
 

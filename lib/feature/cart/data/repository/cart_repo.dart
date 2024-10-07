@@ -33,11 +33,12 @@ class CartRepositoryImplement implements CartRepository {
             await _apiService.addItemToCart(addItemToCartRequestBody);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
-      //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+        //return  internet connection error
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -48,11 +49,12 @@ class CartRepositoryImplement implements CartRepository {
         final response = await _apiService.getCartItem();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
-      //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+       //return  internet connection error
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -63,11 +65,12 @@ class CartRepositoryImplement implements CartRepository {
         final response = await _apiService.removeItemFromCart(id);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -80,11 +83,12 @@ class CartRepositoryImplement implements CartRepository {
             await _apiService.updateItemQuantityFromCart(id, quantity);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -95,11 +99,12 @@ class CartRepositoryImplement implements CartRepository {
         final response = await _apiService.applyCouponToCart(coupon);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
-      //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+     //return  internet connection error
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
   
@@ -110,11 +115,12 @@ class CartRepositoryImplement implements CartRepository {
         final response = await _apiService.deleteCartService();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
-      //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+       //return  internet connection error
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 }

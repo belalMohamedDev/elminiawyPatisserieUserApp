@@ -195,10 +195,10 @@ class ProductGridViewSuccessState extends StatelessWidget {
                 listener: (context, state) {
                   // Show error message if failed to add/remove from wishlist
                   state.whenOrNull(
-                    addOrRemoveProductFromWishListError:
-                        (statesCode, errorMessage) =>
-                            ShowToast.showToastErrorTop(
-                                errorMessage: errorMessage, context: context),
+                    addOrRemoveProductFromWishListError: (apiErrorModel) =>
+                        ShowToast.showToastErrorTop(
+                            errorMessage: apiErrorModel.message!,
+                            context: context),
                   );
                 },
                 builder: (context, state) {

@@ -22,8 +22,8 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
         }
       } else if (state is LogOutError) {
         ShowToast.showToastErrorTop(
-            errorMessage: state.errorMessage, context: context);
-        if (state.statesCode == 400) {
+            errorMessage: state.apiErrorModel.message!, context: context);
+        if (state.apiErrorModel.statusCode == 400) {
           await SharedPrefHelper.clearAllSecuredData();
 
           SharedPrefHelper.removeData(PrefKeys.locationArea);

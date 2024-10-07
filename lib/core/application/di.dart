@@ -28,6 +28,7 @@ Future<void> initAppModule() async {
 Future<void> _initAppModule() async {
   // app module ,its a module where we put all generic dependencies
 
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -62,7 +63,7 @@ Future<void> _initAppModule() async {
 }
 
 Future<void> _initPlaces() async {
-  final places = GoogleMapsPlaces(apiKey: AppConstant.mapKey);
+  final places = GoogleMapsPlaces(apiKey: EnvVariable.instance.mapKey);
 
   instance.registerLazySingleton<GoogleMapsPlaces>(() => places);
 }

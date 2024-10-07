@@ -23,8 +23,7 @@ class MapState with _$MapState {
   const factory MapState.checkAddressAvailableLoading() = CheckAddressAvailableLoading;
 
   const factory MapState.checkAddressAvailableError(
-      {required int statesCode,
-      required String errorMessage}) = CheckAddressAvailableError;
+       ApiErrorModel apiErrorModel) = CheckAddressAvailableError;
 
   const factory MapState.checkAddressAvailableSuccess(
       CheckLocationAvailableResponse data) =

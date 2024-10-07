@@ -24,6 +24,7 @@ class AppStrings {
   static const String area = "Area";
   static const String unknownRegion = "Unknown Region";
   static const String newProductsInStore = "New Products in Store";
+  static const String pleaseCheckYourInternetConnection = "please check your internet connection";
 
 
 

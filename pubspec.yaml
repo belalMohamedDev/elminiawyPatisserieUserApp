@@ -70,7 +70,7 @@ dependencies:
   #show toast message
   toastification: ^2.0.0
   # internet_connection_checker
-  internet_connection_checker: ^2.0.0
+  internet_connection_checker: 1.0.0+1
   # animation
   animate_do: ^3.3.4
   # splash screen
@@ -102,6 +102,7 @@ dependencies:
   flutter_local_notifications: ^17.2.2
   firebase_messaging: ^15.1.2
   badges: ^3.1.2
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -126,6 +127,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - .env
     - asset/image/apple.png
     - asset/image/facebook.png
     - asset/image/google.png

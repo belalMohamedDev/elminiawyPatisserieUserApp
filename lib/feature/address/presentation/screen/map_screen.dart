@@ -42,9 +42,9 @@ class _MapScreenState extends State<MapScreen> {
       body: BlocConsumer<MapCubit, MapState>(
         listener: (context, state) {
           state.whenOrNull(
-              checkAddressAvailableError: (statesCode, errorMessage) =>
+              checkAddressAvailableError: (apiErrorModel) =>
                   ShowToast.showToastErrorTop(
-                      errorMessage: errorMessage, context: context),
+                      errorMessage: apiErrorModel.message!, context: context),
               error: (message) {
                 ShowToast.showToastErrorTop(
                     errorMessage: message, context: context);

@@ -15,11 +15,11 @@ class SearchRow extends StatelessWidget {
     return InkWell(
       onTap: () {
         // Navigate to the search screen when the row is tapped
-        NavBarNavigator.push(
-          context,
-          screen: const SearchView(),
-          withNavBar: false,
-        );
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const SearchView(),
+            ));
       },
       child: Row(
         children: [
@@ -74,12 +74,13 @@ class SearchRow extends StatelessWidget {
                 color: ColorManger.white, // White color for the filter icon
               ),
               onPressed: () {
-                // Navigate to the search screen when the filter button is tapped
-                NavBarNavigator.push(
-                  context,
-                  screen: const SearchView(),
-                  withNavBar: false,
-                );
+                // Navigate to the search screen when the filter button is tapped.
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SearchView(),
+                    ));
+              
               },
             ),
           ),

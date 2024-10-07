@@ -2,6 +2,7 @@ export '../../../../feature/order/presentation/screen/review_screen.dart';
 export '../../../../core/utils/responsive_utils.dart';
 export '../../../../feature/notification/presentation/screen/notifcation_empty_screen.dart';
 export '../../../../feature/notification/presentation/refactor/notification_screen_body.dart';
+export '../../../../core/application/env.variables.dart';
 
 export '../../../../core/style/fonts/styles_manger.dart';
 export '../../../../feature/accountInfo/presentation/refactor/account_info_body.dart';
@@ -22,7 +23,6 @@ export '../../../../feature/login/presentation/widget/password_login_text_form_f
 export '../../../../feature/login/presentation/widget/sign_in_button.dart';
 export '../../../../feature/login/presentation/widget/sign_in_with_apple_face_book_and_google_button.dart';
 export 'package:flutter/gestures.dart';
-export '../../../../core/common/sharedWidget/circle_avatar_icon_button.dart';
 export '../../../core/enums/filter_button_enum.dart';
 export '../../../../feature/newProduct/presentation/refactor/new_product_body.dart';
 export '../../../../feature/productBasedOnCategory/presentation/refactor/get_product_based_on_category_body.dart';
@@ -71,7 +71,6 @@ export 'package:cached_network_image/cached_network_image.dart';
 // Your local styles and utilities
 export '../../style/color/color_manger.dart';
 export '../../style/fonts/font_manger.dart';
-export '../../utils/persistent_nav_bar_navigator.dart.dart';
 export '../../application/cubit/app_logic_cubit.dart';
 export '../../../../core/application/di.dart';
 
@@ -243,7 +242,6 @@ export '../../../../feature/wishList/data/repository/repository.dart';
 export '../../../../firebase_options.dart';
 
 export '../../../../core/application/bloc_observer.dart';
-export '../../../../core/application/constant_manger.dart';
 export '../../../../core/network/api/app_api.dart';
 export '../../../../core/network/dio_factory/dio_factory.dart';
 export '../../../../core/network/network_connectivity/connectivity_controller.dart';

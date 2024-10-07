@@ -146,9 +146,9 @@ class AccountInfomationBody extends StatelessWidget {
     return BlocConsumer<AccountInformationCubit, AccountInformationState>(
       listener: (context, state) {
         state.whenOrNull(
-          updateAccountInformationError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
+          updateAccountInformationError: (apiErrorModel) =>   ShowToast.showToastErrorTop(
+                  errorMessage: apiErrorModel.message!, context: context),
+            
           updateAccountInformationSuccess: (data) {
             ShowToast.showToastSuccessTop(
                 message: data.message!, context: context);
@@ -168,9 +168,8 @@ class AccountInfomationBody extends StatelessWidget {
               context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
             }
           },
-          deleteAccountError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
+          deleteAccountError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
         );
       },
       builder: (context, state) {

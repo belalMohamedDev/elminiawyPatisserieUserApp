@@ -7,8 +7,7 @@ class AccountInformationState with _$AccountInformationState {
   const factory AccountInformationState.updateAccountInformationLoading() =
       UpdateAccountInformationLoading;
   const factory AccountInformationState.updateAccountInformationError(
-      {required int statesCode,
-      required String errorMessage}) = UpdateAccountInformationError;
+       ApiErrorModel apiErrorModel) = UpdateAccountInformationError;
 
   const factory AccountInformationState.updateAccountInformationSuccess(
       UpdateAccountInformationResponse data) = UpdateAccountInformationSuccess;
@@ -27,8 +26,7 @@ class AccountInformationState with _$AccountInformationState {
     const factory AccountInformationState.deleteAccountLoading() =
       DeleteAccountLoading;
   const factory AccountInformationState.deleteAccountError(
-      {required int statesCode,
-      required String errorMessage}) = DeleteAccountError;
+      ApiErrorModel apiErrorModel) = DeleteAccountError;
 
   const factory AccountInformationState.deleteAccountSuccess(
       DeleteAccountResponse data) = DeleteAccountSuccess;

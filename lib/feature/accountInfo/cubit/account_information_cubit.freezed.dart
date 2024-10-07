@@ -20,7 +20,7 @@ mixin _$AccountInformationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -30,8 +30,7 @@ mixin _$AccountInformationState {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +38,7 @@ mixin _$AccountInformationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -48,7 +47,7 @@ mixin _$AccountInformationState {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,7 +55,7 @@ mixin _$AccountInformationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -65,7 +64,7 @@ mixin _$AccountInformationState {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) =>
@@ -184,7 +183,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -194,8 +193,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return initial();
@@ -206,7 +204,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -215,7 +213,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return initial?.call();
@@ -226,7 +224,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -235,7 +233,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
@@ -360,7 +358,7 @@ class _$UpdateAccountInformationLoadingImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -370,8 +368,7 @@ class _$UpdateAccountInformationLoadingImpl
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading();
@@ -382,7 +379,7 @@ class _$UpdateAccountInformationLoadingImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -391,7 +388,7 @@ class _$UpdateAccountInformationLoadingImpl
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading?.call();
@@ -402,7 +399,7 @@ class _$UpdateAccountInformationLoadingImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -411,7 +408,7 @@ class _$UpdateAccountInformationLoadingImpl
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
@@ -500,7 +497,7 @@ abstract class _$$UpdateAccountInformationErrorImplCopyWith<$Res> {
           $Res Function(_$UpdateAccountInformationErrorImpl) then) =
       __$$UpdateAccountInformationErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -516,18 +513,13 @@ class __$$UpdateAccountInformationErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$UpdateAccountInformationErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -536,17 +528,14 @@ class __$$UpdateAccountInformationErrorImplCopyWithImpl<$Res>
 
 class _$UpdateAccountInformationErrorImpl
     implements UpdateAccountInformationError {
-  const _$UpdateAccountInformationErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$UpdateAccountInformationErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'AccountInformationState.updateAccountInformationError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'AccountInformationState.updateAccountInformationError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -554,14 +543,12 @@ class _$UpdateAccountInformationErrorImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateAccountInformationErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -576,7 +563,7 @@ class _$UpdateAccountInformationErrorImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -586,11 +573,10 @@ class _$UpdateAccountInformationErrorImpl
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
-    return updateAccountInformationError(statesCode, errorMessage);
+    return updateAccountInformationError(apiErrorModel);
   }
 
   @override
@@ -598,7 +584,7 @@ class _$UpdateAccountInformationErrorImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -607,10 +593,10 @@ class _$UpdateAccountInformationErrorImpl
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
-    return updateAccountInformationError?.call(statesCode, errorMessage);
+    return updateAccountInformationError?.call(apiErrorModel);
   }
 
   @override
@@ -618,7 +604,7 @@ class _$UpdateAccountInformationErrorImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -627,12 +613,12 @@ class _$UpdateAccountInformationErrorImpl
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationError != null) {
-      return updateAccountInformationError(statesCode, errorMessage);
+      return updateAccountInformationError(apiErrorModel);
     }
     return orElse();
   }
@@ -706,11 +692,9 @@ class _$UpdateAccountInformationErrorImpl
 abstract class UpdateAccountInformationError
     implements AccountInformationState {
   const factory UpdateAccountInformationError(
-          {required final int statesCode, required final String errorMessage}) =
-      _$UpdateAccountInformationErrorImpl;
+      final ApiErrorModel apiErrorModel) = _$UpdateAccountInformationErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$UpdateAccountInformationErrorImplCopyWith<
           _$UpdateAccountInformationErrorImpl>
@@ -789,7 +773,7 @@ class _$UpdateAccountInformationSuccessImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -799,8 +783,7 @@ class _$UpdateAccountInformationSuccessImpl
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess(data);
@@ -811,7 +794,7 @@ class _$UpdateAccountInformationSuccessImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -820,7 +803,7 @@ class _$UpdateAccountInformationSuccessImpl
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess?.call(data);
@@ -831,7 +814,7 @@ class _$UpdateAccountInformationSuccessImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -840,7 +823,7 @@ class _$UpdateAccountInformationSuccessImpl
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
@@ -1015,7 +998,7 @@ class _$GetStorageDataImpl implements GetStorageData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -1025,8 +1008,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return getStorageData(userEmail, userName, userPhone);
@@ -1037,7 +1019,7 @@ class _$GetStorageDataImpl implements GetStorageData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1046,7 +1028,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return getStorageData?.call(userEmail, userName, userPhone);
@@ -1057,7 +1039,7 @@ class _$GetStorageDataImpl implements GetStorageData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1066,7 +1048,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
@@ -1224,7 +1206,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -1234,8 +1216,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return changeEnablTextFormField(enable);
@@ -1246,7 +1227,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1255,7 +1236,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return changeEnablTextFormField?.call(enable);
@@ -1266,7 +1247,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1275,7 +1256,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
@@ -1401,7 +1382,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -1411,8 +1392,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return noChangesDetected();
@@ -1423,7 +1403,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1432,7 +1412,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return noChangesDetected?.call();
@@ -1443,7 +1423,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1452,7 +1432,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
@@ -1574,7 +1554,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -1584,8 +1564,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return deleteAccountLoading();
@@ -1596,7 +1575,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1605,7 +1584,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return deleteAccountLoading?.call();
@@ -1616,7 +1595,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1625,7 +1604,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
@@ -1711,7 +1690,7 @@ abstract class _$$DeleteAccountErrorImplCopyWith<$Res> {
           $Res Function(_$DeleteAccountErrorImpl) then) =
       __$$DeleteAccountErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1726,18 +1705,13 @@ class __$$DeleteAccountErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$DeleteAccountErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1745,17 +1719,14 @@ class __$$DeleteAccountErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteAccountErrorImpl implements DeleteAccountError {
-  const _$DeleteAccountErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$DeleteAccountErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'AccountInformationState.deleteAccountError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'AccountInformationState.deleteAccountError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1763,14 +1734,12 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeleteAccountErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1784,7 +1753,7 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -1794,11 +1763,10 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
-    return deleteAccountError(statesCode, errorMessage);
+    return deleteAccountError(apiErrorModel);
   }
 
   @override
@@ -1806,7 +1774,7 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1815,10 +1783,10 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
-    return deleteAccountError?.call(statesCode, errorMessage);
+    return deleteAccountError?.call(apiErrorModel);
   }
 
   @override
@@ -1826,7 +1794,7 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -1835,12 +1803,12 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (deleteAccountError != null) {
-      return deleteAccountError(statesCode, errorMessage);
+      return deleteAccountError(apiErrorModel);
     }
     return orElse();
   }
@@ -1912,12 +1880,10 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
 }
 
 abstract class DeleteAccountError implements AccountInformationState {
-  const factory DeleteAccountError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$DeleteAccountErrorImpl;
+  const factory DeleteAccountError(final ApiErrorModel apiErrorModel) =
+      _$DeleteAccountErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$DeleteAccountErrorImplCopyWith<_$DeleteAccountErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1992,7 +1958,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() updateAccountInformationLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         updateAccountInformationError,
     required TResult Function(UpdateAccountInformationResponse data)
         updateAccountInformationSuccess,
@@ -2002,8 +1968,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
     required TResult Function(bool enable) changeEnablTextFormField,
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteAccountError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
     required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
   }) {
     return deleteAccountSuccess(data);
@@ -2014,7 +1979,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? updateAccountInformationLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult? Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -2023,7 +1988,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
     TResult? Function(bool enable)? changeEnablTextFormField,
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
-    TResult? Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
   }) {
     return deleteAccountSuccess?.call(data);
@@ -2034,7 +1999,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updateAccountInformationLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         updateAccountInformationError,
     TResult Function(UpdateAccountInformationResponse data)?
         updateAccountInformationSuccess,
@@ -2043,7 +2008,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
     TResult Function(bool enable)? changeEnablTextFormField,
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
-    TResult Function(int statesCode, String errorMessage)? deleteAccountError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
     TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {

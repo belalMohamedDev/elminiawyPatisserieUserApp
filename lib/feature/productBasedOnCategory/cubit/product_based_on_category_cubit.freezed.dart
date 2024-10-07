@@ -20,8 +20,7 @@ mixin _$ProductBasedOnCategoryState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
     required TResult Function(List<Products>? data) filterProductListSuccess,
@@ -32,7 +31,7 @@ mixin _$ProductBasedOnCategoryState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult? Function(List<Products>? data)? filterProductListSuccess,
     TResult? Function(int index)? changeCategoryIndex,
@@ -42,7 +41,7 @@ mixin _$ProductBasedOnCategoryState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult Function(List<Products>? data)? filterProductListSuccess,
     TResult Function(int index)? changeCategoryIndex,
@@ -149,8 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
     required TResult Function(List<Products>? data) filterProductListSuccess,
@@ -164,7 +162,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult? Function(List<Products>? data)? filterProductListSuccess,
     TResult? Function(int index)? changeCategoryIndex,
@@ -177,7 +175,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult Function(List<Products>? data)? filterProductListSuccess,
     TResult Function(int index)? changeCategoryIndex,
@@ -288,8 +286,7 @@ class _$GetProductBasedOnCategoryLoadingImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
     required TResult Function(List<Products>? data) filterProductListSuccess,
@@ -303,7 +300,7 @@ class _$GetProductBasedOnCategoryLoadingImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult? Function(List<Products>? data)? filterProductListSuccess,
     TResult? Function(int index)? changeCategoryIndex,
@@ -316,7 +313,7 @@ class _$GetProductBasedOnCategoryLoadingImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult Function(List<Products>? data)? filterProductListSuccess,
     TResult Function(int index)? changeCategoryIndex,
@@ -391,7 +388,7 @@ abstract class _$$GetProductBasedOnCategoryErrorImplCopyWith<$Res> {
           $Res Function(_$GetProductBasedOnCategoryErrorImpl) then) =
       __$$GetProductBasedOnCategoryErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -407,18 +404,13 @@ class __$$GetProductBasedOnCategoryErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetProductBasedOnCategoryErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -427,17 +419,14 @@ class __$$GetProductBasedOnCategoryErrorImplCopyWithImpl<$Res>
 
 class _$GetProductBasedOnCategoryErrorImpl
     implements GetProductBasedOnCategoryError {
-  const _$GetProductBasedOnCategoryErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetProductBasedOnCategoryErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'ProductBasedOnCategoryState.getProductError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'ProductBasedOnCategoryState.getProductError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -445,14 +434,12 @@ class _$GetProductBasedOnCategoryErrorImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetProductBasedOnCategoryErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -467,14 +454,13 @@ class _$GetProductBasedOnCategoryErrorImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
     required TResult Function(List<Products>? data) filterProductListSuccess,
     required TResult Function(int index) changeCategoryIndex,
   }) {
-    return getProductError(statesCode, errorMessage);
+    return getProductError(apiErrorModel);
   }
 
   @override
@@ -482,12 +468,12 @@ class _$GetProductBasedOnCategoryErrorImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult? Function(List<Products>? data)? filterProductListSuccess,
     TResult? Function(int index)? changeCategoryIndex,
   }) {
-    return getProductError?.call(statesCode, errorMessage);
+    return getProductError?.call(apiErrorModel);
   }
 
   @override
@@ -495,14 +481,14 @@ class _$GetProductBasedOnCategoryErrorImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult Function(List<Products>? data)? filterProductListSuccess,
     TResult Function(int index)? changeCategoryIndex,
     required TResult orElse(),
   }) {
     if (getProductError != null) {
-      return getProductError(statesCode, errorMessage);
+      return getProductError(apiErrorModel);
     }
     return orElse();
   }
@@ -560,11 +546,9 @@ class _$GetProductBasedOnCategoryErrorImpl
 abstract class GetProductBasedOnCategoryError
     implements ProductBasedOnCategoryState {
   const factory GetProductBasedOnCategoryError(
-          {required final int statesCode, required final String errorMessage}) =
-      _$GetProductBasedOnCategoryErrorImpl;
+      final ApiErrorModel apiErrorModel) = _$GetProductBasedOnCategoryErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetProductBasedOnCategoryErrorImplCopyWith<
           _$GetProductBasedOnCategoryErrorImpl>
@@ -643,8 +627,7 @@ class _$GetProductBasedOnCategorySuccessImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
     required TResult Function(List<Products>? data) filterProductListSuccess,
@@ -658,7 +641,7 @@ class _$GetProductBasedOnCategorySuccessImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult? Function(List<Products>? data)? filterProductListSuccess,
     TResult? Function(int index)? changeCategoryIndex,
@@ -671,7 +654,7 @@ class _$GetProductBasedOnCategorySuccessImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult Function(List<Products>? data)? filterProductListSuccess,
     TResult Function(int index)? changeCategoryIndex,
@@ -825,8 +808,7 @@ class _$FilterProductListSuccessImpl implements FilterProductListSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
     required TResult Function(List<Products>? data) filterProductListSuccess,
@@ -840,7 +822,7 @@ class _$FilterProductListSuccessImpl implements FilterProductListSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult? Function(List<Products>? data)? filterProductListSuccess,
     TResult? Function(int index)? changeCategoryIndex,
@@ -853,7 +835,7 @@ class _$FilterProductListSuccessImpl implements FilterProductListSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult Function(List<Products>? data)? filterProductListSuccess,
     TResult Function(int index)? changeCategoryIndex,
@@ -993,8 +975,7 @@ class _$ChangeCategoryIndexImpl implements ChangeCategoryIndex {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(GetProductsBasedOnCategory data)
         getProductSuccess,
     required TResult Function(List<Products>? data) filterProductListSuccess,
@@ -1008,7 +989,7 @@ class _$ChangeCategoryIndexImpl implements ChangeCategoryIndex {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult? Function(List<Products>? data)? filterProductListSuccess,
     TResult? Function(int index)? changeCategoryIndex,
@@ -1021,7 +1002,7 @@ class _$ChangeCategoryIndexImpl implements ChangeCategoryIndex {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(GetProductsBasedOnCategory data)? getProductSuccess,
     TResult Function(List<Products>? data)? filterProductListSuccess,
     TResult Function(int index)? changeCategoryIndex,

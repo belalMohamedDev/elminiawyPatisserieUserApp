@@ -40,7 +40,7 @@ class PaymentCubit extends Cubit<PaymentState> {
       failure: (error) {
         emit(
           PaymentState.createCashOrderError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
+              error),
         );
       },
     );
@@ -61,7 +61,7 @@ class PaymentCubit extends Cubit<PaymentState> {
       failure: (error) {
         emit(
           PaymentState.createCashOrderError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
+              error),
         );
       },
     );
@@ -83,7 +83,7 @@ class PaymentCubit extends Cubit<PaymentState> {
       failure: (error) {
         emit(
           PaymentState.getCompleteOrdersError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
+            error),
         );
       },
     );
@@ -105,7 +105,7 @@ class PaymentCubit extends Cubit<PaymentState> {
       failure: (error) {
         emit(
           PaymentState.getCompleteOrdersError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
+           error),
         );
       },
     );

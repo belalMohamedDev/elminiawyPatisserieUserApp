@@ -15,11 +15,11 @@ class ForgetPasswordRepository {
             await _apiService.forgetPassword(forgetPasswordRequestBody);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
-    }
+return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
   }
 }

@@ -83,7 +83,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
         if (error.statusCode != 401) {
           emit(
             UserAddressState.getAllAddressError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+              error),
           );
         }
       },
@@ -105,7 +105,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
         if (error.statusCode != 401) {
           emit(
             UserAddressState.removeAddressError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+               error),
           );
         }
       },
@@ -175,7 +175,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
         if (error.statusCode != 401) {
           emit(
             UserAddressState.createNewAddressError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+             error),
           );
         }
       },
@@ -248,7 +248,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
         if (error.statusCode != 401) {
           emit(
             UserAddressState.updateAddressError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+             error),
           );
         }
       },

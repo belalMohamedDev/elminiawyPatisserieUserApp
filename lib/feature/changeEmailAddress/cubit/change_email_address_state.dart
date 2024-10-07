@@ -7,8 +7,7 @@ class ChangeEmailAddressState with _$ChangeEmailAddressState {
   const factory ChangeEmailAddressState.changeEmailAddressLoading() =
       ChangeEmailAddressLoading;
   const factory ChangeEmailAddressState.changeEmailAddressError(
-      {required int statesCode,
-      required String errorMessage}) = ChangeEmailAddressError;
+       ApiErrorModel apiErrorModel) = ChangeEmailAddressError;
 
   const factory ChangeEmailAddressState.changeEmailAddressSuccess(
       UpdateEmailAddressResponse data) = ChangeEmailAddressSuccess;

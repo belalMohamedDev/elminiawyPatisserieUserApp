@@ -26,7 +26,7 @@ class CategoryCubit extends Cubit<CategoryState> {
         } else {
           emit(
             CategoryState.getCategoriesError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
           );
           _retryCount = 0;
         }

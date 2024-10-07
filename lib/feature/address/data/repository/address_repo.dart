@@ -32,10 +32,11 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
         );
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+          return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -46,11 +47,12 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
         final response = await _apiService.getAllAddress();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+           return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -61,11 +63,12 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
         final response = await _apiService.deleteAddress(id);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+           return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -78,11 +81,12 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
             id, createAddressRequestBody.toFilteredJson());
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+          return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -95,11 +99,12 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
             .checkAddressAvaliableService(checkAddressAvailableRequestBody);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+          return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 }

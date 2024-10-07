@@ -20,11 +20,12 @@ class HomeRepositoryImplement implements HomeRepository {
         final response = await _apiService.getBanners();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+         return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));   
     }
   }
 
@@ -35,11 +36,12 @@ class HomeRepositoryImplement implements HomeRepository {
         final response = await _apiService.getCategories(sort);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+           return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));   
     }
   }
 

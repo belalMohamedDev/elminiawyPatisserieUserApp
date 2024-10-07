@@ -15,8 +15,7 @@ class CartState with _$CartState {
   //get Cart  item State
   const factory CartState.getCartItemLoading() = GetCartItemLoading;
     const factory CartState.getCartItemError(
-      {required int statesCode,
-      required String errorMessage}) = GetCartItemError;
+  ApiErrorModel apiErrorModel) = GetCartItemError;
 
   const factory CartState.getCartItemSuccess(
     CartResponse? data,
@@ -25,8 +24,7 @@ class CartState with _$CartState {
   //delete item from Cart  State
 
   const factory CartState.deleteCartItemError(
-      {required int statesCode,
-      required String errorMessage}) = DeleteCartItemError;
+       ApiErrorModel apiErrorModel) = DeleteCartItemError;
   const factory CartState.deleteCartItemLoading() = DeleteCartItemLoading;
   const factory CartState.deleteCartLoading() = DeleteCartLoading;
 

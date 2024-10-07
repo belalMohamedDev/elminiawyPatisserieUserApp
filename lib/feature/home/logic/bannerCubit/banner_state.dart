@@ -6,8 +6,7 @@ class BannerState with _$BannerState {
     //get Banner State
   const factory BannerState.getBannersLoading() = GetBannersLoading;
   const factory BannerState.getBannersError(
-      {required int statesCode,
-      required String errorMessage}) = GetBannersError;
+       ApiErrorModel apiErrorModel) = GetBannersError;
 
   const factory BannerState.getBannersSuccess(BannerResponse data) =
       GetBannersSuccess;

@@ -28,7 +28,7 @@ class BannerCubit extends Cubit<BannerState> {
         } else {
           emit(
             BannerState.getBannersError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+              error),
           );
            _retryCount = 0;
         }

@@ -20,8 +20,7 @@ mixin _$CategoryState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getCategoriesLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCategoriesError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
     required TResult Function(CategoryResponse data) getCategoriesSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,7 +28,7 @@ mixin _$CategoryState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getCategoriesLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult? Function(CategoryResponse data)? getCategoriesSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,7 +36,7 @@ mixin _$CategoryState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getCategoriesLoading,
-    TResult Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult Function(CategoryResponse data)? getCategoriesSuccess,
     required TResult orElse(),
   }) =>
@@ -127,8 +126,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getCategoriesLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCategoriesError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
     required TResult Function(CategoryResponse data) getCategoriesSuccess,
   }) {
     return initial();
@@ -139,7 +137,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getCategoriesLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult? Function(CategoryResponse data)? getCategoriesSuccess,
   }) {
     return initial?.call();
@@ -150,7 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getCategoriesLoading,
-    TResult Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult Function(CategoryResponse data)? getCategoriesSuccess,
     required TResult orElse(),
   }) {
@@ -243,8 +241,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getCategoriesLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCategoriesError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
     required TResult Function(CategoryResponse data) getCategoriesSuccess,
   }) {
     return getCategoriesLoading();
@@ -255,7 +252,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getCategoriesLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult? Function(CategoryResponse data)? getCategoriesSuccess,
   }) {
     return getCategoriesLoading?.call();
@@ -266,7 +263,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getCategoriesLoading,
-    TResult Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult Function(CategoryResponse data)? getCategoriesSuccess,
     required TResult orElse(),
   }) {
@@ -324,7 +321,7 @@ abstract class _$$GetCategoriesErrorImplCopyWith<$Res> {
           $Res Function(_$GetCategoriesErrorImpl) then) =
       __$$GetCategoriesErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -338,18 +335,13 @@ class __$$GetCategoriesErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetCategoriesErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -357,17 +349,14 @@ class __$$GetCategoriesErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetCategoriesErrorImpl implements GetCategoriesError {
-  const _$GetCategoriesErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetCategoriesErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'CategoryState.getCategoriesError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'CategoryState.getCategoriesError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -375,14 +364,12 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetCategoriesErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -396,11 +383,10 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getCategoriesLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCategoriesError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
     required TResult Function(CategoryResponse data) getCategoriesSuccess,
   }) {
-    return getCategoriesError(statesCode, errorMessage);
+    return getCategoriesError(apiErrorModel);
   }
 
   @override
@@ -408,10 +394,10 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getCategoriesLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult? Function(CategoryResponse data)? getCategoriesSuccess,
   }) {
-    return getCategoriesError?.call(statesCode, errorMessage);
+    return getCategoriesError?.call(apiErrorModel);
   }
 
   @override
@@ -419,12 +405,12 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getCategoriesLoading,
-    TResult Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult Function(CategoryResponse data)? getCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
-      return getCategoriesError(statesCode, errorMessage);
+      return getCategoriesError(apiErrorModel);
     }
     return orElse();
   }
@@ -468,12 +454,10 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
 }
 
 abstract class GetCategoriesError implements CategoryState {
-  const factory GetCategoriesError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetCategoriesErrorImpl;
+  const factory GetCategoriesError(final ApiErrorModel apiErrorModel) =
+      _$GetCategoriesErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetCategoriesErrorImplCopyWith<_$GetCategoriesErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -547,8 +531,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getCategoriesLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCategoriesError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
     required TResult Function(CategoryResponse data) getCategoriesSuccess,
   }) {
     return getCategoriesSuccess(data);
@@ -559,7 +542,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getCategoriesLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult? Function(CategoryResponse data)? getCategoriesSuccess,
   }) {
     return getCategoriesSuccess?.call(data);
@@ -570,7 +553,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getCategoriesLoading,
-    TResult Function(int statesCode, String errorMessage)? getCategoriesError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
     TResult Function(CategoryResponse data)? getCategoriesSuccess,
     required TResult orElse(),
   }) {

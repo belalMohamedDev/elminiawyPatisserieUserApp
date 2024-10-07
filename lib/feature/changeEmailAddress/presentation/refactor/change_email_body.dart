@@ -161,9 +161,9 @@ class ChangeEmailBody extends StatelessWidget {
     return BlocConsumer<ChangeEmailAddressCubit, ChangeEmailAddressState>(
       listener: (context, state) {
         state.whenOrNull(
-            changeEmailAddressError: (statesCode, errorMessage) =>
+            changeEmailAddressError: (apiErrorModel) =>
                 ShowToast.showToastErrorTop(
-                    errorMessage: errorMessage, context: context),
+                    errorMessage: apiErrorModel.message!, context: context),
             changeEmailAddressSuccess: (data) {
               ShowToast.showToastSuccessTop(
                   message: data.message!, context: context);

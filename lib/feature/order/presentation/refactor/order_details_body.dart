@@ -12,9 +12,8 @@ class OrderDetailsBody extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           createCashOrderLoading: () => context.pop(),
-          createCashOrderError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
+          createCashOrderError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           createCashOrderSuccess: (createOrderResponse) {
             if (order != null) {
               ShowToast.showToastSuccessTop(

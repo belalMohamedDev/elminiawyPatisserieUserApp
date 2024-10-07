@@ -8,8 +8,7 @@ class UserAddressState with _$UserAddressState {
       CreateNewAddressLoading;
 
   const factory UserAddressState.createNewAddressError(
-      {required int statesCode,
-      required String errorMessage}) = CreateNewAddressError;
+       ApiErrorModel apiErrorModel) = CreateNewAddressError;
 
   const factory UserAddressState.updateAddressRegion(
       {required String message,
@@ -22,8 +21,7 @@ class UserAddressState with _$UserAddressState {
   const factory UserAddressState.getAllAddressLoading() = GetAllAddressLoading;
 
   const factory UserAddressState.getAllAddressError(
-      {required int statesCode,
-      required String errorMessage}) = GetAllAddressError;
+       ApiErrorModel apiErrorModel) = GetAllAddressError;
 
   const factory UserAddressState.getAllAddressSuccess(GetAddressResponse data) =
       GetAllAddressSuccess;
@@ -34,8 +32,7 @@ class UserAddressState with _$UserAddressState {
   const factory UserAddressState.updateAddressLoading() = UpdateAddressLoading;
 
   const factory UserAddressState.updateAddressError(
-      {required int statesCode,
-      required String errorMessage}) = UpdateAddressError;
+       ApiErrorModel apiErrorModel) = UpdateAddressError;
 
   const factory UserAddressState.updateAddressSuccess(
       CreateAddressResponse data) = UpdateAddressSuccess;
@@ -43,8 +40,7 @@ class UserAddressState with _$UserAddressState {
   const factory UserAddressState.removeAddressLoading() = RemoveAddressLoading;
 
   const factory UserAddressState.removeAddressError(
-      {required int statesCode,
-      required String errorMessage}) = RemoveAddressError;
+       ApiErrorModel apiErrorModel) = RemoveAddressError;
 
   const factory UserAddressState.removeAddressSuccess(
       ApiSuccessGeneralModel data) = RemoveAddressSuccess;

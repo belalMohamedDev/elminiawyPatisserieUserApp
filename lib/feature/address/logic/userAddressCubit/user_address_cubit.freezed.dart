@@ -20,7 +20,7 @@ mixin _$UserAddressState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -28,17 +28,14 @@ mixin _$UserAddressState {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -46,20 +43,19 @@ mixin _$UserAddressState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,20 +63,19 @@ mixin _$UserAddressState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) =>
@@ -207,7 +202,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -215,17 +210,14 @@ class _$InitialImpl implements _Initial {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return initial();
@@ -236,20 +228,19 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return initial?.call();
@@ -260,20 +251,19 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -405,7 +395,7 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -413,17 +403,14 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return createNewAddressLoading();
@@ -434,20 +421,19 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return createNewAddressLoading?.call();
@@ -458,20 +444,19 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -567,7 +552,7 @@ abstract class _$$CreateNewAddressErrorImplCopyWith<$Res> {
           $Res Function(_$CreateNewAddressErrorImpl) then) =
       __$$CreateNewAddressErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -581,18 +566,13 @@ class __$$CreateNewAddressErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$CreateNewAddressErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -600,17 +580,14 @@ class __$$CreateNewAddressErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
-  const _$CreateNewAddressErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$CreateNewAddressErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'UserAddressState.createNewAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'UserAddressState.createNewAddressError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -618,14 +595,12 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateNewAddressErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -639,7 +614,7 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -647,20 +622,17 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
-    return createNewAddressError(statesCode, errorMessage);
+    return createNewAddressError(apiErrorModel);
   }
 
   @override
@@ -668,23 +640,22 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
-    return createNewAddressError?.call(statesCode, errorMessage);
+    return createNewAddressError?.call(apiErrorModel);
   }
 
   @override
@@ -692,25 +663,24 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressError != null) {
-      return createNewAddressError(statesCode, errorMessage);
+      return createNewAddressError(apiErrorModel);
     }
     return orElse();
   }
@@ -791,12 +761,10 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
 }
 
 abstract class CreateNewAddressError implements UserAddressState {
-  const factory CreateNewAddressError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$CreateNewAddressErrorImpl;
+  const factory CreateNewAddressError(final ApiErrorModel apiErrorModel) =
+      _$CreateNewAddressErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$CreateNewAddressErrorImplCopyWith<_$CreateNewAddressErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -895,7 +863,7 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -903,17 +871,14 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return updateAddressRegion(message, latLng, markData);
@@ -924,20 +889,19 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return updateAddressRegion?.call(message, latLng, markData);
@@ -948,20 +912,19 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -1129,7 +1092,7 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -1137,17 +1100,14 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return createNewAddressSuccess(data);
@@ -1158,20 +1118,19 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return createNewAddressSuccess?.call(data);
@@ -1182,20 +1141,19 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -1331,7 +1289,7 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -1339,17 +1297,14 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return getAllAddressLoading();
@@ -1360,20 +1315,19 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return getAllAddressLoading?.call();
@@ -1384,20 +1338,19 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -1492,7 +1445,7 @@ abstract class _$$GetAllAddressErrorImplCopyWith<$Res> {
           $Res Function(_$GetAllAddressErrorImpl) then) =
       __$$GetAllAddressErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1506,18 +1459,13 @@ class __$$GetAllAddressErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetAllAddressErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1525,17 +1473,14 @@ class __$$GetAllAddressErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAllAddressErrorImpl implements GetAllAddressError {
-  const _$GetAllAddressErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetAllAddressErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'UserAddressState.getAllAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'UserAddressState.getAllAddressError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1543,14 +1488,12 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAllAddressErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1564,7 +1507,7 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -1572,20 +1515,17 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
-    return getAllAddressError(statesCode, errorMessage);
+    return getAllAddressError(apiErrorModel);
   }
 
   @override
@@ -1593,23 +1533,22 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
-    return getAllAddressError?.call(statesCode, errorMessage);
+    return getAllAddressError?.call(apiErrorModel);
   }
 
   @override
@@ -1617,25 +1556,24 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressError != null) {
-      return getAllAddressError(statesCode, errorMessage);
+      return getAllAddressError(apiErrorModel);
     }
     return orElse();
   }
@@ -1716,12 +1654,10 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
 }
 
 abstract class GetAllAddressError implements UserAddressState {
-  const factory GetAllAddressError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetAllAddressErrorImpl;
+  const factory GetAllAddressError(final ApiErrorModel apiErrorModel) =
+      _$GetAllAddressErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetAllAddressErrorImplCopyWith<_$GetAllAddressErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1795,7 +1731,7 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -1803,17 +1739,14 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return getAllAddressSuccess(data);
@@ -1824,20 +1757,19 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return getAllAddressSuccess?.call(data);
@@ -1848,20 +1780,19 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -2032,7 +1963,7 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -2040,17 +1971,14 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return changeRegionAreaIndex(index, alias);
@@ -2061,20 +1989,19 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return changeRegionAreaIndex?.call(index, alias);
@@ -2085,20 +2012,19 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -2235,7 +2161,7 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -2243,17 +2169,14 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return updateAddressLoading();
@@ -2264,20 +2187,19 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return updateAddressLoading?.call();
@@ -2288,20 +2210,19 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -2396,7 +2317,7 @@ abstract class _$$UpdateAddressErrorImplCopyWith<$Res> {
           $Res Function(_$UpdateAddressErrorImpl) then) =
       __$$UpdateAddressErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -2410,18 +2331,13 @@ class __$$UpdateAddressErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$UpdateAddressErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -2429,17 +2345,14 @@ class __$$UpdateAddressErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateAddressErrorImpl implements UpdateAddressError {
-  const _$UpdateAddressErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$UpdateAddressErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'UserAddressState.updateAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'UserAddressState.updateAddressError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -2447,14 +2360,12 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateAddressErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -2468,7 +2379,7 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -2476,20 +2387,17 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
-    return updateAddressError(statesCode, errorMessage);
+    return updateAddressError(apiErrorModel);
   }
 
   @override
@@ -2497,23 +2405,22 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
-    return updateAddressError?.call(statesCode, errorMessage);
+    return updateAddressError?.call(apiErrorModel);
   }
 
   @override
@@ -2521,25 +2428,24 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (updateAddressError != null) {
-      return updateAddressError(statesCode, errorMessage);
+      return updateAddressError(apiErrorModel);
     }
     return orElse();
   }
@@ -2620,12 +2526,10 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
 }
 
 abstract class UpdateAddressError implements UserAddressState {
-  const factory UpdateAddressError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$UpdateAddressErrorImpl;
+  const factory UpdateAddressError(final ApiErrorModel apiErrorModel) =
+      _$UpdateAddressErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$UpdateAddressErrorImplCopyWith<_$UpdateAddressErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2699,7 +2603,7 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -2707,17 +2611,14 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return updateAddressSuccess(data);
@@ -2728,20 +2629,19 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return updateAddressSuccess?.call(data);
@@ -2752,20 +2652,19 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -2901,7 +2800,7 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -2909,17 +2808,14 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return removeAddressLoading();
@@ -2930,20 +2826,19 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return removeAddressLoading?.call();
@@ -2954,20 +2849,19 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
@@ -3062,7 +2956,7 @@ abstract class _$$RemoveAddressErrorImplCopyWith<$Res> {
           $Res Function(_$RemoveAddressErrorImpl) then) =
       __$$RemoveAddressErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -3076,18 +2970,13 @@ class __$$RemoveAddressErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$RemoveAddressErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -3095,17 +2984,14 @@ class __$$RemoveAddressErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RemoveAddressErrorImpl implements RemoveAddressError {
-  const _$RemoveAddressErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$RemoveAddressErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'UserAddressState.removeAddressError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'UserAddressState.removeAddressError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -3113,14 +2999,12 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RemoveAddressErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -3134,7 +3018,7 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -3142,20 +3026,17 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
-    return removeAddressError(statesCode, errorMessage);
+    return removeAddressError(apiErrorModel);
   }
 
   @override
@@ -3163,23 +3044,22 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
-    return removeAddressError?.call(statesCode, errorMessage);
+    return removeAddressError?.call(apiErrorModel);
   }
 
   @override
@@ -3187,25 +3067,24 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (removeAddressError != null) {
-      return removeAddressError(statesCode, errorMessage);
+      return removeAddressError(apiErrorModel);
     }
     return orElse();
   }
@@ -3286,12 +3165,10 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
 }
 
 abstract class RemoveAddressError implements UserAddressState {
-  const factory RemoveAddressError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$RemoveAddressErrorImpl;
+  const factory RemoveAddressError(final ApiErrorModel apiErrorModel) =
+      _$RemoveAddressErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$RemoveAddressErrorImplCopyWith<_$RemoveAddressErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3365,7 +3242,7 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() createNewAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         createNewAddressError,
     required TResult Function(
             String message, LatLng latLng, List<MarkerData> markData)
@@ -3373,17 +3250,14 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     required TResult Function(CreateAddressResponse data)
         createNewAddressSuccess,
     required TResult Function() getAllAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getAllAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllAddressError,
     required TResult Function(GetAddressResponse data) getAllAddressSuccess,
     required TResult Function(int index, String alias) changeRegionAreaIndex,
     required TResult Function() updateAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        updateAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) updateAddressError,
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        removeAddressError,
+    required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
     required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
   }) {
     return removeAddressSuccess(data);
@@ -3394,20 +3268,19 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? createNewAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult? Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult? Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult? Function()? getAllAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult? Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult? Function(int index, String alias)? changeRegionAreaIndex,
     TResult? Function()? updateAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
-    TResult? Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
   }) {
     return removeAddressSuccess?.call(data);
@@ -3418,20 +3291,19 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? createNewAddressLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        createNewAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? createNewAddressError,
     TResult Function(String message, LatLng latLng, List<MarkerData> markData)?
         updateAddressRegion,
     TResult Function(CreateAddressResponse data)? createNewAddressSuccess,
     TResult Function()? getAllAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? getAllAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllAddressError,
     TResult Function(GetAddressResponse data)? getAllAddressSuccess,
     TResult Function(int index, String alias)? changeRegionAreaIndex,
     TResult Function()? updateAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? updateAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? updateAddressError,
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
-    TResult Function(int statesCode, String errorMessage)? removeAddressError,
+    TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
     TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
     required TResult orElse(),
   }) {

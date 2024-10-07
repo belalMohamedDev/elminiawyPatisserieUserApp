@@ -20,7 +20,7 @@ mixin _$ChangeMyPasswordState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() changeMyPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
     required TResult Function(UpdateMyPasswordResponse data)
         changeMyPasswordSuccess,
@@ -39,8 +39,7 @@ mixin _$ChangeMyPasswordState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
@@ -56,8 +55,7 @@ mixin _$ChangeMyPasswordState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
@@ -171,7 +169,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() changeMyPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
     required TResult Function(UpdateMyPasswordResponse data)
         changeMyPasswordSuccess,
@@ -193,8 +191,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
@@ -213,8 +210,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
@@ -333,7 +329,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() changeMyPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
     required TResult Function(UpdateMyPasswordResponse data)
         changeMyPasswordSuccess,
@@ -355,8 +351,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
@@ -375,8 +370,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
@@ -458,7 +452,7 @@ abstract class _$$ChangeMyPasswordErrorImplCopyWith<$Res> {
           $Res Function(_$ChangeMyPasswordErrorImpl) then) =
       __$$ChangeMyPasswordErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -473,18 +467,13 @@ class __$$ChangeMyPasswordErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$ChangeMyPasswordErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -492,17 +481,14 @@ class __$$ChangeMyPasswordErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
-  const _$ChangeMyPasswordErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$ChangeMyPasswordErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'ChangeMyPasswordState.changeMyPasswordError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'ChangeMyPasswordState.changeMyPasswordError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -510,14 +496,12 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangeMyPasswordErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -531,7 +515,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() changeMyPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
     required TResult Function(UpdateMyPasswordResponse data)
         changeMyPasswordSuccess,
@@ -545,7 +529,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     required TResult Function(bool isPasswordVisible)
         changePasswordVisibilityState,
   }) {
-    return changeMyPasswordError(statesCode, errorMessage);
+    return changeMyPasswordError(apiErrorModel);
   }
 
   @override
@@ -553,8 +537,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
@@ -565,7 +548,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
         changeMyPasswordTextColorUpdated,
     TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
   }) {
-    return changeMyPasswordError?.call(statesCode, errorMessage);
+    return changeMyPasswordError?.call(apiErrorModel);
   }
 
   @override
@@ -573,8 +556,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
@@ -587,7 +569,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     required TResult orElse(),
   }) {
     if (changeMyPasswordError != null) {
-      return changeMyPasswordError(statesCode, errorMessage);
+      return changeMyPasswordError(apiErrorModel);
     }
     return orElse();
   }
@@ -646,12 +628,10 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
 }
 
 abstract class ChangeMyPasswordError implements ChangeMyPasswordState {
-  const factory ChangeMyPasswordError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$ChangeMyPasswordErrorImpl;
+  const factory ChangeMyPasswordError(final ApiErrorModel apiErrorModel) =
+      _$ChangeMyPasswordErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$ChangeMyPasswordErrorImplCopyWith<_$ChangeMyPasswordErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -727,7 +707,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() changeMyPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
     required TResult Function(UpdateMyPasswordResponse data)
         changeMyPasswordSuccess,
@@ -749,8 +729,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
@@ -769,8 +748,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
@@ -976,7 +954,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() changeMyPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
     required TResult Function(UpdateMyPasswordResponse data)
         changeMyPasswordSuccess,
@@ -999,8 +977,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
@@ -1024,8 +1001,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
@@ -1195,7 +1171,7 @@ class _$ChangePasswordVisibilityStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() changeMyPasswordLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
     required TResult Function(UpdateMyPasswordResponse data)
         changeMyPasswordSuccess,
@@ -1217,8 +1193,7 @@ class _$ChangePasswordVisibilityStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
@@ -1237,8 +1212,7 @@ class _$ChangePasswordVisibilityStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        changeMyPasswordError,
+    TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
     TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,

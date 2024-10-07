@@ -20,7 +20,7 @@ mixin _$LogOutState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() logOutLoading,
-    required TResult Function(int statesCode, String errorMessage) logOutError,
+    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
     required TResult Function(String successMessage) logOutSuccess,
     required TResult Function(String userName) getStorageData,
   }) =>
@@ -29,7 +29,7 @@ mixin _$LogOutState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? logOutLoading,
-    TResult? Function(int statesCode, String errorMessage)? logOutError,
+    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult? Function(String successMessage)? logOutSuccess,
     TResult? Function(String userName)? getStorageData,
   }) =>
@@ -38,7 +38,7 @@ mixin _$LogOutState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logOutLoading,
-    TResult Function(int statesCode, String errorMessage)? logOutError,
+    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult Function(String successMessage)? logOutSuccess,
     TResult Function(String userName)? getStorageData,
     required TResult orElse(),
@@ -132,7 +132,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() logOutLoading,
-    required TResult Function(int statesCode, String errorMessage) logOutError,
+    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
     required TResult Function(String successMessage) logOutSuccess,
     required TResult Function(String userName) getStorageData,
   }) {
@@ -144,7 +144,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? logOutLoading,
-    TResult? Function(int statesCode, String errorMessage)? logOutError,
+    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult? Function(String successMessage)? logOutSuccess,
     TResult? Function(String userName)? getStorageData,
   }) {
@@ -156,7 +156,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logOutLoading,
-    TResult Function(int statesCode, String errorMessage)? logOutError,
+    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult Function(String successMessage)? logOutSuccess,
     TResult Function(String userName)? getStorageData,
     required TResult orElse(),
@@ -252,7 +252,7 @@ class _$LogOutLoadingImpl implements LogOutLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() logOutLoading,
-    required TResult Function(int statesCode, String errorMessage) logOutError,
+    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
     required TResult Function(String successMessage) logOutSuccess,
     required TResult Function(String userName) getStorageData,
   }) {
@@ -264,7 +264,7 @@ class _$LogOutLoadingImpl implements LogOutLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? logOutLoading,
-    TResult? Function(int statesCode, String errorMessage)? logOutError,
+    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult? Function(String successMessage)? logOutSuccess,
     TResult? Function(String userName)? getStorageData,
   }) {
@@ -276,7 +276,7 @@ class _$LogOutLoadingImpl implements LogOutLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logOutLoading,
-    TResult Function(int statesCode, String errorMessage)? logOutError,
+    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult Function(String successMessage)? logOutSuccess,
     TResult Function(String userName)? getStorageData,
     required TResult orElse(),
@@ -338,7 +338,7 @@ abstract class _$$LogOutErrorImplCopyWith<$Res> {
           _$LogOutErrorImpl value, $Res Function(_$LogOutErrorImpl) then) =
       __$$LogOutErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -352,18 +352,13 @@ class __$$LogOutErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$LogOutErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -371,17 +366,14 @@ class __$$LogOutErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LogOutErrorImpl implements LogOutError {
-  const _$LogOutErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$LogOutErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'LogOutState.logOutError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'LogOutState.logOutError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -389,14 +381,12 @@ class _$LogOutErrorImpl implements LogOutError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LogOutErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -409,11 +399,11 @@ class _$LogOutErrorImpl implements LogOutError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() logOutLoading,
-    required TResult Function(int statesCode, String errorMessage) logOutError,
+    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
     required TResult Function(String successMessage) logOutSuccess,
     required TResult Function(String userName) getStorageData,
   }) {
-    return logOutError(statesCode, errorMessage);
+    return logOutError(apiErrorModel);
   }
 
   @override
@@ -421,11 +411,11 @@ class _$LogOutErrorImpl implements LogOutError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? logOutLoading,
-    TResult? Function(int statesCode, String errorMessage)? logOutError,
+    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult? Function(String successMessage)? logOutSuccess,
     TResult? Function(String userName)? getStorageData,
   }) {
-    return logOutError?.call(statesCode, errorMessage);
+    return logOutError?.call(apiErrorModel);
   }
 
   @override
@@ -433,13 +423,13 @@ class _$LogOutErrorImpl implements LogOutError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logOutLoading,
-    TResult Function(int statesCode, String errorMessage)? logOutError,
+    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult Function(String successMessage)? logOutSuccess,
     TResult Function(String userName)? getStorageData,
     required TResult orElse(),
   }) {
     if (logOutError != null) {
-      return logOutError(statesCode, errorMessage);
+      return logOutError(apiErrorModel);
     }
     return orElse();
   }
@@ -486,12 +476,10 @@ class _$LogOutErrorImpl implements LogOutError {
 }
 
 abstract class LogOutError implements LogOutState {
-  const factory LogOutError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$LogOutErrorImpl;
+  const factory LogOutError(final ApiErrorModel apiErrorModel) =
+      _$LogOutErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$LogOutErrorImplCopyWith<_$LogOutErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -564,7 +552,7 @@ class _$LogOutSuccessImpl implements LogOutSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() logOutLoading,
-    required TResult Function(int statesCode, String errorMessage) logOutError,
+    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
     required TResult Function(String successMessage) logOutSuccess,
     required TResult Function(String userName) getStorageData,
   }) {
@@ -576,7 +564,7 @@ class _$LogOutSuccessImpl implements LogOutSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? logOutLoading,
-    TResult? Function(int statesCode, String errorMessage)? logOutError,
+    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult? Function(String successMessage)? logOutSuccess,
     TResult? Function(String userName)? getStorageData,
   }) {
@@ -588,7 +576,7 @@ class _$LogOutSuccessImpl implements LogOutSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logOutLoading,
-    TResult Function(int statesCode, String errorMessage)? logOutError,
+    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult Function(String successMessage)? logOutSuccess,
     TResult Function(String userName)? getStorageData,
     required TResult orElse(),
@@ -718,7 +706,7 @@ class _$GetStorageDataImpl implements GetStorageData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() logOutLoading,
-    required TResult Function(int statesCode, String errorMessage) logOutError,
+    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
     required TResult Function(String successMessage) logOutSuccess,
     required TResult Function(String userName) getStorageData,
   }) {
@@ -730,7 +718,7 @@ class _$GetStorageDataImpl implements GetStorageData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? logOutLoading,
-    TResult? Function(int statesCode, String errorMessage)? logOutError,
+    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult? Function(String successMessage)? logOutSuccess,
     TResult? Function(String userName)? getStorageData,
   }) {
@@ -742,7 +730,7 @@ class _$GetStorageDataImpl implements GetStorageData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logOutLoading,
-    TResult Function(int statesCode, String errorMessage)? logOutError,
+    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
     TResult Function(String successMessage)? logOutSuccess,
     TResult Function(String userName)? getStorageData,
     required TResult orElse(),

@@ -4,7 +4,7 @@ part of 'forget_password_bloc.dart';
 class ForgetPasswordState with _$ForgetPasswordState {
   const factory ForgetPasswordState.initial() = _Initial;
   const factory ForgetPasswordState.loading() = ForgetPasswordLoadingData;
-  const factory ForgetPasswordState.error({required int statusCode,required String errorMessage}) = ForgetPasswordButtonErrorData;
+  const factory ForgetPasswordState.error(ApiErrorModel apiErrorModel) = ForgetPasswordButtonErrorData;
   const factory ForgetPasswordState.success(ForgetPasswordResponse data) = ForgetPasswordButtonSuccessData;
   const factory ForgetPasswordState.userForgetEmailAddress(String value ) = UserForgetEmailAddress;
   const factory ForgetPasswordState.userForgetButtonValidator(bool value) = ContinueForgetButtonValidator;
@@ -12,14 +12,16 @@ class ForgetPasswordState with _$ForgetPasswordState {
 
 
   const factory ForgetPasswordState.verifyCodeLoading() = VerifyCodeLoadingData;
-  const factory ForgetPasswordState.verifyCodeError({required int statusCode,required String errorMessage}) = VerifyCodeButtonErrorData;
+  const factory ForgetPasswordState.verifyCodeError(
+      ApiErrorModel apiErrorModel) = VerifyCodeButtonErrorData;
   const factory ForgetPasswordState.verifyCodeSuccess(VerifyCodeResponse data) = VerifyCodeButtonSuccessData;
   const factory ForgetPasswordState.otpVerifyCode(String? value) = OtpVerifyCode;
   const factory ForgetPasswordState.verifyButtonValidator(bool value) = VerifyButtonValidator;
 
 
   const factory ForgetPasswordState.newPasswordLoading() = NewPasswordLoadingData;
-  const factory ForgetPasswordState.newPasswordError({required int statusCode,required String errorMessage}) = NewPasswordButtonErrorData;
+  const factory ForgetPasswordState.newPasswordError(
+      ApiErrorModel apiErrorModel) = NewPasswordButtonErrorData;
   const factory ForgetPasswordState.newPasswordSuccess(AuthResponse data) = NewPasswordButtonSuccessData;
   const factory ForgetPasswordState.userNewPassword(String value) = UserNewPassword;
   const factory ForgetPasswordState.userConfirmNewPassword(String value) = UserConfirmNewPassword;

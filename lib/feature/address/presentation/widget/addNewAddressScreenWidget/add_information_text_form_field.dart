@@ -13,12 +13,11 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
     return BlocConsumer<UserAddressCubit, UserAddressState>(
       listener: (context, state) {
         state.whenOrNull(
-            createNewAddressError: (statesCode, errorMessage) =>
+            createNewAddressError: (apiErrorModel) =>
                 ShowToast.showToastErrorTop(
-                    errorMessage: errorMessage, context: context),
-            updateAddressError: (statesCode, errorMessage) =>
-                ShowToast.showToastErrorTop(
-                    errorMessage: errorMessage, context: context),
+                    errorMessage: apiErrorModel.message!, context: context),
+            updateAddressError: (apiErrorModel) => ShowToast.showToastErrorTop(
+                errorMessage: apiErrorModel.message!, context: context),
             createNewAddressSuccess: (data) {
               final userAddressCubit = context.read<UserAddressCubit>();
 

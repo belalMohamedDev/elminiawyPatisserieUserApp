@@ -20,12 +20,13 @@ class SignInButton extends StatelessWidget {
       // Listener to respond to state changes such as success or error events
       listener: (context, state) {
         state.whenOrNull(
-          error: (statesCode, errorMessage) {
-            // Show an error toast when login fails
+          error: (apiErrorModel) {
+           // Show an error toast when login fails
             ShowToast.showToastErrorTop(
-                errorMessage: errorMessage, context: context);
+                errorMessage: apiErrorModel.message!, context: context);
           },
           suceess: (data) {
+            
             // Show a success toast when login is successful
             ShowToast.showToastSuccessTop(
                 message: data.message!, context: context);

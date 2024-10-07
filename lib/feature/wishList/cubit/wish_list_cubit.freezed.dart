@@ -20,11 +20,10 @@ mixin _$WishListState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
@@ -35,10 +34,10 @@ mixin _$WishListState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -49,10 +48,10 @@ mixin _$WishListState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -166,11 +165,10 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
@@ -184,10 +182,10 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -201,10 +199,10 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -320,11 +318,10 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
@@ -338,10 +335,10 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -355,10 +352,10 @@ class _$GetWishListLoadingImpl implements GetWishListLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -440,7 +437,7 @@ abstract class _$$GetWishListErrorImplCopyWith<$Res> {
           $Res Function(_$GetWishListErrorImpl) then) =
       __$$GetWishListErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -454,18 +451,13 @@ class __$$GetWishListErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetWishListErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -473,17 +465,14 @@ class __$$GetWishListErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetWishListErrorImpl implements GetWishListError {
-  const _$GetWishListErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetWishListErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'WishListState.getWishListError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'WishListState.getWishListError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -491,14 +480,12 @@ class _$GetWishListErrorImpl implements GetWishListError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetWishListErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -512,17 +499,16 @@ class _$GetWishListErrorImpl implements GetWishListError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
     required TResult Function(Map<String, bool> favorites) updateFavoriteState,
   }) {
-    return getWishListError(statesCode, errorMessage);
+    return getWishListError(apiErrorModel);
   }
 
   @override
@@ -530,16 +516,16 @@ class _$GetWishListErrorImpl implements GetWishListError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
     TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
   }) {
-    return getWishListError?.call(statesCode, errorMessage);
+    return getWishListError?.call(apiErrorModel);
   }
 
   @override
@@ -547,10 +533,10 @@ class _$GetWishListErrorImpl implements GetWishListError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -558,7 +544,7 @@ class _$GetWishListErrorImpl implements GetWishListError {
     required TResult orElse(),
   }) {
     if (getWishListError != null) {
-      return getWishListError(statesCode, errorMessage);
+      return getWishListError(apiErrorModel);
     }
     return orElse();
   }
@@ -623,12 +609,10 @@ class _$GetWishListErrorImpl implements GetWishListError {
 }
 
 abstract class GetWishListError implements WishListState {
-  const factory GetWishListError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetWishListErrorImpl;
+  const factory GetWishListError(final ApiErrorModel apiErrorModel) =
+      _$GetWishListErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetWishListErrorImplCopyWith<_$GetWishListErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -701,11 +685,10 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
@@ -719,10 +702,10 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -736,10 +719,10 @@ class _$GetWishListSuccessImpl implements GetWishListSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -866,11 +849,10 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
@@ -884,10 +866,10 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -901,10 +883,10 @@ class _$AddOrRemoveProductFromWishListLoadingImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -988,7 +970,7 @@ abstract class _$$AddOrRemoveProductFromWishListErrorImplCopyWith<$Res> {
           $Res Function(_$AddOrRemoveProductFromWishListErrorImpl) then) =
       __$$AddOrRemoveProductFromWishListErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1004,18 +986,13 @@ class __$$AddOrRemoveProductFromWishListErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$AddOrRemoveProductFromWishListErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1024,17 +1001,14 @@ class __$$AddOrRemoveProductFromWishListErrorImplCopyWithImpl<$Res>
 
 class _$AddOrRemoveProductFromWishListErrorImpl
     implements AddOrRemoveProductFromWishListError {
-  const _$AddOrRemoveProductFromWishListErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$AddOrRemoveProductFromWishListErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'WishListState.addOrRemoveProductFromWishListError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'WishListState.addOrRemoveProductFromWishListError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1042,14 +1016,12 @@ class _$AddOrRemoveProductFromWishListErrorImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddOrRemoveProductFromWishListErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1064,17 +1036,16 @@ class _$AddOrRemoveProductFromWishListErrorImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
     required TResult Function(Map<String, bool> favorites) updateFavoriteState,
   }) {
-    return addOrRemoveProductFromWishListError(statesCode, errorMessage);
+    return addOrRemoveProductFromWishListError(apiErrorModel);
   }
 
   @override
@@ -1082,16 +1053,16 @@ class _$AddOrRemoveProductFromWishListErrorImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
     TResult? Function(Map<String, bool> favorites)? updateFavoriteState,
   }) {
-    return addOrRemoveProductFromWishListError?.call(statesCode, errorMessage);
+    return addOrRemoveProductFromWishListError?.call(apiErrorModel);
   }
 
   @override
@@ -1099,10 +1070,10 @@ class _$AddOrRemoveProductFromWishListErrorImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -1110,7 +1081,7 @@ class _$AddOrRemoveProductFromWishListErrorImpl
     required TResult orElse(),
   }) {
     if (addOrRemoveProductFromWishListError != null) {
-      return addOrRemoveProductFromWishListError(statesCode, errorMessage);
+      return addOrRemoveProductFromWishListError(apiErrorModel);
     }
     return orElse();
   }
@@ -1176,11 +1147,10 @@ class _$AddOrRemoveProductFromWishListErrorImpl
 
 abstract class AddOrRemoveProductFromWishListError implements WishListState {
   const factory AddOrRemoveProductFromWishListError(
-          {required final int statesCode, required final String errorMessage}) =
+          final ApiErrorModel apiErrorModel) =
       _$AddOrRemoveProductFromWishListErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$AddOrRemoveProductFromWishListErrorImplCopyWith<
           _$AddOrRemoveProductFromWishListErrorImpl>
@@ -1259,11 +1229,10 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
@@ -1277,10 +1246,10 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -1294,10 +1263,10 @@ class _$AddOrRemoveProductFromWishListSuccessImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -1455,11 +1424,10 @@ class _$UpdateFavoriteStateImpl implements _UpdateFavoriteState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getWishListError,
+    required TResult Function(ApiErrorModel apiErrorModel) getWishListError,
     required TResult Function(WishListProduct data) getWishListSuccess,
     required TResult Function() addOrRemoveProductFromWishListLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         addOrRemoveProductFromWishListError,
     required TResult Function(WishListProduct data)
         addOrRemoveProductFromWishListSuccess,
@@ -1473,10 +1441,10 @@ class _$UpdateFavoriteStateImpl implements _UpdateFavoriteState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)? getWishListError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult? Function(WishListProduct data)? getWishListSuccess,
     TResult? Function()? addOrRemoveProductFromWishListLoading,
-    TResult? Function(int statesCode, String errorMessage)?
+    TResult? Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult? Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,
@@ -1490,10 +1458,10 @@ class _$UpdateFavoriteStateImpl implements _UpdateFavoriteState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getWishListLoading,
-    TResult Function(int statesCode, String errorMessage)? getWishListError,
+    TResult Function(ApiErrorModel apiErrorModel)? getWishListError,
     TResult Function(WishListProduct data)? getWishListSuccess,
     TResult Function()? addOrRemoveProductFromWishListLoading,
-    TResult Function(int statesCode, String errorMessage)?
+    TResult Function(ApiErrorModel apiErrorModel)?
         addOrRemoveProductFromWishListError,
     TResult Function(WishListProduct data)?
         addOrRemoveProductFromWishListSuccess,

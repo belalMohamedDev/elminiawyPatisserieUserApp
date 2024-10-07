@@ -52,9 +52,8 @@ class ProductBottomSheet extends StatelessWidget {
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         state.whenOrNull(
-          deleteCartItemError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
+          deleteCartItemError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           addItemToCartSuccess: (data, quantity) =>
               ShowToast.showToastSuccessTop(
                   message: data.message!, context: context),
@@ -243,9 +242,9 @@ class ProductBottomSheet extends StatelessWidget {
         icon: BlocConsumer<WishListCubit, WishListState>(
           listener: (context, state) {
             state.whenOrNull(
-              addOrRemoveProductFromWishListError: (statesCode, errorMessage) =>
+              addOrRemoveProductFromWishListError: (apiErrorModel) =>
                   ShowToast.showToastErrorTop(
-                      errorMessage: errorMessage, context: context),
+                      errorMessage: apiErrorModel.message!, context: context),
             );
           },
           builder: (context, state) {

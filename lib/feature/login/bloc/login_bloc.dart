@@ -105,11 +105,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           },
           failure: (error) {
             // Emit error state with error details
+
             emit(
-              LoginState.error(
-                errorMessage: error.message!,
-                statesCode: error.statusCode!,
-              ),
+              LoginState.error(error),
             );
           },
         );

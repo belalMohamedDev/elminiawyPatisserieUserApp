@@ -10,12 +10,10 @@ class UserAddressBody extends StatelessWidget {
     return BlocConsumer<UserAddressCubit, UserAddressState>(
       listener: (context, state) {
         state.whenOrNull(
-          getAllAddressError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
-          removeAddressError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
+          getAllAddressError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
+          removeAddressError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           removeAddressSuccess: (data) => ShowToast.showToastSuccessTop(
               message: data.message!, context: context),
         );

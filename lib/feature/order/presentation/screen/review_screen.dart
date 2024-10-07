@@ -114,9 +114,10 @@ class ReviewPaymentScreen extends StatelessWidget {
             BlocConsumer<PaymentCubit, PaymentState>(
               listener: (context, state) {
                 state.whenOrNull(
-                    createCashOrderError: (statesCode, errorMessage) =>
+                    createCashOrderError: (apiErrorModel) =>
                         ShowToast.showToastErrorTop(
-                            errorMessage: errorMessage, context: context),
+                            errorMessage: apiErrorModel.message!,
+                            context: context),
                     createCashOrderSuccess: (data) {
                       Navigator.pushNamedAndRemoveUntil(
                         context,

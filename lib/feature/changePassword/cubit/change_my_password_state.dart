@@ -7,8 +7,7 @@ class ChangeMyPasswordState with _$ChangeMyPasswordState {
   const factory ChangeMyPasswordState.changeMyPasswordLoading() =
       ChangeMyPasswordLoading;
   const factory ChangeMyPasswordState.changeMyPasswordError(
-      {required int statesCode,
-      required String errorMessage}) = ChangeMyPasswordError;
+       ApiErrorModel apiErrorModel) = ChangeMyPasswordError;
 
   const factory ChangeMyPasswordState.changeMyPasswordSuccess(
       UpdateMyPasswordResponse data) = ChangeMyPasswordSuccess;

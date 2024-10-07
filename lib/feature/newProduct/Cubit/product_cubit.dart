@@ -37,8 +37,7 @@ class ProductCubit extends Cubit<ProductState> {
         } else {
           emit(
             ProductState.getProductError(
-              errorMessage: error.message!,
-              statesCode: error.statusCode!,
+        error
             ),
           );
           _retryCount = 0; // Reset retry count after reaching the retry limit

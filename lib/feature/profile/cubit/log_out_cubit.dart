@@ -33,7 +33,7 @@ class LogOutCubit extends Cubit<LogOutState> {
       failure: (error) {
         emit(
           LogOutState.logOutError(
-              errorMessage: error.message!, statesCode: error.statusCode!),
+            error),
         );
       },
     );

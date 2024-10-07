@@ -7,6 +7,10 @@ import '../../../../../core/common/shared/shared_imports.dart'; //
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  
+   // Initialize environment variables
+  await EnvVariable.instance.init();
+
   await initAppModule();
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

@@ -16,10 +16,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       initialUserName =
           await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
         context.read<CategoryCubit>().getCategories(),
         context.read<ProductCubit>().getProduct(),
+      ]);
+
+      await Future.wait([
         if (initialUserName.isNotEmpty) ...[
           context.read<UserAddressCubit>().getUserAddress(),
           context.read<CartCubit>().getCartItem(),

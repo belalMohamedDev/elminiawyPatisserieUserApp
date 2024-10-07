@@ -24,11 +24,9 @@ mixin _$CartState {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -43,9 +41,9 @@ mixin _$CartState {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -59,9 +57,9 @@ mixin _$CartState {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -185,11 +183,9 @@ class _$InitialImpl implements _Initial {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -207,9 +203,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -226,9 +222,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -383,11 +379,9 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -405,9 +399,9 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -424,9 +418,9 @@ class _$AddItemToCartLoadingImpl implements AddItemToCartLoading {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -596,11 +590,9 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -618,9 +610,9 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -637,9 +629,9 @@ class _$AddItemToCartSuccessImpl implements AddItemToCartSuccess {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -802,11 +794,9 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -824,9 +814,9 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -843,9 +833,9 @@ class _$UpdateQuantityNumberImpl implements UpdateQuantityNumber {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -978,11 +968,9 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -1000,9 +988,9 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -1019,9 +1007,9 @@ class _$GetCartItemLoadingImpl implements GetCartItemLoading {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -1110,7 +1098,7 @@ abstract class _$$GetCartItemErrorImplCopyWith<$Res> {
           $Res Function(_$GetCartItemErrorImpl) then) =
       __$$GetCartItemErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1124,18 +1112,13 @@ class __$$GetCartItemErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetCartItemErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1143,17 +1126,14 @@ class __$$GetCartItemErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetCartItemErrorImpl implements GetCartItemError {
-  const _$GetCartItemErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetCartItemErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'CartState.getCartItemError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'CartState.getCartItemError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1161,14 +1141,12 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetCartItemErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1186,18 +1164,16 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
     required TResult Function(String id, int quantity)
         updateQuantityItemLoading,
   }) {
-    return getCartItemError(statesCode, errorMessage);
+    return getCartItemError(apiErrorModel);
   }
 
   @override
@@ -1208,15 +1184,15 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
     TResult? Function(String id, int quantity)? updateQuantityItemLoading,
   }) {
-    return getCartItemError?.call(statesCode, errorMessage);
+    return getCartItemError?.call(apiErrorModel);
   }
 
   @override
@@ -1227,9 +1203,9 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -1237,7 +1213,7 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
     required TResult orElse(),
   }) {
     if (getCartItemError != null) {
-      return getCartItemError(statesCode, errorMessage);
+      return getCartItemError(apiErrorModel);
     }
     return orElse();
   }
@@ -1309,12 +1285,10 @@ class _$GetCartItemErrorImpl implements GetCartItemError {
 }
 
 abstract class GetCartItemError implements CartState {
-  const factory GetCartItemError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetCartItemErrorImpl;
+  const factory GetCartItemError(final ApiErrorModel apiErrorModel) =
+      _$GetCartItemErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetCartItemErrorImplCopyWith<_$GetCartItemErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1391,11 +1365,9 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -1413,9 +1385,9 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -1432,9 +1404,9 @@ class _$GetCartItemSuccessImpl implements GetCartItemSuccess {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -1529,7 +1501,7 @@ abstract class _$$DeleteCartItemErrorImplCopyWith<$Res> {
           $Res Function(_$DeleteCartItemErrorImpl) then) =
       __$$DeleteCartItemErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1543,18 +1515,13 @@ class __$$DeleteCartItemErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$DeleteCartItemErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1562,17 +1529,14 @@ class __$$DeleteCartItemErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
-  const _$DeleteCartItemErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$DeleteCartItemErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'CartState.deleteCartItemError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'CartState.deleteCartItemError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1580,14 +1544,12 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeleteCartItemErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1605,18 +1567,16 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
     required TResult Function(String id, int quantity)
         updateQuantityItemLoading,
   }) {
-    return deleteCartItemError(statesCode, errorMessage);
+    return deleteCartItemError(apiErrorModel);
   }
 
   @override
@@ -1627,15 +1587,15 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
     TResult? Function(String id, int quantity)? updateQuantityItemLoading,
   }) {
-    return deleteCartItemError?.call(statesCode, errorMessage);
+    return deleteCartItemError?.call(apiErrorModel);
   }
 
   @override
@@ -1646,9 +1606,9 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -1656,7 +1616,7 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
     required TResult orElse(),
   }) {
     if (deleteCartItemError != null) {
-      return deleteCartItemError(statesCode, errorMessage);
+      return deleteCartItemError(apiErrorModel);
     }
     return orElse();
   }
@@ -1728,12 +1688,10 @@ class _$DeleteCartItemErrorImpl implements DeleteCartItemError {
 }
 
 abstract class DeleteCartItemError implements CartState {
-  const factory DeleteCartItemError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$DeleteCartItemErrorImpl;
+  const factory DeleteCartItemError(final ApiErrorModel apiErrorModel) =
+      _$DeleteCartItemErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$DeleteCartItemErrorImplCopyWith<_$DeleteCartItemErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1785,11 +1743,9 @@ class _$DeleteCartItemLoadingImpl implements DeleteCartItemLoading {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -1807,9 +1763,9 @@ class _$DeleteCartItemLoadingImpl implements DeleteCartItemLoading {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -1826,9 +1782,9 @@ class _$DeleteCartItemLoadingImpl implements DeleteCartItemLoading {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -1955,11 +1911,9 @@ class _$DeleteCartLoadingImpl implements DeleteCartLoading {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -1977,9 +1931,9 @@ class _$DeleteCartLoadingImpl implements DeleteCartLoading {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -1996,9 +1950,9 @@ class _$DeleteCartLoadingImpl implements DeleteCartLoading {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -2125,11 +2079,9 @@ class _$ApplyCouponLoadingImpl implements ApplyCouponLoading {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -2147,9 +2099,9 @@ class _$ApplyCouponLoadingImpl implements ApplyCouponLoading {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -2166,9 +2118,9 @@ class _$ApplyCouponLoadingImpl implements ApplyCouponLoading {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,
@@ -2333,11 +2285,9 @@ class _$UpdateQuantityItemLoadingImpl implements UpdateQuantityItemLoading {
         addItemToCartSuccess,
     required TResult Function(int quantity) updateQuantityNumber,
     required TResult Function() getCartItemLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) getCartItemError,
     required TResult Function(CartResponse? data) getCartItemSuccess,
-    required TResult Function(int statesCode, String errorMessage)
-        deleteCartItemError,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteCartItemError,
     required TResult Function() deleteCartItemLoading,
     required TResult Function() deleteCartLoading,
     required TResult Function() applyCouponLoading,
@@ -2355,9 +2305,9 @@ class _$UpdateQuantityItemLoadingImpl implements UpdateQuantityItemLoading {
     TResult? Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult? Function(int quantity)? updateQuantityNumber,
     TResult? Function()? getCartItemLoading,
-    TResult? Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult? Function(CartResponse? data)? getCartItemSuccess,
-    TResult? Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult? Function()? deleteCartItemLoading,
     TResult? Function()? deleteCartLoading,
     TResult? Function()? applyCouponLoading,
@@ -2374,9 +2324,9 @@ class _$UpdateQuantityItemLoadingImpl implements UpdateQuantityItemLoading {
     TResult Function(CartResponse data, int quantity)? addItemToCartSuccess,
     TResult Function(int quantity)? updateQuantityNumber,
     TResult Function()? getCartItemLoading,
-    TResult Function(int statesCode, String errorMessage)? getCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCartItemError,
     TResult Function(CartResponse? data)? getCartItemSuccess,
-    TResult Function(int statesCode, String errorMessage)? deleteCartItemError,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteCartItemError,
     TResult Function()? deleteCartItemLoading,
     TResult Function()? deleteCartLoading,
     TResult Function()? applyCouponLoading,

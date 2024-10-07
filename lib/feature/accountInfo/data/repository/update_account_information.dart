@@ -1,6 +1,4 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
-
 
 abstract class AccountInformationRepository {
   Future<ApiResult<UpdateAccountInformationResponse>> updateAccountInformation(
@@ -25,11 +23,12 @@ class AccountInformationRepositoryImplement
             await _apiService.updateMyData(updateAccountInformationRequestBody);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -40,11 +39,12 @@ class AccountInformationRepositoryImplement
         final response = await _apiService.deleteMyAccountService();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 }

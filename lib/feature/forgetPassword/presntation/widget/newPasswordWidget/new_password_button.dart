@@ -18,12 +18,8 @@ class NewPasswordButton extends StatelessWidget {
         // Listen for password change events and handle success or error outcomes
         state.whenOrNull(
           // Show error toast if the new password operation fails
-          newPasswordError: (statusCode, errorMessage) {
-            ShowToast.showToastErrorTop(
-              errorMessage: errorMessage,
-              context: context,
-            );
-          },
+          newPasswordError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           // Show success toast and navigate to the map screen when successful
           newPasswordSuccess: (data) {
             ShowToast.showToastSuccessTop(

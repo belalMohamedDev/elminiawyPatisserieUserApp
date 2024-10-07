@@ -13,6 +13,6 @@ class SignUpState with _$SignUpState {
   const factory SignUpState.buttonSignUpVaildation(bool value) = ButtonSignUpVaildationState;
   const factory SignUpState.signUpAgreeWith(bool value) = signUpAgreeWithState;
   const factory SignUpState.loading() = SignUpButtonLoadingData;
-  const factory SignUpState.error({required int statesCode,required String errorMessage}) = SignUpButtonErrorData;
+  const factory SignUpState.error(ApiErrorModel apiErrorModel) = SignUpButtonErrorData;
   const factory SignUpState.suceess(AuthResponse data) = SignUpButtonSuccessData;
 }

@@ -7,8 +7,7 @@ class WishListState with _$WishListState {
   //get WishList State
   const factory WishListState.getWishListLoading() = GetWishListLoading;
   const factory WishListState.getWishListError(
-      {required int statesCode,
-      required String errorMessage}) = GetWishListError;
+       ApiErrorModel apiErrorModel) = GetWishListError;
 
   const factory WishListState.getWishListSuccess(WishListProduct data) =
       GetWishListSuccess;
@@ -16,8 +15,7 @@ class WishListState with _$WishListState {
   //add or remove product from WishList State
   const factory WishListState.addOrRemoveProductFromWishListLoading() = AddOrRemoveProductFromWishListLoading;
   const factory WishListState.addOrRemoveProductFromWishListError(
-      {required int statesCode,
-      required String errorMessage}) = AddOrRemoveProductFromWishListError;
+       ApiErrorModel apiErrorModel) = AddOrRemoveProductFromWishListError;
 
   const factory WishListState.addOrRemoveProductFromWishListSuccess(WishListProduct data) =
       AddOrRemoveProductFromWishListSuccess;

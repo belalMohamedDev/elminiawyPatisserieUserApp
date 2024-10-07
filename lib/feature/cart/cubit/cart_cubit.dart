@@ -32,7 +32,7 @@ class CartCubit extends Cubit<CartState> {
         if (error.statusCode != 401) {
           emit(
             CartState.deleteCartItemError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
           );
         }
       },
@@ -68,7 +68,7 @@ class CartCubit extends Cubit<CartState> {
           } else {
             emit(
               CartState.getCartItemError(
-                  errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
             );
             _retryCount = 0;
           }
@@ -94,7 +94,7 @@ class CartCubit extends Cubit<CartState> {
         if (error.statusCode != 401) {
           emit(
             CartState.deleteCartItemError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+               error),
           );
         }
       },
@@ -117,7 +117,7 @@ class CartCubit extends Cubit<CartState> {
         if (error.statusCode != 401) {
           emit(
             CartState.deleteCartItemError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+               error),
           );
         }
       },
@@ -141,7 +141,7 @@ class CartCubit extends Cubit<CartState> {
         if (error.statusCode != 401) {
           emit(
             CartState.deleteCartItemError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
           );
         }
       },
@@ -171,7 +171,7 @@ class CartCubit extends Cubit<CartState> {
           if (error.statusCode != 401) {
             emit(
               CartState.deleteCartItemError(
-                  errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
             );
           }
         },

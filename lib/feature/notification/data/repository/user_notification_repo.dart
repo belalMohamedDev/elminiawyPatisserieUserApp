@@ -1,8 +1,6 @@
-import '../../../../core/network/api/app_api.dart';
-import '../../../../core/network/apiResult/api_reuslt.dart';
-import '../../../../core/network/error_handler/api_error_handler.dart';
-import '../../../../core/network/network_connectivity/connectivity_controller.dart';
-import '../model/user_notification_resp.dart';
+
+
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class UserNotificationRepository {
   Future<ApiResult<UserNotificationResponse>> getAllUserNotificationRepo();
@@ -26,11 +24,12 @@ class UserNotificationRepositoryImplement
         final response = await _apiService.getAllNotificationToUserService();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+         return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 
@@ -42,12 +41,12 @@ class UserNotificationRepositoryImplement
         final response = await _apiService.updateAllNotificationToSeenService();
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
-    }
+      return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
   }
 
   @override
@@ -58,11 +57,12 @@ class UserNotificationRepositoryImplement
         final response = await _apiService.deleteUserNotificationService(id);
         return ApiResult.success(response);
       } catch (error) {
-        return ApiResult.failure(ErrorHandler.handle(error).apiErrorModel);
+        return ApiResult.failure(ApiErrorHandler.handle(error));
       }
     } else {
       //return  internet connection error
-      return ApiResult.failure(DataSource.noInternetConnection.getFailure());
+          return ApiResult.failure(
+          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
 }

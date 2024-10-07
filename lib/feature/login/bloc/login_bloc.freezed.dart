@@ -782,7 +782,7 @@ mixin _$LoginState {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) =>
       throw _privateConstructorUsedError;
@@ -794,7 +794,7 @@ mixin _$LoginState {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) =>
       throw _privateConstructorUsedError;
@@ -806,7 +806,7 @@ mixin _$LoginState {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) =>
@@ -914,7 +914,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return initial();
@@ -929,7 +929,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return initial?.call();
@@ -944,7 +944,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -1083,7 +1083,7 @@ class _$UserLoginEmailAddressStateImpl implements UserLoginEmailAddressState {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userLoginEmailAddress(value);
@@ -1098,7 +1098,7 @@ class _$UserLoginEmailAddressStateImpl implements UserLoginEmailAddressState {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userLoginEmailAddress?.call(value);
@@ -1113,7 +1113,7 @@ class _$UserLoginEmailAddressStateImpl implements UserLoginEmailAddressState {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -1258,7 +1258,7 @@ class _$UserLoginPasswordStateImpl implements UserLoginPasswordState {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userLoginPassword(value);
@@ -1273,7 +1273,7 @@ class _$UserLoginPasswordStateImpl implements UserLoginPasswordState {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userLoginPassword?.call(value);
@@ -1288,7 +1288,7 @@ class _$UserLoginPasswordStateImpl implements UserLoginPasswordState {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -1432,7 +1432,7 @@ class _$ShowUserPasswordStateImpl implements ShowUserPasswordState {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return showUserPassword(value);
@@ -1447,7 +1447,7 @@ class _$ShowUserPasswordStateImpl implements ShowUserPasswordState {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return showUserPassword?.call(value);
@@ -1462,7 +1462,7 @@ class _$ShowUserPasswordStateImpl implements ShowUserPasswordState {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -1606,7 +1606,7 @@ class _$ButtonLoginVaildationImpl implements ButtonLoginVaildation {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return buttonLoginVaildation(value);
@@ -1621,7 +1621,7 @@ class _$ButtonLoginVaildationImpl implements ButtonLoginVaildation {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return buttonLoginVaildation?.call(value);
@@ -1636,7 +1636,7 @@ class _$ButtonLoginVaildationImpl implements ButtonLoginVaildation {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -1755,7 +1755,7 @@ class _$LoginButtonLoadingDataImpl implements LoginButtonLoadingData {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return loading();
@@ -1770,7 +1770,7 @@ class _$LoginButtonLoadingDataImpl implements LoginButtonLoadingData {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return loading?.call();
@@ -1785,7 +1785,7 @@ class _$LoginButtonLoadingDataImpl implements LoginButtonLoadingData {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -1857,7 +1857,7 @@ abstract class _$$LoginButtonErrorDataImplCopyWith<$Res> {
           $Res Function(_$LoginButtonErrorDataImpl) then) =
       __$$LoginButtonErrorDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1871,18 +1871,13 @@ class __$$LoginButtonErrorDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$LoginButtonErrorDataImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1890,17 +1885,14 @@ class __$$LoginButtonErrorDataImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
-  const _$LoginButtonErrorDataImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$LoginButtonErrorDataImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'LoginState.error(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'LoginState.error(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1908,14 +1900,12 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginButtonErrorDataImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1934,10 +1924,10 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
-    return error(statesCode, errorMessage);
+    return error(apiErrorModel);
   }
 
   @override
@@ -1949,10 +1939,10 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
-    return error?.call(statesCode, errorMessage);
+    return error?.call(apiErrorModel);
   }
 
   @override
@@ -1964,12 +1954,12 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(statesCode, errorMessage);
+      return error(apiErrorModel);
     }
     return orElse();
   }
@@ -2027,12 +2017,10 @@ class _$LoginButtonErrorDataImpl implements LoginButtonErrorData {
 }
 
 abstract class LoginButtonErrorData implements LoginState {
-  const factory LoginButtonErrorData(
-      {required final int statesCode,
-      required final String errorMessage}) = _$LoginButtonErrorDataImpl;
+  const factory LoginButtonErrorData(final ApiErrorModel apiErrorModel) =
+      _$LoginButtonErrorDataImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$LoginButtonErrorDataImplCopyWith<_$LoginButtonErrorDataImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2111,7 +2099,7 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
     required TResult Function(bool value) showUserPassword,
     required TResult Function(bool value) buttonLoginVaildation,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return suceess(data);
@@ -2126,7 +2114,7 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
     TResult? Function(bool value)? showUserPassword,
     TResult? Function(bool value)? buttonLoginVaildation,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return suceess?.call(data);
@@ -2141,7 +2129,7 @@ class _$LoginButtonSuccessDataImpl implements LoginButtonSuccessData {
     TResult Function(bool value)? showUserPassword,
     TResult Function(bool value)? buttonLoginVaildation,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {

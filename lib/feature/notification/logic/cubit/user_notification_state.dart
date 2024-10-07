@@ -9,8 +9,7 @@ class UserNotificationState with _$UserNotificationState {
 
   const factory UserNotificationState.userNotificationLoaded(UserNotificationResponse userNotificationResponse) = UserNotificationLoaded;
   const factory UserNotificationState.userNotificationError(
-      {required int statesCode,
-      required String errorMessage}) = UserNotificationError;
+     ApiErrorModel apiErrorModel) = UserNotificationError;
 
   const factory UserNotificationState.deleteUserNotificationLoaded(
           UserNotificationResponse userNotificationResponse) =
@@ -20,7 +19,6 @@ class UserNotificationState with _$UserNotificationState {
       DeleteUserNotificationLoading;
 
         const factory UserNotificationState.deleteUserNotificationError(
-      {required int statesCode,
-      required String errorMessage}) = DeleteUserNotificationError;
+      ApiErrorModel apiErrorModel) = DeleteUserNotificationError;
 
 }

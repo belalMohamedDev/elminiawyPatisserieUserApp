@@ -35,7 +35,7 @@ class WishListCubit extends Cubit<WishListState> {
         if (error.statusCode != 401) {
           emit(
             WishListState.getWishListError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+                error),
           );
         }
       },
@@ -74,7 +74,7 @@ class WishListCubit extends Cubit<WishListState> {
 
           emit(
             WishListState.addOrRemoveProductFromWishListError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+              error),
           );
         }
       },

@@ -163,7 +163,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           failure: (error) {
             // Emit error state in case of failure
             emit(SignUpState.error(
-                errorMessage: error.message!, statesCode: error.statusCode!));
+               error));
           },
         );
       },

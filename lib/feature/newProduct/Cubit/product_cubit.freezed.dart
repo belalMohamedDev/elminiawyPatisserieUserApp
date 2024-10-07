@@ -20,8 +20,7 @@ mixin _$ProductState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
@@ -33,7 +32,7 @@ mixin _$ProductState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
@@ -44,7 +43,7 @@ mixin _$ProductState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,
@@ -146,8 +145,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
@@ -162,7 +160,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
@@ -176,7 +174,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,
@@ -280,8 +278,7 @@ class _$GetProductLoadingImpl implements GetProductLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
@@ -296,7 +293,7 @@ class _$GetProductLoadingImpl implements GetProductLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
@@ -310,7 +307,7 @@ class _$GetProductLoadingImpl implements GetProductLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,
@@ -380,7 +377,7 @@ abstract class _$$GetProductErrorImplCopyWith<$Res> {
           $Res Function(_$GetProductErrorImpl) then) =
       __$$GetProductErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -394,18 +391,13 @@ class __$$GetProductErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetProductErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -413,17 +405,14 @@ class __$$GetProductErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetProductErrorImpl implements GetProductError {
-  const _$GetProductErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetProductErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'ProductState.getProductError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'ProductState.getProductError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -431,14 +420,12 @@ class _$GetProductErrorImpl implements GetProductError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetProductErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -452,15 +439,14 @@ class _$GetProductErrorImpl implements GetProductError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
     required TResult Function(RangeValues selectedRange) selectedRangeState,
     required TResult Function(int selectedOption) selectedOptionState,
   }) {
-    return getProductError(statesCode, errorMessage);
+    return getProductError(apiErrorModel);
   }
 
   @override
@@ -468,13 +454,13 @@ class _$GetProductErrorImpl implements GetProductError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
     TResult? Function(int selectedOption)? selectedOptionState,
   }) {
-    return getProductError?.call(statesCode, errorMessage);
+    return getProductError?.call(apiErrorModel);
   }
 
   @override
@@ -482,7 +468,7 @@ class _$GetProductErrorImpl implements GetProductError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,
@@ -490,7 +476,7 @@ class _$GetProductErrorImpl implements GetProductError {
     required TResult orElse(),
   }) {
     if (getProductError != null) {
-      return getProductError(statesCode, errorMessage);
+      return getProductError(apiErrorModel);
     }
     return orElse();
   }
@@ -543,12 +529,10 @@ class _$GetProductErrorImpl implements GetProductError {
 }
 
 abstract class GetProductError implements ProductState {
-  const factory GetProductError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetProductErrorImpl;
+  const factory GetProductError(final ApiErrorModel apiErrorModel) =
+      _$GetProductErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetProductErrorImplCopyWith<_$GetProductErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -621,8 +605,7 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
@@ -637,7 +620,7 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
@@ -651,7 +634,7 @@ class _$GetProductSuccessImpl implements GetProductSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,
@@ -795,8 +778,7 @@ class _$AddItemToListImpl implements AddItemToList {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
@@ -811,7 +793,7 @@ class _$AddItemToListImpl implements AddItemToList {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
@@ -825,7 +807,7 @@ class _$AddItemToListImpl implements AddItemToList {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,
@@ -963,8 +945,7 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
@@ -979,7 +960,7 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
@@ -993,7 +974,7 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,
@@ -1131,8 +1112,7 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getProductLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        getProductError,
+    required TResult Function(ApiErrorModel apiErrorModel) getProductError,
     required TResult Function(ProductResponse data) getProductSuccess,
     required TResult Function(List<DataProductResponse> getFoundData)
         addItemToList,
@@ -1147,7 +1127,7 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getProductLoading,
-    TResult? Function(int statesCode, String errorMessage)? getProductError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult? Function(ProductResponse data)? getProductSuccess,
     TResult? Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult? Function(RangeValues selectedRange)? selectedRangeState,
@@ -1161,7 +1141,7 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getProductLoading,
-    TResult Function(int statesCode, String errorMessage)? getProductError,
+    TResult Function(ApiErrorModel apiErrorModel)? getProductError,
     TResult Function(ProductResponse data)? getProductSuccess,
     TResult Function(List<DataProductResponse> getFoundData)? addItemToList,
     TResult Function(RangeValues selectedRange)? selectedRangeState,

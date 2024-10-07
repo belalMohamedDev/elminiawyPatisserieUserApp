@@ -268,9 +268,9 @@ class ChangeUserPasswordBody extends StatelessWidget {
     return BlocConsumer<ChangeMyPasswordCubit, ChangeMyPasswordState>(
       listener: (context, state) {
         state.whenOrNull(
-            changeMyPasswordError: (statesCode, errorMessage) =>
+            changeMyPasswordError: (apiErrorModel) =>
                 ShowToast.showToastErrorTop(
-                    errorMessage: errorMessage, context: context),
+                    errorMessage: apiErrorModel.message!, context: context),
             changeMyPasswordSuccess: (data) {
               ShowToast.showToastSuccessTop(
                   message: data.message!, context: context);

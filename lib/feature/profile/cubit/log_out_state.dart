@@ -6,7 +6,7 @@ class LogOutState with _$LogOutState {
   //get WishList State
   const factory LogOutState.logOutLoading() = LogOutLoading;
   const factory LogOutState.logOutError(
-      {required int statesCode, required String errorMessage}) = LogOutError;
+       ApiErrorModel apiErrorModel) = LogOutError;
 
   const factory LogOutState.logOutSuccess({required String successMessage}) =
       LogOutSuccess;

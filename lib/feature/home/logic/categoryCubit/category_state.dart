@@ -7,8 +7,7 @@ class CategoryState with _$CategoryState {
       //get category State
   const factory CategoryState.getCategoriesLoading() = GetCategoriesLoading;
   const factory CategoryState.getCategoriesError(
-      {required int statesCode,
-      required String errorMessage}) = GetCategoriesError;
+     ApiErrorModel apiErrorModel) = GetCategoriesError;
 
   const factory CategoryState.getCategoriesSuccess(CategoryResponse data) =
       GetCategoriesSuccess;

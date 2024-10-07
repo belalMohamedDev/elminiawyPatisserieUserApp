@@ -22,17 +22,16 @@ mixin _$PaymentState {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -44,18 +43,15 @@ mixin _$PaymentState {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) =>
@@ -66,17 +62,15 @@ mixin _$PaymentState {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -201,17 +195,16 @@ class _$InitialImpl implements _Initial {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -226,18 +219,15 @@ class _$InitialImpl implements _Initial {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -251,17 +241,15 @@ class _$InitialImpl implements _Initial {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -415,17 +403,16 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -440,18 +427,15 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -465,17 +449,15 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -635,17 +617,16 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -660,18 +641,15 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -685,17 +663,15 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -830,17 +806,16 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -855,18 +830,15 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -880,17 +852,15 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -981,7 +951,7 @@ abstract class _$$CreateCashOrderErrorImplCopyWith<$Res> {
           $Res Function(_$CreateCashOrderErrorImpl) then) =
       __$$CreateCashOrderErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -995,18 +965,13 @@ class __$$CreateCashOrderErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$CreateCashOrderErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1014,17 +979,14 @@ class __$$CreateCashOrderErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
-  const _$CreateCashOrderErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$CreateCashOrderErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'PaymentState.createCashOrderError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'PaymentState.createCashOrderError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1032,14 +994,12 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateCashOrderErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1056,22 +1016,21 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
   }) {
-    return createCashOrderError(statesCode, errorMessage);
+    return createCashOrderError(apiErrorModel);
   }
 
   @override
@@ -1081,22 +1040,19 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
-    return createCashOrderError?.call(statesCode, errorMessage);
+    return createCashOrderError?.call(apiErrorModel);
   }
 
   @override
@@ -1106,23 +1062,21 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
   }) {
     if (createCashOrderError != null) {
-      return createCashOrderError(statesCode, errorMessage);
+      return createCashOrderError(apiErrorModel);
     }
     return orElse();
   }
@@ -1198,12 +1152,10 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
 }
 
 abstract class CreateCashOrderError implements PaymentState {
-  const factory CreateCashOrderError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$CreateCashOrderErrorImpl;
+  const factory CreateCashOrderError(final ApiErrorModel apiErrorModel) =
+      _$CreateCashOrderErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$CreateCashOrderErrorImplCopyWith<_$CreateCashOrderErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1281,17 +1233,16 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -1306,18 +1257,15 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -1331,17 +1279,15 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -1478,17 +1424,16 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -1503,18 +1448,15 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -1528,17 +1470,15 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -1630,7 +1570,7 @@ abstract class _$$GetCompleteOrdersErrorImplCopyWith<$Res> {
           $Res Function(_$GetCompleteOrdersErrorImpl) then) =
       __$$GetCompleteOrdersErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1645,18 +1585,13 @@ class __$$GetCompleteOrdersErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetCompleteOrdersErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1664,17 +1599,14 @@ class __$$GetCompleteOrdersErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
-  const _$GetCompleteOrdersErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetCompleteOrdersErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'PaymentState.getCompleteOrdersError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'PaymentState.getCompleteOrdersError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1682,14 +1614,12 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetCompleteOrdersErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1705,22 +1635,21 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
   }) {
-    return getCompleteOrdersError(statesCode, errorMessage);
+    return getCompleteOrdersError(apiErrorModel);
   }
 
   @override
@@ -1730,22 +1659,19 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
-    return getCompleteOrdersError?.call(statesCode, errorMessage);
+    return getCompleteOrdersError?.call(apiErrorModel);
   }
 
   @override
@@ -1755,23 +1681,21 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
   }) {
     if (getCompleteOrdersError != null) {
-      return getCompleteOrdersError(statesCode, errorMessage);
+      return getCompleteOrdersError(apiErrorModel);
     }
     return orElse();
   }
@@ -1847,12 +1771,10 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
 }
 
 abstract class GetCompleteOrdersError implements PaymentState {
-  const factory GetCompleteOrdersError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetCompleteOrdersErrorImpl;
+  const factory GetCompleteOrdersError(final ApiErrorModel apiErrorModel) =
+      _$GetCompleteOrdersErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetCompleteOrdersErrorImplCopyWith<_$GetCompleteOrdersErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1930,17 +1852,16 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -1955,18 +1876,15 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -1980,17 +1898,15 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -2127,17 +2043,16 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -2152,18 +2067,15 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -2177,17 +2089,15 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
@@ -2279,7 +2189,7 @@ abstract class _$$GetPendingOrdersErrorImplCopyWith<$Res> {
           $Res Function(_$GetPendingOrdersErrorImpl) then) =
       __$$GetPendingOrdersErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -2293,18 +2203,13 @@ class __$$GetPendingOrdersErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$GetPendingOrdersErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -2312,17 +2217,14 @@ class __$$GetPendingOrdersErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
-  const _$GetPendingOrdersErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$GetPendingOrdersErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'PaymentState.getPendingOrdersError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'PaymentState.getPendingOrdersError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -2330,14 +2232,12 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetPendingOrdersErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -2353,22 +2253,21 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
   }) {
-    return getPendingOrdersError(statesCode, errorMessage);
+    return getPendingOrdersError(apiErrorModel);
   }
 
   @override
@@ -2378,22 +2277,19 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
-    return getPendingOrdersError?.call(statesCode, errorMessage);
+    return getPendingOrdersError?.call(apiErrorModel);
   }
 
   @override
@@ -2403,23 +2299,21 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),
   }) {
     if (getPendingOrdersError != null) {
-      return getPendingOrdersError(statesCode, errorMessage);
+      return getPendingOrdersError(apiErrorModel);
     }
     return orElse();
   }
@@ -2495,12 +2389,10 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
 }
 
 abstract class GetPendingOrdersError implements PaymentState {
-  const factory GetPendingOrdersError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$GetPendingOrdersErrorImpl;
+  const factory GetPendingOrdersError(final ApiErrorModel apiErrorModel) =
+      _$GetPendingOrdersErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$GetPendingOrdersErrorImplCopyWith<_$GetPendingOrdersErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2578,17 +2470,16 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     required TResult Function(int index) changeShippingIndex,
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
-    required TResult Function(int statesCode, String errorMessage)
-        createCashOrderError,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
     required TResult Function(CreateOrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
     required TResult Function() getPendingOrdersLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getPendingOrdersSuccess,
@@ -2603,18 +2494,15 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult? Function(int index)? changeShippingIndex,
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        createCashOrderError,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult? Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult? Function()? getPendingOrdersLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
   }) {
@@ -2628,17 +2516,15 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult Function(int index)? changeShippingIndex,
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
-    TResult Function(int statesCode, String errorMessage)? createCashOrderError,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
     TResult Function(CreateOrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getCompleteOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
     TResult Function()? getPendingOrdersLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        getPendingOrdersError,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getPendingOrdersSuccess,
     required TResult orElse(),

@@ -13,9 +13,8 @@ class ApplyCouponCode extends StatelessWidget {
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         state.whenOrNull(
-          deleteCartItemError: (statesCode, errorMessage) =>
-              ShowToast.showToastErrorTop(
-                  errorMessage: errorMessage, context: context),
+          deleteCartItemError: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           getCartItemSuccess: (data) => ShowToast.showToastSuccessTop(
               message: data!.message!, context: context),
         );

@@ -95,7 +95,7 @@ class ChangeMyPasswordCubit extends Cubit<ChangeMyPasswordState> {
         if (error.statusCode != 401) {
           emit(
             ChangeMyPasswordState.changeMyPasswordError(
-                errorMessage: error.message!, statesCode: error.statusCode!),
+               error),
           );
         }
       },

@@ -28,7 +28,7 @@ mixin _$MapState {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -45,8 +45,7 @@ mixin _$MapState {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) =>
@@ -62,8 +61,7 @@ mixin _$MapState {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -191,7 +189,7 @@ class _$InitialImpl implements Initial {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -211,8 +209,7 @@ class _$InitialImpl implements Initial {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -231,8 +228,7 @@ class _$InitialImpl implements Initial {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -363,7 +359,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -383,8 +379,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -403,8 +398,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -577,7 +571,7 @@ class _$LoadedImpl implements Loaded {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -597,8 +591,7 @@ class _$LoadedImpl implements Loaded {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -617,8 +610,7 @@ class _$LoadedImpl implements Loaded {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -791,7 +783,7 @@ class _$SearchResultsImpl implements SearchResults {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -811,8 +803,7 @@ class _$SearchResultsImpl implements SearchResults {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -831,8 +822,7 @@ class _$SearchResultsImpl implements SearchResults {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -995,7 +985,7 @@ class _$ErrorImpl implements Error {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -1015,8 +1005,7 @@ class _$ErrorImpl implements Error {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -1035,8 +1024,7 @@ class _$ErrorImpl implements Error {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -1199,7 +1187,7 @@ class _$ToggleMapStateImpl implements ToggleMapState {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -1219,8 +1207,7 @@ class _$ToggleMapStateImpl implements ToggleMapState {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -1239,8 +1226,7 @@ class _$ToggleMapStateImpl implements ToggleMapState {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -1406,7 +1392,7 @@ class _$SetStringHomeLocationStateImpl implements SetStringHomeLocationState {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -1426,8 +1412,7 @@ class _$SetStringHomeLocationStateImpl implements SetStringHomeLocationState {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -1446,8 +1431,7 @@ class _$SetStringHomeLocationStateImpl implements SetStringHomeLocationState {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -1588,7 +1572,7 @@ class _$CheckAddressAvailableLoadingImpl
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -1608,8 +1592,7 @@ class _$CheckAddressAvailableLoadingImpl
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -1628,8 +1611,7 @@ class _$CheckAddressAvailableLoadingImpl
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
@@ -1720,7 +1702,7 @@ abstract class _$$CheckAddressAvailableErrorImplCopyWith<$Res> {
           $Res Function(_$CheckAddressAvailableErrorImpl) then) =
       __$$CheckAddressAvailableErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -1735,18 +1717,13 @@ class __$$CheckAddressAvailableErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$CheckAddressAvailableErrorImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -1754,17 +1731,14 @@ class __$$CheckAddressAvailableErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
-  const _$CheckAddressAvailableErrorImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$CheckAddressAvailableErrorImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'MapState.checkAddressAvailableError(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'MapState.checkAddressAvailableError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -1772,14 +1746,12 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CheckAddressAvailableErrorImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -1801,12 +1773,12 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
   }) {
-    return checkAddressAvailableError(statesCode, errorMessage);
+    return checkAddressAvailableError(apiErrorModel);
   }
 
   @override
@@ -1821,12 +1793,11 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
-    return checkAddressAvailableError?.call(statesCode, errorMessage);
+    return checkAddressAvailableError?.call(apiErrorModel);
   }
 
   @override
@@ -1841,14 +1812,13 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),
   }) {
     if (checkAddressAvailableError != null) {
-      return checkAddressAvailableError(statesCode, errorMessage);
+      return checkAddressAvailableError(apiErrorModel);
     }
     return orElse();
   }
@@ -1922,12 +1892,10 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
 }
 
 abstract class CheckAddressAvailableError implements MapState {
-  const factory CheckAddressAvailableError(
-      {required final int statesCode,
-      required final String errorMessage}) = _$CheckAddressAvailableErrorImpl;
+  const factory CheckAddressAvailableError(final ApiErrorModel apiErrorModel) =
+      _$CheckAddressAvailableErrorImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$CheckAddressAvailableErrorImplCopyWith<_$CheckAddressAvailableErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2012,7 +1980,7 @@ class _$CheckAddressAvailableSuccessImpl
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
     required TResult Function() checkAddressAvailableLoading,
-    required TResult Function(int statesCode, String errorMessage)
+    required TResult Function(ApiErrorModel apiErrorModel)
         checkAddressAvailableError,
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
@@ -2032,8 +2000,7 @@ class _$CheckAddressAvailableSuccessImpl
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
     TResult? Function()? checkAddressAvailableLoading,
-    TResult? Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult? Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
@@ -2052,8 +2019,7 @@ class _$CheckAddressAvailableSuccessImpl
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
     TResult Function()? checkAddressAvailableLoading,
-    TResult Function(int statesCode, String errorMessage)?
-        checkAddressAvailableError,
+    TResult Function(ApiErrorModel apiErrorModel)? checkAddressAvailableError,
     TResult Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
     required TResult orElse(),

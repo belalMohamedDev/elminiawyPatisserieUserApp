@@ -15,10 +15,8 @@ class SignUpButton extends StatelessWidget {
         // Handle different state changes such as error and success
         state.whenOrNull(
           // Show error message when state contains an error
-          error: (statesCode, errorMessage) => ShowToast.showToastErrorTop(
-            errorMessage: errorMessage,
-            context: context,
-          ),
+          error: (apiErrorModel) => ShowToast.showToastErrorTop(
+              errorMessage: apiErrorModel.message!, context: context),
           // On successful registration, show success message and navigate to home
           suceess: (data) {
             ShowToast.showToastSuccessTop(

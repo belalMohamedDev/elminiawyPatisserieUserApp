@@ -1,3 +1,4 @@
+import 'package:elminiawy/core/network/failure/api_error_model.dart';
 import 'package:elminiawy/feature/notification/data/model/user_notification_resp.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -28,7 +29,7 @@ class UserNotificationCubit extends Cubit<UserNotificationState> {
       },
       failure: (error) {
         emit(UserNotificationState.userNotificationError(
-            errorMessage: error.message!, statesCode: error.statusCode!));
+          error));
       },
     );
   }
@@ -47,7 +48,7 @@ class UserNotificationCubit extends Cubit<UserNotificationState> {
       },
       failure: (error) {
         emit(UserNotificationState.deleteUserNotificationError(
-            errorMessage: error.message!, statesCode: error.statusCode!));
+           error));
       },
     );
   }

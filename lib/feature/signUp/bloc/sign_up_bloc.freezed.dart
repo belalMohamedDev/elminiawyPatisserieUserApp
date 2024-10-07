@@ -1965,7 +1965,7 @@ mixin _$SignUpState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) =>
       throw _privateConstructorUsedError;
@@ -1982,7 +1982,7 @@ mixin _$SignUpState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) =>
       throw _privateConstructorUsedError;
@@ -1999,7 +1999,7 @@ mixin _$SignUpState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) =>
@@ -2133,7 +2133,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return initial();
@@ -2153,7 +2153,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return initial?.call();
@@ -2173,7 +2173,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -2338,7 +2338,7 @@ class _$UserSignUpEmailAddressStateImpl implements UserSignUpEmailAddressState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userSignUpEmailAddress(value);
@@ -2358,7 +2358,7 @@ class _$UserSignUpEmailAddressStateImpl implements UserSignUpEmailAddressState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userSignUpEmailAddress?.call(value);
@@ -2378,7 +2378,7 @@ class _$UserSignUpEmailAddressStateImpl implements UserSignUpEmailAddressState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -2549,7 +2549,7 @@ class _$UserSignUpPasswordStateImpl implements UserSignUpPasswordState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userSignUpPassword(value);
@@ -2569,7 +2569,7 @@ class _$UserSignUpPasswordStateImpl implements UserSignUpPasswordState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userSignUpPassword?.call(value);
@@ -2589,7 +2589,7 @@ class _$UserSignUpPasswordStateImpl implements UserSignUpPasswordState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -2760,7 +2760,7 @@ class _$UserSignUpFirstNameStateImpl implements UserSignUpFirstNameState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userSignUpFirstName(value);
@@ -2780,7 +2780,7 @@ class _$UserSignUpFirstNameStateImpl implements UserSignUpFirstNameState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userSignUpFirstName?.call(value);
@@ -2800,7 +2800,7 @@ class _$UserSignUpFirstNameStateImpl implements UserSignUpFirstNameState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -2971,7 +2971,7 @@ class _$UserSignUpLastNameStateImpl implements UserSignUpLastNameState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userSignUpLastName(value);
@@ -2991,7 +2991,7 @@ class _$UserSignUpLastNameStateImpl implements UserSignUpLastNameState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userSignUpLastName?.call(value);
@@ -3011,7 +3011,7 @@ class _$UserSignUpLastNameStateImpl implements UserSignUpLastNameState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -3181,7 +3181,7 @@ class _$UserSignUpPhoneStateImpl implements UserSignUpPhoneState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userSignUpPhone(value);
@@ -3201,7 +3201,7 @@ class _$UserSignUpPhoneStateImpl implements UserSignUpPhoneState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userSignUpPhone?.call(value);
@@ -3221,7 +3221,7 @@ class _$UserSignUpPhoneStateImpl implements UserSignUpPhoneState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -3392,7 +3392,7 @@ class _$UserSignUpCuntryCodeStateImpl implements UserSignUpCuntryCodeState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return userSignUpCuntryCode(value);
@@ -3412,7 +3412,7 @@ class _$UserSignUpCuntryCodeStateImpl implements UserSignUpCuntryCodeState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return userSignUpCuntryCode?.call(value);
@@ -3432,7 +3432,7 @@ class _$UserSignUpCuntryCodeStateImpl implements UserSignUpCuntryCodeState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -3603,7 +3603,7 @@ class _$ShowUserSignUpPasswordStateImpl implements ShowUserSignUpPasswordState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return showUserSignUpPassword(value);
@@ -3623,7 +3623,7 @@ class _$ShowUserSignUpPasswordStateImpl implements ShowUserSignUpPasswordState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return showUserSignUpPassword?.call(value);
@@ -3643,7 +3643,7 @@ class _$ShowUserSignUpPasswordStateImpl implements ShowUserSignUpPasswordState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -3814,7 +3814,7 @@ class _$ButtonSignUpVaildationStateImpl implements ButtonSignUpVaildationState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return buttonSignUpVaildation(value);
@@ -3834,7 +3834,7 @@ class _$ButtonSignUpVaildationStateImpl implements ButtonSignUpVaildationState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return buttonSignUpVaildation?.call(value);
@@ -3854,7 +3854,7 @@ class _$ButtonSignUpVaildationStateImpl implements ButtonSignUpVaildationState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -4024,7 +4024,7 @@ class _$signUpAgreeWithStateImpl implements signUpAgreeWithState {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return signUpAgreeWith(value);
@@ -4044,7 +4044,7 @@ class _$signUpAgreeWithStateImpl implements signUpAgreeWithState {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return signUpAgreeWith?.call(value);
@@ -4064,7 +4064,7 @@ class _$signUpAgreeWithStateImpl implements signUpAgreeWithState {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -4209,7 +4209,7 @@ class _$SignUpButtonLoadingDataImpl implements SignUpButtonLoadingData {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return loading();
@@ -4229,7 +4229,7 @@ class _$SignUpButtonLoadingDataImpl implements SignUpButtonLoadingData {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return loading?.call();
@@ -4249,7 +4249,7 @@ class _$SignUpButtonLoadingDataImpl implements SignUpButtonLoadingData {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
@@ -4343,7 +4343,7 @@ abstract class _$$SignUpButtonErrorDataImplCopyWith<$Res> {
           $Res Function(_$SignUpButtonErrorDataImpl) then) =
       __$$SignUpButtonErrorDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int statesCode, String errorMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -4357,18 +4357,13 @@ class __$$SignUpButtonErrorDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? statesCode = null,
-    Object? errorMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$SignUpButtonErrorDataImpl(
-      statesCode: null == statesCode
-          ? _value.statesCode
-          : statesCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -4376,17 +4371,14 @@ class __$$SignUpButtonErrorDataImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignUpButtonErrorDataImpl implements SignUpButtonErrorData {
-  const _$SignUpButtonErrorDataImpl(
-      {required this.statesCode, required this.errorMessage});
+  const _$SignUpButtonErrorDataImpl(this.apiErrorModel);
 
   @override
-  final int statesCode;
-  @override
-  final String errorMessage;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'SignUpState.error(statesCode: $statesCode, errorMessage: $errorMessage)';
+    return 'SignUpState.error(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -4394,14 +4386,12 @@ class _$SignUpButtonErrorDataImpl implements SignUpButtonErrorData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignUpButtonErrorDataImpl &&
-            (identical(other.statesCode, statesCode) ||
-                other.statesCode == statesCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, statesCode, errorMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @JsonKey(ignore: true)
   @override
@@ -4424,10 +4414,10 @@ class _$SignUpButtonErrorDataImpl implements SignUpButtonErrorData {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
-    return error(statesCode, errorMessage);
+    return error(apiErrorModel);
   }
 
   @override
@@ -4444,10 +4434,10 @@ class _$SignUpButtonErrorDataImpl implements SignUpButtonErrorData {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
-    return error?.call(statesCode, errorMessage);
+    return error?.call(apiErrorModel);
   }
 
   @override
@@ -4464,12 +4454,12 @@ class _$SignUpButtonErrorDataImpl implements SignUpButtonErrorData {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(statesCode, errorMessage);
+      return error(apiErrorModel);
     }
     return orElse();
   }
@@ -4548,12 +4538,10 @@ class _$SignUpButtonErrorDataImpl implements SignUpButtonErrorData {
 }
 
 abstract class SignUpButtonErrorData implements SignUpState {
-  const factory SignUpButtonErrorData(
-      {required final int statesCode,
-      required final String errorMessage}) = _$SignUpButtonErrorDataImpl;
+  const factory SignUpButtonErrorData(final ApiErrorModel apiErrorModel) =
+      _$SignUpButtonErrorDataImpl;
 
-  int get statesCode;
-  String get errorMessage;
+  ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
   _$$SignUpButtonErrorDataImplCopyWith<_$SignUpButtonErrorDataImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -4637,7 +4625,7 @@ class _$SignUpButtonSuccessDataImpl implements SignUpButtonSuccessData {
     required TResult Function(bool value) buttonSignUpVaildation,
     required TResult Function(bool value) signUpAgreeWith,
     required TResult Function() loading,
-    required TResult Function(int statesCode, String errorMessage) error,
+    required TResult Function(ApiErrorModel apiErrorModel) error,
     required TResult Function(AuthResponse data) suceess,
   }) {
     return suceess(data);
@@ -4657,7 +4645,7 @@ class _$SignUpButtonSuccessDataImpl implements SignUpButtonSuccessData {
     TResult? Function(bool value)? buttonSignUpVaildation,
     TResult? Function(bool value)? signUpAgreeWith,
     TResult? Function()? loading,
-    TResult? Function(int statesCode, String errorMessage)? error,
+    TResult? Function(ApiErrorModel apiErrorModel)? error,
     TResult? Function(AuthResponse data)? suceess,
   }) {
     return suceess?.call(data);
@@ -4677,7 +4665,7 @@ class _$SignUpButtonSuccessDataImpl implements SignUpButtonSuccessData {
     TResult Function(bool value)? buttonSignUpVaildation,
     TResult Function(bool value)? signUpAgreeWith,
     TResult Function()? loading,
-    TResult Function(int statesCode, String errorMessage)? error,
+    TResult Function(ApiErrorModel apiErrorModel)? error,
     TResult Function(AuthResponse data)? suceess,
     required TResult orElse(),
   }) {
