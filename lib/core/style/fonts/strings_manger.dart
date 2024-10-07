@@ -22,6 +22,7 @@ class AppStrings {
 
   ///////// auth screen
   static const String area = "Area";
+  static const String thisAccountNotAccessInThisApp = "this account not access in this app";
   static const String unknownRegion = "Unknown Region";
   static const String newProductsInStore = "New Products in Store";
   static const String pleaseCheckYourInternetConnection = "please check your internet connection";

@@ -22,26 +22,31 @@ class NewPasswordButton extends StatelessWidget {
               errorMessage: apiErrorModel.message!, context: context),
           // Show success toast and navigate to the map screen when successful
           newPasswordSuccess: (data) {
-            ShowToast.showToastSuccessTop(
-              message: data.message!,
-              context: context,
-            );
-            context.pushReplacementNamed(Routes.map);
+            if (data.data!.role == "user") {
+              // Show a success toast when login is successful
+              ShowToast.showToastSuccessTop(
+                  message: data.message!, context: context);
+              // Navigate to the map screen after a successful login
+              context.pushReplacementNamed(Routes.map);
+            } else {
+              ShowToast.showToastErrorTop(
+                  errorMessage: AppStrings.thisAccountNotAccessInThisApp,
+                  context: context);
+            }
           },
         );
       },
       builder: (context, state) {
         return CustomButton(
           // Enable or disable the button based on form validation
-          onPressed: context
-                  .read<ForgetPasswordBloc>()
-                  .isCreateNewPasswordButtonValid
-              ? () {
-                  context
-                      .read<ForgetPasswordBloc>()
-                      .add(const UserForgetNewPasswordButtonEvent());
-                }
-              : null,
+          onPressed:
+              context.read<ForgetPasswordBloc>().isCreateNewPasswordButtonValid
+                  ? () {
+                      context
+                          .read<ForgetPasswordBloc>()
+                          .add(const UserForgetNewPasswordButtonEvent());
+                    }
+                  : null,
           // Display a loading indicator or the button label based on the current state
           widget: state.maybeWhen(
             // If the state is loading, show a spinner and loading text

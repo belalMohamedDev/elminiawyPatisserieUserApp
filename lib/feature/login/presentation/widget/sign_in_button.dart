@@ -21,17 +21,22 @@ class SignInButton extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           error: (apiErrorModel) {
-           // Show an error toast when login fails
+            // Show an error toast when login fails
             ShowToast.showToastErrorTop(
                 errorMessage: apiErrorModel.message!, context: context);
           },
           suceess: (data) {
-            
-            // Show a success toast when login is successful
-            ShowToast.showToastSuccessTop(
-                message: data.message!, context: context);
-            // Navigate to the map screen after a successful login
-            context.pushReplacementNamed(Routes.map);
+            if (data.data!.role == "user") {
+              // Show a success toast when login is successful
+              ShowToast.showToastSuccessTop(
+                  message: data.message!, context: context);
+              // Navigate to the map screen after a successful login
+              context.pushReplacementNamed(Routes.map);
+            } else {
+              ShowToast.showToastErrorTop(
+                  errorMessage:AppStrings.thisAccountNotAccessInThisApp,
+                  context: context);
+            }
           },
         );
       },
@@ -55,7 +60,7 @@ class SignInButton extends StatelessWidget {
                 SizedBox(
                   height: responsive.setHeight(2),
                   width: responsive.setWidth(4),
-                  child:  CircularProgressIndicator(
+                  child: CircularProgressIndicator(
                     color: ColorManger.white, // Indicator color
                     strokeWidth: 2.0, // Line thickness of the indicator
                     strokeAlign:

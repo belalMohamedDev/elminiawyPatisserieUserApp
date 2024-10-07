@@ -19,12 +19,17 @@ class SignUpButton extends StatelessWidget {
               errorMessage: apiErrorModel.message!, context: context),
           // On successful registration, show success message and navigate to home
           suceess: (data) {
-            ShowToast.showToastSuccessTop(
-              message: data.message!,
-              context: context,
-            );
-            context.pushReplacementNamed(
-                Routes.map); // Navigate to the map screen
+            if (data.data!.role == "user") {
+              // Show a success toast when login is successful
+              ShowToast.showToastSuccessTop(
+                  message: data.message!, context: context);
+              // Navigate to the map screen after a successful login
+              context.pushReplacementNamed(Routes.map);
+            } else {
+              ShowToast.showToastErrorTop(
+                  errorMessage: AppStrings.thisAccountNotAccessInThisApp,
+                  context: context);
+            }
           },
         );
       },
@@ -50,15 +55,15 @@ class SignUpButton extends StatelessWidget {
                 SizedBox(
                   height: responsive.setHeight(2),
                   width: responsive.setWidth(4),
-                  child:  CircularProgressIndicator(
+                  child: CircularProgressIndicator(
                     color: ColorManger.white, // White spinner color
                     strokeWidth: 2.0, // Spinner stroke width
                     strokeAlign: 0.01, // Spinner alignment
                   ),
                 ),
                 SizedBox(
-                  width: responsive
-                      .setWidth(3), // Spacer between spinner and text
+                  width:
+                      responsive.setWidth(3), // Spacer between spinner and text
                 ),
                 // Show loading text next to the spinner
                 Text(
