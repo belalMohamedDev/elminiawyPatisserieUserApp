@@ -30,7 +30,6 @@ class ImageAsset {
   static const String orderCancel = "$imagePath/cancel.png";
   static const String orderDelivered = "$imagePath/order_delivered.png";
 
-
   static const String noCart = "$imagePath/noCart.svg";
   static const String noSearch = "$imagePath/noSearch.svg";
   static const String noOrder = "$imagePath/noOrder.svg";
@@ -38,6 +37,9 @@ class ImageAsset {
   static const String noNotification = "$imagePath/noNotification.svg";
   static const String noRoute = "$imagePath/noRoute.svg";
   static const String checkOut = "$imagePath/checkOut.png";
+  static const String noInternetConnection =
+      "$imagePath/noInternetConnection.svg";
+  static const String searchLoading = "$imagePath/searchLoading.svg";
 }
 
 class JsonAsset {

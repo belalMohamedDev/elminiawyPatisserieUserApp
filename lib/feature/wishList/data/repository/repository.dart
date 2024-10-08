@@ -8,14 +8,14 @@ abstract class WishListRepository {
 }
 
 class WishListRepositoryImplement implements WishListRepository {
-  WishListRepositoryImplement(this._apiService, this._networkInfo);
+  WishListRepositoryImplement(this._apiService);
   final AppServiceClient _apiService;
-  late final NetworkInfo _networkInfo;
+
 
   @override
   Future<ApiResult<WishListProduct>> addOrRemoveProductFromWishList(
       String product) async {
-    if (await _networkInfo.isConnected) {
+
       try {
         final response =
             await _apiService.addOrRemoveProductFromWishList(product);
@@ -23,25 +23,19 @@ class WishListRepositoryImplement implements WishListRepository {
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
+
   }
 
   @override
   Future<ApiResult<WishListProduct>> getWishList() async {
-    if (await _networkInfo.isConnected) {
+
       try {
         final response = await _apiService.getWishList();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
+  
   }
 
 

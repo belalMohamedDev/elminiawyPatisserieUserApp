@@ -26,10 +26,10 @@ class RouteStatesScreen extends StatelessWidget {
               height: 20.h,
             ),
             ErrorInfo(
-              title: "You are not logged in!",
-              description:
-                  "Please login to continue and enjoy full access to the app's features. Log in now to explore and use the application seamlessly!",
-              btnText: "Log In",
+              title: AppStrings.youAreNotLoggedIn,
+              description: AppStrings
+                  .pleaseLoginToContinueAndEnjoyFullAccessToTheAppFeatures,
+              btnText: AppStrings.logIn,
               press: () async {
                 Navigator.of(context, rootNavigator: !false)
                     .pushNamedAndRemoveUntil(

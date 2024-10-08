@@ -1,19 +1,20 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import 'package:elminiawy/feature/search/bloc/search_bloc.dart';
 
+import '../../../../../core/common/shared/shared_imports.dart';
 
 class FilterBottomSheet extends StatelessWidget {
   const FilterBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductCubit, ProductState>(
+    return BlocBuilder<SearchBloc, SearchState>(
       builder: (context, state) {
-        final cubit = context.read<ProductCubit>();
+        final searchBloc = context.read<SearchBloc>();
 
         return Padding(
           padding: EdgeInsets.symmetric(vertical: 50.h),
           child: SizedBox(
-            height: 500.h,
+            height: 450.h,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,43 +22,41 @@ class FilterBottomSheet extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 30.w, bottom: 15.h),
                   child: Text(
-                    "Sort By",
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.brun,
+                    AppStrings.sortBy,
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           fontSize: 18.sp,
                         ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Column(
                     children: [
                       Column(
                         children: [
                           buildListTile(
                             context,
-                            'Name: A to Z',
+                            AppStrings.nameAToZ,
                             1,
-                            cubit.selectedOption,
+                            searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                            'Name: Z to A',
+                            AppStrings.nameZToA,
                             2,
-                            cubit.selectedOption,
+                            searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                            'Price: Low to High',
+                            AppStrings.priceLowToHigh,
                             3,
-                            cubit.selectedOption,
+                            searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                            'Price: High to Low',
+                            AppStrings.priceHighToLow,
                             4,
-                            cubit.selectedOption,
+                            searchBloc.selectedOption,
                           ),
                         ],
                       )
@@ -65,18 +64,16 @@ class FilterBottomSheet extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
                         padding: EdgeInsets.only(top: 30.h, bottom: 15.h),
                         child: Text(
-                          "Price Range",
+                          AppStrings.priceRange,
                           style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
-                                    color: ColorManger.brun,
+                              Theme.of(context).textTheme.titleLarge!.copyWith(
                                     fontSize: 18.sp,
                                   ),
                         ),
@@ -87,11 +84,11 @@ class FilterBottomSheet extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'EGP ${cubit.selectedRange.start.toInt()}',
+                              '${AppStrings.egy} ${searchBloc.selectedRange.start.toInt()}',
                               style: TextStyle(fontSize: 14.sp),
                             ),
                             Text(
-                              'EGP ${cubit.selectedRange.end.toInt()}',
+                              '${AppStrings.egy} ${searchBloc.selectedRange.end.toInt()}',
                               style: TextStyle(fontSize: 14.sp),
                             ),
                           ],
@@ -101,41 +98,35 @@ class FilterBottomSheet extends StatelessWidget {
                         height: 10.h,
                       ),
                       RangeSlider(
-                        values: cubit.selectedRange,
+                        values: searchBloc.selectedRange,
                         min: 0,
                         max: 2000,
                         activeColor: ColorManger.brun,
                         inactiveColor: ColorManger.brunLight,
                         labels: RangeLabels(
-                          "${cubit.selectedRange.start.toInt()}",
-                          "${cubit.selectedRange.end.toInt()}",
+                          "${searchBloc.selectedRange.start.toInt()}",
+                          "${searchBloc.selectedRange.end.toInt()}",
                         ),
-                        onChanged: (value) {
-                          context
-                              .read<ProductCubit>()
-                              .updateSelectedRange(value);
+                        onChanged: (selectedRange) {
+                          searchBloc.add(
+                              SearchEvent.updateSelectedRange(selectedRange));
                         },
                       ),
                       SizedBox(
                         height: 30.h,
                       ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            cubit.applyFilters();
-                            Navigator.pop(context);
-                          },
-                          child: Text(
-                            'Apply Filter',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                  color: ColorManger.white,
-                                  fontSize: 14.sp,
-                                ),
-                          ),
+                      CustomButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        widget: Text(
+                          AppStrings.applyFilter,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(
+                                fontSize: 14.sp,
+                              ),
                         ),
                       ),
                     ],
@@ -153,7 +144,7 @@ class FilterBottomSheet extends StatelessWidget {
 Widget buildListTile(
     BuildContext context, String title, int value, int groupValue) {
   return SizedBox(
-    height: 50.h,
+    height: 40.h,
     child: ListTile(
       contentPadding: EdgeInsets.zero,
       title: Text(
@@ -161,10 +152,13 @@ Widget buildListTile(
         style: TextStyle(fontSize: 14.sp),
       ),
       leading: Radio<int>(
+        activeColor: ColorManger.brun,
         value: value,
         groupValue: groupValue,
-        onChanged: (value) {
-          context.read<ProductCubit>().updateSelectedOption(value!);
+        onChanged: (selectedOption) {
+          context
+              .read<SearchBloc>()
+              .add(SearchEvent.updateSelectedOption(selectedOption!));
         },
       ),
     ),

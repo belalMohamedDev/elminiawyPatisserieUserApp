@@ -1,8 +1,9 @@
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
-
 class EmptySearchScreen extends StatelessWidget {
-  const EmptySearchScreen({super.key});
+  final bool isLoading;
+  final String? error;
+  const EmptySearchScreen({super.key, this.isLoading = false, this.error});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,13 @@ class EmptySearchScreen extends StatelessWidget {
                 height: 40.h,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
+                width: isLoading
+                    ? MediaQuery.of(context).size.width * 0.9
+                    : MediaQuery.of(context).size.width * 0.7,
                 child: AspectRatio(
                   aspectRatio: 1,
                   child: SvgPicture.asset(
-                    ImageAsset.noSearch,
+                    isLoading ? ImageAsset.searchLoading : ImageAsset.noSearch,
                     fit: BoxFit.scaleDown,
                   ),
                 ),
@@ -30,11 +33,15 @@ class EmptySearchScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              const ErrorInfo(
-                title: "No Results Found!",
-                description:
-                    "We couldn't find any matching results for your search. Please try again with different keywords.",
-              ),
+              isLoading
+                  ? const SizedBox()
+                  : ErrorInfo(
+                      title: error ?? AppStrings.noResultsFound,
+                      description: error != null
+                          ? ''
+                          : AppStrings
+                              .weCouldntFindAnyMatchingResultsForYourSearch,
+                    ),
             ],
           ),
         ),

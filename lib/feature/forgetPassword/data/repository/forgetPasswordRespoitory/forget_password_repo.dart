@@ -2,14 +2,14 @@
 import '../../../../../../core/common/shared/shared_imports.dart'; //
 
 class ForgetPasswordRepository {
-  ForgetPasswordRepository(this._apiService, this._networkInfo);
+  ForgetPasswordRepository(this._apiService);
   final AppServiceClient _apiService;
-  late final NetworkInfo _networkInfo;
+
 
   Future<ApiResult<ForgetPasswordResponse>> forgetPassword(
     ForgetPasswordRequestBody forgetPasswordRequestBody,
   ) async {
-    if (await _networkInfo.isConnected) {
+  
       try {
         final response =
             await _apiService.forgetPassword(forgetPasswordRequestBody);
@@ -17,9 +17,6 @@ class ForgetPasswordRepository {
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
+    } 
   }
-}
+

@@ -47,6 +47,13 @@ abstract class AppServiceClient {
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> getProduct();
 
+    @GET(ApiConstants.newProduct)
+  Future<ProductResponse> searchInProductService(
+   @Query("sort") String? sort,
+    @Query("keyword") String? keyword,
+    @Query("price") String? price,
+  );
+
   @GET(ApiConstants.wishList)
   Future<WishListProduct> getWishList();
 

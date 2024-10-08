@@ -1,3 +1,5 @@
+import 'package:elminiawy/feature/search/bloc/search_bloc.dart';
+
 import '../../../../core/common/shared/shared_imports.dart';
 
 class RouteGenerator {
@@ -214,7 +216,11 @@ class RouteGenerator {
                 ));
 
       case Routes.search:
-        return MaterialPageRoute(builder: (_) => const SearchView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider.value(
+                  value: instance<SearchBloc>(),
+                  child: const SearchView(),
+                ));
 
       case Routes.noRoute:
         return MaterialPageRoute(builder: (_) => const RouteStatesScreen());

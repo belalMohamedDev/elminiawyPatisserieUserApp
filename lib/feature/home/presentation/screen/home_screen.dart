@@ -22,16 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
 
-    // Create an instance of FirebaseCloudMessaging to handle FCM notifications
-    final FirebaseCloudMessaging firebaseCloudMessaging =
-        FirebaseCloudMessaging();
+
 
     // Initialize the NotificationService with a repository and notification callback
     _notificationService = NotificationService(
       instance<
           UserNotificationRepositoryImplement>(), // Inject the user notification repository
-      firebaseCloudMessaging
-          .recieveNotification, // Method to handle incoming notifications
     );
 
     // Delay the execution until after the first frame is rendered
@@ -45,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // If the username is present, start listening and fetching notifications
       if (initialUserName.isNotEmpty) {
-        _notificationService
-            .listenToNotificationChanges(); // Start listening for notification changes
+        // _notificationService
+        //     .listenToNotificationChanges(); // Start listening for notification changes
         _notificationService
             .fetchNotificationsContinuously(); // Continuously fetch notifications
       }

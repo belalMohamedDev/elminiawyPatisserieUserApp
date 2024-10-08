@@ -103,6 +103,9 @@ dependencies:
   firebase_messaging: ^15.1.2
   badges: ^3.1.2
   flutter_dotenv: ^5.1.0
+  connectivity_plus: ^6.0.5
+  rxdart: ^0.28.0
+
 
 dev_dependencies:
   flutter_test:
@@ -156,6 +159,8 @@ flutter:
     - asset/image/noSearch.svg
     - asset/image/noRoute.svg
     - asset/image/checkOut.png
+    - asset/image/noInternetConnection.svg
+    - asset/image/searchLoading.svg
 
     
 

@@ -12,8 +12,7 @@ class FirebaseCloudMessaging {
   /// Manage notification subscription status
   ValueNotifier<bool> isNotificationSubscribe = ValueNotifier(false);
 
-  /// Manage notification receipt status (when user receives a notification)
-  ValueNotifier<bool> recieveNotification = ValueNotifier(false);
+
   bool hasNotificationPermission = false;
 
   late final String _subscribeKey;
@@ -31,14 +30,6 @@ class FirebaseCloudMessaging {
         .listen(FirebaseMessagingNavigator.foreGroundHandler);
 
 
-   
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage? message) {
-      if (message != null) {
-        FirebaseCloudMessaging().recieveNotification.value = true;
-      }
-    });
-
-    await FirebaseMessagingNavigator.checkTerminatedState();
   }
 
   Future<String> _getValidSubscribeKey() async {

@@ -15,11 +15,7 @@ class SearchRow extends StatelessWidget {
     return InkWell(
       onTap: () {
         // Navigate to the search screen when the row is tapped
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const SearchView(),
-            ));
+        Navigator.of(context, rootNavigator: !false).pushNamed(Routes.search);
       },
       child: Row(
         children: [
@@ -39,7 +35,7 @@ class SearchRow extends StatelessWidget {
                   hintStyle: Theme.of(context)
                       .textTheme
                       .titleMedium!
-                      .copyWith(fontSize: responsive.setTextSize(3.2)),
+                      .copyWith(fontSize: responsive.setTextSize(3.5)),
                   fillColor: ColorManger
                       .backgroundItem, // Background color for the input field
                   disabledBorder: OutlineInputBorder(
@@ -75,12 +71,8 @@ class SearchRow extends StatelessWidget {
               ),
               onPressed: () {
                 // Navigate to the search screen when the filter button is tapped.
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SearchView(),
-                    ));
-              
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamed(Routes.search);
               },
             ),
           ),

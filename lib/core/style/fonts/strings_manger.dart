@@ -21,16 +21,30 @@ class AppStrings {
       "To get started, sign in to your account.";
 
   ///////// auth screen
+  static const String searchProducts = "Search Products";
+  static const String sortBy = "Sort By";
+  static const String nameAToZ = 'Name: A to Z';
+  static const String nameZToA = 'Name: Z to A';
+  static const String applyFilter = 'Apply Filter';
+  static const String priceLowToHigh = 'Price: Low to High';
+  static const String priceHighToLow = 'Price: High to Low';
+  static const String priceRange = 'Price Range';
+  static const String opps = "Opps ! ....";
+  static const String somethingWrongWithYourConnection =
+      "Something wrong with your connection, Please try again after a moment.";
   static const String area = "Area";
-  static const String thisAccountNotAccessInThisApp = "this account not access in this app";
+  static const String thisAccountNotAccessInThisApp =
+      "this account not access in this app";
   static const String unknownRegion = "Unknown Region";
   static const String newProductsInStore = "New Products in Store";
-  static const String pleaseCheckYourInternetConnection = "please check your internet connection";
-
-
-
+  static const String pleaseCheckYourInternetConnection =
+      "please check your internet connection";
 
   static const String orSignInWith = "Or sign in with";
+  static const String noResultsFound = "No Results Found!";
+  static const String weCouldntFindAnyMatchingResultsForYourSearch =   "We couldn't find any matching results for your search. Please try again with different keywords.";
+
+
   static const String wishList = "Wish List";
   static const String hiWelcomeBack = "Hi! Welcome back, you've been missed";
   static const String forgetPassword = "Forget Password?";
@@ -106,32 +120,28 @@ class AppStrings {
   static const String phoneNumber = "Phone number";
   static const String saveAddress = "Save address";
 
-  static const String givethisAddress  = "Give this address a label so you can easily choose between them (e.g. Parent's home)";
-
+  static const String givethisAddress =
+      "Give this address a label so you can easily choose between them (e.g. Parent's home)";
 
   static const String addressLabelOptional = "Address label (optional)";
 
-
   static const String floorOptional = "Floor (optional)";
 
-
-  static const String pleaseEnterAValidStreetName = 'Please enter a valid street name';
+  static const String pleaseEnterAValidStreetName =
+      'Please enter a valid street name';
   static const String street = "Street";
-  static const String additionalDirectionsOptional = "Additional directions (optional)";
+  static const String additionalDirectionsOptional =
+      "Additional directions (optional)";
 
-
-
-  static const String pleaseEnterAValidBuildingName = 'Please enter a valid building name';
+  static const String pleaseEnterAValidBuildingName =
+      'Please enter a valid building name';
   static const String house = "House";
   static const String buildingName = "Building name";
   static const String pleaseEnterAValidCompany = 'Please enter a valid company';
 
-  static const String pleaseEnterAValidApt  = 'Please enter a valid apt .no.';
+  static const String pleaseEnterAValidApt = 'Please enter a valid apt .no.';
   static const String company = 'Company';
   static const String aptNo = 'Apt. no.';
-
-
-
 
   static const String pleaseEnterTheCode =
       "Please Enter the code we just send to email";
@@ -291,15 +301,9 @@ class AppStrings {
 
   static const String darkMode = 'Dark Mode';
 
-
-
   static const String newAddress = 'New Address';
   static const String findYourLocation = 'Find Your Location';
   static const String apartment = 'Apartment';
-
-
-
-
 
   static const String logOut = 'Log Out';
   static const String confirmLogout = 'Confirm Logout';
@@ -317,13 +321,15 @@ class AppStrings {
 
   static const String emptyAddress = 'Empty Address!';
   static const String addAddress = 'Add Address';
-  static const String itSeemsLikeYouHavenAddedAnyAddressesYet = "It seems like you haven't added any addresses yet. Please add an address to proceed with your order!";
-
+  static const String itSeemsLikeYouHavenAddedAnyAddressesYet =
+      "It seems like you haven't added any addresses yet. Please add an address to proceed with your order!";
 
   static const String youreHere = 'You\'re Here';
   static const String chooseAddress = 'Choose Address';
   static const String saveChanges = 'Save Changes';
   static const String addNew = 'Add New';
+  static const String youAreNotLoggedIn = 'You are not logged in!';
+  static const String pleaseLoginToContinueAndEnjoyFullAccessToTheAppFeatures = "Please login to continue and enjoy full access to the app's features. Log in now to explore and use the application seamlessly!";
   static const String youCanEditYourAddressFromYourSettings =
       'You can edit your address from your settings';
   static const String changingTheAddressMightAffectYourCart =

@@ -1,3 +1,4 @@
+
 import '../../../../../core/common/shared/shared_imports.dart'; // Shared imports for project utilities
 import 'package:badges/badges.dart' as badges;
 
@@ -117,71 +118,65 @@ class HomeBody extends StatelessWidget {
         ),
         const Spacer(), // Spacer to push the notification icon to the right
         // ValueListenableBuilder to listen for notification updates
-        ValueListenableBuilder(
-          valueListenable: notificationService
-              .recieveNotification, // Listen for notification changes
-          builder: (context, value, child) {
-            return StreamBuilder<UserNotificationResponse>(
-              stream:
-                  notificationService.notificationStream, // Notification stream
-              builder: (context, snapshot) {
-                if (!snapshot.hasData || snapshot.data == null) {
-                  // If no notifications, show a plain notification icon
-                  return IconButton(
-                    onPressed: () {
-                      Navigator.of(context, rootNavigator: !false).pushNamed(
-                          Routes
-                              .notification); // Navigate to notification screen
-                    },
-                    icon: Icon(
-                      IconlyBold.notification,
-                      color: ColorManger.brun,
+        StreamBuilder<UserNotificationResponse>(
+          stream:
+              notificationService.notificationStream, // Notification stream
+          builder: (context, snapshot) {
+            if (!snapshot.hasData || snapshot.data == null) {
+              // If no notifications, show a plain notification icon
+              return IconButton(
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: !false).pushNamed(
+                      Routes
+                          .notification); // Navigate to notification screen
+                },
+                icon: Icon(
+                  IconlyBold.notification,
+                  color: ColorManger.brun,
+                ),
+              );
+            }
+        
+            // Calculate the number of unread notifications
+            final numberOfNotification = snapshot.data!.data!
+                .where((element) => element.isSeen == false)
+                .length;
+        
+            // Display a badge with the count of unread notifications
+            return badges.Badge(
+              showBadge: numberOfNotification !=
+                  0, // Show badge if there are unread notifications
+              badgeAnimation: const badges.BadgeAnimation.scale(),
+              position: badges.BadgePosition.topEnd(
+                end: numberOfNotification >= 9 ? 8.w : 10.w,
+                top: numberOfNotification >= 9 ? 4.h : 5.h,
+              ),
+              badgeStyle: badges.BadgeStyle(
+                padding: EdgeInsets.all(
+                  numberOfNotification >= 9 ? 4.h : 5.5.h,
+                ),
+              ),
+              // Show "+9" if more than 9 unread notifications, else show the count
+              badgeContent: Text(
+                numberOfNotification >= 9 ? '+9' : '$numberOfNotification',
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      fontFamily: FontConsistent.fontFamilyAcme,
+                      color: ColorManger.white,
+                      fontSize: numberOfNotification >= 9 ? 8.sp : 10.sp,
                     ),
-                  );
-                }
-
-                // Calculate the number of unread notifications
-                final numberOfNotification = snapshot.data!.data!
-                    .where((element) => element.isSeen == false)
-                    .length;
-
-                // Display a badge with the count of unread notifications
-                return badges.Badge(
-                  showBadge: numberOfNotification !=
-                      0, // Show badge if there are unread notifications
-                  badgeAnimation: const badges.BadgeAnimation.scale(),
-                  position: badges.BadgePosition.topEnd(
-                    end: numberOfNotification >= 9 ? 8.w : 10.w,
-                    top: numberOfNotification >= 9 ? 4.h : 5.h,
-                  ),
-                  badgeStyle: badges.BadgeStyle(
-                    padding: EdgeInsets.all(
-                      numberOfNotification >= 9 ? 4.h : 5.5.h,
-                    ),
-                  ),
-                  // Show "+9" if more than 9 unread notifications, else show the count
-                  badgeContent: Text(
-                    numberOfNotification >= 9 ? '+9' : '$numberOfNotification',
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontFamily: FontConsistent.fontFamilyAcme,
-                          color: ColorManger.white,
-                          fontSize: numberOfNotification >= 9 ? 8.sp : 10.sp,
-                        ),
-                  ),
-                  // Notification icon button
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context, rootNavigator: !false).pushNamed(
-                          Routes
-                              .notification); // Navigate to notification screen
-                    },
-                    icon: Icon(
-                      IconlyBold.notification,
-                      color: ColorManger.brun,
-                    ),
-                  ),
-                );
-              },
+              ),
+              // Notification icon button
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: !false).pushNamed(
+                      Routes
+                          .notification); // Navigate to notification screen
+                },
+                icon: Icon(
+                  IconlyBold.notification,
+                  color: ColorManger.brun,
+                ),
+              ),
             );
           },
         ),

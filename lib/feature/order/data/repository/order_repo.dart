@@ -15,14 +15,14 @@ abstract class OrderRepository {
 }
 
 class OrderRepositoryImplement implements OrderRepository {
-  OrderRepositoryImplement(this._apiService, this._networkInfo);
+  OrderRepositoryImplement(this._apiService);
   final AppServiceClient _apiService;
-  late final NetworkInfo _networkInfo;
+
 
   @override
   Future<ApiResult<CreateOrderResponse>> createCashOrder(
       CreateOrderRequestBody createOrderRequestBody) async {
-    if (await _networkInfo.isConnected) {
+ 
       try {
         final response =
             await _apiService.createCashOrderService(createOrderRequestBody);
@@ -30,55 +30,43 @@ class OrderRepositoryImplement implements OrderRepository {
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
+
   }
 
   @override
   Future<ApiResult<CreateOrderResponse>> orderCancelledRepository(
       String id) async {
-    if (await _networkInfo.isConnected) {
+ 
       try {
         final response = await _apiService.orderCancellService(id);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
+  
   }
   
   @override
   Future<ApiResult<GetOrdersResponse>> getAllOrderCompleteRepository() async{
-    if (await _networkInfo.isConnected) {
+ 
       try {
         final response = await _apiService.getAllOrderCompleteService();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
+ 
   }
   
   @override
   Future<ApiResult<GetOrdersResponse>> getAllOrderPendingRepository() async {
-     if (await _networkInfo.isConnected) {
+
       try {
         final response = await _apiService.getAllOrderPendingService();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));    }
+ 
   }
 }

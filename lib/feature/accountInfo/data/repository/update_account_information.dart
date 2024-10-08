@@ -9,15 +9,15 @@ abstract class AccountInformationRepository {
 
 class AccountInformationRepositoryImplement
     implements AccountInformationRepository {
-  AccountInformationRepositoryImplement(this._apiService, this._networkInfo);
+  AccountInformationRepositoryImplement(this._apiService);
   final AppServiceClient _apiService;
-  late final NetworkInfo _networkInfo;
+
 
   @override
   Future<ApiResult<UpdateAccountInformationResponse>> updateAccountInformation(
       UpdateAccountInformationRequestBody
           updateAccountInformationRequestBody) async {
-    if (await _networkInfo.isConnected) {
+  
       try {
         final response =
             await _apiService.updateMyData(updateAccountInformationRequestBody);
@@ -25,26 +25,18 @@ class AccountInformationRepositoryImplement
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
-    }
-  }
+    } 
+  
 
   @override
   Future<ApiResult<DeleteAccountResponse>> deleteAccountRepo() async {
-    if (await _networkInfo.isConnected) {
+
       try {
         final response = await _apiService.deleteMyAccountService();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
-    } else {
-      //return  internet connection error
-      return ApiResult.failure(
-          ApiErrorHandler.handle(AppStrings.pleaseCheckYourInternetConnection));
     }
   }
-}
+
