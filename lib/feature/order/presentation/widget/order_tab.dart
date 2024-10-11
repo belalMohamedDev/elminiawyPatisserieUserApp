@@ -61,7 +61,7 @@ class OrdersTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '${AppStrings.orderNum}${order.sId}',
+                        '${  context.translate(AppStrings.orderNum) }${order.sId}',
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!

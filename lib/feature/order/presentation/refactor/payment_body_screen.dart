@@ -16,7 +16,7 @@ class PaymentBody extends StatelessWidget {
           const CheckOutProcessing(screenIndex: 2),
           responsive.setSizeBox(height: 5),
           Text(
-            AppStrings.chooseYourPaymentMethod,
+          context.translate(AppStrings.chooseYourPaymentMethod) ,
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -26,7 +26,7 @@ class PaymentBody extends StatelessWidget {
           _choosePaymentMethod(context, responsive),
           responsive.setSizeBox(height: 3),
           Text(
-            AppStrings.promoCode,
+           context.translate(AppStrings.promoCode) ,
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -41,7 +41,7 @@ class PaymentBody extends StatelessWidget {
                   .pushNamed(Routes.shippingReviewScreen);
             },
             widget: Text(
-              AppStrings.saveAndContinue,
+          context.translate(AppStrings.saveAndContinue)   ,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(
                         3.8), // Adjusted font size for responsiveness
@@ -89,7 +89,7 @@ class PaymentBody extends StatelessWidget {
                       ),
                       responsive.setSizeBox(width: 3),
                       Text(
-                        AppStrings.cashOnDelivery,
+                    context.translate(AppStrings.cashOnDelivery)    ,
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!
@@ -138,7 +138,7 @@ class PaymentBody extends StatelessWidget {
                         color: ColorManger.brun,
                       ),
                       responsive.setSizeBox(width: 3),
-                      Text(AppStrings.creditOrDebitCard,
+                      Text(context.translate(AppStrings.creditOrDebitCard) ,
                           style: Theme.of(context)
                               .textTheme
                               .titleLarge!

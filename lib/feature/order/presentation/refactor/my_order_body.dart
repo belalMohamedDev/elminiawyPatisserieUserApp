@@ -35,11 +35,11 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
                 borderRadius: BorderRadius.circular(8.r)),
             child: TabBar(
               controller: _tabController,
-              tabs: const [
+              tabs:  [
                 Tab(
-                  text: AppStrings.currentOrders,
+                  text:context.translate(AppStrings.currentOrders) ,
                 ),
-                Tab(text: AppStrings.previousOrders),
+                Tab(text:context.translate(AppStrings.previousOrders) ),
               ],
               labelColor: ColorManger.white, // Text color of selected tab
               unselectedLabelColor: ColorManger.white,

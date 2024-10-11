@@ -19,7 +19,7 @@ class CategoryListViewBuilder extends StatelessWidget {
         Row(
           children: [
             // Category title
-            Text(AppStrings.category,
+            Text(    context.translate(AppStrings.category),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -34,7 +34,7 @@ class CategoryListViewBuilder extends StatelessWidget {
                     .bottomNavBarController
                     .jumpToTab(1); // Switches to the category tab
               },
-              child: Text(AppStrings.viewAll,
+              child: Text(context.translate(AppStrings.viewAll) ,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!

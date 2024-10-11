@@ -9,7 +9,7 @@ class MyOrdersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(AppStrings.myOrders,
+        title: Text(context.translate(AppStrings.myOrders) ,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
            
                 fontSize: 16.sp)),

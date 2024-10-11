@@ -26,13 +26,13 @@ class OrderPlacedBody extends StatelessWidget {
         children: [
           Lottie.asset(JsonAsset.congrat),
           responsive.setSizeBox(height: 3),
-          Text(AppStrings.orderPlaced,
+          Text(context.translate(AppStrings.orderPlaced) ,
               style: Theme.of(context).textTheme.titleLarge),
           responsive.setSizeBox(height: 2),
           Padding(
             padding: responsive.setPadding(left: 3, right: 2),
             child: Text(
-                "${AppStrings.thankYouForPurchasingFromElminiawy}${context.read<PaymentCubit>().createOrderResponseData!.sId}",
+                "${context.translate(AppStrings.thankYouForPurchasingFromElminiawy) }${context.read<PaymentCubit>().createOrderResponseData!.sId}",
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
@@ -44,7 +44,7 @@ class OrderPlacedBody extends StatelessWidget {
                 context.pushReplacementNamed(Routes.bottomNavBarRoute);
               },
               widget: Text(
-                AppStrings.backToHome,
+               context.translate(AppStrings.backToHome) ,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontSize:
                           responsive.setTextSize(3.8), // Responsive text size
@@ -61,7 +61,7 @@ class OrderPlacedBody extends StatelessWidget {
               );
             },
             widget: Text(
-              AppStrings.trackOrder,
+            context.translate(AppStrings.trackOrder)  ,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize:
                         responsive.setTextSize(3.8), // Responsive text size

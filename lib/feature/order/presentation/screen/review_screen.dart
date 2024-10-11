@@ -11,7 +11,7 @@ class ReviewPaymentScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          AppStrings.checkOut,
+         context.translate(AppStrings.checkOut) ,
           style: Theme.of(context)
               .textTheme
               .titleLarge!
@@ -39,52 +39,25 @@ class ReviewPaymentScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppStrings.orderSummary,
+              context.translate(AppStrings.orderSummary),
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
                   .copyWith(fontSize: responsive.setTextSize(4)),
             ),
             responsive.setSizeBox(height: 1),
-            Row(
-              children: [
-                Text(
-                  AppStrings.cartTotal,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
-                ),
-                const Spacer(),
-                Text(
-                  '${cart.cartData!.data!.totalCartPrice!}   ${AppStrings.egy}',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
-                ),
-              ],
+
+            RowTextOrderSummary(
+              orderprice: cart.cartData!.data!.totalCartPrice!,
+              orderText:context.translate(AppStrings.cartTotal) ,
             ),
+
             responsive.setSizeBox(height: 1),
-            Row(
-              children: [
-                Text(
-                  AppStrings.deliveryFee,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
-                ),
-                const Spacer(),
-                Text(
-                  '${cart.cartData!.data!.taxPrice!}   ${AppStrings.egy}',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
-                ),
-              ],
+            RowTextOrderSummary(
+              orderprice: cart.cartData!.data!.totalPriceAfterDiscount!,
+              orderText:context.translate(AppStrings.priceAfterDiscount) ,
             ),
+      
             Divider(
               color: ColorManger.brownLight,
             ),
@@ -92,7 +65,7 @@ class ReviewPaymentScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  AppStrings.total,
+                 context.translate(AppStrings.total) ,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -100,7 +73,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '${cart.cartData!.data!.totalOrderPrice!}   ${AppStrings.egy}',
+                  '${cart.cartData!.data!.totalOrderPrice!}   ${context.translate(AppStrings.egy)}',
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -153,7 +126,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                                 2), // Spacing between the indicator and text
                           ),
                           Text(
-                            AppStrings.loading,
+                             context.translate(AppStrings.loading) ,
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineSmall
@@ -165,7 +138,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                         ],
                       ),
                       orElse: () => Text(
-                        AppStrings.summitOrder,
+                        context.translate(AppStrings.summitOrder),
                         style:
                             Theme.of(context).textTheme.headlineSmall?.copyWith(
                                   fontSize: responsive.setTextSize(
@@ -185,7 +158,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                 ),
                 responsive.setSizeBox(width: 2),
                 Text(
-                  AppStrings.orderWillBeDelivered,
+                  context.translate(AppStrings.orderWillBeDelivered),
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!

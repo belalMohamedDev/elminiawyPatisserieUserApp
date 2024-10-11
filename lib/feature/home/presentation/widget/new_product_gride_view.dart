@@ -19,7 +19,7 @@ class NewProductGrideView extends StatelessWidget {
         Row(
           children: [
             // New Products title
-            Text(AppStrings.newProductsInStore,
+            Text(   context.translate(AppStrings.newProductsInStore),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -34,7 +34,7 @@ class NewProductGrideView extends StatelessWidget {
                         Routes.newProduct // Navigate to NewProductView screen
                         );
               },
-              child: Text(AppStrings.seeAll,
+              child: Text(context.translate(AppStrings.seeAll),
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!

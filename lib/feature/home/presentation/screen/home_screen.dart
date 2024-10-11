@@ -33,16 +33,14 @@ class _HomeScreenState extends State<HomeScreen> {
     // Delay the execution until after the first frame is rendered
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       // Retrieve the saved username from secure shared preferences
-      String initialUserName =
-          await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+
 
       // Call MapCubit's function to set the location to "Home"
       context.read<MapCubit>().setLocationToHome();
 
       // If the username is present, start listening and fetching notifications
-      if (initialUserName.isNotEmpty) {
-        // _notificationService
-        //     .listenToNotificationChanges(); // Start listening for notification changes
+      if (!isAnonymousUser) {
+ 
         _notificationService
             .fetchNotificationsContinuously(); // Continuously fetch notifications
       }

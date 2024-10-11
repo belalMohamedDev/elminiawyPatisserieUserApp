@@ -64,7 +64,7 @@ class AccountInfomationBody extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isNameValid(value)) {
-                return AppStrings.pleaseEnterAValidName;
+                return context.translate(AppStrings.pleaseEnterAValidName) ;
               }
               return null;
             },
@@ -100,7 +100,7 @@ class AccountInfomationBody extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isPhoneNumberValid(value)) {
-                return AppStrings.pleaseEnterAValidPhoneNumber;
+                return context.translate(AppStrings.pleaseEnterAValidPhoneNumber);
               }
               return null;
             },
@@ -160,6 +160,10 @@ class AccountInfomationBody extends StatelessWidget {
             ShowToast.showToastSuccessTop(
                 message: data.message!, context: context);
             await SharedPrefHelper.clearAllSecuredData();
+            SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
+            SharedPrefHelper.removeData(PrefKeys.locationArea);
+            SharedPrefHelper.removeData(PrefKeys.longAddressHome);
+            SharedPrefHelper.removeData(PrefKeys.latAddressHome);
             if (context.mounted) {
               Navigator.of(context, rootNavigator: !false)
                   .pushNamedAndRemoveUntil(
@@ -219,7 +223,7 @@ class AccountInfomationBody extends StatelessWidget {
                     width: 15.w,
                   ),
                   Text(
-                    AppStrings.loading,
+                     context.translate(AppStrings.loading) ,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontSize: 16.sp,
                         ),
@@ -243,7 +247,7 @@ class AccountInfomationBody extends StatelessWidget {
                     width: 15.w,
                   ),
                   Text(
-                    AppStrings.loading,
+                context.translate(AppStrings.loading)    ,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontSize: 16.sp,
                         ),
@@ -252,8 +256,8 @@ class AccountInfomationBody extends StatelessWidget {
               ),
               orElse: () => Text(
                 context.read<AccountInformationCubit>().isTextFormFieldEnabl
-                    ? AppStrings.save
-                    : AppStrings.deleteAccount,
+                    ? context.translate(AppStrings.save)
+                    : context.translate(AppStrings.deleteAccount),
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontSize: 16.sp,
                     ),

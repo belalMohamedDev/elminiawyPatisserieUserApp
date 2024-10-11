@@ -38,11 +38,11 @@ class EmptyNotificationsScreen extends StatelessWidget {
               responsive.setSizeBox(height: 2),
 
               // ErrorInfo widget that displays a title and description for the empty state.
-              const ErrorInfo(
-                title: AppStrings
-                    .emptyNotifications, // Title indicating no notifications are available.
-                description: AppStrings
-                    .itLooksLikeYouNotifications, // Descriptive message for the empty state.
+               ErrorInfo(
+                title: context.translate(AppStrings.emptyNotifications) 
+                    , // Title indicating no notifications are available.
+                description:context.translate(AppStrings.itLooksLikeYouNotifications)  
+                    , // Descriptive message for the empty state.
               ),
             ],
           ),

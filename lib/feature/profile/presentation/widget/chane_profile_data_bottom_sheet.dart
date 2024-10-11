@@ -15,7 +15,7 @@ void chaneProfileDataBottomSheet(BuildContext context) {
                 child: Column(
                   children: [
                     CustomProfileCard(
-                      title: AppStrings.accountInformation,
+                      title:context.translate(AppStrings.accountInformation) ,
                       leadingIcon: IconlyBold.infoCircle,
                       tap: () {
                         Navigator.of(context, rootNavigator: !false)
@@ -23,7 +23,7 @@ void chaneProfileDataBottomSheet(BuildContext context) {
                       },
                     ),
                     CustomProfileCard(
-                      title: AppStrings.changeEmailAddress,
+                      title: context.translate(AppStrings.changeEmailAddress) ,
                       leadingIcon: IconlyBold.message,
                       tap: () {
                         Navigator.of(context, rootNavigator: !false)
@@ -31,7 +31,7 @@ void chaneProfileDataBottomSheet(BuildContext context) {
                       },
                     ),
                     CustomProfileCard(
-                      title: AppStrings.changePassword,
+                      title: context.translate(AppStrings.changePassword) ,
                       leadingIcon: IconlyBold.lock,
                       tap: () {
                         Navigator.of(context, rootNavigator: !false)

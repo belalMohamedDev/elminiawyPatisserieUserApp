@@ -17,7 +17,7 @@ class OrderDetailsBody extends StatelessWidget {
           createCashOrderSuccess: (createOrderResponse) {
             if (order != null) {
               ShowToast.showToastSuccessTop(
-                  message: AppStrings.successToCancelOrder, context: context);
+                  message: context.translate(AppStrings.successToCancelOrder) , context: context);
               context.pop();
               WidgetsBinding.instance.addPostFrameCallback((_) async {
                 await Future.wait([
@@ -179,7 +179,7 @@ class OrderDetailsBody extends StatelessWidget {
         ),
         responsive.setSizeBox(height: 1),
         Text(
-            '${AppStrings.totalPrice}     ${response.cartItems![index].totalItemPrice}.00  \$',
+            '${context.translate(AppStrings.totalPrice)}     ${response.cartItems![index].totalItemPrice}.00  \$',
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -216,7 +216,7 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 5.w,
                 ),
-                Text("${response.totalOrderPrice ?? ''}  ${AppStrings.egy}",
+                Text("${response.totalOrderPrice ?? ''}  ${context.translate(AppStrings.egy) }",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -291,13 +291,13 @@ class OrderDetailsBody extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(AppStrings.shippingPrice,
+                Text(context.translate(AppStrings.shippingPrice),
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
                         .copyWith(fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.shippingPrice ?? ''}  ${AppStrings.egy}",
+                Text("${response.shippingPrice ?? ''}  ${context.translate(AppStrings.egy)}",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -310,13 +310,13 @@ class OrderDetailsBody extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(AppStrings.taxPrice,
+                Text(context.translate(AppStrings.taxPrice),
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
                         .copyWith(fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.taxPrice ?? ""}  ${AppStrings.egy}",
+                Text("${response.taxPrice ?? ""}  ${context.translate(AppStrings.egy)}",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -431,7 +431,7 @@ class OrderDetailsBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(AppStrings.orderStatus,
+            Text(context.translate(AppStrings.orderStatus),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -446,27 +446,27 @@ class OrderDetailsBody extends StatelessWidget {
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 0,
-                          title: AppStrings.orderPlaced,
+                          title: context.translate(AppStrings.orderPlaced),
                           subTitle:
-                              '${AppStrings.orderHasBeenPlacedAt} ${createAt.getFormattedDate()} .'),
+                              '${context.translate(AppStrings.orderHasBeenPlacedAt)} ${createAt.getFormattedDate()} .'),
                       _buildLine(orderStatus > 0),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 1,
-                          title: AppStrings.preparing,
-                          subTitle: AppStrings.yourOrderIsBeingPrepared),
+                          title: context.translate(AppStrings.preparing),
+                          subTitle:context.translate(AppStrings.yourOrderIsBeingPrepared) ),
                       _buildLine(orderStatus > 1),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 2,
-                          title: AppStrings.onItsWay,
-                          subTitle: AppStrings.yourOrderIsOnItsWay),
+                          title: context.translate(AppStrings.onItsWay),
+                          subTitle: context.translate(AppStrings.yourOrderIsOnItsWay)),
                       _buildLine(orderStatus > 2),
                       _buildStep(
                         context: context,
                         isCompleted: orderStatus >= 3,
-                        title: AppStrings.delivered,
-                        subTitle: AppStrings.yourOrderWasDeliveredSuccessfully,
+                        title: context.translate(AppStrings.delivered),
+                        subTitle: context.translate(AppStrings.yourOrderWasDeliveredSuccessfully),
                       ),
                     ],
                   )
@@ -476,16 +476,16 @@ class OrderDetailsBody extends StatelessWidget {
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus == 4,
-                          title: AppStrings.orderPlaced,
+                          title:context.translate(AppStrings.orderPlaced) ,
                           subTitle:
-                              '${AppStrings.orderHasBeenPlacedAt} ${createAt.getFormattedDate()}'),
+                              '${context.translate(AppStrings.orderHasBeenPlacedAt)} ${createAt.getFormattedDate()}'),
                       _buildLine(orderStatus == 4),
                       _buildStep(
                           isCancelled: true,
                           context: context,
                           isCompleted: orderStatus == 4,
-                          title: AppStrings.cancelled,
-                          subTitle: AppStrings.yourOrderWasCancelled,
+                          title: context.translate(AppStrings.cancelled),
+                          subTitle: context.translate(AppStrings.yourOrderWasCancelled),
                           imagePath: ImageAsset.orderCancel),
                     ],
                   )
@@ -526,7 +526,7 @@ class OrderDetailsBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AppStrings.orderID,
+              Text(context.translate(AppStrings.orderID),
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!

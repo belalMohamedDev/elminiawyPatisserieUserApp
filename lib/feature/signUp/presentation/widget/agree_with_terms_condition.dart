@@ -44,7 +44,8 @@ class AgreeWithTermsCondition extends StatelessWidget {
             // Text describing the terms and conditions with underline
             Text.rich(
               TextSpan(
-                text: AppStrings.agreeWith, // Base text: "I agree with"
+                text:   context.translate(
+                    AppStrings.agreeWith) , // Base text: "I agree with"
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize:
                         responsive.setTextSize(3.5)), // Responsive text size
@@ -57,7 +58,7 @@ class AgreeWithTermsCondition extends StatelessWidget {
                   ),
                   // Link-like text for "Terms and Conditions"
                   TextSpan(
-                    text: AppStrings.termsCondition,
+                    text:  context.translate(AppStrings.termsCondition)  ,
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           decoration: TextDecoration
                               .underline, // Underline "Terms and Conditions"

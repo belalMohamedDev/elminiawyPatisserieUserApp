@@ -1,3 +1,9 @@
+bool isLoggedInUser = false;
+bool isOnBoardingScreen = false;
+bool isAnonymousUser = false;
+bool isLocatedMap = false;
+
+
 class PrefKeys {
   static const String prefsKeyIsUserLoggedIn = 'PREFS_KEY_IS_USER_LOGGED_IN';
   static const String prefsKeyOnBoardingScreenView =

@@ -25,7 +25,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           _changingAddressText(context, responsive),
           responsive.setSizeBox(height: 4),
           Text(
-            AppStrings.currentLocation,
+          context.translate(AppStrings.currentLocation)  ,
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -35,7 +35,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           _mapWidget(context, responsive),
           responsive.setSizeBox(height: 4),
           Text(
-            AppStrings.shippingAddress,
+         context.translate(AppStrings.shippingAddress)  ,
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -55,7 +55,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   .pushNamed(Routes.shippingPayment);
             },
             widget: Text(
-              AppStrings.saveAndContinue,
+            context.translate(AppStrings.saveAndContinue)  ,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(
                         3.8), // Adjusted font size for responsiveness
@@ -114,7 +114,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           ),
                           child: Center(
                             child: Text(
-                              AppStrings.defaultAddress,
+                         context.translate(AppStrings.defaultAddress)    ,
                               style: Theme.of(context)
                                   .textTheme
                                   .headlineSmall!
@@ -145,7 +145,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                               onTap: () {
                                 _chaneProfileDataaBottomSheet(context);
                               },
-                              child: Text(AppStrings.change,
+                              child: Text(context.translate(AppStrings.change) ,
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleLarge!
@@ -282,7 +282,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   children: [
                     Icon(IconlyBold.location, color: ColorManger.brunLight),
                     responsive.setSizeBox(width: 1.2),
-                    Text(AppStrings.youreHere,
+                    Text(context.translate(AppStrings.youreHere) ,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -313,7 +313,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           ),
           responsive.setSizeBox(width: 3),
           Text(
-            AppStrings.changingTheAddressMightAffectYourCart,
+         context.translate(AppStrings.changingTheAddressMightAffectYourCart)  ,
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -369,7 +369,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(AppStrings.chooseAddress,
+                          Text(context.translate(AppStrings.chooseAddress),
                               style: Theme.of(context)
                                   .textTheme
                                   .titleLarge!
@@ -377,7 +377,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                                     fontSize: responsive.setTextSize(4),
                                   )),
                           responsive.setSizeBox(height: 0.5),
-                          Text(AppStrings.youCanEditYourAddressFromYourSettings,
+                          Text(context.translate(AppStrings.youCanEditYourAddressFromYourSettings) ,
                               style: Theme.of(context)
                                   .textTheme
                                   .titleMedium!
@@ -430,7 +430,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           .popAndPushNamed(Routes.shippingAddress);
                     },
                     widget: Text(
-                      AppStrings.saveChanges,
+                    context.translate(AppStrings.saveChanges)  ,
                       style:
                           Theme.of(context).textTheme.headlineSmall?.copyWith(
                                 fontSize: responsive
@@ -448,7 +448,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                     },
                     color: ColorManger.brownLight,
                     widget: Text(
-                      AppStrings.addNew,
+                     context.translate(AppStrings.addNew) ,
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             fontSize: responsive
                                 .setTextSize(3.8), // Dynamic text size

@@ -15,7 +15,8 @@ class AlreadyHaveAnAccountText extends StatelessWidget {
       child: Text.rich(
         TextSpan(
           text:
-              AppStrings.alreadyHaveAccount, // "Already have an account?" text
+              context.translate(
+              AppStrings.alreadyHaveAccount)   , // "Already have an account?" text
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 fontSize: responsive.setTextSize(4), // Responsive font size
               ),
@@ -33,7 +34,7 @@ class AlreadyHaveAnAccountText extends StatelessWidget {
                   // Navigate to the login route when tapped
                   context.pushReplacementNamed(Routes.loginRoute);
                 },
-              text: AppStrings.signIn, // "Sign In" text
+              text:   context.translate(AppStrings.signIn)    , // "Sign In" text
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   fontSize:
                       responsive.setTextSize(4.5), // Larger font for emphasis

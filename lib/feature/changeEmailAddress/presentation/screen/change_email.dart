@@ -8,7 +8,7 @@ class ChangeEmailScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(AppStrings.changeEmailAddress,
+          title: Text(context.translate(AppStrings.changeEmailAddress) ,
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!

@@ -64,8 +64,8 @@ class PhoneTextFormField extends StatelessWidget {
               showDropDownButton:
                   true, // Show a dropdown button to select the country code
             ),
-            hintText: AppStrings
-                .enterPhoneNumber, // Placeholder for the phone input field
+            hintText:   context.translate(AppStrings.enterPhoneNumber) 
+                , // Placeholder for the phone input field
 
             // Display error text if phone input is invalid
             errorText: state.whenOrNull(

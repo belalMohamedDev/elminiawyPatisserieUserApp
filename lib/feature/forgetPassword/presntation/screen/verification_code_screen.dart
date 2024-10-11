@@ -22,7 +22,7 @@ class VerificationCodeView extends StatelessWidget {
               children: [
                 // Title for verifying the code
                 Text(
-                  AppStrings.verifyCode,
+                context.translate(AppStrings.verifyCode)  ,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
                 SizedBox(
@@ -31,7 +31,7 @@ class VerificationCodeView extends StatelessWidget {
                 ),
                 // Instruction for the user to enter the code
                 Text(
-                  AppStrings.pleaseEnterTheCode,
+                     context.translate(AppStrings.pleaseEnterTheCode)  ,
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall!
@@ -65,7 +65,7 @@ class VerificationCodeView extends StatelessWidget {
                 ),
                 // Message indicating the user did not receive the OTP
                 Text(
-                  AppStrings.didntRecieveotp,
+                   context.translate(AppStrings.didntRecieveotp)   ,
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall!
@@ -85,7 +85,7 @@ class VerificationCodeView extends StatelessWidget {
                           .add(const UserForgetPasswordButtonEvent());
                     },
                     child: Text(
-                      AppStrings.resendCode,
+                         context.translate(AppStrings.resendCode) ,
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium!
@@ -114,7 +114,7 @@ class VerificationCodeView extends StatelessWidget {
                           .clear();
                     },
                     child: Text(
-                      AppStrings.backToLogin,
+                    context.translate(AppStrings.backToLogin)  ,
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium!

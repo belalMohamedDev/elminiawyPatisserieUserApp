@@ -1,7 +1,4 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
-
 
 class InformationCardArea extends StatelessWidget {
   const InformationCardArea({
@@ -25,7 +22,7 @@ class InformationCardArea extends StatelessWidget {
             getAddressResponseData!.region != null) {
           regionAddress = getAddressResponseData!.region!;
         } else {
-          regionAddress = AppStrings.unknownRegion;
+          regionAddress = context.translate(AppStrings.unknownRegion);
         }
 
         return Card(
@@ -58,13 +55,11 @@ class InformationCardArea extends StatelessWidget {
                           SizedBox(
                             width: 2.w,
                           ),
-                          Text(AppStrings.area,
+                          Text(context.translate(AppStrings.area),
                               style: Theme.of(context)
                                   .textTheme
                                   .titleLarge!
-                                  .copyWith(
-                                    
-                                      fontSize: 12.sp)),
+                                  .copyWith(fontSize: 12.sp)),
                         ],
                       ),
                     ),
@@ -81,9 +76,7 @@ class InformationCardArea extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
-                                .copyWith(
-                                
-                                    fontSize: 10.sp)),
+                                .copyWith(fontSize: 10.sp)),
                       ),
                     )
                   ],
@@ -105,10 +98,11 @@ class InformationCardArea extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text(AppStrings.change,
-                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        
-                            fontSize: 13.sp)),
+                    child: Text(context.translate(AppStrings.change) ,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(fontSize: 13.sp)),
                   ),
                 )
               ],

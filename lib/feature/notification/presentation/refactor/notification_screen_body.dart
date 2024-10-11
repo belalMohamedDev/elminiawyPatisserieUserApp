@@ -87,7 +87,7 @@ class UserNotificationBody extends StatelessWidget {
                         backgroundColor: ColorManger.redError,
                         foregroundColor: ColorManger.white,
                         icon: IconlyBold.delete,
-                        label: AppStrings.delete,
+                        label: context.translate(AppStrings.delete) ,
                       ),
                     ],
                   ),

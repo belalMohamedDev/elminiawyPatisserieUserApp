@@ -29,35 +29,7 @@ class SuccessCartScreen extends StatelessWidget {
               childCount: cartData!.data!.cartItems?.length ?? 0,
             ),
           ),
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: responsive.setPadding(left: 2, top: 2, bottom: 2),
-                  child: Text(
-                    AppStrings.saveOnYourOrder,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: responsive.setTextSize(4.2)),
-                  ),
-                ),
-                const ApplyCouponCode(),
-                Padding(
-                  padding: responsive.setPadding(left: 2, top: 2, bottom: 2),
-                  child: Text(
-                    AppStrings.paymentSummary,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: responsive.setTextSize(4.2)),
-                  ),
-                ),
-                PaymentSummary(cartData: cartData!.data!)
-              ],
-            ),
-          ),
+    
         ], // Other slivrs for remaining widgets
       ),
     );

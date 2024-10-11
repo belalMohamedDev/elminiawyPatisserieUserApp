@@ -14,7 +14,7 @@ class AlreadyAccountTextSpan extends StatelessWidget {
     return Text.rich(
       TextSpan(
         // Display the text "Already have an account?"
-        text: AppStrings.alreadyHaveAnAccount,
+        text:   context.translate(AppStrings.alreadyHaveAnAccount)    ,
 
         // Apply the bodySmall style and adjust the font size responsively
         style: Theme.of(context)
@@ -42,7 +42,7 @@ class AlreadyAccountTextSpan extends StatelessWidget {
               },
 
             // Display the text "Sign In"
-            text: AppStrings.signIn,
+            text:  context.translate(AppStrings.signIn)     ,
 
             // Apply the titleLarge style from the theme to the "Sign In" text
             style: Theme.of(context).textTheme.titleLarge!,

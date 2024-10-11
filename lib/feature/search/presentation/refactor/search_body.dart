@@ -1,4 +1,3 @@
-import 'package:elminiawy/feature/search/bloc/search_bloc.dart';
 
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
@@ -22,7 +21,7 @@ class SearchScreenBody extends StatelessWidget {
                       .add(SearchEvent.searchText(value)),
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      hintText: AppStrings.findYourPatisserie,
+                      hintText:  context.translate(AppStrings.findYourPatisserie),
                       prefixIcon: Icon(IconlyBroken.search,
                           size: responsive.setIconSize(5),
                           color: ColorManger.brunLight),

@@ -93,13 +93,13 @@ class TokenInterceptor extends Interceptor {
 
     if (context != null) {
       ShowToast.showToastErrorTop(
-          errorMessage: AppStrings.sessionExpired, context: context);
+          errorMessage:     context.translate(AppStrings.sessionExpired) , context: context);
 
       // Show session expired message
       navigatorKey.currentState?.pushNamedAndRemoveUntil(
         Routes.loginRoute,
         (Route<dynamic> route) => false,
-        arguments: AppStrings.sessionExpired,
+        arguments:     context.translate(AppStrings.sessionExpired) ,
       );
     }
   }

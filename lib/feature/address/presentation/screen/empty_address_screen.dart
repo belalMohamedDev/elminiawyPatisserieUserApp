@@ -28,10 +28,10 @@ class EmptyAddressScreen extends StatelessWidget {
                 height: 20.h,
               ),
               ErrorInfo(
-                title: AppStrings.emptyAddress,
+                title:context.translate(AppStrings.emptyAddress) ,
                 description:
-                  AppStrings.itSeemsLikeYouHavenAddedAnyAddressesYet  ,
-                btnText: AppStrings.addAddress,
+                  context.translate(AppStrings.itSeemsLikeYouHavenAddedAnyAddressesYet)  ,
+                btnText:context.translate(AppStrings.addAddress) ,
                 press: () {
                   Navigator.of(context, rootNavigator: !false)
                       .pushNamed(Routes.map);

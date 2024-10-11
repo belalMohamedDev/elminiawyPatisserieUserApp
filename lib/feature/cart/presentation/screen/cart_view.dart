@@ -9,7 +9,7 @@ class CartView extends StatelessWidget {
     return Scaffold(
       appBar: _cartViewAppBar(context),
       body: const CartBody(),
-   
+      bottomNavigationBar: _orderSummary(context),
     );
   }
 
@@ -19,7 +19,7 @@ class CartView extends StatelessWidget {
     return AppBar(
       centerTitle: true,
       title: Text(
-        AppStrings.myCart,
+       context.translate(AppStrings.myCart) ,
         style: Theme.of(context).textTheme.titleLarge!.copyWith(
             fontSize: responsive.setTextSize(4)), // Responsive font size
       ),
@@ -43,19 +43,59 @@ class CartView extends StatelessWidget {
             );
           },
         ),
-        responsive.setSizeBox(width: 5),
-        BlocBuilder<CartCubit, CartState>(
-          builder: (context, state) {
-            if (state is GetCartItemError ||
-                state is GetCartItemLoading ||
-                context.read<CartCubit>().cartData == null ||
-                context.read<CartCubit>().cartData!.data!.cartItems!.isEmpty) {
-              return const SizedBox();
-            }
-            return Padding(
-              padding: responsive.setPadding(bottom: 1),
-              child: InkWell(
-                  onTap: () {
+        responsive.setSizeBox(width: 9),
+    
+      ],
+    );
+  }
+
+  BlocBuilder _orderSummary(BuildContext context) {
+    final cart = context.read<CartCubit>();
+
+    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final responsive = ResponsiveUtils(context);
+    return BlocBuilder<CartCubit, CartState>(
+      builder: (context, state) {
+        if (state is GetCartItemError ||
+            state is GetCartItemLoading ||
+            context.read<CartCubit>().cartData == null ||
+            context.read<CartCubit>().cartData!.data!.cartItems!.isEmpty) {
+          return const SizedBox();
+        }
+        return Container(
+          height: responsive.setHeight(30),
+          color: ColorManger.backgroundItem,
+          child: Padding(
+            padding: responsive.setPadding(left: 5, right: 5, top: 1),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                responsive.setSizeBox(height: 1),
+                RowTextOrderSummary(
+                  orderprice: cart.cartData!.data!.totalCartPrice!,
+                  orderText: AppStrings.subTotal,
+                ),
+                responsive.setSizeBox(height: 1),
+                RowTextOrderSummary(
+                  orderprice: cart.cartData!.data!.taxPrice!,
+                  orderText: AppStrings.tax,
+                ),
+                responsive.setSizeBox(height: 1),
+                RowTextOrderSummary(
+                  orderprice: cart.cartData!.data!.shippingPrice!,
+                  orderText: context.translate(AppStrings.shippingPrice) ,
+                ),
+                Divider(
+                  color: ColorManger.brownLight,
+                ),
+                responsive.setSizeBox(height: 1),
+                RowTextOrderSummary(
+                  orderprice: cart.cartData!.data!.totalOrderPrice!,
+                  orderText: context.translate(AppStrings.cartTotal) ,
+                ),
+                responsive.setSizeBox(height: 2),
+                CustomButton(
+                  onPressed: () {
                     if (context
                         .read<UserAddressCubit>()
                         .addressDataList
@@ -69,15 +109,37 @@ class CartView extends StatelessWidget {
                       context.read<UserAddressCubit>().isPaymentAddress = true;
                     }
                   },
-                  child: Image.asset(
-                    ImageAsset.checkOut,
-                    height: responsive.setHeight(3.5),
-                  )),
-            );
-          },
-        ),
-        responsive.setSizeBox(width: 6),
-      ],
+                  widget: Text(
+                   context.translate(AppStrings.checkOutOrder) ,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontSize: responsive.setTextSize(
+                              3.8), // Adjusted font size for responsiveness
+                        ),
+                  ),
+                ),
+                responsive.setSizeBox(height: 2),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.car_rental_outlined,
+                      color: ColorManger.brun,
+                    ),
+                    responsive.setSizeBox(width: 2),
+                    Text(
+                    context.translate(AppStrings.orderWillBeDelivered)  ,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(fontSize: responsive.setTextSize(4)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

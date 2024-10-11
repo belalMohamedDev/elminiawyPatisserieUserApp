@@ -34,7 +34,7 @@ class SignInButton extends StatelessWidget {
               context.pushReplacementNamed(Routes.map);
             } else {
               ShowToast.showToastErrorTop(
-                  errorMessage:AppStrings.thisAccountNotAccessInThisApp,
+                  errorMessage:   context.translate(AppStrings.thisAccountNotAccessInThisApp) ,
                   context: context);
             }
           },
@@ -73,7 +73,7 @@ class SignInButton extends StatelessWidget {
                 ),
                 // Loading text displayed next to the progress indicator
                 Text(
-                  AppStrings.loading,
+                  context.translate( AppStrings.loading) ,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize:
                             responsive.setTextSize(3.8), // Dynamic text size
@@ -83,7 +83,7 @@ class SignInButton extends StatelessWidget {
             ),
             // Default button label when not loading
             orElse: () => Text(
-              AppStrings.signIn,
+              context.translate(AppStrings.signIn)      ,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(
                         3.8), // Adjusted font size for responsiveness

@@ -62,8 +62,8 @@ class PasswordLoginTextFormField extends StatelessWidget {
                           .setIconSize(6.5), // Set icon size dynamically
                     ),
             ),
-            hintText: AppStrings
-                .enterYourPassword, // Hint text for the password field
+            hintText:  context.translate(AppStrings
+                .enterYourPassword) , // Hint text for the password field
             // Show validation errors if any, based on the state of the bloc
             errorText: state.whenOrNull(
               userLoginPassword: (value) {

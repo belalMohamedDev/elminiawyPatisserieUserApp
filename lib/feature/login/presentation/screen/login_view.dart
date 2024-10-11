@@ -39,7 +39,7 @@ class LoginView extends StatelessWidget {
             children: [
               // Main headline "Welcome Back"
               Text(
-                AppStrings.welcomeBack,
+                 context.translate(AppStrings.welcomeBack)  ,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge, // Uses theme styling
@@ -50,7 +50,7 @@ class LoginView extends StatelessWidget {
 
               // Subtitle prompting the user to sign in
               Text(
-                AppStrings.toGetStartedSignInToYourAccount,
+                context.translate(AppStrings.toGetStartedSignInToYourAccount)     ,
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     fontSize: responsive.setTextSize(
                         3.8)), // Adjust font size based on screen size
@@ -83,7 +83,7 @@ class LoginView extends StatelessWidget {
                         .forgetPasswordRoute); // Navigate to the "Forgot Password" screen
                   },
                   child: Text(
-                    AppStrings.forgetPassword,
+                   context.translate(AppStrings.forgetPassword)  ,
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           fontSize: responsive.setTextSize(
                               3.5), // Adjust font size for the text

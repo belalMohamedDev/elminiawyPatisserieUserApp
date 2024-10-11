@@ -1,15 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-import '../../../../core/common/sharedWidget/custom_button.dart';
-import '../../../../core/common/toast/show_toast.dart';
-import '../../../../core/style/color/color_manger.dart';
-import '../../../../core/style/fonts/font_manger.dart';
-import '../../../../core/style/fonts/strings_manger.dart';
-import '../../../../core/utils/app_regex.dart';
-import '../../cubit/change_my_password_cubit.dart';
 
 class ChangeUserPasswordBody extends StatelessWidget {
   const ChangeUserPasswordBody({super.key});
@@ -35,12 +25,12 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isPasswordValid(value)) {
-                  return AppStrings.pleaseEnterValidPassword;
+                  return  context.translate(AppStrings.pleaseEnterValidPassword) ;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: AppStrings.currentPassword,
+                hintText: context.translate(AppStrings.currentPassword),
                 suffixIcon: IconButton(
                   icon: Icon(
                     context
@@ -99,7 +89,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 return null;
               },
               decoration: InputDecoration(
-                hintText: AppStrings.newPassword,
+                hintText:   context.translate(AppStrings.newPassword) ,
                 suffixIcon: IconButton(
                   icon: Icon(
                     context.watch<ChangeMyPasswordCubit>().isPasswordVisible
@@ -157,12 +147,12 @@ class ChangeUserPasswordBody extends StatelessWidget {
                         .passwordController
                         .text
                         .trim()) {
-                  return AppStrings.newPasswordAndConfirmPasswordNotMatching;
+                  return context.translate(AppStrings.newPasswordAndConfirmPasswordNotMatching) ;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: AppStrings.confirmNewUserPassword,
+                hintText: context.translate(AppStrings.confirmNewUserPassword) ,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -253,7 +243,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ],
             ),
             orElse: () => Text(
-              AppStrings.submit,
+             context.translate(AppStrings.submit),
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: 16.sp,
                   ),
@@ -283,7 +273,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppStrings.passwordMustBeAtLeast8CharactersAndShouldInclude,
+               context.translate(AppStrings.passwordMustBeAtLeast8CharactersAndShouldInclude) ,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color:
                         context.read<ChangeMyPasswordCubit>().lengthTextColor,
@@ -291,7 +281,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                AppStrings.upperCaseLetter,
+                context.translate(AppStrings.upperCaseLetter) ,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     fontFamily: FontConsistent.fontFamilyAcme,
                     color: context
@@ -301,7 +291,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                AppStrings.lowerCaseLetter,
+                context.translate(AppStrings.lowerCaseLetter) ,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: context
                         .read<ChangeMyPasswordCubit>()
@@ -310,7 +300,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                AppStrings.number,
+              context.translate(AppStrings.number)  ,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color:
                         context.read<ChangeMyPasswordCubit>().numberTextColor,
@@ -318,7 +308,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                AppStrings.specialCharacter,
+               context.translate(AppStrings.specialCharacter),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: context
                         .read<ChangeMyPasswordCubit>()

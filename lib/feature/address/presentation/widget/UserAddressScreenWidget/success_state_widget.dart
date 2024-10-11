@@ -32,7 +32,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                             backgroundColor: ColorManger.redError,
                             foregroundColor: ColorManger.white,
                             icon: IconlyBold.delete,
-                            label: AppStrings.delete,
+                            label:    context.translate(AppStrings.delete) ,
                           ),
                           SlidableAction(
                             onPressed: (context) {
@@ -59,7 +59,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                             backgroundColor: ColorManger.backgroundItem,
                             foregroundColor: ColorManger.brown,
                             icon: IconlyBold.edit,
-                            label:AppStrings.edit ,
+                            label: context.translate(AppStrings.edit)  ,
                           ),
                         ],
                       ),

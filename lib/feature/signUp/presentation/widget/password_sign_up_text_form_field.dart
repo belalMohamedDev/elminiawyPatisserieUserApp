@@ -58,8 +58,8 @@ class PasswordSignUpTextFormField extends StatelessWidget {
                       size: responsive.setIconSize(6.5),
                     ),
             ),
-            hintText: AppStrings
-                .enterYourPassword, // Placeholder text for the password input field
+            hintText:   context.translate(AppStrings.enterYourPassword) 
+                , // Placeholder text for the password input field
 
             // Display error text if the password input is invalid
             errorText: state.whenOrNull(

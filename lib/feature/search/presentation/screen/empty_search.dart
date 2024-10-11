@@ -36,11 +36,11 @@ class EmptySearchScreen extends StatelessWidget {
               isLoading
                   ? const SizedBox()
                   : ErrorInfo(
-                      title: error ?? AppStrings.noResultsFound,
+                      title: error ??   context.translate(AppStrings.noResultsFound),
                       description: error != null
                           ? ''
-                          : AppStrings
-                              .weCouldntFindAnyMatchingResultsForYourSearch,
+                          :   context.translate(AppStrings.weCouldntFindAnyMatchingResultsForYourSearch) 
+                             ,
                     ),
             ],
           ),

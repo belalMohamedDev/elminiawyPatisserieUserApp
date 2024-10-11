@@ -40,8 +40,8 @@ class NameTextFormField extends StatelessWidget {
                     size:
                         responsive.setIconSize(5), // Dynamically set icon size
                   ),
-                  hintText: AppStrings
-                      .firstNameExample, // Placeholder text for first name
+                  hintText:  context.translate(AppStrings.firstNameExample)   
+                      , // Placeholder text for first name
                   errorText: state.whenOrNull(
                     // Display error text if validation fails for first name
                     userSignUpFirstName: (value) {
@@ -80,8 +80,8 @@ class NameTextFormField extends StatelessWidget {
                     size:
                         responsive.setIconSize(5), // Dynamically set icon size
                   ),
-                  hintText: AppStrings
-                      .lastNameExample, // Placeholder text for last name
+                  hintText: context.translate(AppStrings.lastNameExample) 
+                      , // Placeholder text for last name
                   errorText: state.whenOrNull(
                     // Display error text if validation fails for last name
                     userSignUpLastName: (value) {

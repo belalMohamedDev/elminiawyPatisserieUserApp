@@ -27,7 +27,7 @@ class SignUpButton extends StatelessWidget {
               context.pushReplacementNamed(Routes.map);
             } else {
               ShowToast.showToastErrorTop(
-                  errorMessage: AppStrings.thisAccountNotAccessInThisApp,
+                  errorMessage:  context.translate(AppStrings.thisAccountNotAccessInThisApp) ,
                   context: context);
             }
           },
@@ -67,7 +67,7 @@ class SignUpButton extends StatelessWidget {
                 ),
                 // Show loading text next to the spinner
                 Text(
-                  AppStrings.loading, // "Loading" text during registration
+              context.translate(AppStrings.loading)    , // "Loading" text during registration
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize:
                             responsive.setTextSize(3.8), // Responsive text size
@@ -77,7 +77,7 @@ class SignUpButton extends StatelessWidget {
             ),
             // Default button text if not in loading state
             orElse: () => Text(
-              AppStrings.signUp, // "Sign Up" text for the button
+           context.translate(AppStrings.signUp)  , // "Sign Up" text for the button
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize:
                         responsive.setTextSize(3.8), // Responsive text size

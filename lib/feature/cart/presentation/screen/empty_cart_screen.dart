@@ -26,10 +26,11 @@ class EmptyCartScreen extends StatelessWidget {
                 ),
               ),
               responsive.setSizeBox(height: 2),
-              const ErrorInfo(
-                title: AppStrings.emptyCart,
+               ErrorInfo(
+                title:context.translate(AppStrings.emptyCart) ,
                 description:
-                    AppStrings.itSeemsLikeYouHaventAddedAnythingToYourCart,
+                  context.translate(
+                    AppStrings.itSeemsLikeYouHaventAddedAnythingToYourCart)  ,
               ),
               responsive.setSizeBox(height: 10),
             ],

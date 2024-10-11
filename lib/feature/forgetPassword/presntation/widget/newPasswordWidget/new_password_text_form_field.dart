@@ -51,7 +51,8 @@ class NewPasswordTextFormField extends StatelessWidget {
                     ),
             ),
             hintText:
-                AppStrings.enterNewPassword, // Placeholder text for the field
+               context.translate(
+                AppStrings.enterNewPassword)  , // Placeholder text for the field
             errorText: state.whenOrNull(
               userNewPassword: (value) {
                 // Display error message if the password field is invalid

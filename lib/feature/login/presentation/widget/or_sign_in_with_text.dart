@@ -30,7 +30,7 @@ class OrSignInWithText extends StatelessWidget {
         ),
         // Center text: "Or sign in with" text between the dividers
         Text(
-          AppStrings.orSignInWith,
+           context.translate(AppStrings.orSignInWith) ,
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
               fontSize: responsive.setTextSize(3.5)), // Responsive text size
         ),

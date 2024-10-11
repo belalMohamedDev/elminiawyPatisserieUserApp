@@ -89,13 +89,15 @@ class PickLocationButton extends StatelessWidget {
                             mapCubit.checkLocationAvailableResponse!
                                     .isAddressAvailable ==
                                 true
-                        ? AppStrings.pickLocation
+                        ? context.translate(AppStrings.pickLocation)
                         : mapCubit.checkLocationAvailableResponse!
                                     .isAddressAvailable ==
                                 false
-                            ? AppStrings.addressNotFoundInThisArea
-                            : AppStrings.serviceNotAvailableInThisArea
-                    : AppStrings.enterCompleteAddress,
+                            ? context
+                                .translate(AppStrings.addressNotFoundInThisArea)
+                            : context.translate(
+                                AppStrings.serviceNotAvailableInThisArea)
+                    : context.translate(AppStrings.enterCompleteAddress),
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       fontSize: responsive.setTextSize(3.8),
                     ),

@@ -28,7 +28,7 @@ class NoconnectionScreen extends StatelessWidget {
               height: 35.h,
             ),
             Text(
-              AppStrings.opps,
+              context.translate(AppStrings.opps)  ,
               style: TextStyle(
                 fontSize: responsive.setTextSize(5),
                 color: ColorManger.brun,
@@ -41,7 +41,7 @@ class NoconnectionScreen extends StatelessWidget {
 
             // Display the description text for the error or message
             Text(
-              AppStrings.somethingWrongWithYourConnection,
+               context.translate(AppStrings.somethingWrongWithYourConnection) ,
               textAlign: TextAlign.center, // Center-align the text
               style: TextStyle(
                 fontSize: responsive.setTextSize(4),
@@ -61,20 +61,3 @@ class NoconnectionScreen extends StatelessWidget {
 }
 
 
-// /// Display a simple "No Internet" screen when there's no connection
-// Widget _buildNoInternetScreen() {
-//   return const Scaffold(
-//     body: Center(
-//       child: Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Icon(Icons.wifi_off, size: 100, color: Colors.red),
-//           SizedBox(height: 20),
-//           Text(
-//             'No Internet Connection',
-//             style: TextStyle(fontSize: 24, color: Colors.black),
-//           ),
-//         ],
-//       ),
-//     ),
-//   );

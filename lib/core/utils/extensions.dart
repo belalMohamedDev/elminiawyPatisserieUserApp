@@ -2,6 +2,13 @@ import '../../../../../core/common/shared/shared_imports.dart'; //
 
 
 extension ContextExt on BuildContext {
+
+  //Language
+  String translate(String langkey) {
+    return AppLocalizations.of(this)!.translate(langkey).toString();
+  }
+
+  
   //Navigation
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);

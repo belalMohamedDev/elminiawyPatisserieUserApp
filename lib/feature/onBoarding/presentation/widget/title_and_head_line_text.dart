@@ -15,7 +15,7 @@ class TitleAndHeadLineText extends StatelessWidget {
       children: [
         // Main title: "Welcome to Elminiawy Patisserie"
         Text(
-          AppStrings.welcomeToElminiawyPatisserie, // Main title text
+        context.translate(AppStrings.welcomeToElminiawyPatisserie)  , // Main title text
           textAlign: TextAlign.center, // Align the text in the center
           style: Theme.of(context)
               .textTheme
@@ -30,7 +30,7 @@ class TitleAndHeadLineText extends StatelessWidget {
 
         // Sub-headline: "Discover Our Wonderful Selection"
         Text(
-          AppStrings.discoverOurWonderfulSelection, // Sub-headline text
+      context.translate(AppStrings.discoverOurWonderfulSelection) , // Sub-headline text
 
           // Apply the 'bodySmall' theme style with an adjusted font size
           style: Theme.of(context).textTheme.bodySmall!.copyWith(

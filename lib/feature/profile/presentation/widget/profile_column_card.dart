@@ -15,7 +15,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
             child: Column(
               children: [
                 CustomProfileCard(
-                  title: AppStrings.myProfile,
+                  title: context.translate(AppStrings.myProfile) ,
                   leadingIcon: IconlyBold.profile,
                   tap: initUserNameCheck
                       ? () {
@@ -27,7 +27,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
                         },
                 ),
                 CustomProfileCard(
-                  title: AppStrings.myAddress,
+                  title: context.translate(AppStrings.myAddress) ,
                   leadingIcon: IconlyBold.location,
                   tap: initUserNameCheck
                       ? () {
@@ -40,7 +40,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
                         },
                 ),
                 CustomProfileCard(
-                  title: AppStrings.myOrders,
+                  title: context.translate(AppStrings.myOrders) ,
                   leadingIcon: IconlyBold.bag,
                   tap: initUserNameCheck
                       ? () {
@@ -53,7 +53,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
                         },
                 ),
                 CustomProfileCard(
-                  title: AppStrings.myWishList,
+                  title: context.translate(AppStrings.myWishList) ,
                   leadingIcon: IconlyBold.heart,
                   tap: initUserNameCheck
                       ? () {
@@ -66,7 +66,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
                         },
                 ),
                 CustomProfileCard(
-                  title: AppStrings.settings,
+                  title:context.translate(AppStrings.settings)  ,
                   leadingIcon: IconlyBold.setting,
                   tap: () {
                     settingChangeBottomSheet(context);

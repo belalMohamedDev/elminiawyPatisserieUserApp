@@ -10,6 +10,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
             message: state.successMessage, context: context);
         await SharedPrefHelper.clearAllSecuredData();
 
+        SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
         SharedPrefHelper.removeData(PrefKeys.locationArea);
         SharedPrefHelper.removeData(PrefKeys.longAddressHome);
         SharedPrefHelper.removeData(PrefKeys.latAddressHome);
@@ -26,6 +27,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
         if (state.apiErrorModel.statusCode == 400) {
           await SharedPrefHelper.clearAllSecuredData();
 
+          SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
           SharedPrefHelper.removeData(PrefKeys.locationArea);
           SharedPrefHelper.removeData(PrefKeys.longAddressHome);
           SharedPrefHelper.removeData(PrefKeys.latAddressHome);
@@ -42,8 +44,8 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
     },
     child: CustomProfileCard(
       title: context.read<LogOutCubit>().initialUserName == 'Guest User'
-          ? AppStrings.logIn
-          : AppStrings.logOut,
+          ? context.translate(AppStrings.logIn) 
+          : context.translate(AppStrings.logOut) ,
       leadingIcon: IconlyBold.logout,
       tap: context.read<LogOutCubit>().initialUserName == 'Guest User'
           ? () async {
@@ -72,7 +74,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                     contentPadding: EdgeInsets.only(left: 16.w),
                     titlePadding: EdgeInsets.only(top: 25.h, left: 16.w),
                     title: Text(
-                      AppStrings.confirmLogout,
+                 context.translate(AppStrings.confirmLogout)     ,
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!
@@ -86,7 +88,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                           height: 5.h,
                           width: 350.w,
                         ),
-                        Text(AppStrings.areYouSureYouWantToLogOut,
+                        Text( context.translate(AppStrings.areYouSureYouWantToLogOut) ,
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
@@ -100,7 +102,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                         onPressed: () {
                           Navigator.of(context).pop(false);
                         },
-                        child: Text(AppStrings.cancel,
+                        child: Text( context.translate(AppStrings.cancel),
                             style: Theme.of(context)
                                 .textTheme
                                 .titleLarge!
@@ -120,7 +122,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                             onPressed: () {
                               Navigator.of(context).pop(true);
                             },
-                            child: Text(AppStrings.logOut,
+                            child: Text( context.translate(AppStrings.logOut) ,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headlineSmall!

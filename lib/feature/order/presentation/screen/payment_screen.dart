@@ -15,7 +15,7 @@ class PaymentScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          AppStrings.checkOut,
+         context.translate(AppStrings.checkOut) ,
           style: Theme.of(context)
               .textTheme
               .titleLarge!

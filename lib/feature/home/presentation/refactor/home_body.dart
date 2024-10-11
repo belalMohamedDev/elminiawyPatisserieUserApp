@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Shared imports for project utilities
 import 'package:badges/badges.dart' as badges;
 
@@ -110,7 +109,7 @@ class HomeBody extends StatelessWidget {
         SizedBox(width: responsive.setWidth(2)), // Horizontal space
         // Display the location label
         Text(
-          AppStrings.location,
+            context.translate(AppStrings.location) ,
           style: Theme.of(context)
               .textTheme
               .titleLarge!
@@ -119,16 +118,19 @@ class HomeBody extends StatelessWidget {
         const Spacer(), // Spacer to push the notification icon to the right
         // ValueListenableBuilder to listen for notification updates
         StreamBuilder<UserNotificationResponse>(
-          stream:
-              notificationService.notificationStream, // Notification stream
+          stream: notificationService.notificationStream, // Notification stream
           builder: (context, snapshot) {
             if (!snapshot.hasData || snapshot.data == null) {
               // If no notifications, show a plain notification icon
               return IconButton(
                 onPressed: () {
-                  Navigator.of(context, rootNavigator: !false).pushNamed(
-                      Routes
-                          .notification); // Navigate to notification screen
+                  if (isAnonymousUser) {
+                    Navigator.of(context, rootNavigator: !false)
+                        .pushNamed(Routes.noRoute);
+                  } else {
+                    Navigator.of(context, rootNavigator: !false).pushNamed(
+                        Routes.notification); // Navigate to notification screen
+                  }
                 },
                 icon: Icon(
                   IconlyBold.notification,
@@ -136,12 +138,12 @@ class HomeBody extends StatelessWidget {
                 ),
               );
             }
-        
+
             // Calculate the number of unread notifications
             final numberOfNotification = snapshot.data!.data!
                 .where((element) => element.isSeen == false)
                 .length;
-        
+
             // Display a badge with the count of unread notifications
             return badges.Badge(
               showBadge: numberOfNotification !=
@@ -169,8 +171,7 @@ class HomeBody extends StatelessWidget {
               child: IconButton(
                 onPressed: () {
                   Navigator.of(context, rootNavigator: !false).pushNamed(
-                      Routes
-                          .notification); // Navigate to notification screen
+                      Routes.notification); // Navigate to notification screen
                 },
                 icon: Icon(
                   IconlyBold.notification,

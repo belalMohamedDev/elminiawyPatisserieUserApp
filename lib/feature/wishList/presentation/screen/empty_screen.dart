@@ -28,9 +28,9 @@ class EmptyWishListScreen extends StatelessWidget {
                 height: 20.h,
               ),
               ErrorInfo(
-                title: AppStrings.emptyWishList,
+                title:  context.translate(AppStrings.emptyWishList) ,
                 description:
-                    AppStrings.itSeemsLikeYouHavenAddedAnythingToYourWishlistYet,
+                   context.translate(AppStrings.itSeemsLikeYouHavenAddedAnythingToYourWishlistYet)   ,
                 press: () {},
               ),
               SizedBox(

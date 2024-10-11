@@ -21,7 +21,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(AppStrings.newAddress,
+        title: Text(context.translate(AppStrings.newAddress),
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,
@@ -32,7 +32,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
             context.read<MapCubit>().checkLocationAvailableResponse = null;
 
             context.read<MapCubit>().textEditingSearchText =
-                AppStrings.findYourLocation;
+               context.translate(AppStrings.findYourLocation) ;
 
             context.pop();
           },
@@ -55,11 +55,11 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
 
       final userAddressCubit = context.read<UserAddressCubit>();
       userAddressCubit.aliasData =
-          widget.getAddressResponseData!.alias ?? AppStrings.apartment;
+          widget.getAddressResponseData!.alias ?? context.translate(AppStrings.apartment) ;
       userAddressCubit.regionAreaIndex = userAddressCubit.regionArea.indexWhere(
           (element) =>
               element['text'] ==
-              (widget.getAddressResponseData!.alias ?? AppStrings.apartment));
+              (widget.getAddressResponseData!.alias ?? context.translate(AppStrings.apartment)));
 
       userAddressCubit.buildingNameController.text =
           widget.getAddressResponseData?.buildingName ?? '';
@@ -86,7 +86,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
 
       userAddressCubit.clearAllControllers();
       userAddressCubit.regionAreaIndex = userAddressCubit.regionArea
-          .indexWhere((element) => element['text'] == (AppStrings.apartment));
+          .indexWhere((element) => element['text'] == (context.translate(AppStrings.apartment) ));
     }
   }
 }

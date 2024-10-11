@@ -70,7 +70,7 @@ class VerificationCodeButton extends StatelessWidget {
                       .setHeight(2), // Spacer between spinner and text
                 ),
                 Text(
-                  AppStrings.loading,
+                 context.translate(AppStrings.loading)   ,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize: responsive.setTextSize(3.8),
                       ),

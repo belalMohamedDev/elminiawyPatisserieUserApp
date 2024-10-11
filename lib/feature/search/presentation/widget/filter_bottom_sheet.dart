@@ -1,4 +1,3 @@
-import 'package:elminiawy/feature/search/bloc/search_bloc.dart';
 
 import '../../../../../core/common/shared/shared_imports.dart';
 
@@ -22,7 +21,7 @@ class FilterBottomSheet extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 30.w, bottom: 15.h),
                   child: Text(
-                    AppStrings.sortBy,
+                  context.translate( AppStrings.sortBy)   ,
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           fontSize: 18.sp,
                         ),
@@ -36,25 +35,25 @@ class FilterBottomSheet extends StatelessWidget {
                         children: [
                           buildListTile(
                             context,
-                            AppStrings.nameAToZ,
+                            context.translate(AppStrings.nameAToZ)  ,
                             1,
                             searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                            AppStrings.nameZToA,
+                       context.translate(AppStrings.nameZToA)       ,
                             2,
                             searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                            AppStrings.priceLowToHigh,
+                         context.translate(AppStrings.priceLowToHigh)     ,
                             3,
                             searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                            AppStrings.priceHighToLow,
+                         context.translate(AppStrings.priceHighToLow)     ,
                             4,
                             searchBloc.selectedOption,
                           ),
@@ -71,7 +70,7 @@ class FilterBottomSheet extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 30.h, bottom: 15.h),
                         child: Text(
-                          AppStrings.priceRange,
+                      context.translate( AppStrings.priceRange)     ,
                           style:
                               Theme.of(context).textTheme.titleLarge!.copyWith(
                                     fontSize: 18.sp,
@@ -84,11 +83,11 @@ class FilterBottomSheet extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '${AppStrings.egy} ${searchBloc.selectedRange.start.toInt()}',
+                              '${ context.translate(AppStrings.egy)} ${searchBloc.selectedRange.start.toInt()}',
                               style: TextStyle(fontSize: 14.sp),
                             ),
                             Text(
-                              '${AppStrings.egy} ${searchBloc.selectedRange.end.toInt()}',
+                              '${ context.translate(AppStrings.egy)} ${searchBloc.selectedRange.end.toInt()}',
                               style: TextStyle(fontSize: 14.sp),
                             ),
                           ],
@@ -120,7 +119,7 @@ class FilterBottomSheet extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         widget: Text(
-                          AppStrings.applyFilter,
+                          context.translate(AppStrings.applyFilter)  ,
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!

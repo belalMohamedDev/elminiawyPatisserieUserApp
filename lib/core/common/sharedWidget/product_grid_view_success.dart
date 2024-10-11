@@ -154,7 +154,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
           responsive.setSizeBox(height: 0.5),
           // Display product price
           Text(
-            " ${displayList[index].price!} ${AppStrings.egy}",
+            " ${displayList[index].price!} ${    context.translate(AppStrings.egy)}",
             style: Theme.of(context)
                 .textTheme
                 .bodySmall!

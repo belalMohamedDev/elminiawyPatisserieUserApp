@@ -37,7 +37,7 @@ class SignUpView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Display the "Create Account" title
-                Text(AppStrings.createAccount,
+                Text(  context.translate(AppStrings.createAccount)  ,
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -46,7 +46,7 @@ class SignUpView extends StatelessWidget {
                   height: responsive.setHeight(1),
                 ),
                 // Display the prompt to fill in information
-                Text(AppStrings.fillYouInformation,
+                Text(  context.translate(AppStrings.fillYouInformation)  ,
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall!

@@ -29,7 +29,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                 context.read<MapCubit>().checkLocationAvailableResponse = null;
 
                 context.read<MapCubit>().textEditingSearchText =
-                  AppStrings.findYourLocation;
+                context.translate(AppStrings.findYourLocation)  ;
 
                 if (userAddressCubit.isPaymentAddress == true) {
                   final index = userAddressCubit.addressDataList
@@ -75,7 +75,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isNameValid(value)) {
-                        return AppStrings.pleaseEnterAValidBuildingName;
+                        return     context.translate(
+                            AppStrings.pleaseEnterAValidBuildingName) ;
                       }
                       return null;
                     },
@@ -84,8 +85,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: userAddressCubit.regionAreaIndex == 1
-                          ? AppStrings.house
-                          : AppStrings.buildingName ,
+                          ?    context.translate( AppStrings.house) 
+                          :     context.translate( AppStrings.buildingName) ,
                     ),
                   ),
                   SizedBox(
@@ -101,8 +102,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return userAddressCubit.regionAreaIndex == 2
-                                        ? AppStrings.pleaseEnterAValidCompany
-                                        : AppStrings.pleaseEnterAValidApt;
+                                        ?     context.translate(AppStrings.pleaseEnterAValidCompany) 
+                                        :    context.translate(AppStrings.pleaseEnterAValidApt) ;
                                   }
                                   return null;
                                 },
@@ -111,8 +112,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 decoration: InputDecoration(
                                   hintText:
                                       userAddressCubit.regionAreaIndex == 2
-                                          ? AppStrings.company
-                                          : AppStrings.aptNo,
+                                          ?     context.translate(AppStrings.company) 
+                                          :     context.translate(AppStrings.aptNo) ,
                                 ),
                               ),
                             ),
@@ -124,8 +125,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 controller: userAddressCubit.floorController,
                                 textInputAction: TextInputAction.next,
                                 keyboardType: TextInputType.text,
-                                decoration: const InputDecoration(
-                                  hintText: AppStrings.floorOptional,
+                                decoration:  InputDecoration(
+                                  hintText:  context.translate(AppStrings.floorOptional)  ,
                                 ),
                               ),
                             ),
@@ -141,13 +142,13 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isNameValid(value)) {
-                        return AppStrings.pleaseEnterAValidStreetName;
+                        return  context.translate(AppStrings.pleaseEnterAValidStreetName)  ;
                       }
                       return null;
                     },
                     keyboardType: TextInputType.text,
-                    decoration: const InputDecoration(
-                      hintText: AppStrings.street,
+                    decoration:  InputDecoration(
+                      hintText:     context.translate(AppStrings.street) ,
                     ),
                   ),
                   SizedBox(
@@ -157,8 +158,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                     controller: userAddressCubit.additionalDirectionsContoller,
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(
-                      hintText: AppStrings.additionalDirectionsOptional,
+                    decoration:  InputDecoration(
+                      hintText:     context.translate(AppStrings.additionalDirectionsOptional) ,
                     ),
                   ),
                   SizedBox(
@@ -172,12 +173,12 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                       if (value == null ||
                           value.isEmpty ||
                           !AppRegex.isPhoneNumberValid(value)) {
-                        return AppStrings.pleaseEnterAValidPhoneNumber;
+                        return context.translate(AppStrings.pleaseEnterAValidPhoneNumber) ;
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText:AppStrings.phoneNumber ,
+                      hintText:  context.translate( AppStrings.phoneNumber)  ,
                       prefixIcon: CountryCodePicker(
                         showFlagMain: false,
                         onChanged: (value) {},
@@ -203,15 +204,15 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                     controller: userAddressCubit.addressLabel,
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.text,
-                    decoration: const InputDecoration(
-                      hintText: AppStrings.addressLabelOptional,
+                    decoration: InputDecoration(
+                      hintText:  context.translate(AppStrings.addressLabelOptional)  ,
                     ),
                   ),
                   Padding(
                     padding:
                         EdgeInsets.only(left: 8.w, top: 10.h, bottom: 10.h),
                     child: Text(
-                       AppStrings.givethisAddress,
+                        context.translate(AppStrings.givethisAddress)  ,
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontFamily: FontConsistent.fontFamilyAcme,
                             color: ColorManger.brunLight,
@@ -259,7 +260,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                               width: 15.w,
                             ),
                             Text(
-                              AppStrings.loading,
+                              context.translate(  AppStrings.loading) ,
                               style: Theme.of(context)
                                   .textTheme
                                   .headlineSmall
@@ -286,7 +287,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                               width: 15.w,
                             ),
                             Text(
-                              AppStrings.loading,
+                              context.translate(  AppStrings.loading)  ,
                               style: Theme.of(context)
                                   .textTheme
                                   .headlineSmall
@@ -297,7 +298,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                           ],
                         ),
                         orElse: () => Text(
-                          AppStrings.saveAddress,
+                          context.translate(AppStrings.saveAddress) ,
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall

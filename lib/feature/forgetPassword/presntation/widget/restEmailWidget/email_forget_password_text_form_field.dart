@@ -28,8 +28,8 @@ class EmailForgetPasswordTextFormField extends StatelessWidget {
             if (value == null ||
                 value.isEmpty ||
                 !AppRegex.isEmailValid(value)) {
-              return AppStrings
-                  .isEmailValid; // Return error message if validation fails
+              return context.translate(AppStrings
+                  .isEmailValid); // Return error message if validation fails
             }
             return null; // Return null if validation passes
           },
@@ -42,7 +42,8 @@ class EmailForgetPasswordTextFormField extends StatelessWidget {
               IconlyBroken.message,
               size: 18.sp, // Size of the icon
             ),
-            hintText: AppStrings.emailExample, // Hint text for the input field
+            hintText: context.translate(
+                AppStrings.emailExample), // Hint text for the input field
             // Error text to display validation errors
             errorText: state.whenOrNull(
               userForgetEmailAddress: (value) {

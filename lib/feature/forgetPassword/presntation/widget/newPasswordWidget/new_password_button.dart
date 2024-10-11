@@ -30,7 +30,7 @@ class NewPasswordButton extends StatelessWidget {
               context.pushReplacementNamed(Routes.map);
             } else {
               ShowToast.showToastErrorTop(
-                  errorMessage: AppStrings.thisAccountNotAccessInThisApp,
+                  errorMessage:   context.translate(AppStrings.thisAccountNotAccessInThisApp),
                   context: context);
             }
           },
@@ -70,7 +70,7 @@ class NewPasswordButton extends StatelessWidget {
                 ),
                 // Loading text next to the spinner
                 Text(
-                  AppStrings.loading,
+                  context.translate(AppStrings.loading)  ,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize: responsive.setTextSize(3.8),
                       ),
@@ -79,7 +79,7 @@ class NewPasswordButton extends StatelessWidget {
             ),
             // If not loading, display the "Create New Password" text
             orElse: () => Text(
-              AppStrings.createNewPassword,
+           context.translate(AppStrings.createNewPassword)      ,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(3.5),
                   ),

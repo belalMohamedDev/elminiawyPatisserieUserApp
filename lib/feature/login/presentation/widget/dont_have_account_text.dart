@@ -20,7 +20,7 @@ class DontHaveAnAccountText extends StatelessWidget {
           Alignment.topCenter, // Align the text at the top center of its parent
       child: Text.rich(
         TextSpan(
-          text: AppStrings.dontHaveAnAccount, // Default text message
+          text:   context.translate(AppStrings.dontHaveAnAccount) , // Default text message
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 fontSize: responsive.setTextSize(4), // Responsive font size
               ),
@@ -38,7 +38,7 @@ class DontHaveAnAccountText extends StatelessWidget {
                   // Navigate to the registration route when tapped
                   context.pushReplacementNamed(Routes.registerRoute);
                 },
-              text: AppStrings.signUp, // Link text
+              text:  context.translate(AppStrings.signUp) , // Link text
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   fontSize:
                       responsive.setTextSize(4.5)), // Responsive font size

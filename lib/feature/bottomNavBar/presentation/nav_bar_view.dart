@@ -8,28 +8,31 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  late String initialUserName;
   @override
   void initState() {
     super.initState();
 
+    bool isDataLoaded = false;
+
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      initialUserName =
-          await SharedPrefHelper.getSecuredString(PrefKeys.userName);
+      if (!isDataLoaded) {
+        await Future.wait([
+          context.read<BannerCubit>().getBanners(),
+          context.read<CategoryCubit>().getCategories(),
+          context.read<ProductCubit>().getProduct(),
+        ]);
 
-      await Future.wait([
-        context.read<BannerCubit>().getBanners(),
-        context.read<CategoryCubit>().getCategories(),
-        context.read<ProductCubit>().getProduct(),
-      ]);
+        if (!isAnonymousUser) {
+      
+          await Future.wait([
+            context.read<UserAddressCubit>().getUserAddress(),
+            context.read<CartCubit>().getCartItem(),
+            context.read<WishListCubit>().getWishList(),
+          ]);
+        }
 
-      await Future.wait([
-        if (initialUserName.isNotEmpty) ...[
-          context.read<UserAddressCubit>().getUserAddress(),
-          context.read<CartCubit>().getCartItem(),
-          context.read<WishListCubit>().getWishList(),
-        ],
-      ]);
+        isDataLoaded = true; // Set this to true to prevent re-loading
+      }
     });
   }
 
@@ -54,7 +57,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
           onTabChanged: (index) {
             if (index == 2) {
-              if (initialUserName.isEmpty) {
+              if (isAnonymousUser) {
+              
+
                 Navigator.of(context, rootNavigator: !false)
                     .pushNamed(Routes.noRoute);
               } else {
@@ -97,7 +102,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         item: ItemConfig(
           icon: Icon(IconlyBold.home, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.home, size: 20.sp),
-          title: (AppStrings.home),
+          title: (    context.translate(AppStrings.home) ),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -107,7 +112,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         item: ItemConfig(
           icon: Icon(IconlyBold.category, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.category, size: 20.sp),
-          title: (AppStrings.categories),
+          title: (    context.translate(AppStrings.categories)),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -117,7 +122,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         item: ItemConfig(
           icon: Icon(IconlyBold.bag, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.bag, size: 20.sp),
-          title: (AppStrings.shopping),
+          title: (    context.translate(AppStrings.shopping) ),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -137,7 +142,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         item: ItemConfig(
           icon: Icon(IconlyBold.setting, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.setting, size: 20.sp),
-          title: (AppStrings.profile),
+          title: (    context.translate(AppStrings.profile) ),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),

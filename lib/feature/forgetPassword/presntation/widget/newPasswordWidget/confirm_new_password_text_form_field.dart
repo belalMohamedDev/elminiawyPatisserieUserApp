@@ -63,7 +63,7 @@ class ConfirmNewPasswordTextFormField extends StatelessWidget {
             ),
 
             // Placeholder text for the password field
-            hintText: AppStrings.enterConfirmNewPassword,
+            hintText:  context.translate(AppStrings.enterConfirmNewPassword) ,
 
             // Display error text if validation fails
             errorText: state.whenOrNull(

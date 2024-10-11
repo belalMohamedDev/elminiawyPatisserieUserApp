@@ -1,6 +1,5 @@
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
-
 part 'product_state.dart';
 part 'product_cubit.freezed.dart';
 
@@ -11,9 +10,8 @@ class ProductCubit extends Cubit<ProductState> {
 
   List<DataProductResponse> dataList = [];
 
-  static const int _retryLimit = 3;
-  int _retryCount = 0;
-
+  // static const int _retryLimit = 3;
+  // int _retryCount = 0;
 
   Future<void> getProduct() async {
     emit(const ProductState.getProductLoading());
@@ -29,18 +27,17 @@ class ProductCubit extends Cubit<ProductState> {
         emit(ProductState.getProductSuccess(dataResponse));
       },
       failure: (error) {
-        if (_retryCount < _retryLimit) {
-          _retryCount++;
-          // Retry the request
-          getProduct();
-        } else {
-          emit(
-            ProductState.getProductError(
-        error
-            ),
-          );
-          _retryCount = 0; // Reset retry count after reaching the retry limit
-        }
+        ProductState.getProductError(error);
+        // if (_retryCount < _retryLimit) {
+        //   _retryCount++;
+        //   // Retry the request
+        //   getProduct();
+        // } else {
+        //   emit(
+        //     ProductState.getProductError(error),
+        //   );
+        //   _retryCount = 0; // Reset retry count after reaching the retry limit
+        // }
       },
     );
   }
@@ -127,7 +124,7 @@ class ProductCubit extends Cubit<ProductState> {
   //     maxPrice: selectedRange.end,
   //     sortOrder: getSortOrder(),
   //   );
-  }
+}
 
 //   SortOrder? getSortOrder() {
 //     switch (selectedOption) {

@@ -30,11 +30,11 @@ class EmptyOrderScreen extends StatelessWidget {
               ),
               ErrorInfo(
                 title: isCurrentOrder
-                    ?AppStrings. noCurrentOrders
-                    : AppStrings.noPreviousOrders,
+                    ?   context.translate(AppStrings.noCurrentOrders)   
+                    :   context.translate(AppStrings.noPreviousOrders) ,
                 description: isCurrentOrder
-                    ?AppStrings. youDontHaveAnyActiveOrders
-                    :AppStrings. itLooksLikeYouHaventCompletedAnyOrdersYet,
+                    ?  context.translate(AppStrings.youDontHaveAnyActiveOrders)  
+                    :  context.translate(AppStrings.itLooksLikeYouHaventCompletedAnyOrdersYet)   ,
               ),
               SizedBox(
                 height: 50.h,

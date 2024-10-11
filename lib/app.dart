@@ -1,6 +1,5 @@
 import 'package:device_preview/device_preview.dart';
 
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class MyApp extends StatefulWidget {
@@ -66,79 +65,47 @@ class _MyAppState extends State<MyApp> {
                 );
               });
             }
-            return FutureBuilder<String>(
-              future: checkIfLoggedInUser(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  // Show a loading indicator while waiting for the future
-                  return const Center(child: CircularProgressIndicator());
-                } else if (snapshot.hasError) {
-                  // Handle error
-                  return Center(child: Text('Error: //${snapshot.error}'));
-                } else {
-                  // Build the MaterialApp with the initial route based on the future result
-                  return ScreenUtilInit(
-                    // Initialize ScreenUtil to support different screen sizes and resolutions
+            // Build the MaterialApp with the initial route based on the future result
+            return ScreenUtilInit(
+              // Initialize ScreenUtil to support different screen sizes and resolutions
 
-                    designSize:
-                        const Size(375, 812), // Base size for screen scaling
-                    minTextAdapt: true,
-                    useInheritedMediaQuery: true,
-                    builder: (context, child) {
-                      return MaterialApp(
-                        locale: DevicePreview.locale(context),
-                        builder: DevicePreview.appBuilder,
-                        title: AppStrings.appName,
-                        debugShowCheckedModeBanner: false,
-                        initialRoute: snapshot.data,
-                        onGenerateRoute: RouteGenerator.getRoute,
-                        theme: getApplicationTheme(context),
-                      );
-                    },
-                  );
-                }
+              designSize: const Size(375, 812), // Base size for screen scaling
+              minTextAdapt: true,
+              useInheritedMediaQuery: true,
+              builder: (context, child) {
+                return MaterialApp(
+                    // locale: Locale(cubit.currentLangCode),
+                  supportedLocales: AppLocalizationsSetup.supportedLocales,
+                  localizationsDelegates:
+                      AppLocalizationsSetup.localizationsDelegates,
+                  localeResolutionCallback:
+                      AppLocalizationsSetup.localeResolutionCallback,
+                  locale: DevicePreview.locale(context),
+                  builder: DevicePreview.appBuilder,
+                  title:context.translate(AppStrings.appName),
+                  debugShowCheckedModeBanner: false,
+                  initialRoute: isOnBoardingScreen
+                      ? isAnonymousUser
+                          ? isLocatedMap
+                              ? Routes.bottomNavBarRoute
+                              : Routes.map
+                          : isLoggedInUser
+                              ? isLocatedMap
+                                  ? Routes.bottomNavBarRoute
+                                  : Routes.map
+                              : Routes.loginRoute
+                      : Routes.onBoardingRoute,
+                  onGenerateRoute: RouteGenerator.getRoute,
+                  theme: getApplicationTheme(context),
+                );
               },
             );
+                     
           }),
     );
   }
 }
 
-Future<String> checkIfLoggedInUser() async {
-
-  var results = await Future.wait([
-    SharedPrefHelper.getSecuredString(PrefKeys.refreshToken),
-    SharedPrefHelper.getBool(PrefKeys.prefsKeyOnBoardingScreenView),
-    SharedPrefHelper.getBool(PrefKeys.prefsKeyAnonymousUser),
-    SharedPrefHelper.getSecuredString(PrefKeys.locationArea),
-  ]);
 
 
-  String? userToken = results[0] as String?;
-  bool? isOnBoardingScreenView = results[1] as bool?;
-  bool? isAnonymousUser = results[2] as bool?;
-  String? locationArea = results[3] as String?;
-  
-
-  if (isOnBoardingScreenView == true) {
-    if (isAnonymousUser == true) {
-      if (locationArea == null || locationArea.isEmpty) {
-        return Routes.map;
-      } else {
-        return Routes.bottomNavBarRoute;
-      }
-    } else if (userToken != null && userToken.isNotEmpty) {
-      if (locationArea == null || locationArea.isEmpty) {
-        return Routes.map;
-      } else {
-        return Routes.bottomNavBarRoute;
-      }
-    } else {
-      return Routes.loginRoute;
-    }
-  } else {
-    return Routes.onBoardingRoute;
-  }
-}
-
-
+                

@@ -65,12 +65,19 @@ class ProfileBody extends StatelessWidget {
                                 .jumpToTab(0);
 
                             await SharedPrefHelper.clearAllSecuredData();
+                               SharedPrefHelper.setData(
+                                PrefKeys.prefsKeyAnonymousUser, false);
+                            SharedPrefHelper.removeData(PrefKeys.locationArea);
+                            SharedPrefHelper.removeData(
+                                PrefKeys.longAddressHome);
+                            SharedPrefHelper.removeData(
+                                PrefKeys.latAddressHome);
                         },
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(AppStrings.guestUser,
+                              Text(context.translate(AppStrings.guestUser),
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall!
@@ -78,7 +85,7 @@ class ProfileBody extends StatelessWidget {
                                       
                                           color: Colors.white70,
                                           fontSize: 13.sp)),
-                              Text(AppStrings.loginToViewAllTheFeatures,
+                              Text(context.translate(AppStrings.loginToViewAllTheFeatures) ,
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall!
@@ -90,7 +97,7 @@ class ProfileBody extends StatelessWidget {
                           ),
                       )
                       : Text(
-                          AppStrings.welcomeBackLetsAchieveGreatThingsToday,
+                         context.translate(AppStrings.welcomeBackLetsAchieveGreatThingsToday),
                           style:
                               Theme.of(context).textTheme.headlineSmall!.copyWith(
                               

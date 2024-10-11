@@ -1,4 +1,3 @@
-import 'package:elminiawy/feature/search/bloc/search_bloc.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 
@@ -280,14 +279,19 @@ class RouteGenerator {
 
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
-      builder: (_) => Scaffold(
-        appBar: AppBar(title: const Text(AppStrings.noRouteFound)),
-        body: const SizedBox(
+      builder: (context) => Scaffold(
+        appBar: AppBar(
+          title: Text(context.translate(AppStrings.noRouteFound)),
+        ),
+        body: SizedBox(
           height: double.infinity,
           width: double.infinity,
-          child: Center(child: Text(AppStrings.noRouteFound)),
+          child: Center(
+            child: Text(context.translate(AppStrings.noRouteFound)),
+          ),
         ),
       ),
     );
+
   }
 }

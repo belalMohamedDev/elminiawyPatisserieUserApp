@@ -35,8 +35,8 @@ class EmailSignUpTextFormField extends StatelessWidget {
               size: responsive.setIconSize(
                   5), // Dynamically set icon size based on screen size
             ),
-            hintText: AppStrings
-                .emailExample, // Placeholder text for the email input field
+            hintText:   context.translate(AppStrings.emailExample) 
+                , // Placeholder text for the email input field
 
             // Display error text if the email input is invalid
             errorText: state.whenOrNull(

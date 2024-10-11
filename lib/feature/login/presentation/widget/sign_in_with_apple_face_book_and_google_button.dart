@@ -34,7 +34,7 @@ class SignInWithAppleFaceBookAndGoogleButton extends StatelessWidget {
               ),
               // Google sign-in text
               Text(
-                AppStrings.signInWithGoogle,
+               context.translate(AppStrings.signInWithGoogle)       ,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontSize:
                           responsive.setTextSize(3.8), // Responsive text size
@@ -65,7 +65,7 @@ class SignInWithAppleFaceBookAndGoogleButton extends StatelessWidget {
               ),
               // Apple sign-in text
               Text(
-                AppStrings.signInWithApple,
+             context.translate(AppStrings.signInWithApple) ,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontSize:
                           responsive.setTextSize(3.8), // Responsive text size

@@ -17,16 +17,12 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
 
     // Using a post frame callback to ensure it runs after the first frame is rendered.
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // Fetch the user name from shared preferences.
-      String initialUserName =
-          await SharedPrefHelper.getSecuredString(PrefKeys.userName);
-
       // If the user name is not empty, mark all notifications as seen.
-      if (initialUserName.isNotEmpty) {
+
         await Future.wait([
           context.read<UserNotificationCubit>().updateAllNotificationsToSeen()
         ]);
-      }
+    
     });
   }
 
@@ -40,7 +36,7 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          AppStrings.notification,
+         context.translate(AppStrings.notification) ,
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
               fontSize: responsive.setTextSize(4)), // Responsive font size
         ),

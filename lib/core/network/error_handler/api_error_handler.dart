@@ -27,13 +27,9 @@ class ApiErrorHandler {
         default:
           return ApiErrorModel(message: "Something went wrong");
       }
-    } else if (error == AppStrings.pleaseCheckYourInternetConnection) {
-      return ApiErrorModel(
-          message: "No internet connection. Please try again.");
     } else {
       return ApiErrorModel(message: "Unexpected error occurred");
     }
-
   }
 
   static ApiErrorModel _handleError(int? statusCode, dynamic error) {

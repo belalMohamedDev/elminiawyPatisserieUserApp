@@ -39,7 +39,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          AppStrings.checkOut,
+         context.translate(AppStrings.checkOut),
           style: Theme.of(context)
               .textTheme
               .titleLarge!

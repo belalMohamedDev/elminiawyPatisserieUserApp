@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
 class ConnectivityController {
@@ -24,17 +23,20 @@ class ConnectivityController {
   }
 
   /// Handle connectivity changes
-  void _updateConnectivityStatus(List<ConnectivityResult> connectivityResult) {
+  void _updateConnectivityStatus(
+      List<ConnectivityResult> connectivityResult) async {
     if (connectivityResult.contains(ConnectivityResult.none)) {
       _connectivityStreamController.sink.add(false);
     } else if (connectivityResult.contains(ConnectivityResult.mobile) ||
         connectivityResult.contains(ConnectivityResult.wifi)) {
-      _connectivityStreamController.sink.add(true);
+     _connectivityStreamController.sink.add(true);
     }
   }
 
-  /// Dispose StreamController when done
-  void dispose() {
-    _connectivityStreamController.close();
+
   }
-}
+
+
+
+
+

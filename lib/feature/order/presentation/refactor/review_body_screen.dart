@@ -8,7 +8,7 @@ class ReviewPaymentBody extends StatelessWidget {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
     return Padding(
-      padding: responsive.setPadding(top: 5, right: 5, left: 5),
+         padding: responsive.setPadding(top: 3, right: 6, left: 6, bottom: 5),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +37,7 @@ class ReviewPaymentBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          AppStrings.addNotes,
+       context.translate(AppStrings.addNotes)  ,
           style: Theme.of(context)
               .textTheme
               .titleLarge!
@@ -50,7 +50,7 @@ class ReviewPaymentBody extends StatelessWidget {
           minLines: 3,
           maxLines: 10,
           decoration: InputDecoration(
-              hintText: AppStrings.typeAnyNoteRelatedToThisOrder,
+              hintText: context.translate(AppStrings.typeAnyNoteRelatedToThisOrder) ,
               hintStyle: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -99,7 +99,7 @@ class ReviewPaymentBody extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(AppStrings.payment,
+                Text(context.translate(AppStrings.payment),
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -109,7 +109,7 @@ class ReviewPaymentBody extends StatelessWidget {
                   onTap: () {
                     context.pop();
                   },
-                  child: Text(AppStrings.edit,
+                  child: Text(context.translate(AppStrings.edit) ,
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!
@@ -161,7 +161,7 @@ class ReviewPaymentBody extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(AppStrings.shippingAddress,
+                Text(context.translate(AppStrings.shippingAddress) ,
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -181,7 +181,7 @@ class ReviewPaymentBody extends StatelessWidget {
                     context.pop();
                   },
                   child: Text(
-                    AppStrings.change,
+                  context.translate(AppStrings.change)  ,
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!

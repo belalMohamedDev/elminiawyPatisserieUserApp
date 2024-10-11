@@ -31,8 +31,8 @@ class GetStartedButton extends StatelessWidget {
       },
       // The text displayed on the button
       widget: Text(
-        AppStrings
-            .letsGetStarted, // The string displayed in the button (e.g., "Let's Get Started")
+          context.translate(AppStrings.letsGetStarted)   ,
+  // The string displayed in the button (e.g., "Let's Get Started")
 
         // Style the text using the headlineSmall from the app's theme,
         // and adjust the font size dynamically based on screen size.

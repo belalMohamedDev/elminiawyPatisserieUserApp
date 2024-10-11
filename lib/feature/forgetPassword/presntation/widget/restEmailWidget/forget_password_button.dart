@@ -58,7 +58,7 @@ class ForgetPasswordButton extends StatelessWidget {
                       .setHeight(2), // Spacer between spinner and text
                 ),
                 Text(
-                  AppStrings.loading,
+                   context.translate(AppStrings.loading),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize: responsive.setTextSize(3.8),
                       ),
@@ -66,7 +66,7 @@ class ForgetPasswordButton extends StatelessWidget {
               ],
             ),
             orElse: () => Text(
-              AppStrings.continueText,
+               context.translate(AppStrings.continueText)  ,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(3.8),
                   ),

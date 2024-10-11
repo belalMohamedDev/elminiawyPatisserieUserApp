@@ -22,7 +22,7 @@ class _AccountInfomationState extends State<AccountInfomation> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: Text(AppStrings.myAccountInformation,
+        title: Text(context.translate(AppStrings.myAccountInformation) ,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
           
                 fontSize: 16.sp)),
@@ -40,7 +40,7 @@ class _AccountInfomationState extends State<AccountInfomation> {
             },
             child: Padding(
               padding: EdgeInsets.only(right: 18.w),
-              child: Text(AppStrings.edit,
+              child: Text(context.translate(AppStrings.edit) ,
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
           
                       color: ColorManger.primary,

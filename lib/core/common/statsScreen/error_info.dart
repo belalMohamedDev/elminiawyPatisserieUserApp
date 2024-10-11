@@ -81,8 +81,8 @@ class ErrorInfo extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8)))),
                       child: Text(btnText ??
-                          AppStrings.retry
-                              .toUpperCase()), // Default to "Retry" if btnText is null
+                            context.translate(AppStrings.retry)  
+                              ), // Default to "Retry" if btnText is null
                     ),
 
             // Add space after the button

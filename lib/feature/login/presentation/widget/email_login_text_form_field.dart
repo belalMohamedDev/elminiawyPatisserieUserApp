@@ -41,7 +41,8 @@ class EmailLoginTextFormField extends StatelessWidget {
                   responsive.setIconSize(5.5), // Adjust icon size responsively
             ),
             hintText:
-                AppStrings.emailExample, // Placeholder text for the email field
+                context.translate(AppStrings
+                .emailExample)  , // Placeholder text for the email field
 
             // Show error message if the state contains an invalid email
             errorText: state.whenOrNull(

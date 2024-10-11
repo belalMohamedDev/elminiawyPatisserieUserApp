@@ -13,7 +13,7 @@ class _SearchViewState extends State<SearchView> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(AppStrings.searchProducts,
+        title: Text(  context.translate(AppStrings.searchProducts) ,
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!

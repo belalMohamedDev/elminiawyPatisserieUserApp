@@ -11,7 +11,7 @@ class OrderDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(AppStrings.orderDetails,
+        title: Text(context.translate(AppStrings.orderDetails) ,
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -34,7 +34,7 @@ class OrderDetails extends StatelessWidget {
                         cancelBottomSheet(
                             context, order, context.read<PaymentCubit>());
                       },
-                      child: Text(AppStrings.cancel,
+                      child: Text(context.translate(AppStrings.cancel) ,
                           style: Theme.of(context)
                               .textTheme
                               .titleLarge!
@@ -48,7 +48,7 @@ class OrderDetails extends StatelessWidget {
                     cancelBottomSheet(
                         context, order, context.read<PaymentCubit>());
                   },
-                  child: Text(AppStrings.cancel,
+                  child: Text(context.translate(AppStrings.cancel),
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color: ColorManger.redError,
                           fontSize: responsive.setTextSize(4))),
@@ -80,7 +80,7 @@ class OrderDetails extends StatelessWidget {
                       height: responsive.setHeight(8),
                     ),
                     responsive.setSizeBox(height: 2),
-                    Text(AppStrings.areYouSureYouWantToCancel,
+                    Text(context.translate(AppStrings.areYouSureYouWantToCancel) ,
                         style: Theme.of(context).textTheme.titleLarge),
                     responsive.setSizeBox(height: 3),
                     CustomButton(
@@ -91,7 +91,7 @@ class OrderDetails extends StatelessWidget {
                           paymentCubit.ordercancelSummit(orderId);
                         }
                       },
-                      widget: Text(AppStrings.yesCancel,
+                      widget: Text(context.translate(AppStrings.yesCancel) ,
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!
@@ -103,7 +103,7 @@ class OrderDetails extends StatelessWidget {
                         context.pop();
                       },
                       color: ColorManger.brownLight,
-                      widget: Text(AppStrings.noKeepIt,
+                      widget: Text(context.translate(AppStrings.noKeepIt) ,
                           style: Theme.of(context)
                               .textTheme
                               .titleLarge!

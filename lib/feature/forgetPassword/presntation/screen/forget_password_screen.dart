@@ -26,7 +26,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               ///
               /// Provides the main heading for the password recovery screen.
               Text(
-                AppStrings.restYourPassword,
+               context.translate(AppStrings.restYourPassword) ,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
 
@@ -39,7 +39,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               ///
               /// Briefly explains to the user what to do on this screen.
               Text(
-                AppStrings.enterYourEmailToSendVerifyCode,
+             context.translate( AppStrings.enterYourEmailToSendVerifyCode)  ,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
@@ -89,7 +89,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                         .clear();
                   },
                   child: Text(
-                    AppStrings.backToLogin,
+                   context.translate(AppStrings.backToLogin) ,
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!

@@ -25,7 +25,7 @@ class ProductBottomSheet extends StatelessWidget {
             _productImageRatingNameAndFavoritRow(product, context, responsive),
             responsive.setSizeBox(height: 2),
             Text(
-              AppStrings.description,
+              context.translate(AppStrings.description) ,
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
@@ -123,7 +123,7 @@ class ProductBottomSheet extends StatelessWidget {
                           .setWidth(3), // Spacer between spinner and text
                     ),
                     Text(
-                      AppStrings.loading,
+                      context.translate(AppStrings.loading)  ,
                       style:
                           Theme.of(context).textTheme.headlineSmall?.copyWith(
                                 fontSize: responsive.setTextSize(3.8),
@@ -132,7 +132,7 @@ class ProductBottomSheet extends StatelessWidget {
                   ],
                 ),
                 orElse: () => Text(
-                  AppStrings.addToCart,
+                 context.translate( AppStrings.addToCart),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize: responsive.setTextSize(3.8),
                       ),
@@ -215,7 +215,7 @@ class ProductBottomSheet extends StatelessWidget {
           ),
           responsive.setSizeBox(height: 1.2),
           Text(
-            '${AppStrings.price}   ${displayList[index].price!}  ${AppStrings.egy}',
+            '${ context.translate(AppStrings.price)}   ${displayList[index].price!}  ${ context.translate(AppStrings.egy)}',
             style: Theme.of(context)
                 .textTheme
                 .bodySmall!

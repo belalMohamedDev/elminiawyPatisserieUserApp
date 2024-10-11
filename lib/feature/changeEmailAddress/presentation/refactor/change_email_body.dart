@@ -19,12 +19,12 @@ class ChangeEmailBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isEmailValid(value)) {
-                  return AppStrings.pleaseEnterAValidEmailAddress;
+                  return context.translate(AppStrings.pleaseEnterAValidEmailAddress) ;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: AppStrings.newEmailAddress,
+                hintText: context.translate(AppStrings.newEmailAddress),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -58,19 +58,19 @@ class ChangeEmailBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isEmailValid(value)) {
-                  return AppStrings.pleaseEnterAValidEmailAddress;
+                  return context.translate(AppStrings.pleaseEnterAValidEmailAddress);
                 } else if (value.trim() !=
                     context
                         .read<ChangeEmailAddressCubit>()
                         .newEmailAddressController
                         .text
                         .trim()) {
-                  return AppStrings.emailAddressAndConfirmEmailNotMatching;
+                  return context.translate(AppStrings.emailAddressAndConfirmEmailNotMatching);
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: AppStrings.confirmNewEmailAddress,
+                hintText: context.translate(AppStrings.confirmNewEmailAddress) ,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -106,12 +106,12 @@ class ChangeEmailBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isPasswordValid(value)) {
-                  return AppStrings.pleaseEnterValidPassword;
+                  return    context.translate(AppStrings.pleaseEnterValidPassword) ;
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: AppStrings.currentPassword,
+                hintText: context.translate(AppStrings.currentPassword) ,
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -200,7 +200,7 @@ class ChangeEmailBody extends StatelessWidget {
                   width: 15.w,
                 ),
                 Text(
-                  AppStrings.loading,
+                  context.translate(AppStrings.loading)  ,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize: 16.sp,
                       ),
@@ -208,7 +208,7 @@ class ChangeEmailBody extends StatelessWidget {
               ],
             ),
             orElse: () => Text(
-              AppStrings.submit,
+            context.translate(AppStrings.submit)   ,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: 16.sp,
                   ),
