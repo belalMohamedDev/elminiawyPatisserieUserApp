@@ -22,7 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           context.read<ProductCubit>().getProduct(),
         ]);
 
-        if (!isAnonymousUser) {
+        if (!AppInitialRoute.isAnonymousUser) {
       
           await Future.wait([
             context.read<UserAddressCubit>().getUserAddress(),
@@ -57,7 +57,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
           onTabChanged: (index) {
             if (index == 2) {
-              if (isAnonymousUser) {
+              if (AppInitialRoute.isAnonymousUser) {
               
 
                 Navigator.of(context, rootNavigator: !false)

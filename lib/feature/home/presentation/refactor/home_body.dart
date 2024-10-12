@@ -124,7 +124,7 @@ class HomeBody extends StatelessWidget {
               // If no notifications, show a plain notification icon
               return IconButton(
                 onPressed: () {
-                  if (isAnonymousUser) {
+                  if (AppInitialRoute.isAnonymousUser) {
                     Navigator.of(context, rootNavigator: !false)
                         .pushNamed(Routes.noRoute);
                   } else {

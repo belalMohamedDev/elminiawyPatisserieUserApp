@@ -1,4 +1,4 @@
-
+import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class AppLogout {
   factory AppLogout() {
@@ -9,13 +9,19 @@ class AppLogout {
 
   static final AppLogout _instance = AppLogout._();
 
-  Future<void> logout() async {
-    // final context = sl<GlobalKey<NavigatorState>>().currentState!.context;
-    // await SharedPref().removePreference(PrefKeys.accessToken);
-    // await SharedPref().removePreference(PrefKeys.userId);
-    // await SharedPref().removePreference(PrefKeys.userRole);
-    // await HiveDatabase().clearAllBox();
-    // if (!context.mounted) return;
-    // await context.pushNamedAndRemoveUntil(AppRoutes.login);
+  Future<void> logOutThenNavigateToLogin() async {
+    final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
+    await SharedPrefHelper.clearAllSecuredData();
+    SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
+    SharedPrefHelper.removeData(PrefKeys.locationArea);
+    SharedPrefHelper.removeData(PrefKeys.longAddressHome);
+    SharedPrefHelper.removeData(PrefKeys.latAddressHome);
+
+    context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
+
+    if (!context.mounted) return;
+    await context.pushNamedAndRemoveUntil(Routes.loginRoute);
   }
 }
+
+

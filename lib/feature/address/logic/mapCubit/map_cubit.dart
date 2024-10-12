@@ -186,11 +186,11 @@ class MapCubit extends Cubit<MapState> {
     }
   }
 
-  Future<void> addLocationToMap(BuildContext context) async {
+     void addLocationToMap(BuildContext context)  {
     emit(const MapState.loading());
     try {
-      final lat = await SharedPrefHelper.getDouble(PrefKeys.latAddressHome);
-      final long = await SharedPrefHelper.getDouble(PrefKeys.longAddressHome);
+      final lat =  SharedPrefHelper.getDouble(PrefKeys.latAddressHome);
+      final long =  SharedPrefHelper.getDouble(PrefKeys.longAddressHome);
 
       LatLng currentPosition = LatLng(lat, long);
 

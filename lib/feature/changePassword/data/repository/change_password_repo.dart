@@ -5,7 +5,7 @@ class ChangeMyPasswordRepository {
   final AppServiceClient _apiService;
 
 
-  Future<ApiResult<UpdateMyPasswordResponse>> changeMypasswordRepo(
+  Future<ApiResult<AuthResponse>> changeMypasswordRepo(
     ChangeMyPasswordRequestBody changeMyPasswordRequestBody,
   ) async {
 

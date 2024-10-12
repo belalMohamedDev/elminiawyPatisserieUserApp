@@ -1,3 +1,4 @@
+
 import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
 /// The [SignInButton] widget represents the primary button for initiating the login process.
@@ -25,16 +26,17 @@ class SignInButton extends StatelessWidget {
             ShowToast.showToastErrorTop(
                 errorMessage: apiErrorModel.message!, context: context);
           },
-          suceess: (data) {
-            if (data.data!.role == "user") {
+          suceess: (authResponse) {
+            if (authResponse.data!.role == "user") {
               // Show a success toast when login is successful
               ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
+                  message: authResponse.message!, context: context);
               // Navigate to the map screen after a successful login
-              context.pushReplacementNamed(Routes.map);
+              AppLogin().storeDataThenNavigateToMap(authResponse);
             } else {
               ShowToast.showToastErrorTop(
-                  errorMessage:   context.translate(AppStrings.thisAccountNotAccessInThisApp) ,
+                  errorMessage: context
+                      .translate(AppStrings.thisAccountNotAccessInThisApp),
                   context: context);
             }
           },
@@ -73,7 +75,7 @@ class SignInButton extends StatelessWidget {
                 ),
                 // Loading text displayed next to the progress indicator
                 Text(
-                  context.translate( AppStrings.loading) ,
+                  context.translate(AppStrings.loading),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize:
                             responsive.setTextSize(3.8), // Dynamic text size
@@ -83,7 +85,7 @@ class SignInButton extends StatelessWidget {
             ),
             // Default button label when not loading
             orElse: () => Text(
-              context.translate(AppStrings.signIn)      ,
+              context.translate(AppStrings.signIn),
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(
                         3.8), // Adjusted font size for responsiveness

@@ -93,15 +93,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         response.when(
           success: (loginResponse) async {
             emit(LoginState.suceess(loginResponse));
-            // Save user token and related information
-            await _saveUserToken(
-              loginResponse.accessToken!,
-              loginResponse.data!.refreshToken!,
-              loginResponse.data!.name!,
-              loginResponse.data!.phone!,
-              loginResponse.data!.email!,
-              loginResponse.data!.sId!,
-            );
           },
           failure: (error) {
             // Emit error state with error details
@@ -113,24 +104,5 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         );
       },
     );
-  }
-
-  /// Saves the user's authentication tokens and details in secure storage.
-  Future<void> _saveUserToken(
-      String accessToken,
-      String refreshToken,
-      String userName,
-      String userPhone,
-      String userEmail,
-      String userId) async {
-    // Store user details in secure preferences
-    await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
-    SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
-    await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
-    await SharedPrefHelper.setSecuredString(
-        PrefKeys.refreshToken, refreshToken);
   }
 }

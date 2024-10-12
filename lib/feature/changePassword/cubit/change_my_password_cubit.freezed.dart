@@ -22,8 +22,7 @@ mixin _$ChangeMyPasswordState {
     required TResult Function() changeMyPasswordLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
-    required TResult Function(UpdateMyPasswordResponse data)
-        changeMyPasswordSuccess,
+    required TResult Function(AuthResponse data) changeMyPasswordSuccess,
     required TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -40,7 +39,7 @@ mixin _$ChangeMyPasswordState {
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult? Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -56,7 +55,7 @@ mixin _$ChangeMyPasswordState {
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
     TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -171,8 +170,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() changeMyPasswordLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
-    required TResult Function(UpdateMyPasswordResponse data)
-        changeMyPasswordSuccess,
+    required TResult Function(AuthResponse data) changeMyPasswordSuccess,
     required TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -192,7 +190,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult? Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -211,7 +209,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
     TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -331,8 +329,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
     required TResult Function() changeMyPasswordLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
-    required TResult Function(UpdateMyPasswordResponse data)
-        changeMyPasswordSuccess,
+    required TResult Function(AuthResponse data) changeMyPasswordSuccess,
     required TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -352,7 +349,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult? Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -371,7 +368,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
     TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -517,8 +514,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     required TResult Function() changeMyPasswordLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
-    required TResult Function(UpdateMyPasswordResponse data)
-        changeMyPasswordSuccess,
+    required TResult Function(AuthResponse data) changeMyPasswordSuccess,
     required TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -538,7 +534,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult? Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -557,7 +553,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
     TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -644,7 +640,7 @@ abstract class _$$ChangeMyPasswordSuccessImplCopyWith<$Res> {
           $Res Function(_$ChangeMyPasswordSuccessImpl) then) =
       __$$ChangeMyPasswordSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UpdateMyPasswordResponse data});
+  $Res call({AuthResponse data});
 }
 
 /// @nodoc
@@ -666,7 +662,7 @@ class __$$ChangeMyPasswordSuccessImplCopyWithImpl<$Res>
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as UpdateMyPasswordResponse,
+              as AuthResponse,
     ));
   }
 }
@@ -677,7 +673,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
   const _$ChangeMyPasswordSuccessImpl(this.data);
 
   @override
-  final UpdateMyPasswordResponse data;
+  final AuthResponse data;
 
   @override
   String toString() {
@@ -709,8 +705,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
     required TResult Function() changeMyPasswordLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
-    required TResult Function(UpdateMyPasswordResponse data)
-        changeMyPasswordSuccess,
+    required TResult Function(AuthResponse data) changeMyPasswordSuccess,
     required TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -730,7 +725,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult? Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -749,7 +744,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
     TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -820,10 +815,10 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
 }
 
 abstract class ChangeMyPasswordSuccess implements ChangeMyPasswordState {
-  const factory ChangeMyPasswordSuccess(final UpdateMyPasswordResponse data) =
+  const factory ChangeMyPasswordSuccess(final AuthResponse data) =
       _$ChangeMyPasswordSuccessImpl;
 
-  UpdateMyPasswordResponse get data;
+  AuthResponse get data;
   @JsonKey(ignore: true)
   _$$ChangeMyPasswordSuccessImplCopyWith<_$ChangeMyPasswordSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -956,8 +951,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
     required TResult Function() changeMyPasswordLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
-    required TResult Function(UpdateMyPasswordResponse data)
-        changeMyPasswordSuccess,
+    required TResult Function(AuthResponse data) changeMyPasswordSuccess,
     required TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -978,7 +972,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult? Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -1002,7 +996,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
     TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -1173,8 +1167,7 @@ class _$ChangePasswordVisibilityStateImpl
     required TResult Function() changeMyPasswordLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         changeMyPasswordError,
-    required TResult Function(UpdateMyPasswordResponse data)
-        changeMyPasswordSuccess,
+    required TResult Function(AuthResponse data) changeMyPasswordSuccess,
     required TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -1194,7 +1187,7 @@ class _$ChangePasswordVisibilityStateImpl
     TResult? Function()? initial,
     TResult? Function()? changeMyPasswordLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult? Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult? Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult? Function(
             Color lengthTextColor,
             Color upperCaseTextColor,
@@ -1213,7 +1206,7 @@ class _$ChangePasswordVisibilityStateImpl
     TResult Function()? initial,
     TResult Function()? changeMyPasswordLoading,
     TResult Function(ApiErrorModel apiErrorModel)? changeMyPasswordError,
-    TResult Function(UpdateMyPasswordResponse data)? changeMyPasswordSuccess,
+    TResult Function(AuthResponse data)? changeMyPasswordSuccess,
     TResult Function(
             Color lengthTextColor,
             Color upperCaseTextColor,

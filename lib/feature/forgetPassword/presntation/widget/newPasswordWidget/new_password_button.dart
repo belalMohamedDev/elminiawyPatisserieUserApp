@@ -21,13 +21,13 @@ class NewPasswordButton extends StatelessWidget {
           newPasswordError: (apiErrorModel) => ShowToast.showToastErrorTop(
               errorMessage: apiErrorModel.message!, context: context),
           // Show success toast and navigate to the map screen when successful
-          newPasswordSuccess: (data) {
-            if (data.data!.role == "user") {
+          newPasswordSuccess: (authResponse) {
+            if (authResponse.data!.role == "user") {
               // Show a success toast when login is successful
               ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
-              // Navigate to the map screen after a successful login
-              context.pushReplacementNamed(Routes.map);
+                  message: authResponse.message!, context: context);
+                 // Navigate to the map screen after a successful login
+              AppLogin().storeDataThenNavigateToMap(authResponse);
             } else {
               ShowToast.showToastErrorTop(
                   errorMessage:   context.translate(AppStrings.thisAccountNotAccessInThisApp),

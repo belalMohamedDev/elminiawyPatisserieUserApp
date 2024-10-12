@@ -31,7 +31,7 @@ class PickLocationButton extends StatelessWidget {
                 mapCubit.checkLocationAvailableResponse!.isAddressAvailable ==
                     true) {
               bool loginMap =
-                  await SharedPrefHelper.getBool(PrefKeys.prefsSetLoginMap);
+                   SharedPrefHelper.getBool(PrefKeys.prefsSetLoginMap);
               if (isUpdateMap == true) {
                 mapCubit.moveToLocation(
                     position: mapCubit.targetPosition,

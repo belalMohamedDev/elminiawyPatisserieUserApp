@@ -1,4 +1,3 @@
-
 import '../../../../core/common/shared/shared_imports.dart';
 
 final instance = GetIt.instance;
@@ -6,12 +5,11 @@ final instance = GetIt.instance;
 Future<void> initAppModule() async {
   await Future.wait([
     _initAppModule(),
+    _inithome(),
     _initPlaces(),
     _initLogin(),
     _initSignUp(),
     _initForgetPassword(),
-    _initBanner(),
-    _initCatogry(),
     _initProduct(),
     _initWishList(),
     _initLogOut(),
@@ -34,20 +32,31 @@ Future<void> _initAppModule() async {
 
   Bloc.observer = AppBlocObserver();
 
+  final navigatorKey = GlobalKey<NavigatorState>();
+
   // Dio & ApiService
 
   Dio dio = DioFactory.getDio();
 
-  instance.registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio));
+  instance
+    ..registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio))
+    ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
+    ..registerFactory(AppLogicCubit.new);
+}
 
-  //home repository
-  instance.registerLazySingleton<HomeRepositoryImplement>(
-      () => HomeRepositoryImplement(
-            instance(),
-          ));
-
-  // app logic cuibt
-  instance.registerFactory<AppLogicCubit>(() => AppLogicCubit());
+Future<void> _inithome() async {
+  // //home repository
+  instance
+    ..registerLazySingleton<HomeRepositoryImplement>(
+        () => HomeRepositoryImplement(
+              instance(),
+            ))
+    ..registerFactory<CategoryCubit>(() => CategoryCubit(
+          instance(),
+        ))
+    ..registerFactory<BannerCubit>(() => BannerCubit(
+          instance(),
+        ));
 }
 
 Future<void> _initPlaces() async {
@@ -86,20 +95,6 @@ Future<void> _initForgetPassword() async {
         () => NewPasswordRepository(instance()))
     ..registerLazySingleton<ForgetPasswordBloc>(
         () => ForgetPasswordBloc(instance(), instance(), instance()));
-}
-
-// home cuibt
-// banner repositry
-Future<void> _initBanner() async {
-  instance.registerFactory<BannerCubit>(() => BannerCubit(
-        instance(),
-      ));
-}
-
-Future<void> _initCatogry() async {
-  instance.registerFactory<CategoryCubit>(() => CategoryCubit(
-        instance(),
-      ));
 }
 
 Future<void> _initProduct() async {

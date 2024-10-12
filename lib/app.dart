@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => instance<AppLogicCubit>(),
+          create: (context) => instance<AppLogicCubit>()..getSavedLanguage(),
         ),
       ],
       child: StreamBuilder<bool>(
@@ -73,39 +73,41 @@ class _MyAppState extends State<MyApp> {
               minTextAdapt: true,
               useInheritedMediaQuery: true,
               builder: (context, child) {
-                return MaterialApp(
-                    // locale: Locale(cubit.currentLangCode),
-                  supportedLocales: AppLocalizationsSetup.supportedLocales,
-                  localizationsDelegates:
-                      AppLocalizationsSetup.localizationsDelegates,
-                  localeResolutionCallback:
-                      AppLocalizationsSetup.localeResolutionCallback,
-                  locale: DevicePreview.locale(context),
-                  builder: DevicePreview.appBuilder,
-                  title:context.translate(AppStrings.appName),
-                  debugShowCheckedModeBanner: false,
-                  initialRoute: isOnBoardingScreen
-                      ? isAnonymousUser
-                          ? isLocatedMap
-                              ? Routes.bottomNavBarRoute
-                              : Routes.map
-                          : isLoggedInUser
-                              ? isLocatedMap
+                return BlocBuilder<AppLogicCubit, AppLogicState>(
+                  builder: (context, state) {
+                    return MaterialApp(
+                      locale:
+                          Locale(context.read<AppLogicCubit>().currentLangCode),
+
+                      navigatorKey: instance<GlobalKey<NavigatorState>>(),
+                      supportedLocales: AppLocalizationsSetup.supportedLocales,
+                      localizationsDelegates:
+                          AppLocalizationsSetup.localizationsDelegates,
+                      localeResolutionCallback:
+                          AppLocalizationsSetup.localeResolutionCallback,
+                      //  locale: DevicePreview.locale(context),
+                      builder: DevicePreview.appBuilder,
+                      title: context.translate(AppStrings.appName),
+                      debugShowCheckedModeBanner: false,
+                      initialRoute: AppInitialRoute.isOnBoardingScreen
+                          ? AppInitialRoute.isAnonymousUser
+                              ? AppInitialRoute.isLocatedMap
                                   ? Routes.bottomNavBarRoute
                                   : Routes.map
-                              : Routes.loginRoute
-                      : Routes.onBoardingRoute,
-                  onGenerateRoute: RouteGenerator.getRoute,
-                  theme: getApplicationTheme(context),
+                              : AppInitialRoute.isLoggedInUser
+                                  ? AppInitialRoute.isLocatedMap
+                                      ? Routes.bottomNavBarRoute
+                                      : Routes.map
+                                  : Routes.loginRoute
+                          : Routes.onBoardingRoute,
+                      onGenerateRoute: RouteGenerator.getRoute,
+                      theme: getApplicationTheme(context),
+                    );
+                  },
                 );
               },
             );
-                     
           }),
     );
   }
 }
-
-
-
-                

@@ -1,5 +1,3 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'change_my_password_state.dart';
@@ -82,20 +80,11 @@ class ChangeMyPasswordCubit extends Cubit<ChangeMyPasswordState> {
         emit(ChangeMyPasswordState.changeMyPasswordSuccess(dataResponse));
         clearAllControllers();
         validatePassword("");
-        await saveUserToken(
-          dataResponse.accessToken!,
-          dataResponse.data!.refreshToken!,
-          dataResponse.data!.name!,
-          dataResponse.data!.phone!,
-          dataResponse.data!.email!,
-          dataResponse.data!.sId!,
-        );
       },
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            ChangeMyPasswordState.changeMyPasswordError(
-               error),
+            ChangeMyPasswordState.changeMyPasswordError(error),
           );
         }
       },
@@ -106,24 +95,5 @@ class ChangeMyPasswordCubit extends Cubit<ChangeMyPasswordState> {
     passwordController.clear();
     passwordConfirmController.clear();
     currentPasswordController.clear();
-  }
-
-  Future<void> saveUserToken(
-    String accessToken,
-    String refreshToken,
-    String userName,
-    String userPhone,
-    String userEmail,
-    String userId,
-  ) async {
-    await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
-
-    await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
-    await SharedPrefHelper.setSecuredString(
-        PrefKeys.refreshToken, refreshToken);
-
   }
 }

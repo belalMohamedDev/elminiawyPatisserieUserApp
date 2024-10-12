@@ -1,7 +1,3 @@
-bool isLoggedInUser = false;
-bool isOnBoardingScreen = false;
-bool isAnonymousUser = false;
-bool isLocatedMap = false;
 
 
 class PrefKeys {
@@ -21,4 +17,5 @@ class PrefKeys {
   static const String longAddressHome = 'longAddressHome';
   static const String prefsKeyAnonymousUser = 'prefsKeyAnonymousUser';
   static const String prefsSetLoginMap = 'prefsSetLoginMap';
+  static const String prefsLanguage = 'prefsLanguageLogic';
 }

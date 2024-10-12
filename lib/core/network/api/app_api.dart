@@ -136,7 +136,7 @@ abstract class AppServiceClient {
   );
 
   @PUT(ApiConstants.updateMyPassword)
-  Future<UpdateMyPasswordResponse> updateMyPasswordService(
+  Future<AuthResponse> updateMyPasswordService(
     @Body() ChangeMyPasswordRequestBody changeMyPasswordRequestBody,
   );
 

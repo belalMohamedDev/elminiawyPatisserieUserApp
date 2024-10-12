@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
       context.read<MapCubit>().setLocationToHome();
 
       // If the username is present, start listening and fetching notifications
-      if (!isAnonymousUser) {
+      if (!AppInitialRoute.isAnonymousUser) {
  
         _notificationService
             .fetchNotificationsContinuously(); // Continuously fetch notifications

@@ -1,6 +1,3 @@
-
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class ProfileBody extends StatelessWidget {
@@ -44,9 +41,7 @@ class ProfileBody extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleLarge!
-                                    .copyWith(
-                                       
-                                        fontSize: 60.sp)),
+                                    .copyWith(fontSize: 60.sp)),
                           ),
                         ),
                   SizedBox(
@@ -54,26 +49,10 @@ class ProfileBody extends StatelessWidget {
                   ),
                   initUserNameCheck
                       ? InkWell(
-                        onTap: () async{
-                                 Navigator.of(context, rootNavigator: !false)
-                                .pushNamedAndRemoveUntil(
-                                    Routes.loginRoute, (Route route) => false);
-
-                            context
-                                .read<AppLogicCubit>()
-                                .bottomNavBarController
-                                .jumpToTab(0);
-
-                            await SharedPrefHelper.clearAllSecuredData();
-                               SharedPrefHelper.setData(
-                                PrefKeys.prefsKeyAnonymousUser, false);
-                            SharedPrefHelper.removeData(PrefKeys.locationArea);
-                            SharedPrefHelper.removeData(
-                                PrefKeys.longAddressHome);
-                            SharedPrefHelper.removeData(
-                                PrefKeys.latAddressHome);
-                        },
-                        child: Column(
+                          onTap: () async {
+                            await AppLogout().logOutThenNavigateToLogin();
+                          },
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -82,27 +61,29 @@ class ProfileBody extends StatelessWidget {
                                       .textTheme
                                       .headlineSmall!
                                       .copyWith(
-                                      
                                           color: Colors.white70,
                                           fontSize: 13.sp)),
-                              Text(context.translate(AppStrings.loginToViewAllTheFeatures) ,
+                              Text(
+                                  context.translate(
+                                      AppStrings.loginToViewAllTheFeatures),
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall!
                                       .copyWith(
-                                   
                                           color: Colors.white60,
                                           fontSize: 13.sp)),
                             ],
                           ),
-                      )
+                        )
                       : Text(
-                         context.translate(AppStrings.welcomeBackLetsAchieveGreatThingsToday),
-                          style:
-                              Theme.of(context).textTheme.headlineSmall!.copyWith(
-                              
-                                    fontSize: 13.sp,
-                                  ),
+                          context.translate(AppStrings
+                              .welcomeBackLetsAchieveGreatThingsToday),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(
+                                fontSize: 13.sp,
+                              ),
                         ),
                 ],
               );

@@ -10,7 +10,7 @@ class ChangeMyPasswordState with _$ChangeMyPasswordState {
        ApiErrorModel apiErrorModel) = ChangeMyPasswordError;
 
   const factory ChangeMyPasswordState.changeMyPasswordSuccess(
-      UpdateMyPasswordResponse data) = ChangeMyPasswordSuccess;
+      AuthResponse data) = ChangeMyPasswordSuccess;
 
   const factory ChangeMyPasswordState.changeMyPasswordTextColorUpdated(
       Color lengthTextColor,

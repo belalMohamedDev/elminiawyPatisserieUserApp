@@ -1,6 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-
 class ChangeUserPasswordBody extends StatelessWidget {
   const ChangeUserPasswordBody({super.key});
 
@@ -25,7 +24,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isPasswordValid(value)) {
-                  return  context.translate(AppStrings.pleaseEnterValidPassword) ;
+                  return context.translate(AppStrings.pleaseEnterValidPassword);
                 }
                 return null;
               },
@@ -89,7 +88,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 return null;
               },
               decoration: InputDecoration(
-                hintText:   context.translate(AppStrings.newPassword) ,
+                hintText: context.translate(AppStrings.newPassword),
                 suffixIcon: IconButton(
                   icon: Icon(
                     context.watch<ChangeMyPasswordCubit>().isPasswordVisible
@@ -147,12 +146,13 @@ class ChangeUserPasswordBody extends StatelessWidget {
                         .passwordController
                         .text
                         .trim()) {
-                  return context.translate(AppStrings.newPasswordAndConfirmPasswordNotMatching) ;
+                  return context.translate(
+                      AppStrings.newPasswordAndConfirmPasswordNotMatching);
                 }
                 return null;
               },
               decoration: InputDecoration(
-                hintText: context.translate(AppStrings.confirmNewUserPassword) ,
+                hintText: context.translate(AppStrings.confirmNewUserPassword),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: ColorManger.backgroundItem,
@@ -243,7 +243,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ],
             ),
             orElse: () => Text(
-             context.translate(AppStrings.submit),
+              context.translate(AppStrings.submit),
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: 16.sp,
                   ),
@@ -261,9 +261,12 @@ class ChangeUserPasswordBody extends StatelessWidget {
             changeMyPasswordError: (apiErrorModel) =>
                 ShowToast.showToastErrorTop(
                     errorMessage: apiErrorModel.message!, context: context),
-            changeMyPasswordSuccess: (data) {
+            changeMyPasswordSuccess: (authResponse) {
               ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
+                  message: authResponse.message!, context: context);
+
+              // Navigate to the map screen after a successful login
+              AppLogin().storeDataThenNavigateToMap(authResponse);
             });
       },
       builder: (context, state) {
@@ -273,7 +276,8 @@ class ChangeUserPasswordBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-               context.translate(AppStrings.passwordMustBeAtLeast8CharactersAndShouldInclude) ,
+                context.translate(AppStrings
+                    .passwordMustBeAtLeast8CharactersAndShouldInclude),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color:
                         context.read<ChangeMyPasswordCubit>().lengthTextColor,
@@ -281,7 +285,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                context.translate(AppStrings.upperCaseLetter) ,
+                context.translate(AppStrings.upperCaseLetter),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     fontFamily: FontConsistent.fontFamilyAcme,
                     color: context
@@ -291,7 +295,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-                context.translate(AppStrings.lowerCaseLetter) ,
+                context.translate(AppStrings.lowerCaseLetter),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: context
                         .read<ChangeMyPasswordCubit>()
@@ -300,7 +304,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-              context.translate(AppStrings.number)  ,
+                context.translate(AppStrings.number),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color:
                         context.read<ChangeMyPasswordCubit>().numberTextColor,
@@ -308,7 +312,7 @@ class ChangeUserPasswordBody extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               Text(
-               context.translate(AppStrings.specialCharacter),
+                context.translate(AppStrings.specialCharacter),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: context
                         .read<ChangeMyPasswordCubit>()

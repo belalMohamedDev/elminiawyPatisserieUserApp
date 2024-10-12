@@ -1,3 +1,4 @@
+
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class RouteStatesScreen extends StatelessWidget {
@@ -31,21 +32,7 @@ class RouteStatesScreen extends StatelessWidget {
                   ,
               btnText: context.translate(AppStrings.logIn),
               press: () async {
-                Navigator.of(context, rootNavigator: !false)
-                    .pushNamedAndRemoveUntil(
-                        Routes.loginRoute, (Route route) => false);
-
-                context
-                    .read<AppLogicCubit>()
-                    .bottomNavBarController
-                    .jumpToTab(0);
-
-                await SharedPrefHelper.clearAllSecuredData();
-
-                SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
-                SharedPrefHelper.removeData(PrefKeys.locationArea);
-                SharedPrefHelper.removeData(PrefKeys.longAddressHome);
-                SharedPrefHelper.removeData(PrefKeys.latAddressHome);
+                 await AppLogout().logOutThenNavigateToLogin();
               },
             ),
             SizedBox(

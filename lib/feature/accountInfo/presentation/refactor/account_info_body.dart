@@ -159,18 +159,9 @@ class AccountInfomationBody extends StatelessWidget {
           deleteAccountSuccess: (data) async {
             ShowToast.showToastSuccessTop(
                 message: data.message!, context: context);
-            await SharedPrefHelper.clearAllSecuredData();
-            SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
-            SharedPrefHelper.removeData(PrefKeys.locationArea);
-            SharedPrefHelper.removeData(PrefKeys.longAddressHome);
-            SharedPrefHelper.removeData(PrefKeys.latAddressHome);
-            if (context.mounted) {
-              Navigator.of(context, rootNavigator: !false)
-                  .pushNamedAndRemoveUntil(
-                      Routes.loginRoute, (Route route) => false);
 
-              context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
-            }
+                 await AppLogout().logOutThenNavigateToLogin();
+         
           },
           deleteAccountError: (apiErrorModel) => ShowToast.showToastErrorTop(
               errorMessage: apiErrorModel.message!, context: context),

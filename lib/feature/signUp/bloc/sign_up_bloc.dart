@@ -149,49 +149,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           success: (registerResponse) async {
             // Emit success state
             emit(SignUpState.suceess(registerResponse));
-
-            // Save the user token securely in shared preferences
-            await saveUserToken(
-              registerResponse.accessToken!,
-              registerResponse.data!.refreshToken!,
-              registerResponse.data!.name!,
-              registerResponse.data!.phone!,
-              registerResponse.data!.email!,
-              registerResponse.data!.sId!,
-            );
           },
           failure: (error) {
             // Emit error state in case of failure
-            emit(SignUpState.error(
-               error));
+            emit(SignUpState.error(error));
           },
         );
       },
     );
-  }
-
-  ////////////////////////////////////////
-  // Save User Token
-  ////////////////////////////////////////
-
-  /// Saves the user token and other important data in secured storage.
-  Future<void> saveUserToken(
-    String accessToken,
-    String refreshToken,
-    String userName,
-    String userPhone,
-    String userEmail,
-    String userId,
-  ) async {
-    // Save user details in secured storage
-    await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, userPhone);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userName, userName);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, userEmail);
-    await SharedPrefHelper.setSecuredString(PrefKeys.userId, userId);
-    SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
-    // Save authentication tokens in secured storage
-    await SharedPrefHelper.setSecuredString(PrefKeys.accessToken, accessToken);
-    await SharedPrefHelper.setSecuredString(
-        PrefKeys.refreshToken, refreshToken);
   }
 }

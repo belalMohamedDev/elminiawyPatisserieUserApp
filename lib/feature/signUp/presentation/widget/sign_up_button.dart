@@ -1,3 +1,4 @@
+
 import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
 /// A custom sign-up button widget that triggers the user registration process.
@@ -18,13 +19,13 @@ class SignUpButton extends StatelessWidget {
           error: (apiErrorModel) => ShowToast.showToastErrorTop(
               errorMessage: apiErrorModel.message!, context: context),
           // On successful registration, show success message and navigate to home
-          suceess: (data) {
-            if (data.data!.role == "user") {
+          suceess: (authResponse) {
+            if (authResponse.data!.role == "user") {
               // Show a success toast when login is successful
               ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
-              // Navigate to the map screen after a successful login
-              context.pushReplacementNamed(Routes.map);
+                  message: authResponse.message!, context: context);
+                  // Navigate to the map screen after a successful login
+              AppLogin().storeDataThenNavigateToMap(authResponse);
             } else {
               ShowToast.showToastErrorTop(
                   errorMessage:  context.translate(AppStrings.thisAccountNotAccessInThisApp) ,
