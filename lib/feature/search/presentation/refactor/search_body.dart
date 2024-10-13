@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class SearchScreenBody extends StatelessWidget {
@@ -8,6 +7,8 @@ class SearchScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return Column(
       children: [
         Row(
@@ -21,7 +22,8 @@ class SearchScreenBody extends StatelessWidget {
                       .add(SearchEvent.searchText(value)),
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      hintText:  context.translate(AppStrings.findYourPatisserie),
+                      hintText:
+                          context.translate(AppStrings.findYourPatisserie),
                       prefixIcon: Icon(IconlyBroken.search,
                           size: responsive.setIconSize(5),
                           color: ColorManger.brunLight),
@@ -52,7 +54,8 @@ class SearchScreenBody extends StatelessWidget {
             ),
             Container(
               height: responsive.setHeight(5.5),
-              margin: responsive.setMargin(left: 3, right: 2),
+              margin: responsive.setMargin(
+                  right: isEnLocale ? null : 2, left: isEnLocale ? 2 : null),
               decoration: BoxDecoration(
                 color: ColorManger.brun,
                 borderRadius:

@@ -21,7 +21,7 @@ class CheckOutProcessing extends StatelessWidget {
             backgroundColor: ColorManger.brun,
             maxRadius: 12.r,
             child: Text(
-              '1',
+            context.translate(AppStrings.one)   ,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontFamily: FontConsistent.fontFamilyAcme,
                   color: ColorManger.white,
@@ -32,7 +32,7 @@ class CheckOutProcessing extends StatelessWidget {
             width: 15.w,
           ),
           Text(
-            'Shipping',
+          context.translate(AppStrings.shipping)  ,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,
@@ -53,7 +53,7 @@ class CheckOutProcessing extends StatelessWidget {
                   : ColorManger.white,
               maxRadius: 10.r,
               child: Text(
-                '2',
+             context.translate(AppStrings.two)   ,
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontFamily: FontConsistent.fontFamilyAcme,
                     color: screenIndex == 2 || screenIndex == 3
@@ -67,7 +67,7 @@ class CheckOutProcessing extends StatelessWidget {
             width: 15.w,
           ),
           Text(
-            'Payment',
+           context.translate(AppStrings.payment) ,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,
@@ -87,7 +87,7 @@ class CheckOutProcessing extends StatelessWidget {
                   screenIndex == 3 ? ColorManger.brun : ColorManger.white,
               maxRadius: 10.r,
               child: Text(
-                '3',
+              context.translate(AppStrings.three)  ,
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontFamily: FontConsistent.fontFamilyAcme,
                     color:
@@ -100,7 +100,7 @@ class CheckOutProcessing extends StatelessWidget {
             width: 15.w,
           ),
           Text(
-            'Review',
+           context.translate(AppStrings.review)  ,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: FontConsistent.fontFamilyAcme,
                 color: ColorManger.brun,

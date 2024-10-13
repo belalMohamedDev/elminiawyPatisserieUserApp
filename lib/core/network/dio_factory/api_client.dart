@@ -1,6 +1,4 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
-
 
 class TokenInterceptor extends Interceptor {
   final Dio dio;
@@ -16,9 +14,11 @@ class TokenInterceptor extends Interceptor {
     String? accessToken =
         await SharedPrefHelper.getSecuredString(PrefKeys.accessToken);
 
+    String? language = SharedPrefHelper.getString(PrefKeys.prefsLanguage).isEmpty?'en': SharedPrefHelper.getString(PrefKeys.prefsLanguage);
     // Add the access token to the Authorization header
     options.headers["Accept"] = "application/json";
     options.headers["Authorization"] = "Bearer $accessToken";
+    options.headers["lang"] = language;
 
     return handler.next(options); // continue
   }
@@ -93,13 +93,14 @@ class TokenInterceptor extends Interceptor {
 
     if (context != null) {
       ShowToast.showToastErrorTop(
-          errorMessage:     context.translate(AppStrings.sessionExpired) , context: context);
+          errorMessage: context.translate(AppStrings.sessionExpired),
+          context: context);
 
       // Show session expired message
       navigatorKey.currentState?.pushNamedAndRemoveUntil(
         Routes.loginRoute,
         (Route<dynamic> route) => false,
-        arguments:     context.translate(AppStrings.sessionExpired) ,
+        arguments: context.translate(AppStrings.sessionExpired),
       );
     }
   }

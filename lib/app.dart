@@ -78,16 +78,17 @@ class _MyAppState extends State<MyApp> {
                     return MaterialApp(
                       locale:
                           Locale(context.read<AppLogicCubit>().currentLangCode),
-
-                      navigatorKey: instance<GlobalKey<NavigatorState>>(),
                       supportedLocales: AppLocalizationsSetup.supportedLocales,
                       localizationsDelegates:
                           AppLocalizationsSetup.localizationsDelegates,
                       localeResolutionCallback:
                           AppLocalizationsSetup.localeResolutionCallback,
+
+                      navigatorKey: instance<GlobalKey<NavigatorState>>(),
+
                       //  locale: DevicePreview.locale(context),
                       builder: DevicePreview.appBuilder,
-                      title: context.translate(AppStrings.appName),
+                      title: 'Elminiawy Patisserie',
                       debugShowCheckedModeBanner: false,
                       initialRoute: AppInitialRoute.isOnBoardingScreen
                           ? AppInitialRoute.isAnonymousUser

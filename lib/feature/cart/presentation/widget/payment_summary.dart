@@ -31,7 +31,7 @@ class PaymentSummary extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppStrings.subTotal,
+                 context.translate(AppStrings.subTotal) ,
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -39,7 +39,7 @@ class PaymentSummary extends StatelessWidget {
                 ),
                 responsive.setSizeBox(height: 1),
                 Text(
-                  AppStrings.priceAfterDiscount,
+                context.translate(AppStrings.priceAfterDiscount) ,
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -47,7 +47,7 @@ class PaymentSummary extends StatelessWidget {
                 ),
                 responsive.setSizeBox(height: 1),
                 Text(
-                  AppStrings.tax,
+              context.translate(AppStrings.tax)    ,
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -55,7 +55,7 @@ class PaymentSummary extends StatelessWidget {
                 ),
                 responsive.setSizeBox(height: 1),
                 Text(
-                  AppStrings.shipping,
+                 context.translate(AppStrings.shipping) ,
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -63,7 +63,7 @@ class PaymentSummary extends StatelessWidget {
                 ),
                 responsive.setSizeBox(height: 1),
                 Text(
-                  AppStrings.totalAmount,
+              context.translate(AppStrings.totalAmount)   ,
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -84,7 +84,7 @@ class PaymentSummary extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${cartData.totalCartPrice}   ${AppStrings.egy}',
+                '${cartData.totalCartPrice}   ${context.translate(AppStrings.egy)}',
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!
@@ -92,7 +92,7 @@ class PaymentSummary extends StatelessWidget {
               ),
               responsive.setSizeBox(height: 1),
               Text(
-                '${cartData.totalPriceAfterDiscount}   ${AppStrings.egy}',
+                '${cartData.totalPriceAfterDiscount}   ${context.translate(AppStrings.egy)}',
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!
@@ -100,7 +100,7 @@ class PaymentSummary extends StatelessWidget {
               ),
               responsive.setSizeBox(height: 1),
               Text(
-                '${cartData.taxPrice}   ${AppStrings.egy}',
+                '${cartData.taxPrice}   ${context.translate(AppStrings.egy)}',
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!
@@ -108,7 +108,7 @@ class PaymentSummary extends StatelessWidget {
               ),
               responsive.setSizeBox(height: 1),
               Text(
-                '${cartData.shippingPrice}   ${AppStrings.egy}',
+                '${cartData.shippingPrice}   ${context.translate(AppStrings.egy)}',
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!
@@ -116,7 +116,7 @@ class PaymentSummary extends StatelessWidget {
               ),
               responsive.setSizeBox(height: 1),
               Text(
-                '${cartData.totalOrderPrice}   ${AppStrings.egy}',
+                '${cartData.totalOrderPrice}   ${context.translate(AppStrings.egy)}',
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!

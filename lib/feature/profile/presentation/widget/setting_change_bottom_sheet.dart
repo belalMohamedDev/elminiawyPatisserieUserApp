@@ -1,8 +1,8 @@
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
-
 Future<dynamic> settingChangeBottomSheet(BuildContext context) {
+  final cubit = context.read<AppLogicCubit>();
+
   return showCupertinoModalBottomSheet(
       useRootNavigator: true,
       barrierColor: Colors.black54,
@@ -22,7 +22,7 @@ Future<dynamic> settingChangeBottomSheet(BuildContext context) {
                               FirebaseCloudMessaging().isNotificationSubscribe,
                           builder: (_, value, __) {
                             return CustomProfileCard(
-                              title: context.translate(AppStrings.notification) ,
+                              title: context.translate(AppStrings.notification),
                               actionWidget: Transform.scale(
                                 scale: 0.75,
                                 child: CupertinoSwitch(
@@ -43,13 +43,19 @@ Future<dynamic> settingChangeBottomSheet(BuildContext context) {
                             );
                           }),
                       CustomProfileCard(
-                        title:  context.translate(AppStrings.language),
-                        subTitle:  context.translate(AppStrings.english),
+                        title: context.translate(AppStrings.language),
+                        subTitle: context.translate(AppStrings.english),
                         leadingIcon: Icons.language,
-                        tap: () {},
+                        tap: () {
+                          if (AppLocalizations.of(context)!.isEnLocale) {
+                            cubit.toArabic();
+                          } else {
+                            cubit.toEnglish();
+                          }
+                        },
                       ),
                       CustomProfileCard(
-                        title: context.translate(AppStrings.darkMode) ,
+                        title: context.translate(AppStrings.darkMode),
                         leadingIcon: Icons.light_mode,
                         tap: () {},
                         actionWidget: Transform.scale(

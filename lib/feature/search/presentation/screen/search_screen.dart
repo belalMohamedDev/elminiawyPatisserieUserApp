@@ -13,17 +13,12 @@ class _SearchViewState extends State<SearchView> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(  context.translate(AppStrings.searchProducts) ,
+        title: Text(context.translate(AppStrings.searchProducts),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
                 .copyWith(fontSize: 16.sp)),
-        leading: IconButton(
-          icon: const Icon(IconlyBroken.arrowLeft),
-          onPressed: () {
-            context.pop();
-          },
-        ),
+      
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),

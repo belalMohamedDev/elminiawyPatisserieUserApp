@@ -11,11 +11,13 @@ class BuildSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     return Padding(
       padding: responsive.setPadding(
         top: 7,
-        left: 6,
+        left: isEnLocale ? 6 : 0,
+        right: isEnLocale ? 0 : 6,
       ),
       child: SizedBox(
         width: responsive.screenWidth * 0.9,
@@ -29,7 +31,8 @@ class BuildSearchBar extends StatelessWidget {
               ),
           controller: mapCubit.searchConroller,
           decoration: InputDecoration(
-              hintText: mapCubit.textEditingSearchText,
+              hintText: mapCubit.textEditingSearchText ??
+                  context.translate(AppStrings.findYourLocation),
               prefixIcon: Icon(IconlyBroken.search,
                   size: responsive.setIconSize(5), color: ColorManger.white),
               hintStyle: Theme.of(context).textTheme.headlineSmall!.copyWith(

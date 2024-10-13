@@ -19,10 +19,9 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       // If the user name is not empty, mark all notifications as seen.
 
-        await Future.wait([
-          context.read<UserNotificationCubit>().updateAllNotificationsToSeen()
-        ]);
-    
+      await Future.wait([
+        context.read<UserNotificationCubit>().updateAllNotificationsToSeen()
+      ]);
     });
   }
 
@@ -31,21 +30,13 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-         context.translate(AppStrings.notification) ,
+          context.translate(AppStrings.notification),
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
               fontSize: responsive.setTextSize(4)), // Responsive font size
-        ),
-        // Back button in the app bar to navigate back to the previous screen.
-        leading: IconButton(
-          icon: const Icon(IconlyBroken.arrowLeft),
-          onPressed: () {
-            context.pop(); // Navigate back when the icon is pressed.
-          },
         ),
       ),
       // Body content of the screen, showing notifications to the user.

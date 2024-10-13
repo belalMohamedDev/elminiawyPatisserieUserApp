@@ -13,10 +13,12 @@ class BuildSearchResults extends StatelessWidget {
     return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
         final mapCuibt = context.read<MapCubit>();
+        bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
         if (state is SearchResults) {
           return Padding(
-            padding: responsive.setPadding(top: 14, left: 6, right: 4),
+            padding: responsive.setPadding(
+                top: 14, left: isEnLocale ? 6 : 4, right: isEnLocale ? 4 : 6),
             child: InkWell(
               onTap: () {
                 Navigator.of(context).pop();

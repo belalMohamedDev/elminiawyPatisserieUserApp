@@ -73,12 +73,12 @@ class CartView extends StatelessWidget {
                 responsive.setSizeBox(height: 1),
                 RowTextOrderSummary(
                   orderprice: cart.cartData!.data!.totalCartPrice!,
-                  orderText: AppStrings.subTotal,
+                  orderText:context.translate(AppStrings.subTotal),
                 ),
                 responsive.setSizeBox(height: 1),
                 RowTextOrderSummary(
                   orderprice: cart.cartData!.data!.taxPrice!,
-                  orderText: AppStrings.tax,
+                  orderText: context.translate(AppStrings.tax) ,
                 ),
                 responsive.setSizeBox(height: 1),
                 RowTextOrderSummary(

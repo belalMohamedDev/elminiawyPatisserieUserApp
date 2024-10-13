@@ -64,14 +64,17 @@ class HomeBody extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Icon(IconlyBold.location,
-              color: ColorManger.brunLight), // Location icon
-          SizedBox(width: responsive.setWidth(1)), // Horizontal spacing
+          Icon(
+            IconlyBold.location,
+            color: ColorManger.brun,
+            size: responsive.setIconSize(5),
+          ), // Location icon
+          SizedBox(width: responsive.setWidth(2)), // Horizontal spacing
           // Display the current address from the MapCubit
           BlocBuilder<MapCubit, MapState>(
             builder: (context, state) {
               return ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: responsive.setWidth(35)),
+                constraints: BoxConstraints(maxWidth: responsive.setWidth(40)),
                 child: Text(
                   context
                       .read<MapCubit>()
@@ -79,7 +82,7 @@ class HomeBody extends StatelessWidget {
                   maxLines: 1,
                   textAlign: TextAlign.start,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         fontSize: responsive.setTextSize(3.5),
                       ),
                 ),
@@ -90,8 +93,8 @@ class HomeBody extends StatelessWidget {
           // Icon to indicate dropdown or expandable content
           Icon(
             IconlyBold.arrowDown2,
-            color: ColorManger.brunLight,
-            size: 15.sp,
+            color: Colors.black38,
+            size: responsive.setIconSize(4),
           ),
         ],
       ),
@@ -109,11 +112,10 @@ class HomeBody extends StatelessWidget {
         SizedBox(width: responsive.setWidth(2)), // Horizontal space
         // Display the location label
         Text(
-            context.translate(AppStrings.location) ,
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(4)),
+          context.translate(AppStrings.location),
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                fontSize: responsive.setTextSize(4),
+              ),
         ),
         const Spacer(), // Spacer to push the notification icon to the right
         // ValueListenableBuilder to listen for notification updates
@@ -170,7 +172,7 @@ class HomeBody extends StatelessWidget {
               // Notification icon button
               child: IconButton(
                 onPressed: () {
-                  Navigator.of(context, rootNavigator: !false).pushNamed(
+                  context.pushNamed(
                       Routes.notification); // Navigate to notification screen
                 },
                 icon: Icon(

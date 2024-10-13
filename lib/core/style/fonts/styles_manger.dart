@@ -8,7 +8,7 @@ TextStyle _getTextStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+    }) {
   return TextStyle(
       fontSize: fontSize,
       fontWeight: fontWeight,
@@ -16,7 +16,7 @@ TextStyle _getTextStyle(
       wordSpacing: wordSpacing,
       height: height,
       letterSpacing: letterSpacing,
-      fontFamily: fontFamily);
+      fontFamily: FontConsistent.geLocalozedFontFamily());
 }
 
 //regular style
@@ -27,9 +27,9 @@ TextStyle getRegularStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+   }) {
   return _getTextStyle(
-      fontFamily: fontFamily,
+
       fontSize: fontSize,
       fontWeight: FontWeightManger.regular,
       color: color,
@@ -45,10 +45,10 @@ TextStyle getBoldStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+}) {
   return _getTextStyle(
       fontSize: fontSize,
-      fontFamily: fontFamily,
+
       fontWeight: FontWeightManger.bold,
       color: color,
       wordSpacing: wordSpacing,
@@ -63,10 +63,10 @@ TextStyle getLightStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+}) {
   return _getTextStyle(
       fontSize: fontSize,
-      fontFamily: fontFamily,
+
       fontWeight: FontWeightManger.light,
       color: color,
       wordSpacing: wordSpacing,
@@ -81,9 +81,9 @@ TextStyle getMediumStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+}) {
   return _getTextStyle(
-      fontFamily: fontFamily,
+
       fontSize: fontSize,
       fontWeight: FontWeightManger.medium,
       color: color,
@@ -99,9 +99,9 @@ TextStyle getSemiBoldStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+ }) {
   return _getTextStyle(
-      fontFamily: fontFamily,
+
       fontSize: fontSize,
       fontWeight: FontWeightManger.semiBold,
       color: color,
@@ -117,9 +117,9 @@ TextStyle getExtraBoldStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+}) {
   return _getTextStyle(
-      fontFamily: fontFamily,
+ 
       fontSize: fontSize,
       fontWeight: FontWeightManger.extraBold,
       color: color,
@@ -135,9 +135,9 @@ TextStyle getExtraLightStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+}) {
   return _getTextStyle(
-      fontFamily: fontFamily,
+
       fontSize: fontSize,
       fontWeight: FontWeightManger.extraLight,
       color: color,
@@ -153,11 +153,11 @@ TextStyle getBlackStyle(
     double? wordSpacing,
     double? height,
     double? letterSpacing,
-    fontFamily = FontConsistent.fontFamilyCairo}) {
+}) {
   return _getTextStyle(
       fontSize: fontSize,
       fontWeight: FontWeightManger.black,
-      fontFamily: fontFamily,
+
       color: color,
       wordSpacing: wordSpacing,
       height: height,

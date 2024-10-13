@@ -22,8 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           context.read<ProductCubit>().getProduct(),
         ]);
 
-        if (!AppInitialRoute.isAnonymousUser) {
-      
+        if (AppInitialRoute.isAnonymousUser == false) {
           await Future.wait([
             context.read<UserAddressCubit>().getUserAddress(),
             context.read<CartCubit>().getCartItem(),
@@ -38,6 +37,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
+    final responsive = ResponsiveUtils(context);
+
     return BlocBuilder<AppLogicCubit, AppLogicState>(
       builder: (context, state) {
         return PersistentTabView(
@@ -58,8 +59,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           onTabChanged: (index) {
             if (index == 2) {
               if (AppInitialRoute.isAnonymousUser) {
-              
-
                 Navigator.of(context, rootNavigator: !false)
                     .pushNamed(Routes.noRoute);
               } else {
@@ -71,7 +70,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             }
           },
 
-          tabs: _navBarsItems(),
+          tabs: _navBarsItems(responsive),
 
           navBarBuilder: (navBarConfig) => Style8BottomNavBar(
             navBarConfig: navBarConfig,
@@ -95,14 +94,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
     );
   }
 
-  List<PersistentTabConfig> _navBarsItems() {
+  List<PersistentTabConfig> _navBarsItems(ResponsiveUtils responsive) {
     return [
       PersistentTabConfig(
         screen: const HomeScreen(),
         item: ItemConfig(
           icon: Icon(IconlyBold.home, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.home, size: 20.sp),
-          title: (    context.translate(AppStrings.home) ),
+          title: (context.translate(AppStrings.home)),
+          textStyle: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(3.5)),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -112,7 +115,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
         item: ItemConfig(
           icon: Icon(IconlyBold.category, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.category, size: 20.sp),
-          title: (    context.translate(AppStrings.categories)),
+          title: (context.translate(AppStrings.categories)),
+          textStyle: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(3.5)),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -122,7 +129,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
         item: ItemConfig(
           icon: Icon(IconlyBold.bag, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.bag, size: 20.sp),
-          title: (    context.translate(AppStrings.shopping) ),
+          title: (context.translate(AppStrings.shopping)),
+          textStyle: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(3.5)),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -142,7 +153,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
         item: ItemConfig(
           icon: Icon(IconlyBold.setting, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.setting, size: 20.sp),
-          title: (    context.translate(AppStrings.profile) ),
+          title: (context.translate(AppStrings.profile)),
+          textStyle: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(fontSize: responsive.setTextSize(3.5)),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),

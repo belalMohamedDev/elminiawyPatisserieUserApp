@@ -6,7 +6,11 @@ part 'map_cubit.freezed.dart';
 class MapCubit extends Cubit<MapState> {
   MapCubit(this.places, this._userAddressRepository)
       : super(const MapState.initial());
+
+
   final UserAddressRepositoryImplement _userAddressRepository;
+  
+  final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
 
   final GoogleMapsPlaces
       places; // Instance of GoogleMapsPlaces for search functionality
@@ -19,7 +23,7 @@ class MapCubit extends Cubit<MapState> {
 
   bool isHomeScreenLocation = false;
 
-  String textEditingSearchText = 'Find Your Location';
+  String? textEditingSearchText;
   String homeScreenCurrentAddress = '';
   final TextEditingController searchConroller = TextEditingController();
 
@@ -128,9 +132,7 @@ class MapCubit extends Cubit<MapState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            MapState.checkAddressAvailableError(
-          error
-            ),
+            MapState.checkAddressAvailableError(error),
           );
         }
       },
@@ -186,11 +188,11 @@ class MapCubit extends Cubit<MapState> {
     }
   }
 
-     void addLocationToMap(BuildContext context)  {
+  void addLocationToMap(BuildContext context) {
     emit(const MapState.loading());
     try {
-      final lat =  SharedPrefHelper.getDouble(PrefKeys.latAddressHome);
-      final long =  SharedPrefHelper.getDouble(PrefKeys.longAddressHome);
+      final lat = SharedPrefHelper.getDouble(PrefKeys.latAddressHome);
+      final long = SharedPrefHelper.getDouble(PrefKeys.longAddressHome);
 
       LatLng currentPosition = LatLng(lat, long);
 

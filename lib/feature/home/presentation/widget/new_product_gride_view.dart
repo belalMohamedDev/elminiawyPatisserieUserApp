@@ -16,10 +16,17 @@ class NewProductGrideView extends StatelessWidget {
     return Column(
       children: [
         // Header Row: New Products title and 'See All' button
+
         Row(
           children: [
+            Icon(
+              IconlyBold.discount,
+              color: ColorManger.brun,
+              size: responsive.setIconSize(5),
+            ),
+            responsive.setSizeBox(width: 2),
             // New Products title
-            Text(   context.translate(AppStrings.newProductsInStore),
+            Text(context.translate(AppStrings.newProductsInStore),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -27,9 +34,10 @@ class NewProductGrideView extends StatelessWidget {
             const Spacer(), // Spacer to push 'See All' button to the right
 
             // 'See All' button, navigates to the NewProductView page when tapped
+
             InkWell(
               onTap: () {
-                Navigator.of(context, rootNavigator: !false)
+                context
                     .pushNamed(// Disable bottom navigation bar on this screen
                         Routes.newProduct // Navigate to NewProductView screen
                         );
@@ -37,8 +45,8 @@ class NewProductGrideView extends StatelessWidget {
               child: Text(context.translate(AppStrings.seeAll),
                   style: Theme.of(context)
                       .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4))),
+                      .titleMedium!
+                      .copyWith(fontSize: responsive.setTextSize(3.5))),
             ),
           ],
         ),

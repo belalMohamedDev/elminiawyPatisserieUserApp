@@ -1,6 +1,7 @@
 
-
-import '../common/shared/shared_imports.dart';
+import 'package:elminiawy/core/language/app_localizations.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class AppLocalizationsSetup {
   static const Iterable<Locale> supportedLocales = [

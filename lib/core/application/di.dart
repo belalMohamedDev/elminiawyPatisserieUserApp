@@ -41,7 +41,8 @@ Future<void> _initAppModule() async {
   instance
     ..registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio))
     ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
-    ..registerFactory(AppLogicCubit.new);
+    ..registerFactory<AppLogicCubit>(() => AppLogicCubit(
+        ));
 }
 
 Future<void> _inithome() async {

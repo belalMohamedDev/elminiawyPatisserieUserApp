@@ -25,7 +25,7 @@ class RowTextOrderSummary extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          '$orderprice   ${AppStrings.egy}',
+          '$orderprice   ${context.translate(AppStrings.egy)}',
           style: Theme.of(context)
               .textTheme
               .titleLarge!

@@ -12,14 +12,22 @@ class CategoryListViewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     return Column(
       children: [
         // Header Row: Category title and 'View All' button
+
         Row(
           children: [
+            Icon(
+              IconlyBold.category,
+              color: ColorManger.brun,
+              size: responsive.setIconSize(5),
+            ),
+            responsive.setSizeBox(width: 2),
             // Category title
-            Text(    context.translate(AppStrings.category),
+            Text(context.translate(AppStrings.categories),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -34,11 +42,11 @@ class CategoryListViewBuilder extends StatelessWidget {
                     .bottomNavBarController
                     .jumpToTab(1); // Switches to the category tab
               },
-              child: Text(context.translate(AppStrings.viewAll) ,
+              child: Text(context.translate(AppStrings.viewAll),
                   style: Theme.of(context)
                       .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4))),
+                      .titleMedium!
+                      .copyWith(fontSize: responsive.setTextSize(3.5))),
             ),
           ],
         ),
@@ -49,7 +57,7 @@ class CategoryListViewBuilder extends StatelessWidget {
           builder: (context, state) {
             if (state is GetCategoriesSuccess) {
               // If categories are successfully loaded, display the category list
-              return _categorySuccessState(state, responsive);
+              return _categorySuccessState(state, responsive, isEnLocale);
             }
             // If the state is loading or error, show loading shimmer effect
             return _categoryLoadingAndErrorState(responsive);
@@ -100,7 +108,7 @@ class CategoryListViewBuilder extends StatelessWidget {
   /// Builds the success state for the category list. It displays the categories
   /// in a horizontal scrollable list with their images and titles.
   SizedBox _categorySuccessState(
-      GetCategoriesSuccess state, ResponsiveUtils responsive) {
+      GetCategoriesSuccess state, ResponsiveUtils responsive, bool isEnLocale) {
     return SizedBox(
       height: responsive.setHeight(15), // Height of the category list
       child: ListView.builder(
@@ -109,7 +117,9 @@ class CategoryListViewBuilder extends StatelessWidget {
         scrollDirection: Axis.horizontal, // Horizontal scrolling for categories
         itemBuilder: (context, index) {
           return Padding(
-            padding: responsive.setPadding(right: 4), // Padding between items
+            padding: responsive.setPadding(
+                left: isEnLocale ? null : 3,
+                right: isEnLocale ? 3.5 : null), // Padding between items
             child: InkWell(
               onTap: () {
                 // Navigate to the ProductBaseOnCategory screen when a category is tapped

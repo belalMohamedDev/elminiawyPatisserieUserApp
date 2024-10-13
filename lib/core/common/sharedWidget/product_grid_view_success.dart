@@ -26,6 +26,8 @@ class ProductGridViewSuccessState extends StatelessWidget {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     // Determine which list to display (dataList, wishListData, or allProductList)
     final List displayList = (dataList ?? wishListData ?? allProductList ?? []);
 
@@ -63,14 +65,15 @@ class ProductGridViewSuccessState extends StatelessWidget {
                   children: [
                     // Image and wishlist icon
                     _wishListAndImageStack(
-                        context, index, displayList, responsive),
+                        context, index, displayList, responsive, isEnLocale),
                     // Product title and information
                     _productTitleAndSomeInformationText(
-                        responsive, displayList, index, context)
+                        responsive, displayList, index, context, isEnLocale)
                   ],
                 ),
                 // Add to order button
-                _addOrderButton(context, displayList, index, responsive)
+                _addOrderButton(
+                    context, displayList, index, responsive, isEnLocale)
               ],
             ),
           ),
@@ -81,10 +84,11 @@ class ProductGridViewSuccessState extends StatelessWidget {
 
   /// Builds the add-to-cart button and handles the loading state for the add-to-cart action.
   Positioned _addOrderButton(BuildContext context, List<dynamic> displayList,
-      int index, ResponsiveUtils responsive) {
+      int index, ResponsiveUtils responsive, bool isEnLocale) {
     return Positioned(
       bottom: 0,
-      right: 0,
+      right: isEnLocale ? 0 : null,
+      left: isEnLocale ? null : 0,
       child: InkWell(
         onTap: () {
           // Add product to cart using CartCubit
@@ -95,7 +99,10 @@ class ProductGridViewSuccessState extends StatelessWidget {
           width: responsive.setWidth(8),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(responsive.setBorderRadius(2))),
+                  bottomLeft: Radius.circular(
+                      responsive.setBorderRadius(isEnLocale ? 0 : 2)),
+                  bottomRight: Radius.circular(
+                      responsive.setBorderRadius(isEnLocale ? 2 : 0))),
               color: ColorManger.brun),
           child: BlocBuilder<CartCubit, CartState>(
             builder: (context, state) {
@@ -127,10 +134,15 @@ class ProductGridViewSuccessState extends StatelessWidget {
   }
 
   /// Displays product title, description, and price information.
-  Padding _productTitleAndSomeInformationText(ResponsiveUtils responsive,
-      List<dynamic> displayList, int index, BuildContext context) {
+  Padding _productTitleAndSomeInformationText(
+      ResponsiveUtils responsive,
+      List<dynamic> displayList,
+      int index,
+      BuildContext context,
+      bool isEnLocale) {
     return Padding(
-      padding: responsive.setPadding(left: 4, top: 2),
+      padding: responsive.setPadding(
+          left: isEnLocale ? 4 : null, top: 2, right: isEnLocale ? null : 3),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -142,7 +154,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
                 .titleLarge!
                 .copyWith(fontSize: responsive.setTextSize(4)),
           ),
-          responsive.setSizeBox(height: 0.2),
+          responsive.setSizeBox(height: 0.5),
           // Display product description
           Text(
             displayList[index].description!,
@@ -154,7 +166,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
           responsive.setSizeBox(height: 0.5),
           // Display product price
           Text(
-            " ${displayList[index].price!} ${    context.translate(AppStrings.egy)}",
+            " ${displayList[index].price!} ${context.translate(AppStrings.egy)}",
             style: Theme.of(context)
                 .textTheme
                 .bodySmall!
@@ -167,7 +179,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
 
   /// Displays the product image and wishlist button.
   Container _wishListAndImageStack(BuildContext context, int index,
-      List displayList, ResponsiveUtils responsive) {
+      List displayList, ResponsiveUtils responsive, bool isEnLocale) {
     final product = displayList[index];
 
     return Container(
@@ -182,7 +194,8 @@ class ProductGridViewSuccessState extends StatelessWidget {
         children: [
           // Wishlist button
           Positioned(
-            right: 0,
+            right: isEnLocale ? 0 : null,
+            left: isEnLocale ? null : 0,
             top: 2,
             child: IconButton(
               onPressed: () {

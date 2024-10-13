@@ -9,6 +9,7 @@ class ForgetPasswordBloc
   final ForgetPasswordRepository _forgetPasswordRepository;
   final VerifyCodeRepository _verifyCodeRepository;
   final NewPasswordRepository _newPasswordRepository;
+  final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
 
   String? code; // Variable to store the verification code
   bool showNewPassword = true; // Toggle visibility of new password field
@@ -51,8 +52,8 @@ class ForgetPasswordBloc
         userForgetPasswordEmailAddress: (value) {
           validateForgetPasswordButton(emit);
           if (!AppRegex.isEmailValid(value)) {
-            emit(const ForgetPasswordState.userForgetEmailAddress(
-                AppStrings.pleaseEnterValidEmail));
+            emit(ForgetPasswordState.userForgetEmailAddress(
+                context.translate(AppStrings.pleaseEnterValidEmail)));
           } else {
             emit(const ForgetPasswordState.userForgetEmailAddress(''));
           }
@@ -60,15 +61,15 @@ class ForgetPasswordBloc
         userForgetNewPassword: (value) {
           validateNewPasswordButton(emit);
           if (!AppRegex.isPasswordValid(value)) {
-            emit(const ForgetPasswordState.userNewPassword(
-                AppStrings.pleaseEnterValidPassword));
+            emit(ForgetPasswordState.userNewPassword(
+                context.translate(AppStrings.pleaseEnterValidPassword)));
           }
         },
         userConfirmForgetNewPassword: (value) {
           validateNewPasswordButton(emit);
           if (value != userNewPassword.text) {
-            emit(const ForgetPasswordState.userConfirmNewPassword(
-                AppStrings.confirmPasswordNotEqualNewPassword));
+            emit(ForgetPasswordState.userConfirmNewPassword(context
+                .translate(AppStrings.confirmPasswordNotEqualNewPassword)));
           } else {
             emit(const ForgetPasswordState.userConfirmNewPassword(''));
           }
@@ -121,9 +122,7 @@ class ForgetPasswordBloc
             emit(ForgetPasswordState.success(forgetPasswordResponse));
           },
           failure: (error) {
-            emit(ForgetPasswordState.error(
-           error
-            ));
+            emit(ForgetPasswordState.error(error));
           },
         );
       },
@@ -145,9 +144,7 @@ class ForgetPasswordBloc
             emit(ForgetPasswordState.verifyCodeSuccess(verifyResponse));
           },
           failure: (error) {
-            emit(ForgetPasswordState.verifyCodeError(
-              error
-            ));
+            emit(ForgetPasswordState.verifyCodeError(error));
           },
         );
       },
@@ -171,17 +168,12 @@ class ForgetPasswordBloc
         response.when(
           success: (newPasswordResponse) async {
             emit(ForgetPasswordState.newPasswordSuccess(newPasswordResponse));
-     
           },
           failure: (error) {
-            emit(ForgetPasswordState.newPasswordError(
-             error
-            ));
+            emit(ForgetPasswordState.newPasswordError(error));
           },
         );
       },
     );
   }
-
-
 }

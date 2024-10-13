@@ -8,7 +8,7 @@ class AppLogicCubit extends Cubit<AppLogicState> {
   final PersistentTabController bottomNavBarController =
       PersistentTabController();
 
-  String currentLangCode = 'en';
+ String currentLangCode = 'en';
 
 //Language Change
   void getSavedLanguage() {

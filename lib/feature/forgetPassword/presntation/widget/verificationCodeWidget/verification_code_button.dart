@@ -78,7 +78,7 @@ class VerificationCodeButton extends StatelessWidget {
               ],
             ),
             orElse: () => Text(
-              AppStrings.verify, // Default button text
+              context.translate(AppStrings.verify), // Default button text
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(3.8),
                   ),

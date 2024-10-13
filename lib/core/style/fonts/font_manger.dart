@@ -2,7 +2,16 @@ import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class FontConsistent {
   static const String fontFamilyAcme = "Acme";
-  static const String fontFamilyCairo = "cairo";
+  static const String fontFamilyCairo = "Cairo";
+
+  static String geLocalozedFontFamily() {
+    final currentLanguage = SharedPrefHelper.getString(PrefKeys.prefsLanguage);
+    if (currentLanguage == 'ar') {
+      return fontFamilyCairo;
+    } else {
+      return fontFamilyAcme;
+    }
+  }
 }
 
 class FontWeightManger {

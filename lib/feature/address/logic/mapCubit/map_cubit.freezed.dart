@@ -501,11 +501,11 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPosition = freezed,
+    Object? currentPosition = null,
     Object? markers = null,
   }) {
     return _then(_$LoadedImpl(
-      freezed == currentPosition
+      null == currentPosition
           ? _value.currentPosition
           : currentPosition // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -543,15 +543,13 @@ class _$LoadedImpl implements Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality()
-                .equals(other.currentPosition, currentPosition) &&
+            (identical(other.currentPosition, currentPosition) ||
+                other.currentPosition == currentPosition) &&
             const DeepCollectionEquality().equals(other._markers, _markers));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(currentPosition),
+  int get hashCode => Object.hash(runtimeType, currentPosition,
       const DeepCollectionEquality().hash(_markers));
 
   @JsonKey(ignore: true)
@@ -1134,10 +1132,10 @@ class __$$ToggleMapStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mapType = freezed,
+    Object? mapType = null,
   }) {
     return _then(_$ToggleMapStateImpl(
-      freezed == mapType
+      null == mapType
           ? _value.mapType
           : mapType // ignore: cast_nullable_to_non_nullable
               as MapType,
@@ -1163,12 +1161,11 @@ class _$ToggleMapStateImpl implements ToggleMapState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ToggleMapStateImpl &&
-            const DeepCollectionEquality().equals(other.mapType, mapType));
+            (identical(other.mapType, mapType) || other.mapType == mapType));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(mapType));
+  int get hashCode => Object.hash(runtimeType, mapType);
 
   @JsonKey(ignore: true)
   @override

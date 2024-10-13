@@ -1,6 +1,6 @@
 {
   "noRouteFound": "No Route Found",
-  "appName": "Elminiawy Patisserie",
+
   "welcomeToElminiawyPatisserie": "Welcome to Elminiawy Patisserie Taste happiness with every bite!",
   "discoverOurWonderfulSelection": "Discover our wonderful selection of fresh pastries and baked goods,crafted with love and passion.",
   "letsGetStarted": "let’s Get Started",
@@ -108,7 +108,7 @@
   "description": "Description",
   "addToCart": "Add To Cart",
   "price": "Price:",
-  "egy": "Egy",
+  "egy": "Pound",
   "pickLocation": "Pick Location",
   "addressNotFoundInThisArea": "Address not found in this area",
   "serviceNotAvailableInThisArea": "Service not available in this area",
@@ -238,7 +238,13 @@
     "currentOrders": "Current Orders",
     "previousOrders": "Previous Orders",
     "accountInformation": "Account Information",
-    "changePassword": "Change Password"
+    "changePassword": "Change Password",
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "Shipping": "Shipping",
+    "Payment": "Payment",
+    "Review": "Review"
 
 
 

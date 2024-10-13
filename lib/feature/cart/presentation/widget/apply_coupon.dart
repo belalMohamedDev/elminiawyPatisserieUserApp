@@ -64,7 +64,7 @@ class ApplyCouponCode extends StatelessWidget {
                                 )
                               : Center(
                                   child: Text(
-                                    AppStrings.apply,
+                                 context.translate(AppStrings.apply)  ,
                                     style: Theme.of(context)
                                         .textTheme
                                         .headlineSmall
@@ -76,7 +76,7 @@ class ApplyCouponCode extends StatelessWidget {
                                 ),
                         ),
                       ),
-                      hintText: AppStrings.enterVoucherCode,
+                      hintText:  context.translate(AppStrings.enterVoucherCode)  ,
                       hintStyle: Theme.of(context)
                           .textTheme
                           .titleMedium!

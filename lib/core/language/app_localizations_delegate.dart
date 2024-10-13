@@ -1,4 +1,5 @@
-import '../common/shared/shared_imports.dart';
+import 'package:elminiawy/core/language/app_localizations.dart';
+import 'package:flutter/material.dart' show Locale, LocalizationsDelegate;
 
 // Defining a custom LocalizationsDelegate for AppLocalizations.
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1,8 +1,8 @@
+import 'dart:convert' show json;
 
-
-import '../common/shared/shared_imports.dart';
-
-
+import 'package:elminiawy/core/language/app_localizations_delegate.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppLocalizations {
   AppLocalizations(this.locale);
@@ -25,6 +25,7 @@ class AppLocalizations {
   Future<void> load() async {
     final jsonString =
         await rootBundle.loadString('lang/${locale.languageCode}.json');
+
 
     final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
 

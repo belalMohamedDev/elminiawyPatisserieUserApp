@@ -13,7 +13,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final TextEditingController userSignUpFirstName = TextEditingController();
   final TextEditingController userSignUpLastName = TextEditingController();
   final TextEditingController userSignUpPhone = TextEditingController();
-
+  final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
   // Repository for handling the registration process
   final RegisterRepository _registerRepository;
 
@@ -36,8 +36,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (event is UserSignUFirstNameEvent) {
         registerButtonValidator(event, emit);
         if (!AppRegex.isNameValid(event.value)) {
-          emit(const SignUpState.userSignUpFirstName(
-              AppStrings.pleaseEnterValidFirstName));
+          emit( SignUpState.userSignUpFirstName(
+                 context.translate(AppStrings.pleaseEnterValidFirstName) ));
         } else {
           emit(const SignUpState.userSignUpFirstName(""));
         }
@@ -46,8 +46,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (event is UserSignUpLastNameEvent) {
         registerButtonValidator(event, emit);
         if (!AppRegex.isNameValid(event.value)) {
-          emit(const SignUpState.userSignUpLastName(
-              AppStrings.pleaseEnterValidLastName));
+          emit( SignUpState.userSignUpLastName(
+                   context.translate(AppStrings.pleaseEnterValidLastName) ));
         } else {
           emit(const SignUpState.userSignUpLastName(""));
         }
@@ -56,8 +56,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (event is UserSignUpPhoneEvent) {
         registerButtonValidator(event, emit);
         if (!AppRegex.isPhoneNumberValid(event.value)) {
-          emit(const SignUpState.userSignUpPhone(
-              AppStrings.pleaseEnterValidPhoneNumber));
+          emit( SignUpState.userSignUpPhone(
+                context.translate(AppStrings.pleaseEnterValidPhoneNumber) ));
         } else {
           emit(const SignUpState.userSignUpPhone(""));
         }
@@ -66,8 +66,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (event is UserSignUpEmailAddressEvent) {
         registerButtonValidator(event, emit);
         if (!AppRegex.isEmailValid(event.value)) {
-          emit(const SignUpState.userSignUpEmailAddress(
-              AppStrings.pleaseEnterValidEmail));
+          emit( SignUpState.userSignUpEmailAddress(
+               context.translate(AppStrings.pleaseEnterValidEmail)));
         } else {
           emit(const SignUpState.userSignUpEmailAddress(""));
         }
@@ -76,8 +76,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (event is UserSignUpPasswordEvent) {
         registerButtonValidator(event, emit);
         if (!AppRegex.isPasswordValid(event.value)) {
-          emit(const SignUpState.userSignUpPassword(
-              AppStrings.pleaseEnterValidSignUpPhoneNumber));
+          emit( SignUpState.userSignUpPassword(
+                context.translate(AppStrings.pleaseEnterValidSignUpPhoneNumber) ));
         } else {
           emit(const SignUpState.userSignUpPassword(""));
         }

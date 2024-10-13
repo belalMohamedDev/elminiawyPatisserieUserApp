@@ -1,7 +1,7 @@
 class AppStrings {
   static const String noRouteFound = "noRouteFound";
 
-  static const String appName = "appName";
+ // static const String appName = "appName";
   static const String welcomeToElminiawyPatisserie =
       "welcomeToElminiawyPatisserie";
   static const String discoverOurWonderfulSelection =
@@ -49,7 +49,7 @@ class AppStrings {
   static const String enterYourPassword = "enterYourPassword";
   static const String enterNewPassword = "enterNewPassword";
   static const String enterConfirmNewPassword = "enterConfirmNewPassword";
-  static const String pleaseEnterValidEmail = "pleaseEnterValidEmail";
+   static const String pleaseEnterValidEmail = "pleaseEnterValidEmail";
   static const String pleaseEnterValidPassword = "pleaseEnterValidPassword";
   static const String loading = "loading";
   static const String orderNum = "orderNum";
@@ -138,7 +138,7 @@ class AppStrings {
   static const String subTotal = "subTotal";
   static const String priceAfterDiscount = "priceAfterDiscount";
   static const String tax = "tax";
-  static const String shipping = "shipping";
+ // static const String shipping = "shipping";
   static const String totalAmount = "totalAmount";
   static const String apply = "apply";
   static const String enterVoucherCode = "enterVoucherCode";
@@ -233,7 +233,7 @@ class AppStrings {
   static const String addNotes = "addNotes";
   static const String typeAnyNoteRelatedToThisOrder =
       "typeAnyNoteRelatedToThisOrder";
-  static const String payment = "payment";
+ // static const String payment = "payment";
   static const String edit = "edit";
   static const String newPasswordAndConfirmPasswordNotMatching =
       "newPasswordAndConfirmPasswordNotMatching";
@@ -280,4 +280,13 @@ class AppStrings {
   static const String previousOrders = "previousOrders";
   static const String accountInformation = "accountInformation";
   static const String changePassword = "changePassword";
+
+
+  static const String one = "1";
+  static const String two = "2";
+
+  static const String three = "3";
+  static const String shipping = "Shipping";
+  static const String payment = "Payment";
+  static const String review = "Review";
 }

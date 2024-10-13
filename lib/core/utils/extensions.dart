@@ -2,8 +2,16 @@ import '../../../../../core/common/shared/shared_imports.dart'; //
 
 extension ContextExt on BuildContext {
   //Language
-  String translate(String langkey) {
-    return AppLocalizations.of(this)!.translate(langkey).toString();
+  // String translate(String langkey) {
+  //   return AppLocalizations.of(this)!.translate(langkey).toString();
+  // }
+  String translate(String langKey) {
+    final localizations = AppLocalizations.of(this);
+    if (localizations != null) {
+      return localizations.translate(langKey) ?? langKey;
+    } else {
+      return langKey; // Return the key if translation is not available
+    }
   }
 
   //Navigation

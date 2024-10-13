@@ -53,7 +53,7 @@ DataProductResponse _$DataProductResponseFromJson(Map<String, dynamic> json) =>
       inWishlist: json['in_wishlist'] as bool?,
       description: json['description'] as String?,
       sId: json['_id'] as String?,
-      price: (json['price'] as num?)?.toInt(),
+      price: (json['price'] as num?)?.toDouble(),
       subCategory: json['subCategory'] as String?,
       image: json['image'] as String?,
       publicId: json['publicId'] as String?,

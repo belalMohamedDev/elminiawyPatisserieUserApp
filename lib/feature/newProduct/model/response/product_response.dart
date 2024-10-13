@@ -49,7 +49,7 @@ class DataProductResponse {
   double? ratingsAverage;
   @JsonKey(name: "_id")
   String? sId;
-  int? price;
+  double? price;
   String? subCategory;
   String? image;
   String? publicId;

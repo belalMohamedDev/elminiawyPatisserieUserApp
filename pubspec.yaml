@@ -134,36 +134,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - .env
-    - asset/image/apple.png
-    - asset/image/facebook.png
-    - asset/image/google.png
-    - asset/image/onBoarding.jpg
-    - asset/image/newItem.png
-    - asset/image/guest_icon_light.png
-    - asset/image/guest_icon.png
-    - asset/image/pick_marker.png
-    - asset/image/navigation.png
-    - asset/image/map.png
-    - asset/image/building.png
-    - asset/image/home.png
-    - asset/image/bag.png
-    - asset/image/location.png
-    - asset/image/picture.png
-    - asset/image/basket.png
-    - asset/image/shopping-bag.png
-    - asset/image/cancel.png
-    - asset/image/order_delivered.png
-    - asset/json/cong.json
-    - asset/image/noCart.svg
-    - asset/image/noOrder.svg
-    - asset/image/whishList.svg
-    - asset/image/noAddress.svg
-    - asset/image/noNotification.svg
-    - asset/image/noSearch.svg
-    - asset/image/noRoute.svg
-    - asset/image/checkOut.png
-    - asset/image/noInternetConnection.svg
-    - asset/image/searchLoading.svg
+    - lang/ar.json
+    - lang/en.json
+    - asset/image/
+    - asset/json/
+
+
 
     
 
@@ -185,7 +161,7 @@ flutter:
         - asset: asset/fonts/Acme-Regular.ttf
 
 
-    - family: cairo
+    - family: Cairo
       fonts:
         - asset: asset/fonts/Cairo-Black.ttf
           weight: 900

@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart';
 
 class FilterBottomSheet extends StatelessWidget {
@@ -6,6 +5,8 @@ class FilterBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return BlocBuilder<SearchBloc, SearchState>(
       builder: (context, state) {
         final searchBloc = context.read<SearchBloc>();
@@ -19,9 +20,12 @@ class FilterBottomSheet extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 30.w, bottom: 15.h),
+                  padding: EdgeInsets.only(
+                      left: isEnLocale ? 30.w : 0,
+                      right: isEnLocale ? 0 : 30.w,
+                      bottom: 15.h),
                   child: Text(
-                  context.translate( AppStrings.sortBy)   ,
+                    context.translate(AppStrings.sortBy),
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           fontSize: 18.sp,
                         ),
@@ -35,25 +39,25 @@ class FilterBottomSheet extends StatelessWidget {
                         children: [
                           buildListTile(
                             context,
-                            context.translate(AppStrings.nameAToZ)  ,
+                            context.translate(AppStrings.nameAToZ),
                             1,
                             searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                       context.translate(AppStrings.nameZToA)       ,
+                            context.translate(AppStrings.nameZToA),
                             2,
                             searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                         context.translate(AppStrings.priceLowToHigh)     ,
+                            context.translate(AppStrings.priceLowToHigh),
                             3,
                             searchBloc.selectedOption,
                           ),
                           buildListTile(
                             context,
-                         context.translate(AppStrings.priceHighToLow)     ,
+                            context.translate(AppStrings.priceHighToLow),
                             4,
                             searchBloc.selectedOption,
                           ),
@@ -70,7 +74,7 @@ class FilterBottomSheet extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 30.h, bottom: 15.h),
                         child: Text(
-                      context.translate( AppStrings.priceRange)     ,
+                          context.translate(AppStrings.priceRange),
                           style:
                               Theme.of(context).textTheme.titleLarge!.copyWith(
                                     fontSize: 18.sp,
@@ -83,11 +87,11 @@ class FilterBottomSheet extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '${ context.translate(AppStrings.egy)} ${searchBloc.selectedRange.start.toInt()}',
+                              '${context.translate(AppStrings.egy)} ${searchBloc.selectedRange.start.toInt()}',
                               style: TextStyle(fontSize: 14.sp),
                             ),
                             Text(
-                              '${ context.translate(AppStrings.egy)} ${searchBloc.selectedRange.end.toInt()}',
+                              '${context.translate(AppStrings.egy)} ${searchBloc.selectedRange.end.toInt()}',
                               style: TextStyle(fontSize: 14.sp),
                             ),
                           ],
@@ -119,7 +123,7 @@ class FilterBottomSheet extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         widget: Text(
-                          context.translate(AppStrings.applyFilter)  ,
+                          context.translate(AppStrings.applyFilter),
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!

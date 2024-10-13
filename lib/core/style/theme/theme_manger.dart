@@ -24,6 +24,8 @@ ThemeData getApplicationTheme(BuildContext context) {
 //
 // //appbar theme
       appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(
+              color: ColorManger.brun, size: responsive.setIconSize(5)),
           systemOverlayStyle: SystemUiOverlayStyle(
               statusBarColor: ColorManger.white,
               statusBarIconBrightness: Brightness.dark),
@@ -36,26 +38,22 @@ ThemeData getApplicationTheme(BuildContext context) {
         titleLarge: getMediumStyle(
           fontSize: responsive.setTextSize(5),
           color: ColorManger.brun,
-          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         //using in profile page
         headlineSmall: getMediumStyle(
           fontSize: responsive.setTextSize(5),
           color: ColorManger.white,
-          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         bodySmall: getMediumStyle(
           fontSize: responsive.setTextSize(5),
           color: Colors.grey.shade500,
-          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         titleSmall: getMediumStyle(
           fontSize: responsive.setTextSize(5),
           color: ColorManger.black,
-          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         bodyLarge: TextStyle(
@@ -66,15 +64,12 @@ ThemeData getApplicationTheme(BuildContext context) {
         titleMedium: getMediumStyle(
           fontSize: responsive.setTextSize(5),
           color: ColorManger.brunLight,
-          fontFamily: FontConsistent.fontFamilyAcme,
         ),
 
         bodyMedium: getMediumStyle(
           fontSize: responsive.setTextSize(5),
           color: Colors.black38,
-          fontFamily: FontConsistent.fontFamilyAcme,
         ),
-
       ),
 
 //
@@ -97,7 +92,7 @@ ThemeData getApplicationTheme(BuildContext context) {
         ),
         errorStyle: TextStyle(
             fontSize: 11.sp,
-            fontFamily: FontConsistent.fontFamilyCairo,
+            fontFamily: FontConsistent.geLocalozedFontFamily(),
             fontWeight: FontWeight.w500),
         prefixIconColor: WidgetStateColor.resolveWith((states) =>
             states.contains(WidgetState.focused)

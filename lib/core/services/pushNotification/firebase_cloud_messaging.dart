@@ -15,20 +15,26 @@ class FirebaseCloudMessaging {
 
   bool hasNotificationPermission = false;
 
-  late final String _subscribeKey;
+
+  // Make _subscribeKey nullable to handle reinitialization safely
+  String? _subscribeKey;
 
   Future<void> init() async {
-    _subscribeKey = await _getValidSubscribeKey();
+      // Only initialize _subscribeKey if it's null
+    if (_subscribeKey == null) {
+      _subscribeKey = await _getValidSubscribeKey();
 
-    if (_subscribeKey.isNotEmpty) {
-      await _requestNotificationPermissions();
+      if (_subscribeKey!.isNotEmpty) {
+        await _requestNotificationPermissions();
+      } else {
+        debugPrint('⚠️ subscribeKey is invalid after sanitizing');
+      }
+
+      FirebaseMessaging.onMessage
+          .listen(FirebaseMessagingNavigator.foreGroundHandler);
     } else {
-      debugPrint('⚠️ subscribeKey is invalid after sanitizing');
+      debugPrint('⚠️ _subscribeKey is already initialized');
     }
-
-    FirebaseMessaging.onMessage
-        .listen(FirebaseMessagingNavigator.foreGroundHandler);
-
 
   }
 
@@ -75,14 +81,17 @@ class FirebaseCloudMessaging {
   /// subscribe notification
   Future<void> _subscribeToNotifications() async {
     isNotificationSubscribe.value = true;
-    await FirebaseMessaging.instance.subscribeToTopic(_subscribeKey);
+    await FirebaseMessaging.instance.subscribeToTopic(_subscribeKey!);
     debugPrint('====🔔 Notification Subscribed 🔔=====');
   }
 
   /// unsubscribe notification
   Future<void> _unsubscribeFromNotifications() async {
     isNotificationSubscribe.value = false;
-    await FirebaseMessaging.instance.unsubscribeFromTopic(_subscribeKey);
+    await FirebaseMessaging.instance.unsubscribeFromTopic(_subscribeKey!);
     debugPrint('====🔕 Notification Unsubscribed 🔕=====');
   }
 }
+
+
+

@@ -12,7 +12,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   // Controllers for the user email and password fields
   final TextEditingController userLoginEmailAddress = TextEditingController();
   final TextEditingController userLoginPassword = TextEditingController();
-
+  final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
   // Global key for the login form
   final loginFormKey = GlobalKey<FormState>();
 
@@ -35,8 +35,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
         // Validate email format
         if (!AppRegex.isEmailValid(event.value)) {
-          emit(const LoginState.userLoginEmailAddress(
-              AppStrings.pleaseEnterValidEmail));
+          emit(LoginState.userLoginEmailAddress(
+              context.translate(AppStrings.pleaseEnterValidEmail)));
         } else {
           emit(const LoginState.userLoginEmailAddress(""));
         }
@@ -47,8 +47,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
         // Validate password format
         if (!AppRegex.isPasswordValid(event.value)) {
-          emit(const LoginState.userLoginPassword(
-              AppStrings.pleaseEnterValidPassword));
+          emit( LoginState.userLoginPassword(
+           context.translate(AppStrings.pleaseEnterValidPassword) ));
         }
       }
 

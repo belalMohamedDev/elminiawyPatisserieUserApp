@@ -9,13 +9,13 @@ class UserNotificationBody extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
-
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
     return BlocBuilder<UserNotificationCubit, UserNotificationState>(
       builder: (context, state) {
         // Handle loading and error states with a common method
         if (state is UserNotificationLoading ||
             state is UserNotificationError) {
-          return _userNotificationErrorAndLoadingState(responsive);
+          return _userNotificationErrorAndLoadingState(responsive, isEnLocale);
         }
 
         // Handle the case when the notification list is empty
@@ -87,7 +87,7 @@ class UserNotificationBody extends StatelessWidget {
                         backgroundColor: ColorManger.redError,
                         foregroundColor: ColorManger.white,
                         icon: IconlyBold.delete,
-                        label: context.translate(AppStrings.delete) ,
+                        label: context.translate(AppStrings.delete),
                       ),
                     ],
                   ),
@@ -162,9 +162,11 @@ class UserNotificationBody extends StatelessWidget {
   }
 
   /// Displays a shimmer effect for loading states or an error placeholder.
-  Padding _userNotificationErrorAndLoadingState(ResponsiveUtils responsive) {
+  Padding _userNotificationErrorAndLoadingState(
+      ResponsiveUtils responsive, bool isEnLocale) {
     return Padding(
-      padding: responsive.setPadding(left: 6, right: 9, top: 2),
+      padding: responsive.setPadding(
+          left: isEnLocale ? 6 : 9, right: isEnLocale ? 9 : 6, top: 2),
       child: ListView.builder(
         itemCount: 12, // Arbitrary count for loading placeholders
         scrollDirection: Axis.vertical,
