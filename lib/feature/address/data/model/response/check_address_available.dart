@@ -1,21 +1,24 @@
 class CheckLocationAvailableResponse {
   bool? status;
   String? message;
-  String? address;
+  String? englishAddress;
+  String? arabicAddress;
   bool? storeAddressAvailable;
   bool? isAddressAvailable;
 
   CheckLocationAvailableResponse(
       {this.status,
       this.message,
-      this.address,
+      this.englishAddress,
+      this.arabicAddress,
       this.storeAddressAvailable,
       this.isAddressAvailable});
 
   CheckLocationAvailableResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    address = json['address'];
+    arabicAddress = json['arabicAddress'];
+    englishAddress = json['englishAddress'];
     storeAddressAvailable = json['StoreAddressAvailable'];
     isAddressAvailable = json['isAddressAvailable'];
   }
@@ -24,7 +27,8 @@ class CheckLocationAvailableResponse {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['status'] = status;
     data['message'] = message;
-    data['address'] = address;
+    data['englishAddress'] = englishAddress;
+    data['arabicAddress'] = arabicAddress;
     data['StoreAddressAvailable'] = storeAddressAvailable;
     data['isAddressAvailable'] = isAddressAvailable;
     return data;

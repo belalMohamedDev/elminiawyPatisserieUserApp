@@ -343,5 +343,5 @@ export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 export '../../../feature/onBoarding/presentation/widget/get_started_button.dart';
-export '../../../feature/onBoarding/presentation/widget/sign_in_text_span.dart';
+export '../../../feature/onBoarding/presentation/widget/continue_without_signing_up.dart';
 export '../../../feature/onBoarding/presentation/widget/title_and_head_line_text.dart';

@@ -12,6 +12,7 @@ class AppStrings {
   static const String signInWithGoogle = "signInWithGoogle";
   static const String signInWithApple = "signInWithApple";
   static const String signIn = "signIn";
+  static const String continueWithoutSigningUp = "continueWithoutSigningUp";
   static const String welcomeBack = "welcomeBack";
   static const String toGetStartedSignInToYourAccount =
       "toGetStartedSignInToYourAccount";

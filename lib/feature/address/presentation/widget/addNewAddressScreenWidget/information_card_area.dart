@@ -18,8 +18,10 @@ class InformationCardArea extends StatelessWidget {
         String regionAddress = '';
 
         if (mapCuibt.checkLocationAvailableResponse != null &&
-            mapCuibt.checkLocationAvailableResponse!.address != null) {
-          regionAddress = mapCuibt.checkLocationAvailableResponse!.address!;
+            mapCuibt.checkLocationAvailableResponse!.englishAddress != null) {
+          regionAddress = isEnLocale
+              ? mapCuibt.checkLocationAvailableResponse!.englishAddress!
+              : mapCuibt.checkLocationAvailableResponse!.arabicAddress!;
         } else if (getAddressResponseData != null &&
             getAddressResponseData!.region != null) {
           regionAddress = getAddressResponseData!.region!;
@@ -66,8 +68,6 @@ class InformationCardArea extends StatelessWidget {
                         ],
                       ),
                     ),
-                 
-
                     Padding(
                       padding: EdgeInsets.only(
                           left: isEnLocale ? 20.w : 0,

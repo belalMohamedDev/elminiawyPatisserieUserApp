@@ -13,7 +13,8 @@ class AppLogout {
     final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
     await SharedPrefHelper.clearAllSecuredData();
     SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, false);
-    SharedPrefHelper.removeData(PrefKeys.locationArea);
+    SharedPrefHelper.removeData(PrefKeys.enLocationArea);
+    SharedPrefHelper.removeData(PrefKeys.arLocationArea);
     SharedPrefHelper.removeData(PrefKeys.longAddressHome);
     SharedPrefHelper.removeData(PrefKeys.latAddressHome);
 

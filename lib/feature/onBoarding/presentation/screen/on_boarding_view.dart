@@ -64,11 +64,11 @@ class OnBoardingView extends StatelessWidget {
               // Add vertical space between the button and the "Already have an account?" text
               SizedBox(
                 height: responsive
-                    .setHeight(3), // Dynamic height based on screen size
+                    .setHeight(2), // Dynamic height based on screen size
               ),
 
               // Text span that allows users to navigate to the sign-in page if they already have an account
-              const AlreadyAccountTextSpan(),
+              const ContinueWithoutSigningUp(),
             ],
           ),
         ),

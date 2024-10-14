@@ -14,9 +14,8 @@ class AlreadyHaveAnAccountText extends StatelessWidget {
       alignment: Alignment.topCenter, // Center the text horizontally
       child: Text.rich(
         TextSpan(
-          text:
-              context.translate(
-              AppStrings.alreadyHaveAccount)   , // "Already have an account?" text
+          text: context.translate(
+              AppStrings.alreadyHaveAccount), // "Already have an account?" text
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 fontSize: responsive.setTextSize(4), // Responsive font size
               ),
@@ -34,12 +33,11 @@ class AlreadyHaveAnAccountText extends StatelessWidget {
                   // Navigate to the login route when tapped
                   context.pushReplacementNamed(Routes.loginRoute);
                 },
-              text:   context.translate(AppStrings.signIn)    , // "Sign In" text
+              text: context.translate(AppStrings.signIn), // "Sign In" text
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  fontSize:
-                      responsive.setTextSize(4.5), // Larger font for emphasis
-                  fontFamily:
-                      FontConsistent.fontFamilyAcme), // Custom font family
+                    fontSize:
+                        responsive.setTextSize(4.5), // Larger font for emphasis
+                  ), // Custom font family
             ),
           ],
         ),

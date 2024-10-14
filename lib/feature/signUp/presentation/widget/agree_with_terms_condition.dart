@@ -24,14 +24,15 @@ class AgreeWithTermsCondition extends StatelessWidget {
                     .read<SignUpBloc>()
                     .add(UserSignUpAgreeWithEvent(value!));
               },
+
               activeColor:
-                  ColorManger.brun, // Set the active color of the checkbox
+                  ColorManger.brunLight, // Set the active color of the checkbox
 
               // Customize the border of the checkbox when inactive
               side: WidgetStateBorderSide.resolveWith(
                 (states) => BorderSide(
-                  width: responsive.setWidth(1), // Responsive border width
-                  color: ColorManger.brun, // Border color when unchecked
+                  width: responsive.setWidth(0.3), // Responsive border width
+                  color: ColorManger.brunLight, // Border color when unchecked
                 ),
               ),
 
@@ -44,8 +45,8 @@ class AgreeWithTermsCondition extends StatelessWidget {
             // Text describing the terms and conditions with underline
             Text.rich(
               TextSpan(
-                text:   context.translate(
-                    AppStrings.agreeWith) , // Base text: "I agree with"
+                text: context.translate(
+                    AppStrings.agreeWith), // Base text: "I agree with"
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontSize:
                         responsive.setTextSize(3.5)), // Responsive text size
@@ -58,7 +59,7 @@ class AgreeWithTermsCondition extends StatelessWidget {
                   ),
                   // Link-like text for "Terms and Conditions"
                   TextSpan(
-                    text:  context.translate(AppStrings.termsCondition)  ,
+                    text: context.translate(AppStrings.termsCondition),
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           decoration: TextDecoration
                               .underline, // Underline "Terms and Conditions"

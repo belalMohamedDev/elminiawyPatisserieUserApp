@@ -235,7 +235,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 longitude: mapCuibt.targetPosition.longitude
                                     .toString(),
                                 region: mapCuibt.checkLocationAvailableResponse!
-                                        .address ??
+                                        .englishAddress ??
                                     '');
                           } else {
                             await userAddressCubit.addNewAddress(
@@ -244,7 +244,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                                 longitude: mapCuibt.targetPosition.longitude
                                     .toString(),
                                 region: mapCuibt
-                                    .checkLocationAvailableResponse!.address!);
+                                    .checkLocationAvailableResponse!.englishAddress!);
                           }
                         }
                       },

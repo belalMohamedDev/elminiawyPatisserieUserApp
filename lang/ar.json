@@ -6,7 +6,7 @@
   "letsGetStarted": "هيا بنا لنبدأ !",
   "alreadyHaveAnAccount": "هل لديك حساب بالفعل؟",
   "signInWithGoogle": "تسجيل الدخول باستخدام جوجل",
-  "signInWithApple": "تسجيل الدخول باستخدام أبل",
+  "signInWithApple": "تسجيل الدخول باستخدام إبل",
   "signIn": "تسجيل الدخول",
   "welcomeBack": "مرحبًا بعودتك!",
   "toGetStartedSignInToYourAccount": "للبدء، سجل الدخول إلى حسابك.",
@@ -20,6 +20,7 @@
   "priceRange": "نطاق السعر",
   "opps": "عذرًا! ....",
   "office": "مكتب",
+  "continueWithoutSigningUp":"استمرار بدون تسجيل",
 
   "somethingWrongWithYourConnection": "هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد لحظة.",
   "area": "المنطقة",

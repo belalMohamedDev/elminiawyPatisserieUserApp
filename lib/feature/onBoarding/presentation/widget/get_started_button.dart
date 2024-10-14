@@ -16,29 +16,23 @@ class GetStartedButton extends StatelessWidget {
     return CustomButton(
       // Action to be performed when the button is pressed
       onPressed: () async {
-        // Navigate to the next screen (e.g., Map screen) and remove all previous routes
-        context.pushNamedAndRemoveUntil(Routes.map);
+        // Navigate to the login screen and remove all previous routes
+        context.pushNamedAndRemoveUntil(Routes.loginRoute);
 
         // Store user progress in shared preferences to mark onboarding as completed
         await SharedPrefHelper.setData(
             PrefKeys.prefsKeyOnBoardingScreenView, true);
-
-        // Store anonymous user data in shared preferences (if applicable)
-        await SharedPrefHelper.setData(PrefKeys.prefsKeyAnonymousUser, true);
-
-        // Store login map status in shared preferences (if applicable)
-        await SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
       },
       // The text displayed on the button
       widget: Text(
-          context.translate(AppStrings.letsGetStarted)   ,
-  // The string displayed in the button (e.g., "Let's Get Started")
+        context.translate(AppStrings.letsGetStarted),
+        // The string displayed in the button (e.g., "Let's Get Started")
 
         // Style the text using the headlineSmall from the app's theme,
         // and adjust the font size dynamically based on screen size.
         style: Theme.of(context).textTheme.headlineSmall!.copyWith(
               fontSize: responsive.setTextSize(
-                  3.5), // Dynamically set the font size for better responsiveness
+                  4), // Dynamically set the font size for better responsiveness
             ),
       ),
     );

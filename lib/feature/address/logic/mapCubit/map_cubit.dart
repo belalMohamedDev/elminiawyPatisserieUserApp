@@ -7,9 +7,8 @@ class MapCubit extends Cubit<MapState> {
   MapCubit(this.places, this._userAddressRepository)
       : super(const MapState.initial());
 
-
   final UserAddressRepositoryImplement _userAddressRepository;
-  
+
   final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
 
   final GoogleMapsPlaces
@@ -114,6 +113,8 @@ class MapCubit extends Cubit<MapState> {
 
 // Check if the address is available
   Future<void> checkAddressAvailableFetch(LatLng currentLocation) async {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     emit(const MapState.checkAddressAvailableLoading());
 
     final response = await _userAddressRepository.checkAddressAvailable(
@@ -125,7 +126,9 @@ class MapCubit extends Cubit<MapState> {
 
     response.when(
       success: (dataResponse) {
-        textEditingSearchText = dataResponse.address!;
+        textEditingSearchText = isEnLocale
+            ? dataResponse.englishAddress!
+            : dataResponse.arabicAddress!;
         checkLocationAvailableResponse = dataResponse;
         emit(MapState.checkAddressAvailableSuccess(dataResponse));
       },
@@ -159,8 +162,10 @@ class MapCubit extends Cubit<MapState> {
 
   // Set the location String
   void setLocationToHome() async {
-    homeScreenCurrentAddress =
-        await SharedPrefHelper.getSecuredString(PrefKeys.locationArea);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
+    homeScreenCurrentAddress = await SharedPrefHelper.getSecuredString(
+        isEnLocale ? PrefKeys.enLocationArea : PrefKeys.arLocationArea);
     emit(MapState.setStringHomeLocationState(homeScreenCurrentAddress));
   }
 

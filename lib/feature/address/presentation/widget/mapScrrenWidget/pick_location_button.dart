@@ -31,15 +31,17 @@ class PickLocationButton extends StatelessWidget {
                 mapCubit.checkLocationAvailableResponse!.isAddressAvailable ==
                     true) {
               bool loginMap =
-                   SharedPrefHelper.getBool(PrefKeys.prefsSetLoginMap);
+                  SharedPrefHelper.getBool(PrefKeys.prefsSetLoginMap);
               if (isUpdateMap == true) {
                 mapCubit.moveToLocation(
                     position: mapCubit.targetPosition,
                     controller: mapCubit.newAddressMapController);
                 Navigator.pop(context);
               } else if (isHomeMap == true) {
-                await SharedPrefHelper.setSecuredString(PrefKeys.locationArea,
-                    mapCubit.checkLocationAvailableResponse!.address!);
+                await SharedPrefHelper.setSecuredString(PrefKeys.enLocationArea,
+                    mapCubit.checkLocationAvailableResponse!.englishAddress!);
+                await SharedPrefHelper.setSecuredString(PrefKeys.arLocationArea,
+                    mapCubit.checkLocationAvailableResponse!.arabicAddress!);
                 await SharedPrefHelper.setData(
                     PrefKeys.latAddressHome, mapCubit.targetPosition.latitude);
                 await SharedPrefHelper.setData(PrefKeys.longAddressHome,
@@ -48,8 +50,11 @@ class PickLocationButton extends StatelessWidget {
                 mapCubit.setLocationToHome();
                 Navigator.pop(context);
               } else if (loginMap == true) {
-                await SharedPrefHelper.setSecuredString(PrefKeys.locationArea,
-                    mapCubit.checkLocationAvailableResponse!.address!);
+                await SharedPrefHelper.setSecuredString(PrefKeys.enLocationArea,
+                    mapCubit.checkLocationAvailableResponse!.englishAddress!);
+                await SharedPrefHelper.setSecuredString(PrefKeys.arLocationArea,
+                    mapCubit.checkLocationAvailableResponse!.arabicAddress!);
+
                 await SharedPrefHelper.setData(
                     PrefKeys.latAddressHome, mapCubit.targetPosition.latitude);
                 await SharedPrefHelper.setData(PrefKeys.longAddressHome,

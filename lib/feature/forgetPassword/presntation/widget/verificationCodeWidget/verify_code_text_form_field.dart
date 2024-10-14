@@ -21,7 +21,7 @@ class VerifyCodeTextFormField extends StatelessWidget {
       margin: const EdgeInsets.all(2), // Margin between input fields
       length: 6, // Length of the verification code
       itemSize:
-          responsive.setIconSize(4), // Responsive size of each input field
+          responsive.setIconSize(10), // Responsive size of each input field
       cursorColor:
           ColorManger.primary, // Cursor color to match the primary theme
       // Called when the user completes entering the verification code

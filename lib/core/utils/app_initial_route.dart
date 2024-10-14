@@ -17,7 +17,7 @@ class AppInitialRoute {
   getStoreDataAndCheckInitialRoute() async {
     var results = await Future.wait([
       SharedPrefHelper.getSecuredString(PrefKeys.refreshToken),
-      SharedPrefHelper.getSecuredString(PrefKeys.locationArea),
+      SharedPrefHelper.getSecuredString(PrefKeys.enLocationArea),
     ]);
 
     bool? isOnBoardingScreenView =
