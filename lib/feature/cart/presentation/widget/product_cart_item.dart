@@ -17,7 +17,7 @@ class ProductCartItem extends StatelessWidget {
             backgroundColor: ColorManger.redError,
             foregroundColor: ColorManger.backgroundItem,
             icon: IconlyBold.delete,
-            label: 'Delete',
+            label: context.translate(AppStrings.delete),
           ),
         ],
       ),
@@ -155,10 +155,8 @@ class ProductCartItem extends StatelessWidget {
       children: [
         Text(
           cartItems.product!.title!,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 12.sp),
+          style:
+              Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
         ),
         SizedBox(
           height: 5.h,
@@ -191,11 +189,9 @@ class ProductCartItem extends StatelessWidget {
           height: 5.h,
         ),
         Text(
-          'Total Price:     ${cartItems.totalItemPrice!}.00  \$',
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-              fontFamily: FontConsistent.fontFamilyAcme,
-              color: ColorManger.brun,
-              fontSize: 11.sp),
+          '${context.translate(AppStrings.totalPrice)}   ${cartItems.totalItemPrice!}  ${context.translate(AppStrings.egy)}',
+          style:
+              Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
         ),
       ],
     );

@@ -86,6 +86,7 @@
   "additionalDirectionsOptional": "Additional directions (optional)",
   "pleaseEnterAValidBuildingName": "Please enter a valid building name",
   "house": "House",
+  "office": "Office",
   "buildingName": "Building name",
   "pleaseEnterAValidCompany": "Please enter a valid company",
   "pleaseEnterAValidApt": "Please enter a valid apt .no.",

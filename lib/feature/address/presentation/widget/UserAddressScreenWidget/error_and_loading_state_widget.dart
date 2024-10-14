@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class UserAddressErrorAndLoadingStateWidget extends StatelessWidget {
@@ -8,9 +7,12 @@ class UserAddressErrorAndLoadingStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return Padding(
       padding: EdgeInsets.only(
-        right: 40.w,
+        right: isEnLocale ? 40.w : 20.w,
+        left: isEnLocale ? 0 : 10.w,
         top: 10.h,
       ),
       child: ListView.builder(

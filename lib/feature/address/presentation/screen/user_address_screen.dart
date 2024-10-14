@@ -1,6 +1,3 @@
-
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class UserAddressView extends StatelessWidget {
@@ -8,19 +5,16 @@ class UserAddressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(context.translate(AppStrings.myAddress) ,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-          
-                fontSize: 16.sp)),
-        leading: IconButton(
-          icon: const Icon(IconlyBroken.arrowLeft),
-          onPressed: () {
-            context.pop();
-          },
-        ),
+        title: Text(context.translate(AppStrings.myAddress),
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: 16.sp)),
         actions: [
           BlocBuilder<UserAddressCubit, UserAddressState>(
             builder: (context, state) {
@@ -28,7 +22,9 @@ class UserAddressView extends StatelessWidget {
                       state is GetAllAddressLoading
                   ? const SizedBox()
                   : Padding(
-                      padding: EdgeInsets.only(right: 15.w),
+                      padding: EdgeInsets.only(
+                          right: isEnLocale ? 15.w : 0,
+                          left: isEnLocale ? 0 : 18.w),
                       child: InkWell(
                           onTap: () {
                             Navigator.of(context, rootNavigator: !false)
@@ -44,7 +40,10 @@ class UserAddressView extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 20.w, top: 10.h),
+        padding: EdgeInsets.only(
+            left: isEnLocale ? 20.w : 0,
+            right: isEnLocale ? 0 : 20.w,
+            top: 10.h),
         child: const UserAddressBody(),
       ),
     );

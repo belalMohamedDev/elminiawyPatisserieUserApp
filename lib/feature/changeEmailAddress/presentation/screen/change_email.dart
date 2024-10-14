@@ -8,17 +8,11 @@ class ChangeEmailScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(context.translate(AppStrings.changeEmailAddress) ,
+          title: Text(context.translate(AppStrings.changeEmailAddress),
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
                   .copyWith(fontSize: 16.sp)),
-          leading: IconButton(
-            icon: const Icon(IconlyBroken.arrowLeft),
-            onPressed: () {
-              context.pop();
-            },
-          ),
         ),
         body: const ChangeEmailBody());
   }

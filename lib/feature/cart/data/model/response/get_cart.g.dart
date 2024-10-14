@@ -73,9 +73,9 @@ GetCartItems _$GetCartItemsFromJson(Map<String, dynamic> json) => GetCartItems(
           ? null
           : GetCartProduct.fromJson(json['product'] as Map<String, dynamic>),
       quantity: (json['quantity'] as num?)?.toInt(),
-      price: (json['price'] as num?)?.toInt(),
+      price: (json['price'] as num?)?.toDouble(),
       sId: json['_id'] as String?,
-      totalItemPrice: (json['totalItemPrice'] as num?)?.toInt(),
+      totalItemPrice: (json['totalItemPrice'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$GetCartItemsToJson(GetCartItems instance) =>

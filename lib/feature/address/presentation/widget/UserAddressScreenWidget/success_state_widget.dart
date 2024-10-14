@@ -7,6 +7,8 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return BlocBuilder<UserAddressCubit, UserAddressState>(
       builder: (context, state) {
         final userAddress = context.read<UserAddressCubit>();
@@ -32,7 +34,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                             backgroundColor: ColorManger.redError,
                             foregroundColor: ColorManger.white,
                             icon: IconlyBold.delete,
-                            label:    context.translate(AppStrings.delete) ,
+                            label: context.translate(AppStrings.delete),
                           ),
                           SlidableAction(
                             onPressed: (context) {
@@ -59,7 +61,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                             backgroundColor: ColorManger.backgroundItem,
                             foregroundColor: ColorManger.brown,
                             icon: IconlyBold.edit,
-                            label: context.translate(AppStrings.edit)  ,
+                            label: context.translate(AppStrings.edit),
                           ),
                         ],
                       ),
@@ -86,31 +88,27 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleLarge!
-                                    .copyWith(
-                                     
-                                        fontSize: 16.sp),
+                                    .copyWith(fontSize: 16.sp),
                               ),
                               Text(
                                 userAddress.addressDataList[index].phone!,
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleLarge!
-                                    .copyWith(
-                                      
-                                        fontSize: 11.sp),
+                                    .copyWith(fontSize: 11.sp),
                                 maxLines: 1,
                                 textAlign: TextAlign.start,
                                 overflow: TextOverflow.ellipsis,
                               ),
                               ConstrainedBox(
-                                constraints: BoxConstraints(maxWidth: 300.w),
+                                constraints: BoxConstraints(
+                                    maxWidth: isEnLocale ? 300.w : 250.w),
                                 child: Text(
                                   userAddress.addressDataList[index].region!,
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleLarge!
                                       .copyWith(
-                                        
                                           color: ColorManger.grey,
                                           fontSize: 11.sp),
                                   maxLines: 1,

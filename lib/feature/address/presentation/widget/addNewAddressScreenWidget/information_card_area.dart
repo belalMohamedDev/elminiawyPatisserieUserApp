@@ -10,6 +10,8 @@ class InformationCardArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return BlocBuilder<MapCubit, MapState>(
       builder: (context, state) {
         final mapCuibt = context.read<MapCubit>();
@@ -42,7 +44,8 @@ class InformationCardArea extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                        left: 12.w,
+                        left: isEnLocale ? 12.w : 0.w,
+                        right: isEnLocale ? 0 : 12.w,
                         top: 12.h,
                       ),
                       child: Row(
@@ -63,12 +66,15 @@ class InformationCardArea extends StatelessWidget {
                         ],
                       ),
                     ),
-                    //   mapCubit.checkLocationAvailableResponse!.address =
+                 
 
                     Padding(
-                      padding: EdgeInsets.only(left: 20.w, top: 5.h),
+                      padding: EdgeInsets.only(
+                          left: isEnLocale ? 20.w : 0,
+                          right: isEnLocale ? 0 : 20.w,
+                          top: 5.h),
                       child: ConstrainedBox(
-                        constraints: BoxConstraints(maxWidth: 250.w),
+                        constraints: BoxConstraints(maxWidth: 220.w),
                         child: Text(regionAddress,
                             maxLines: 1,
                             textAlign: TextAlign.start,
@@ -83,7 +89,10 @@ class InformationCardArea extends StatelessWidget {
                 ),
                 const Spacer(),
                 Padding(
-                  padding: EdgeInsets.only(right: 20.w, top: 2.h),
+                  padding: EdgeInsets.only(
+                      right: isEnLocale ? 20.w : 0,
+                      left: isEnLocale ? 0.w : 20,
+                      top: 2.h),
                   child: InkWell(
                     onTap: () async {
                       Navigator.push(
@@ -98,7 +107,7 @@ class InformationCardArea extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text(context.translate(AppStrings.change) ,
+                    child: Text(context.translate(AppStrings.change),
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!

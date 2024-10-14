@@ -1,5 +1,3 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ChangePasswordScreen extends StatelessWidget {
@@ -10,19 +8,13 @@ class ChangePasswordScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(context.translate(AppStrings.changeUserPassword) ,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-          
-                fontSize: 16.sp)),
-        leading: IconButton(
-          icon: const Icon(IconlyBroken.arrowLeft),
-          onPressed: () {
-            context.pop();
-          },
-        ),
+        title: Text(context.translate(AppStrings.changeUserPassword),
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: 16.sp)),
       ),
       body: const ChangeUserPasswordBody(),
     );
   }
 }
-

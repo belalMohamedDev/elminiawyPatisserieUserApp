@@ -27,6 +27,7 @@ class AppStrings {
   static const String somethingWrongWithYourConnection =
       "somethingWrongWithYourConnection";
   static const String area = "area";
+  static const String office = "office";
 
   static const String thisAccountNotAccessInThisApp =
       "thisAccountNotAccessInThisApp";

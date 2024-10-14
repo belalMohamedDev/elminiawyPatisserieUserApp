@@ -1,5 +1,3 @@
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class CustomProfileCard extends StatelessWidget {
@@ -20,6 +18,8 @@ class CustomProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return Column(
       children: [
         Divider(color: ColorManger.backgroundItem),
@@ -40,14 +40,16 @@ class CustomProfileCard extends StatelessWidget {
                   width: 20.w,
                 ),
                 Text(title,
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                   
-                        fontSize: 12.sp)),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 12.sp)),
                 const Spacer(),
                 Text(subTitle ?? '',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                 
-                        fontSize: 13.sp)),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 13.sp)),
                 SizedBox(
                   width: 7.w,
                 ),
@@ -55,7 +57,9 @@ class CustomProfileCard extends StatelessWidget {
                     ? subTitle != null
                         ? const SizedBox()
                         : Icon(
-                            IconlyBroken.arrowRight2,
+                            isEnLocale
+                                ? IconlyBroken.arrowRight2
+                                : IconlyBroken.arrowLeft2,
                             color: ColorManger.brun,
                             size: 18.sp,
                           )

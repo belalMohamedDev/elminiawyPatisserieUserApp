@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'product_based_on_category_state.dart';
@@ -26,7 +25,7 @@ class ProductBasedOnCategoryCubit extends Cubit<ProductBasedOnCategoryState> {
           subCategoryProductData = [
             SubCategoryProductData(
               id: "All",
-              title: "All",
+              title: "All Item",
               products: dataResponse.allProducts ?? [],
             ),
             ...?dataResponse.data,
@@ -39,8 +38,7 @@ class ProductBasedOnCategoryCubit extends Cubit<ProductBasedOnCategoryState> {
       },
       failure: (error) {
         emit(
-          ProductBasedOnCategoryState.getProductError(
-            error),
+          ProductBasedOnCategoryState.getProductError(error),
         );
       },
     );

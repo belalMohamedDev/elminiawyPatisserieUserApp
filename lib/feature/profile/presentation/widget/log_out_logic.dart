@@ -3,6 +3,8 @@ import '../../../../../core/common/shared/shared_imports.dart'; //
 BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
   // Initialize the ResponsiveUtils to handle responsive layout adjustments.
   final responsive = ResponsiveUtils(context);
+  bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
   return BlocListener<LogOutCubit, LogOutState>(
     listener: (context, state) async {
       if (state is LogOutSuccess) {
@@ -36,8 +38,13 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                       borderRadius: BorderRadius.circular(15.r),
                     ),
                     backgroundColor: ColorManger.backgroundItem,
-                    contentPadding: EdgeInsets.only(left: 16.w),
-                    titlePadding: EdgeInsets.only(top: 25.h, left: 16.w),
+                    contentPadding: EdgeInsets.only(
+                        left: isEnLocale ? 16.w : 0,
+                        right: isEnLocale ? 0 : 16.w),
+                    titlePadding: EdgeInsets.only(
+                        top: 25.h,
+                        left: isEnLocale ? 16.w : 0,
+                        right: isEnLocale ? 0 : 16.w),
                     title: Text(
                       context.translate(AppStrings.confirmLogout),
                       style: Theme.of(context)
@@ -62,8 +69,11 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                                 .copyWith(fontSize: responsive.setTextSize(4))),
                       ],
                     ),
-                    actionsPadding:
-                        EdgeInsets.only(top: 20.h, right: 22.w, bottom: 20.h),
+                    actionsPadding: EdgeInsets.only(
+                        top: 20.h,
+                        right: isEnLocale ? 22.w : 0,
+                        left: isEnLocale ? 0 : 22.w,
+                        bottom: 20.h),
                     actions: <Widget>[
                       TextButton(
                         onPressed: () {
@@ -90,6 +100,7 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
                               Navigator.of(context).pop(true);
                             },
                             child: Text(context.translate(AppStrings.logOut),
+                                textAlign: TextAlign.center,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headlineSmall!

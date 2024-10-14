@@ -18,21 +18,23 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(context.translate(AppStrings.newAddress),
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontFamily: FontConsistent.fontFamilyAcme,
-                color: ColorManger.brun,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+    
                 fontSize: 16.sp)),
         leading: IconButton(
-          icon: const Icon(IconlyBroken.arrowLeft),
+          icon: Icon(
+              isEnLocale ? IconlyBroken.arrowLeft : IconlyBroken.arrowRight),
           onPressed: () {
             context.read<MapCubit>().checkLocationAvailableResponse = null;
 
             context.read<MapCubit>().textEditingSearchText =
-               context.translate(AppStrings.findYourLocation) ;
+                context.translate(AppStrings.findYourLocation);
 
             context.pop();
           },
@@ -55,11 +57,11 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
 
       final userAddressCubit = context.read<UserAddressCubit>();
       userAddressCubit.aliasData =
-          widget.getAddressResponseData!.alias ?? context.translate(AppStrings.apartment) ;
+          widget.getAddressResponseData!.alias ?? "Apartment";
       userAddressCubit.regionAreaIndex = userAddressCubit.regionArea.indexWhere(
           (element) =>
-              element['text'] ==
-              (widget.getAddressResponseData!.alias ?? context.translate(AppStrings.apartment)));
+              element['textEn'] ==
+              (widget.getAddressResponseData!.alias ?? "Apartment"));
 
       userAddressCubit.buildingNameController.text =
           widget.getAddressResponseData?.buildingName ?? '';
@@ -86,7 +88,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
 
       userAddressCubit.clearAllControllers();
       userAddressCubit.regionAreaIndex = userAddressCubit.regionArea
-          .indexWhere((element) => element['text'] == (context.translate(AppStrings.apartment) ));
+          .indexWhere((element) => element['textEn'] == ("Apartment"));
     }
   }
 }

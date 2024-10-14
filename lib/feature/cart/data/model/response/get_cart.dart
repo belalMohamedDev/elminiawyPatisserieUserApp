@@ -69,19 +69,18 @@ class GetUserCart {
 class GetCartItems {
   GetCartProduct? product;
   int? quantity;
-  int? price;
+  double? price;
   @JsonKey(name: "_id")
   String? sId;
-  int? totalItemPrice;
+  double? totalItemPrice;
 
-
-  GetCartItems(
-      {this.product,
-      this.quantity,
-      this.price,
-      this.sId,
-      this.totalItemPrice,
-      });
+  GetCartItems({
+    this.product,
+    this.quantity,
+    this.price,
+    this.sId,
+    this.totalItemPrice,
+  });
 
   //from json
   factory GetCartItems.fromJson(Map<String, dynamic> json) =>

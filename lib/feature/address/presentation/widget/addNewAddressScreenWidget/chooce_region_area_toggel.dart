@@ -10,6 +10,8 @@ class ChooceRegionAreaFromToggel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return SizedBox(
       height: 32.h,
       child: BlocBuilder<UserAddressCubit, UserAddressState>(
@@ -27,15 +29,15 @@ class ChooceRegionAreaFromToggel extends StatelessWidget {
                           index: index,
                           alias: context
                               .read<UserAddressCubit>()
-                              .regionArea[index]["text"]);
+                              .regionArea[index]["textEn"]);
                     },
                     child: RegionAreaWidget(
                       index: index,
                       imagePath: context
                           .read<UserAddressCubit>()
                           .regionArea[index]["imagePath"],
-                      text: context.read<UserAddressCubit>().regionArea[index]
-                          ["text"],
+                      text: isEnLocale? context.read<UserAddressCubit>().regionArea[index]["textEn"]: 
+                      context.read<UserAddressCubit>().regionArea[index]["textAr"],
                     ),
                   ),
                 );

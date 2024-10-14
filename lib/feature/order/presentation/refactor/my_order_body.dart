@@ -24,6 +24,8 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return Column(
       children: [
         Padding(
@@ -35,11 +37,11 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
                 borderRadius: BorderRadius.circular(8.r)),
             child: TabBar(
               controller: _tabController,
-              tabs:  [
+              tabs: [
                 Tab(
-                  text:context.translate(AppStrings.currentOrders) ,
+                  text: context.translate(AppStrings.currentOrders),
                 ),
-                Tab(text:context.translate(AppStrings.previousOrders) ),
+                Tab(text: context.translate(AppStrings.previousOrders)),
               ],
               labelColor: ColorManger.white, // Text color of selected tab
               unselectedLabelColor: ColorManger.white,
@@ -53,17 +55,21 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
                   .copyWith(fontSize: responsive.setTextSize(4)),
 
               indicatorSize: TabBarIndicatorSize.tab,
-              dividerColor: ColorManger.white,
+              dividerColor: Colors.transparent,
               indicator: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  topLeft:
-                      Radius.circular(_tabController.index == 0 ? 8.r : 0.r),
-                  bottomLeft:
-                      Radius.circular(_tabController.index == 0 ? 8.r : 0.r),
-                  bottomRight:
-                      Radius.circular(_tabController.index == 1 ? 8.r : 0.r),
-                  topRight:
-                      Radius.circular(_tabController.index == 1 ? 8.r : 0.r),
+                  topLeft: isEnLocale
+                      ? Radius.circular(_tabController.index == 0 ? 8.r : 0.r)
+                      : Radius.circular(_tabController.index == 0 ? 0.r : 8.r),
+                  bottomLeft: isEnLocale
+                      ? Radius.circular(_tabController.index == 0 ? 8.r : 0.r)
+                      : Radius.circular(_tabController.index == 0 ? 0.r : 8.r),
+                  bottomRight: isEnLocale
+                      ? Radius.circular(_tabController.index == 1 ? 8.r : 0.r)
+                      : Radius.circular(_tabController.index == 1 ? 0.r : 8.r),
+                  topRight: isEnLocale
+                      ? Radius.circular(_tabController.index == 1 ? 8.r : 0.r)
+                      : Radius.circular(_tabController.index == 1 ? 0.r : 8.r),
                 ),
                 color: ColorManger.brun,
               ), // Remove default indicator

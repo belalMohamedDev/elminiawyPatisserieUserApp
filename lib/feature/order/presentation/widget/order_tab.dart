@@ -27,7 +27,7 @@ class OrdersTab extends StatelessWidget {
             },
             child: Container(
               width: double.infinity,
-              height: 80.h,
+              height: 88.h,
               decoration: BoxDecoration(
                 color: ColorManger.backgroundItem,
                 borderRadius: BorderRadius.circular(10.r),
@@ -61,7 +61,7 @@ class OrdersTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '${  context.translate(AppStrings.orderNum) }${order.sId}',
+                        '${context.translate(AppStrings.orderNum)} ${order.sId}',
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!
@@ -71,7 +71,7 @@ class OrdersTab extends StatelessWidget {
                         height: 3.h,
                       ),
                       Text(
-                        order.createdAt!.getFormattedDate(),
+                        '${context.translate(AppStrings.orderPlaced)}  ${order.createdAt!.getFormattedDate()}',
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -80,40 +80,23 @@ class OrdersTab extends StatelessWidget {
                       SizedBox(
                         height: 3.h,
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            order.status == 0
-                                ? "Order Placed"
-                                : order.status == 1
-                                    ? "Preparing"
-                                    : order.status == 2
-                                        ? "On its way"
-                                        : order.status == 3
-                                            ? "Delivered"
-                                            : order.status == 4
-                                                ? "Cancelled"
-                                                : '',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(
-                                    color: order.status == 4
-                                        ? ColorManger.redError
-                                        : Colors.green,
-                                    fontSize: 12.sp),
-                          ),
-                          SizedBox(
-                            width: 110.w,
-                          ),
-                          Text(
-                            '${order.totalOrderPrice}',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(fontSize: 18.sp),
-                          ),
-                        ],
+                      Text(
+                        '${context.translate(AppStrings.totalPrice)}  ${order.totalOrderPrice}',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(fontSize: 12.sp),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      Text(
+                        '${context.translate(AppStrings.orderStatus)}  ${order.status == 0 ? "Order Placed" : order.status == 1 ? "Preparing" : order.status == 2 ? "On its way" : order.status == 3 ? "Delivered" : order.status == 4 ? "Cancelled" : ''}',
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            color: order.status == 4
+                                ? ColorManger.redError
+                                : Colors.green,
+                            fontSize: 12.sp),
                       ),
                     ],
                   )

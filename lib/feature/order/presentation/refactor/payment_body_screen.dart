@@ -16,7 +16,7 @@ class PaymentBody extends StatelessWidget {
           const CheckOutProcessing(screenIndex: 2),
           responsive.setSizeBox(height: 5),
           Text(
-          context.translate(AppStrings.chooseYourPaymentMethod) ,
+            context.translate(AppStrings.chooseYourPaymentMethod),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -26,7 +26,7 @@ class PaymentBody extends StatelessWidget {
           _choosePaymentMethod(context, responsive),
           responsive.setSizeBox(height: 3),
           Text(
-           context.translate(AppStrings.promoCode) ,
+            context.translate(AppStrings.promoCode),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -37,11 +37,10 @@ class PaymentBody extends StatelessWidget {
           const Spacer(),
           CustomButton(
             onPressed: () {
-              Navigator.of(context, rootNavigator: !false)
-                  .pushNamed(Routes.shippingReviewScreen);
+              context.pushNamed(Routes.shippingReviewScreen);
             },
             widget: Text(
-          context.translate(AppStrings.saveAndContinue)   ,
+              context.translate(AppStrings.saveAndContinue),
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(
                         3.8), // Adjusted font size for responsiveness
@@ -55,9 +54,12 @@ class PaymentBody extends StatelessWidget {
 
   BlocBuilder _choosePaymentMethod(
       BuildContext context, ResponsiveUtils responsive) {
-    final paymentCubit = context.read<PaymentCubit>();
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return BlocBuilder<PaymentCubit, PaymentState>(
       builder: (context, state) {
+        final paymentCubit = context.read<PaymentCubit>();
+
         return Column(
           children: [
             InkWell(
@@ -80,7 +82,8 @@ class PaymentBody extends StatelessWidget {
                       width: responsive.setWidth(0.1)),
                 ),
                 child: Padding(
-                  padding: responsive.setPadding(left: 2),
+                  padding: responsive.setPadding(
+                      left: isEnLocale ? 2 : 0, right: isEnLocale ? 0 : 2),
                   child: Row(
                     children: [
                       Icon(
@@ -89,7 +92,7 @@ class PaymentBody extends StatelessWidget {
                       ),
                       responsive.setSizeBox(width: 3),
                       Text(
-                    context.translate(AppStrings.cashOnDelivery)    ,
+                        context.translate(AppStrings.cashOnDelivery),
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!
@@ -130,7 +133,8 @@ class PaymentBody extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: responsive.setPadding(left: 2),
+                  padding: responsive.setPadding(
+                      left: isEnLocale ? 2 : 0, right: isEnLocale ? 0 : 2),
                   child: Row(
                     children: [
                       Icon(
@@ -138,7 +142,7 @@ class PaymentBody extends StatelessWidget {
                         color: ColorManger.brun,
                       ),
                       responsive.setSizeBox(width: 3),
-                      Text(context.translate(AppStrings.creditOrDebitCard) ,
+                      Text(context.translate(AppStrings.creditOrDebitCard),
                           style: Theme.of(context)
                               .textTheme
                               .titleLarge!

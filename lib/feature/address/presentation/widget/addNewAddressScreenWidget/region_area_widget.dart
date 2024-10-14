@@ -1,5 +1,3 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 class RegionAreaWidget extends StatelessWidget {
@@ -43,7 +41,7 @@ class RegionAreaWidget extends StatelessWidget {
           ),
           Text(text,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontFamily: FontConsistent.fontFamilyAcme,
+                  fontFamily: FontConsistent.geLocalozedFontFamily(),
                   color: regionAreaIndex ? ColorManger.white : null,
                   fontSize: 12.sp)),
         ],

@@ -8,6 +8,8 @@ class OrderDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return BlocConsumer<PaymentCubit, PaymentState>(
       listener: (context, state) {
         state.whenOrNull(
@@ -17,7 +19,8 @@ class OrderDetailsBody extends StatelessWidget {
           createCashOrderSuccess: (createOrderResponse) {
             if (order != null) {
               ShowToast.showToastSuccessTop(
-                  message: context.translate(AppStrings.successToCancelOrder) , context: context);
+                  message: context.translate(AppStrings.successToCancelOrder),
+                  context: context);
               context.pop();
               WidgetsBinding.instance.addPostFrameCallback((_) async {
                 await Future.wait([
@@ -45,11 +48,11 @@ class OrderDetailsBody extends StatelessWidget {
                         _orderIdContainer(
                             context, createOrderResponse, order, responsive),
                         responsive.setSizeBox(height: 1),
-                        _orderStautsStepper(
-                            context, createOrderResponse, order, responsive),
+                        _orderStautsStepper(context, createOrderResponse, order,
+                            responsive, isEnLocale),
                         responsive.setSizeBox(height: 1),
                         _orderShippingInformation(
-                            context, createOrderResponse, order),
+                            context, createOrderResponse, order, isEnLocale),
                         responsive.setSizeBox(height: 1),
                       ],
                     ),
@@ -91,7 +94,7 @@ class OrderDetailsBody extends StatelessWidget {
         delegate: SliverChildBuilderDelegate(childCount: cartItems!.length,
             (context, index) {
       return Padding(
-          padding: responsive.setPadding(bottom: 5),
+          padding: responsive.setPadding(bottom: 1),
           child: Slidable(
             child: Container(
               width: double.infinity,
@@ -179,7 +182,7 @@ class OrderDetailsBody extends StatelessWidget {
         ),
         responsive.setSizeBox(height: 1),
         Text(
-            '${context.translate(AppStrings.totalPrice)}     ${response.cartItems![index].totalItemPrice}.00  \$',
+            '${context.translate(AppStrings.totalPrice)}   ${response.cartItems![index].totalItemPrice}  ${context.translate(AppStrings.egy)} ',
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -191,7 +194,8 @@ class OrderDetailsBody extends StatelessWidget {
   Container _orderShippingInformation(
       BuildContext context,
       CreateOrderResponseData? createOrderResponse,
-      GetOrdersResponseData? order) {
+      GetOrdersResponseData? order,
+      bool isEnLocale) {
     dynamic response = order ?? createOrderResponse;
 
     return Container(
@@ -209,14 +213,8 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 5.w,
                 ),
-                Icon(
-                  Icons.attach_money_sharp,
-                  color: ColorManger.brun,
-                ),
-                SizedBox(
-                  width: 5.w,
-                ),
-                Text("${response.totalOrderPrice ?? ''}  ${context.translate(AppStrings.egy) }",
+                Text(
+                    "${context.translate(AppStrings.totalPrice)}  ${response.totalOrderPrice ?? ''}  ${context.translate(AppStrings.egy)}",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -238,7 +236,14 @@ class OrderDetailsBody extends StatelessWidget {
                 SizedBox(
                   width: 20.w,
                 ),
-                Text("${response.paymentMethodType ?? ""}",
+                Text(
+                    response.paymentMethodType == 'cash'
+                        ? isEnLocale
+                            ? "${response.paymentMethodType ?? ""}"
+                            : "كاش عند الاستلام"
+                        : isEnLocale
+                            ? "${response.paymentMethodType ?? ""}"
+                            : "بطاقة ائتمانية",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -297,7 +302,8 @@ class OrderDetailsBody extends StatelessWidget {
                         .titleLarge!
                         .copyWith(fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.shippingPrice ?? ''}  ${context.translate(AppStrings.egy)}",
+                Text(
+                    "${response.shippingPrice ?? ''}  ${context.translate(AppStrings.egy)}",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -316,7 +322,8 @@ class OrderDetailsBody extends StatelessWidget {
                         .titleLarge!
                         .copyWith(fontSize: 12.sp)),
                 const Spacer(),
-                Text("${response.taxPrice ?? ""}  ${context.translate(AppStrings.egy)}",
+                Text(
+                    "${response.taxPrice ?? ""}  ${context.translate(AppStrings.egy)}",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -331,9 +338,11 @@ class OrderDetailsBody extends StatelessWidget {
 
   Padding _buildLine(
     bool isCompleted,
+    bool isEnLocale,
   ) {
     return Padding(
-      padding: EdgeInsets.only(left: 10.w),
+      padding: EdgeInsets.only(
+          left: isEnLocale ? 10.w : 0, right: isEnLocale ? 0 : 10),
       child: Column(
           children: List.generate(
         2,
@@ -354,6 +363,7 @@ class OrderDetailsBody extends StatelessWidget {
   Column _buildStep(
       {required BuildContext context,
       required bool isCompleted,
+      required bool isEnLocale,
       bool isCancelled = false,
       required String title,
       required String subTitle,
@@ -381,7 +391,8 @@ class OrderDetailsBody extends StatelessWidget {
                       )
                     : null),
             Padding(
-              padding: EdgeInsets.only(left: 20.w),
+              padding: EdgeInsets.only(
+                  left: isEnLocale ? 20.w : 0, right: isEnLocale ? 0 : 20.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -414,7 +425,8 @@ class OrderDetailsBody extends StatelessWidget {
       BuildContext context,
       CreateOrderResponseData? createOrderResponse,
       GetOrdersResponseData? order,
-      ResponsiveUtils responsive) {
+      ResponsiveUtils responsive,
+      bool isEnLocale) {
     dynamic response = order ?? createOrderResponse;
 
     int orderStatus = response!.status;
@@ -447,26 +459,34 @@ class OrderDetailsBody extends StatelessWidget {
                           context: context,
                           isCompleted: orderStatus >= 0,
                           title: context.translate(AppStrings.orderPlaced),
+                          isEnLocale: isEnLocale,
                           subTitle:
                               '${context.translate(AppStrings.orderHasBeenPlacedAt)} ${createAt.getFormattedDate()} .'),
-                      _buildLine(orderStatus > 0),
+                      _buildLine(orderStatus > 0, isEnLocale),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 1,
                           title: context.translate(AppStrings.preparing),
-                          subTitle:context.translate(AppStrings.yourOrderIsBeingPrepared) ),
-                      _buildLine(orderStatus > 1),
+                          subTitle: context
+                              .translate(AppStrings.yourOrderIsBeingPrepared),
+                          isEnLocale: isEnLocale),
+                      _buildLine(orderStatus > 1, isEnLocale),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 2,
+                          isEnLocale: isEnLocale,
                           title: context.translate(AppStrings.onItsWay),
-                          subTitle: context.translate(AppStrings.yourOrderIsOnItsWay)),
-                      _buildLine(orderStatus > 2),
+                          subTitle: context.translate(
+                            AppStrings.yourOrderIsOnItsWay,
+                          )),
+                      _buildLine(orderStatus > 2, isEnLocale),
                       _buildStep(
                         context: context,
                         isCompleted: orderStatus >= 3,
+                        isEnLocale: isEnLocale,
                         title: context.translate(AppStrings.delivered),
-                        subTitle: context.translate(AppStrings.yourOrderWasDeliveredSuccessfully),
+                        subTitle: context.translate(
+                            AppStrings.yourOrderWasDeliveredSuccessfully),
                       ),
                     ],
                   )
@@ -476,17 +496,20 @@ class OrderDetailsBody extends StatelessWidget {
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus == 4,
-                          title:context.translate(AppStrings.orderPlaced) ,
+                          title: context.translate(AppStrings.orderPlaced),
+                          isEnLocale: isEnLocale,
                           subTitle:
                               '${context.translate(AppStrings.orderHasBeenPlacedAt)} ${createAt.getFormattedDate()}'),
-                      _buildLine(orderStatus == 4),
+                      _buildLine(orderStatus == 4, isEnLocale),
                       _buildStep(
                           isCancelled: true,
                           context: context,
                           isCompleted: orderStatus == 4,
                           title: context.translate(AppStrings.cancelled),
-                          subTitle: context.translate(AppStrings.yourOrderWasCancelled),
-                          imagePath: ImageAsset.orderCancel),
+                          subTitle: context
+                              .translate(AppStrings.yourOrderWasCancelled),
+                          imagePath: ImageAsset.orderCancel,
+                          isEnLocale: isEnLocale),
                     ],
                   )
           ],

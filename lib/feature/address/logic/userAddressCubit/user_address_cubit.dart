@@ -28,15 +28,18 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   List<Map<String, dynamic>> regionArea = [
     {
       "imagePath": ImageAsset.building,
-      "text": "Apartment",
+      "textEn": "Apartment",
+      "textAr": "شقة",
     },
     {
       "imagePath": ImageAsset.home,
-      "text": "House",
+      "textEn": "House",
+      "textAr": "منزل",
     },
     {
       "imagePath": ImageAsset.bag,
-      "text": "Office",
+      "textEn": "Office",
+      "textAr": "مكتب",
     },
   ];
 

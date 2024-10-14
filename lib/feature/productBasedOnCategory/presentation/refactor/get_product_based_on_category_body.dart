@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class ProductBaseOnCategoryBody extends StatelessWidget {
@@ -65,6 +64,8 @@ class ProductBaseOnCategoryBody extends StatelessWidget {
 }
 
 SizedBox _subCategorySuccessState(BuildContext context) {
+  bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
   final productBasedOnCategoryCubit =
       context.read<ProductBasedOnCategoryCubit>();
   return SizedBox(
@@ -75,7 +76,8 @@ SizedBox _subCategorySuccessState(BuildContext context) {
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.only(right: 15.w),
+          padding: EdgeInsets.only(
+              right: isEnLocale ? 8.w : 0, left: isEnLocale ? 0 : 8.w),
           child: Column(
             children: [
               InkWell(
@@ -101,13 +103,19 @@ SizedBox _subCategorySuccessState(BuildContext context) {
                                   : ColorManger.brownLight),
                       child: Center(
                         child: Text(
-                            productBasedOnCategoryCubit
-                                .subCategoryProductData![index].title!,
+                            index == 0
+                                ? isEnLocale
+                                    ? productBasedOnCategoryCubit
+                                        .subCategoryProductData![index].title!
+                                    : 'كل المنتجات'
+                                : productBasedOnCategoryCubit
+                                    .subCategoryProductData![index].title!,
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyLarge!
                                 .copyWith(
-                                    fontFamily: FontConsistent.fontFamilyAcme,
+                                    fontFamily:
+                                        FontConsistent.geLocalozedFontFamily(),
                                     color: productBasedOnCategoryCubit
                                                 .categoryIndex ==
                                             index
