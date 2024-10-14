@@ -88,7 +88,10 @@ class _MyAppState extends State<MyApp> {
 
                       //  locale: DevicePreview.locale(context),
                       builder: DevicePreview.appBuilder,
-                      title: 'Elminiawy Patisserie',
+                      title:
+                          context.read<AppLogicCubit>().currentLangCode == 'en'
+                              ? 'Elminiawy Patisserie'
+                              : 'حلوانى المنياوى',
                       debugShowCheckedModeBanner: false,
                       initialRoute: AppInitialRoute.isOnBoardingScreen
                           ? AppInitialRoute.isAnonymousUser

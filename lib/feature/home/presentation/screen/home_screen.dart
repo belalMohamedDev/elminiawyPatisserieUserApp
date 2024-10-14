@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-  
 
     // Initialize the NotificationService with a repository and notification callback
     _notificationService = NotificationService(
@@ -32,7 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
     // Delay the execution until after the first frame is rendered
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       // Retrieve the saved username from secure shared preferences
-
       // Call MapCubit's function to set the location to "Home"
       context.read<MapCubit>().setLocationToHome();
 
@@ -46,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     // The Scaffold represents the main structure of the home screen
     return Scaffold(
       // Pass the notification service to the body of the home screen

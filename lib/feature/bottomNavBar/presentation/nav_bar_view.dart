@@ -12,16 +12,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
   void initState() {
     super.initState();
 
-    bool isDataLoaded = false;
-
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      if (!isDataLoaded) {
+      context.read<AppLogicCubit>().stream.listen((locale) async {
         await Future.wait([
           context.read<BannerCubit>().getBanners(),
           context.read<CategoryCubit>().getCategories(),
           context.read<ProductCubit>().getProduct(),
         ]);
-
         if (AppInitialRoute.isAnonymousUser == false) {
           await Future.wait([
             context.read<UserAddressCubit>().getUserAddress(),
@@ -29,8 +26,20 @@ class _BottomNavBarState extends State<BottomNavBar> {
             context.read<WishListCubit>().getWishList(),
           ]);
         }
+      });
 
-        isDataLoaded = true; // Set this to true to prevent re-loading
+      await Future.wait([
+        context.read<BannerCubit>().getBanners(),
+        context.read<CategoryCubit>().getCategories(),
+        context.read<ProductCubit>().getProduct(),
+      ]);
+
+      if (AppInitialRoute.isAnonymousUser == false) {
+        await Future.wait([
+          context.read<UserAddressCubit>().getUserAddress(),
+          context.read<CartCubit>().getCartItem(),
+          context.read<WishListCubit>().getWishList(),
+        ]);
       }
     });
   }
