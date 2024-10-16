@@ -11,9 +11,9 @@ class UserAddressErrorAndLoadingStateWidget extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.only(
-        right: isEnLocale ? 40.w : 20.w,
-        left: isEnLocale ? 0 : 10.w,
-        top: 10.h,
+        right: isEnLocale ? 60.w : 20.w,
+        left: isEnLocale ? 20 : 30.w,
+        top: 20.h,
       ),
       child: ListView.builder(
         itemCount: 12,

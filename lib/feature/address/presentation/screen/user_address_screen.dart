@@ -48,13 +48,10 @@ class UserAddressView extends StatelessWidget {
                         )
                 ],
               ),
-              body: Padding(
-                padding: EdgeInsets.only(
-                    left: isEnLocale ? 20.w : 0,
-                    right: isEnLocale ? 0 : 20.w,
-                    top: 10.h),
-                child: UserAddressBody(state: state),
-              ),
+              body: 
+        
+              UserAddressBody(state: state),
+             
             ),
             LoadingOverlay(isLoading: state is RemoveAddressLoading)
           ],

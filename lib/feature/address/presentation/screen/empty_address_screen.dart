@@ -33,7 +33,7 @@ class EmptyAddressScreen extends StatelessWidget {
                   context.translate(AppStrings.itSeemsLikeYouHavenAddedAnyAddressesYet)  ,
                 btnText:context.translate(AppStrings.addAddress) ,
                 press: () {
-                  Navigator.of(context, rootNavigator: !false)
+                context
                       .pushNamed(Routes.map);
                 },
               ),

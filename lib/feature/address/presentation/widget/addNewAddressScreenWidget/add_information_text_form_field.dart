@@ -271,25 +271,22 @@ void _validationTextFormFieldThenCreateOrUpdateAddress(
       mapCuibt.checkLocationAvailableResponse?.englishAddress;
   final arabicAddress = mapCuibt.checkLocationAvailableResponse?.arabicAddress;
 
-
   if (userAddressCubit.formKey.currentState!.validate()) {
     if (getAddressResponseData != null) {
       await userAddressCubit.updateAddress(
-          nearbyStoreAddress:
-              nearbyStoreAddressId ?? '',
-          id: addressId ?? '', 
-          latitude: latitude, 
-          longitude: longitude, 
-          enRegion: englishAddress ?? '', 
-          arRegion: arabicAddress ?? '');   
+          nearbyStoreAddress: nearbyStoreAddressId ?? '',
+          id: addressId ?? '',
+          latitude: latitude,
+          longitude: longitude,
+          enRegion: englishAddress ?? '',
+          arRegion: arabicAddress ?? '');
     } else {
       await userAddressCubit.addNewAddress(
-          nearbyStoreAddress:
-              nearbyStoreAddressId ?? '', 
-          latitude: latitude, 
+          nearbyStoreAddress: nearbyStoreAddressId ?? '',
+          latitude: latitude,
           longitude: longitude,
-          enRegion: englishAddress ?? '',   
-          arRegion: arabicAddress ?? '');   
+          enRegion: englishAddress ?? '',
+          arRegion: arabicAddress ?? '');
     }
   }
 }
@@ -321,13 +318,13 @@ void _mangeUserAddressCuibtState(BuildContext context, UserAddressState state) {
 
             if (index != -1) {
               context.read<PaymentCubit>().changeShippingIndex(index);
+
               Navigator.of(context, rootNavigator: !false)
                   .popAndPushNamed(Routes.shippingAddress);
             }
           } else {
-            Navigator.pop(context);
-            Navigator.pushReplacementNamed(
-              context,
+            context.pop();
+            context.pushReplacementNamed(
               Routes.address,
             );
           }
@@ -336,6 +333,7 @@ void _mangeUserAddressCuibtState(BuildContext context, UserAddressState state) {
       updateAddressSuccess: (data) {
         ShowToast.showToastSuccessTop(message: data.message!, context: context);
         if (context.mounted) {
+          context.pop();
           Navigator.pushReplacementNamed(
             context,
             Routes.address,
