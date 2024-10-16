@@ -39,6 +39,7 @@ CreateAddressData _$CreateAddressDataFromJson(Map<String, dynamic> json) =>
           ? null
           : Location.fromJson(json['location'] as Map<String, dynamic>),
       user: json['user'] as String?,
+      nearbyStoreAddress: json['nearbyStoreAddress'] as String?,
       sId: json['_id'] as String?,
     );
 
@@ -55,6 +56,7 @@ Map<String, dynamic> _$CreateAddressDataToJson(CreateAddressData instance) =>
       'addressLabel': instance.addressLabel,
       'location': instance.location,
       'user': instance.user,
+      'nearbyStoreAddress': instance.nearbyStoreAddress,
       '_id': instance.sId,
     };
 

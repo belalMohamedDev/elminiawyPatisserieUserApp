@@ -58,6 +58,9 @@ class NewProductGrideView extends StatelessWidget {
           listener: (context, state) {
             // Update the wishlist when products are successfully loaded
             state.whenOrNull(
+              getProductError: (apiErrorModel) {
+                context.read<ProductCubit>().getProduct();
+              },
               getProductSuccess: (data) {
                 final wishListCubit = context.read<WishListCubit>();
 

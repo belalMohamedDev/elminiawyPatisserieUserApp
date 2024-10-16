@@ -12,53 +12,7 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<UserAddressCubit, UserAddressState>(
       listener: (context, state) {
-        state.whenOrNull(
-            createNewAddressError: (apiErrorModel) =>
-                ShowToast.showToastErrorTop(
-                    errorMessage: apiErrorModel.message!, context: context),
-            updateAddressError: (apiErrorModel) => ShowToast.showToastErrorTop(
-                errorMessage: apiErrorModel.message!, context: context),
-            createNewAddressSuccess: (data) {
-              final userAddressCubit = context.read<UserAddressCubit>();
-
-              ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
-              if (context.mounted) {
-                userAddressCubit.clearAllControllers();
-
-                context.read<MapCubit>().checkLocationAvailableResponse = null;
-
-                context.read<MapCubit>().textEditingSearchText =
-                    context.translate(AppStrings.findYourLocation);
-
-                if (userAddressCubit.isPaymentAddress == true) {
-                  final index = userAddressCubit.addressDataList
-                      .indexWhere((element) => element.sId == data.data!.sId);
-
-                  if (index != -1) {
-                    context.read<PaymentCubit>().changeShippingIndex(index);
-                    Navigator.of(context, rootNavigator: !false)
-                        .popAndPushNamed(Routes.shippingAddress);
-                  }
-                } else {
-                  Navigator.pop(context);
-                  Navigator.pushReplacementNamed(
-                    context,
-                    Routes.address,
-                  );
-                }
-              }
-            },
-            updateAddressSuccess: (data) {
-              ShowToast.showToastSuccessTop(
-                  message: data.message!, context: context);
-              if (context.mounted) {
-                Navigator.pushReplacementNamed(
-                  context,
-                  Routes.address,
-                );
-              }
-            });
+        _mangeUserAddressCuibtState(context, state);
       },
       builder: (context, state) {
         return BlocBuilder<UserAddressCubit, UserAddressState>(
@@ -226,27 +180,8 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
                   ),
                   CustomButton(
                       onPressed: () async {
-                        if (userAddressCubit.formKey.currentState!.validate()) {
-                          if (getAddressResponseData != null) {
-                            await userAddressCubit.updateAddress(
-                                id: getAddressResponseData!.sId!,
-                                latitude:
-                                    mapCuibt.targetPosition.latitude.toString(),
-                                longitude: mapCuibt.targetPosition.longitude
-                                    .toString(),
-                                region: mapCuibt.checkLocationAvailableResponse!
-                                        .englishAddress ??
-                                    '');
-                          } else {
-                            await userAddressCubit.addNewAddress(
-                                latitude:
-                                    mapCuibt.targetPosition.latitude.toString(),
-                                longitude: mapCuibt.targetPosition.longitude
-                                    .toString(),
-                                region: mapCuibt
-                                    .checkLocationAvailableResponse!.englishAddress!);
-                          }
-                        }
+                        _validationTextFormFieldThenCreateOrUpdateAddress(
+                            userAddressCubit, mapCuibt, getAddressResponseData);
                       },
                       widget: state.maybeWhen(
                         createNewAddressLoading: () => Row(
@@ -321,4 +256,90 @@ class AddAddressInformationFromTextFormField extends StatelessWidget {
       },
     );
   }
+}
+
+void _validationTextFormFieldThenCreateOrUpdateAddress(
+    UserAddressCubit userAddressCubit,
+    MapCubit mapCuibt,
+    GetAddressResponseData? getAddressResponseData) async {
+  final nearbyStoreAddressId =
+      mapCuibt.checkLocationAvailableResponse?.nearbyStoreAddressId;
+  final addressId = getAddressResponseData?.sId;
+  final latitude = mapCuibt.targetPosition.latitude.toString();
+  final longitude = mapCuibt.targetPosition.longitude.toString();
+  final englishAddress =
+      mapCuibt.checkLocationAvailableResponse?.englishAddress;
+  final arabicAddress = mapCuibt.checkLocationAvailableResponse?.arabicAddress;
+
+
+  if (userAddressCubit.formKey.currentState!.validate()) {
+    if (getAddressResponseData != null) {
+      await userAddressCubit.updateAddress(
+          nearbyStoreAddress:
+              nearbyStoreAddressId ?? '',
+          id: addressId ?? '', 
+          latitude: latitude, 
+          longitude: longitude, 
+          enRegion: englishAddress ?? '', 
+          arRegion: arabicAddress ?? '');   
+    } else {
+      await userAddressCubit.addNewAddress(
+          nearbyStoreAddress:
+              nearbyStoreAddressId ?? '', 
+          latitude: latitude, 
+          longitude: longitude,
+          enRegion: englishAddress ?? '',   
+          arRegion: arabicAddress ?? '');   
+    }
+  }
+}
+
+void _mangeUserAddressCuibtState(BuildContext context, UserAddressState state) {
+  state.whenOrNull(
+      createNewAddressError: (apiErrorModel) {
+        ShowToast.showToastErrorTop(
+            errorMessage: apiErrorModel.message!, context: context);
+      },
+      updateAddressError: (apiErrorModel) => ShowToast.showToastErrorTop(
+          errorMessage: apiErrorModel.message!, context: context),
+      createNewAddressSuccess: (data) {
+        final userAddressCubit = context.read<UserAddressCubit>();
+
+        ShowToast.showToastSuccessTop(message: data.message!, context: context);
+
+        if (context.mounted) {
+          userAddressCubit.clearAllControllers();
+
+          context.read<MapCubit>().checkLocationAvailableResponse = null;
+
+          context.read<MapCubit>().textEditingSearchText =
+              context.translate(AppStrings.findYourLocation);
+
+          if (userAddressCubit.isPaymentAddress == true) {
+            final index = userAddressCubit.addressDataList
+                .indexWhere((element) => element.sId == data.data!.sId);
+
+            if (index != -1) {
+              context.read<PaymentCubit>().changeShippingIndex(index);
+              Navigator.of(context, rootNavigator: !false)
+                  .popAndPushNamed(Routes.shippingAddress);
+            }
+          } else {
+            Navigator.pop(context);
+            Navigator.pushReplacementNamed(
+              context,
+              Routes.address,
+            );
+          }
+        }
+      },
+      updateAddressSuccess: (data) {
+        ShowToast.showToastSuccessTop(message: data.message!, context: context);
+        if (context.mounted) {
+          Navigator.pushReplacementNamed(
+            context,
+            Routes.address,
+          );
+        }
+      });
 }

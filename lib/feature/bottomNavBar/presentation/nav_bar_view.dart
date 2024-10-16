@@ -53,29 +53,25 @@ class _BottomNavBarState extends State<BottomNavBar> {
         return PersistentTabView(
           avoidBottomPadding: false,
           stateManagement: false,
-
           controller: context.read<AppLogicCubit>().bottomNavBarController,
 
           margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 12.h),
 
           backgroundColor: ColorManger.brun,
 
-          screenTransitionAnimation: const ScreenTransitionAnimation(
-            curve: Curves.ease,
-            duration: Duration(milliseconds: 200),
-          ),
+        
 
           onTabChanged: (index) {
             if (index == 2) {
               if (AppInitialRoute.isAnonymousUser) {
-                Navigator.of(context, rootNavigator: !false)
-                    .pushNamed(Routes.noRoute);
+                context.pushNamed(Routes.noRoute);
               } else {
-                Navigator.of(context, rootNavigator: !false)
-                    .pushNamed(Routes.cart);
+                context.pushNamed(Routes.cart);
               }
-
-              context.read<AppLogicCubit>().bottomNavBarController.jumpToTab(0);
+              context
+                  .read<AppLogicCubit>()
+                  .bottomNavBarController
+                  .jumpToPreviousTab();
             }
           },
 

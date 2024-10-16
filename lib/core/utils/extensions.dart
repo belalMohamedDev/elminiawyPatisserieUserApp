@@ -21,6 +21,12 @@ extension ContextExt on BuildContext {
         .pushNamed(routeName, arguments: arguments);
   }
 
+  Future<dynamic> popThenPushNamed(String routeName,
+      {Object? arguments, rootNavigator = !false}) {
+    return Navigator.of(this, rootNavigator: rootNavigator)
+        .popAndPushNamed(routeName, arguments: arguments);
+  }
+
   Future<dynamic> pushReplacementNamed(String routeName,
       {Object? arguments, rootNavigator = !false}) {
     return Navigator.of(this, rootNavigator: rootNavigator)
@@ -39,6 +45,12 @@ extension ContextExt on BuildContext {
 
 extension StringExtension on String? {
   bool isNullOrEmpty() => this == null || this == "";
+}
+
+extension StringExtensions on String {
+  String? getOrNull() {
+    return trim().isNotEmpty ? trim() : null;
+  }
 }
 
 extension ListExtension<T> on List<T>? {

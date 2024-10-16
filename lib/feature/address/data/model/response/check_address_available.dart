@@ -5,6 +5,7 @@ class CheckLocationAvailableResponse {
   String? arabicAddress;
   bool? storeAddressAvailable;
   bool? isAddressAvailable;
+  String? nearbyStoreAddressId;
 
   CheckLocationAvailableResponse(
       {this.status,
@@ -12,7 +13,9 @@ class CheckLocationAvailableResponse {
       this.englishAddress,
       this.arabicAddress,
       this.storeAddressAvailable,
-      this.isAddressAvailable});
+      this.isAddressAvailable,
+      this.nearbyStoreAddressId
+      });
 
   CheckLocationAvailableResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
@@ -21,6 +24,7 @@ class CheckLocationAvailableResponse {
     englishAddress = json['englishAddress'];
     storeAddressAvailable = json['StoreAddressAvailable'];
     isAddressAvailable = json['isAddressAvailable'];
+    nearbyStoreAddressId = json['nearbyStoreAddressId'];
   }
 
   Map<String, dynamic> toJson() {
@@ -31,6 +35,7 @@ class CheckLocationAvailableResponse {
     data['arabicAddress'] = arabicAddress;
     data['StoreAddressAvailable'] = storeAddressAvailable;
     data['isAddressAvailable'] = isAddressAvailable;
+    data['nearbyStoreAddressId'] = nearbyStoreAddressId;
     return data;
   }
 }

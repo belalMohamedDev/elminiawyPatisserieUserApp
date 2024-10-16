@@ -5,11 +5,12 @@ part 'create_order_request.g.dart';
 class CreateOrderRequestBody {
   CreateOrderRequestBody({
     required this.shippingAddress,
+    required this.nearbyStoreAddress,
     required this.notes,
   });
 
   final String shippingAddress;
-
+  final String nearbyStoreAddress;
   final String notes;
 
   //from json

@@ -62,6 +62,7 @@ GetAddressResponseData _$GetAddressResponseDataFromJson(
       phone: json['phone'] as String?,
       addressLabel: json['addressLabel'] as String?,
       user: json['user'] as String?,
+      nearbyStoreAddress: json['nearbyStoreAddress'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
@@ -81,6 +82,7 @@ Map<String, dynamic> _$GetAddressResponseDataToJson(
       'phone': instance.phone,
       'addressLabel': instance.addressLabel,
       'user': instance.user,
+      'nearbyStoreAddress': instance.nearbyStoreAddress,
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
     };

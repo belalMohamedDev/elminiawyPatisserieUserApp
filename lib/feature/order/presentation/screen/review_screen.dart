@@ -11,7 +11,7 @@ class ReviewPaymentScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-         context.translate(AppStrings.checkOut) ,
+          context.translate(AppStrings.checkOut),
           style: Theme.of(context)
               .textTheme
               .titleLarge!
@@ -46,18 +46,15 @@ class ReviewPaymentScreen extends StatelessWidget {
                   .copyWith(fontSize: responsive.setTextSize(4)),
             ),
             responsive.setSizeBox(height: 1),
-
             RowTextOrderSummary(
               orderprice: cart.cartData!.data!.totalCartPrice!,
-              orderText:context.translate(AppStrings.cartTotal) ,
+              orderText: context.translate(AppStrings.cartTotal),
             ),
-
             responsive.setSizeBox(height: 1),
             RowTextOrderSummary(
               orderprice: cart.cartData!.data!.totalPriceAfterDiscount!,
-              orderText:context.translate(AppStrings.priceAfterDiscount) ,
+              orderText: context.translate(AppStrings.priceAfterDiscount),
             ),
-      
             Divider(
               color: ColorManger.brownLight,
             ),
@@ -65,7 +62,7 @@ class ReviewPaymentScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                 context.translate(AppStrings.total) ,
+                  context.translate(AppStrings.total),
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -103,8 +100,13 @@ class ReviewPaymentScreen extends StatelessWidget {
                 return CustomButton(
                     onPressed: () {
                       if (paymentCuibt.choosePaymentMethod.startsWith('Cash')) {
-                        paymentCuibt.createCashOrderSummit(userAddressCubit
-                            .addressDataList[paymentCuibt.selectedIndex].sId!);
+                        paymentCuibt.createCashOrderSummit(
+                            userAddressCubit
+                                .addressDataList[paymentCuibt.selectedIndex]
+                                .sId!,
+                            userAddressCubit
+                                .addressDataList[paymentCuibt.selectedIndex]
+                                .nearbyStoreAddress!);
                       }
                     },
                     widget: state.maybeWhen(
@@ -126,7 +128,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                                 2), // Spacing between the indicator and text
                           ),
                           Text(
-                             context.translate(AppStrings.loading) ,
+                            context.translate(AppStrings.loading),
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineSmall

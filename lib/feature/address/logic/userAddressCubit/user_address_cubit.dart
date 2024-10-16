@@ -85,8 +85,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            UserAddressState.getAllAddressError(
-              error),
+            UserAddressState.getAllAddressError(error),
           );
         }
       },
@@ -107,8 +106,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            UserAddressState.removeAddressError(
-               error),
+            UserAddressState.removeAddressError(error),
           );
         }
       },
@@ -116,37 +114,19 @@ class UserAddressCubit extends Cubit<UserAddressState> {
   }
 
   Future<void> addNewAddress(
-      {required String region,
+      {required String arRegion,
+      required String enRegion,
       required String latitude,
-      required String longitude}) async {
+      required String longitude,
+      required String nearbyStoreAddress}) async {
     emit(const UserAddressState.createNewAddressLoading());
 
-    final createAddressRequestBody = CreateAddressRequestBody(
-      additionalDirections: additionalDirectionsContoller.text.trim().isNotEmpty
-          ? additionalDirectionsContoller.text.trim()
-          : null,
-      alias: aliasData.trim().isNotEmpty ? aliasData.trim() : null,
-      buildingName: buildingNameController.text.trim().isNotEmpty
-          ? buildingNameController.text.trim()
-          : null,
-      apartmentNumber: companyController.text.trim().isNotEmpty
-          ? companyController.text.trim()
-          : null,
-      floor: floorController.text.trim().isNotEmpty
-          ? floorController.text.trim()
-          : null,
-      region: region.trim().isNotEmpty ? region.trim() : null,
-      streetName: streetController.text.trim().isNotEmpty
-          ? streetController.text.trim()
-          : null,
-      phone: phoneNumberContoller.text.trim().isNotEmpty
-          ? phoneNumberContoller.text.trim()
-          : null,
-      addressLabel:
-          addressLabel.text.trim().isNotEmpty ? addressLabel.text.trim() : null,
-      latitude: latitude.trim().isNotEmpty ? latitude.trim() : null,
-      longitude: longitude.trim().isNotEmpty ? longitude.trim() : null,
-    );
+    final createAddressRequestBody = createAddressRequest(
+        arRegion: arRegion,
+        enRegion: enRegion,
+        latitude: latitude,
+        longitude: longitude,
+        nearbyStoreAddress: nearbyStoreAddress);
 
     final response = await _userAddressRepository
         .createANewAddress(createAddressRequestBody);
@@ -154,22 +134,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
     response.when(
       success: (dataResponse) {
         if (dataResponse.data != null) {
-          addressDataList.add(GetAddressResponseData(
-            sId: dataResponse.data!.sId,
-            alias: dataResponse.data!.alias,
-            buildingName: dataResponse.data!.buildingName,
-            apartmentNumber: dataResponse.data!.apartmentNumber,
-            floor: dataResponse.data!.floor,
-            region: dataResponse.data!.region,
-            additionalDirections: dataResponse.data!.additionalDirections,
-            streetName: dataResponse.data!.streetName,
-            phone: dataResponse.data!.phone,
-            addressLabel: dataResponse.data!.addressLabel,
-            location: GetAddressResponseLocation(
-              type: dataResponse.data!.location!.type,
-              coordinates: dataResponse.data!.location!.coordinates,
-            ),
-          ));
+          addressDataList.add(toGetAddressResponseData(dataResponse.data!));
         }
 
         emit(UserAddressState.createNewAddressSuccess(dataResponse));
@@ -177,81 +142,98 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            UserAddressState.createNewAddressError(
-             error),
+            UserAddressState.createNewAddressError(error),
           );
         }
       },
     );
   }
 
+  CreateAddressRequestBody createAddressRequest({
+    String? arRegion,
+    String? enRegion,
+    String? latitude,
+    String? longitude,
+    String? nearbyStoreAddress,
+    String? alias,
+  }) {
+    return CreateAddressRequestBody(
+      additionalDirections: additionalDirectionsContoller.text.getOrNull(),
+      alias: aliasData.getOrNull(),
+      buildingName: buildingNameController.text.getOrNull(),
+      apartmentNumber: companyController.text.getOrNull(),
+      floor: floorController.text.getOrNull(),
+      region: {
+        'en': enRegion ?? "", 
+        'ar': arRegion ?? "",
+      },
+      streetName: streetController.text.getOrNull(),
+      phone: phoneNumberContoller.text.getOrNull(),
+      addressLabel: addressLabel.text.getOrNull(),
+      latitude: latitude ?? '',
+      longitude: longitude ?? "",
+      nearbyStoreAddress: nearbyStoreAddress ?? "",
+    );
+  }
+
+  GetAddressResponseData toGetAddressResponseData(CreateAddressData data) {
+    return GetAddressResponseData(
+      sId: data.sId,
+      alias: data.alias,
+      buildingName: data.buildingName,
+      apartmentNumber: data.apartmentNumber,
+      floor: data.floor,
+      region: data.region,
+      additionalDirections: data.additionalDirections,
+      streetName: data.streetName,
+      phone: data.phone,
+      addressLabel: data.addressLabel,
+      location: GetAddressResponseLocation(
+        type: data.location!.type,
+        coordinates: data.location!.coordinates,
+      ),
+    );
+  }
+
   Future<void> updateAddress(
       {required String id,
-      required String region,
+      required String arRegion,
+      required String enRegion,
       required String latitude,
-      required String longitude}) async {
+      required String longitude,
+      required String nearbyStoreAddress}) async {
     emit(const UserAddressState.updateAddressLoading());
-    final createAddressRequestBody = CreateAddressRequestBody(
-      additionalDirections: additionalDirectionsContoller.text.trim().isNotEmpty
-          ? additionalDirectionsContoller.text.trim()
-          : null,
-      alias: aliasData.trim().isNotEmpty ? aliasData.trim() : null,
-      buildingName: buildingNameController.text.trim().isNotEmpty
-          ? buildingNameController.text.trim()
-          : null,
-      apartmentNumber: companyController.text.trim().isNotEmpty
-          ? companyController.text.trim()
-          : null,
-      floor: floorController.text.trim().isNotEmpty
-          ? floorController.text.trim()
-          : null,
-      region: region.trim().isNotEmpty ? region.trim() : null,
-      streetName: streetController.text.trim().isNotEmpty
-          ? streetController.text.trim()
-          : null,
-      phone: phoneNumberContoller.text.trim().isNotEmpty
-          ? phoneNumberContoller.text.trim()
-          : null,
-      addressLabel:
-          addressLabel.text.trim().isNotEmpty ? addressLabel.text.trim() : null,
-      latitude: latitude.trim().isNotEmpty ? latitude.trim() : null,
-      longitude: longitude.trim().isNotEmpty ? longitude.trim() : null,
-    );
+
+    final createAddressRequestBody = createAddressRequest(
+        arRegion: arRegion,
+        enRegion: enRegion,
+        latitude: latitude,
+        longitude: longitude,
+        nearbyStoreAddress: nearbyStoreAddress);
 
     final response = await _userAddressRepository.updateAddress(
         id, createAddressRequestBody);
 
     response.when(
       success: (dataResponse) {
-        addressDataList = addressDataList.map((address) {
+        // Create a new list to avoid modifying the original list during iteration
+        final updatedAddressList = addressDataList.map((address) {
           if (address.sId == id) {
-            return GetAddressResponseData(
-              sId: id,
-              alias: dataResponse.data!.alias,
-              buildingName: dataResponse.data!.buildingName,
-              apartmentNumber: dataResponse.data!.apartmentNumber,
-              floor: dataResponse.data!.floor,
-              region: dataResponse.data!.region,
-              additionalDirections: dataResponse.data!.additionalDirections,
-              streetName: dataResponse.data!.streetName,
-              phone: dataResponse.data!.phone,
-              addressLabel: dataResponse.data!.addressLabel,
-              location: GetAddressResponseLocation(
-                type: dataResponse.data!.location!.type,
-                coordinates: dataResponse.data!.location!.coordinates,
-              ),
-            );
+            // Replace the updated address
+            return toGetAddressResponseData(dataResponse.data!);
           }
           return address;
         }).toList();
+
+        // Update the original list with the new modified list
+        addressDataList = updatedAddressList;
 
         emit(UserAddressState.updateAddressSuccess(dataResponse));
       },
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            UserAddressState.updateAddressError(
-             error),
+            UserAddressState.updateAddressError(error),
           );
         }
       },

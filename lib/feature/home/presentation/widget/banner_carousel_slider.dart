@@ -13,7 +13,12 @@ class BannerCarouselSlider extends StatelessWidget {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
-    return BlocBuilder<BannerCubit, BannerState>(
+    return BlocConsumer<BannerCubit, BannerState>(
+      listener: (context, state) {
+        if (state is GetBannersError) {
+          context.read<BannerCubit>().getBanners();
+        }
+      },
       // Define when the widget should rebuild (only for loading, success, and error states)
       buildWhen: (previous, current) =>
           current is GetBannersLoading ||

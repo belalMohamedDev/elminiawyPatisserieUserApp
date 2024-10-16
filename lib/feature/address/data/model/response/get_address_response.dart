@@ -55,6 +55,7 @@ class GetAddressResponseData {
   String? phone;
   String? addressLabel;
   String? user;
+  String? nearbyStoreAddress;
   String? createdAt;
   String? updatedAt;
 
@@ -71,6 +72,7 @@ class GetAddressResponseData {
       this.phone,
       this.addressLabel,
       this.user,
+      this.nearbyStoreAddress,
       this.createdAt,
       this.updatedAt});
 

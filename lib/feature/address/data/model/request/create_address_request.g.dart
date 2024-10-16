@@ -13,13 +13,16 @@ CreateAddressRequestBody _$CreateAddressRequestBodyFromJson(
       buildingName: json['buildingName'] as String?,
       apartmentNumber: json['apartmentNumber'] as String?,
       floor: json['floor'] as String?,
-      region: json['region'] as String?,
+      region: (json['region'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
       additionalDirections: json['additionalDirections'] as String?,
       streetName: json['streetName'] as String?,
       phone: json['phone'] as String?,
       addressLabel: json['addressLabel'] as String?,
       latitude: json['latitude'] as String?,
       longitude: json['longitude'] as String?,
+      nearbyStoreAddress: json['nearbyStoreAddress'] as String?,
     );
 
 Map<String, dynamic> _$CreateAddressRequestBodyToJson(
@@ -36,4 +39,5 @@ Map<String, dynamic> _$CreateAddressRequestBodyToJson(
       'addressLabel': instance.addressLabel,
       'latitude': instance.latitude,
       'longitude': instance.longitude,
+      'nearbyStoreAddress': instance.nearbyStoreAddress,
     };

@@ -104,7 +104,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                                 constraints: BoxConstraints(
                                     maxWidth: isEnLocale ? 300.w : 250.w),
                                 child: Text(
-                                  userAddress.addressDataList[index].region!,
+                                  userAddress.addressDataList[index].region??'',
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleLarge!

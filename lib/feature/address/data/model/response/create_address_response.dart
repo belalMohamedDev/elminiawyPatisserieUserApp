@@ -31,6 +31,7 @@ class CreateAddressData {
   String? addressLabel;
   Location? location;
   String? user;
+  String? nearbyStoreAddress;
   @JsonKey(name: "_id")
   String? sId;
 
@@ -46,6 +47,7 @@ class CreateAddressData {
     this.addressLabel,
     this.location,
     this.user,
+    this.nearbyStoreAddress,
     this.sId,
   });
 

@@ -53,7 +53,12 @@ class CategoryListViewBuilder extends StatelessWidget {
         responsive.setSizeBox(height: 3), // Spacing between title and content
 
         // BlocBuilder to handle category states
-        BlocBuilder<CategoryCubit, CategoryState>(
+        BlocConsumer<CategoryCubit, CategoryState>(
+          listener: (context, state) {
+            if (state is GetCategoriesError) {
+              context.read<CategoryCubit>().getCategories();
+            }
+          },
           builder: (context, state) {
             if (state is GetCategoriesSuccess) {
               // If categories are successfully loaded, display the category list

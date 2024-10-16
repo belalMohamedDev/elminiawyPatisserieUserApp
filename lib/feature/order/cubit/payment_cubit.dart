@@ -24,12 +24,13 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(PaymentState.choosePayment(choosePaymentMethod));
   }
 
-  Future<void> createCashOrderSummit(String shippingAddressId) async {
+  Future<void> createCashOrderSummit(String shippingAddressId,String nearbyStoreAddress) async {
     emit(const PaymentState.createCashOrderLoading());
 
     final response = await _orderRepositoryImplement.createCashOrder(
         CreateOrderRequestBody(
             shippingAddress: shippingAddressId,
+            nearbyStoreAddress:nearbyStoreAddress,
             notes: notesController.text.trim()));
 
     response.when(
