@@ -21,7 +21,8 @@ Future<void> initAppModule() async {
     _initChangeMyPassword(),
     _initPayment(),
     _initNotification(),
-    _initSearch()
+    _initSearch(),
+    _initSignInWithGoogleAndApple()
   ]);
 }
 
@@ -41,8 +42,7 @@ Future<void> _initAppModule() async {
   instance
     ..registerLazySingleton<AppServiceClient>(() => AppServiceClient(dio))
     ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
-    ..registerFactory<AppLogicCubit>(() => AppLogicCubit(
-        ));
+    ..registerFactory<AppLogicCubit>(() => AppLogicCubit());
 }
 
 Future<void> _inithome() async {
@@ -72,6 +72,16 @@ Future<void> _initLogin() async {
     ..registerFactory<LoginBloc>(() => LoginBloc(
           instance(),
         ));
+}
+
+Future<void> _initSignInWithGoogleAndApple() async {
+  instance
+    ..registerLazySingleton<AuthenticationRepository>(
+        () => AuthenticationRepository(instance()))
+    ..registerFactory<AuthenticationWithGoogleAndAppleCubit>(
+        () => AuthenticationWithGoogleAndAppleCubit(
+              instance(),
+            ));
 }
 
 Future<void> _initSignUp() async {

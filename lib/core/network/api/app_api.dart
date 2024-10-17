@@ -16,6 +16,12 @@ abstract class AppServiceClient {
     @Body() LoginRequestBody loginRequestBody,
   );
 
+
+  @POST(ApiConstants.google)
+  Future<AuthResponse> googleService(
+      @Field("token") String userTokenFromGoogle,
+  );
+
   @POST(ApiConstants.signup)
   Future<AuthResponse> register(
     @Body() RegisterRequestBody registerRequestBody,

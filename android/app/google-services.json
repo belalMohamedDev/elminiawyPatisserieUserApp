@@ -12,7 +12,20 @@
           "package_name": "com.elminiawy.patisserie"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "274043185653-72gv74mo06f2rd05tl1rbq5bojqqn1h1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elminiawy.patisserie",
+            "certificate_hash": "303737f905a7cc5ed159da93d4089f0b0f432d87"
+          }
+        },
+        {
+          "client_id": "274043185653-vclem08s9voiuv427d46ur0g8eqge0b6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCBsADXjnjR0Wv0pnl2rzmONBwoSvE7TJs"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274043185653-vclem08s9voiuv427d46ur0g8eqge0b6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "274043185653-ov8o0grh9tepaqo6e9a839oo26m4cjje.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.coder.elminiawy"
+              }
+            }
+          ]
         }
       }
     }

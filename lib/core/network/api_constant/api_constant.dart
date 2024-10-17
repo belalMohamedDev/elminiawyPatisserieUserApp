@@ -3,6 +3,7 @@ class ApiConstants {
    static const int apiTimeOut = 120 * 1000;
 
   static const String login = '/v1/api/auth/login';
+  static const String google = '/v1/api/auth/google';
   static const String signup = '/v1/api/auth/signUp';
   static const String forgetPassword = '/v1/api/auth/forgetPassword';
   static const String verifyCode = '/v1/api/auth/verifyCode';

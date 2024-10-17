@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
 /// The [SignInButton] widget represents the primary button for initiating the login process.
@@ -14,9 +13,6 @@ class SignInButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments
-    final responsive = ResponsiveUtils(context);
-
     return BlocConsumer<LoginBloc, LoginState>(
       // Listener to respond to state changes such as success or error events
       listener: (context, state) {
@@ -52,45 +48,10 @@ class SignInButton extends StatelessWidget {
                   context.read<LoginBloc>().add(const UserLoginButton());
                 }
               : null, // If validation fails, the button is disabled
-          widget: state.maybeWhen(
-            // Display a loading indicator when the login is in progress
-            loading: () => Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Circular progress indicator with dynamic sizing
-                SizedBox(
-                  height: responsive.setHeight(2),
-                  width: responsive.setWidth(4),
-                  child: CircularProgressIndicator(
-                    color: ColorManger.white, // Indicator color
-                    strokeWidth: 2.0, // Line thickness of the indicator
-                    strokeAlign:
-                        0.01, // Alignment of the stroke (indicator line)
-                  ),
-                ),
-                SizedBox(
-                  width: responsive
-                      .setHeight(2), // Spacing between the indicator and text
-                ),
-                // Loading text displayed next to the progress indicator
-                Text(
-                  context.translate(AppStrings.loading),
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontSize:
-                            responsive.setTextSize(3.8), // Dynamic text size
-                      ),
-                ),
-              ],
-            ),
-            // Default button label when not loading
-            orElse: () => Text(
-              context.translate(AppStrings.signIn),
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontSize: responsive.setTextSize(
-                        3.8), // Adjusted font size for responsiveness
-                  ),
-            ),
+          widget: LoadingButtonContent(
+            defaultText: AppStrings.signIn,
+            state: state,
+         
           ),
         );
       },
