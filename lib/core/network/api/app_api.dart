@@ -19,7 +19,7 @@ abstract class AppServiceClient {
 
   @POST(ApiConstants.google)
   Future<AuthResponse> googleService(
-      @Field("token") String userTokenFromGoogle,
+    @Body() Map<String, dynamic> registerRequestBody,
   );
 
   @POST(ApiConstants.signup)

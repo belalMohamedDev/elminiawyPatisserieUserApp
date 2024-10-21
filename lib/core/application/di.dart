@@ -67,30 +67,26 @@ Future<void> _initPlaces() async {
 }
 
 Future<void> _initLogin() async {
-  instance
-    ..registerLazySingleton<LoginRepository>(() => LoginRepository(instance()))
-    ..registerFactory<LoginBloc>(() => LoginBloc(
-          instance(),
-        ));
+  instance.registerFactory<LoginBloc>(() => LoginBloc(
+        instance(),
+      ));
 }
 
 Future<void> _initSignInWithGoogleAndApple() async {
+
   instance
-    ..registerLazySingleton<AuthenticationRepository>(
-        () => AuthenticationRepository(instance()))
-    ..registerFactory<AuthenticationWithGoogleAndAppleCubit>(
-        () => AuthenticationWithGoogleAndAppleCubit(
-              instance(),
-            ));
+    ..registerLazySingleton<AuthenticationRepositoryImplement>(
+        () => AuthenticationRepositoryImplement(instance()))
+  ..registerFactory<AuthenticationWithGoogleAndAppleCubit>(
+      () => AuthenticationWithGoogleAndAppleCubit(
+            instance(),
+          ));
 }
 
 Future<void> _initSignUp() async {
-  instance
-    ..registerLazySingleton<RegisterRepository>(
-        () => RegisterRepository(instance()))
-    ..registerFactory<SignUpBloc>(() => SignUpBloc(
-          instance(),
-        ));
+  instance.registerFactory<SignUpBloc>(() => SignUpBloc(
+        instance(),
+      ));
 }
 
 // forget password

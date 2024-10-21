@@ -116,7 +116,14 @@ BlocListener<LogOutCubit, LogOutState> logoutLogic(BuildContext context) {
 
               // Proceed with logout if confirmed
               if (shouldLogOut == true) {
-                context.read<LogOutCubit>().checkTokenThenDoLogOut(context);
+                context
+                    .read<AuthenticationWithGoogleAndAppleCubit>()
+                    .signOut()
+                    .whenComplete(
+                  () {
+                    context.read<LogOutCubit>().checkTokenThenDoLogOut(context);
+                  },
+                );
               }
             },
     ),

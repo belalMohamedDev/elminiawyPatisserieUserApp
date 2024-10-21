@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "274043185653-72gv74mo06f2rd05tl1rbq5bojqqn1h1.apps.googleusercontent.com",
+          "client_id": "274043185653-e20kquhbs0jbvtjndnrs5o622h9oetgb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.elminiawy.patisserie",
-            "certificate_hash": "303737f905a7cc5ed159da93d4089f0b0f432d87"
+            "certificate_hash": "381b78197ecb00b77abc258fe3740e077a3b530d"
           }
         },
         {

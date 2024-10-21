@@ -58,11 +58,13 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<AuthResponse> googleService(String userTokenFromGoogle) async {
+  Future<AuthResponse> googleService(
+      Map<String, dynamic> registerRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {'token': userTokenFromGoogle};
+    final _data = <String, dynamic>{};
+    _data.addAll(registerRequestBody);
     final _options = _setStreamType<AuthResponse>(Options(
       method: 'POST',
       headers: _headers,
