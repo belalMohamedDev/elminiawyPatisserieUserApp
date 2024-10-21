@@ -64,7 +64,7 @@ class AccountInfomationBody extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isNameValid(value)) {
-                return context.translate(AppStrings.pleaseEnterAValidName) ;
+                return context.translate(AppStrings.pleaseEnterAValidName);
               }
               return null;
             },
@@ -100,7 +100,8 @@ class AccountInfomationBody extends StatelessWidget {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isPhoneNumberValid(value)) {
-                return context.translate(AppStrings.pleaseEnterAValidPhoneNumber);
+                return context
+                    .translate(AppStrings.pleaseEnterAValidPhoneNumber);
               }
               return null;
             },
@@ -146,9 +147,9 @@ class AccountInfomationBody extends StatelessWidget {
     return BlocConsumer<AccountInformationCubit, AccountInformationState>(
       listener: (context, state) {
         state.whenOrNull(
-          updateAccountInformationError: (apiErrorModel) =>   ShowToast.showToastErrorTop(
+          updateAccountInformationError: (apiErrorModel) =>
+              ShowToast.showToastErrorTop(
                   errorMessage: apiErrorModel.message!, context: context),
-            
           updateAccountInformationSuccess: (data) {
             ShowToast.showToastSuccessTop(
                 message: data.message!, context: context);
@@ -160,8 +161,9 @@ class AccountInfomationBody extends StatelessWidget {
             ShowToast.showToastSuccessTop(
                 message: data.message!, context: context);
 
-                 await AppLogout().logOutThenNavigateToLogin();
-         
+            context.read<AuthenticationWithGoogleAndAppleCubit>().signOut();
+
+            await AppLogout().logOutThenNavigateToLogin();
           },
           deleteAccountError: (apiErrorModel) => ShowToast.showToastErrorTop(
               errorMessage: apiErrorModel.message!, context: context),
@@ -214,7 +216,7 @@ class AccountInfomationBody extends StatelessWidget {
                     width: 15.w,
                   ),
                   Text(
-                     context.translate(AppStrings.loading) ,
+                    context.translate(AppStrings.loading),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontSize: 16.sp,
                         ),
@@ -238,7 +240,7 @@ class AccountInfomationBody extends StatelessWidget {
                     width: 15.w,
                   ),
                   Text(
-                context.translate(AppStrings.loading)    ,
+                    context.translate(AppStrings.loading),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontSize: 16.sp,
                         ),

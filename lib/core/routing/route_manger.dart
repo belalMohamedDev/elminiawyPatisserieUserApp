@@ -1,4 +1,3 @@
-
 import '../../../../core/common/shared/shared_imports.dart';
 
 class RouteGenerator {
@@ -12,8 +11,8 @@ class RouteGenerator {
                 create: (context) => instance<LoginBloc>(),
               ),
               BlocProvider(
-                create: (context) =>  instance<AuthenticationWithGoogleAndAppleCubit>()
-              ),
+                  create: (context) =>
+                      instance<AuthenticationWithGoogleAndAppleCubit>()),
             ],
             child: const LoginView(),
           ),
@@ -91,8 +90,16 @@ class RouteGenerator {
 
       case Routes.accountInfomation:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AccountInformationCubit>(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => instance<AccountInformationCubit>(),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    instance<AuthenticationWithGoogleAndAppleCubit>(),
+              ),
+            ],
             child: const AccountInfomation(),
           ),
         );

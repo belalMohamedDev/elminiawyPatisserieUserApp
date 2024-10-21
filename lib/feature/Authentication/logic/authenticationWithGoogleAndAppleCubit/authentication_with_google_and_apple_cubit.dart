@@ -40,9 +40,13 @@ class AuthenticationWithGoogleAndAppleCubit
 
   Future<void> signOut() async {
     final User? user = FirebaseAuth.instance.currentUser;
-
+   
     if (user != null) {
+       // Sign out from Firebase
       await FirebaseAuth.instance.signOut();
+
+      // Sign out from Google
+      await _googleSignIn.signOut();
     }
   }
 

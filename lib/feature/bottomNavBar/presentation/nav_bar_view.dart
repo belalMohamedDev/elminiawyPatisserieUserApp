@@ -59,8 +59,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
           backgroundColor: ColorManger.brun,
 
-        
-
           onTabChanged: (index) {
             if (index == 2) {
               if (AppInitialRoute.isAnonymousUser) {
@@ -151,6 +149,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
             ),
             BlocProvider.value(
               value: instance<PaymentCubit>(),
+            ),
+            BlocProvider(
+              create: (context) =>
+                  instance<AuthenticationWithGoogleAndAppleCubit>(),
             ),
           ],
           child: const ProfileView(),
