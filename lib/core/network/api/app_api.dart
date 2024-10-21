@@ -28,12 +28,12 @@ abstract class AppServiceClient {
   );
 
   @POST(ApiConstants.forgetPassword)
-  Future<ForgetPasswordResponse> forgetPassword(
+  Future<ApiSuccessGeneralModel> forgetPassword(
     @Body() ForgetPasswordRequestBody forgetPasswordRequestBody,
   );
 
   @POST(ApiConstants.verifyCode)
-  Future<VerifyCodeResponse> verifyCode(
+  Future<ApiSuccessGeneralModel> verifyCode(
     @Body() VerifyCodeRequestBody verifyCodeRequestBody,
   );
 

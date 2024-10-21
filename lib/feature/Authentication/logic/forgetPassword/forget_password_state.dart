@@ -5,7 +5,7 @@ class ForgetPasswordState with _$ForgetPasswordState {
   const factory ForgetPasswordState.initial() = _Initial;
   const factory ForgetPasswordState.loading() = ForgetPasswordLoadingData;
   const factory ForgetPasswordState.error(ApiErrorModel apiErrorModel) = ForgetPasswordButtonErrorData;
-  const factory ForgetPasswordState.success(ForgetPasswordResponse data) = ForgetPasswordButtonSuccessData;
+  const factory ForgetPasswordState.success(ApiSuccessGeneralModel data) = ForgetPasswordButtonSuccessData;
   const factory ForgetPasswordState.userForgetEmailAddress(String value ) = UserForgetEmailAddress;
   const factory ForgetPasswordState.userForgetButtonValidator(bool value) = ContinueForgetButtonValidator;
 
@@ -14,7 +14,7 @@ class ForgetPasswordState with _$ForgetPasswordState {
   const factory ForgetPasswordState.verifyCodeLoading() = VerifyCodeLoadingData;
   const factory ForgetPasswordState.verifyCodeError(
       ApiErrorModel apiErrorModel) = VerifyCodeButtonErrorData;
-  const factory ForgetPasswordState.verifyCodeSuccess(VerifyCodeResponse data) = VerifyCodeButtonSuccessData;
+  const factory ForgetPasswordState.verifyCodeSuccess(ApiSuccessGeneralModel data) = VerifyCodeButtonSuccessData;
   const factory ForgetPasswordState.otpVerifyCode(String? value) = OtpVerifyCode;
   const factory ForgetPasswordState.verifyButtonValidator(bool value) = VerifyButtonValidator;
 

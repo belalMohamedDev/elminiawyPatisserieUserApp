@@ -18,14 +18,20 @@ export '../../../../core/utils/app_login.dart';
 export '../../../../core/common/sharedWidget/loading_overlay.dart';
 export '../../../../feature/Authentication/presentation/sharedWidgetBetweenScreen/headline_text_auth_screen.dart';
 
+export '../../../../feature/Authentication/presentation/refactors/restEmail/email_forget_password_text_form_field.dart';
+export '../../../../feature/Authentication/presentation/refactors/restEmail/forget_password_button.dart';
+
 export 'package:firebase_core/firebase_core.dart';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export '../../../feature/Authentication/logic/authenticationWithGoogleAndAppleCubit/authentication_with_google_and_apple_cubit.dart';
 export '../../../feature/Authentication/data/repository/authentication_repository.dart';
-export '../../../feature/Authentication/data/model/authResponse/login_response.dart';
+export '../../../feature/Authentication/data/model/authResponse/auth_response.dart';
 export '../../../feature/Authentication/data/model/bodyRequest/login/login_body_request.dart';
 export '../../../feature/Authentication/data/model/bodyRequest/register/sign_up_body_request.dart';
+export '../../../feature/Authentication/data/model/bodyRequest/newPassword/new_password_body_request.dart';
+export '../../../feature/Authentication/data/model/bodyRequest/restEmail/forget_password_body_request.dart';
+export '../../../feature/Authentication/data/model/bodyRequest/verifiyCode/verifiy_code_body_request.dart';
 
 export '../../../feature/Authentication/presentation/sharedWidgetBetweenScreen/loading_button_content.dart';
 
@@ -40,8 +46,6 @@ export '../../../../feature/address/data/model/request/create_address_request.da
 export '../../../../feature/address/presentation/widget/mapScrrenWidget/custom_map_marker.dart';
 export '../../../../feature/changeEmailAddress/presentation/refactor/change_email_body.dart';
 export '../../../../feature/changePassword/presentation/refactor/change_password_body.dart';
-export '../../../feature/forgetPassword/presntation/widget/restEmailWidget/email_forget_password_text_form_field.dart';
-export '../../../feature/forgetPassword/presntation/widget/restEmailWidget/forget_password_button.dart';
 export '../../../../feature/home/presentation/refactor/home_body.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export '../../../../core/common/sharedWidget/product_grid_view_loading.dart';
@@ -65,21 +69,18 @@ export '../../../feature/Authentication/presentation/refactors/signUp/name_text_
 export '../../../feature/Authentication/presentation/refactors/signUp/password_sign_up_text_form_field.dart';
 export '../../../feature/Authentication/presentation/refactors/signUp/phone_text_form_field.dart';
 export '../../../feature/Authentication/presentation/refactors/signUp/sign_up_button.dart';
-export '../../../feature/forgetPassword/presntation/widget/verificationCodeWidget/verification_code_button.dart';
-export '../../../feature/forgetPassword/presntation/widget/verificationCodeWidget/verify_code_text_form_field.dart';
 export 'package:flutter_verification_code/flutter_verification_code.dart';
 export '../../../../feature/wishList/presentation/refactor/wishlist_body.dart';
 export '../../../../app.dart';
 
-export '../../../feature/forgetPassword/presntation/widget/newPasswordWidget/confirm_new_password_text_form_field.dart';
-export '../../../../feature/forgetPassword/presntation/widget/newPasswordWidget/new_password_button.dart';
 
-export '../../../feature/forgetPassword/presntation/widget/newPasswordWidget/new_password_text_form_field.dart';
 
 export '../../../../core/common/sharedWidget/search_row.dart';
 export '../../../../feature/home/presentation/widget/banner_carousel_slider.dart';
 export '../../../../feature/home/presentation/widget/category_list_view_builder.dart';
 export '../../../../feature/home/presentation/widget/new_product_gride_view.dart';
+export '../../../../feature/Authentication/presentation/refactors/verificationCode/verification_code_button.dart';
+export '../../../../feature/Authentication/presentation/refactors/verificationCode/verify_code_text_form_field.dart';
 
 export 'package:geolocator/geolocator.dart';
 export 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -93,6 +94,9 @@ export 'package:custom_map_markers/custom_map_markers.dart';
 export 'package:flutter_slidable/flutter_slidable.dart'
     hide ConfirmDismissCallback;
 export 'package:flutter_rating_bar/flutter_rating_bar.dart';
+export '../../../../feature/Authentication/presentation/refactors/newPassword/confirm_new_password_text_form_field.dart';
+export '../../../../feature/Authentication/presentation/refactors/newPassword/new_password_button.dart';
+export '../../../../feature/Authentication/presentation/refactors/newPassword/new_password_text_form_field.dart';
 
 // Cached network image
 export 'package:cached_network_image/cached_network_image.dart';
@@ -166,17 +170,17 @@ export '../../../feature/Authentication/logic/signUpBloc/sign_up_bloc.dart';
 
 export '../../../../feature/address/presentation/screen/add_new_address_screen.dart';
 export '../../../../feature/bottomNavBar/presentation/nav_bar_view.dart';
-export '../../../../feature/forgetPassword/bloc/forget_password_bloc.dart';
-export '../../../../feature/forgetPassword/presntation/screen/forget_password_screen.dart';
+export '../../../feature/Authentication/logic/forgetPassword/forget_password_bloc.dart';
 export '../../../feature/Authentication/logic/loginBloc/login_bloc.dart';
 export '../../../feature/Authentication/presentation/screens/sign_in_view.dart';
-export '../../../feature/forgetPassword/presntation/screen/new_password_screen.dart';
 export '../../../../feature/notification/logic/cubit/user_notification_cubit.dart';
 export '../../../../feature/onBoarding/presentation/screen/on_boarding_view.dart';
 export '../../../feature/Authentication/presentation/screens/sign_up_view.dart';
 export '../../../../feature/address/presentation/screen/user_address_screen.dart';
-export '../../../feature/forgetPassword/presntation/screen/verification_code_screen.dart';
 export '../../../../feature/wishList/presentation/screen/wishlist_screen.dart';
+export '../../../../feature/Authentication/presentation/screens/forget_password_screen.dart';
+export '../../../../feature/Authentication/presentation/screens/new_password_screen.dart';
+export '../../../../feature/Authentication/presentation/screens/verification_code_screen.dart';
 
 export '../../../../feature/accountInfo/cubit/account_information_cubit.dart'
     hide GetStorageData;
@@ -262,12 +266,9 @@ export 'package:get_it/get_it.dart';
 export 'package:internet_connection_checker/internet_connection_checker.dart';
 
 export '../../../../feature/accountInfo/data/repository/update_account_information.dart';
-export '../../../feature/forgetPassword/data/repository/forgetPasswordRespoitory/forget_password_repo.dart';
 export '../../../../feature/home/data/repository/repositry.dart';
-export '../../../feature/forgetPassword/data/repository/newPasswordrepository/new_password_repo.dart';
 export '../../../../feature/newProduct/model/repository/repositry.dart';
 export '../../../../feature/address/data/repository/address_repo.dart';
-export '../../../feature/forgetPassword/data/repository/verificationRepository/verify_code_repo.dart';
 export '../../../../feature/wishList/data/repository/repository.dart';
 export '../../../../firebase_options.dart';
 
@@ -324,16 +325,11 @@ export '../../../feature/address/data/model/response/check_address_available.dar
 export '../../../feature/cart/data/model/bodyRequest/add_item.dart';
 export '../../../feature/changeEmailAddress/data/model/request/change_email_request.dart';
 export '../../../feature/changeEmailAddress/data/model/response/change_email_response.dart';
-export '../../../feature/forgetPassword/data/model/restEmailModel/bodyRequest/forget_password_body_request.dart';
-export '../../../feature/forgetPassword/data/model/restEmailModel/loginResponse/forget_password_response.dart';
 export '../../../feature/home/data/model/response/banner_response.dart';
 export '../../../feature/profile/data/model/response/log_out_response.dart';
 
 
-export '../../../feature/forgetPassword/data/model/newPasswordModel/bodyRequest/new_password_body_request.dart';
 
-export '../../../feature/forgetPassword/data/model/verificationModel/bodyRequest/verifiy_code_body_request.dart';
-export '../../../feature/forgetPassword/data/model/verificationModel/verifiyCodeResponse/verifiy_code_response.dart';
 
 export '../../../core/network/api_constant/api_constant.dart';
 

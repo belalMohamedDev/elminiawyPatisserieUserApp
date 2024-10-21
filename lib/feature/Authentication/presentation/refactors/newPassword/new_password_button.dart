@@ -11,7 +11,6 @@ class NewPasswordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
-    final responsive = ResponsiveUtils(context);
 
     return BlocConsumer<ForgetPasswordBloc, ForgetPasswordState>(
       listener: (context, state) {
@@ -26,11 +25,12 @@ class NewPasswordButton extends StatelessWidget {
               // Show a success toast when login is successful
               ShowToast.showToastSuccessTop(
                   message: authResponse.message!, context: context);
-                 // Navigate to the map screen after a successful login
+              // Navigate to the map screen after a successful login
               AppLogin().storeDataThenNavigateToMap(authResponse);
             } else {
               ShowToast.showToastErrorTop(
-                  errorMessage:   context.translate(AppStrings.thisAccountNotAccessInThisApp),
+                  errorMessage: context
+                      .translate(AppStrings.thisAccountNotAccessInThisApp),
                   context: context);
             }
           },
@@ -48,42 +48,9 @@ class NewPasswordButton extends StatelessWidget {
                     }
                   : null,
           // Display a loading indicator or the button label based on the current state
-          widget: state.maybeWhen(
-            // If the state is loading, show a spinner and loading text
-            newPasswordLoading: () => Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Circular progress indicator (spinner)
-                SizedBox(
-                  height: responsive.setHeight(2),
-                  width: responsive.setWidth(4),
-                  child: const CircularProgressIndicator(
-                    color: Colors.white,
-                    strokeWidth: 2.0,
-                    strokeAlign: 0.01,
-                  ),
-                ),
-                // Spacing between spinner and loading text
-                SizedBox(
-                  width: responsive.setHeight(2),
-                ),
-                // Loading text next to the spinner
-                Text(
-                  context.translate(AppStrings.loading)  ,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontSize: responsive.setTextSize(3.8),
-                      ),
-                ),
-              ],
-            ),
-            // If not loading, display the "Create New Password" text
-            orElse: () => Text(
-           context.translate(AppStrings.createNewPassword)      ,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontSize: responsive.setTextSize(3.5),
-                  ),
-            ),
+          widget: LoadingButtonContent(
+            defaultText: AppStrings.createNewPassword,
+            state: state,
           ),
         );
       },

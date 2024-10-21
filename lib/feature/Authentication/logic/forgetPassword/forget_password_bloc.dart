@@ -1,4 +1,4 @@
-import '../../../../../core/common/shared/shared_imports.dart'; // Import necessary shared utilities
+import '../../../../../../core/common/shared/shared_imports.dart'; // Import necessary shared utilities
 
 part 'forget_password_event.dart';
 part 'forget_password_state.dart';
@@ -6,9 +6,9 @@ part 'forget_password_bloc.freezed.dart';
 
 class ForgetPasswordBloc
     extends Bloc<ForgetPasswordEvent, ForgetPasswordState> {
-  final ForgetPasswordRepository _forgetPasswordRepository;
-  final VerifyCodeRepository _verifyCodeRepository;
-  final NewPasswordRepository _newPasswordRepository;
+  final AuthenticationRepositoryImplement _forgetPasswordRepository;
+  final AuthenticationRepositoryImplement _verifyCodeRepository;
+  final AuthenticationRepositoryImplement _newPasswordRepository;
   final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
 
   String? code; // Variable to store the verification code

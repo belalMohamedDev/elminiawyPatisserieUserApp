@@ -127,14 +127,14 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ForgetPasswordResponse> forgetPassword(
+  Future<ApiSuccessGeneralModel> forgetPassword(
       ForgetPasswordRequestBody forgetPasswordRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(forgetPasswordRequestBody.toJson());
-    final _options = _setStreamType<ForgetPasswordResponse>(Options(
+    final _options = _setStreamType<ApiSuccessGeneralModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -151,9 +151,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ForgetPasswordResponse _value;
+    late ApiSuccessGeneralModel _value;
     try {
-      _value = ForgetPasswordResponse.fromJson(_result.data!);
+      _value = ApiSuccessGeneralModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -162,14 +162,14 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<VerifyCodeResponse> verifyCode(
+  Future<ApiSuccessGeneralModel> verifyCode(
       VerifyCodeRequestBody verifyCodeRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(verifyCodeRequestBody.toJson());
-    final _options = _setStreamType<VerifyCodeResponse>(Options(
+    final _options = _setStreamType<ApiSuccessGeneralModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -186,9 +186,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late VerifyCodeResponse _value;
+    late ApiSuccessGeneralModel _value;
     try {
-      _value = VerifyCodeResponse.fromJson(_result.data!);
+      _value = ApiSuccessGeneralModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -46,7 +46,11 @@ class LoadingButtonContent extends StatelessWidget {
       );
     }
 
-    if (state is LoginButtonLoadingData || state is SignUpButtonLoadingData) {
+    if (state is LoginButtonLoadingData ||
+        state is SignUpButtonLoadingData ||
+        state is ForgetPasswordLoadingData ||
+        state is VerifyCodeLoadingData ||
+        state is NewPasswordLoadingData) {
       return loadingWidget();
     } else if (state is AuthenticationWithGoogleLoading) {
       return loadingWidget(signWithGoogleOrApple: true);

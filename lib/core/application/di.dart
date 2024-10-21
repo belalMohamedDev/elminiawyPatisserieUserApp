@@ -73,14 +73,13 @@ Future<void> _initLogin() async {
 }
 
 Future<void> _initSignInWithGoogleAndApple() async {
-
   instance
     ..registerLazySingleton<AuthenticationRepositoryImplement>(
         () => AuthenticationRepositoryImplement(instance()))
-  ..registerFactory<AuthenticationWithGoogleAndAppleCubit>(
-      () => AuthenticationWithGoogleAndAppleCubit(
-            instance(),
-          ));
+    ..registerFactory<AuthenticationWithGoogleAndAppleCubit>(
+        () => AuthenticationWithGoogleAndAppleCubit(
+              instance(),
+            ));
 }
 
 Future<void> _initSignUp() async {
@@ -93,15 +92,8 @@ Future<void> _initSignUp() async {
 // verify code repositry
 // New Password Repository
 Future<void> _initForgetPassword() async {
-  instance
-    ..registerLazySingleton<ForgetPasswordRepository>(
-        () => ForgetPasswordRepository(instance()))
-    ..registerLazySingleton<VerifyCodeRepository>(
-        () => VerifyCodeRepository(instance()))
-    ..registerLazySingleton<NewPasswordRepository>(
-        () => NewPasswordRepository(instance()))
-    ..registerLazySingleton<ForgetPasswordBloc>(
-        () => ForgetPasswordBloc(instance(), instance(), instance()));
+  instance.registerLazySingleton<ForgetPasswordBloc>(
+      () => ForgetPasswordBloc(instance(), instance(), instance()));
 }
 
 Future<void> _initProduct() async {

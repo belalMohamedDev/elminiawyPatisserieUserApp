@@ -1,3 +1,4 @@
+
 import '../../../../core/common/shared/shared_imports.dart';
 
 class RouteGenerator {
