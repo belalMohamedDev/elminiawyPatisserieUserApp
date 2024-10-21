@@ -37,23 +37,11 @@ class LoginView extends StatelessWidget {
                 CrossAxisAlignment.start, // Align children to the left
             children: [
               // Main headline "Welcome Back"
-              Text(
-                context.translate(AppStrings.welcomeBack),
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge, // Uses theme styling
-              ),
-              SizedBox(
-                height: responsive.setHeight(1), // Spacing after the headline
+              const HeadlineTextAuthScreen(
+                titleText: AppStrings.welcomeBack,
+                subTitleText: AppStrings.toGetStartedSignInToYourAccount,
               ),
 
-              // Subtitle prompting the user to sign in
-              Text(
-                context.translate(AppStrings.toGetStartedSignInToYourAccount),
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    fontSize: responsive.setTextSize(
-                        3.8)), // Adjust font size based on screen size
-              ),
               SizedBox(
                 height: responsive
                     .setHeight(6), // Spacing before the email input field

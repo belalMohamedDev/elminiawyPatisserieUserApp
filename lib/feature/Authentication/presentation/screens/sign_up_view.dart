@@ -19,8 +19,9 @@ class SignUpView extends StatelessWidget {
         height: responsive
             .setHeight(8), // Dynamically set height for the bottom bar
         child: const Center(
-          child:
-              HaveAnAccountText(signUpText: true,), // Text prompting the user to log in if they already have an account
+          child: HaveAnAccountText(
+            signUpText: true,
+          ), // Text prompting the user to log in if they already have an account
         ),
       ),
       body: SingleChildScrollView(
@@ -37,20 +38,24 @@ class SignUpView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Display the "Create Account" title
-                Text(context.translate(AppStrings.createAccount),
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: responsive.setTextSize(4.2))),
-                SizedBox(
-                  height: responsive.setHeight(1),
+                const HeadlineTextAuthScreen(
+                  titleText: AppStrings.createAccount,
+                  subTitleText: AppStrings.fillYouInformation,
                 ),
-                // Display the prompt to fill in information
-                Text(context.translate(AppStrings.fillYouInformation),
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall!
-                        .copyWith(fontSize: responsive.setTextSize(3.2))),
+                // Text(context.translate(AppStrings.createAccount),
+                //     style: Theme.of(context)
+                //         .textTheme
+                //         .titleLarge!
+                //         .copyWith(fontSize: responsive.setTextSize(4.2))),
+                // SizedBox(
+                //   height: responsive.setHeight(1),
+                // ),
+                // // Display the prompt to fill in information
+                // Text(context.translate(AppStrings.fillYouInformation),
+                //     style: Theme.of(context)
+                //         .textTheme
+                //         .bodySmall!
+                //         .copyWith(fontSize: responsive.setTextSize(3.2))),
                 SizedBox(
                   height: responsive.setHeight(3),
                 ),

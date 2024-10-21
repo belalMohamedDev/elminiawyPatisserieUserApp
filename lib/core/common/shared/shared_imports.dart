@@ -16,6 +16,7 @@ export '../../../../core/utils/app_logout.dart';
 export '../../../../core/utils/app_initial_route.dart';
 export '../../../../core/utils/app_login.dart';
 export '../../../../core/common/sharedWidget/loading_overlay.dart';
+export '../../../../feature/Authentication/presentation/sharedWidgetBetweenScreen/headline_text_auth_screen.dart';
 
 export 'package:firebase_core/firebase_core.dart';
 export 'package:google_sign_in/google_sign_in.dart';
