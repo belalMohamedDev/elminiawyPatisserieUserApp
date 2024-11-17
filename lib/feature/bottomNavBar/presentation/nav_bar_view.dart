@@ -60,17 +60,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
           backgroundColor: ColorManger.brun,
 
           onTabChanged: (index) {
-            if (index == 2) {
-              if (AppInitialRoute.isAnonymousUser) {
-                context.pushNamed(Routes.noRoute);
-              } else {
-                context.pushNamed(Routes.cart);
-              }
-              context
-                  .read<AppLogicCubit>()
-                  .bottomNavBarController
-                  .jumpToPreviousTab();
-            }
+            // if (index == 2) {
+            //   if (AppInitialRoute.isAnonymousUser) {
+            //     context.pushNamed(Routes.noRoute);
+            //   } else {
+            //     context.pushNamed(Routes.cart);
+            //   }
+            //   context
+            //       .read<AppLogicCubit>()
+            //       .bottomNavBarController
+            //       .jumpToPreviousTab();
+            // }
           },
 
           tabs: _navBarsItems(responsive),
@@ -128,11 +128,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
       ),
       PersistentTabConfig(
-        screen: Container(),
+        screen: const WishListView(),
         item: ItemConfig(
-          icon: Icon(IconlyBold.bag, size: 20.sp),
-          inactiveIcon: Icon(IconlyBroken.bag, size: 20.sp),
-          title: (context.translate(AppStrings.shopping)),
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 5),
+            child: Icon(IconlyBold.heart, size: 20.sp),
+          ),
+          inactiveIcon: Icon(IconlyBroken.heart, size: 20.sp),
+          title: (context.translate(AppStrings.wishList)),
           textStyle: Theme.of(context)
               .textTheme
               .titleLarge!

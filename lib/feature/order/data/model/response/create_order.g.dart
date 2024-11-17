@@ -45,6 +45,10 @@ CreateOrderResponseData _$CreateOrderResponseDataFromJson(
       totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
       paymentMethodType: json['paymentMethodType'] as String?,
       isPaid: json['isPaid'] as bool?,
+      paitAt: json['paitAt'] as String?,
+      adminAcceptedAt: json['adminAcceptedAt'] as String?,
+      adminCompletedAt: json['adminCompletedAt'] as String?,
+      driverAcceptedAt: json['driverAcceptedAt'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
@@ -65,6 +69,10 @@ Map<String, dynamic> _$CreateOrderResponseDataToJson(
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
       'isPaid': instance.isPaid,
+      'paitAt': instance.paitAt,
+      'adminAcceptedAt': instance.adminAcceptedAt,
+      'adminCompletedAt': instance.adminCompletedAt,
+      'driverAcceptedAt': instance.driverAcceptedAt,
     };
 
 UserOrderData _$UserOrderDataFromJson(Map<String, dynamic> json) =>

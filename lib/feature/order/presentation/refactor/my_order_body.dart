@@ -30,7 +30,7 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
       children: [
         Padding(
           padding:
-              EdgeInsets.only(left: 55.w, right: 55.w, top: 20.h, bottom: 30.h),
+              EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h, bottom: 20.h),
           child: Container(
             decoration: BoxDecoration(
                 color: ColorManger.brunLight,

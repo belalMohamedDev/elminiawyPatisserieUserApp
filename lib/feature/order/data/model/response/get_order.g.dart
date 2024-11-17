@@ -67,6 +67,10 @@ GetOrdersResponseData _$GetOrdersResponseDataFromJson(
       totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
       paymentMethodType: json['paymentMethodType'] as String?,
       isPaid: json['isPaid'] as bool?,
+      paitAt: json['paitAt'] as String?,
+      adminAcceptedAt: json['adminAcceptedAt'] as String?,
+      driverAcceptedAt: json['driverAcceptedAt'] as String?,
+      adminCompletedAt: json['adminCompletedAt'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
@@ -87,6 +91,10 @@ Map<String, dynamic> _$GetOrdersResponseDataToJson(
       'isPaid': instance.isPaid,
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
+      'paitAt': instance.paitAt,
+      'adminAcceptedAt': instance.adminAcceptedAt,
+      'adminCompletedAt': instance.adminCompletedAt,
+      'driverAcceptedAt': instance.driverAcceptedAt,
     };
 
 GetOrdersUser _$GetOrdersUserFromJson(Map<String, dynamic> json) =>

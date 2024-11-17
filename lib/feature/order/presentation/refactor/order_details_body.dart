@@ -347,10 +347,10 @@ class OrderDetailsBody extends StatelessWidget {
           children: List.generate(
         2,
         (index) => Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h),
+          padding: EdgeInsets.symmetric(vertical: 3.h),
           child: Container(
             width: isCompleted ? 1.6.w : 1.8.w,
-            height: 8.h,
+            height: 6.h,
             decoration: BoxDecoration(
                 color: isCompleted ? ColorManger.brun : ColorManger.brownLight,
                 borderRadius: BorderRadius.circular(8.r)),
@@ -360,7 +360,7 @@ class OrderDetailsBody extends StatelessWidget {
     );
   }
 
-  Column _buildStep(
+  Row _buildStep(
       {required BuildContext context,
       required bool isCompleted,
       required bool isEnLocale,
@@ -368,55 +368,46 @@ class OrderDetailsBody extends StatelessWidget {
       required String title,
       required String subTitle,
       String imagePath = ImageAsset.orderDelivered}) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+    return Row(
       children: [
-        Row(
-          children: [
-            SizedBox(
-              width: isCompleted ? 0 : 6.w,
-            ),
-            CircleAvatar(
-                radius: isCompleted
-                    ? isCancelled
-                        ? 15.r
-                        : 11.r
-                    : 5.r,
-                backgroundColor: isCancelled
-                    ? ColorManger.backgroundItem
-                    : ColorManger.brownLight,
-                child: isCompleted
-                    ? Image.asset(
-                        imagePath,
-                      )
-                    : null),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: isEnLocale ? 20.w : 0, right: isEnLocale ? 0 : 20.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title,
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: isCompleted
-                              ? ColorManger.brun
-                              : ColorManger.brunLight,
-                          fontSize: 10.sp)),
-                  SizedBox(
-                    height: isCompleted ? 5.h : 0,
-                  ),
-                  isCompleted
-                      ? Text(subTitle,
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(fontSize: 10.sp))
-                      : const SizedBox(),
-                ],
-              ),
-            )
-          ],
+        SizedBox(
+          width: isCompleted ? 0 : 5.5.w,
         ),
+        CircleAvatar(
+            radius: isCompleted ? 11.r : 5.r,
+            backgroundColor: isCancelled
+                ? ColorManger.backgroundItem
+                : ColorManger.brownLight,
+            child: isCompleted
+                ? Image.asset(
+                    imagePath,
+                  )
+                : null),
+        Padding(
+          padding: EdgeInsets.only(
+              left: isEnLocale ? 20.w : 0, right: isEnLocale ? 0 : 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      color: isCompleted
+                          ? ColorManger.brun
+                          : ColorManger.brunLight,
+                      fontSize: 10.sp)),
+              SizedBox(
+                height: isCompleted ? 5.h : 0,
+              ),
+              isCompleted
+                  ? Text(subTitle,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontSize: 10.sp))
+                  : const SizedBox(),
+            ],
+          ),
+        )
       ],
     );
   }
@@ -431,6 +422,11 @@ class OrderDetailsBody extends StatelessWidget {
 
     int orderStatus = response!.status;
     String createAt = response.createdAt;
+    String updatedAt = response.updatedAt;
+    String paitAt = response.paitAt ?? updatedAt;
+    String adminAcceptedAt = response.adminAcceptedAt ?? updatedAt;
+    String adminCompletedAt = response.adminCompletedAt ?? updatedAt;
+    String driverAcceptedAt = response.driverAcceptedAt ?? updatedAt;
 
     return Container(
       width: double.infinity,
@@ -451,7 +447,7 @@ class OrderDetailsBody extends StatelessWidget {
             SizedBox(
               height: 15.h,
             ),
-            orderStatus != 4
+            orderStatus != 5
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -460,33 +456,36 @@ class OrderDetailsBody extends StatelessWidget {
                           isCompleted: orderStatus >= 0,
                           title: context.translate(AppStrings.orderPlaced),
                           isEnLocale: isEnLocale,
-                          subTitle:
-                              '${context.translate(AppStrings.orderHasBeenPlacedAt)} ${createAt.getFormattedDate()} .'),
+                          subTitle: '${createAt.getFormattedDate()} .'),
                       _buildLine(orderStatus > 0, isEnLocale),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 1,
                           title: context.translate(AppStrings.preparing),
-                          subTitle: context
-                              .translate(AppStrings.yourOrderIsBeingPrepared),
+                          subTitle: '${adminAcceptedAt.getFormattedDate()} .',
                           isEnLocale: isEnLocale),
                       _buildLine(orderStatus > 1, isEnLocale),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 2,
+                          title: context.translate(
+                              AppStrings.theOrderAcceptedByRestaurant),
                           isEnLocale: isEnLocale,
-                          title: context.translate(AppStrings.onItsWay),
-                          subTitle: context.translate(
-                            AppStrings.yourOrderIsOnItsWay,
-                          )),
+                          subTitle: '${adminCompletedAt.getFormattedDate()} .'),
                       _buildLine(orderStatus > 2, isEnLocale),
                       _buildStep(
+                          context: context,
+                          isCompleted: orderStatus >= 3,
+                          isEnLocale: isEnLocale,
+                          title: context.translate(AppStrings.onItsWay),
+                          subTitle: '${driverAcceptedAt.getFormattedDate()} .'),
+                      _buildLine(orderStatus > 3, isEnLocale),
+                      _buildStep(
                         context: context,
-                        isCompleted: orderStatus >= 3,
+                        isCompleted: orderStatus >= 4,
                         isEnLocale: isEnLocale,
                         title: context.translate(AppStrings.delivered),
-                        subTitle: context.translate(
-                            AppStrings.yourOrderWasDeliveredSuccessfully),
+                        subTitle: '${paitAt.getFormattedDate()} .',
                       ),
                     ],
                   )
@@ -495,16 +494,15 @@ class OrderDetailsBody extends StatelessWidget {
                     children: [
                       _buildStep(
                           context: context,
-                          isCompleted: orderStatus == 4,
+                          isCompleted: orderStatus == 5,
                           title: context.translate(AppStrings.orderPlaced),
                           isEnLocale: isEnLocale,
-                          subTitle:
-                              '${context.translate(AppStrings.orderHasBeenPlacedAt)} ${createAt.getFormattedDate()}'),
-                      _buildLine(orderStatus == 4, isEnLocale),
+                          subTitle: '${createAt.getFormattedDate()} .'),
+                      _buildLine(orderStatus == 5, isEnLocale),
                       _buildStep(
                           isCancelled: true,
                           context: context,
-                          isCompleted: orderStatus == 4,
+                          isCompleted: orderStatus == 5,
                           title: context.translate(AppStrings.cancelled),
                           subTitle: context
                               .translate(AppStrings.yourOrderWasCancelled),
@@ -535,14 +533,12 @@ class OrderDetailsBody extends StatelessWidget {
         children: [
           responsive.setSizeBox(width: 4),
           Image.asset(
-            orderStatus == 4
+            orderStatus == 5
                 ? ImageAsset.orderCancel
-                : orderStatus == 3
+                : orderStatus == 4
                     ? ImageAsset.orderDelivered
                     : ImageAsset.shoppingBag,
-            height: orderStatus == 3
-                ? responsive.setHeight(5)
-                : responsive.setHeight(5),
+            height: responsive.setHeight(5),
           ),
           responsive.setSizeBox(width: 4),
           Column(

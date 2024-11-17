@@ -1,5 +1,3 @@
-
-
 import 'package:device_preview/device_preview.dart';
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
@@ -31,8 +29,6 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
@@ -56,14 +52,6 @@ class _MyAppState extends State<MyApp> {
           // If there's no internet, show the NoConnection screen
           if (snapshot.hasData && !snapshot.data!) {
             return const NoconnectionScreen();
-          }
-
-          // Only show the main app UI if the dependencies are loaded
-          if (!_isDependenciesLoaded) {
-            return const Center(
-              child:
-                  CircularProgressIndicator(), // Show loading screen while initializing dependencies
-            );
           }
 
           return ScreenUtilInit(
@@ -100,7 +88,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-   Future<void> _initializeDependencies() async {
+  Future<void> _initializeDependencies() async {
     if (_isDependenciesLoaded) return;
 
     await Firebase.initializeApp(

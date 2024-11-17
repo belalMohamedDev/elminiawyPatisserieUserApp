@@ -1,5 +1,3 @@
-
-
 import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
 BlocBuilder profileColumnCard(BuildContext context) {
@@ -15,7 +13,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
             child: Column(
               children: [
                 CustomProfileCard(
-                  title: context.translate(AppStrings.myProfile) ,
+                  title: context.translate(AppStrings.myProfile),
                   leadingIcon: IconlyBold.profile,
                   tap: initUserNameCheck
                       ? () {
@@ -27,7 +25,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
                         },
                 ),
                 CustomProfileCard(
-                  title: context.translate(AppStrings.myAddress) ,
+                  title: context.translate(AppStrings.myAddress),
                   leadingIcon: IconlyBold.location,
                   tap: initUserNameCheck
                       ? () {
@@ -40,7 +38,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
                         },
                 ),
                 CustomProfileCard(
-                  title: context.translate(AppStrings.myOrders) ,
+                  title: context.translate(AppStrings.myOrders),
                   leadingIcon: IconlyBold.bag,
                   tap: initUserNameCheck
                       ? () {
@@ -53,20 +51,7 @@ BlocBuilder profileColumnCard(BuildContext context) {
                         },
                 ),
                 CustomProfileCard(
-                  title: context.translate(AppStrings.myWishList) ,
-                  leadingIcon: IconlyBold.heart,
-                  tap: initUserNameCheck
-                      ? () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.noRoute);
-                        }
-                      : () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.wishList);
-                        },
-                ),
-                CustomProfileCard(
-                  title:context.translate(AppStrings.settings)  ,
+                  title: context.translate(AppStrings.settings),
                   leadingIcon: IconlyBold.setting,
                   tap: () {
                     settingChangeBottomSheet(context);

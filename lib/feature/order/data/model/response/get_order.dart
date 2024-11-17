@@ -54,6 +54,11 @@ class GetOrdersResponseData {
   bool? isPaid;
   String? createdAt;
   String? updatedAt;
+  String? paitAt;
+
+  String? adminAcceptedAt;
+  String? adminCompletedAt;
+  String? driverAcceptedAt;
 
   GetOrdersResponseData(
       {this.sId,
@@ -67,6 +72,10 @@ class GetOrdersResponseData {
       this.totalOrderPrice,
       this.paymentMethodType,
       this.isPaid,
+      this.paitAt,
+      this.adminAcceptedAt,
+      this.driverAcceptedAt,
+      this.adminCompletedAt,
       this.createdAt,
       this.updatedAt});
 

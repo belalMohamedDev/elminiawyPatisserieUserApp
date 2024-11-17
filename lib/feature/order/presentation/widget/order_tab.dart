@@ -12,7 +12,7 @@ class OrdersTab extends StatelessWidget {
       itemBuilder: (context, index) {
         final order = getOrdersResponseData[index];
         return Padding(
-          padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 15.h),
+          padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 15.h),
           child: InkWell(
             onTap: () {
               Navigator.push(
@@ -27,7 +27,7 @@ class OrdersTab extends StatelessWidget {
             },
             child: Container(
               width: double.infinity,
-              height: 88.h,
+              height: 75.h,
               decoration: BoxDecoration(
                 color: ColorManger.backgroundItem,
                 borderRadius: BorderRadius.circular(10.r),
@@ -68,17 +68,7 @@ class OrdersTab extends StatelessWidget {
                             .copyWith(fontSize: 12.sp),
                       ),
                       SizedBox(
-                        height: 3.h,
-                      ),
-                      Text(
-                        '${context.translate(AppStrings.orderPlaced)}  ${order.createdAt!.getFormattedDate()}',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(fontSize: 12.sp),
-                      ),
-                      SizedBox(
-                        height: 3.h,
+                        height: 6.h,
                       ),
                       Text(
                         '${context.translate(AppStrings.totalPrice)}  ${order.totalOrderPrice}',
@@ -88,14 +78,33 @@ class OrdersTab extends StatelessWidget {
                             .copyWith(fontSize: 12.sp),
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 6.h,
                       ),
                       Text(
-                        '${context.translate(AppStrings.orderStatus)}  ${order.status == 0 ? "Order Placed" : order.status == 1 ? "Preparing" : order.status == 2 ? "On its way" : order.status == 3 ? "Delivered" : order.status == 4 ? "Cancelled" : ''}',
+                        order.status == 0
+                            ? context.translate(AppStrings.orderPlaced)
+                            : order.status == 1
+                                ? context.translate(
+                                    AppStrings.yourOrderIsBeingPrepared)
+                                : order.status == 2
+                                    ? context.translate(
+                                        AppStrings.theOrderAcceptedByRestaurant)
+                                    : order.status == 3
+                                        ? context.translate(
+                                            AppStrings.yourOrderIsOnItsWay)
+                                        : order.status == 4
+                                            ? context.translate(AppStrings
+                                                .yourOrderWasDeliveredSuccessfully)
+                                            : order.status == 5
+                                                ? context.translate(AppStrings
+                                                    .yourOrderWasCancelled)
+                                                : '',
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            color: order.status == 4
+                            color: order.status == 5
                                 ? ColorManger.redError
-                                : Colors.green,
+                                : order.status == 4
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 194, 155, 38),
                             fontSize: 12.sp),
                       ),
                     ],

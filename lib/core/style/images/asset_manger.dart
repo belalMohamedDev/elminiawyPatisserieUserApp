@@ -29,6 +29,7 @@ class ImageAsset {
 
   static const String orderCancel = "$imagePath/cancel.png";
   static const String orderDelivered = "$imagePath/order_delivered.png";
+  static const String orderWaiting = "$imagePath/order_waiting.png";
 
   static const String noCart = "$imagePath/noCart.svg";
   static const String noSearch = "$imagePath/noSearch.svg";

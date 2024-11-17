@@ -278,6 +278,7 @@ class AppStrings {
   static const String backToHome = "backToHome";
   static const String trackOrder = "trackOrder";
   static const String myOrders = "myOrders";
+  static const String theOrderAcceptedByRestaurant = "theOrderAcceptedByRestaurant";
   static const String currentOrders = "currentOrders";
   static const String previousOrders = "previousOrders";
   static const String accountInformation = "accountInformation";

@@ -33,6 +33,11 @@ class CreateOrderResponseData {
   String? createdAt;
   String? updatedAt;
   bool? isPaid;
+  String? paitAt;
+
+  String? adminAcceptedAt;
+  String? adminCompletedAt;
+  String? driverAcceptedAt;
 
   CreateOrderResponseData(
       {this.sId,
@@ -46,6 +51,10 @@ class CreateOrderResponseData {
       this.totalOrderPrice,
       this.paymentMethodType,
       this.isPaid,
+      this.paitAt,
+      this.adminAcceptedAt,
+      this.adminCompletedAt,
+      this.driverAcceptedAt,
       this.createdAt,
       this.updatedAt});
 
