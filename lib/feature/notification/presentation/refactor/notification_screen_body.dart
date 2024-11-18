@@ -9,14 +9,9 @@ class UserNotificationBody extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
-    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
     return BlocBuilder<UserNotificationCubit, UserNotificationState>(
       builder: (context, state) {
-        // Handle loading and error states with a common method
-        if (state is UserNotificationLoading ||
-            state is UserNotificationError) {
-          return _userNotificationErrorAndLoadingState(responsive, isEnLocale);
-        }
+      // 
 
         // Handle the case when the notification list is empty
         if (context.read<UserNotificationCubit>().dataList.isEmpty) {
@@ -161,67 +156,5 @@ class UserNotificationBody extends StatelessWidget {
     );
   }
 
-  /// Displays a shimmer effect for loading states or an error placeholder.
-  Padding _userNotificationErrorAndLoadingState(
-      ResponsiveUtils responsive, bool isEnLocale) {
-    return Padding(
-      padding: responsive.setPadding(
-          left: isEnLocale ? 6 : 9, right: isEnLocale ? 9 : 6, top: 2),
-      child: ListView.builder(
-        itemCount: 12, // Arbitrary count for loading placeholders
-        scrollDirection: Axis.vertical,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(
-              bottom: responsive.setHeight(1.5),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  height: responsive.setHeight(5),
-                  width: responsive.setWidth(11),
-                  decoration: BoxDecoration(
-                    color: ColorManger.brownLight,
-                    borderRadius:
-                        BorderRadius.circular(responsive.setBorderRadius(10)),
-                  ),
-                  child: Center(
-                    child: Image.asset(
-                      ImageAsset.orderDelivered,
-                      height: responsive.setHeight(4),
-                    ),
-                  ),
-                ),
-                responsive.setSizeBox(width: 3),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Shimmer effect for loading title
-                      LoadingShimmer(
-                        height: responsive.setHeight(0.7),
-                        width: double.infinity,
-                      ),
-                      responsive.setSizeBox(height: 0.5),
-                      // Shimmer effect for loading description
-                      LoadingShimmer(
-                        height: responsive.setHeight(0.7),
-                        width: responsive.setWidth(50),
-                      ),
-                      responsive.setSizeBox(height: 0.5),
-                      LoadingShimmer(
-                        height: responsive.setHeight(0.7),
-                        width: responsive.setWidth(30),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
+
 }

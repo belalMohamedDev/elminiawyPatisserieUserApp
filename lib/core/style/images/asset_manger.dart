@@ -46,4 +46,5 @@ class ImageAsset {
 class JsonAsset {
   //onBoading screen
   static const String congrat = "$jsonPath/cong.json";
+
 }

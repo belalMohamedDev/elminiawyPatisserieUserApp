@@ -119,6 +119,53 @@ class HomeBody extends StatelessWidget {
         ),
         const Spacer(), // Spacer to push the notification icon to the right
         // ValueListenableBuilder to listen for notification updates
+
+        GestureDetector(
+          onTap: () {
+            if (AppInitialRoute.isAnonymousUser) {
+              context.pushNamed(Routes.noRoute);
+            } else {
+              context.pushNamed(Routes.cart);
+            }
+          },
+          child: badges.Badge(
+            showBadge: true,
+            badgeAnimation: const badges.BadgeAnimation.scale(
+                loopAnimation: true,
+                curve: Curves.slowMiddle,
+                animationDuration: Duration(milliseconds: 2000)),
+            position: badges.BadgePosition.topEnd(
+              end: 26.w,
+              top: -2.h,
+            ),
+            badgeStyle: badges.BadgeStyle(
+              padding: EdgeInsets.all(
+                3.h,
+              ),
+            ),
+            badgeContent: Text(
+              '+9',
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    fontFamily: FontConsistent.fontFamilyAcme,
+                    color: ColorManger.white,
+                    fontSize: 10.sp,
+                  ),
+            ),
+            child: Container(
+              height: responsive.setHeight(4.5),
+              width: responsive.setWidth(9.8),
+              decoration: BoxDecoration(
+                  color: ColorManger.brownLight,
+                  borderRadius:
+                      BorderRadius.circular(responsive.setBorderRadius(5))),
+              child: Icon(
+                IconlyBold.bag,
+                color: ColorManger.brun,
+              ),
+            ),
+          ),
+        ),
+        responsive.setSizeBox(width: 1),
         StreamBuilder<UserNotificationResponse>(
           stream: notificationService.notificationStream, // Notification stream
           builder: (context, snapshot) {
@@ -130,13 +177,21 @@ class HomeBody extends StatelessWidget {
                     Navigator.of(context, rootNavigator: !false)
                         .pushNamed(Routes.noRoute);
                   } else {
-                    Navigator.of(context, rootNavigator: !false).pushNamed(
-                        Routes.notification); // Navigate to notification screen
+                    Navigator.of(context, rootNavigator: !false)
+                        .pushNamed(Routes.notification);
                   }
                 },
-                icon: Icon(
-                  IconlyBold.notification,
-                  color: ColorManger.brun,
+                icon: Container(
+                  height: responsive.setHeight(4.5),
+                  width: responsive.setWidth(9.8),
+                  decoration: BoxDecoration(
+                      color: ColorManger.brownLight,
+                      borderRadius:
+                          BorderRadius.circular(responsive.setBorderRadius(5))),
+                  child: Icon(
+                    IconlyBold.notification,
+                    color: ColorManger.brun,
+                  ),
                 ),
               );
             }
