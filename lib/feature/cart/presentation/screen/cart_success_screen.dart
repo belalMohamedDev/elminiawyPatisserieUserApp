@@ -29,7 +29,6 @@ class SuccessCartScreen extends StatelessWidget {
               childCount: cartData!.data!.cartItems?.length ?? 0,
             ),
           ),
-    
         ], // Other slivrs for remaining widgets
       ),
     );

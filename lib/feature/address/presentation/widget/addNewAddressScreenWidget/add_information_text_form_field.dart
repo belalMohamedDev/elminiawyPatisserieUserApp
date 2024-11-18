@@ -317,7 +317,7 @@ void _mangeUserAddressCuibtState(BuildContext context, UserAddressState state) {
                 .indexWhere((element) => element.sId == data.data!.sId);
 
             if (index != -1) {
-              context.read<PaymentCubit>().changeShippingIndex(index);
+              context.read<UserAddressCubit>().changeBetweenAddress(index);
 
               Navigator.of(context, rootNavigator: !false)
                   .popAndPushNamed(Routes.shippingAddress);

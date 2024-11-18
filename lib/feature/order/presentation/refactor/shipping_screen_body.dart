@@ -12,6 +12,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
   Widget build(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     return Padding(
       padding: responsive.setPadding(top: 3, right: 6, left: 6, bottom: 5),
@@ -21,11 +22,11 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           const CheckOutProcessing(
             screenIndex: 1,
           ),
-          responsive.setSizeBox(height: 4),
+          responsive.setSizeBox(height: 3),
           _changingAddressText(context, responsive),
-          responsive.setSizeBox(height: 4),
+          responsive.setSizeBox(height: 2),
           Text(
-          context.translate(AppStrings.currentLocation)  ,
+            context.translate(AppStrings.currentLocation),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -33,29 +34,155 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           ),
           responsive.setSizeBox(height: 2),
           _mapWidget(context, responsive),
-          responsive.setSizeBox(height: 4),
+          responsive.setSizeBox(height: 2),
           Text(
-         context.translate(AppStrings.shippingAddress)  ,
+            context.translate(AppStrings.shippingAddress),
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
                 .copyWith(fontSize: responsive.setTextSize(4)),
           ),
           responsive.setSizeBox(height: 2),
-          BlocBuilder<PaymentCubit, PaymentState>(
+          BlocBuilder<UserAddressCubit, UserAddressState>(
             builder: (context, state) {
-              return _shippingAddresssContainer(
-                  context: context, isSippingAddressCheckOut: true);
+              final userAddressCubit = context.read<UserAddressCubit>();
+              return Expanded(
+                child: ListView.builder(
+                  addAutomaticKeepAlives: true,
+                  itemCount: userAddressCubit.addressDataList.length + 1,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context, index) {
+                    if (index == userAddressCubit.addressDataList.length) {
+                      return Padding(
+                        padding: responsive.setPadding(bottom: 1, top: 0.5),
+                        child: InkWell(
+                          onTap: () {
+                            context.read<UserAddressCubit>().isPaymentAddress =
+                                true;
+
+                            Navigator.of(context, rootNavigator: !false)
+                                .popAndPushNamed(Routes.map);
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: responsive.setHeight(6),
+                            decoration: BoxDecoration(
+                              color: ColorManger.backgroundItem,
+                              borderRadius: BorderRadius.circular(
+                                  responsive.setBorderRadius(2)),
+                              border: Border.all(
+                                  color: ColorManger.brownLight,
+                                  width: responsive.setWidth(0.1)),
+                            ),
+                            child: Padding(
+                              padding: responsive.setPadding(
+                                  left: isEnLocale ? 2 : 0,
+                                  right: isEnLocale ? 0 : 2),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.add_circle_outline_rounded,
+                                    color: ColorManger.brun,
+                                  ),
+                                  responsive.setSizeBox(width: 2),
+                                  ConstrainedBox(
+                                    constraints:
+                                        BoxConstraints(maxWidth: 240.w),
+                                    child: Text(
+                                      context
+                                          .translate(AppStrings.addNewAddress),
+                                      maxLines: 1,
+                                      textAlign: TextAlign.start,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge!
+                                          .copyWith(
+                                              fontSize:
+                                                  responsive.setTextSize(4.5)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    } else {
+                      return Padding(
+                        padding: responsive.setPadding(bottom: 1),
+                        child: InkWell(
+                          onTap: () {
+                            userAddressCubit.changeBetweenAddress(index);
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: responsive.setHeight(6),
+                            decoration: BoxDecoration(
+                              color: userAddressCubit.addressIndex == index
+                                  ? ColorManger.brownLight
+                                  : ColorManger.backgroundItem,
+                              borderRadius: BorderRadius.circular(
+                                  responsive.setBorderRadius(2)),
+                              border: Border.all(
+                                  color: ColorManger.brownLight,
+                                  width: responsive.setWidth(0.1)),
+                            ),
+                            child: Padding(
+                              padding: responsive.setPadding(
+                                  left: isEnLocale ? 2 : 0,
+                                  right: isEnLocale ? 0 : 2),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    IconlyBold.location,
+                                    color: ColorManger.brun,
+                                  ),
+                                  responsive.setSizeBox(width: 2),
+                                  ConstrainedBox(
+                                    constraints:
+                                        BoxConstraints(maxWidth: 240.w),
+                                    child: Text(
+                                      userAddressCubit
+                                          .addressDataList[index].region!,
+                                      maxLines: 1,
+                                      textAlign: TextAlign.start,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge!
+                                          .copyWith(
+                                              fontSize:
+                                                  responsive.setTextSize(3.5)),
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Radio<int>(
+                                    value: index,
+                                    groupValue: userAddressCubit.addressIndex,
+                                    onChanged: (value) {},
+                                    activeColor: ColorManger.brun,
+                                    hoverColor: ColorManger.brun,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                ),
+              );
             },
           ),
-          const Spacer(),
+          //    const Spacer(),
           CustomButton(
             onPressed: () {
-              Navigator.of(context, rootNavigator: !false)
-                  .pushNamed(Routes.shippingPayment);
+              context.pushNamed(Routes.shippingPayment);
             },
             widget: Text(
-            context.translate(AppStrings.saveAndContinue)  ,
+              context.translate(AppStrings.saveAndContinue),
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontSize: responsive.setTextSize(
                         3.8), // Adjusted font size for responsiveness
@@ -114,7 +241,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           ),
                           child: Center(
                             child: Text(
-                         context.translate(AppStrings.defaultAddress)    ,
+                              context.translate(AppStrings.defaultAddress),
                               style: Theme.of(context)
                                   .textTheme
                                   .headlineSmall!
@@ -145,7 +272,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                               onTap: () {
                                 _chaneProfileDataaBottomSheet(context);
                               },
-                              child: Text(context.translate(AppStrings.change) ,
+                              child: Text(context.translate(AppStrings.change),
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleLarge!
@@ -251,7 +378,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                 borderRadius:
                     BorderRadius.circular(responsive.setBorderRadius(1.4)),
                 child: SizedBox(
-                  height: responsive.setHeight(16),
+                  height: responsive.setHeight(12),
                   width: double.infinity,
                   child: CustomGoogleMapMarkerBuilder(
                     customMarkers: mapCuibt.markers,
@@ -282,7 +409,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                   children: [
                     Icon(IconlyBold.location, color: ColorManger.brunLight),
                     responsive.setSizeBox(width: 1.2),
-                    Text(context.translate(AppStrings.youreHere) ,
+                    Text(context.translate(AppStrings.youreHere),
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -313,7 +440,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
           ),
           responsive.setSizeBox(width: 3),
           Text(
-         context.translate(AppStrings.changingTheAddressMightAffectYourCart)  ,
+            context.translate(AppStrings.changingTheAddressMightAffectYourCart),
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -377,7 +504,9 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                                     fontSize: responsive.setTextSize(4),
                                   )),
                           responsive.setSizeBox(height: 0.5),
-                          Text(context.translate(AppStrings.youCanEditYourAddressFromYourSettings) ,
+                          Text(
+                              context.translate(AppStrings
+                                  .youCanEditYourAddressFromYourSettings),
                               style: Theme.of(context)
                                   .textTheme
                                   .titleMedium!
@@ -430,7 +559,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                           .popAndPushNamed(Routes.shippingAddress);
                     },
                     widget: Text(
-                    context.translate(AppStrings.saveChanges)  ,
+                      context.translate(AppStrings.saveChanges),
                       style:
                           Theme.of(context).textTheme.headlineSmall?.copyWith(
                                 fontSize: responsive
@@ -448,7 +577,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                     },
                     color: ColorManger.brownLight,
                     widget: Text(
-                     context.translate(AppStrings.addNew) ,
+                      context.translate(AppStrings.addNew),
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                             fontSize: responsive
                                 .setTextSize(3.8), // Dynamic text size

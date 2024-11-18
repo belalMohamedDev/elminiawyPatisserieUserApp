@@ -23,6 +23,13 @@ class UserAddressCubit extends Cubit<UserAddressState> {
 
   List<GetAddressResponseData> addressDataList = [];
 
+  int addressIndex=0;
+
+  void changeBetweenAddress(int chooseAdress) {
+    addressIndex = chooseAdress;
+    emit(UserAddressState.chooseAddress(addressIndex));
+  }
+
   int regionAreaIndex = 0;
   String aliasData = "Apartment";
   List<Map<String, dynamic>> regionArea = [
@@ -100,7 +107,8 @@ class UserAddressCubit extends Cubit<UserAddressState> {
     response.when(
       success: (dataResponse) {
         addressDataList.removeWhere((address) => address.sId == addressId);
-        emit(UserAddressState.removeAddressSuccess(dataResponse,addressDataList));
+        emit(UserAddressState.removeAddressSuccess(
+            dataResponse, addressDataList));
       },
       failure: (error) {
         if (error.statusCode != 401) {
