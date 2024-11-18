@@ -36,7 +36,9 @@ mixin _$UserAddressState {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,7 +58,9 @@ mixin _$UserAddressState {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,7 +80,9 @@ mixin _$UserAddressState {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -218,7 +224,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return initial();
   }
@@ -241,7 +249,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return initial?.call();
   }
@@ -264,7 +274,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -411,7 +423,9 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return createNewAddressLoading();
   }
@@ -434,7 +448,9 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return createNewAddressLoading?.call();
   }
@@ -457,7 +473,9 @@ class _$CreateNewAddressLoadingImpl implements CreateNewAddressLoading {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressLoading != null) {
@@ -630,7 +648,9 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return createNewAddressError(apiErrorModel);
   }
@@ -653,7 +673,9 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return createNewAddressError?.call(apiErrorModel);
   }
@@ -676,7 +698,9 @@ class _$CreateNewAddressErrorImpl implements CreateNewAddressError {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressError != null) {
@@ -879,7 +903,9 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return updateAddressRegion(message, latLng, markData);
   }
@@ -902,7 +928,9 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return updateAddressRegion?.call(message, latLng, markData);
   }
@@ -925,7 +953,9 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (updateAddressRegion != null) {
@@ -1108,7 +1138,9 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return createNewAddressSuccess(data);
   }
@@ -1131,7 +1163,9 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return createNewAddressSuccess?.call(data);
   }
@@ -1154,7 +1188,9 @@ class _$CreateNewAddressSuccessImpl implements CreateNewAddressSuccess {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (createNewAddressSuccess != null) {
@@ -1305,7 +1341,9 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return getAllAddressLoading();
   }
@@ -1328,7 +1366,9 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return getAllAddressLoading?.call();
   }
@@ -1351,7 +1391,9 @@ class _$GetAllAddressLoadingImpl implements GetAllAddressLoading {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressLoading != null) {
@@ -1523,7 +1565,9 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return getAllAddressError(apiErrorModel);
   }
@@ -1546,7 +1590,9 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return getAllAddressError?.call(apiErrorModel);
   }
@@ -1569,7 +1615,9 @@ class _$GetAllAddressErrorImpl implements GetAllAddressError {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressError != null) {
@@ -1747,7 +1795,9 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return getAllAddressSuccess(data);
   }
@@ -1770,7 +1820,9 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return getAllAddressSuccess?.call(data);
   }
@@ -1793,7 +1845,9 @@ class _$GetAllAddressSuccessImpl implements GetAllAddressSuccess {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (getAllAddressSuccess != null) {
@@ -1979,7 +2033,9 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return changeRegionAreaIndex(index, alias);
   }
@@ -2002,7 +2058,9 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return changeRegionAreaIndex?.call(index, alias);
   }
@@ -2025,7 +2083,9 @@ class _$ChangeRegionAreaIndexImpl implements ChangeRegionAreaIndex {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (changeRegionAreaIndex != null) {
@@ -2177,7 +2237,9 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return updateAddressLoading();
   }
@@ -2200,7 +2262,9 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return updateAddressLoading?.call();
   }
@@ -2223,7 +2287,9 @@ class _$UpdateAddressLoadingImpl implements UpdateAddressLoading {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (updateAddressLoading != null) {
@@ -2395,7 +2461,9 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return updateAddressError(apiErrorModel);
   }
@@ -2418,7 +2486,9 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return updateAddressError?.call(apiErrorModel);
   }
@@ -2441,7 +2511,9 @@ class _$UpdateAddressErrorImpl implements UpdateAddressError {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (updateAddressError != null) {
@@ -2619,7 +2691,9 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return updateAddressSuccess(data);
   }
@@ -2642,7 +2716,9 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return updateAddressSuccess?.call(data);
   }
@@ -2665,7 +2741,9 @@ class _$UpdateAddressSuccessImpl implements UpdateAddressSuccess {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (updateAddressSuccess != null) {
@@ -2816,7 +2894,9 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return removeAddressLoading();
   }
@@ -2839,7 +2919,9 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return removeAddressLoading?.call();
   }
@@ -2862,7 +2944,9 @@ class _$RemoveAddressLoadingImpl implements RemoveAddressLoading {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (removeAddressLoading != null) {
@@ -3034,7 +3118,9 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
     return removeAddressError(apiErrorModel);
   }
@@ -3057,7 +3143,9 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
     return removeAddressError?.call(apiErrorModel);
   }
@@ -3080,7 +3168,9 @@ class _$RemoveAddressErrorImpl implements RemoveAddressError {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (removeAddressError != null) {
@@ -3180,7 +3270,9 @@ abstract class _$$RemoveAddressSuccessImplCopyWith<$Res> {
           $Res Function(_$RemoveAddressSuccessImpl) then) =
       __$$RemoveAddressSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ApiSuccessGeneralModel data});
+  $Res call(
+      {ApiSuccessGeneralModel data,
+      List<GetAddressResponseData> getAddressResponseData});
 }
 
 /// @nodoc
@@ -3195,12 +3287,17 @@ class __$$RemoveAddressSuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
+    Object? getAddressResponseData = null,
   }) {
     return _then(_$RemoveAddressSuccessImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as ApiSuccessGeneralModel,
+      null == getAddressResponseData
+          ? _value._getAddressResponseData
+          : getAddressResponseData // ignore: cast_nullable_to_non_nullable
+              as List<GetAddressResponseData>,
     ));
   }
 }
@@ -3208,14 +3305,24 @@ class __$$RemoveAddressSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
-  const _$RemoveAddressSuccessImpl(this.data);
+  const _$RemoveAddressSuccessImpl(
+      this.data, final List<GetAddressResponseData> getAddressResponseData)
+      : _getAddressResponseData = getAddressResponseData;
 
   @override
   final ApiSuccessGeneralModel data;
+  final List<GetAddressResponseData> _getAddressResponseData;
+  @override
+  List<GetAddressResponseData> get getAddressResponseData {
+    if (_getAddressResponseData is EqualUnmodifiableListView)
+      return _getAddressResponseData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_getAddressResponseData);
+  }
 
   @override
   String toString() {
-    return 'UserAddressState.removeAddressSuccess(data: $data)';
+    return 'UserAddressState.removeAddressSuccess(data: $data, getAddressResponseData: $getAddressResponseData)';
   }
 
   @override
@@ -3223,11 +3330,14 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RemoveAddressSuccessImpl &&
-            (identical(other.data, data) || other.data == data));
+            (identical(other.data, data) || other.data == data) &&
+            const DeepCollectionEquality().equals(
+                other._getAddressResponseData, _getAddressResponseData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(runtimeType, data,
+      const DeepCollectionEquality().hash(_getAddressResponseData));
 
   @JsonKey(ignore: true)
   @override
@@ -3258,9 +3368,11 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     required TResult Function(CreateAddressResponse data) updateAddressSuccess,
     required TResult Function() removeAddressLoading,
     required TResult Function(ApiErrorModel apiErrorModel) removeAddressError,
-    required TResult Function(ApiSuccessGeneralModel data) removeAddressSuccess,
+    required TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)
+        removeAddressSuccess,
   }) {
-    return removeAddressSuccess(data);
+    return removeAddressSuccess(data, getAddressResponseData);
   }
 
   @override
@@ -3281,9 +3393,11 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     TResult? Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult? Function()? removeAddressLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult? Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult? Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
   }) {
-    return removeAddressSuccess?.call(data);
+    return removeAddressSuccess?.call(data, getAddressResponseData);
   }
 
   @override
@@ -3304,11 +3418,13 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
     TResult Function(CreateAddressResponse data)? updateAddressSuccess,
     TResult Function()? removeAddressLoading,
     TResult Function(ApiErrorModel apiErrorModel)? removeAddressError,
-    TResult Function(ApiSuccessGeneralModel data)? removeAddressSuccess,
+    TResult Function(ApiSuccessGeneralModel data,
+            List<GetAddressResponseData> getAddressResponseData)?
+        removeAddressSuccess,
     required TResult orElse(),
   }) {
     if (removeAddressSuccess != null) {
-      return removeAddressSuccess(data);
+      return removeAddressSuccess(data, getAddressResponseData);
     }
     return orElse();
   }
@@ -3389,10 +3505,12 @@ class _$RemoveAddressSuccessImpl implements RemoveAddressSuccess {
 }
 
 abstract class RemoveAddressSuccess implements UserAddressState {
-  const factory RemoveAddressSuccess(final ApiSuccessGeneralModel data) =
+  const factory RemoveAddressSuccess(final ApiSuccessGeneralModel data,
+          final List<GetAddressResponseData> getAddressResponseData) =
       _$RemoveAddressSuccessImpl;
 
   ApiSuccessGeneralModel get data;
+  List<GetAddressResponseData> get getAddressResponseData;
   @JsonKey(ignore: true)
   _$$RemoveAddressSuccessImplCopyWith<_$RemoveAddressSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;

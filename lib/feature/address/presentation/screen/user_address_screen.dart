@@ -5,8 +5,6 @@ class UserAddressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
-
     return BlocConsumer<UserAddressCubit, UserAddressState>(
       listener: (context, state) {
         state.whenOrNull(
@@ -14,8 +12,9 @@ class UserAddressView extends StatelessWidget {
               errorMessage: apiErrorModel.message!, context: context),
           removeAddressError: (apiErrorModel) => ShowToast.showToastErrorTop(
               errorMessage: apiErrorModel.message!, context: context),
-          removeAddressSuccess: (data) => ShowToast.showToastSuccessTop(
-              message: data.message!, context: context),
+          removeAddressSuccess: (data, getAddressResponseData) =>
+              ShowToast.showToastSuccessTop(
+                  message: data.message!, context: context),
         );
       },
       builder: (context, state) {
@@ -29,29 +28,11 @@ class UserAddressView extends StatelessWidget {
                         .textTheme
                         .titleLarge!
                         .copyWith(fontSize: 16.sp)),
-                actions: [
-                  context.read<UserAddressCubit>().addressDataList.isEmpty ||
-                          state is GetAllAddressLoading
-                      ? const SizedBox()
-                      : Padding(
-                          padding: EdgeInsets.only(
-                              right: isEnLocale ? 15.w : 0,
-                              left: isEnLocale ? 0 : 18.w),
-                          child: InkWell(
-                              onTap: () {
-                                context.pushNamed(Routes.map);
-                              },
-                              child: Image.asset(
-                                ImageAsset.addLocation,
-                                height: 22.h,
-                              )),
-                        )
-                ],
               ),
-              body: 
-        
-              UserAddressBody(state: state),
-             
+              body: context.read<UserAddressCubit>().addressDataList.isEmpty
+                  ? const EmptyAddressScreen()
+                  :  UserAddressSuccessStateWidget(
+                     userAddress:  context.read<UserAddressCubit>(),),
             ),
             LoadingOverlay(isLoading: state is RemoveAddressLoading)
           ],

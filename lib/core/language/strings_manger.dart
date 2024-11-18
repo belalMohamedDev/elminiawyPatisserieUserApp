@@ -270,6 +270,9 @@ class AppStrings {
   static const String noKeepIt = "noKeepIt";
   static const String myProfile = "myProfile";
   static const String myAddress = "myAddress";
+  static const String addNewAddress = "addNewAddress";
+     
+
   static const String myWishList = "myWishList";
   static const String settings = "settings";
   static const String orderPlaced = "orderPlaced";

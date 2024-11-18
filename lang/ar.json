@@ -235,6 +235,7 @@
   "settings": "الإعدادات",
   "orderPlaced": "تم تقديم طلبك الى المطعم",
   "theOrderAcceptedByRestaurant": "تم الانتهاء من تجهيز طلبك .",
+    "addNewAddress": "اضافة عنوان جديد.",
 
   "thankYouForPurchasingFromElminiawy": "شكرًا لشراءك من المنياوى. يمكنك تتبع طلبك رقم #",
   "backToHome": "العودة إلى الصفحة الرئيسية",

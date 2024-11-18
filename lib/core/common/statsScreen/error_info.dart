@@ -73,7 +73,7 @@ class ErrorInfo extends StatelessWidget {
                           minimumSize: const Size(double.infinity,
                               50), // Make button full width and 50 height
                           backgroundColor: ColorManger
-                              .primary, // Set button color to primary color
+                              .brun, // Set button color to primary color
                           foregroundColor:
                               ColorManger.white, // Set text color to white
                           shape: const RoundedRectangleBorder(
@@ -81,8 +81,8 @@ class ErrorInfo extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8)))),
                       child: Text(btnText ??
-                            context.translate(AppStrings.retry)  
-                              ), // Default to "Retry" if btnText is null
+                          context.translate(AppStrings
+                              .retry)), // Default to "Retry" if btnText is null
                     ),
 
             // Add space after the button

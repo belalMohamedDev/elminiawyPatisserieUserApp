@@ -100,8 +100,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
     response.when(
       success: (dataResponse) {
         addressDataList.removeWhere((address) => address.sId == addressId);
-
-        emit(UserAddressState.removeAddressSuccess(dataResponse));
+        emit(UserAddressState.removeAddressSuccess(dataResponse,addressDataList));
       },
       failure: (error) {
         if (error.statusCode != 401) {
@@ -164,7 +163,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       apartmentNumber: companyController.text.getOrNull(),
       floor: floorController.text.getOrNull(),
       region: {
-        'en': enRegion ?? "", 
+        'en': enRegion ?? "",
         'ar': arRegion ?? "",
       },
       streetName: streetController.text.getOrNull(),

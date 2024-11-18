@@ -43,5 +43,5 @@ class UserAddressState with _$UserAddressState {
        ApiErrorModel apiErrorModel) = RemoveAddressError;
 
   const factory UserAddressState.removeAddressSuccess(
-      ApiSuccessGeneralModel data) = RemoveAddressSuccess;
+      ApiSuccessGeneralModel data, List<GetAddressResponseData> getAddressResponseData) = RemoveAddressSuccess;
 }
