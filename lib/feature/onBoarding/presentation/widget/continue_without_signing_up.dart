@@ -1,4 +1,4 @@
-import '../../../../../core/common/shared/shared_imports.dart'; // Import the shared dependencies and utilities
+import '../../../../core/common/shared/shared_imports.dart'; // Import the shared dependencies and utilities
 
 /// The [ContinueWithoutSigningUp] widget displays a prompt for users who already have an account.
 /// It shows a "Sign In" link that navigates to the login screen when tapped.

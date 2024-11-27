@@ -1,7 +1,5 @@
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-/// The [TitleAndHeadLineText] widget displays the main titles and headlines on the onboarding screen.
-/// It consists of two main parts: a welcome title and a sub-headline to guide the user through the onboarding process.
 class TitleAndHeadLineText extends StatelessWidget {
   const TitleAndHeadLineText({super.key});
 

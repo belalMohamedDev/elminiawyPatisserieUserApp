@@ -110,6 +110,7 @@ dependencies:
   dart_ping: ^9.0.1
   google_sign_in: ^6.2.1
   firebase_auth: ^5.3.1
+  smooth_page_indicator: ^1.2.0+3
 
 
 dev_dependencies:

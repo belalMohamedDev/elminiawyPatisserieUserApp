@@ -1,4 +1,4 @@
-import '../../../../../core/common/shared/shared_imports.dart'; // Import the shared dependencies and utilities
+import '../../../../core/common/shared/shared_imports.dart'; // Import the shared dependencies and utilities
 
 /// The [GetStartedButton] is the main action button on the onboarding screen.
 /// This button will trigger navigation to the next screen and store the user's

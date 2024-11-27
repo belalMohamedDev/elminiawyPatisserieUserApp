@@ -1,5 +1,4 @@
-
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 class LoadingShimmer extends StatelessWidget {
   const LoadingShimmer({

@@ -1,4 +1,4 @@
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 /// A widget that provides a search input field and a filter button.
 /// When tapped, it navigates to the search screen.

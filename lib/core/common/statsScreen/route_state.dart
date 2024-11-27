@@ -1,5 +1,4 @@
-
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 class RouteStatesScreen extends StatelessWidget {
   const RouteStatesScreen({super.key});
@@ -27,12 +26,12 @@ class RouteStatesScreen extends StatelessWidget {
               height: 20.h,
             ),
             ErrorInfo(
-              title: context.translate( AppStrings.youAreNotLoggedIn),
-              description:context.translate(AppStrings.pleaseLoginToContinueAndEnjoyFullAccessToTheAppFeatures) 
-                  ,
+              title: context.translate(AppStrings.youAreNotLoggedIn),
+              description: context.translate(AppStrings
+                  .pleaseLoginToContinueAndEnjoyFullAccessToTheAppFeatures),
               btnText: context.translate(AppStrings.logIn),
               press: () async {
-                 await AppLogout().logOutThenNavigateToLogin();
+                await AppLogout().logOutThenNavigateToLogin();
               },
             ),
             SizedBox(

@@ -1,5 +1,5 @@
 import 'package:device_preview/device_preview.dart';
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp._internal(); // private named constructor

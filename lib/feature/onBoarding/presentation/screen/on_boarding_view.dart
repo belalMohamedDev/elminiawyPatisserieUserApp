@@ -1,8 +1,6 @@
-import '../../../../core/common/shared/shared_imports.dart'; // Import the barrel file
 
-/// The [OnBoardingView] is the main entry screen for onboarding.
-/// It provides a responsive UI layout and ensures that the system status bar styling is consistent.
-/// This view is the first screen users see when they launch the onboarding process.
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
+
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({super.key});
 
