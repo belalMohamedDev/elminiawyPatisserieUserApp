@@ -29,6 +29,6 @@ class AccountInformationState with _$AccountInformationState {
       ApiErrorModel apiErrorModel) = DeleteAccountError;
 
   const factory AccountInformationState.deleteAccountSuccess(
-      DeleteAccountResponse data) = DeleteAccountSuccess;
+      ApiSuccessGeneralModel data) = DeleteAccountSuccess;
 
 }

@@ -31,7 +31,7 @@ mixin _$AccountInformationState {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,7 +48,7 @@ mixin _$AccountInformationState {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,7 +65,7 @@ mixin _$AccountInformationState {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -194,7 +194,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return initial();
   }
@@ -214,7 +214,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return initial?.call();
   }
@@ -234,7 +234,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -369,7 +369,7 @@ class _$UpdateAccountInformationLoadingImpl
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading();
   }
@@ -389,7 +389,7 @@ class _$UpdateAccountInformationLoadingImpl
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationLoading?.call();
   }
@@ -409,7 +409,7 @@ class _$UpdateAccountInformationLoadingImpl
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationLoading != null) {
@@ -574,7 +574,7 @@ class _$UpdateAccountInformationErrorImpl
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return updateAccountInformationError(apiErrorModel);
   }
@@ -594,7 +594,7 @@ class _$UpdateAccountInformationErrorImpl
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationError?.call(apiErrorModel);
   }
@@ -614,7 +614,7 @@ class _$UpdateAccountInformationErrorImpl
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationError != null) {
@@ -784,7 +784,7 @@ class _$UpdateAccountInformationSuccessImpl
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess(data);
   }
@@ -804,7 +804,7 @@ class _$UpdateAccountInformationSuccessImpl
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return updateAccountInformationSuccess?.call(data);
   }
@@ -824,7 +824,7 @@ class _$UpdateAccountInformationSuccessImpl
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (updateAccountInformationSuccess != null) {
@@ -1009,7 +1009,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return getStorageData(userEmail, userName, userPhone);
   }
@@ -1029,7 +1029,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return getStorageData?.call(userEmail, userName, userPhone);
   }
@@ -1049,7 +1049,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (getStorageData != null) {
@@ -1217,7 +1217,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return changeEnablTextFormField(enable);
   }
@@ -1237,7 +1237,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return changeEnablTextFormField?.call(enable);
   }
@@ -1257,7 +1257,7 @@ class _$ChangeEnablTextFormFieldImpl implements ChangeEnablTextFormField {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (changeEnablTextFormField != null) {
@@ -1393,7 +1393,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return noChangesDetected();
   }
@@ -1413,7 +1413,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return noChangesDetected?.call();
   }
@@ -1433,7 +1433,7 @@ class _$NoChangesDetectedImpl implements NoChangesDetected {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (noChangesDetected != null) {
@@ -1565,7 +1565,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return deleteAccountLoading();
   }
@@ -1585,7 +1585,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return deleteAccountLoading?.call();
   }
@@ -1605,7 +1605,7 @@ class _$DeleteAccountLoadingImpl implements DeleteAccountLoading {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (deleteAccountLoading != null) {
@@ -1764,7 +1764,7 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return deleteAccountError(apiErrorModel);
   }
@@ -1784,7 +1784,7 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return deleteAccountError?.call(apiErrorModel);
   }
@@ -1804,7 +1804,7 @@ class _$DeleteAccountErrorImpl implements DeleteAccountError {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (deleteAccountError != null) {
@@ -1895,7 +1895,7 @@ abstract class _$$DeleteAccountSuccessImplCopyWith<$Res> {
           $Res Function(_$DeleteAccountSuccessImpl) then) =
       __$$DeleteAccountSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DeleteAccountResponse data});
+  $Res call({ApiSuccessGeneralModel data});
 }
 
 /// @nodoc
@@ -1916,7 +1916,7 @@ class __$$DeleteAccountSuccessImplCopyWithImpl<$Res>
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as DeleteAccountResponse,
+              as ApiSuccessGeneralModel,
     ));
   }
 }
@@ -1927,7 +1927,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
   const _$DeleteAccountSuccessImpl(this.data);
 
   @override
-  final DeleteAccountResponse data;
+  final ApiSuccessGeneralModel data;
 
   @override
   String toString() {
@@ -1969,7 +1969,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
     required TResult Function() noChangesDetected,
     required TResult Function() deleteAccountLoading,
     required TResult Function(ApiErrorModel apiErrorModel) deleteAccountError,
-    required TResult Function(DeleteAccountResponse data) deleteAccountSuccess,
+    required TResult Function(ApiSuccessGeneralModel data) deleteAccountSuccess,
   }) {
     return deleteAccountSuccess(data);
   }
@@ -1989,7 +1989,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
     TResult? Function()? noChangesDetected,
     TResult? Function()? deleteAccountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult? Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult? Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
   }) {
     return deleteAccountSuccess?.call(data);
   }
@@ -2009,7 +2009,7 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
     TResult Function()? noChangesDetected,
     TResult Function()? deleteAccountLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteAccountError,
-    TResult Function(DeleteAccountResponse data)? deleteAccountSuccess,
+    TResult Function(ApiSuccessGeneralModel data)? deleteAccountSuccess,
     required TResult orElse(),
   }) {
     if (deleteAccountSuccess != null) {
@@ -2085,10 +2085,10 @@ class _$DeleteAccountSuccessImpl implements DeleteAccountSuccess {
 }
 
 abstract class DeleteAccountSuccess implements AccountInformationState {
-  const factory DeleteAccountSuccess(final DeleteAccountResponse data) =
+  const factory DeleteAccountSuccess(final ApiSuccessGeneralModel data) =
       _$DeleteAccountSuccessImpl;
 
-  DeleteAccountResponse get data;
+  ApiSuccessGeneralModel get data;
   @JsonKey(ignore: true)
   _$$DeleteAccountSuccessImplCopyWith<_$DeleteAccountSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;

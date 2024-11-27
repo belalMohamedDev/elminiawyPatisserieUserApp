@@ -68,7 +68,7 @@ abstract class AppServiceClient {
       @Field("product") String product);
 
   @POST(ApiConstants.logOut)
-  Future<LogOutResponse> logOut(
+  Future<ApiSuccessGeneralModel> logOut(
     @Field("refreshToken") String refreshToken,
   );
 
@@ -147,7 +147,7 @@ abstract class AppServiceClient {
   );
 
   @DELETE(ApiConstants.deleteMyAccount)
-  Future<DeleteAccountResponse> deleteMyAccountService();
+  Future<ApiSuccessGeneralModel> deleteMyAccountService();
 
   @POST(ApiConstants.order)
   Future<CreateOrderResponse> createCashOrderService(

@@ -439,12 +439,12 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<LogOutResponse> logOut(String refreshToken) async {
+  Future<ApiSuccessGeneralModel> logOut(String refreshToken) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'refreshToken': refreshToken};
-    final _options = _setStreamType<LogOutResponse>(Options(
+    final _options = _setStreamType<ApiSuccessGeneralModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -461,9 +461,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late LogOutResponse _value;
+    late ApiSuccessGeneralModel _value;
     try {
-      _value = LogOutResponse.fromJson(_result.data!);
+      _value = ApiSuccessGeneralModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -988,12 +988,12 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<DeleteAccountResponse> deleteMyAccountService() async {
+  Future<ApiSuccessGeneralModel> deleteMyAccountService() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<DeleteAccountResponse>(Options(
+    final _options = _setStreamType<ApiSuccessGeneralModel>(Options(
       method: 'DELETE',
       headers: _headers,
       extra: _extra,
@@ -1010,9 +1010,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late DeleteAccountResponse _value;
+    late ApiSuccessGeneralModel _value;
     try {
-      _value = DeleteAccountResponse.fromJson(_result.data!);
+      _value = ApiSuccessGeneralModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

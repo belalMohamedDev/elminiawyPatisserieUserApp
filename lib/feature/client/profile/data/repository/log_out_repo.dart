@@ -5,7 +5,7 @@ class LogOutRepository {
   final AppServiceClient _apiService;
 
 
-  Future<ApiResult<LogOutResponse>> logOut(String refreshToken) async {
+  Future<ApiResult<ApiSuccessGeneralModel>> logOut(String refreshToken) async {
 
       try {
         final response = await _apiService.logOut(refreshToken);

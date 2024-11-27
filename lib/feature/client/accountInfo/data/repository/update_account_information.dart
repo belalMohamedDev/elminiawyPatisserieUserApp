@@ -4,7 +4,7 @@ abstract class AccountInformationRepository {
   Future<ApiResult<UpdateAccountInformationResponse>> updateAccountInformation(
       UpdateAccountInformationRequestBody updateAccountInformationRequestBody);
 
-  Future<ApiResult<DeleteAccountResponse>> deleteAccountRepo();
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteAccountRepo();
 }
 
 class AccountInformationRepositoryImplement
@@ -29,7 +29,7 @@ class AccountInformationRepositoryImplement
   
 
   @override
-  Future<ApiResult<DeleteAccountResponse>> deleteAccountRepo() async {
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteAccountRepo() async {
 
       try {
         final response = await _apiService.deleteMyAccountService();
