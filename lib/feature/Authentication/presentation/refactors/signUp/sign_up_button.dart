@@ -7,7 +7,6 @@ class SignUpButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return BlocConsumer<SignUpBloc, SignUpState>(
       listener: (context, state) {
         // Handle different state changes such as error and success
@@ -17,12 +16,22 @@ class SignUpButton extends StatelessWidget {
               errorMessage: apiErrorModel.message!, context: context),
           // On successful registration, show success message and navigate to home
           suceess: (authResponse) {
+            // Show a success toast when login is successful
+            ShowToast.showToastSuccessTop(
+                message: authResponse.message!, context: context);
+            // Navigate to the map screen after a successful login
+            AppLogin().storeAuthData(authResponse);
+
             if (authResponse.data!.role == "user") {
-              // Show a success toast when login is successful
-              ShowToast.showToastSuccessTop(
-                  message: authResponse.message!, context: context);
-              // Navigate to the map screen after a successful login
-              AppLogin().storeDataThenNavigateToMap(authResponse);
+              // Ensure the context is still mounted before navigating
+              if (context.mounted) {
+                context.pushReplacementNamed(Routes.map);
+              }
+            } else if (authResponse.data!.role == "admin") {
+              // Ensure the context is still mounted before navigating
+              if (context.mounted) {
+                context.pushReplacementNamed(Routes.adminHome);
+              }
             } else {
               ShowToast.showToastErrorTop(
                   errorMessage: context
@@ -49,8 +58,6 @@ class SignUpButton extends StatelessWidget {
             defaultText: AppStrings.signUp,
             state: state,
           ),
-
-     
         );
       },
     );

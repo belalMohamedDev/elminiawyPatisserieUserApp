@@ -17,6 +17,7 @@ class Routes {
   static const String changeMyPassword = "changeMyPassword";
   static const String notification = "notification";
   static const String map = "Map";
+  static const String adminHome = "adminHome";
   static const String addNewAddress = "AddNewAddress";
   static const String myOrder = "MyOrder";
   static const String wishList = "wishList";

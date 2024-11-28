@@ -10,18 +10,8 @@ class AppLogin {
 
   static final AppLogin _instance = AppLogin._();
 
-  Future<void> storeDataThenNavigateToMap(AuthResponse authResponse,
+  Future<void> storeAuthData(AuthResponse authResponse,
       {bool isChangeUserPassword = false}) async {
-    final navigatorState = instance<GlobalKey<NavigatorState>>().currentState;
-
-    // Ensure the navigator state and authResponse data are not null
-    if (navigatorState == null || authResponse.data == null) {
-      // Handle error case or log the issue
-      return;
-    }
-
-    final context = navigatorState.context;
-
     // Ensure necessary fields are not null before storing them
     if (authResponse.data!.phone != null) {
       await SharedPrefHelper.setSecuredString(
@@ -48,14 +38,14 @@ class AppLogin {
           PrefKeys.refreshToken, authResponse.data!.refreshToken!);
     }
 
+    if (authResponse.data!.role != null) {
+      await SharedPrefHelper.setSecuredString(
+          PrefKeys.role, authResponse.data!.role!);
+    }
+
     if (!isChangeUserPassword) {
       // Set login status to true and navigate to the map screen
       SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
-
-      // Ensure the context is still mounted before navigating
-      if (context.mounted) {
-        context.pushReplacementNamed(Routes.map);
-      }
     }
   }
 }

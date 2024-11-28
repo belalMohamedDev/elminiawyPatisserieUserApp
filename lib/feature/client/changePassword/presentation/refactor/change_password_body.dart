@@ -262,11 +262,23 @@ class ChangeUserPasswordBody extends StatelessWidget {
                 ShowToast.showToastErrorTop(
                     errorMessage: apiErrorModel.message!, context: context),
             changeMyPasswordSuccess: (authResponse) {
+              // Show a success toast when login is successful
               ShowToast.showToastSuccessTop(
                   message: authResponse.message!, context: context);
-
               // Navigate to the map screen after a successful login
-              AppLogin().storeDataThenNavigateToMap(authResponse);
+              AppLogin().storeAuthData(authResponse);
+
+              if (authResponse.data!.role == "user") {
+                // Ensure the context is still mounted before navigating
+                if (context.mounted) {
+                  context.pushReplacementNamed(Routes.map);
+                }
+              } else if (authResponse.data!.role == "admin") {
+                // Ensure the context is still mounted before navigating
+                if (context.mounted) {
+                  context.pushReplacementNamed(Routes.adminHome);
+                }
+              }
             });
       },
       builder: (context, state) {
