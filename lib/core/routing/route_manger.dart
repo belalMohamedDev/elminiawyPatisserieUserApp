@@ -1,3 +1,4 @@
+
 import '../../../../core/common/shared/shared_imports.dart';
 
 class RouteGenerator {
@@ -86,6 +87,11 @@ class RouteGenerator {
             value: instance<MapCubit>(),
             child: const MapScreen(),
           ),
+        );
+
+      case Routes.adminHome:
+        return MaterialPageRoute(
+          builder: (_) => const DrawerStackView(),
         );
 
       case Routes.accountInfomation:

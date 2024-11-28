@@ -18,6 +18,10 @@ class ImageAsset {
   static const String map = "$imagePath/map.png";
   static const String building = "$imagePath/building.png";
   static const String bag = "$imagePath/bag.png";
+  static const String order = "$imagePath/order.png";
+  static const String honey = "$imagePath/honey.png";
+  static const String dessert = "$imagePath/dessert.png";
+  static const String deliveryBike = "$imagePath/delivery-bike.png";
   static const String home = "$imagePath/home.png";
   static const String addLocation = "$imagePath/location.png";
   static const String picture = "$imagePath/picture.png";
@@ -26,6 +30,7 @@ class ImageAsset {
 
   static const String shoppingBag = "$imagePath/shopping-bag.png";
   static const String basket = "$imagePath/basket.png";
+  static const String menu = "$imagePath/menu.png";
 
   static const String orderCancel = "$imagePath/cancel.png";
   static const String orderDelivered = "$imagePath/order_delivered.png";
@@ -46,5 +51,6 @@ class ImageAsset {
 class JsonAsset {
   //onBoading screen
   static const String congrat = "$jsonPath/cong.json";
+
 
 }

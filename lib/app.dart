@@ -111,9 +111,15 @@ class _MyAppState extends State<MyApp> {
             ? Routes.bottomNavBarRoute
             : Routes.map;
       } else if (AppInitialRoute.isLoggedInUser) {
-        return AppInitialRoute.isLocatedMap
-            ? Routes.bottomNavBarRoute
-            : Routes.map;
+        if (AppInitialRoute.role == "user") {
+          return AppInitialRoute.isLocatedMap
+              ? Routes.bottomNavBarRoute
+              : Routes.map;
+        } else if (AppInitialRoute.role == "admin") {
+          return Routes.adminHome;
+        } else {
+          return Routes.loginRoute;
+        }
       } else {
         return Routes.loginRoute;
       }

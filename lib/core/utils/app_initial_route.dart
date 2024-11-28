@@ -13,11 +13,13 @@ class AppInitialRoute {
   static bool isOnBoardingScreen = false;
   static bool isAnonymousUser = false;
   static bool isLocatedMap = false;
+  static String role = "";
 
   getStoreDataAndCheckInitialRoute() async {
     var results = await Future.wait([
       SharedPrefHelper.getSecuredString(PrefKeys.refreshToken),
       SharedPrefHelper.getSecuredString(PrefKeys.enLocationArea),
+      SharedPrefHelper.getSecuredString(PrefKeys.role),
     ]);
 
     bool? isOnBoardingScreenView =
@@ -28,6 +30,8 @@ class AppInitialRoute {
     String? userToken = results[0] as String?;
 
     String? locationArea = results[1] as String?;
+
+    String? authRole = results[2] as String?;
 
     if (!userToken.isNullOrEmpty()) {
       isLoggedInUser = true;
@@ -47,6 +51,12 @@ class AppInitialRoute {
       isLocatedMap = true;
     } else {
       isLocatedMap = false;
+    }
+
+    if (!authRole.isNullOrEmpty()) {
+      role = authRole!;
+    } else {
+      role = "";
     }
   }
 }

@@ -22,6 +22,7 @@ export 'package:elminiawy/feature/client/address/presentation/widget/UserAddress
 export 'package:elminiawy/feature/client/address/presentation/widget/addNewAddressScreenWidget/add_information_text_form_field.dart';
 export 'package:elminiawy/feature/client/address/presentation/widget/addNewAddressScreenWidget/chooce_region_area_toggel.dart';
 export 'package:elminiawy/feature/client/address/presentation/widget/addNewAddressScreenWidget/information_card_area.dart';
+export 'package:elminiawy/feature/admin/drawer/presentation/widget/drawer_stack_view.dart';
 
 export '../../../../feature/Authentication/presentation/refactors/restEmail/email_forget_password_text_form_field.dart';
 export '../../../../feature/Authentication/presentation/refactors/restEmail/forget_password_button.dart';
