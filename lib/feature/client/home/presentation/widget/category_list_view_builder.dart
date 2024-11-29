@@ -118,7 +118,7 @@ class CategoryListViewBuilder extends StatelessWidget {
       height: responsive.setHeight(15), // Height of the category list
       child: ListView.builder(
         addAutomaticKeepAlives: true, // Keep items alive when scrolling
-        itemCount: state.data.data!.length, // Number of categories to display
+        itemCount: state.data.length, // Number of categories to display
         scrollDirection: Axis.horizontal, // Horizontal scrolling for categories
         itemBuilder: (context, index) {
           return Padding(
@@ -146,9 +146,9 @@ class CategoryListViewBuilder extends StatelessWidget {
                       ],
                       child: ProductBaseOnCategory(
                         categoryId:
-                            state.data.data![index].sId!, // Pass category ID
+                            state.data[index].sId!, // Pass category ID
                         categoryName: state
-                            .data.data![index].title!, // Pass category name
+                            .data[index].title!, // Pass category name
                       ),
                     ),
                   ),
@@ -173,7 +173,7 @@ class CategoryListViewBuilder extends StatelessWidget {
                             left: 1,
                             right: 1), // Padding inside container
                         child: CachedNetworkImage(
-                          imageUrl: state.data.data![index]
+                          imageUrl: state.data[index]
                               .image!, // Load category image from network
                           placeholder: (context, url) => LoadingShimmer(
                             height: responsive
@@ -193,7 +193,7 @@ class CategoryListViewBuilder extends StatelessWidget {
                       height: 1.5), // Space between image and title
 
                   // Category title
-                  Text(state.data.data![index].title!,
+                  Text(state.data[index].title!,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontSize: responsive.setTextSize(
                               3.2))), // Category title with responsive text size

@@ -23,6 +23,14 @@ class RouteGenerator {
           builder: (_) => const OnBoardingView(),
         );
 
+      case Routes.adminCategory:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<CategoryCubit>(),
+            child: const CategoryView(),
+          ),
+        );
+
       case Routes.registerRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

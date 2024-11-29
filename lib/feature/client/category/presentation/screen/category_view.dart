@@ -1,41 +1,53 @@
 import '../../../../../core/common/shared/shared_imports.dart';
 
-/// The `CategoryView` class is a `StatelessWidget` responsible for displaying
-/// categories in a grid format. It utilizes Bloc to fetch and display categories
-/// based on the state of `CategoryCubit`. If categories are fetched successfully,
-/// they are displayed, otherwise a loading shimmer is shown.
-
-class CategoryView extends StatelessWidget {
+class CategoryView extends StatefulWidget {
   const CategoryView({super.key});
 
   @override
+  State<CategoryView> createState() => _CategoryViewState();
+}
+
+class _CategoryViewState extends State<CategoryView> {
+  @override
+  void initState() {
+    if (AppInitialRoute.role == "admin") {
+      context.read<CategoryCubit>().getCategories();
+    }
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
     return Scaffold(
-      appBar: AppBar(), // Standard app bar
+      appBar: AppBar(
+        centerTitle: true,
+        title: AppInitialRoute.role == "admin"
+            ? Text(context.translate(AppStrings.category),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(fontSize: 16.sp))
+            : null,
+      ), // Standard app bar
       body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
           // Check if categories are successfully fetched
-          if (state is GetCategoriesSuccess) {
-            // Display categories in the success state
-            return _categorySuccessState(state, context, responsive);
-          }
+          // if (state is GetCategoriesSuccess) {
+          //   // Display categories in the success state
+          //   return _categorySuccessState(state, context, responsive);
+          // }
 
           // Display loading or error state while categories are being fetched or if an error occurs
-          return _categoryLoadingAndErrorState(responsive);
+          //  return _categoryLoadingAndErrorState(responsive);
+          return _categorySuccessState(context, responsive, state);
         },
       ),
     );
   }
 }
 
-/// This method handles the UI when categories are still loading or when an error occurs.
-/// A grid of shimmer placeholders is displayed to indicate loading.
-///
-/// [responsive] is an instance of `ResponsiveUtils` to adjust padding and sizing
-/// dynamically based on the screen size.
 Padding _categoryLoadingAndErrorState(ResponsiveUtils responsive) {
   return Padding(
     padding: responsive.setPadding(left: 5, right: 5),
@@ -73,109 +85,150 @@ Padding _categoryLoadingAndErrorState(ResponsiveUtils responsive) {
   );
 }
 
-/// This method handles the UI when categories are successfully fetched and available for display.
-/// It displays each category in a grid with an image, title, and a clickable area that navigates
-/// to a screen showing products based on the selected category.
-///
-/// [state] is the current state which holds the category data.
-/// [context] is the build context used for navigation and theme access.
-/// [responsive] is used to adjust the layout based on screen size.
-Padding _categorySuccessState(GetCategoriesSuccess state, BuildContext context,
-    ResponsiveUtils responsive) {
+Padding _categorySuccessState(BuildContext context, ResponsiveUtils responsive,
+    CategoryState categoryState) {
+  final state = context.read<CategoryCubit>().categories;
   return Padding(
-    padding:
-        responsive.setPadding(left: 5, right: 5), // Set padding dynamically
+    padding: responsive.setPadding(
+        left: 5, right: 5, top: AppInitialRoute.role == "admin" ? 2 : 0),
     child: GridView.count(
-      addAutomaticKeepAlives:
-          true, // Keep child widgets alive for performance optimization
-      shrinkWrap: true, // Limit the size of the grid
-      physics: const NeverScrollableScrollPhysics(), // Disable scrolling
-      crossAxisCount: 3, // 3 items per row
-      childAspectRatio: 0.7, // Aspect ratio for grid items
+      addAutomaticKeepAlives: true,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 3,
+      childAspectRatio: 0.7,
       children: List.generate(
-        state.data.data!
-            .length, // Dynamically generate grid items based on the fetched categories
-        (index) => Column(
-          children: [
-            // Wrap category item in InkWell to allow user interaction (tapping)
-            InkWell(
-              onTap: () {
-                // Navigate to product list screen for the selected category
-                Navigator.of(context, rootNavigator: !false).push(
-                  MaterialPageRoute(
-                    builder: (context) => MultiBlocProvider(
-                      providers: [
-                        BlocProvider(
-                          create: (context) => instance<
-                              ProductBasedOnCategoryCubit>(), // Create the cubit
-                        ),
-                        BlocProvider.value(
-                          value: instance<CartCubit>(),
-                        ),
-                        BlocProvider.value(
-                          value: instance<WishListCubit>(),
-                        ),
-                      ],
-                      child: ProductBaseOnCategory(
-                        categoryId:
-                            state.data.data![index].sId!, // Pass category ID
-                        categoryName: state
-                            .data.data![index].title!, // Pass category name
-                      ),
+        state.length,
+        (index) => GestureDetector(
+          onTap: () {
+            if (AppInitialRoute.role == "admin") {
+              showCupertinoModalPopup(
+                context: context,
+                builder: (_) => CupertinoActionSheet(
+                  title: const Text("Actions"),
+                  actions: [
+                    CupertinoActionSheetAction(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Edit'),
                     ),
-                  ),
-                );
+                    CupertinoActionSheetAction(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      isDestructiveAction: true,
+                      child: const Text('Delete'),
+                    ),
+                    CupertinoActionSheetAction(
+                      onPressed: () {
+                        Navigator.pop(context);
 
-    
-              },
-              child: Container(
-                height: responsive.setHeight(
-                    10), // Responsive height for category image container
-                width: responsive.setWidth(
-                    25), // Responsive width for category image container
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                      responsive.setBorderRadius(2)), // Rounded corners
-                  color: ColorManger
-                      .backgroundItem, // Background color for the container
-                ),
-                child: Padding(
-                  padding: responsive.setPadding(
-                      left: 4,
-                      right: 4), // Padding for the image inside the container
-                  child: CachedNetworkImage(
-                    imageUrl: state
-                        .data.data![index].image!, // Image URL for category
-                    placeholder: (context, url) => LoadingShimmer(
-                      height: responsive.setHeight(
-                          10), // Placeholder shimmer while image loads
-                      width: responsive.setWidth(25),
-                      borderRadius: responsive.setBorderRadius(2),
+                        context
+                            .read<CategoryCubit>()
+                            .fetchUpdateActiveOrNotCategories(
+                              state[index].sId,
+                              !state[index].active!,
+                            );
+                      },
+                      child: Text(
+                          state[index].active == true ? 'DeActive' : 'Active'),
                     ),
-                    errorWidget: (context, url, error) => const Icon(Icons
-                        .error), // Show an error icon if the image fails to load
+                  ],
+                  cancelButton: CupertinoActionSheetAction(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Cancel'),
                   ),
                 ),
-              ),
-            ),
-            responsive.setSizeBox(height: 2), // Spacing between image and title
-            // Display category title
-            Text(
-              state.data.data![index].title!, // Category title text
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontSize: responsive
-                      .setTextSize(3)), // Adjust font size responsively
-            ),
-            responsive.setSizeBox(height: 1), // Additional spacing
-            // Placeholder shimmer for future dynamic content (e.g., subtitle or metadata)
-            LoadingShimmer(
-              width: responsive.setWidth(8),
-              height: responsive.setHeight(0.5),
-              borderRadius: responsive.setBorderRadius(2),
-            ),
-          ],
+              );
+            } else {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => MultiBlocProvider(
+                    providers: [
+                      BlocProvider(
+                        create: (context) =>
+                            instance<ProductBasedOnCategoryCubit>(),
+                      ),
+                      BlocProvider.value(
+                        value: instance<CartCubit>(),
+                      ),
+                      BlocProvider.value(
+                        value: instance<WishListCubit>(),
+                      ),
+                    ],
+                    child: ProductBaseOnCategory(
+                      categoryId: state[index].sId!,
+                      categoryName: state[index].title!,
+                    ),
+                  ),
+                ),
+              );
+            }
+          },
+          child: Stack(
+            children: [
+              _buildCategoryCard(state, context, responsive, index),
+              if (categoryState is UpdateCategoriesLoading &&
+                  categoryState.id == state[index].sId)
+                Positioned(
+                  top: 25,
+                  left: 30,
+                  child: CircularProgressIndicator(color: ColorManger.offWhite),
+                ),
+            ],
+          ),
+
+          //_buildCategoryCard(state, context, responsive, index),
         ),
       ),
+    ),
+  );
+}
+
+Widget _buildCategoryCard(List<CategoryResponseData> state,
+    BuildContext context, ResponsiveUtils responsive, int index) {
+  return Material(
+    color: Colors.transparent,
+    child: Column(
+      children: [
+        Container(
+          height: responsive.setHeight(10),
+          width: responsive.setWidth(25),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
+            color: ColorManger.backgroundItem,
+          ),
+          child: Padding(
+            padding: responsive.setPadding(left: 4, right: 4),
+            child: CachedNetworkImage(
+              imageUrl: state[index].image!,
+              placeholder: (context, url) => LoadingShimmer(
+                height: responsive.setHeight(10),
+                width: responsive.setWidth(25),
+                borderRadius: responsive.setBorderRadius(2),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            ),
+          ),
+        ),
+        responsive.setSizeBox(height: 2),
+        Text(
+          state[index].title!,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium!
+              .copyWith(fontSize: responsive.setTextSize(3)),
+        ),
+        responsive.setSizeBox(height: 1),
+        LoadingShimmer(
+          width: responsive.setWidth(8),
+          height: responsive.setHeight(0.5),
+          borderRadius: responsive.setBorderRadius(2),
+        ),
+      ],
     ),
   );
 }

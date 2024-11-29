@@ -41,7 +41,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
             Material(
               color: Colors.transparent,
               child: ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.adminCategory);
+                },
                 horizontalTitleGap: 25.0,
                 leading: Icon(
                   IconlyBold.category,

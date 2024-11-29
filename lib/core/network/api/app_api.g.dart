@@ -232,7 +232,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<BannerResponse> getBanners() async {
+  Future<BannerResponse> getBannersServic() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -265,7 +265,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<CategoryResponse> getCategories(String sort) async {
+  Future<CategoryResponse> getCategoriesService(String sort) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'sort': sort};
     final _headers = <String, dynamic>{};
@@ -278,6 +278,43 @@ class _AppServiceClient implements AppServiceClient {
         .compose(
           _dio.options,
           '/v1/api/categories',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CategoryResponse _value;
+    try {
+      _value = CategoryResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<CategoryResponse> updateCategoriesService(
+    String id,
+    Map<String, dynamic> requestBody,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(requestBody);
+    final _options = _setStreamType<CategoryResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/v1/api/categories/${id}',
           queryParameters: queryParameters,
           data: _data,
         )

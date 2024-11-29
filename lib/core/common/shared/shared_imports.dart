@@ -23,6 +23,7 @@ export 'package:elminiawy/feature/client/address/presentation/widget/addNewAddre
 export 'package:elminiawy/feature/client/address/presentation/widget/addNewAddressScreenWidget/chooce_region_area_toggel.dart';
 export 'package:elminiawy/feature/client/address/presentation/widget/addNewAddressScreenWidget/information_card_area.dart';
 export 'package:elminiawy/feature/admin/drawer/presentation/widget/drawer_stack_view.dart';
+export 'package:elminiawy/feature/client/category/data/model/response/category_response.dart';
 
 export '../../../../feature/Authentication/presentation/refactors/restEmail/email_forget_password_text_form_field.dart';
 export '../../../../feature/Authentication/presentation/refactors/restEmail/forget_password_button.dart';
@@ -115,7 +116,7 @@ export '../../../../core/application/di.dart';
 
 export '../../../feature/client/productBasedOnCategory/cubit/product_based_on_category_cubit.dart';
 export '../../../feature/client/productBasedOnCategory/presentation/screen/get_product_based_on_category.dart';
-export '../../../feature/client/home/logic/categoryCubit/category_cubit.dart';
+export '../../../feature/client/category/categoryCubit/category_cubit.dart';
 
 export '../../../../core/common/statsScreen/loading_shimmer.dart';
 
@@ -310,8 +311,7 @@ export '../../../../core/network/apiResult/api_reuslt.dart';
 export '../../../../core/network/error_handler/api_error_handler.dart';
 
 export '../../../../feature/client/changePassword/data/model/request/change_my_password_request.dart';
-export '../../../../feature/client/home/data/model/response/category_response.dart'
-    hide PaginationRuslt;
+
 export '../../../../feature/client/address/data/model/response/create_address_response.dart'
     hide Location;
 

@@ -4,8 +4,8 @@ part 'banner_state.dart';
 part 'banner_cubit.freezed.dart';
 
 class BannerCubit extends Cubit<BannerState> {
-  BannerCubit(this._homeRepository) : super(const BannerState.initial());
-  final HomeRepositoryImplement _homeRepository;
+  BannerCubit(this._bannerRepository) : super(const BannerState.initial());
+  final BannerRepository _bannerRepository;
 
   int bannerIndex = 0;
 
@@ -17,7 +17,7 @@ class BannerCubit extends Cubit<BannerState> {
   Future<void> getBanners() async {
     emit(const BannerState.getBannersLoading());
 
-    final response = await _homeRepository.getBanner();
+    final response = await _bannerRepository.getBannerRepo();
 
     response.when(
       success: (dataResponse) {

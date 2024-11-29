@@ -6,19 +6,35 @@ class TokenInterceptor extends Interceptor {
 
   TokenInterceptor(this.dio);
 
+
+
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     // Obtain the access token
-
     String? accessToken =
         await SharedPrefHelper.getSecuredString(PrefKeys.accessToken);
 
-    String? language = SharedPrefHelper.getString(PrefKeys.prefsLanguage).isEmpty?'en': SharedPrefHelper.getString(PrefKeys.prefsLanguage);
-    // Add the access token to the Authorization header
+    String? language =
+        SharedPrefHelper.getString(PrefKeys.prefsLanguage).isEmpty
+            ? 'en'
+            : SharedPrefHelper.getString(PrefKeys.prefsLanguage);
+
+    // Add headers
     options.headers["Accept"] = "application/json";
     options.headers["Authorization"] = "Bearer $accessToken";
     options.headers["lang"] = language;
+
+    // Filter out null values in data (for FormData or Map)
+    if (options.data is FormData) {
+      // Handle FormData
+      final formData = options.data as FormData;
+      formData.fields.removeWhere((field) => field.value.toString().isEmpty);
+      formData.files.removeWhere((file) => file.value.toString().isEmpty);
+    } else if (options.data is Map<String, dynamic>) {
+      // Handle regular Map data
+      options.data.removeWhere((key, value) => value == null);
+    }
 
     return handler.next(options); // continue
   }

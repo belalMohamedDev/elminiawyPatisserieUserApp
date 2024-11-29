@@ -1,3 +1,5 @@
+import 'package:elminiawy/feature/client/category/data/repository/category_repo.dart';
+
 import '../../../../core/common/shared/shared_imports.dart';
 
 final instance = GetIt.instance;
@@ -5,7 +7,8 @@ final instance = GetIt.instance;
 Future<void> initAppModule() async {
   await Future.wait([
     _initAppModule(),
-    _inithome(),
+    _initCategory(),
+    _initBanner(),
     _initPlaces(),
     _initLogin(),
     _initSignUp(),
@@ -45,17 +48,25 @@ Future<void> _initAppModule() async {
     ..registerFactory<AppLogicCubit>(() => AppLogicCubit());
 }
 
-Future<void> _inithome() async {
+Future<void> _initBanner() async {
   // //home repository
   instance
-    ..registerLazySingleton<HomeRepositoryImplement>(
-        () => HomeRepositoryImplement(
-              instance(),
-            ))
-    ..registerFactory<CategoryCubit>(() => CategoryCubit(
+    ..registerLazySingleton<BannerRepository>(() => BannerRepository(
           instance(),
         ))
     ..registerFactory<BannerCubit>(() => BannerCubit(
+          instance(),
+        ));
+}
+
+Future<void> _initCategory() async {
+  // //home repository
+  instance
+    ..registerLazySingleton<CategoryRepositoryImplement>(
+        () => CategoryRepositoryImplement(
+              instance(),
+            ))
+    ..registerFactory<CategoryCubit>(() => CategoryCubit(
           instance(),
         ));
 }
