@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../core/common/shared/shared_imports.dart'; //
@@ -50,6 +52,13 @@ abstract class AppServiceClient {
   Future<CategoryResponse> updateCategoriesService(
     @Path("id") String id,
     @Body() Map<String, dynamic> requestBody,
+  );
+
+  @PUT("${ApiConstants.category}/{id}")
+  @MultiPart()
+  Future<CategoryResponse> updateCategoriesImageService(
+    @Path("id") String id,
+    @Part() File image,
   );
 
   @DELETE("${ApiConstants.category}/{id}")

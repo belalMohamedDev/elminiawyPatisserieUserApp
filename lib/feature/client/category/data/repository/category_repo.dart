@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class CategoryRepository {
@@ -11,6 +13,10 @@ abstract class CategoryRepository {
   Future<ApiResult<CategoryResponse>> updateCategoriesActiveOrNotActiveRepo(
     String id,
     bool? isActive,
+  );
+  Future<ApiResult<CategoryResponse>> updateCategoriesImageRepo(
+    String id,
+    File image,
   );
   Future<ApiResult<ApiSuccessGeneralModel>> deleteCategoriesrepo(
     String id,
@@ -68,6 +74,18 @@ class CategoryRepositoryImplement implements CategoryRepository {
       String id) async {
     try {
       final response = await _apiService.deleteCategoriesService(id);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<CategoryResponse>> updateCategoriesImageRepo(
+      String id, File image) async {
+    try {
+      final response =
+          await _apiService.updateCategoriesImageService(id, image);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

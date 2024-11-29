@@ -37,7 +37,7 @@ Future<void> _initAppModule() async {
   Bloc.observer = AppBlocObserver();
 
   final navigatorKey = GlobalKey<NavigatorState>();
-
+  instance.registerLazySingleton<ImagePicker>(ImagePicker.new);
   // Dio & ApiService
 
   Dio dio = DioFactory.getDio();
@@ -67,6 +67,7 @@ Future<void> _initCategory() async {
               instance(),
             ))
     ..registerFactory<CategoryCubit>(() => CategoryCubit(
+          instance(),
           instance(),
         ));
 }

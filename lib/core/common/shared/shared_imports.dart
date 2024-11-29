@@ -27,7 +27,7 @@ export 'package:elminiawy/feature/client/category/data/model/response/category_r
 
 export '../../../../feature/Authentication/presentation/refactors/restEmail/email_forget_password_text_form_field.dart';
 export '../../../../feature/Authentication/presentation/refactors/restEmail/forget_password_button.dart';
-
+export 'package:image_picker/image_picker.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:firebase_auth/firebase_auth.dart';

@@ -114,6 +114,10 @@ Padding _categorySuccessState(BuildContext context, ResponsiveUtils responsive,
                     CupertinoActionSheetAction(
                       onPressed: () {
                         Navigator.pop(context);
+                        context.read<CategoryCubit>().pickImage(
+                              ImageSource.gallery,
+                              category[index].sId,
+                            );
                       },
                       child: const Text('Edit Image'),
                     ),
