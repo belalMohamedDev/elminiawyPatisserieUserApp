@@ -52,6 +52,11 @@ abstract class AppServiceClient {
     @Body() Map<String, dynamic> requestBody,
   );
 
+  @DELETE("${ApiConstants.category}/{id}")
+  Future<ApiSuccessGeneralModel> deleteCategoriesService(
+    @Path("id") String id,
+  );
+
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> getProduct();
 

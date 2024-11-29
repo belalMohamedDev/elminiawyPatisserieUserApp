@@ -90,4 +90,29 @@ class CategoryCubit extends Cubit<CategoryState> {
       },
     );
   }
+
+  Future<void> fetchDeleteCategories(
+    String? id,
+  ) async {
+    emit(CategoryState.updateCategoriesLoading(id!));
+
+    final response =
+        await _categoryRepositoryImplement.deleteCategoriesrepo(id);
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _categories.indexWhere((category) => category.sId == id);
+
+        if (updatedIndex != -1) {
+          _categories.removeAt(updatedIndex);
+        }
+
+        emit(CategoryState.updateCategoriesSuccess([..._categories]));
+      },
+      failure: (error) {
+        emit(CategoryState.updateCategoriesError(error));
+      },
+    );
+  }
 }

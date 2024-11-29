@@ -12,6 +12,9 @@ abstract class CategoryRepository {
     String id,
     bool? isActive,
   );
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteCategoriesrepo(
+    String id,
+  );
 }
 
 class CategoryRepositoryImplement implements CategoryRepository {
@@ -54,6 +57,17 @@ class CategoryRepositoryImplement implements CategoryRepository {
     try {
       final response =
           await _apiService.updateCategoriesService(id, requestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteCategoriesrepo(
+      String id) async {
+    try {
+      final response = await _apiService.deleteCategoriesService(id);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

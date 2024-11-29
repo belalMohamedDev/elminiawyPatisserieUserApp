@@ -115,8 +115,7 @@ Padding _categorySuccessState(BuildContext context, ResponsiveUtils responsive,
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      isDestructiveAction: true,
-                      child: const Text('Delete'),
+                      child: const Text('Edit Image'),
                     ),
                     CupertinoActionSheetAction(
                       onPressed: () {
@@ -132,6 +131,16 @@ Padding _categorySuccessState(BuildContext context, ResponsiveUtils responsive,
                       child: Text(category[index].active == true
                           ? 'DeActive'
                           : 'Active'),
+                    ),
+                    CupertinoActionSheetAction(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        context.read<CategoryCubit>().fetchDeleteCategories(
+                              category[index].sId,
+                            );
+                      },
+                      isDestructiveAction: true,
+                      child: const Text('Delete'),
                     ),
                   ],
                   cancelButton: CupertinoActionSheetAction(
