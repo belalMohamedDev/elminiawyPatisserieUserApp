@@ -19,4 +19,8 @@ class CategoryState with _$CategoryState {
 
   const factory CategoryState.updateCategoriesSuccess(
       List<CategoryResponseData> data) = UpdateCategoriesSuccess;
+
+
+  const factory CategoryState.createCategoriesLoading() =
+      CreateCategoriesLoading;
 }

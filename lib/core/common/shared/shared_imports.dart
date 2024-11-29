@@ -116,7 +116,7 @@ export '../../../../core/application/di.dart';
 
 export '../../../feature/client/productBasedOnCategory/cubit/product_based_on_category_cubit.dart';
 export '../../../feature/client/productBasedOnCategory/presentation/screen/get_product_based_on_category.dart';
-export '../../../feature/client/category/categoryCubit/category_cubit.dart';
+export '../../../feature/client/category/cubit/category_cubit.dart';
 
 export '../../../../core/common/statsScreen/loading_shimmer.dart';
 

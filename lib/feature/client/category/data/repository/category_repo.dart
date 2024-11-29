@@ -21,6 +21,12 @@ abstract class CategoryRepository {
   Future<ApiResult<ApiSuccessGeneralModel>> deleteCategoriesrepo(
     String id,
   );
+
+  Future<ApiResult<CategoryResponse>> createCategoriesrepo(
+    String titleAr,
+    String titleEn,
+    File image,
+  );
 }
 
 class CategoryRepositoryImplement implements CategoryRepository {
@@ -86,6 +92,18 @@ class CategoryRepositoryImplement implements CategoryRepository {
     try {
       final response =
           await _apiService.updateCategoriesImageService(id, image);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<CategoryResponse>> createCategoriesrepo(
+      String titleAr, String titleEn, File image) async {
+    try {
+      final response =
+          await _apiService.createCategoriesService(titleAr, titleEn, image);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

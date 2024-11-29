@@ -28,6 +28,7 @@ mixin _$CategoryState {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +40,7 @@ mixin _$CategoryState {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +52,7 @@ mixin _$CategoryState {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +68,8 @@ mixin _$CategoryState {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +81,7 @@ mixin _$CategoryState {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +93,7 @@ mixin _$CategoryState {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +165,7 @@ class _$InitialImpl implements _Initial {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) {
     return initial();
   }
@@ -172,6 +180,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) {
     return initial?.call();
   }
@@ -186,6 +195,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -207,6 +217,8 @@ class _$InitialImpl implements _Initial {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) {
     return initial(this);
   }
@@ -221,6 +233,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) {
     return initial?.call(this);
   }
@@ -235,6 +248,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -297,6 +311,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) {
     return getCategoriesLoading();
   }
@@ -311,6 +326,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) {
     return getCategoriesLoading?.call();
   }
@@ -325,6 +341,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -346,6 +363,8 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) {
     return getCategoriesLoading(this);
   }
@@ -360,6 +379,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) {
     return getCategoriesLoading?.call(this);
   }
@@ -374,6 +394,7 @@ class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -463,6 +484,7 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) {
     return getCategoriesError(apiErrorModel);
   }
@@ -477,6 +499,7 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) {
     return getCategoriesError?.call(apiErrorModel);
   }
@@ -491,6 +514,7 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -512,6 +536,8 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) {
     return getCategoriesError(this);
   }
@@ -526,6 +552,7 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) {
     return getCategoriesError?.call(this);
   }
@@ -540,6 +567,7 @@ class _$GetCategoriesErrorImpl implements GetCategoriesError {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -642,6 +670,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) {
     return getCategoriesSuccess(data);
   }
@@ -656,6 +685,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) {
     return getCategoriesSuccess?.call(data);
   }
@@ -670,6 +700,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -691,6 +722,8 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) {
     return getCategoriesSuccess(this);
   }
@@ -705,6 +738,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) {
     return getCategoriesSuccess?.call(this);
   }
@@ -719,6 +753,7 @@ class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -815,6 +850,7 @@ class _$UpdateCategoriesLoadingImpl implements UpdateCategoriesLoading {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) {
     return updateCategoriesLoading(id);
   }
@@ -829,6 +865,7 @@ class _$UpdateCategoriesLoadingImpl implements UpdateCategoriesLoading {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) {
     return updateCategoriesLoading?.call(id);
   }
@@ -843,6 +880,7 @@ class _$UpdateCategoriesLoadingImpl implements UpdateCategoriesLoading {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (updateCategoriesLoading != null) {
@@ -864,6 +902,8 @@ class _$UpdateCategoriesLoadingImpl implements UpdateCategoriesLoading {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) {
     return updateCategoriesLoading(this);
   }
@@ -878,6 +918,7 @@ class _$UpdateCategoriesLoadingImpl implements UpdateCategoriesLoading {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) {
     return updateCategoriesLoading?.call(this);
   }
@@ -892,6 +933,7 @@ class _$UpdateCategoriesLoadingImpl implements UpdateCategoriesLoading {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (updateCategoriesLoading != null) {
@@ -988,6 +1030,7 @@ class _$UpdateCategoriesErrorImpl implements UpdateCategoriesError {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) {
     return updateCategoriesError(apiErrorModel);
   }
@@ -1002,6 +1045,7 @@ class _$UpdateCategoriesErrorImpl implements UpdateCategoriesError {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) {
     return updateCategoriesError?.call(apiErrorModel);
   }
@@ -1016,6 +1060,7 @@ class _$UpdateCategoriesErrorImpl implements UpdateCategoriesError {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (updateCategoriesError != null) {
@@ -1037,6 +1082,8 @@ class _$UpdateCategoriesErrorImpl implements UpdateCategoriesError {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) {
     return updateCategoriesError(this);
   }
@@ -1051,6 +1098,7 @@ class _$UpdateCategoriesErrorImpl implements UpdateCategoriesError {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) {
     return updateCategoriesError?.call(this);
   }
@@ -1065,6 +1113,7 @@ class _$UpdateCategoriesErrorImpl implements UpdateCategoriesError {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (updateCategoriesError != null) {
@@ -1168,6 +1217,7 @@ class _$UpdateCategoriesSuccessImpl implements UpdateCategoriesSuccess {
         updateCategoriesError,
     required TResult Function(List<CategoryResponseData> data)
         updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
   }) {
     return updateCategoriesSuccess(data);
   }
@@ -1182,6 +1232,7 @@ class _$UpdateCategoriesSuccessImpl implements UpdateCategoriesSuccess {
     TResult? Function(String id)? updateCategoriesLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
   }) {
     return updateCategoriesSuccess?.call(data);
   }
@@ -1196,6 +1247,7 @@ class _$UpdateCategoriesSuccessImpl implements UpdateCategoriesSuccess {
     TResult Function(String id)? updateCategoriesLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
     TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (updateCategoriesSuccess != null) {
@@ -1217,6 +1269,8 @@ class _$UpdateCategoriesSuccessImpl implements UpdateCategoriesSuccess {
         updateCategoriesError,
     required TResult Function(UpdateCategoriesSuccess value)
         updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
   }) {
     return updateCategoriesSuccess(this);
   }
@@ -1231,6 +1285,7 @@ class _$UpdateCategoriesSuccessImpl implements UpdateCategoriesSuccess {
     TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
   }) {
     return updateCategoriesSuccess?.call(this);
   }
@@ -1245,6 +1300,7 @@ class _$UpdateCategoriesSuccessImpl implements UpdateCategoriesSuccess {
     TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
     TResult Function(UpdateCategoriesError value)? updateCategoriesError,
     TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
     required TResult orElse(),
   }) {
     if (updateCategoriesSuccess != null) {
@@ -1262,4 +1318,152 @@ abstract class UpdateCategoriesSuccess implements CategoryState {
   @JsonKey(ignore: true)
   _$$UpdateCategoriesSuccessImplCopyWith<_$UpdateCategoriesSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreateCategoriesLoadingImplCopyWith<$Res> {
+  factory _$$CreateCategoriesLoadingImplCopyWith(
+          _$CreateCategoriesLoadingImpl value,
+          $Res Function(_$CreateCategoriesLoadingImpl) then) =
+      __$$CreateCategoriesLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreateCategoriesLoadingImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CreateCategoriesLoadingImpl>
+    implements _$$CreateCategoriesLoadingImplCopyWith<$Res> {
+  __$$CreateCategoriesLoadingImplCopyWithImpl(
+      _$CreateCategoriesLoadingImpl _value,
+      $Res Function(_$CreateCategoriesLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CreateCategoriesLoadingImpl implements CreateCategoriesLoading {
+  const _$CreateCategoriesLoadingImpl();
+
+  @override
+  String toString() {
+    return 'CategoryState.createCategoriesLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateCategoriesLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
+    required TResult Function(List<CategoryResponseData> data)
+        getCategoriesSuccess,
+    required TResult Function(String id) updateCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateCategoriesError,
+    required TResult Function(List<CategoryResponseData> data)
+        updateCategoriesSuccess,
+    required TResult Function() createCategoriesLoading,
+  }) {
+    return createCategoriesLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
+    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
+    TResult? Function(String id)? updateCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
+    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult? Function()? createCategoriesLoading,
+  }) {
+    return createCategoriesLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
+    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
+    TResult Function(String id)? updateCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
+    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
+    TResult Function()? createCategoriesLoading,
+    required TResult orElse(),
+  }) {
+    if (createCategoriesLoading != null) {
+      return createCategoriesLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
+    required TResult Function(GetCategoriesError value) getCategoriesError,
+    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
+    required TResult Function(UpdateCategoriesLoading value)
+        updateCategoriesLoading,
+    required TResult Function(UpdateCategoriesError value)
+        updateCategoriesError,
+    required TResult Function(UpdateCategoriesSuccess value)
+        updateCategoriesSuccess,
+    required TResult Function(CreateCategoriesLoading value)
+        createCategoriesLoading,
+  }) {
+    return createCategoriesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesError value)? getCategoriesError,
+    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
+    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
+    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
+    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
+  }) {
+    return createCategoriesLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
+    TResult Function(GetCategoriesError value)? getCategoriesError,
+    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
+    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
+    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
+    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
+    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
+    required TResult orElse(),
+  }) {
+    if (createCategoriesLoading != null) {
+      return createCategoriesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateCategoriesLoading implements CategoryState {
+  const factory CreateCategoriesLoading() = _$CreateCategoriesLoadingImpl;
 }

@@ -30,7 +30,6 @@ CategoryResponseData _$CategoryResponseDataFromJson(
       updatedAt: json['updatedAt'] as String?,
       image: json['image'] as String?,
       publicId: json['publicId'] as String?,
-      isLoading: json['isLoading'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$CategoryResponseDataToJson(
@@ -43,5 +42,4 @@ Map<String, dynamic> _$CategoryResponseDataToJson(
       'updatedAt': instance.updatedAt,
       'image': instance.image,
       'publicId': instance.publicId,
-      'isLoading': instance.isLoading,
     };

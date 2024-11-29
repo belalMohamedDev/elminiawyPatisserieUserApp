@@ -36,6 +36,23 @@ class CategoryCubit extends Cubit<CategoryState> {
       },
     );
   }
+   Future<void> fetchCreationCategory(File image) async {
+    emit(const CategoryState.createCategoriesLoading());
+
+    final response = await _categoryRepositoryImplement.createCategoriesrepo(
+        arTitleController.text.trim(), enTitleController.text.trim(), image);
+
+    response.when(
+      success: (dataResponse) {
+        _categories.add(dataResponse.data);
+
+        emit(CategoryState.updateCategoriesSuccess([..._categories]));
+      },
+      failure: (error) {
+        emit(CategoryState.updateCategoriesError(error));
+      },
+    );
+  }
 
   Future<void> fetchUpdateActiveOrNotCategories(
       String? id, bool? isActive) async {

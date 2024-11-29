@@ -52,7 +52,7 @@ class CategoryResponseData {
   String? updatedAt;
   String? image;
   String? publicId;
-  bool isLoading;
+ 
 
   CategoryResponseData(
       {this.title,
@@ -62,7 +62,7 @@ class CategoryResponseData {
       this.updatedAt,
       this.image,
       this.publicId,
-      this.isLoading = false});
+     });
 
   //from json
   factory CategoryResponseData.fromJson(Map<String, dynamic> json) =>
@@ -71,16 +71,4 @@ class CategoryResponseData {
   //to json
   Map<String, dynamic> toJson() => _$CategoryResponseDataToJson(this);
 
-  CategoryResponseData copyWith({bool? isLoading}) {
-    return CategoryResponseData(
-      title: title,
-      sId: sId,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-      image: image,
-      publicId: publicId,
-      active: active,
-      isLoading: isLoading ?? this.isLoading,
-    );
-  }
 }

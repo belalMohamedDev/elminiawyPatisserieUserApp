@@ -61,6 +61,14 @@ abstract class AppServiceClient {
     @Part() File image,
   );
 
+  @POST(ApiConstants.category)
+  @MultiPart()
+  Future<CategoryResponse> createCategoriesService(
+    @Part(name: "title.ar") String arTitle,
+    @Part(name: "title.en") String enTitle,
+    @Part() File image,
+  );
+
   @DELETE("${ApiConstants.category}/{id}")
   Future<ApiSuccessGeneralModel> deleteCategoriesService(
     @Path("id") String id,
