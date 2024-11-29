@@ -35,7 +35,8 @@ class CategoryCubit extends Cubit<CategoryState> {
     );
   }
 
-  Future<void> fetchUpdateActiveOrNotCategories(String? id, bool? isActive) async {
+  Future<void> fetchUpdateActiveOrNotCategories(
+      String? id, bool? isActive) async {
     emit(CategoryState.updateCategoriesLoading(id!));
 
     final response = await _categoryRepositoryImplement
@@ -46,7 +47,6 @@ class CategoryCubit extends Cubit<CategoryState> {
 
     response.when(
       success: (dataResponse) {
-        // Once the API succeeds, update the category with the new data
         final updatedIndex =
             _categories.indexWhere((category) => category.sId == id);
 
@@ -54,11 +54,39 @@ class CategoryCubit extends Cubit<CategoryState> {
           _categories[updatedIndex] = dataResponse.data;
         }
 
-        // Emit the updated list with the category replaced
         emit(CategoryState.updateCategoriesSuccess([..._categories]));
       },
       failure: (error) {
-        emit(CategoryState.updateCategoriesError(error)); // Emit failure state
+        emit(CategoryState.updateCategoriesError(error));
+      },
+    );
+  }
+
+  Future<void> fetchUpdateTitleCategories(
+    String? id,
+  ) async {
+    emit(CategoryState.updateCategoriesLoading(id!));
+
+    final response =
+        await _categoryRepositoryImplement.updateCategoriesTitleRepo(
+            id, arTitleController.text.trim(), enTitleController.text.trim());
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _categories.indexWhere((category) => category.sId == id);
+
+        if (updatedIndex != -1) {
+          _categories[updatedIndex] = dataResponse.data;
+        }
+
+        arTitleController.clear();
+        enTitleController.clear();
+
+        emit(CategoryState.updateCategoriesSuccess([..._categories]));
+      },
+      failure: (error) {
+        emit(CategoryState.updateCategoriesError(error));
       },
     );
   }

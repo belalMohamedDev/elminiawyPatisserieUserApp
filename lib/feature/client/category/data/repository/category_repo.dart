@@ -33,8 +33,8 @@ class CategoryRepositoryImplement implements CategoryRepository {
   Future<ApiResult<CategoryResponse>> updateCategoriesTitleRepo(
       String id, String? titleAr, String? titleEn) async {
     final Map<String, dynamic> requestBody = {
-      'title.ar': titleAr,
-      'title.en': titleEn,
+      'title': {"ar": titleAr, "en": titleEn},
+      // 'title.en': titleEn,
     };
     try {
       final response =

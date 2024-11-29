@@ -7,17 +7,21 @@ class LoadingShimmer extends StatelessWidget {
     this.width,
     this.borderRadius,
     this.widget,
+    this.baseColor,
+    this.highlightColor,
   });
   final double? height;
   final double? width;
   final double? borderRadius;
   final Widget? widget;
+  final Color? baseColor;
+  final Color? highlightColor;
 
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey.shade600,
-      highlightColor: Colors.grey.shade400,
+      baseColor: baseColor ?? Colors.grey.shade600,
+      highlightColor: highlightColor ?? Colors.grey.shade400,
       child: Container(
         height: height,
         width: width,
