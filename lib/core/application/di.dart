@@ -1,4 +1,3 @@
-
 import 'package:flutter_google_maps_webservices/places.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
@@ -26,7 +25,8 @@ Future<void> initAppModule() async {
     _initPayment(),
     _initNotification(),
     _initSearch(),
-    _initSignInWithGoogleAndApple()
+    _initSignInWithGoogleAndApple(),
+    _initAdminHome()
   ]);
 }
 
@@ -58,6 +58,11 @@ Future<void> _initBanner() async {
     ..registerFactory<BannerCubit>(() => BannerCubit(
           instance(),
         ));
+}
+
+Future<void> _initAdminHome() async {
+  // //home repository
+  instance.registerFactory<AdminHomeCubit>(() => AdminHomeCubit());
 }
 
 Future<void> _initCategory() async {

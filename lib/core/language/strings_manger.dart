@@ -13,6 +13,14 @@ class AppStrings {
   static const String deActive = "deActive";
   static const String active = "active";
 
+  static const String subCategory = "subCategory";
+  static const String banners = "active";
+  static const String products = "products";
+  static const String orders = "orders";
+  static const String driver = "driver";
+  static const String users = "users";
+  static const String admins = "admins";
+
 
   static const String alreadyHaveAnAccount = "alreadyHaveAnAccount";
   static const String signInWithGoogle = "signInWithGoogle";

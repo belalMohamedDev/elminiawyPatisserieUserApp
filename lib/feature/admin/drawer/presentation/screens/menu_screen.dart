@@ -16,25 +16,33 @@ class _DrawerScreenState extends State<DrawerScreen> {
       color: ColorManger.brun,
       child: Padding(
         padding:
-            responsive.setPadding(top: 23, left: 1.5, right: 45, bottom: 8),
+            responsive.setPadding(top: 20, left: 1.5, right: 45, bottom: 8),
         child: Column(
           children: [
             Material(
               color: Colors.transparent,
               child: ListTile(
                 splashColor: ColorManger.white,
-                onTap: () {},
+                onTap: () {
+                  context.read<AdminHomeCubit>().drawerOpenOrClose(
+                        0,
+                        0,
+                        1,
+                        0,
+                        false,
+                      );
+                },
                 horizontalTitleGap: 25.0,
                 leading: Icon(
                   IconlyBold.home,
                   color: ColorManger.white,
                 ),
                 title: Text(
-                  AppStrings.home,
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.home),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -50,11 +58,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   color: ColorManger.white,
                 ),
                 title: Text(
-                  AppStrings.category,
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.categories),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -68,11 +76,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   color: ColorManger.white,
                 ),
                 title: Text(
-                  "SubCategory",
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.subCategory),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -86,11 +94,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   color: ColorManger.white,
                 ),
                 title: Text(
-                  "Banner",
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.banners),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -105,11 +113,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   height: responsive.setHeight(2.4),
                 ),
                 title: Text(
-                  "Product",
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.products),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -124,11 +132,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   height: responsive.setHeight(2.4),
                 ),
                 title: Text(
-                  "Orders",
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.orders),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -143,11 +151,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   height: responsive.setHeight(2.4),
                 ),
                 title: Text(
-                  "Driver",
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.driver),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -161,11 +169,29 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   color: ColorManger.white,
                 ),
                 title: Text(
-                  "Users",
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
-                  ),
+                  context.translate(AppStrings.users),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                ),
+              ),
+            ),
+            Material(
+              color: Colors.transparent,
+              child: ListTile(
+                onTap: () {},
+                horizontalTitleGap: 25.0,
+                leading: Icon(
+                  Icons.admin_panel_settings,
+                  color: ColorManger.white,
+                ),
+                title: Text(
+                  context.translate(AppStrings.admins),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
                 ),
               ),
             ),
@@ -180,7 +206,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   color: ColorManger.white,
                 ),
                 title: Text(
-                  AppStrings.logOut,
+                  context.translate(AppStrings.logOut),
                   style: TextStyle(
                     color: ColorManger.white,
                     fontSize: responsive.setTextSize(3.8),

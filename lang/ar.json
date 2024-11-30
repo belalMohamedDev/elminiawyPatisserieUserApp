@@ -28,6 +28,15 @@
  "deActive":"إلغاء التنشيط" , 
  "active": "تنشيط",
 
+"subCategory": "الفئات الفرعية",
+"banners": "لافتات",
+"products": "المنتجات",
+"orders": "الطلبات",
+"driver": "السائقون",
+"users": "المستخدمون",
+"admins": "المسؤولون",
+
+
 
   "continueWithoutSigningUp":"استمرار بدون تسجيل",
 "enterArabicTitle": "أدخل العنوان باللغة العربية",

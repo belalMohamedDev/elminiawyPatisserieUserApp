@@ -1,4 +1,3 @@
-
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
@@ -101,7 +100,10 @@ class RouteGenerator {
 
       case Routes.adminHome:
         return MaterialPageRoute(
-          builder: (_) => const DrawerStackView(),
+          builder: (_) => BlocProvider(
+            create: (context) => instance<AdminHomeCubit>(),
+            child: const DrawerStackView(),
+          ),
         );
 
       case Routes.accountInfomation:

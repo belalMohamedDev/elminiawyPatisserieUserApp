@@ -42,6 +42,9 @@ void main() {
     'flutter_test',
     'flutter_lints',
     'flutter',
+    'build_runner',
+    'json_serializable',
+    'retrofit_generator',
   };
 
   // إضافة المكتبات الأساسية يدويًا

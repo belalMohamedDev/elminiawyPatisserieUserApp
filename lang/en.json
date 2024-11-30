@@ -93,7 +93,20 @@
   "editImage": "Edit Image",
   "actions": "Actions",
   "deActive": "DeActive",
+
+  
   "active": "Active",
+
+
+
+
+  "subCategory": "SubCategories",
+  "banners": "Banners",
+  "products": "Products",
+  "orders": "Orders",
+  "driver": "Drivers",
+  "users": "Users",
+  "admins": "Admins",
 
 
 
