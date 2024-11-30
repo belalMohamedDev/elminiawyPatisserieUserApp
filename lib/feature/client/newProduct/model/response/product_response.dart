@@ -50,11 +50,11 @@ class DataProductResponse {
   @JsonKey(name: "_id")
   String? sId;
   double? price;
-  String? subCategory;
+  //String? subCategory;
   String? image;
   String? publicId;
   int? ratingsQuantity;
-  String? category;
+ // String? category;
   @JsonKey(name: "in_cart")
   bool? inCart;
   @JsonKey(name: "in_wishlist")
@@ -68,11 +68,12 @@ class DataProductResponse {
       this.description,
       this.sId,
       this.price,
-      this.subCategory,
+      //this.subCategory,
       this.image,
       this.publicId,
       this.ratingsQuantity,
-      this.category});
+      //this.category
+      });
 
 
   //from json

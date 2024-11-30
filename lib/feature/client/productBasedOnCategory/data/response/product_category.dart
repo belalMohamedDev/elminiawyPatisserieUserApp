@@ -29,11 +29,11 @@ class Products {
   @JsonKey(name: "_id")
   String? sId;
   int? price;
-  String? subCategory;
+  // String? subCategory;
   String? image;
   String? publicId;
   int? ratingsQuantity;
-  String? category;
+  // String? category;
   @JsonKey(name: "in_wishlist")
   bool? inWishlist;
   @JsonKey(name: "in_cart")
@@ -45,11 +45,12 @@ class Products {
       this.ratingsAverage,
       this.sId,
       this.price,
-      this.subCategory,
+      ///this.subCategory,
       this.image,
       this.publicId,
       this.ratingsQuantity,
-      this.category});
+     // this.category
+      });
 
   //from json
   factory Products.fromJson(Map<String, dynamic> json) =>
@@ -58,6 +59,9 @@ class Products {
   //to json
   Map<String, dynamic> toJson() => _$ProductsToJson(this);
 }
+
+
+
 
 @JsonSerializable()
 class SubCategoryProductData {

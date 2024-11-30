@@ -14,7 +14,10 @@ class CategorySuccessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
-    final category = context.read<CategoryCubit>().categories;
+    final allCategories = context.read<CategoryCubit>().categories;
+    final category = AppInitialRoute.role == "admin"
+        ? allCategories
+        : allCategories.where((cat) => cat.active == true).toList();
     return Padding(
       padding: responsive.setPadding(
           left: 5, right: 5, top: AppInitialRoute.role == "admin" ? 2 : 0),
@@ -29,7 +32,7 @@ class CategorySuccessWidget extends StatelessWidget {
               ? category.length + 1
               : category.length,
           (index) {
-            if (AppInitialRoute.role == "admin" && index == category.length) {
+            if (AppInitialRoute.role == "admin" && index == 0) {
               return GestureDetector(
                 onTap: () {
                   showAddCategoryDialog(context);
@@ -39,6 +42,9 @@ class CategorySuccessWidget extends StatelessWidget {
                 ),
               );
             } else {
+              final actualIndex =
+                  AppInitialRoute.role == "admin" ? index - 1 : index;
+
               return GestureDetector(
                 onTap: () {
                   if (AppInitialRoute.role == "admin") {
@@ -51,7 +57,7 @@ class CategorySuccessWidget extends StatelessWidget {
                             onPressed: () {
                               Navigator.pop(context);
                               showEditPopup(
-                                category[index],
+                                category[actualIndex],
                                 context,
                               );
                             },
@@ -62,7 +68,7 @@ class CategorySuccessWidget extends StatelessWidget {
                               Navigator.pop(context);
                               context.read<CategoryCubit>().pickImage(
                                     ImageSource.gallery,
-                                    category[index].sId,
+                                    category[actualIndex].sId,
                                   );
                             },
                             child: const Text('Edit Image'),
@@ -73,11 +79,11 @@ class CategorySuccessWidget extends StatelessWidget {
                               context
                                   .read<CategoryCubit>()
                                   .fetchUpdateActiveOrNotCategories(
-                                    category[index].sId,
-                                    !category[index].active!,
+                                    category[actualIndex].sId,
+                                    !category[actualIndex].active!,
                                   );
                             },
-                            child: Text(category[index].active == true
+                            child: Text(category[actualIndex].active == true
                                 ? 'DeActive'
                                 : 'Active'),
                           ),
@@ -87,7 +93,7 @@ class CategorySuccessWidget extends StatelessWidget {
                               context
                                   .read<CategoryCubit>()
                                   .fetchDeleteCategories(
-                                    category[index].sId,
+                                    category[actualIndex].sId,
                                   );
                             },
                             isDestructiveAction: true,
@@ -119,8 +125,8 @@ class CategorySuccessWidget extends StatelessWidget {
                             ),
                           ],
                           child: ProductBaseOnCategory(
-                            categoryId: category[index].sId!,
-                            categoryName: category[index].title!,
+                            categoryId: category[actualIndex].sId!,
+                            categoryName: category[actualIndex].title!,
                           ),
                         ),
                       ),
@@ -130,16 +136,16 @@ class CategorySuccessWidget extends StatelessWidget {
                 child: Stack(
                   children: [
                     BuildCategoryCard(
-                      category: category[index],
+                      category: category[actualIndex],
                     ),
                     if (categoryState is UpdateCategoriesLoading &&
                         (categoryState as UpdateCategoriesLoading).id ==
-                            category[index].sId)
+                            category[actualIndex].sId)
                       Positioned(
                         top: 25,
                         left: 30,
                         child: CircularProgressIndicator(
-                            color: category[index].active == true
+                            color: category[actualIndex].active == true
                                 ? Colors.red.shade200
                                 : Colors.green.shade200),
                       ),

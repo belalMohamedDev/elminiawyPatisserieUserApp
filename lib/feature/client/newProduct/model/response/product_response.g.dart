@@ -54,11 +54,9 @@ DataProductResponse _$DataProductResponseFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       sId: json['_id'] as String?,
       price: (json['price'] as num?)?.toDouble(),
-      subCategory: json['subCategory'] as String?,
       image: json['image'] as String?,
       publicId: json['publicId'] as String?,
       ratingsQuantity: (json['ratingsQuantity'] as num?)?.toInt(),
-      category: json['category'] as String?,
     );
 
 Map<String, dynamic> _$DataProductResponseToJson(
@@ -69,11 +67,9 @@ Map<String, dynamic> _$DataProductResponseToJson(
       'ratingsAverage': instance.ratingsAverage,
       '_id': instance.sId,
       'price': instance.price,
-      'subCategory': instance.subCategory,
       'image': instance.image,
       'publicId': instance.publicId,
       'ratingsQuantity': instance.ratingsQuantity,
-      'category': instance.category,
       'in_cart': instance.inCart,
       'in_wishlist': instance.inWishlist,
     };

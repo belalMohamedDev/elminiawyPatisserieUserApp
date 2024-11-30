@@ -1,7 +1,7 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 class BuildCategoryCard extends StatelessWidget {
-  const BuildCategoryCard( {
+  const BuildCategoryCard({
     super.key,
     this.category,
   });
@@ -28,7 +28,7 @@ class BuildCategoryCard extends StatelessWidget {
               child: category == null
                   ? Image.asset(
                       ImageAsset.upload,
-                      color: ColorManger.selected.withAlpha(160),
+                      color: ColorManger.grey.withAlpha(80),
                     )
                   : CachedNetworkImage(
                       imageUrl: category!.image!,
@@ -57,14 +57,14 @@ class BuildCategoryCard extends StatelessWidget {
             borderRadius: responsive.setBorderRadius(2),
             baseColor: AppInitialRoute.role == "admin"
                 ? category == null
-                    ? ColorManger.selected
+                    ? null
                     : category!.active == true
                         ? Colors.green.shade600
                         : Colors.red.shade600
                 : null,
             highlightColor: AppInitialRoute.role == "admin"
                 ? category == null
-                    ? ColorManger.selected.withAlpha(180)
+                    ? null
                     : category!.active == true
                         ? Colors.green.shade200
                         : Colors.red.shade200
