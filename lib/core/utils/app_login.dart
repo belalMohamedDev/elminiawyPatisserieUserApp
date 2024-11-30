@@ -41,6 +41,8 @@ class AppLogin {
     if (authResponse.data!.role != null) {
       await SharedPrefHelper.setSecuredString(
           PrefKeys.role, authResponse.data!.role!);
+
+      AppInitialRoute.role=authResponse.data!.role!;
     }
 
     if (!isChangeUserPassword) {
