@@ -6,14 +6,21 @@ void showEditPopup(CategoryResponseData category, BuildContext context) {
   showCupertinoModalPopup(
     context: context,
     builder: (_) => CupertinoActionSheet(
-      title: Text("Edit ${category.title} Category"),
+      title: Text("${category.title} ${context.translate(AppStrings.category)}",
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall!
+              .copyWith(fontSize: responsive.setTextSize(3.5))),
       message: Column(
         children: [
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
             controller: context.read<CategoryCubit>().arTitleController,
-            placeholder: "Enter Arabic Title",
-            style: const TextStyle(fontSize: 16, color: CupertinoColors.black),
+            placeholder: context.translate(AppStrings.enterArabicTitle),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontSize: responsive.setTextSize(3.5)),
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
               color: Colors.transparent,
@@ -27,8 +34,11 @@ void showEditPopup(CategoryResponseData category, BuildContext context) {
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
             controller: context.read<CategoryCubit>().enTitleController,
-            placeholder: "Enter English Title",
-            style: const TextStyle(fontSize: 16, color: CupertinoColors.black),
+            placeholder: context.translate(AppStrings.enterEnglishTitle),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontSize: responsive.setTextSize(3.5)),
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -49,14 +59,21 @@ void showEditPopup(CategoryResponseData category, BuildContext context) {
                 .fetchUpdateTitleCategories(category.sId);
             Navigator.pop(context);
           },
-          child: const Text("Save"),
+          child: Text(
+            context.translate(AppStrings.save),
+            style:
+                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+          ),
         ),
       ],
       cancelButton: CupertinoActionSheetAction(
         onPressed: () {
           Navigator.pop(context);
         },
-        child: const Text("Cancel"),
+        child: Text(
+          context.translate(AppStrings.cancel),
+          style: TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+        ),
       ),
     ),
   );

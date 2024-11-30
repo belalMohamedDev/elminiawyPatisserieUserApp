@@ -20,8 +20,18 @@
   "priceRange": "نطاق السعر",
   "opps": "عذرًا! ....",
   "office": "مكتب",
-  "continueWithoutSigningUp":"استمرار بدون تسجيل",
+"addImage": "إضافة صورة",
+"addNewCategory": "إضافة فئة جديدة",
 
+"editImage": "تعديل الصورة",
+ "actions": "إجراءات", 
+ "deActive":"إلغاء التنشيط" , 
+ "active": "تنشيط",
+
+
+  "continueWithoutSigningUp":"استمرار بدون تسجيل",
+"enterArabicTitle": "أدخل العنوان باللغة العربية",
+"enterEnglishTitle": "أدخل العنوان باللغة الإنجليزية",
   "somethingWrongWithYourConnection": "هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد لحظة.",
   "area": "المنطقة",
   "thisAccountNotAccessInThisApp": "هذا الحساب لا يمكن الوصول إليه في هذا التطبيق",

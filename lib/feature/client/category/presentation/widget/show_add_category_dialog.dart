@@ -5,14 +5,21 @@ void showAddCategoryDialog(BuildContext context) {
   showCupertinoDialog(
     context: context,
     builder: (_) => CupertinoAlertDialog(
-      title: const Text('Add New Category'),
+      title: Text(context.translate(AppStrings.addNewCategory),
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall!
+              .copyWith(fontSize: responsive.setTextSize(3.5))),
       content: Column(
         children: [
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
             controller: context.read<CategoryCubit>().arTitleController,
-            placeholder: "Enter Arabic Title",
-            style: const TextStyle(fontSize: 16, color: CupertinoColors.black),
+            placeholder: context.translate(AppStrings.enterArabicTitle),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontSize: responsive.setTextSize(3.5)),
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
               color: Colors.transparent,
@@ -26,8 +33,11 @@ void showAddCategoryDialog(BuildContext context) {
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
             controller: context.read<CategoryCubit>().enTitleController,
-            placeholder: "Enter English Title",
-            style: const TextStyle(fontSize: 16, color: CupertinoColors.black),
+            placeholder: context.translate(AppStrings.enterEnglishTitle),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontSize: responsive.setTextSize(3.5)),
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -45,14 +55,23 @@ void showAddCategoryDialog(BuildContext context) {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Cancel'),
+          child: Text(
+            context.translate(AppStrings.cancel),
+            style:
+                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+          ),
         ),
         CupertinoDialogAction(
           onPressed: () {
             context.read<CategoryCubit>().pickImage(ImageSource.gallery, null);
             Navigator.pop(context);
           },
-          child: const Text('Add Image'),
+          child: Text(
+              context.translate(
+                AppStrings.addImage,
+              ),
+              style: TextStyle(
+                  fontFamily: FontConsistent.geLocalozedFontFamily())),
         ),
       ],
     ),

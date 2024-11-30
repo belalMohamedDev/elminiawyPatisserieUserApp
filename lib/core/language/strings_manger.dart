@@ -8,6 +8,12 @@ class AppStrings {
       "discoverOurWonderfulSelection";
   static const String letsGetStarted = "letsGetStarted";
 
+  static const String editImage = "editImage";
+  static const String actions = "actions";
+  static const String deActive = "deActive";
+  static const String active = "active";
+
+
   static const String alreadyHaveAnAccount = "alreadyHaveAnAccount";
   static const String signInWithGoogle = "signInWithGoogle";
   static const String signInWithApple = "signInWithApple";
@@ -25,10 +31,14 @@ class AppStrings {
   static const String priceHighToLow = "priceHighToLow";
   static const String priceRange = "priceRange";
   static const String opps = "opps";
+  static const String addNewCategory = "addNewCategory";
+  static const String addImage = "addImage";
   static const String somethingWrongWithYourConnection =
       "somethingWrongWithYourConnection";
   static const String area = "area";
   static const String office = "office";
+  static const String enterEnglishTitle = "enterEnglishTitle";
+  static const String enterArabicTitle = "enterArabicTitle";
 
   static const String thisAccountNotAccessInThisApp =
       "thisAccountNotAccessInThisApp";

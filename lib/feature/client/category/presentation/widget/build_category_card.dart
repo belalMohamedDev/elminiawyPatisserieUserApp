@@ -44,7 +44,7 @@ class BuildCategoryCard extends StatelessWidget {
           ),
           responsive.setSizeBox(height: 2),
           Text(
-            category == null ? "add new" : category!.title!,
+            category == null ?      context.translate(AppStrings.addNew) : category!.title!,
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!

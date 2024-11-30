@@ -1,7 +1,7 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:elminiawy/feature/client/category/presentation/widget/build_category_card.dart';
 import 'package:elminiawy/feature/client/category/presentation/widget/show_add_category_dialog.dart';
-import 'package:elminiawy/feature/client/category/presentation/widget/show_edit_popup.dart';
+import 'package:elminiawy/feature/client/category/presentation/widget/show_edit_action_dialog.dart';
 
 class CategorySuccessWidget extends StatelessWidget {
   const CategorySuccessWidget({
@@ -48,66 +48,8 @@ class CategorySuccessWidget extends StatelessWidget {
               return GestureDetector(
                 onTap: () {
                   if (AppInitialRoute.role == "admin") {
-                    showCupertinoModalPopup(
-                      context: context,
-                      builder: (_) => CupertinoActionSheet(
-                        title: const Text("Actions"),
-                        actions: [
-                          CupertinoActionSheetAction(
-                            onPressed: () {
-                              Navigator.pop(context);
-                              showEditPopup(
-                                category[actualIndex],
-                                context,
-                              );
-                            },
-                            child: const Text('Edit'),
-                          ),
-                          CupertinoActionSheetAction(
-                            onPressed: () {
-                              Navigator.pop(context);
-                              context.read<CategoryCubit>().pickImage(
-                                    ImageSource.gallery,
-                                    category[actualIndex].sId,
-                                  );
-                            },
-                            child: const Text('Edit Image'),
-                          ),
-                          CupertinoActionSheetAction(
-                            onPressed: () {
-                              Navigator.pop(context);
-                              context
-                                  .read<CategoryCubit>()
-                                  .fetchUpdateActiveOrNotCategories(
-                                    category[actualIndex].sId,
-                                    !category[actualIndex].active!,
-                                  );
-                            },
-                            child: Text(category[actualIndex].active == true
-                                ? 'DeActive'
-                                : 'Active'),
-                          ),
-                          CupertinoActionSheetAction(
-                            onPressed: () {
-                              Navigator.pop(context);
-                              context
-                                  .read<CategoryCubit>()
-                                  .fetchDeleteCategories(
-                                    category[actualIndex].sId,
-                                  );
-                            },
-                            isDestructiveAction: true,
-                            child: const Text('Delete'),
-                          ),
-                        ],
-                        cancelButton: CupertinoActionSheetAction(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text('Cancel'),
-                        ),
-                      ),
-                    );
+                    showEditCategoryActionDialog(
+                        context, category[actualIndex]);
                   } else {
                     Navigator.of(context).push(
                       MaterialPageRoute(
