@@ -1,7 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/client/category/presentation/widget/build_category_card.dart';
-import 'package:elminiawy/feature/client/category/presentation/widget/show_add_category_dialog.dart';
-import 'package:elminiawy/feature/client/category/presentation/widget/show_edit_action_dialog.dart';
 
 class CategorySuccessWidget extends StatelessWidget {
   const CategorySuccessWidget({

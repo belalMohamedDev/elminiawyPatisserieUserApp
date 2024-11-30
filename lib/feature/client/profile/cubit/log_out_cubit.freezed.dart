@@ -50,7 +50,7 @@ mixin _$LogOutState {
     required TResult Function(LogOutLoading value) logOutLoading,
     required TResult Function(LogOutError value) logOutError,
     required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(GetUserNameStorageData value) getStorageData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,7 +59,7 @@ mixin _$LogOutState {
     TResult? Function(LogOutLoading value)? logOutLoading,
     TResult? Function(LogOutError value)? logOutError,
     TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(GetUserNameStorageData value)? getStorageData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,7 +68,7 @@ mixin _$LogOutState {
     TResult Function(LogOutLoading value)? logOutLoading,
     TResult Function(LogOutError value)? logOutError,
     TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(GetUserNameStorageData value)? getStorageData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,7 +174,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(LogOutLoading value) logOutLoading,
     required TResult Function(LogOutError value) logOutError,
     required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(GetUserNameStorageData value) getStorageData,
   }) {
     return initial(this);
   }
@@ -186,7 +186,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(LogOutLoading value)? logOutLoading,
     TResult? Function(LogOutError value)? logOutError,
     TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(GetUserNameStorageData value)? getStorageData,
   }) {
     return initial?.call(this);
   }
@@ -198,7 +198,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(LogOutLoading value)? logOutLoading,
     TResult Function(LogOutError value)? logOutError,
     TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(GetUserNameStorageData value)? getStorageData,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -294,7 +294,7 @@ class _$LogOutLoadingImpl implements LogOutLoading {
     required TResult Function(LogOutLoading value) logOutLoading,
     required TResult Function(LogOutError value) logOutError,
     required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(GetUserNameStorageData value) getStorageData,
   }) {
     return logOutLoading(this);
   }
@@ -306,7 +306,7 @@ class _$LogOutLoadingImpl implements LogOutLoading {
     TResult? Function(LogOutLoading value)? logOutLoading,
     TResult? Function(LogOutError value)? logOutError,
     TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(GetUserNameStorageData value)? getStorageData,
   }) {
     return logOutLoading?.call(this);
   }
@@ -318,7 +318,7 @@ class _$LogOutLoadingImpl implements LogOutLoading {
     TResult Function(LogOutLoading value)? logOutLoading,
     TResult Function(LogOutError value)? logOutError,
     TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(GetUserNameStorageData value)? getStorageData,
     required TResult orElse(),
   }) {
     if (logOutLoading != null) {
@@ -441,7 +441,7 @@ class _$LogOutErrorImpl implements LogOutError {
     required TResult Function(LogOutLoading value) logOutLoading,
     required TResult Function(LogOutError value) logOutError,
     required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(GetUserNameStorageData value) getStorageData,
   }) {
     return logOutError(this);
   }
@@ -453,7 +453,7 @@ class _$LogOutErrorImpl implements LogOutError {
     TResult? Function(LogOutLoading value)? logOutLoading,
     TResult? Function(LogOutError value)? logOutError,
     TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(GetUserNameStorageData value)? getStorageData,
   }) {
     return logOutError?.call(this);
   }
@@ -465,7 +465,7 @@ class _$LogOutErrorImpl implements LogOutError {
     TResult Function(LogOutLoading value)? logOutLoading,
     TResult Function(LogOutError value)? logOutError,
     TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(GetUserNameStorageData value)? getStorageData,
     required TResult orElse(),
   }) {
     if (logOutError != null) {
@@ -594,7 +594,7 @@ class _$LogOutSuccessImpl implements LogOutSuccess {
     required TResult Function(LogOutLoading value) logOutLoading,
     required TResult Function(LogOutError value) logOutError,
     required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(GetUserNameStorageData value) getStorageData,
   }) {
     return logOutSuccess(this);
   }
@@ -606,7 +606,7 @@ class _$LogOutSuccessImpl implements LogOutSuccess {
     TResult? Function(LogOutLoading value)? logOutLoading,
     TResult? Function(LogOutError value)? logOutError,
     TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(GetUserNameStorageData value)? getStorageData,
   }) {
     return logOutSuccess?.call(this);
   }
@@ -618,7 +618,7 @@ class _$LogOutSuccessImpl implements LogOutSuccess {
     TResult Function(LogOutLoading value)? logOutLoading,
     TResult Function(LogOutError value)? logOutError,
     TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(GetUserNameStorageData value)? getStorageData,
     required TResult orElse(),
   }) {
     if (logOutSuccess != null) {
@@ -639,20 +639,22 @@ abstract class LogOutSuccess implements LogOutState {
 }
 
 /// @nodoc
-abstract class _$$GetStorageDataImplCopyWith<$Res> {
-  factory _$$GetStorageDataImplCopyWith(_$GetStorageDataImpl value,
-          $Res Function(_$GetStorageDataImpl) then) =
-      __$$GetStorageDataImplCopyWithImpl<$Res>;
+abstract class _$$GetUserNameStorageDataImplCopyWith<$Res> {
+  factory _$$GetUserNameStorageDataImplCopyWith(
+          _$GetUserNameStorageDataImpl value,
+          $Res Function(_$GetUserNameStorageDataImpl) then) =
+      __$$GetUserNameStorageDataImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String userName});
 }
 
 /// @nodoc
-class __$$GetStorageDataImplCopyWithImpl<$Res>
-    extends _$LogOutStateCopyWithImpl<$Res, _$GetStorageDataImpl>
-    implements _$$GetStorageDataImplCopyWith<$Res> {
-  __$$GetStorageDataImplCopyWithImpl(
-      _$GetStorageDataImpl _value, $Res Function(_$GetStorageDataImpl) _then)
+class __$$GetUserNameStorageDataImplCopyWithImpl<$Res>
+    extends _$LogOutStateCopyWithImpl<$Res, _$GetUserNameStorageDataImpl>
+    implements _$$GetUserNameStorageDataImplCopyWith<$Res> {
+  __$$GetUserNameStorageDataImplCopyWithImpl(
+      _$GetUserNameStorageDataImpl _value,
+      $Res Function(_$GetUserNameStorageDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -660,7 +662,7 @@ class __$$GetStorageDataImplCopyWithImpl<$Res>
   $Res call({
     Object? userName = null,
   }) {
-    return _then(_$GetStorageDataImpl(
+    return _then(_$GetUserNameStorageDataImpl(
       null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
@@ -671,8 +673,8 @@ class __$$GetStorageDataImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetStorageDataImpl implements GetStorageData {
-  const _$GetStorageDataImpl(this.userName);
+class _$GetUserNameStorageDataImpl implements GetUserNameStorageData {
+  const _$GetUserNameStorageDataImpl(this.userName);
 
   @override
   final String userName;
@@ -686,7 +688,7 @@ class _$GetStorageDataImpl implements GetStorageData {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetStorageDataImpl &&
+            other is _$GetUserNameStorageDataImpl &&
             (identical(other.userName, userName) ||
                 other.userName == userName));
   }
@@ -697,9 +699,9 @@ class _$GetStorageDataImpl implements GetStorageData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetStorageDataImplCopyWith<_$GetStorageDataImpl> get copyWith =>
-      __$$GetStorageDataImplCopyWithImpl<_$GetStorageDataImpl>(
-          this, _$identity);
+  _$$GetUserNameStorageDataImplCopyWith<_$GetUserNameStorageDataImpl>
+      get copyWith => __$$GetUserNameStorageDataImplCopyWithImpl<
+          _$GetUserNameStorageDataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -748,7 +750,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     required TResult Function(LogOutLoading value) logOutLoading,
     required TResult Function(LogOutError value) logOutError,
     required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetStorageData value) getStorageData,
+    required TResult Function(GetUserNameStorageData value) getStorageData,
   }) {
     return getStorageData(this);
   }
@@ -760,7 +762,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult? Function(LogOutLoading value)? logOutLoading,
     TResult? Function(LogOutError value)? logOutError,
     TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetStorageData value)? getStorageData,
+    TResult? Function(GetUserNameStorageData value)? getStorageData,
   }) {
     return getStorageData?.call(this);
   }
@@ -772,7 +774,7 @@ class _$GetStorageDataImpl implements GetStorageData {
     TResult Function(LogOutLoading value)? logOutLoading,
     TResult Function(LogOutError value)? logOutError,
     TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetStorageData value)? getStorageData,
+    TResult Function(GetUserNameStorageData value)? getStorageData,
     required TResult orElse(),
   }) {
     if (getStorageData != null) {
@@ -782,11 +784,12 @@ class _$GetStorageDataImpl implements GetStorageData {
   }
 }
 
-abstract class GetStorageData implements LogOutState {
-  const factory GetStorageData(final String userName) = _$GetStorageDataImpl;
+abstract class GetUserNameStorageData implements LogOutState {
+  const factory GetUserNameStorageData(final String userName) =
+      _$GetUserNameStorageDataImpl;
 
   String get userName;
   @JsonKey(ignore: true)
-  _$$GetStorageDataImplCopyWith<_$GetStorageDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetUserNameStorageDataImplCopyWith<_$GetUserNameStorageDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

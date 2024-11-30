@@ -1,3 +1,4 @@
+
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 ThemeData getApplicationTheme(BuildContext context) {

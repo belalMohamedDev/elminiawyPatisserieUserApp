@@ -1,11 +1,12 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
+
 part 'get_order.g.dart';
 
 @JsonSerializable()
 class GetOrdersResponse {
   bool? status;
   String? message;
-  PaginationRuslt? paginationRuslt;
+  PaginationGetOrdersRuslt? paginationRuslt;
   List<GetOrdersResponseData>? data;
 
   GetOrdersResponse(
@@ -20,22 +21,22 @@ class GetOrdersResponse {
 }
 
 @JsonSerializable()
-class PaginationRuslt {
+class PaginationGetOrdersRuslt {
   int? currentPage;
   int? limit;
   int? skip;
   int? numberOfPages;
   int? next;
 
-  PaginationRuslt(
+  PaginationGetOrdersRuslt(
       {this.currentPage, this.limit, this.skip, this.numberOfPages, this.next});
 
   //from json
-  factory PaginationRuslt.fromJson(Map<String, dynamic> json) =>
-      _$PaginationRusltFromJson(json);
+  factory PaginationGetOrdersRuslt.fromJson(Map<String, dynamic> json) =>
+      _$PaginationGetOrdersRusltFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$PaginationRusltToJson(this);
+  Map<String, dynamic> toJson() => _$PaginationGetOrdersRusltToJson(this);
 }
 
 @JsonSerializable()

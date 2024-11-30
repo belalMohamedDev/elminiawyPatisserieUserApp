@@ -37,7 +37,7 @@ CreateAddressData _$CreateAddressDataFromJson(Map<String, dynamic> json) =>
       addressLabel: json['addressLabel'] as String?,
       location: json['location'] == null
           ? null
-          : Location.fromJson(json['location'] as Map<String, dynamic>),
+          : LocationData.fromJson(json['location'] as Map<String, dynamic>),
       user: json['user'] as String?,
       nearbyStoreAddress: json['nearbyStoreAddress'] as String?,
       sId: json['_id'] as String?,
@@ -60,14 +60,15 @@ Map<String, dynamic> _$CreateAddressDataToJson(CreateAddressData instance) =>
       '_id': instance.sId,
     };
 
-Location _$LocationFromJson(Map<String, dynamic> json) => Location(
+LocationData _$LocationDataFromJson(Map<String, dynamic> json) => LocationData(
       type: json['type'] as String?,
       coordinates: (json['coordinates'] as List<dynamic>?)
           ?.map((e) => (e as num).toDouble())
           .toList(),
     );
 
-Map<String, dynamic> _$LocationToJson(Location instance) => <String, dynamic>{
+Map<String, dynamic> _$LocationDataToJson(LocationData instance) =>
+    <String, dynamic>{
       'type': instance.type,
       'coordinates': instance.coordinates,
     };

@@ -112,6 +112,7 @@ dependencies:
   firebase_auth: ^5.3.1
   smooth_page_indicator: ^1.2.0+3
   image_picker: ^1.1.2
+  yaml: ^3.1.2
 
 
 dev_dependencies:

@@ -12,7 +12,7 @@ GetOrdersResponse _$GetOrdersResponseFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String?,
       paginationRuslt: json['paginationRuslt'] == null
           ? null
-          : PaginationRuslt.fromJson(
+          : PaginationGetOrdersRuslt.fromJson(
               json['paginationRuslt'] as Map<String, dynamic>),
       data: (json['data'] as List<dynamic>?)
           ?.map(
@@ -28,8 +28,9 @@ Map<String, dynamic> _$GetOrdersResponseToJson(GetOrdersResponse instance) =>
       'data': instance.data,
     };
 
-PaginationRuslt _$PaginationRusltFromJson(Map<String, dynamic> json) =>
-    PaginationRuslt(
+PaginationGetOrdersRuslt _$PaginationGetOrdersRusltFromJson(
+        Map<String, dynamic> json) =>
+    PaginationGetOrdersRuslt(
       currentPage: (json['currentPage'] as num?)?.toInt(),
       limit: (json['limit'] as num?)?.toInt(),
       skip: (json['skip'] as num?)?.toInt(),
@@ -37,7 +38,8 @@ PaginationRuslt _$PaginationRusltFromJson(Map<String, dynamic> json) =>
       next: (json['next'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$PaginationRusltToJson(PaginationRuslt instance) =>
+Map<String, dynamic> _$PaginationGetOrdersRusltToJson(
+        PaginationGetOrdersRuslt instance) =>
     <String, dynamic>{
       'currentPage': instance.currentPage,
       'limit': instance.limit,

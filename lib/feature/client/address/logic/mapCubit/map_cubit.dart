@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:flutter_google_maps_webservices/places.dart';
 
 part 'map_state.dart';
 part 'map_cubit.freezed.dart';

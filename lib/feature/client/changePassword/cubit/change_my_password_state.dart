@@ -21,5 +21,5 @@ class ChangeMyPasswordState with _$ChangeMyPasswordState {
 
   const factory ChangeMyPasswordState.changePasswordVisibilityState(
     bool isPasswordVisible,
-  ) = ChangePasswordVisibilityState;
+  ) = ChangePasswordVisibilitylookState;
 }

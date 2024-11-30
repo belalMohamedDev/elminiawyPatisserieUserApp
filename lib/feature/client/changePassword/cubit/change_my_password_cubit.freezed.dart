@@ -78,7 +78,7 @@ mixin _$ChangeMyPasswordState {
         changeMyPasswordSuccess,
     required TResult Function(ChangeMyPasswordTextColorUpdated value)
         changeMyPasswordTextColorUpdated,
-    required TResult Function(ChangePasswordVisibilityState value)
+    required TResult Function(ChangePasswordVisibilitylookState value)
         changePasswordVisibilityState,
   }) =>
       throw _privateConstructorUsedError;
@@ -90,7 +90,7 @@ mixin _$ChangeMyPasswordState {
     TResult? Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult? Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult? Function(ChangePasswordVisibilityState value)?
+    TResult? Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
   }) =>
       throw _privateConstructorUsedError;
@@ -102,7 +102,7 @@ mixin _$ChangeMyPasswordState {
     TResult Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult Function(ChangePasswordVisibilityState value)?
+    TResult Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
     required TResult orElse(),
   }) =>
@@ -238,7 +238,7 @@ class _$InitialImpl implements _Initial {
         changeMyPasswordSuccess,
     required TResult Function(ChangeMyPasswordTextColorUpdated value)
         changeMyPasswordTextColorUpdated,
-    required TResult Function(ChangePasswordVisibilityState value)
+    required TResult Function(ChangePasswordVisibilitylookState value)
         changePasswordVisibilityState,
   }) {
     return initial(this);
@@ -253,7 +253,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult? Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult? Function(ChangePasswordVisibilityState value)?
+    TResult? Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
   }) {
     return initial?.call(this);
@@ -268,7 +268,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult Function(ChangePasswordVisibilityState value)?
+    TResult Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
     required TResult orElse(),
   }) {
@@ -397,7 +397,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
         changeMyPasswordSuccess,
     required TResult Function(ChangeMyPasswordTextColorUpdated value)
         changeMyPasswordTextColorUpdated,
-    required TResult Function(ChangePasswordVisibilityState value)
+    required TResult Function(ChangePasswordVisibilitylookState value)
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordLoading(this);
@@ -412,7 +412,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
     TResult? Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult? Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult? Function(ChangePasswordVisibilityState value)?
+    TResult? Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordLoading?.call(this);
@@ -427,7 +427,7 @@ class _$ChangeMyPasswordLoadingImpl implements ChangeMyPasswordLoading {
     TResult Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult Function(ChangePasswordVisibilityState value)?
+    TResult Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
     required TResult orElse(),
   }) {
@@ -582,7 +582,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
         changeMyPasswordSuccess,
     required TResult Function(ChangeMyPasswordTextColorUpdated value)
         changeMyPasswordTextColorUpdated,
-    required TResult Function(ChangePasswordVisibilityState value)
+    required TResult Function(ChangePasswordVisibilitylookState value)
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordError(this);
@@ -597,7 +597,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     TResult? Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult? Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult? Function(ChangePasswordVisibilityState value)?
+    TResult? Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordError?.call(this);
@@ -612,7 +612,7 @@ class _$ChangeMyPasswordErrorImpl implements ChangeMyPasswordError {
     TResult Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult Function(ChangePasswordVisibilityState value)?
+    TResult Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
     required TResult orElse(),
   }) {
@@ -773,7 +773,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
         changeMyPasswordSuccess,
     required TResult Function(ChangeMyPasswordTextColorUpdated value)
         changeMyPasswordTextColorUpdated,
-    required TResult Function(ChangePasswordVisibilityState value)
+    required TResult Function(ChangePasswordVisibilitylookState value)
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordSuccess(this);
@@ -788,7 +788,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
     TResult? Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult? Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult? Function(ChangePasswordVisibilityState value)?
+    TResult? Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordSuccess?.call(this);
@@ -803,7 +803,7 @@ class _$ChangeMyPasswordSuccessImpl implements ChangeMyPasswordSuccess {
     TResult Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult Function(ChangePasswordVisibilityState value)?
+    TResult Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
     required TResult orElse(),
   }) {
@@ -1030,7 +1030,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
         changeMyPasswordSuccess,
     required TResult Function(ChangeMyPasswordTextColorUpdated value)
         changeMyPasswordTextColorUpdated,
-    required TResult Function(ChangePasswordVisibilityState value)
+    required TResult Function(ChangePasswordVisibilitylookState value)
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordTextColorUpdated(this);
@@ -1045,7 +1045,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
     TResult? Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult? Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult? Function(ChangePasswordVisibilityState value)?
+    TResult? Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
   }) {
     return changeMyPasswordTextColorUpdated?.call(this);
@@ -1060,7 +1060,7 @@ class _$ChangeMyPasswordTextColorUpdatedImpl
     TResult Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult Function(ChangePasswordVisibilityState value)?
+    TResult Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
     required TResult orElse(),
   }) {
@@ -1093,23 +1093,23 @@ abstract class ChangeMyPasswordTextColorUpdated
 }
 
 /// @nodoc
-abstract class _$$ChangePasswordVisibilityStateImplCopyWith<$Res> {
-  factory _$$ChangePasswordVisibilityStateImplCopyWith(
-          _$ChangePasswordVisibilityStateImpl value,
-          $Res Function(_$ChangePasswordVisibilityStateImpl) then) =
-      __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>;
+abstract class _$$ChangePasswordVisibilitylookStateImplCopyWith<$Res> {
+  factory _$$ChangePasswordVisibilitylookStateImplCopyWith(
+          _$ChangePasswordVisibilitylookStateImpl value,
+          $Res Function(_$ChangePasswordVisibilitylookStateImpl) then) =
+      __$$ChangePasswordVisibilitylookStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isPasswordVisible});
 }
 
 /// @nodoc
-class __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>
+class __$$ChangePasswordVisibilitylookStateImplCopyWithImpl<$Res>
     extends _$ChangeMyPasswordStateCopyWithImpl<$Res,
-        _$ChangePasswordVisibilityStateImpl>
-    implements _$$ChangePasswordVisibilityStateImplCopyWith<$Res> {
-  __$$ChangePasswordVisibilityStateImplCopyWithImpl(
-      _$ChangePasswordVisibilityStateImpl _value,
-      $Res Function(_$ChangePasswordVisibilityStateImpl) _then)
+        _$ChangePasswordVisibilitylookStateImpl>
+    implements _$$ChangePasswordVisibilitylookStateImplCopyWith<$Res> {
+  __$$ChangePasswordVisibilitylookStateImplCopyWithImpl(
+      _$ChangePasswordVisibilitylookStateImpl _value,
+      $Res Function(_$ChangePasswordVisibilitylookStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1117,7 +1117,7 @@ class __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isPasswordVisible = null,
   }) {
-    return _then(_$ChangePasswordVisibilityStateImpl(
+    return _then(_$ChangePasswordVisibilitylookStateImpl(
       null == isPasswordVisible
           ? _value.isPasswordVisible
           : isPasswordVisible // ignore: cast_nullable_to_non_nullable
@@ -1128,9 +1128,9 @@ class __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangePasswordVisibilityStateImpl
-    implements ChangePasswordVisibilityState {
-  const _$ChangePasswordVisibilityStateImpl(this.isPasswordVisible);
+class _$ChangePasswordVisibilitylookStateImpl
+    implements ChangePasswordVisibilitylookState {
+  const _$ChangePasswordVisibilitylookStateImpl(this.isPasswordVisible);
 
   @override
   final bool isPasswordVisible;
@@ -1144,7 +1144,7 @@ class _$ChangePasswordVisibilityStateImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordVisibilityStateImpl &&
+            other is _$ChangePasswordVisibilitylookStateImpl &&
             (identical(other.isPasswordVisible, isPasswordVisible) ||
                 other.isPasswordVisible == isPasswordVisible));
   }
@@ -1155,10 +1155,10 @@ class _$ChangePasswordVisibilityStateImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChangePasswordVisibilityStateImplCopyWith<
-          _$ChangePasswordVisibilityStateImpl>
-      get copyWith => __$$ChangePasswordVisibilityStateImplCopyWithImpl<
-          _$ChangePasswordVisibilityStateImpl>(this, _$identity);
+  _$$ChangePasswordVisibilitylookStateImplCopyWith<
+          _$ChangePasswordVisibilitylookStateImpl>
+      get copyWith => __$$ChangePasswordVisibilitylookStateImplCopyWithImpl<
+          _$ChangePasswordVisibilitylookStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1235,7 +1235,7 @@ class _$ChangePasswordVisibilityStateImpl
         changeMyPasswordSuccess,
     required TResult Function(ChangeMyPasswordTextColorUpdated value)
         changeMyPasswordTextColorUpdated,
-    required TResult Function(ChangePasswordVisibilityState value)
+    required TResult Function(ChangePasswordVisibilitylookState value)
         changePasswordVisibilityState,
   }) {
     return changePasswordVisibilityState(this);
@@ -1250,7 +1250,7 @@ class _$ChangePasswordVisibilityStateImpl
     TResult? Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult? Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult? Function(ChangePasswordVisibilityState value)?
+    TResult? Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
   }) {
     return changePasswordVisibilityState?.call(this);
@@ -1265,7 +1265,7 @@ class _$ChangePasswordVisibilityStateImpl
     TResult Function(ChangeMyPasswordSuccess value)? changeMyPasswordSuccess,
     TResult Function(ChangeMyPasswordTextColorUpdated value)?
         changeMyPasswordTextColorUpdated,
-    TResult Function(ChangePasswordVisibilityState value)?
+    TResult Function(ChangePasswordVisibilitylookState value)?
         changePasswordVisibilityState,
     required TResult orElse(),
   }) {
@@ -1276,13 +1276,14 @@ class _$ChangePasswordVisibilityStateImpl
   }
 }
 
-abstract class ChangePasswordVisibilityState implements ChangeMyPasswordState {
-  const factory ChangePasswordVisibilityState(final bool isPasswordVisible) =
-      _$ChangePasswordVisibilityStateImpl;
+abstract class ChangePasswordVisibilitylookState
+    implements ChangeMyPasswordState {
+  const factory ChangePasswordVisibilitylookState(
+      final bool isPasswordVisible) = _$ChangePasswordVisibilitylookStateImpl;
 
   bool get isPasswordVisible;
   @JsonKey(ignore: true)
-  _$$ChangePasswordVisibilityStateImplCopyWith<
-          _$ChangePasswordVisibilityStateImpl>
+  _$$ChangePasswordVisibilitylookStateImplCopyWith<
+          _$ChangePasswordVisibilitylookStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

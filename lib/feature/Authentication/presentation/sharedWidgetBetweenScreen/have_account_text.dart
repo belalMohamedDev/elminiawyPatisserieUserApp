@@ -1,3 +1,5 @@
+import 'package:flutter/gestures.dart';
+
 import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
 /// The [DontHaveAnAccountText] widget displays a message prompting users

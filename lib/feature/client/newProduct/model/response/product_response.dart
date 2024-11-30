@@ -23,23 +23,23 @@ class ProductResponse {
 }
 
 @JsonSerializable()
-class PaginationRuslt {
+class PaginationProductRuslt {
   int? currentPage;
   int? limit;
   int? skip;
   int? numberOfPages;
   int? next;
 
-  PaginationRuslt(
+  PaginationProductRuslt(
       {this.currentPage, this.limit, this.skip, this.numberOfPages, this.next});
 
 
   //from json
-  factory PaginationRuslt.fromJson(Map<String, dynamic> json) =>
-      _$PaginationRusltFromJson(json);
+  factory PaginationProductRuslt.fromJson(Map<String, dynamic> json) =>
+      _$PaginationProductRusltFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$PaginationRusltToJson(this);
+  Map<String, dynamic> toJson() => _$PaginationProductRusltToJson(this);
 }
 
 @JsonSerializable()

@@ -27,8 +27,9 @@ Map<String, dynamic> _$ProductResponseToJson(ProductResponse instance) =>
       'data': instance.data,
     };
 
-PaginationRuslt _$PaginationRusltFromJson(Map<String, dynamic> json) =>
-    PaginationRuslt(
+PaginationProductRuslt _$PaginationProductRusltFromJson(
+        Map<String, dynamic> json) =>
+    PaginationProductRuslt(
       currentPage: (json['currentPage'] as num?)?.toInt(),
       limit: (json['limit'] as num?)?.toInt(),
       skip: (json['skip'] as num?)?.toInt(),
@@ -36,7 +37,8 @@ PaginationRuslt _$PaginationRusltFromJson(Map<String, dynamic> json) =>
       next: (json['next'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$PaginationRusltToJson(PaginationRuslt instance) =>
+Map<String, dynamic> _$PaginationProductRusltToJson(
+        PaginationProductRuslt instance) =>
     <String, dynamic>{
       'currentPage': instance.currentPage,
       'limit': instance.limit,

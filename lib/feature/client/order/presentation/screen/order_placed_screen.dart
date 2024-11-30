@@ -1,3 +1,6 @@
+
+import 'package:lottie/lottie.dart';
+
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class OrderPlaced extends StatelessWidget {

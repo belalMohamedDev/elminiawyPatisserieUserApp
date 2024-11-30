@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 /// [UserNotificationBody] is a StatelessWidget responsible for displaying the list of notifications.
 /// It also handles the loading, error, and deletion states of user notifications.

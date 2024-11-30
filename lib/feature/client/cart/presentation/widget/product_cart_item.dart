@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ProductCartItem extends StatelessWidget {
   final GetCartItems cartItems;

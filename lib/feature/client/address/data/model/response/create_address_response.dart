@@ -1,4 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
+
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 part 'create_address_response.g.dart';
 
@@ -29,7 +30,7 @@ class CreateAddressData {
   String? streetName;
   String? phone;
   String? addressLabel;
-  Location? location;
+  LocationData? location;
   String? user;
   String? nearbyStoreAddress;
   @JsonKey(name: "_id")
@@ -60,16 +61,16 @@ class CreateAddressData {
 }
 
 @JsonSerializable()
-class Location {
+class LocationData {
   String? type;
   List<double>? coordinates;
 
-  Location({this.type, this.coordinates});
+  LocationData({this.type, this.coordinates});
 
   //from json
-  factory Location.fromJson(Map<String, dynamic> json) =>
-      _$LocationFromJson(json);
+  factory LocationData.fromJson(Map<String, dynamic> json) =>
+      _$LocationDataFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$LocationToJson(this);
+  Map<String, dynamic> toJson() => _$LocationDataToJson(this);
 }

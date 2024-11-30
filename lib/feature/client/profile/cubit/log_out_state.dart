@@ -11,5 +11,5 @@ class LogOutState with _$LogOutState {
   const factory LogOutState.logOutSuccess({required String successMessage}) =
       LogOutSuccess;
 
-  const factory LogOutState.getStorageData(String userName) = GetStorageData;
+  const factory LogOutState.getStorageData(String userName) = GetUserNameStorageData;
 }
