@@ -20,8 +20,6 @@ class CategorySuccessWidget extends StatelessWidget {
           left: 5, right: 5, top: AppInitialRoute.role == "admin" ? 2 : 0),
       child: GridView.count(
         addAutomaticKeepAlives: true,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 3,
         childAspectRatio: 0.7,
         children: List.generate(

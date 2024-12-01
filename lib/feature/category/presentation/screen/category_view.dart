@@ -1,5 +1,3 @@
-
-
 import '../../../../../core/common/shared/shared_imports.dart';
 
 class CategoryView extends StatefulWidget {
@@ -22,6 +20,8 @@ class _CategoryViewState extends State<CategoryView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: AppInitialRoute.role == "admin"
             ? Text(context.translate(AppStrings.category),
@@ -48,8 +48,3 @@ class _CategoryViewState extends State<CategoryView> {
     );
   }
 }
-
-
-
-
-

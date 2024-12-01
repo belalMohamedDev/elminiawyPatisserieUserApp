@@ -64,7 +64,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                                   );
                                 },
                                 icon: Icon(
-                                  Icons.arrow_back_ios,
+                                  IconlyBold.arrowRight,
                                   color: ColorManger.white,
                                 )),
                           )
@@ -83,7 +83,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                                       true);
                                 },
                                 icon: Image.asset(ImageAsset.menu,
-                                    height: responsive.setHeight(2.8),
+                                    height: responsive.setHeight(3.5),
                                     color: ColorManger.white)),
                           ),
                   ),
