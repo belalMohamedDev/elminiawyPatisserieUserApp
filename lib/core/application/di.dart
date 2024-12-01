@@ -26,7 +26,8 @@ Future<void> initAppModule() async {
     _initNotification(),
     _initSearch(),
     _initSignInWithGoogleAndApple(),
-    _initAdminHome()
+    _initAdminHome(),
+    _initSubCategory()
   ]);
 }
 
@@ -77,6 +78,21 @@ Future<void> _initCategory() async {
           instance(),
         ));
 }
+
+
+Future<void> _initSubCategory() async {
+  // //home repository
+  instance
+    ..registerLazySingleton<SubCategoryRepositoryImplement>(
+        () => SubCategoryRepositoryImplement(
+              instance(),
+            ))
+    ..registerFactory<SubCategoriesCubit>(() => SubCategoriesCubit(
+          instance(),
+     
+        ));
+}
+
 
 Future<void> _initPlaces() async {
   final places = GoogleMapsPlaces(apiKey: EnvVariable.instance.mapKey);

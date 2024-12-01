@@ -1,4 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
+
 part 'category_response.g.dart';
 
 @JsonSerializable()

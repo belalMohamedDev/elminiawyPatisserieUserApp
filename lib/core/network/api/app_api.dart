@@ -74,6 +74,9 @@ abstract class AppServiceClient {
     @Path("id") String id,
   );
 
+  @GET(ApiConstants.subCategories)
+  Future<SubCategoryResponse> getSubCategoriesService();
+
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> getProduct();
 
