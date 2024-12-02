@@ -531,6 +531,43 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
+  Future<SubCategoryResponse> updateSubCategoriesService(
+    String id,
+    Map<String, dynamic> requestBody,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(requestBody);
+    final _options = _setStreamType<SubCategoryResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/v1/api/subCategories/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubCategoryResponse _value;
+    try {
+      _value = SubCategoryResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<ProductResponse> getProduct() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

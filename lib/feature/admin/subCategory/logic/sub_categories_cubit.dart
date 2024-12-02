@@ -34,6 +34,37 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
     );
   }
 
+    Future<void> fetchUpdateSubCategories(
+    String? id,
+    String? categoryId,
+    bool? active
+  ) async {
+    emit(SubCategoriesState.updateSubCategoriesLoading(id!));
+
+    final response =
+        await _subCategoryRepositoryImplement.updateSubCategoriesTitleRepo(
+            id, arTitleController.text.trim(), enTitleController.text.trim(),active,categoryId);
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _subCategories.indexWhere((subCategory) => subCategory.sId == id);
+
+        if (updatedIndex != -1) {
+          _subCategories[updatedIndex] = dataResponse.data;
+        }
+
+        arTitleController.clear();
+        enTitleController.clear();
+
+        emit(SubCategoriesState.updateSubCategoriesSuccess([..._subCategories]));
+      },
+      failure: (error) {
+        emit(SubCategoriesState.updateSubCategoriesError(error));
+      },
+    );
+  }
+
   Future<void> fetchDeleteSubCategories(
     String? id,
   ) async {
@@ -45,7 +76,7 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
     response.when(
       success: (dataResponse) {
         final updatedIndex =
-            _subCategories.indexWhere((category) => category.sId == id);
+            _subCategories.indexWhere((subCategory) => subCategory.sId == id);
 
         if (updatedIndex != -1) {
           _subCategories.removeAt(updatedIndex);

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-
 import '../../../../core/common/shared/shared_imports.dart'; //
 
 part 'category_state.dart';
@@ -16,7 +15,11 @@ class CategoryCubit extends Cubit<CategoryState> {
   final ImagePicker _imagePicker;
   List<CategoryResponseData> _categories = [];
 
+  List<String> _categoryTitleData = [];
+
   List<CategoryResponseData> get categories => _categories;
+
+  List<String> get categoriesTitle => _categoryTitleData;
 
   Future<void> getCategories({String sort = 'createdAt'}) async {
     emit(const CategoryState.getCategoriesLoading());
@@ -25,6 +28,8 @@ class CategoryCubit extends Cubit<CategoryState> {
 
     response.when(
       success: (dataResponse) {
+        _categoryTitleData =
+            dataResponse.data!.map((category) => category.title).toList();
         _categories = dataResponse.data!;
         emit(CategoryState.getCategoriesSuccess(_categories));
       },

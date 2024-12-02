@@ -19,4 +19,12 @@ class SubCategoriesState with _$SubCategoriesState {
 
   const factory SubCategoriesState.deleteSubCategoriesSuccess(
       List<SubCategoryResponseData> data) = DeleteSubCategoriesSuccess;
+
+  const factory SubCategoriesState.updateSubCategoriesLoading(String id) =
+      UpdateSubCategoriesLoading;
+  const factory SubCategoriesState.updateSubCategoriesError(
+      ApiErrorModel apiErrorModel) = UpdateSubCategoriesError;
+
+  const factory SubCategoriesState.updateSubCategoriesSuccess(
+      List<SubCategoryResponseData> data) = UpdateSubCategoriesSuccess;
 }

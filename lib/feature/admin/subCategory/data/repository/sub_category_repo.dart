@@ -1,14 +1,9 @@
-
-
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 abstract class SubCategoryRepository {
   Future<ApiResult<SubCategoryResponse>> getSubCategoriesRepo();
-  // Future<ApiResult<CategoryResponse>> updateCategoriesTitleRepo(
-  //   String id,
-  //   String? titleAr,
-  //   String? titleEn,
-  // );
+  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesTitleRepo(String id,
+      String? titleAr, String? titleEn, bool? active, String categoryId);
 
   // Future<ApiResult<CategoryResponse>> updateCategoriesActiveOrNotActiveRepo(
   //   String id,
@@ -44,35 +39,26 @@ class SubCategoryRepositoryImplement implements SubCategoryRepository {
     }
   }
 
-  // @override
-  // Future<ApiResult<CategoryResponse>> updateCategoriesTitleRepo(
-  //     String id, String? titleAr, String? titleEn) async {
-  //   final Map<String, dynamic> requestBody = {
-  //     'title': {"ar": titleAr, "en": titleEn},
-  //   };
-  //   try {
-  //     final response =
-  //         await _apiService.updateCategoriesService(id, requestBody);
-  //     return ApiResult.success(response);
-  //   } catch (error) {
-  //     return ApiResult.failure(ApiErrorHandler.handle(error));
-  //   }
-  // }
-
-  // @override
-  // Future<ApiResult<CategoryResponse>> updateCategoriesActiveOrNotActiveRepo(
-  //     String id, bool? isActive) async {
-  //   final Map<String, dynamic> requestBody = {
-  //     'active': isActive,
-  //   };
-  //   try {
-  //     final response =
-  //         await _apiService.updateCategoriesService(id, requestBody);
-  //     return ApiResult.success(response);
-  //   } catch (error) {
-  //     return ApiResult.failure(ApiErrorHandler.handle(error));
-  //   }
-  // }
+  @override
+  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesTitleRepo(
+      String id,
+      String? titleAr,
+      String? titleEn,
+      bool? active,
+      String? categoryId) async {
+    final Map<String, dynamic> requestBody = {
+      'title': {"ar": titleAr, "en": titleEn},
+      'category': categoryId,
+      'active': active
+    };
+    try {
+      final response =
+          await _apiService.updateSubCategoriesService(id, requestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 
   @override
   Future<ApiResult<ApiSuccessGeneralModel>> deleteSubCategoriesrepo(
@@ -84,18 +70,6 @@ class SubCategoryRepositoryImplement implements SubCategoryRepository {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
-
-  // @override
-  // Future<ApiResult<CategoryResponse>> updateCategoriesImageRepo(
-  //     String id, File image) async {
-  //   try {
-  //     final response =
-  //         await _apiService.updateCategoriesImageService(id, image);
-  //     return ApiResult.success(response);
-  //   } catch (error) {
-  //     return ApiResult.failure(ApiErrorHandler.handle(error));
-  //   }
-  // }
 
   // @override
   // Future<ApiResult<CategoryResponse>> createCategoriesrepo(

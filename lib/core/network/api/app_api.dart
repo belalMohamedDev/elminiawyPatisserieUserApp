@@ -83,6 +83,13 @@ abstract class AppServiceClient {
     @Path("id") String id,
   );
 
+   @PUT("${ApiConstants.subCategories}/{id}")
+  Future<SubCategoryResponse> updateSubCategoriesService(
+    @Path("id") String id,
+    @Body() Map<String, dynamic> requestBody,
+  );
+
+
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> getProduct();
 
