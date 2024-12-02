@@ -12,9 +12,10 @@ class AppStrings {
   static const String actions = "actions";
   static const String deActive = "deActive";
   static const String active = "active";
+  static const String discount = "discount";
 
   static const String subCategory = "subCategory";
-  static const String banners = "active";
+  static const String banners = "banners";
   static const String products = "products";
   static const String orders = "orders";
   static const String driver = "driver";
@@ -44,8 +45,6 @@ class AppStrings {
   static const String addNewCategory = "addNewCategory";
   static const String update = "update";
 
-
-  
   static const String addImage = "addImage";
   static const String addNewSubCategory = "addNewSubCategory";
 

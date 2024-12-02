@@ -23,6 +23,7 @@ class Routes {
   static const String myOrder = "MyOrder";
   static const String wishList = "wishList";
   static const String cart = "Cart";
+  static const String adminBanner = "adminBanner";
   static const String noRoute = "noRoute";
   static const String shippingAddress = "ShippingAddress";
   static const String shippingPayment = "ShippingPayment";
