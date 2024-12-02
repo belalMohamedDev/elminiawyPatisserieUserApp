@@ -42,7 +42,7 @@ class SignInWithAppleFaceBookAndGoogleButton extends StatelessWidget {
                 } else if (authResponse.data!.role == "admin") {
                   // Ensure the context is still mounted before navigating
                   if (context.mounted) {
-                    context.pushReplacementNamed(Routes.adminHome);
+                    context.pushReplacementNamed(Routes.adminMenue);
                   }
                 } else {
                   ShowToast.showToastErrorTop(

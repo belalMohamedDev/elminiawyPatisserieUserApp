@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
+import 'package:elminiawy/feature/admin/subCategory/presentation/screens/sub_category_screen.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 
@@ -98,11 +99,19 @@ class RouteGenerator {
           ),
         );
 
-      case Routes.adminHome:
+      case Routes.adminMenue:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => instance<AdminHomeCubit>(),
             child: const DrawerStackView(),
+          ),
+        );
+
+         case Routes.adminSubCategory:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<SubCategoriesCubit>(),
+            child: const AdminSubCategoryScreen(),
           ),
         );
 

@@ -116,7 +116,7 @@ class _MyAppState extends State<MyApp> {
               ? Routes.bottomNavBarRoute
               : Routes.map;
         } else if (AppInitialRoute.role == "admin") {
-          return Routes.adminHome;
+          return Routes.adminMenue;
         } else {
           return Routes.loginRoute;
         }

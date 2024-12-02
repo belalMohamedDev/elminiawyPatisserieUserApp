@@ -18,17 +18,16 @@ class _CategoryViewState extends State<CategoryView> {
 
   @override
   Widget build(BuildContext context) {
+    final responsive = ResponsiveUtils(context);
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
         centerTitle: true,
         title: AppInitialRoute.role == "admin"
             ? Text(context.translate(AppStrings.category),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
-                    .copyWith(fontSize: 16.sp))
+                    .copyWith(fontSize: responsive.setTextSize(4)))
             : null,
       ),
       body: BlocBuilder<CategoryCubit, CategoryState>(
