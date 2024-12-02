@@ -1,14 +1,15 @@
-
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 part 'sub_categories_state.dart';
 part 'sub_categories_cubit.freezed.dart';
 
 class SubCategoriesCubit extends Cubit<SubCategoriesState> {
-  SubCategoriesCubit(this._subCategoryRepositoryImplement) : super(const SubCategoriesState.initial());
+  SubCategoriesCubit(this._subCategoryRepositoryImplement)
+      : super(const SubCategoriesState.initial());
 
-    final SubCategoryRepositoryImplement _subCategoryRepositoryImplement;
-
+  final SubCategoryRepositoryImplement _subCategoryRepositoryImplement;
+  final TextEditingController arTitleController = TextEditingController();
+  final TextEditingController enTitleController = TextEditingController();
 
   List<SubCategoryResponseData> _subCategories = [];
 
@@ -17,7 +18,8 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   Future<void> fetchGetSubCategories() async {
     emit(const SubCategoriesState.getSubCategoriesLoading());
 
-    final response = await _subCategoryRepositoryImplement.getSubCategoriesRepo();
+    final response =
+        await _subCategoryRepositoryImplement.getSubCategoriesRepo();
 
     response.when(
       success: (dataResponse) {
@@ -32,8 +34,6 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
     );
   }
 
-
-  
   Future<void> fetchDeleteSubCategories(
     String? id,
   ) async {
@@ -51,7 +51,8 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
           _subCategories.removeAt(updatedIndex);
         }
 
-        emit(SubCategoriesState.deleteSubCategoriesSuccess([..._subCategories]));
+        emit(
+            SubCategoriesState.deleteSubCategoriesSuccess([..._subCategories]));
       },
       failure: (error) {
         emit(SubCategoriesState.deleteSubCategoriesError(error));

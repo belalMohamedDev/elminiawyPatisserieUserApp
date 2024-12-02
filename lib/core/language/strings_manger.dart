@@ -1,7 +1,7 @@
 class AppStrings {
   static const String noRouteFound = "noRouteFound";
 
- // static const String appName = "appName";
+  // static const String appName = "appName";
   static const String welcomeToElminiawyPatisserie =
       "welcomeToElminiawyPatisserie";
   static const String discoverOurWonderfulSelection =
@@ -23,7 +23,6 @@ class AppStrings {
   static const String notAssigned = "notAssigned";
   static const String areYouSureYouWantToDelete = "areYouSureYouWantToDelete";
 
-
   static const String alreadyHaveAnAccount = "alreadyHaveAnAccount";
   static const String signInWithGoogle = "signInWithGoogle";
   static const String signInWithApple = "signInWithApple";
@@ -42,7 +41,13 @@ class AppStrings {
   static const String priceRange = "priceRange";
   static const String opps = "opps";
   static const String addNewCategory = "addNewCategory";
+  static const String update = "update";
+
+
+  
   static const String addImage = "addImage";
+  static const String addNewSubCategory = "addNewSubCategory";
+
   static const String somethingWrongWithYourConnection =
       "somethingWrongWithYourConnection";
   static const String area = "area";
@@ -71,7 +76,7 @@ class AppStrings {
   static const String enterYourPassword = "enterYourPassword";
   static const String enterNewPassword = "enterNewPassword";
   static const String enterConfirmNewPassword = "enterConfirmNewPassword";
-   static const String pleaseEnterValidEmail = "pleaseEnterValidEmail";
+  static const String pleaseEnterValidEmail = "pleaseEnterValidEmail";
   static const String pleaseEnterValidPassword = "pleaseEnterValidPassword";
   static const String loading = "loading";
   static const String orderNum = "orderNum";
@@ -160,7 +165,7 @@ class AppStrings {
   static const String subTotal = "subTotal";
   static const String priceAfterDiscount = "priceAfterDiscount";
   static const String tax = "tax";
- // static const String shipping = "shipping";
+  // static const String shipping = "shipping";
   static const String totalAmount = "totalAmount";
   static const String apply = "apply";
   static const String enterVoucherCode = "enterVoucherCode";
@@ -255,7 +260,7 @@ class AppStrings {
   static const String addNotes = "addNotes";
   static const String typeAnyNoteRelatedToThisOrder =
       "typeAnyNoteRelatedToThisOrder";
- // static const String payment = "payment";
+  // static const String payment = "payment";
   static const String edit = "edit";
   static const String newPasswordAndConfirmPasswordNotMatching =
       "newPasswordAndConfirmPasswordNotMatching";
@@ -291,7 +296,6 @@ class AppStrings {
   static const String myProfile = "myProfile";
   static const String myAddress = "myAddress";
   static const String addNewAddress = "addNewAddress";
-     
 
   static const String myWishList = "myWishList";
   static const String settings = "settings";
@@ -301,12 +305,12 @@ class AppStrings {
   static const String backToHome = "backToHome";
   static const String trackOrder = "trackOrder";
   static const String myOrders = "myOrders";
-  static const String theOrderAcceptedByRestaurant = "theOrderAcceptedByRestaurant";
+  static const String theOrderAcceptedByRestaurant =
+      "theOrderAcceptedByRestaurant";
   static const String currentOrders = "currentOrders";
   static const String previousOrders = "previousOrders";
   static const String accountInformation = "accountInformation";
   static const String changePassword = "changePassword";
-
 
   static const String one = "1";
   static const String two = "2";
