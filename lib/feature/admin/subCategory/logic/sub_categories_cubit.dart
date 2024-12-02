@@ -31,4 +31,31 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
       },
     );
   }
+
+
+  
+  Future<void> fetchDeleteSubCategories(
+    String? id,
+  ) async {
+    emit(SubCategoriesState.deleteSubCategoriesLoading(id!));
+
+    final response =
+        await _subCategoryRepositoryImplement.deleteSubCategoriesrepo(id);
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _subCategories.indexWhere((category) => category.sId == id);
+
+        if (updatedIndex != -1) {
+          _subCategories.removeAt(updatedIndex);
+        }
+
+        emit(SubCategoriesState.deleteSubCategoriesSuccess([..._subCategories]));
+      },
+      failure: (error) {
+        emit(SubCategoriesState.deleteSubCategoriesError(error));
+      },
+    );
+  }
 }

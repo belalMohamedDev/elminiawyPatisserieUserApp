@@ -123,7 +123,9 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
                                   IconButton(
                                     icon: Icon(
                                       Icons.edit,
-                                      color: ColorManger.brun,
+                                      color: item.active == true
+                                          ? Colors.green
+                                          : ColorManger.redError,
                                       size: responsive.setIconSize(5.5),
                                     ),
                                     onPressed: () {

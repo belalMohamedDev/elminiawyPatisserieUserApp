@@ -77,6 +77,12 @@ abstract class AppServiceClient {
   @GET(ApiConstants.subCategories)
   Future<SubCategoryResponse> getSubCategoriesService();
 
+  
+  @DELETE("${ApiConstants.subCategories}/{id}")
+  Future<ApiSuccessGeneralModel> deleteSubCategoriesService(
+    @Path("id") String id,
+  );
+
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> getProduct();
 

@@ -6,9 +6,9 @@ part 'sub_category_response.g.dart';
 class SubCategoryResponse {
   bool? status;
   String? message;
- dynamic data;
+  dynamic data;
 
- SubCategoryResponse({this.status, this.message, this.data});
+  SubCategoryResponse({this.status, this.message, this.data});
 
   //from json
 
@@ -47,12 +47,18 @@ class SubCategoryResponseData {
   String? title;
   @JsonKey(name: "_id")
   String? sId;
+  bool? active;
   CategoryDataToSubCategory? category;
   String? createdAt;
   String? updatedAt;
 
   SubCategoryResponseData(
-      {this.title, this.sId, this.category, this.createdAt, this.updatedAt});
+      {this.title,
+      this.sId,
+      this.active,
+      this.category,
+      this.createdAt,
+      this.updatedAt});
 
   factory SubCategoryResponseData.fromJson(Map<String, dynamic> json) =>
       _$SubCategoryResponseDataFromJson(json);

@@ -24,6 +24,11 @@ mixin _$SubCategoriesState {
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
         getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +38,10 @@ mixin _$SubCategoriesState {
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +51,10 @@ mixin _$SubCategoriesState {
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +67,12 @@ mixin _$SubCategoriesState {
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
         getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +81,11 @@ mixin _$SubCategoriesState {
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +94,11 @@ mixin _$SubCategoriesState {
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +166,11 @@ class _$InitialImpl implements _Initial {
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
         getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
   }) {
     return initial();
   }
@@ -149,6 +183,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
   }) {
     return initial?.call();
   }
@@ -161,6 +199,10 @@ class _$InitialImpl implements _Initial {
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -179,6 +221,12 @@ class _$InitialImpl implements _Initial {
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
         getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
   }) {
     return initial(this);
   }
@@ -190,6 +238,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
   }) {
     return initial?.call(this);
   }
@@ -201,6 +254,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -262,6 +320,11 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
         getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesLoading();
   }
@@ -274,6 +337,10 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesLoading?.call();
   }
@@ -286,6 +353,10 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (getSubCategoriesLoading != null) {
@@ -304,6 +375,12 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
         getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesLoading(this);
   }
@@ -315,6 +392,11 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesLoading?.call(this);
   }
@@ -326,6 +408,11 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (getSubCategoriesLoading != null) {
@@ -412,6 +499,11 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
         getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesError(apiErrorModel);
   }
@@ -424,6 +516,10 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesError?.call(apiErrorModel);
   }
@@ -436,6 +532,10 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (getSubCategoriesError != null) {
@@ -454,6 +554,12 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
         getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesError(this);
   }
@@ -465,6 +571,11 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesError?.call(this);
   }
@@ -476,6 +587,11 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (getSubCategoriesError != null) {
@@ -576,6 +692,11 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
         getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesSuccess(data);
   }
@@ -588,6 +709,10 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesSuccess?.call(data);
   }
@@ -600,6 +725,10 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (getSubCategoriesSuccess != null) {
@@ -618,6 +747,12 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
         getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesSuccess(this);
   }
@@ -629,6 +764,11 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
   }) {
     return getSubCategoriesSuccess?.call(this);
   }
@@ -640,6 +780,11 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
     required TResult orElse(),
   }) {
     if (getSubCategoriesSuccess != null) {
@@ -656,5 +801,573 @@ abstract class GetSubCategoriesSuccess implements SubCategoriesState {
   List<SubCategoryResponseData> get data;
   @JsonKey(ignore: true)
   _$$GetSubCategoriesSuccessImplCopyWith<_$GetSubCategoriesSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteSubCategoriesLoadingImplCopyWith<$Res> {
+  factory _$$DeleteSubCategoriesLoadingImplCopyWith(
+          _$DeleteSubCategoriesLoadingImpl value,
+          $Res Function(_$DeleteSubCategoriesLoadingImpl) then) =
+      __$$DeleteSubCategoriesLoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$DeleteSubCategoriesLoadingImplCopyWithImpl<$Res>
+    extends _$SubCategoriesStateCopyWithImpl<$Res,
+        _$DeleteSubCategoriesLoadingImpl>
+    implements _$$DeleteSubCategoriesLoadingImplCopyWith<$Res> {
+  __$$DeleteSubCategoriesLoadingImplCopyWithImpl(
+      _$DeleteSubCategoriesLoadingImpl _value,
+      $Res Function(_$DeleteSubCategoriesLoadingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$DeleteSubCategoriesLoadingImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteSubCategoriesLoadingImpl implements DeleteSubCategoriesLoading {
+  const _$DeleteSubCategoriesLoadingImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'SubCategoriesState.deleteSubCategoriesLoading(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteSubCategoriesLoadingImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteSubCategoriesLoadingImplCopyWith<_$DeleteSubCategoriesLoadingImpl>
+      get copyWith => __$$DeleteSubCategoriesLoadingImplCopyWithImpl<
+          _$DeleteSubCategoriesLoadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesLoading(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesLoading?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSubCategoriesLoading != null) {
+      return deleteSubCategoriesLoading(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetSubCategoriesLoading value)
+        getSubCategoriesLoading,
+    required TResult Function(GetSubCategoriesError value)
+        getSubCategoriesError,
+    required TResult Function(GetSubCategoriesSuccess value)
+        getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSubCategoriesLoading != null) {
+      return deleteSubCategoriesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteSubCategoriesLoading implements SubCategoriesState {
+  const factory DeleteSubCategoriesLoading(final String id) =
+      _$DeleteSubCategoriesLoadingImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$DeleteSubCategoriesLoadingImplCopyWith<_$DeleteSubCategoriesLoadingImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteSubCategoriesErrorImplCopyWith<$Res> {
+  factory _$$DeleteSubCategoriesErrorImplCopyWith(
+          _$DeleteSubCategoriesErrorImpl value,
+          $Res Function(_$DeleteSubCategoriesErrorImpl) then) =
+      __$$DeleteSubCategoriesErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$DeleteSubCategoriesErrorImplCopyWithImpl<$Res>
+    extends _$SubCategoriesStateCopyWithImpl<$Res,
+        _$DeleteSubCategoriesErrorImpl>
+    implements _$$DeleteSubCategoriesErrorImplCopyWith<$Res> {
+  __$$DeleteSubCategoriesErrorImplCopyWithImpl(
+      _$DeleteSubCategoriesErrorImpl _value,
+      $Res Function(_$DeleteSubCategoriesErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$DeleteSubCategoriesErrorImpl(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteSubCategoriesErrorImpl implements DeleteSubCategoriesError {
+  const _$DeleteSubCategoriesErrorImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'SubCategoriesState.deleteSubCategoriesError(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteSubCategoriesErrorImpl &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteSubCategoriesErrorImplCopyWith<_$DeleteSubCategoriesErrorImpl>
+      get copyWith => __$$DeleteSubCategoriesErrorImplCopyWithImpl<
+          _$DeleteSubCategoriesErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesError(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesError?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSubCategoriesError != null) {
+      return deleteSubCategoriesError(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetSubCategoriesLoading value)
+        getSubCategoriesLoading,
+    required TResult Function(GetSubCategoriesError value)
+        getSubCategoriesError,
+    required TResult Function(GetSubCategoriesSuccess value)
+        getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSubCategoriesError != null) {
+      return deleteSubCategoriesError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteSubCategoriesError implements SubCategoriesState {
+  const factory DeleteSubCategoriesError(final ApiErrorModel apiErrorModel) =
+      _$DeleteSubCategoriesErrorImpl;
+
+  ApiErrorModel get apiErrorModel;
+  @JsonKey(ignore: true)
+  _$$DeleteSubCategoriesErrorImplCopyWith<_$DeleteSubCategoriesErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteSubCategoriesSuccessImplCopyWith<$Res> {
+  factory _$$DeleteSubCategoriesSuccessImplCopyWith(
+          _$DeleteSubCategoriesSuccessImpl value,
+          $Res Function(_$DeleteSubCategoriesSuccessImpl) then) =
+      __$$DeleteSubCategoriesSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<SubCategoryResponseData> data});
+}
+
+/// @nodoc
+class __$$DeleteSubCategoriesSuccessImplCopyWithImpl<$Res>
+    extends _$SubCategoriesStateCopyWithImpl<$Res,
+        _$DeleteSubCategoriesSuccessImpl>
+    implements _$$DeleteSubCategoriesSuccessImplCopyWith<$Res> {
+  __$$DeleteSubCategoriesSuccessImplCopyWithImpl(
+      _$DeleteSubCategoriesSuccessImpl _value,
+      $Res Function(_$DeleteSubCategoriesSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$DeleteSubCategoriesSuccessImpl(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<SubCategoryResponseData>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteSubCategoriesSuccessImpl implements DeleteSubCategoriesSuccess {
+  const _$DeleteSubCategoriesSuccessImpl(
+      final List<SubCategoryResponseData> data)
+      : _data = data;
+
+  final List<SubCategoryResponseData> _data;
+  @override
+  List<SubCategoryResponseData> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'SubCategoriesState.deleteSubCategoriesSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteSubCategoriesSuccessImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteSubCategoriesSuccessImplCopyWith<_$DeleteSubCategoriesSuccessImpl>
+      get copyWith => __$$DeleteSubCategoriesSuccessImplCopyWithImpl<
+          _$DeleteSubCategoriesSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSubCategoriesSuccess != null) {
+      return deleteSubCategoriesSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetSubCategoriesLoading value)
+        getSubCategoriesLoading,
+    required TResult Function(GetSubCategoriesError value)
+        getSubCategoriesError,
+    required TResult Function(GetSubCategoriesSuccess value)
+        getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+  }) {
+    return deleteSubCategoriesSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (deleteSubCategoriesSuccess != null) {
+      return deleteSubCategoriesSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteSubCategoriesSuccess implements SubCategoriesState {
+  const factory DeleteSubCategoriesSuccess(
+          final List<SubCategoryResponseData> data) =
+      _$DeleteSubCategoriesSuccessImpl;
+
+  List<SubCategoryResponseData> get data;
+  @JsonKey(ignore: true)
+  _$$DeleteSubCategoriesSuccessImplCopyWith<_$DeleteSubCategoriesSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

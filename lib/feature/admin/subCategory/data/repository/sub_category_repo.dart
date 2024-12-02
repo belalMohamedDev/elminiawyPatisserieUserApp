@@ -18,9 +18,9 @@ abstract class SubCategoryRepository {
   //   String id,
   //   File image,
   // );
-  // Future<ApiResult<ApiSuccessGeneralModel>> deleteCategoriesrepo(
-  //   String id,
-  // );
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteSubCategoriesrepo(
+    String id,
+  );
 
   // Future<ApiResult<CategoryResponse>> createCategoriesrepo(
   //   String titleAr,
@@ -74,16 +74,16 @@ class SubCategoryRepositoryImplement implements SubCategoryRepository {
   //   }
   // }
 
-  // @override
-  // Future<ApiResult<ApiSuccessGeneralModel>> deleteCategoriesrepo(
-  //     String id) async {
-  //   try {
-  //     final response = await _apiService.deleteCategoriesService(id);
-  //     return ApiResult.success(response);
-  //   } catch (error) {
-  //     return ApiResult.failure(ApiErrorHandler.handle(error));
-  //   }
-  // }
+  @override
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteSubCategoriesrepo(
+      String id) async {
+    try {
+      final response = await _apiService.deleteSubCategoriesService(id);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 
   // @override
   // Future<ApiResult<CategoryResponse>> updateCategoriesImageRepo(

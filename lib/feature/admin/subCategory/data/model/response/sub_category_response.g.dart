@@ -26,6 +26,7 @@ SubCategoryResponseData _$SubCategoryResponseDataFromJson(
     SubCategoryResponseData(
       title: json['title'] as String?,
       sId: json['_id'] as String?,
+      active: json['active'] as bool?,
       category: json['category'] == null
           ? null
           : CategoryDataToSubCategory.fromJson(
@@ -39,6 +40,7 @@ Map<String, dynamic> _$SubCategoryResponseDataToJson(
     <String, dynamic>{
       'title': instance.title,
       '_id': instance.sId,
+      'active': instance.active,
       'category': instance.category,
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
