@@ -15,6 +15,20 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
 
   List<SubCategoryResponseData> get subCategories => _subCategories;
 
+  String? categoryValueId;
+
+  bool? active;
+  void setCategoryId(String value) {
+    categoryValueId = value;
+  }
+
+void setActiveStatus(bool value) {
+  
+    active = value;
+    emit(SubCategoriesState.updateActiveStatus(active));
+  }
+
+
   Future<void> fetchGetSubCategories() async {
     emit(const SubCategoriesState.getSubCategoriesLoading());
 
@@ -34,16 +48,21 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
     );
   }
 
-    Future<void> fetchUpdateSubCategories(
+  Future<void> fetchUpdateSubCategories(
+ {
     String? id,
-    String? categoryId,
-    bool? active
+    bool? active,
+  }
   ) async {
     emit(SubCategoriesState.updateSubCategoriesLoading(id!));
 
     final response =
-        await _subCategoryRepositoryImplement.updateSubCategoriesTitleRepo(
-            id, arTitleController.text.trim(), enTitleController.text.trim(),active,categoryId);
+        await _subCategoryRepositoryImplement.updateSubCategoriesRepo(
+            id,
+            arTitleController.text.trim(),
+            enTitleController.text.trim(),
+            active,
+            categoryValueId);
 
     response.when(
       success: (dataResponse) {
@@ -57,7 +76,8 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
         arTitleController.clear();
         enTitleController.clear();
 
-        emit(SubCategoriesState.updateSubCategoriesSuccess([..._subCategories]));
+        emit(
+            SubCategoriesState.updateSubCategoriesSuccess([..._subCategories]));
       },
       failure: (error) {
         emit(SubCategoriesState.updateSubCategoriesError(error));

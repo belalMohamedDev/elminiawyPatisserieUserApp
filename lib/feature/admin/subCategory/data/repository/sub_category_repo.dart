@@ -2,8 +2,8 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 abstract class SubCategoryRepository {
   Future<ApiResult<SubCategoryResponse>> getSubCategoriesRepo();
-  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesTitleRepo(String id,
-      String? titleAr, String? titleEn, bool? active, String categoryId);
+  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesRepo(String id,
+      String? titleAr, String? titleEn, bool? active, String? categoryId);
 
   // Future<ApiResult<CategoryResponse>> updateCategoriesActiveOrNotActiveRepo(
   //   String id,
@@ -40,17 +40,25 @@ class SubCategoryRepositoryImplement implements SubCategoryRepository {
   }
 
   @override
-  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesTitleRepo(
+  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesRepo(
       String id,
       String? titleAr,
       String? titleEn,
       bool? active,
       String? categoryId) async {
     final Map<String, dynamic> requestBody = {
-      'title': {"ar": titleAr, "en": titleEn},
-      'category': categoryId,
-      'active': active
+      if (titleAr != null &&
+          titleEn != null &&
+          titleAr.isNotEmpty &&
+          titleEn.isNotEmpty)
+        'title': {
+          'ar': titleAr,
+          'en': titleEn,
+        },
+      if (categoryId != null) 'category': categoryId,
+      if (active != null) 'active': active,
     };
+
     try {
       final response =
           await _apiService.updateSubCategoriesService(id, requestBody);

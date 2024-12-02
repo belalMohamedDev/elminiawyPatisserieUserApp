@@ -1,6 +1,6 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/admin/subCategory/presentation/widget/delete_sub_category_item.dart';
 import 'package:elminiawy/feature/admin/subCategory/presentation/widget/edit_sub_category_item.dart';
+import 'package:elminiawy/feature/admin/subCategory/presentation/widget/show_edit_action_dialog.dart';
 
 class AdminSubCategoryScreen extends StatefulWidget {
   const AdminSubCategoryScreen({super.key});
@@ -14,6 +14,7 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
   void initState() {
     super.initState();
     context.read<SubCategoriesCubit>().fetchGetSubCategories();
+    context.read<CategoryCubit>().getCategories();
   }
 
   @override
@@ -40,144 +41,177 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
               child: Column(
                 children: [
                   DataTable(
+                    showCheckboxColumn: false,
                     columnSpacing: responsive.setWidth(0),
-                    horizontalMargin: responsive.setWidth(4),
+                    horizontalMargin: responsive.setWidth(5),
                     headingRowColor: WidgetStateProperty.all(Colors.grey[200]),
                     border: TableBorder(
                       bottom: BorderSide(color: Colors.grey[400]!, width: 1),
+                      top: BorderSide(color: Colors.grey[400]!, width: 0.5),
                     ),
                     columns: [
                       DataColumn(
-                          label: responsive.setSizeBox(
-                        width: 34,
-                        child: Text(
-                          context.translate(AppStrings.subCategory),
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleLarge!
-                              .copyWith(fontSize: responsive.setTextSize(3.5)),
-                        ),
-                      )),
-                      DataColumn(
-                          label: responsive.setSizeBox(
-                        width: 37,
-                        child: Text(
-                          context.translate(AppStrings.category),
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleLarge!
-                              .copyWith(fontSize: responsive.setTextSize(3.5)),
-                        ),
-                      )),
-                      DataColumn(
-                          label: responsive.setSizeBox(
-                        width: 25,
-                        child: Padding(
-                          padding: responsive.setPadding(left: 7),
+                        label: responsive.setSizeBox(
+                          width: 39,
                           child: Text(
-                            context.translate(AppStrings.actions),
+                            context.translate(AppStrings.title),
                             style: Theme.of(context)
                                 .textTheme
                                 .titleLarge!
                                 .copyWith(
-                                    fontSize: responsive.setTextSize(3.5)),
+                                  fontSize: responsive.setTextSize(4),
+                                ),
                           ),
                         ),
-                      )),
+                      ),
+                      DataColumn(
+                        label: responsive.setSizeBox(
+                          width: 40,
+                          child: Text(
+                            context.translate(AppStrings.category),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(
+                                  fontSize: responsive.setTextSize(3.8),
+                                ),
+                          ),
+                        ),
+                      ),
+                      DataColumn(
+                        label: responsive.setSizeBox(
+                          width: 12,
+                          child: Icon(
+                            Icons.check_circle,
+                            color: ColorManger.brun,
+                          ),
+                        ), // Icon column for Active/Inactive action
+                      ),
                     ],
-                    rows: subCategories.map((item) {
-                      final hasCategory = item.category?.title != null;
-                      return DataRow(
+                    rows: [
+                      DataRow(
+                        onSelectChanged: (_) {
+                          showEditAndCreateSubCategoryDialog(
+                              context,
+                         
+                              null,
+                              context.read<SubCategoriesCubit>(),
+                              context.read<CategoryCubit>());
+                        },
                         cells: [
-                          DataCell(responsive.setSizeBox(
-                            width: 34,
-                            child: Text(
-                              item.title!,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge!
-                                  .copyWith(
-                                      fontSize: responsive.setTextSize(3.5)),
-                            ),
-                          )),
+                          DataCell(Container()), //
                           DataCell(
-                            responsive.setSizeBox(
-                              width: 37,
-                              child: Text(
-                                item.category?.title ??
-                                    context.translate(AppStrings.notAssigned),
-                                style: TextStyle(
-                                    color: hasCategory
-                                        ? ColorManger.brun
-                                        : ColorManger.redError,
-                                    fontSize: responsive.setTextSize(3.5),
-                                    fontFamily:
-                                        FontConsistent.geLocalozedFontFamily()),
+                            Text(
+                              context.translate(AppStrings.addNew),
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontFamily:
+                                    FontConsistent.geLocalozedFontFamily(),
+                                fontSize: responsive.setTextSize(4),
                               ),
                             ),
                           ),
-                          DataCell(
-                            responsive.setSizeBox(
-                              width: 25,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  IconButton(
-                                    icon: Icon(
-                                      Icons.edit,
-                                      color: item.active == true
-                                          ? Colors.green
-                                          : ColorManger.redError,
-                                      size: responsive.setIconSize(5.5),
-                                    ),
-                                    onPressed: () {
-                                      // Action to edit
-                                      showEditAndCreateSubCategoryDialog(
-                                          context,
-                                          item,
-                                          context.read<SubCategoriesCubit>());
-                                    },
-                                  ),
-                                  (state is DeleteSubCategoriesLoading &&
-                                          (state).id == item.sId)
-                                      ? responsive.setSizeBox(
-                                          height: 2,
-                                          width: 5,
-                                          child: CircularProgressIndicator(
-                                            color: ColorManger.redError,
-                                            strokeWidth:
-                                                responsive.setWidth(0.7),
-                                          ),
-                                        )
-                                      : IconButton(
-                                          icon: Icon(
-                                            Icons.delete,
-                                            color: ColorManger.redError,
-                                            size: responsive.setIconSize(5.5),
-                                          ),
-                                          onPressed: () {
-                                            // Action to delete
-                                            deleteSubCategoryItem(
-                                                context,
-                                                item,
-                                                context.read<
-                                                    SubCategoriesCubit>());
-                                          },
-                                        )
-                                ],
-                              ),
-                            ),
-                          ),
+                          DataCell(Container()),
                         ],
-                      );
-                    }).toList(),
+                      ),
+                      ...subCategories.map((item) {
+                        final hasCategory = item.category?.title != null;
+                        return DataRow(
+                          onSelectChanged: (_) {
+                            showEditSubCategoryActionDialog(
+                              context,
+                              item,
+                            );
+                          },
+                          cells: [
+                            DataCell(
+                              responsive.setSizeBox(
+                                width: 39,
+                                child: Text(
+                                  item.title!,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge!
+                                      .copyWith(
+                                        fontSize: responsive.setTextSize(3.8),
+                                      ),
+                                ),
+                              ),
+                            ),
+                            DataCell(
+                              responsive.setSizeBox(
+                                  width: 40,
+                                  child: state is UpdateSubCategoriesLoading &&
+                                          state.id == item.sId
+                                      ? Center(
+                                          child: Padding(
+                                            padding: responsive.setPadding(
+                                                left: 0,
+                                                right: 20,
+                                                top: 1.5,
+                                                bottom: 1.5),
+                                            child: CircularProgressIndicator(
+                                              color: Colors.grey,
+                                              strokeWidth:
+                                                  responsive.setWidth(0.8),
+                                            ),
+                                          ),
+                                        )
+                                      : Text(
+                                          item.category?.title ??
+                                              context.translate(
+                                                  AppStrings.notAssigned),
+                                          style: TextStyle(
+                                            color: hasCategory
+                                                ? ColorManger.brun
+                                                : ColorManger.redError,
+                                            fontSize:
+                                                responsive.setTextSize(3.8),
+                                            fontFamily: FontConsistent
+                                                .geLocalozedFontFamily(),
+                                          ),
+                                        )),
+                            ),
+                            DataCell(
+                              responsive.setSizeBox(
+                                  width: 12,
+                                  child: state is DeleteSubCategoriesLoading &&
+                                          state.id == item.sId
+                                      ? Padding(
+                                          padding: responsive.setPadding(
+                                              left: 2,
+                                              right: 2,
+                                              top: 1,
+                                              bottom: 1),
+                                          child: CircularProgressIndicator(
+                                            color: Colors.grey,
+                                            strokeWidth:
+                                                responsive.setWidth(0.8),
+                                          ),
+                                        )
+                                      : Icon(
+                                          item.active == true
+                                              ? Icons.check_circle
+                                              : Icons.cancel,
+                                          color: item.active == true
+                                              ? Colors.green
+                                              : Colors.grey,
+                                        )),
+                            ),
+                          ],
+                        );
+                      }),
+                    ],
                   ),
+
+                  //
+
                   responsive.setSizeBox(height: 3),
                   if (state is GetSubCategoriesLoading ||
                       state is GetSubCategoriesError)
                     CircularProgressIndicator(
                       color: ColorManger.brun,
-                    )
+                    ),
                 ],
               ),
             ),
@@ -187,4 +221,3 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
     );
   }
 }
-

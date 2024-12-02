@@ -107,10 +107,17 @@ class RouteGenerator {
           ),
         );
 
-         case Routes.adminSubCategory:
+      case Routes.adminSubCategory:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<SubCategoriesCubit>(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => instance<SubCategoriesCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => instance<CategoryCubit>(),
+              ),
+            ],
             child: const AdminSubCategoryScreen(),
           ),
         );

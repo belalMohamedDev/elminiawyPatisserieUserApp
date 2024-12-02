@@ -15,11 +15,23 @@ class CategoryCubit extends Cubit<CategoryState> {
   final ImagePicker _imagePicker;
   List<CategoryResponseData> _categories = [];
 
-  List<String> _categoryTitleData = [];
+  final List<String?> _categoryTitleData = [];
 
   List<CategoryResponseData> get categories => _categories;
 
-  List<String> get categoriesTitle => _categoryTitleData;
+  List<String?> get categoriesTitle => _categoryTitleData;
+
+  String? returnCategoryIdType(String value) {
+    try {
+      final category = _categories.firstWhere(
+        (category) => category.title == value,
+      );
+
+      return category.sId;
+    } catch (e) {
+      return null;
+    }
+  }
 
   Future<void> getCategories({String sort = 'createdAt'}) async {
     emit(const CategoryState.getCategoriesLoading());
@@ -28,8 +40,11 @@ class CategoryCubit extends Cubit<CategoryState> {
 
     response.when(
       success: (dataResponse) {
-        _categoryTitleData =
-            dataResponse.data!.map((category) => category.title).toList();
+        _categoryTitleData.clear(); // Clear old data
+        dataResponse.data?.forEach((category) {
+          _categoryTitleData.add(category.title); // Add new titles
+        });
+
         _categories = dataResponse.data!;
         emit(CategoryState.getCategoriesSuccess(_categories));
       },

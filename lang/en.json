@@ -97,10 +97,11 @@
   "update": "Update",
 
 
+  "title":"Title",
 
   "editImage": "Edit Image",
   "actions": "Actions",
-  "deActive": "DeActive",
+  "deActive": "Inactive",
 
   
   "active": "Active",

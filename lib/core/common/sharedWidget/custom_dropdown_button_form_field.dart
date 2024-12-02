@@ -3,7 +3,7 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 class CustomDropdownButtonFormField extends StatefulWidget {
   final List<String?> items;
   final String? value;
-  final bool? isDisable;
+
   final Function(String?)? onChanged;
   final InputDecoration? decoration;
 
@@ -11,7 +11,6 @@ class CustomDropdownButtonFormField extends StatefulWidget {
     super.key,
     required this.items,
     this.value,
-    this.isDisable,
     this.onChanged,
     this.decoration,
   });
@@ -39,7 +38,7 @@ class _CustomDropdownButtonFormFieldState
     Size size = renderBox.size;
 
     final responsive = ResponsiveUtils(context);
-
+    ScrollController scrollController = ScrollController();
     return OverlayEntry(
       builder: (context) => GestureDetector(
         onTap: () {
@@ -73,9 +72,11 @@ class _CustomDropdownButtonFormFieldState
                               .setHeight(25), // Adjust the height as needed
                         ),
                         child: Scrollbar(
+                          controller: scrollController,
                           thumbVisibility:
                               true, // This shows the scrollbar thumb
                           child: SingleChildScrollView(
+                            controller: scrollController,
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: widget.items.map((String? item) {
@@ -93,18 +94,16 @@ class _CustomDropdownButtonFormFieldState
                                   },
                                   child: Container(
                                     padding: responsive.setPadding(bottom: 2),
-                                    child: Align(
-                                      alignment: Alignment.centerRight,
-                                      child: Text(
-                                        item!,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge!
-                                            .copyWith(
-                                              fontSize:
-                                                  responsive.setTextSize(1),
-                                            ),
-                                      ),
+                                    child: Text(
+                                      item!,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge!
+                                          .copyWith(
+                                            color: Colors.black38,
+                                            fontSize:
+                                                responsive.setTextSize(3.8),
+                                          ),
                                     ),
                                   ),
                                 );
@@ -146,7 +145,7 @@ class _CustomDropdownButtonFormFieldState
     final responsive = ResponsiveUtils(context);
 
     return GestureDetector(
-      onTap: widget.isDisable == false ? null : _toggleDropdown,
+      onTap: _toggleDropdown,
       child: CompositedTransformTarget(
         link: _layerLink,
         child: InputDecorator(
@@ -170,8 +169,7 @@ class _CustomDropdownButtonFormFieldState
                 _isOpen
                     ? Icons.keyboard_arrow_up_rounded
                     : Icons.keyboard_arrow_down_rounded,
-                color:
-                    widget.isDisable == false ? Colors.black26 : Colors.black54,
+                color: Colors.black54,
               ),
             ],
           ),

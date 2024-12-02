@@ -27,4 +27,8 @@ class SubCategoriesState with _$SubCategoriesState {
 
   const factory SubCategoriesState.updateSubCategoriesSuccess(
       List<SubCategoryResponseData> data) = UpdateSubCategoriesSuccess;
+
+      
+  const factory SubCategoriesState.updateActiveStatus(
+      bool? value) = UpdateActiveStatus;
 }
