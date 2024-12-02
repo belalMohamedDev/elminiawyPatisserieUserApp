@@ -53,7 +53,7 @@ Future<void> _initAppModule() async {
 Future<void> _initBanner() async {
   // //home repository
   instance
-    ..registerLazySingleton<BannerRepository>(() => BannerRepository(
+    ..registerLazySingleton<BannerRepositoryImplement>(() => BannerRepositoryImplement(
           instance(),
         ))
     ..registerFactory<BannerCubit>(() => BannerCubit(

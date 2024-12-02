@@ -1,6 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/admin/subCategory/presentation/widget/edit_sub_category_item.dart';
-import 'package:elminiawy/feature/admin/subCategory/presentation/widget/show_edit_action_dialog.dart';
 
 class AdminSubCategoryScreen extends StatefulWidget {
   const AdminSubCategoryScreen({super.key});

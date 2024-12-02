@@ -5,23 +5,15 @@ abstract class SubCategoryRepository {
   Future<ApiResult<SubCategoryResponse>> updateSubCategoriesRepo(String id,
       String? titleAr, String? titleEn, bool? active, String? categoryId);
 
-  // Future<ApiResult<CategoryResponse>> updateCategoriesActiveOrNotActiveRepo(
-  //   String id,
-  //   bool? isActive,
-  // );
-  // Future<ApiResult<CategoryResponse>> updateCategoriesImageRepo(
-  //   String id,
-  //   File image,
-  // );
   Future<ApiResult<ApiSuccessGeneralModel>> deleteSubCategoriesrepo(
     String id,
   );
 
-  // Future<ApiResult<CategoryResponse>> createCategoriesrepo(
-  //   String titleAr,
-  //   String titleEn,
-  //   File image,
-  // );
+  Future<ApiResult<SubCategoryResponse>> createNewSubCategoriesrepo(
+    String titleAr,
+    String titleEn,
+    String categoryId,
+  );
 }
 
 class SubCategoryRepositoryImplement implements SubCategoryRepository {
@@ -79,15 +71,22 @@ class SubCategoryRepositoryImplement implements SubCategoryRepository {
     }
   }
 
-  // @override
-  // Future<ApiResult<CategoryResponse>> createCategoriesrepo(
-  //     String titleAr, String titleEn, File image) async {
-  //   try {
-  //     final response =
-  //         await _apiService.createCategoriesService(titleAr, titleEn, image);
-  //     return ApiResult.success(response);
-  //   } catch (error) {
-  //     return ApiResult.failure(ApiErrorHandler.handle(error));
-  //   }
-  // }
+  @override
+  Future<ApiResult<SubCategoryResponse>> createNewSubCategoriesrepo(
+      String titleAr, String titleEn, String categoryId) async {
+    final Map<String, dynamic> requestBody = {
+      'title': {
+        'ar': titleAr,
+        'en': titleEn,
+      },
+      'category': categoryId,
+    };
+    try {
+      final response =
+          await _apiService.createNewSubCategoriesService(requestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }

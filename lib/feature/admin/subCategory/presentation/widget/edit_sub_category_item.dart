@@ -1,5 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/core/common/sharedWidget/custom_dropdown_button_form_field.dart';
 import 'package:flutter/cupertino.dart';
 
 void showEditAndCreateSubCategoryDialog(
@@ -90,6 +89,10 @@ void showEditAndCreateSubCategoryDialog(
               if (subCategory != null) {
                 subCategoryCubit.fetchUpdateSubCategories(
                   id: subCategory.sId,
+                );
+              }else{
+                 subCategoryCubit.fetchCreationNewSubCategory(
+             
                 );
               }
             },

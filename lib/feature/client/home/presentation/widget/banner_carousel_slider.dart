@@ -1,8 +1,6 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-/// A widget that displays a carousel slider for banners retrieved from the server.
-/// The banner images are fetched using a [BannerCubit], and different states are
-/// handled (loading, success, and error states).
+
 class BannerCarouselSlider extends StatelessWidget {
   const BannerCarouselSlider({
     super.key,
@@ -10,7 +8,6 @@ class BannerCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
     return BlocConsumer<BannerCubit, BannerState>(
@@ -47,9 +44,7 @@ class BannerCarouselSlider extends StatelessWidget {
       BuildContext context, ResponsiveUtils responsive) {
     return CarouselSlider(
       options: CarouselOptions(
-        onPageChanged: (index, reason) {
-          context.read<BannerCubit>().changeIndexCarouselSlider(index);
-        },
+ 
         height: responsive.setHeight(15), // Set the height for each banner
         enableInfiniteScroll: true, // Enable infinite scrolling of banners
         autoPlay: true, // Automatically play banners

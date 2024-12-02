@@ -1,10 +1,16 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../../core/common/shared/shared_imports.dart'; 
 
-class BannerRepository {
-  BannerRepository(this._apiService);
+
+abstract class BannerRepository {
+  Future<ApiResult<BannerResponse>> getBannerRepo();
+}
+
+class BannerRepositoryImplement implements BannerRepository {
+  BannerRepositoryImplement(this._apiService);
 
   final AppServiceClient _apiService;
 
+  @override
   Future<ApiResult<BannerResponse>> getBannerRepo() async {
     try {
       final response = await _apiService.getBannersServic();

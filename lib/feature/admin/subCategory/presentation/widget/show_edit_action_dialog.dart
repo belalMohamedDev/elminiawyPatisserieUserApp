@@ -1,6 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/admin/subCategory/presentation/widget/delete_sub_category_item.dart';
-import 'package:elminiawy/feature/admin/subCategory/presentation/widget/edit_sub_category_item.dart';
 import 'package:flutter/cupertino.dart';
 
 void showEditSubCategoryActionDialog(
