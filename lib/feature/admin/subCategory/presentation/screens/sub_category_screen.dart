@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/admin/subCategory/presentation/widget/delete_sub_category_item.dart';
 
 class AdminSubCategoryScreen extends StatefulWidget {
   const AdminSubCategoryScreen({super.key});
@@ -133,17 +134,32 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
                                       _editItem(context, item);
                                     },
                                   ),
-                                  IconButton(
-                                    icon: Icon(
-                                      Icons.delete,
-                                      color: ColorManger.redError,
-                                      size: responsive.setIconSize(5.5),
-                                    ),
-                                    onPressed: () {
-                                      // Action to delete
-                                      _deleteItem(context, item);
-                                    },
-                                  ),
+                                  (state is DeleteSubCategoriesLoading &&
+                                          (state).id == item.sId)
+                                      ? responsive.setSizeBox(
+                                          height: 2,
+                                          width: 5,
+                                          child: CircularProgressIndicator(
+                                            color: ColorManger.redError,
+                                            strokeWidth:
+                                                responsive.setWidth(0.7),
+                                          ),
+                                        )
+                                      : IconButton(
+                                          icon: Icon(
+                                            Icons.delete,
+                                            color: ColorManger.redError,
+                                            size: responsive.setIconSize(5.5),
+                                          ),
+                                          onPressed: () {
+                                            // Action to delete
+                                            deleteSubCategoryItem(
+                                                context,
+                                                item,
+                                                context.read<
+                                                    SubCategoriesCubit>());
+                                          },
+                                        )
                                 ],
                               ),
                             ),
@@ -170,31 +186,6 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
   void _editItem(BuildContext context, SubCategoryResponseData item) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Edit ${item.title}')),
-    );
-  }
-
-  void _deleteItem(BuildContext context, SubCategoryResponseData item) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text("Delete Item"),
-        content: Text("Are you sure you want to delete ${item.title}?"),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text("Cancel"),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('${item.title} deleted')),
-              );
-            },
-            child: const Text("Delete", style: TextStyle(color: Colors.red)),
-          ),
-        ],
-      ),
     );
   }
 }

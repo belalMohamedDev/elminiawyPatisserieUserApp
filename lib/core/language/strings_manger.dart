@@ -21,6 +21,7 @@ class AppStrings {
   static const String users = "users";
   static const String admins = "admins";
   static const String notAssigned = "notAssigned";
+  static const String areYouSureYouWantToDelete = "areYouSureYouWantToDelete";
 
 
   static const String alreadyHaveAnAccount = "alreadyHaveAnAccount";
