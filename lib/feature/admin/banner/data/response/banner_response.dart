@@ -1,17 +1,15 @@
 class BannerResponse {
   bool? status;
   String? message;
-  PaginationBannerResponseRuslt? paginationRuslt;
+
   List<DataBannerResponse>? data;
 
-  BannerResponse({this.status, this.message, this.paginationRuslt, this.data});
+  BannerResponse({this.status, this.message, this.data});
 
   BannerResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    paginationRuslt = json['paginationRuslt'] != null
-        ? PaginationBannerResponseRuslt.fromJson(json['paginationRuslt'])
-        : null;
+
     if (json['data'] != null) {
       data = <DataBannerResponse>[];
       json['data'].forEach((v) {
@@ -24,9 +22,7 @@ class BannerResponse {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['status'] = status;
     data['message'] = message;
-    if (paginationRuslt != null) {
-      data['paginationRuslt'] = paginationRuslt!.toJson();
-    }
+
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -34,34 +30,7 @@ class BannerResponse {
   }
 }
 
-class PaginationBannerResponseRuslt {
-  int? currentPage;
-  int? limit;
-  int? skip;
-  int? numberOfPages;
-  int? next;
 
-  PaginationBannerResponseRuslt(
-      {this.currentPage, this.limit, this.skip, this.numberOfPages, this.next});
-
-  PaginationBannerResponseRuslt.fromJson(Map<String, dynamic> json) {
-    currentPage = json['currentPage'];
-    limit = json['limit'];
-    skip = json['skip'];
-    numberOfPages = json['numberOfPages'];
-    next = json['next'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['currentPage'] = currentPage;
-    data['limit'] = limit;
-    data['skip'] = skip;
-    data['numberOfPages'] = numberOfPages;
-    data['next'] = next;
-    return data;
-  }
-}
 
 class DataBannerResponse {
   String? sId;

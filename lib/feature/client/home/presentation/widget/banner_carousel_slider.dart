@@ -55,7 +55,7 @@ class BannerCarouselSlider extends StatelessWidget {
         autoPlayCurve: Curves.easeInOutCubic, // Animation curve for auto-play
         scrollDirection: Axis.horizontal, // Horizontal scrolling for banners
       ),
-      items: state.data.data!
+      items: state.data
           .map((banner) => ClipRRect(
                 borderRadius: BorderRadius.circular(responsive
                     .setBorderRadius(2)), // Set rounded corners for the banners

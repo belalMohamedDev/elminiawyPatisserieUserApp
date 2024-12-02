@@ -19,10 +19,31 @@ class BannerCubit extends Cubit<BannerState> {
     response.when(
       success: (dataResponse) {
         _banners = dataResponse.data!;
-        emit(BannerState.getBannersSuccess(dataResponse));
+        emit(BannerState.getBannersSuccess(_banners));
       },
       failure: (error) {
         emit(BannerState.getBannersError(error));
+      },
+    );
+  }
+
+    Future<void> deleteBanner(String id) async {
+    emit( BannerState.deleteBannersLoading(id));
+
+    final response = await _bannerRepository.deleteBannerRepo(id);
+
+    response.when(
+      success: (dataResponse) {
+          final updatedIndex =
+            _banners.indexWhere((banner) => banner.sId == id);
+
+        if (updatedIndex != -1) {
+          _banners.removeAt(updatedIndex);
+        }
+        emit(BannerState.deleteBannersSuccess(_banners));
+      },
+      failure: (error) {
+        emit(BannerState.deleteBannersError(error));
       },
     );
   }

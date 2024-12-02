@@ -9,8 +9,18 @@ class BannerState with _$BannerState {
   const factory BannerState.getBannersError(ApiErrorModel apiErrorModel) =
       GetBannersError;
 
-  const factory BannerState.getBannersSuccess(BannerResponse data) =
+  const factory BannerState.getBannersSuccess(List<DataBannerResponse> data) =
       GetBannersSuccess;
+
+
+
+  const factory BannerState.deleteBannersLoading(String id) = DeleteBannersLoading;
+
+  const factory BannerState.deleteBannersError(ApiErrorModel apiErrorModel) =
+     DeleteBannersError;
+
+  const factory BannerState.deleteBannersSuccess(List<DataBannerResponse> data) =
+      DeleteBannersSuccess;
 
 
 }

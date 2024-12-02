@@ -63,13 +63,37 @@ class _BannerScreenState extends State<BannerScreen> {
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    IconButton(
-                      icon: Icon(Icons.edit, color: ColorManger.brun),
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.delete, color: ColorManger.redError),
-                      onPressed: () {},
+                    Icon(Icons.edit, color: ColorManger.brun),
+                    responsive.setSizeBox(width: 3),
+                    state is DeleteBannersLoading && (state).id == banner.sId
+                        ? responsive.setSizeBox(
+                            width: 5,
+                            height: 3,
+                            child: CircularProgressIndicator(
+                              color: ColorManger.redError,
+                              strokeWidth: responsive.setWidth(0.8),
+                            ),
+                          )
+                        : InkWell(
+                            onTap: () {
+                              context
+                                  .read<BannerCubit>()
+                                  .deleteBanner(banner.sId!);
+                            },
+                            child: Icon(Icons.delete,
+                                color: ColorManger.redError)),
+                    responsive.setSizeBox(width: 3),
+                    Icon(
+                      banner.endDate != null &&
+                              DateTime.parse(banner.endDate!)
+                                  .isAfter(DateTime.now())
+                          ? Icons.check_circle
+                          : Icons.cancel,
+                      color: banner.endDate != null &&
+                              DateTime.parse(banner.endDate!)
+                                  .isAfter(DateTime.now())
+                          ? Colors.green
+                          : Colors.grey,
                     ),
                   ],
                 ),
