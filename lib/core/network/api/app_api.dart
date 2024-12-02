@@ -43,6 +43,13 @@ abstract class AppServiceClient {
   @GET(ApiConstants.banner)
   Future<BannerResponse> getBannersServic();
 
+  
+  @DELETE("${ApiConstants.banner}/{id}")
+  Future<ApiSuccessGeneralModel> deleteBannerService(
+    @Path("id") String id,
+  );
+
+
   @GET(ApiConstants.category)
   Future<CategoryResponse> getCategoriesService(
     @Query("sort") String sort,
