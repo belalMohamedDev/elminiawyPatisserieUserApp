@@ -1,4 +1,4 @@
-
+import 'dart:io';
 
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
@@ -6,24 +6,69 @@ part 'banner_state.dart';
 part 'banner_cubit.freezed.dart';
 
 class BannerCubit extends Cubit<BannerState> {
-  BannerCubit(this._bannerRepository, this._imagePicker) : super(const BannerState.initial());
+  BannerCubit(this._bannerRepository, this._imagePicker)
+      : super(const BannerState.initial());
   final BannerRepositoryImplement _bannerRepository;
 
   TextEditingController startDateController = TextEditingController();
   TextEditingController endDateController = TextEditingController();
+  String? startDateText;
+  String? endDateText;
 
   List<DataBannerResponse> _banners = [];
   final ImagePicker _imagePicker;
   List<DataBannerResponse> get banners => _banners;
 
-  Future<void> pickImage(ImageSource source, ) async {
+  void setStartDate(DateTime pickedDate) {
+    startDateText = pickedDate.toIso8601String();
+    startDateController.text =
+        '${pickedDate.year}-${pickedDate.month}-${pickedDate.day}';
+    emit(BannerState.setStartOrEndTextDate(startDateController.text));
+  }
+
+  void setEndDate(DateTime pickedDate) {
+    endDateText = pickedDate.toIso8601String();
+    endDateController.text =
+        '${pickedDate.year}-${pickedDate.month}-${pickedDate.day}';
+    emit(BannerState.setStartOrEndTextDate(endDateController.text));
+  }
+
+  Future<void> pickImage(
+    ImageSource source,
+    String? id,
+  ) async {
     final pickedImage = await _imagePicker.pickImage(source: source);
     if (pickedImage != null) {
-      //final imageFile = File(pickedImage.path);
-
+      final imageFile = File(pickedImage.path);
+      await createNewBanners(imageFile);
       // id == null
       //     ? await fetchCreationCategory(imageFile)
       //     : await fetchUpdateImageCategories(id, imageFile);
+    }
+  }
+
+  Future<void> createNewBanners(File? image) async {
+    if (image != null &&
+        startDateController.text.isNotEmpty &&
+        endDateController.text.isNotEmpty) {
+      emit(const BannerState.createBannersLoading());
+
+      final response = await _bannerRepository.createNewBannerRepo(
+          startDateText!, endDateText!, image);
+
+      response.when(
+        success: (dataResponse) {
+          _banners.insert(0, dataResponse.data);
+
+          startDateController.clear();
+          endDateController.clear();
+
+          emit(BannerState.createBannersSuccess([..._banners]));
+        },
+        failure: (error) {
+          emit(BannerState.createBannersError(error));
+        },
+      );
     }
   }
 

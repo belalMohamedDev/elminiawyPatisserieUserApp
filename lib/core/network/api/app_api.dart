@@ -43,23 +43,24 @@ abstract class AppServiceClient {
   @GET(ApiConstants.banner)
   Future<BannerResponse> getBannersServic();
 
+  @POST(ApiConstants.banner)
+  @MultiPart()
+  Future<BannerResponse> createBannerService(
+    @Part() String? startDate,
+    @Part() String? endDate,
+    @Part() File image,
+  );
 
-    // @POST(ApiConstants.banner)
-  // @MultiPart()
-  // Future<CategoryResponse> createBannerService(
-  //   @Part() String? title,
-  //   @Part() String? startDate,
-  //   @Part() String? endDate,
-  //   @Part() String? discount,
-  //   @Part() File image,
-  // );
+  @PUT(ApiConstants.banner)
+  @MultiPart()
+  Future<BannerResponse> updateImageBannerService(
+    @Part() File image,
+  );
 
-  
   @DELETE("${ApiConstants.banner}/{id}")
   Future<ApiSuccessGeneralModel> deleteBannerService(
     @Path("id") String id,
   );
-
 
   @GET(ApiConstants.category)
   Future<CategoryResponse> getCategoriesService(
@@ -86,7 +87,6 @@ abstract class AppServiceClient {
     @Part(name: "title.en") String enTitle,
     @Part() File image,
   );
-
 
   @DELETE("${ApiConstants.category}/{id}")
   Future<ApiSuccessGeneralModel> deleteCategoriesService(

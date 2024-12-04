@@ -13,6 +13,16 @@ class BannerState with _$BannerState {
       GetBannersSuccess;
 
 
+  const factory BannerState.setStartOrEndTextDate(String text) = SetStartOrEndTextDate;
+
+
+    const factory BannerState.createBannersLoading() = CreateBannersLoading;
+  const factory BannerState.createBannersError(ApiErrorModel apiErrorModel) =
+      CreateBannersError;
+
+  const factory BannerState.createBannersSuccess(List<DataBannerResponse> data) =
+      CreateBannersSuccess;
+
 
   const factory BannerState.deleteBannersLoading(String id) = DeleteBannersLoading;
 

@@ -1,39 +1,55 @@
+
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
+
+part 'banner_response.g.dart';
+
+@JsonSerializable()
 class BannerResponse {
   bool? status;
   String? message;
 
-  List<DataBannerResponse>? data;
+  dynamic data;
 
   BannerResponse({this.status, this.message, this.data});
 
-  BannerResponse.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    message = json['message'];
+  //from json
 
-    if (json['data'] != null) {
-      data = <DataBannerResponse>[];
-      json['data'].forEach((v) {
-        data!.add(DataBannerResponse.fromJson(v));
-      });
+  factory BannerResponse.fromJson(Map<String, dynamic> json) {
+    final response = _$BannerResponseFromJson(json);
+
+    if (json['data'] is List) {
+      response.data = (json['data'] as List)
+          .map((item) => DataBannerResponse.fromJson(item))
+          .toList();
+    } else if (json['data'] is Map<String, dynamic>) {
+      response.data = DataBannerResponse.fromJson(json['data']);
     }
+
+    return response;
   }
 
+  // to json
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['status'] = status;
-    data['message'] = message;
+    final json = _$BannerResponseToJson(this);
 
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
+    if (data is List<DataBannerResponse>) {
+      json['data'] = (data as List<DataBannerResponse>)
+          .map((item) => item.toJson())
+          .toList();
+    } else if (data is DataBannerResponse) {
+      json['data'] = (data as DataBannerResponse).toJson();
     }
-    return data;
+
+    return json;
   }
 }
 
+
+@JsonSerializable()
 class DataBannerResponse {
+  @JsonKey(name: "_id")
   String? sId;
   String? image;
-
   String? startDate;
   String? endDate;
 
@@ -44,24 +60,9 @@ class DataBannerResponse {
     this.endDate,
   });
 
-  DataBannerResponse.fromJson(Map<String, dynamic> json) {
-    sId = json['_id'];
-    image = json['image'];
+  factory DataBannerResponse.fromJson(Map<String, dynamic> json) =>
+      _$DataBannerResponseFromJson(json);
 
-    startDate = json['startDate'];
-    endDate = json['endDate'];
-
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['_id'] = sId;
-    data['image'] = image;
-
-
-    data['startDate'] = startDate;
-    data['endDate'] = endDate;
-
-    return data;
-  }
+  //to json
+  Map<String, dynamic> toJson() => _$DataBannerResponseToJson(this);
 }
