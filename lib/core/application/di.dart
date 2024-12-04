@@ -53,10 +53,12 @@ Future<void> _initAppModule() async {
 Future<void> _initBanner() async {
   // //home repository
   instance
-    ..registerLazySingleton<BannerRepositoryImplement>(() => BannerRepositoryImplement(
-          instance(),
-        ))
+    ..registerLazySingleton<BannerRepositoryImplement>(
+        () => BannerRepositoryImplement(
+              instance(),
+            ))
     ..registerFactory<BannerCubit>(() => BannerCubit(
+          instance(),
           instance(),
         ));
 }
@@ -79,7 +81,6 @@ Future<void> _initCategory() async {
         ));
 }
 
-
 Future<void> _initSubCategory() async {
   // //home repository
   instance
@@ -89,10 +90,8 @@ Future<void> _initSubCategory() async {
             ))
     ..registerFactory<SubCategoriesCubit>(() => SubCategoriesCubit(
           instance(),
-     
         ));
 }
-
 
 Future<void> _initPlaces() async {
   final places = GoogleMapsPlaces(apiKey: EnvVariable.instance.mapKey);

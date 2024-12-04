@@ -42,18 +42,18 @@ class BannersSuccessDataBody extends StatelessWidget {
                 ),
               ),
               title: Text(
-                banner.title!,
+                banner.startDate!.getFormattedDate(),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
-                    .copyWith(fontSize: responsive.setTextSize(3.5)),
+                    .copyWith(fontSize: responsive.setTextSize(3.2)),
               ),
               subtitle: Text(
-                '${context.translate(AppStrings.discount)} ${banner.discount}%',
+                banner.endDate!.getFormattedDate(),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
-                    .copyWith(fontSize: responsive.setTextSize(3.5)),
+                    .copyWith(fontSize: responsive.setTextSize(3.2)),
               ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,

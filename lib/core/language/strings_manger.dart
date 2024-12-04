@@ -14,6 +14,9 @@ class AppStrings {
   static const String active = "active";
   static const String discount = "discount";
 
+  static const String startDate = "startDate";
+  static const String endDate = "endDate";
+
   static const String subCategory = "subCategory";
   static const String banners = "banners";
   static const String products = "products";

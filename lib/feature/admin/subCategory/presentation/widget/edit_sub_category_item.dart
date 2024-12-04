@@ -90,10 +90,8 @@ void showEditAndCreateSubCategoryDialog(
                 subCategoryCubit.fetchUpdateSubCategories(
                   id: subCategory.sId,
                 );
-              }else{
-                 subCategoryCubit.fetchCreationNewSubCategory(
-             
-                );
+              } else {
+                subCategoryCubit.fetchCreationNewSubCategory();
               }
             },
             child: Text(
