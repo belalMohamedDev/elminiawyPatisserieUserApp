@@ -51,9 +51,10 @@ abstract class AppServiceClient {
     @Part() File image,
   );
 
-  @PUT(ApiConstants.banner)
+  @PUT("${ApiConstants.banner}/{id}")
   @MultiPart()
   Future<BannerResponse> updateImageBannerService(
+    @Path("id") String id,
     @Part() File image,
   );
 

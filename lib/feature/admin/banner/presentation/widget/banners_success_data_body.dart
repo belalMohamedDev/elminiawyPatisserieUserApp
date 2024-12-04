@@ -29,18 +29,37 @@ class BannersSuccessDataBody extends StatelessWidget {
                 left: 3.5,
                 right: 3.5,
               ),
-              leading: ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(responsive.setBorderRadius(1.5)),
-                child: CachedNetworkImage(
-                  imageUrl: banner.image!,
-                  width: responsive.setWidth(18),
-                  placeholder: (context, url) => LoadingShimmer(
-                    width: responsive.setWidth(18),
-                    borderRadius: responsive.setBorderRadius(2),
+              leading: Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(responsive.setBorderRadius(1.5)),
+                    child: CachedNetworkImage(
+                      imageUrl: banner.image!,
+                      width: responsive.setWidth(18),
+                      placeholder: (context, url) => LoadingShimmer(
+                        width: responsive.setWidth(18),
+                        borderRadius: responsive.setBorderRadius(2),
+                      ),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                    ),
                   ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
+                  state is UpdateImageBannersLoading &&
+                          (state as UpdateImageBannersLoading).id == banner.sId
+                      ? Positioned(
+                          left: responsive.setWidth(4.5),
+                          top: responsive.setHeight(1),
+                          child: responsive.setSizeBox(
+                            height: 3,
+                            width: 7,
+                            child: CircularProgressIndicator(
+                              color: ColorManger.brun,
+                            ),
+                          ),
+                        )
+                      : const SizedBox()
+                ],
               ),
               title: Text(
                 banner.startDate!.getFormattedDate(),

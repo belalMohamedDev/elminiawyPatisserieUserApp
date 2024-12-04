@@ -33,4 +33,15 @@ class BannerState with _$BannerState {
       DeleteBannersSuccess;
 
 
+
+  const factory BannerState.updateImageBannersLoading(String id) =
+      UpdateImageBannersLoading;
+
+  const factory BannerState.updateImageBannersError(ApiErrorModel apiErrorModel) =
+      UpdateImageBannersError;
+
+  const factory BannerState.updateImageBannersSuccess(
+      List<DataBannerResponse> data) = UpdateImageBannersSuccess;
+
+
 }

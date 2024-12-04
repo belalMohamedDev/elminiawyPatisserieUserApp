@@ -41,9 +41,12 @@ class BannerCubit extends Cubit<BannerState> {
     if (pickedImage != null) {
       final imageFile = File(pickedImage.path);
       await createNewBanners(imageFile);
-      // id == null
-      //     ? await fetchCreationCategory(imageFile)
-      //     : await fetchUpdateImageCategories(id, imageFile);
+      id == null
+          ? await createNewBanners(imageFile)
+          : await updateImageBanners(
+              imageFile,
+              id,
+            );
     }
   }
 
@@ -67,6 +70,30 @@ class BannerCubit extends Cubit<BannerState> {
         },
         failure: (error) {
           emit(BannerState.createBannersError(error));
+        },
+      );
+    }
+  }
+
+  Future<void> updateImageBanners(File? image, String id) async {
+    if (image != null) {
+      emit(BannerState.updateImageBannersLoading(id));
+
+      final response = await _bannerRepository.updateBannerImageRepo(id, image);
+
+      response.when(
+        success: (dataResponse) {
+          final updatedIndex =
+              _banners.indexWhere((subCategory) => subCategory.sId == id);
+
+          if (updatedIndex != -1) {
+            _banners[updatedIndex] = dataResponse.data;
+          }
+
+          emit(BannerState.updateImageBannersSuccess([..._banners]));
+        },
+        failure: (error) {
+          emit(BannerState.updateImageBannersError(error));
         },
       );
     }

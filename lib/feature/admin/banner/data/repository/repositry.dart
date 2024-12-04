@@ -7,6 +7,9 @@ abstract class BannerRepository {
   Future<ApiResult<ApiSuccessGeneralModel>> deleteBannerRepo(String id);
   Future<ApiResult<BannerResponse>> createNewBannerRepo(
       String startDate, String endDate, File image);
+
+  Future<ApiResult<BannerResponse>> updateBannerImageRepo(
+      String id, File image);
 }
 
 class BannerRepositoryImplement implements BannerRepository {
@@ -40,6 +43,17 @@ class BannerRepositoryImplement implements BannerRepository {
     try {
       final response =
           await _apiService.createBannerService(startDate, endDate, image);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<BannerResponse>> updateBannerImageRepo(
+      String id, File image) async {
+    try {
+      final response = await _apiService.updateImageBannerService(id, image);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

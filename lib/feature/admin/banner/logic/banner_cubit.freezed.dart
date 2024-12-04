@@ -32,6 +32,11 @@ mixin _$BannerState {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +53,9 @@ mixin _$BannerState {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +72,9 @@ mixin _$BannerState {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -82,6 +93,12 @@ mixin _$BannerState {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -98,6 +115,11 @@ mixin _$BannerState {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,6 +136,11 @@ mixin _$BannerState {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -189,6 +216,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return initial();
   }
@@ -208,6 +240,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return initial?.call();
   }
@@ -227,6 +262,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,6 +289,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return initial(this);
   }
@@ -270,6 +314,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return initial?.call(this);
   }
@@ -289,6 +338,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -354,6 +408,11 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return getBannersLoading();
   }
@@ -373,6 +432,9 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return getBannersLoading?.call();
   }
@@ -392,6 +454,9 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (getBannersLoading != null) {
@@ -416,6 +481,12 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return getBannersLoading(this);
   }
@@ -435,6 +506,11 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return getBannersLoading?.call(this);
   }
@@ -454,6 +530,11 @@ class _$GetBannersLoadingImpl implements GetBannersLoading {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (getBannersLoading != null) {
@@ -546,6 +627,11 @@ class _$ChangeCrouserIndexImpl implements ChangeCrouserIndex {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return changeCrouserIndex(index);
   }
@@ -565,6 +651,9 @@ class _$ChangeCrouserIndexImpl implements ChangeCrouserIndex {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return changeCrouserIndex?.call(index);
   }
@@ -584,6 +673,9 @@ class _$ChangeCrouserIndexImpl implements ChangeCrouserIndex {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (changeCrouserIndex != null) {
@@ -608,6 +700,12 @@ class _$ChangeCrouserIndexImpl implements ChangeCrouserIndex {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return changeCrouserIndex(this);
   }
@@ -627,6 +725,11 @@ class _$ChangeCrouserIndexImpl implements ChangeCrouserIndex {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return changeCrouserIndex?.call(this);
   }
@@ -646,6 +749,11 @@ class _$ChangeCrouserIndexImpl implements ChangeCrouserIndex {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (changeCrouserIndex != null) {
@@ -744,6 +852,11 @@ class _$GetBannersErrorImpl implements GetBannersError {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return getBannersError(apiErrorModel);
   }
@@ -763,6 +876,9 @@ class _$GetBannersErrorImpl implements GetBannersError {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return getBannersError?.call(apiErrorModel);
   }
@@ -782,6 +898,9 @@ class _$GetBannersErrorImpl implements GetBannersError {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (getBannersError != null) {
@@ -806,6 +925,12 @@ class _$GetBannersErrorImpl implements GetBannersError {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return getBannersError(this);
   }
@@ -825,6 +950,11 @@ class _$GetBannersErrorImpl implements GetBannersError {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return getBannersError?.call(this);
   }
@@ -844,6 +974,11 @@ class _$GetBannersErrorImpl implements GetBannersError {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (getBannersError != null) {
@@ -949,6 +1084,11 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return getBannersSuccess(data);
   }
@@ -968,6 +1108,9 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return getBannersSuccess?.call(data);
   }
@@ -987,6 +1130,9 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (getBannersSuccess != null) {
@@ -1011,6 +1157,12 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return getBannersSuccess(this);
   }
@@ -1030,6 +1182,11 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return getBannersSuccess?.call(this);
   }
@@ -1049,6 +1206,11 @@ class _$GetBannersSuccessImpl implements GetBannersSuccess {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (getBannersSuccess != null) {
@@ -1148,6 +1310,11 @@ class _$SetStartOrEndTextDateImpl implements SetStartOrEndTextDate {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return setStartOrEndTextDate(text);
   }
@@ -1167,6 +1334,9 @@ class _$SetStartOrEndTextDateImpl implements SetStartOrEndTextDate {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return setStartOrEndTextDate?.call(text);
   }
@@ -1186,6 +1356,9 @@ class _$SetStartOrEndTextDateImpl implements SetStartOrEndTextDate {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (setStartOrEndTextDate != null) {
@@ -1210,6 +1383,12 @@ class _$SetStartOrEndTextDateImpl implements SetStartOrEndTextDate {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return setStartOrEndTextDate(this);
   }
@@ -1229,6 +1408,11 @@ class _$SetStartOrEndTextDateImpl implements SetStartOrEndTextDate {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return setStartOrEndTextDate?.call(this);
   }
@@ -1248,6 +1432,11 @@ class _$SetStartOrEndTextDateImpl implements SetStartOrEndTextDate {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (setStartOrEndTextDate != null) {
@@ -1320,6 +1509,11 @@ class _$CreateBannersLoadingImpl implements CreateBannersLoading {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return createBannersLoading();
   }
@@ -1339,6 +1533,9 @@ class _$CreateBannersLoadingImpl implements CreateBannersLoading {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return createBannersLoading?.call();
   }
@@ -1358,6 +1555,9 @@ class _$CreateBannersLoadingImpl implements CreateBannersLoading {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (createBannersLoading != null) {
@@ -1382,6 +1582,12 @@ class _$CreateBannersLoadingImpl implements CreateBannersLoading {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return createBannersLoading(this);
   }
@@ -1401,6 +1607,11 @@ class _$CreateBannersLoadingImpl implements CreateBannersLoading {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return createBannersLoading?.call(this);
   }
@@ -1420,6 +1631,11 @@ class _$CreateBannersLoadingImpl implements CreateBannersLoading {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (createBannersLoading != null) {
@@ -1513,6 +1729,11 @@ class _$CreateBannersErrorImpl implements CreateBannersError {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return createBannersError(apiErrorModel);
   }
@@ -1532,6 +1753,9 @@ class _$CreateBannersErrorImpl implements CreateBannersError {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return createBannersError?.call(apiErrorModel);
   }
@@ -1551,6 +1775,9 @@ class _$CreateBannersErrorImpl implements CreateBannersError {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (createBannersError != null) {
@@ -1575,6 +1802,12 @@ class _$CreateBannersErrorImpl implements CreateBannersError {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return createBannersError(this);
   }
@@ -1594,6 +1827,11 @@ class _$CreateBannersErrorImpl implements CreateBannersError {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return createBannersError?.call(this);
   }
@@ -1613,6 +1851,11 @@ class _$CreateBannersErrorImpl implements CreateBannersError {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (createBannersError != null) {
@@ -1719,6 +1962,11 @@ class _$CreateBannersSuccessImpl implements CreateBannersSuccess {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return createBannersSuccess(data);
   }
@@ -1738,6 +1986,9 @@ class _$CreateBannersSuccessImpl implements CreateBannersSuccess {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return createBannersSuccess?.call(data);
   }
@@ -1757,6 +2008,9 @@ class _$CreateBannersSuccessImpl implements CreateBannersSuccess {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (createBannersSuccess != null) {
@@ -1781,6 +2035,12 @@ class _$CreateBannersSuccessImpl implements CreateBannersSuccess {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return createBannersSuccess(this);
   }
@@ -1800,6 +2060,11 @@ class _$CreateBannersSuccessImpl implements CreateBannersSuccess {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return createBannersSuccess?.call(this);
   }
@@ -1819,6 +2084,11 @@ class _$CreateBannersSuccessImpl implements CreateBannersSuccess {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (createBannersSuccess != null) {
@@ -1918,6 +2188,11 @@ class _$DeleteBannersLoadingImpl implements DeleteBannersLoading {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return deleteBannersLoading(id);
   }
@@ -1937,6 +2212,9 @@ class _$DeleteBannersLoadingImpl implements DeleteBannersLoading {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return deleteBannersLoading?.call(id);
   }
@@ -1956,6 +2234,9 @@ class _$DeleteBannersLoadingImpl implements DeleteBannersLoading {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (deleteBannersLoading != null) {
@@ -1980,6 +2261,12 @@ class _$DeleteBannersLoadingImpl implements DeleteBannersLoading {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return deleteBannersLoading(this);
   }
@@ -1999,6 +2286,11 @@ class _$DeleteBannersLoadingImpl implements DeleteBannersLoading {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return deleteBannersLoading?.call(this);
   }
@@ -2018,6 +2310,11 @@ class _$DeleteBannersLoadingImpl implements DeleteBannersLoading {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (deleteBannersLoading != null) {
@@ -2117,6 +2414,11 @@ class _$DeleteBannersErrorImpl implements DeleteBannersError {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return deleteBannersError(apiErrorModel);
   }
@@ -2136,6 +2438,9 @@ class _$DeleteBannersErrorImpl implements DeleteBannersError {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return deleteBannersError?.call(apiErrorModel);
   }
@@ -2155,6 +2460,9 @@ class _$DeleteBannersErrorImpl implements DeleteBannersError {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (deleteBannersError != null) {
@@ -2179,6 +2487,12 @@ class _$DeleteBannersErrorImpl implements DeleteBannersError {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return deleteBannersError(this);
   }
@@ -2198,6 +2512,11 @@ class _$DeleteBannersErrorImpl implements DeleteBannersError {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return deleteBannersError?.call(this);
   }
@@ -2217,6 +2536,11 @@ class _$DeleteBannersErrorImpl implements DeleteBannersError {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (deleteBannersError != null) {
@@ -2323,6 +2647,11 @@ class _$DeleteBannersSuccessImpl implements DeleteBannersSuccess {
     required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
     required TResult Function(List<DataBannerResponse> data)
         deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
   }) {
     return deleteBannersSuccess(data);
   }
@@ -2342,6 +2671,9 @@ class _$DeleteBannersSuccessImpl implements DeleteBannersSuccess {
     TResult? Function(String id)? deleteBannersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
   }) {
     return deleteBannersSuccess?.call(data);
   }
@@ -2361,6 +2693,9 @@ class _$DeleteBannersSuccessImpl implements DeleteBannersSuccess {
     TResult Function(String id)? deleteBannersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
     TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (deleteBannersSuccess != null) {
@@ -2385,6 +2720,12 @@ class _$DeleteBannersSuccessImpl implements DeleteBannersSuccess {
     required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
     required TResult Function(DeleteBannersError value) deleteBannersError,
     required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
   }) {
     return deleteBannersSuccess(this);
   }
@@ -2404,6 +2745,11 @@ class _$DeleteBannersSuccessImpl implements DeleteBannersSuccess {
     TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult? Function(DeleteBannersError value)? deleteBannersError,
     TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
   }) {
     return deleteBannersSuccess?.call(this);
   }
@@ -2423,6 +2769,11 @@ class _$DeleteBannersSuccessImpl implements DeleteBannersSuccess {
     TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
     TResult Function(DeleteBannersError value)? deleteBannersError,
     TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
     required TResult orElse(),
   }) {
     if (deleteBannersSuccess != null) {
@@ -2439,5 +2790,694 @@ abstract class DeleteBannersSuccess implements BannerState {
   List<DataBannerResponse> get data;
   @JsonKey(ignore: true)
   _$$DeleteBannersSuccessImplCopyWith<_$DeleteBannersSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateImageBannersLoadingImplCopyWith<$Res> {
+  factory _$$UpdateImageBannersLoadingImplCopyWith(
+          _$UpdateImageBannersLoadingImpl value,
+          $Res Function(_$UpdateImageBannersLoadingImpl) then) =
+      __$$UpdateImageBannersLoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$UpdateImageBannersLoadingImplCopyWithImpl<$Res>
+    extends _$BannerStateCopyWithImpl<$Res, _$UpdateImageBannersLoadingImpl>
+    implements _$$UpdateImageBannersLoadingImplCopyWith<$Res> {
+  __$$UpdateImageBannersLoadingImplCopyWithImpl(
+      _$UpdateImageBannersLoadingImpl _value,
+      $Res Function(_$UpdateImageBannersLoadingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$UpdateImageBannersLoadingImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateImageBannersLoadingImpl implements UpdateImageBannersLoading {
+  const _$UpdateImageBannersLoadingImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'BannerState.updateImageBannersLoading(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateImageBannersLoadingImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateImageBannersLoadingImplCopyWith<_$UpdateImageBannersLoadingImpl>
+      get copyWith => __$$UpdateImageBannersLoadingImplCopyWithImpl<
+          _$UpdateImageBannersLoadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBannersLoading,
+    required TResult Function(int index) changeCrouserIndex,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
+    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
+    required TResult Function(String text) setStartOrEndTextDate,
+    required TResult Function() createBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        createBannersSuccess,
+    required TResult Function(String id) deleteBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersLoading(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBannersLoading,
+    TResult? Function(int index)? changeCrouserIndex,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
+    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
+    TResult? Function(String text)? setStartOrEndTextDate,
+    TResult? Function()? createBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
+    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
+    TResult? Function(String id)? deleteBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
+    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
+  }) {
+    return updateImageBannersLoading?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBannersLoading,
+    TResult Function(int index)? changeCrouserIndex,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
+    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
+    TResult Function(String text)? setStartOrEndTextDate,
+    TResult Function()? createBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
+    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
+    TResult Function(String id)? deleteBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
+    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateImageBannersLoading != null) {
+      return updateImageBannersLoading(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetBannersLoading value) getBannersLoading,
+    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
+    required TResult Function(GetBannersError value) getBannersError,
+    required TResult Function(GetBannersSuccess value) getBannersSuccess,
+    required TResult Function(SetStartOrEndTextDate value)
+        setStartOrEndTextDate,
+    required TResult Function(CreateBannersLoading value) createBannersLoading,
+    required TResult Function(CreateBannersError value) createBannersError,
+    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
+    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
+    required TResult Function(DeleteBannersError value) deleteBannersError,
+    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetBannersLoading value)? getBannersLoading,
+    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
+    TResult? Function(GetBannersError value)? getBannersError,
+    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
+    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
+    TResult? Function(CreateBannersLoading value)? createBannersLoading,
+    TResult? Function(CreateBannersError value)? createBannersError,
+    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
+    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
+    TResult? Function(DeleteBannersError value)? deleteBannersError,
+    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetBannersLoading value)? getBannersLoading,
+    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
+    TResult Function(GetBannersError value)? getBannersError,
+    TResult Function(GetBannersSuccess value)? getBannersSuccess,
+    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
+    TResult Function(CreateBannersLoading value)? createBannersLoading,
+    TResult Function(CreateBannersError value)? createBannersError,
+    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
+    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
+    TResult Function(DeleteBannersError value)? deleteBannersError,
+    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateImageBannersLoading != null) {
+      return updateImageBannersLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateImageBannersLoading implements BannerState {
+  const factory UpdateImageBannersLoading(final String id) =
+      _$UpdateImageBannersLoadingImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$UpdateImageBannersLoadingImplCopyWith<_$UpdateImageBannersLoadingImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateImageBannersErrorImplCopyWith<$Res> {
+  factory _$$UpdateImageBannersErrorImplCopyWith(
+          _$UpdateImageBannersErrorImpl value,
+          $Res Function(_$UpdateImageBannersErrorImpl) then) =
+      __$$UpdateImageBannersErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$UpdateImageBannersErrorImplCopyWithImpl<$Res>
+    extends _$BannerStateCopyWithImpl<$Res, _$UpdateImageBannersErrorImpl>
+    implements _$$UpdateImageBannersErrorImplCopyWith<$Res> {
+  __$$UpdateImageBannersErrorImplCopyWithImpl(
+      _$UpdateImageBannersErrorImpl _value,
+      $Res Function(_$UpdateImageBannersErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$UpdateImageBannersErrorImpl(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateImageBannersErrorImpl implements UpdateImageBannersError {
+  const _$UpdateImageBannersErrorImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'BannerState.updateImageBannersError(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateImageBannersErrorImpl &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateImageBannersErrorImplCopyWith<_$UpdateImageBannersErrorImpl>
+      get copyWith => __$$UpdateImageBannersErrorImplCopyWithImpl<
+          _$UpdateImageBannersErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBannersLoading,
+    required TResult Function(int index) changeCrouserIndex,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
+    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
+    required TResult Function(String text) setStartOrEndTextDate,
+    required TResult Function() createBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        createBannersSuccess,
+    required TResult Function(String id) deleteBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersError(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBannersLoading,
+    TResult? Function(int index)? changeCrouserIndex,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
+    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
+    TResult? Function(String text)? setStartOrEndTextDate,
+    TResult? Function()? createBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
+    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
+    TResult? Function(String id)? deleteBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
+    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
+  }) {
+    return updateImageBannersError?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBannersLoading,
+    TResult Function(int index)? changeCrouserIndex,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
+    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
+    TResult Function(String text)? setStartOrEndTextDate,
+    TResult Function()? createBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
+    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
+    TResult Function(String id)? deleteBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
+    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateImageBannersError != null) {
+      return updateImageBannersError(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetBannersLoading value) getBannersLoading,
+    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
+    required TResult Function(GetBannersError value) getBannersError,
+    required TResult Function(GetBannersSuccess value) getBannersSuccess,
+    required TResult Function(SetStartOrEndTextDate value)
+        setStartOrEndTextDate,
+    required TResult Function(CreateBannersLoading value) createBannersLoading,
+    required TResult Function(CreateBannersError value) createBannersError,
+    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
+    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
+    required TResult Function(DeleteBannersError value) deleteBannersError,
+    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetBannersLoading value)? getBannersLoading,
+    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
+    TResult? Function(GetBannersError value)? getBannersError,
+    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
+    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
+    TResult? Function(CreateBannersLoading value)? createBannersLoading,
+    TResult? Function(CreateBannersError value)? createBannersError,
+    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
+    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
+    TResult? Function(DeleteBannersError value)? deleteBannersError,
+    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetBannersLoading value)? getBannersLoading,
+    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
+    TResult Function(GetBannersError value)? getBannersError,
+    TResult Function(GetBannersSuccess value)? getBannersSuccess,
+    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
+    TResult Function(CreateBannersLoading value)? createBannersLoading,
+    TResult Function(CreateBannersError value)? createBannersError,
+    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
+    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
+    TResult Function(DeleteBannersError value)? deleteBannersError,
+    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateImageBannersError != null) {
+      return updateImageBannersError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateImageBannersError implements BannerState {
+  const factory UpdateImageBannersError(final ApiErrorModel apiErrorModel) =
+      _$UpdateImageBannersErrorImpl;
+
+  ApiErrorModel get apiErrorModel;
+  @JsonKey(ignore: true)
+  _$$UpdateImageBannersErrorImplCopyWith<_$UpdateImageBannersErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateImageBannersSuccessImplCopyWith<$Res> {
+  factory _$$UpdateImageBannersSuccessImplCopyWith(
+          _$UpdateImageBannersSuccessImpl value,
+          $Res Function(_$UpdateImageBannersSuccessImpl) then) =
+      __$$UpdateImageBannersSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<DataBannerResponse> data});
+}
+
+/// @nodoc
+class __$$UpdateImageBannersSuccessImplCopyWithImpl<$Res>
+    extends _$BannerStateCopyWithImpl<$Res, _$UpdateImageBannersSuccessImpl>
+    implements _$$UpdateImageBannersSuccessImplCopyWith<$Res> {
+  __$$UpdateImageBannersSuccessImplCopyWithImpl(
+      _$UpdateImageBannersSuccessImpl _value,
+      $Res Function(_$UpdateImageBannersSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateImageBannersSuccessImpl(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<DataBannerResponse>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateImageBannersSuccessImpl implements UpdateImageBannersSuccess {
+  const _$UpdateImageBannersSuccessImpl(final List<DataBannerResponse> data)
+      : _data = data;
+
+  final List<DataBannerResponse> _data;
+  @override
+  List<DataBannerResponse> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'BannerState.updateImageBannersSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateImageBannersSuccessImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateImageBannersSuccessImplCopyWith<_$UpdateImageBannersSuccessImpl>
+      get copyWith => __$$UpdateImageBannersSuccessImplCopyWithImpl<
+          _$UpdateImageBannersSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBannersLoading,
+    required TResult Function(int index) changeCrouserIndex,
+    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
+    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
+    required TResult Function(String text) setStartOrEndTextDate,
+    required TResult Function() createBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        createBannersSuccess,
+    required TResult Function(String id) deleteBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        deleteBannersSuccess,
+    required TResult Function(String id) updateImageBannersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateImageBannersError,
+    required TResult Function(List<DataBannerResponse> data)
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBannersLoading,
+    TResult? Function(int index)? changeCrouserIndex,
+    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
+    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
+    TResult? Function(String text)? setStartOrEndTextDate,
+    TResult? Function()? createBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
+    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
+    TResult? Function(String id)? deleteBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
+    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult? Function(String id)? updateImageBannersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
+  }) {
+    return updateImageBannersSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBannersLoading,
+    TResult Function(int index)? changeCrouserIndex,
+    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
+    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
+    TResult Function(String text)? setStartOrEndTextDate,
+    TResult Function()? createBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
+    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
+    TResult Function(String id)? deleteBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
+    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
+    TResult Function(String id)? updateImageBannersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
+    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateImageBannersSuccess != null) {
+      return updateImageBannersSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetBannersLoading value) getBannersLoading,
+    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
+    required TResult Function(GetBannersError value) getBannersError,
+    required TResult Function(GetBannersSuccess value) getBannersSuccess,
+    required TResult Function(SetStartOrEndTextDate value)
+        setStartOrEndTextDate,
+    required TResult Function(CreateBannersLoading value) createBannersLoading,
+    required TResult Function(CreateBannersError value) createBannersError,
+    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
+    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
+    required TResult Function(DeleteBannersError value) deleteBannersError,
+    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
+    required TResult Function(UpdateImageBannersLoading value)
+        updateImageBannersLoading,
+    required TResult Function(UpdateImageBannersError value)
+        updateImageBannersError,
+    required TResult Function(UpdateImageBannersSuccess value)
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetBannersLoading value)? getBannersLoading,
+    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
+    TResult? Function(GetBannersError value)? getBannersError,
+    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
+    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
+    TResult? Function(CreateBannersLoading value)? createBannersLoading,
+    TResult? Function(CreateBannersError value)? createBannersError,
+    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
+    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
+    TResult? Function(DeleteBannersError value)? deleteBannersError,
+    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult? Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult? Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
+  }) {
+    return updateImageBannersSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetBannersLoading value)? getBannersLoading,
+    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
+    TResult Function(GetBannersError value)? getBannersError,
+    TResult Function(GetBannersSuccess value)? getBannersSuccess,
+    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
+    TResult Function(CreateBannersLoading value)? createBannersLoading,
+    TResult Function(CreateBannersError value)? createBannersError,
+    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
+    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
+    TResult Function(DeleteBannersError value)? deleteBannersError,
+    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
+    TResult Function(UpdateImageBannersLoading value)?
+        updateImageBannersLoading,
+    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
+    TResult Function(UpdateImageBannersSuccess value)?
+        updateImageBannersSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateImageBannersSuccess != null) {
+      return updateImageBannersSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateImageBannersSuccess implements BannerState {
+  const factory UpdateImageBannersSuccess(final List<DataBannerResponse> data) =
+      _$UpdateImageBannersSuccessImpl;
+
+  List<DataBannerResponse> get data;
+  @JsonKey(ignore: true)
+  _$$UpdateImageBannersSuccessImplCopyWith<_$UpdateImageBannersSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
