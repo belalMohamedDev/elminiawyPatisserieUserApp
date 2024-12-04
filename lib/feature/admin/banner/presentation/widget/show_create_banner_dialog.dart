@@ -1,11 +1,16 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:flutter/cupertino.dart';
 
-void showCreateBannerDialog(
-  BuildContext context,
-) {
+void showCreateAndEditImageBannerDialog(
+    BuildContext context, DataBannerResponse? banner, BannerCubit bannerCuibt) {
   final responsive = ResponsiveUtils(context);
-  final bannerCuibt = context.read<BannerCubit>();
+
+  if (banner != null) {
+    bannerCuibt.endDateController.text = banner.endDate!.getFormattedDate();
+    bannerCuibt.endDateText = banner.endDate!;
+    bannerCuibt.startDateController.text = banner.startDate!.getFormattedDate();
+    bannerCuibt.startDateText = banner.startDate!;
+  }
   showCupertinoModalPopup(
     context: context,
     builder: (_) => StatefulBuilder(
@@ -108,12 +113,18 @@ void showCreateBannerDialog(
           ),
           actions: [
             CupertinoActionSheetAction(
-              onPressed: () {
-                Navigator.pop(context);
-                bannerCuibt.pickImage(ImageSource.gallery,null);
-              },
+              onPressed: banner != null
+                  ? () {
+                      Navigator.pop(context);
+                      bannerCuibt.updateBannersDate(banner.sId!);
+                    }
+                  : () {
+                      Navigator.pop(context);
+                      bannerCuibt.pickImage(ImageSource.gallery, null);
+                    },
               child: Text(
-                context.translate(AppStrings.addImage),
+                context.translate(
+                    banner == null ? AppStrings.addImage : AppStrings.save),
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!

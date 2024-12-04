@@ -58,6 +58,13 @@ abstract class AppServiceClient {
     @Part() File image,
   );
 
+  @PUT("${ApiConstants.banner}/{id}")
+  Future<BannerResponse> updateBannerDateService(
+    @Path("id") String id,
+    @Part() String? startDate,
+    @Part() String? endDate,
+  );
+
   @DELETE("${ApiConstants.banner}/{id}")
   Future<ApiSuccessGeneralModel> deleteBannerService(
     @Path("id") String id,

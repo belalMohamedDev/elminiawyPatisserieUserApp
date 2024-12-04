@@ -44,4 +44,12 @@ class BannerState with _$BannerState {
       List<DataBannerResponse> data) = UpdateImageBannersSuccess;
 
 
+  const factory BannerState.updateBannersLoading(String id) =
+      UpdateBannersLoading;
+
+  const factory BannerState.updateBannersError(
+      ApiErrorModel apiErrorModel) = UpdateBannersError;
+
+  const factory BannerState.updateBannersSuccess(
+      List<DataBannerResponse> data) = UpdateBannersSuccess;
 }

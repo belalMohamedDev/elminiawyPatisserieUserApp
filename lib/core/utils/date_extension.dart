@@ -8,8 +8,13 @@ extension DateEx on DateTime {
 }
 
 extension StringDate on String {
-  String getFormattedDate() {
+  String getFormattedDateAndHourse() {
     DateTime parsedDate = DateTime.parse(this);
     return DateFormat('yyyy/MM/dd         hh:mm a').format(parsedDate);
+  }
+
+  String getFormattedDate() {
+    DateTime parsedDate = DateTime.parse(this);
+    return DateFormat('yyyy/MM/dd').format(parsedDate);
   }
 }

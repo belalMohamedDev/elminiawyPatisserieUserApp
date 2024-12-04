@@ -99,6 +99,29 @@ class BannerCubit extends Cubit<BannerState> {
     }
   }
 
+  Future<void> updateBannersDate(String id) async {
+    emit(BannerState.updateBannersLoading(id));
+
+    final response = await _bannerRepository.updateBannerDateRepo(
+        id, startDateText!, endDateText!);
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _banners.indexWhere((subCategory) => subCategory.sId == id);
+
+        if (updatedIndex != -1) {
+          _banners[updatedIndex] = dataResponse.data;
+        }
+
+        emit(BannerState.updateBannersSuccess([..._banners]));
+      },
+      failure: (error) {
+        emit(BannerState.updateBannersError(error));
+      },
+    );
+  }
+
   Future<void> getBanners() async {
     emit(const BannerState.getBannersLoading());
 

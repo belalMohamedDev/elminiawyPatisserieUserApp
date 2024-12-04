@@ -1,5 +1,4 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
-import 'package:elminiawy/feature/admin/banner/presentation/screens/banner_screen.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 

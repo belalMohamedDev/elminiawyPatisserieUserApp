@@ -1,7 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/admin/banner/presentation/widget/banners_shimmer_loading_body.dart';
-import 'package:elminiawy/feature/admin/banner/presentation/widget/banners_success_data_body.dart';
-import 'package:elminiawy/feature/admin/banner/presentation/widget/show_create_banner_dialog.dart';
 
 class BannerScreen extends StatefulWidget {
   const BannerScreen({super.key});
@@ -44,7 +41,8 @@ class _BannerScreenState extends State<BannerScreen> {
                   : FloatingActionButton(
                       backgroundColor: ColorManger.brun,
                       onPressed: () {
-                        showCreateBannerDialog(context);
+                        showCreateAndEditImageBannerDialog(
+                            context, null, context.read<BannerCubit>());
                       },
                       child: Icon(
                         Icons.add,
@@ -53,7 +51,8 @@ class _BannerScreenState extends State<BannerScreen> {
                     ),
             ),
             LoadingOverlay(
-              isLoading: state is CreateBannersLoading,
+              isLoading: state is CreateBannersLoading ||
+                  state is UpdateBannersLoading,
             )
           ],
         );
@@ -61,4 +60,3 @@ class _BannerScreenState extends State<BannerScreen> {
     );
   }
 }
-

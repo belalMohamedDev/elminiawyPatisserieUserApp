@@ -1,5 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/admin/subCategory/presentation/widget/sub_category_table.dart';
 
 class AdminSubCategoryScreen extends StatefulWidget {
   const AdminSubCategoryScreen({super.key});

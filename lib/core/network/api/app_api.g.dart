@@ -367,6 +367,56 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
+  Future<BannerResponse> updateBannerDateService(
+    String id,
+    String? startDate,
+    String? endDate,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    if (startDate != null) {
+      _data.fields.add(MapEntry(
+        'startDate',
+        startDate,
+      ));
+    }
+    if (endDate != null) {
+      _data.fields.add(MapEntry(
+        'endDate',
+        endDate,
+      ));
+    }
+    final _options = _setStreamType<BannerResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/v1/api/banner/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late BannerResponse _value;
+    try {
+      _value = BannerResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<ApiSuccessGeneralModel> deleteBannerService(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
