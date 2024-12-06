@@ -17,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         await Future.wait([
           context.read<BannerCubit>().getBanners(),
           context.read<CategoryCubit>().getCategories(),
-          context.read<ProductCubit>().getProduct(),
+          context.read<ProductCubit>().fetchGetNewProduct(),
         ]);
         if (AppInitialRoute.isAnonymousUser == false) {
           await Future.wait([
@@ -31,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
         context.read<CategoryCubit>().getCategories(),
-        context.read<ProductCubit>().getProduct(),
+        context.read<ProductCubit>().fetchGetNewProduct(),
       ]);
 
       if (AppInitialRoute.isAnonymousUser == false) {
@@ -58,20 +58,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 12.h),
 
           backgroundColor: ColorManger.brun,
-
-          onTabChanged: (index) {
-            // if (index == 2) {
-            //   if (AppInitialRoute.isAnonymousUser) {
-            //     context.pushNamed(Routes.noRoute);
-            //   } else {
-            //     context.pushNamed(Routes.cart);
-            //   }
-            //   context
-            //       .read<AppLogicCubit>()
-            //       .bottomNavBarController
-            //       .jumpToPreviousTab();
-            // }
-          },
 
           tabs: _navBarsItems(responsive),
 

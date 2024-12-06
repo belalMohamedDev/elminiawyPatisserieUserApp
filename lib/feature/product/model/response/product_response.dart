@@ -1,4 +1,4 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../core/common/shared/shared_imports.dart'; //
 
 part 'product_response.g.dart';
 

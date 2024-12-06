@@ -1,4 +1,4 @@
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 part 'product_state.dart';
 part 'product_cubit.freezed.dart';
@@ -10,9 +10,8 @@ class ProductCubit extends Cubit<ProductState> {
 
   List<DataProductResponse> dataList = [];
 
-
-  Future<void> getProduct() async {
-    emit(const ProductState.getProductLoading());
+  Future<void> fetchGetNewProduct() async {
+    emit(const ProductState.getNewProductLoading());
 
     final response = await _productRepository.getNewProduct();
 
@@ -22,14 +21,11 @@ class ProductCubit extends Cubit<ProductState> {
           dataList = [];
           dataList.addAll(dataResponse.data!);
         }
-        emit(ProductState.getProductSuccess(dataResponse));
+        emit(ProductState.getNewProductSuccess(dataResponse));
       },
       failure: (error) {
-        ProductState.getProductError(error);
-
+        ProductState.getNewProductError(error);
       },
     );
   }
 }
-
-

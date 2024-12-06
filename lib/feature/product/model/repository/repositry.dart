@@ -1,5 +1,5 @@
 
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../core/common/shared/shared_imports.dart'; //
 
 class ProductRepository {
   ProductRepository( this._apiService);
