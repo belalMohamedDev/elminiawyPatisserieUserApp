@@ -130,8 +130,8 @@ Future<void> _initForgetPassword() async {
 }
 
 Future<void> _initProduct() async {
-  instance.registerLazySingleton<ProductRepository>(
-      () => ProductRepository(instance()));
+  instance.registerLazySingleton<ProductRepositoryImplement>(
+      () => ProductRepositoryImplement(instance()));
   instance.registerLazySingleton<ProductCubit>(() => ProductCubit(
         instance(),
       ));
@@ -232,7 +232,7 @@ Future<void> _initNotification() async {
 
 Future<void> _initSearch() async {
   instance
-    ..registerLazySingleton<SearchInProductRepository>(
-        () => SearchInProductRepository(instance()))
-    ..registerLazySingleton<SearchBloc>(() => SearchBloc(instance()));
+    // ..registerLazySingleton<SearchInProductRepository>(
+    //     () => SearchInProductRepository(instance()))
+    .registerLazySingleton<SearchBloc>(() => SearchBloc(instance()));
 }

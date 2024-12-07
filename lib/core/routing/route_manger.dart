@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
+import 'package:elminiawy/feature/product/presenatation/screen/admin_product_screen.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 
@@ -31,6 +32,16 @@ class RouteGenerator {
             child: const CategoryView(),
           ),
         );
+
+
+     case Routes.adminProduct:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<ProductCubit>(),
+            child: const AdminProductScreen(),
+          ),
+        );
+
 
       case Routes.registerRoute:
         return MaterialPageRoute(

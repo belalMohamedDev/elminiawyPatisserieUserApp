@@ -6,12 +6,11 @@ part 'product_response.g.dart';
 class ProductResponse {
   bool? status;
   String? message;
-  PaginationRuslt? paginationRuslt;
+
   @JsonKey(name: "data")
   List<DataProductResponse>? data;
 
-  ProductResponse({this.status, this.message, this.paginationRuslt, this.data});
-
+  ProductResponse({this.status, this.message, this.data});
 
   //from json
   factory ProductResponse.fromJson(Map<String, dynamic> json) =>
@@ -19,27 +18,6 @@ class ProductResponse {
 
   //to json
   Map<String, dynamic> toJson() => _$ProductResponseToJson(this);
-
-}
-
-@JsonSerializable()
-class PaginationProductRuslt {
-  int? currentPage;
-  int? limit;
-  int? skip;
-  int? numberOfPages;
-  int? next;
-
-  PaginationProductRuslt(
-      {this.currentPage, this.limit, this.skip, this.numberOfPages, this.next});
-
-
-  //from json
-  factory PaginationProductRuslt.fromJson(Map<String, dynamic> json) =>
-      _$PaginationProductRusltFromJson(json);
-
-  //to json
-  Map<String, dynamic> toJson() => _$PaginationProductRusltToJson(this);
 }
 
 @JsonSerializable()
@@ -47,6 +25,7 @@ class DataProductResponse {
   String? title;
   String? description;
   double? ratingsAverage;
+  bool? active;
   @JsonKey(name: "_id")
   String? sId;
   double? price;
@@ -54,27 +33,27 @@ class DataProductResponse {
   String? image;
   String? publicId;
   int? ratingsQuantity;
- // String? category;
+  // String? category;
   @JsonKey(name: "in_cart")
   bool? inCart;
   @JsonKey(name: "in_wishlist")
   bool? inWishlist;
 
-  DataProductResponse(
-      {this.title,
-      this.inCart,
-      this.ratingsAverage,
-      this.inWishlist,
-      this.description,
-      this.sId,
-      this.price,
-      //this.subCategory,
-      this.image,
-      this.publicId,
-      this.ratingsQuantity,
-      //this.category
-      });
-
+  DataProductResponse({
+    this.title,
+    this.inCart,
+    this.ratingsAverage,
+    this.inWishlist,
+    this.description,
+    this.sId,
+    this.price,
+    this.active,
+    //this.subCategory,
+    this.image,
+    this.publicId,
+    this.ratingsQuantity,
+    //this.category
+  });
 
   //from json
   factory DataProductResponse.fromJson(Map<String, dynamic> json) =>

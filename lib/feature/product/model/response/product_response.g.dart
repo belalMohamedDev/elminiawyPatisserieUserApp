@@ -10,10 +10,6 @@ ProductResponse _$ProductResponseFromJson(Map<String, dynamic> json) =>
     ProductResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
-      paginationRuslt: json['paginationRuslt'] == null
-          ? null
-          : PaginationRuslt.fromJson(
-              json['paginationRuslt'] as Map<String, dynamic>),
       data: (json['data'] as List<dynamic>?)
           ?.map((e) => DataProductResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -23,28 +19,7 @@ Map<String, dynamic> _$ProductResponseToJson(ProductResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
-      'paginationRuslt': instance.paginationRuslt,
       'data': instance.data,
-    };
-
-PaginationProductRuslt _$PaginationProductRusltFromJson(
-        Map<String, dynamic> json) =>
-    PaginationProductRuslt(
-      currentPage: (json['currentPage'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt(),
-      skip: (json['skip'] as num?)?.toInt(),
-      numberOfPages: (json['numberOfPages'] as num?)?.toInt(),
-      next: (json['next'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$PaginationProductRusltToJson(
-        PaginationProductRuslt instance) =>
-    <String, dynamic>{
-      'currentPage': instance.currentPage,
-      'limit': instance.limit,
-      'skip': instance.skip,
-      'numberOfPages': instance.numberOfPages,
-      'next': instance.next,
     };
 
 DataProductResponse _$DataProductResponseFromJson(Map<String, dynamic> json) =>
@@ -56,6 +31,7 @@ DataProductResponse _$DataProductResponseFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       sId: json['_id'] as String?,
       price: (json['price'] as num?)?.toDouble(),
+      active: json['active'] as bool?,
       image: json['image'] as String?,
       publicId: json['publicId'] as String?,
       ratingsQuantity: (json['ratingsQuantity'] as num?)?.toInt(),
@@ -67,6 +43,7 @@ Map<String, dynamic> _$DataProductResponseToJson(
       'title': instance.title,
       'description': instance.description,
       'ratingsAverage': instance.ratingsAverage,
+      'active': instance.active,
       '_id': instance.sId,
       'price': instance.price,
       'image': instance.image,

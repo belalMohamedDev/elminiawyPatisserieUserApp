@@ -56,7 +56,7 @@ class NewProductGrideView extends StatelessWidget {
          
             state.whenOrNull(
               getNewProductError: (apiErrorModel) {
-                context.read<ProductCubit>().fetchGetNewProduct();
+                context.read<ProductCubit>().fetchGetNewProductToUser();
               },
               getNewProductSuccess: (data) {
                 final wishListCubit = context.read<WishListCubit>();

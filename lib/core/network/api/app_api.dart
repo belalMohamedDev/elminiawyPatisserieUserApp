@@ -121,7 +121,18 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.newProduct)
-  Future<ProductResponse> getProduct();
+  Future<ProductResponse> getNewProductToUser(
+    @Query("limit") String? limit,
+  );
+
+  @GET(ApiConstants.newProduct)
+  Future<ProductResponse> getUserProduct(
+    @Queries() Map<String, dynamic> requestQuary,
+  );
+
+  @GET(ApiConstants.product)
+  Future<ProductResponse> getAllProduct();
+
 
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> searchInProductService(

@@ -17,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         await Future.wait([
           context.read<BannerCubit>().getBanners(),
           context.read<CategoryCubit>().getCategories(),
-          context.read<ProductCubit>().fetchGetNewProduct(),
+          context.read<ProductCubit>().fetchGetNewProductToUser(),
         ]);
         if (AppInitialRoute.isAnonymousUser == false) {
           await Future.wait([
@@ -31,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       await Future.wait([
         context.read<BannerCubit>().getBanners(),
         context.read<CategoryCubit>().getCategories(),
-        context.read<ProductCubit>().fetchGetNewProduct(),
+        context.read<ProductCubit>().fetchGetNewProductToUser(),
       ]);
 
       if (AppInitialRoute.isAnonymousUser == false) {

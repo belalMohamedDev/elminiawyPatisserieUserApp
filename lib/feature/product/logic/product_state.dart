@@ -4,8 +4,7 @@ part of 'product_cubit.dart';
 class ProductState with _$ProductState {
   const factory ProductState.initial() = _Initial;
 
-
-    //get product State
+  //get product State
   const factory ProductState.getNewProductLoading() = GetNewProductLoading;
   const factory ProductState.getNewProductError(ApiErrorModel apiErrorModel) =
       GetNewProductError;
@@ -21,4 +20,11 @@ class ProductState with _$ProductState {
 
   const factory ProductState.selectedOptionState(int selectedOption) =
       SelectedOptionState;
+
+  const factory ProductState.getAllProductLoading() = GetAllProductLoading;
+  const factory ProductState.getAllProductError(ApiErrorModel apiErrorModel) =
+      GetAllProductError;
+
+  const factory ProductState.getAllProductSuccess(ProductResponse data) =
+      GetAllProductSuccess;
 }

@@ -4,7 +4,7 @@ part 'search_state.dart';
 part 'search_bloc.freezed.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  final SearchInProductRepository _searchInProductRepository;
+  final ProductRepository _searchInProductRepository;
 
   int selectedOption =
       1; // 1: A to Z, 2: Z to A, 3: Low to High, 4: High to Low
@@ -52,8 +52,8 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         }
 
         // Attempt to fetch search results with price range and sort option
-        final response = await _searchInProductRepository.searchInProduct(
-            keyword: value.trim(), priceRange: priceRange, sort: sort);
+        final response = await _searchInProductRepository.getNewProduct(
+            keyword: value.trim(), price: priceRange, sort: sort);
 
         // Handle the search response
         response.when(
@@ -68,8 +68,6 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       },
     );
   }
-
-
 
   // Update selected sorting option
   void updateSelectedOption(int option, Emitter<SearchState> emit) {
