@@ -29,6 +29,10 @@ mixin _$ProductState {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +48,9 @@ mixin _$ProductState {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +66,9 @@ mixin _$ProductState {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +85,9 @@ mixin _$ProductState {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,6 +102,9 @@ mixin _$ProductState {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,6 +119,9 @@ mixin _$ProductState {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -175,6 +194,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return initial();
   }
@@ -193,6 +216,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return initial?.call();
   }
@@ -211,6 +237,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -233,6 +262,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return initial(this);
   }
@@ -250,6 +282,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return initial?.call(this);
   }
@@ -267,6 +302,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -330,6 +368,10 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return getNewProductLoading();
   }
@@ -348,6 +390,9 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return getNewProductLoading?.call();
   }
@@ -366,6 +411,9 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getNewProductLoading != null) {
@@ -388,6 +436,9 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return getNewProductLoading(this);
   }
@@ -405,6 +456,9 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return getNewProductLoading?.call(this);
   }
@@ -422,6 +476,9 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getNewProductLoading != null) {
@@ -512,6 +569,10 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return getNewProductError(apiErrorModel);
   }
@@ -530,6 +591,9 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return getNewProductError?.call(apiErrorModel);
   }
@@ -548,6 +612,9 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getNewProductError != null) {
@@ -570,6 +637,9 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return getNewProductError(this);
   }
@@ -587,6 +657,9 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return getNewProductError?.call(this);
   }
@@ -604,6 +677,9 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getNewProductError != null) {
@@ -700,6 +776,10 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return getNewProductSuccess(data);
   }
@@ -718,6 +798,9 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return getNewProductSuccess?.call(data);
   }
@@ -736,6 +819,9 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getNewProductSuccess != null) {
@@ -758,6 +844,9 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return getNewProductSuccess(this);
   }
@@ -775,6 +864,9 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return getNewProductSuccess?.call(this);
   }
@@ -792,6 +884,9 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getNewProductSuccess != null) {
@@ -898,6 +993,10 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return addNewProductItemToList(getFoundData);
   }
@@ -916,6 +1015,9 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return addNewProductItemToList?.call(getFoundData);
   }
@@ -934,6 +1036,9 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (addNewProductItemToList != null) {
@@ -956,6 +1061,9 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return addNewProductItemToList(this);
   }
@@ -973,6 +1081,9 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return addNewProductItemToList?.call(this);
   }
@@ -990,6 +1101,9 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (addNewProductItemToList != null) {
@@ -1087,6 +1201,10 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return selectedRangeState(selectedRange);
   }
@@ -1105,6 +1223,9 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return selectedRangeState?.call(selectedRange);
   }
@@ -1123,6 +1244,9 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (selectedRangeState != null) {
@@ -1145,6 +1269,9 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return selectedRangeState(this);
   }
@@ -1162,6 +1289,9 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return selectedRangeState?.call(this);
   }
@@ -1179,6 +1309,9 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (selectedRangeState != null) {
@@ -1275,6 +1408,10 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return selectedOptionState(selectedOption);
   }
@@ -1293,6 +1430,9 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return selectedOptionState?.call(selectedOption);
   }
@@ -1311,6 +1451,9 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (selectedOptionState != null) {
@@ -1333,6 +1476,9 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return selectedOptionState(this);
   }
@@ -1350,6 +1496,9 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return selectedOptionState?.call(this);
   }
@@ -1367,6 +1516,9 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (selectedOptionState != null) {
@@ -1436,6 +1588,10 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return getAllProductLoading();
   }
@@ -1454,6 +1610,9 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return getAllProductLoading?.call();
   }
@@ -1472,6 +1631,9 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getAllProductLoading != null) {
@@ -1494,6 +1656,9 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return getAllProductLoading(this);
   }
@@ -1511,6 +1676,9 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return getAllProductLoading?.call(this);
   }
@@ -1528,6 +1696,9 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getAllProductLoading != null) {
@@ -1618,6 +1789,10 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return getAllProductError(apiErrorModel);
   }
@@ -1636,6 +1811,9 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return getAllProductError?.call(apiErrorModel);
   }
@@ -1654,6 +1832,9 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getAllProductError != null) {
@@ -1676,6 +1857,9 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return getAllProductError(this);
   }
@@ -1693,6 +1877,9 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return getAllProductError?.call(this);
   }
@@ -1710,6 +1897,9 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getAllProductError != null) {
@@ -1806,6 +1996,10 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
   }) {
     return getAllProductSuccess(data);
   }
@@ -1824,6 +2018,9 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
   }) {
     return getAllProductSuccess?.call(data);
   }
@@ -1842,6 +2039,9 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getAllProductSuccess != null) {
@@ -1864,6 +2064,9 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
   }) {
     return getAllProductSuccess(this);
   }
@@ -1881,6 +2084,9 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
   }) {
     return getAllProductSuccess?.call(this);
   }
@@ -1898,6 +2104,9 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
     required TResult orElse(),
   }) {
     if (getAllProductSuccess != null) {
@@ -1914,5 +2123,633 @@ abstract class GetAllProductSuccess implements ProductState {
   ProductResponse get data;
   @JsonKey(ignore: true)
   _$$GetAllProductSuccessImplCopyWith<_$GetAllProductSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProductLoadingImplCopyWith<$Res> {
+  factory _$$UpdateProductLoadingImplCopyWith(_$UpdateProductLoadingImpl value,
+          $Res Function(_$UpdateProductLoadingImpl) then) =
+      __$$UpdateProductLoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$UpdateProductLoadingImplCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$UpdateProductLoadingImpl>
+    implements _$$UpdateProductLoadingImplCopyWith<$Res> {
+  __$$UpdateProductLoadingImplCopyWithImpl(_$UpdateProductLoadingImpl _value,
+      $Res Function(_$UpdateProductLoadingImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$UpdateProductLoadingImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProductLoadingImpl implements UpdateProductLoading {
+  const _$UpdateProductLoadingImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'ProductState.updateProductLoading(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProductLoadingImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProductLoadingImplCopyWith<_$UpdateProductLoadingImpl>
+      get copyWith =>
+          __$$UpdateProductLoadingImplCopyWithImpl<_$UpdateProductLoadingImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getNewProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getNewProductError,
+    required TResult Function(ProductResponse data) getNewProductSuccess,
+    required TResult Function(List<DataProductResponse> getFoundData)
+        addNewProductItemToList,
+    required TResult Function(RangeValues selectedRange) selectedRangeState,
+    required TResult Function(int selectedOption) selectedOptionState,
+    required TResult Function() getAllProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
+    required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
+  }) {
+    return updateProductLoading(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getNewProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult? Function(ProductResponse data)? getNewProductSuccess,
+    TResult? Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult? Function(RangeValues selectedRange)? selectedRangeState,
+    TResult? Function(int selectedOption)? selectedOptionState,
+    TResult? Function()? getAllProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
+  }) {
+    return updateProductLoading?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getNewProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult Function(ProductResponse data)? getNewProductSuccess,
+    TResult Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult Function(RangeValues selectedRange)? selectedRangeState,
+    TResult Function(int selectedOption)? selectedOptionState,
+    TResult Function()? getAllProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateProductLoading != null) {
+      return updateProductLoading(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetNewProductLoading value) getNewProductLoading,
+    required TResult Function(GetNewProductError value) getNewProductError,
+    required TResult Function(GetNewProductSuccess value) getNewProductSuccess,
+    required TResult Function(AddNewProductItemToList value)
+        addNewProductItemToList,
+    required TResult Function(SelectedRangeState value) selectedRangeState,
+    required TResult Function(SelectedOptionState value) selectedOptionState,
+    required TResult Function(GetAllProductLoading value) getAllProductLoading,
+    required TResult Function(GetAllProductError value) getAllProductError,
+    required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
+  }) {
+    return updateProductLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult? Function(GetNewProductError value)? getNewProductError,
+    TResult? Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult? Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult? Function(SelectedRangeState value)? selectedRangeState,
+    TResult? Function(SelectedOptionState value)? selectedOptionState,
+    TResult? Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult? Function(GetAllProductError value)? getAllProductError,
+    TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
+  }) {
+    return updateProductLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult Function(GetNewProductError value)? getNewProductError,
+    TResult Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult Function(SelectedRangeState value)? selectedRangeState,
+    TResult Function(SelectedOptionState value)? selectedOptionState,
+    TResult Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult Function(GetAllProductError value)? getAllProductError,
+    TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateProductLoading != null) {
+      return updateProductLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProductLoading implements ProductState {
+  const factory UpdateProductLoading(final String id) =
+      _$UpdateProductLoadingImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$UpdateProductLoadingImplCopyWith<_$UpdateProductLoadingImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProductErrorImplCopyWith<$Res> {
+  factory _$$UpdateProductErrorImplCopyWith(_$UpdateProductErrorImpl value,
+          $Res Function(_$UpdateProductErrorImpl) then) =
+      __$$UpdateProductErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$UpdateProductErrorImplCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$UpdateProductErrorImpl>
+    implements _$$UpdateProductErrorImplCopyWith<$Res> {
+  __$$UpdateProductErrorImplCopyWithImpl(_$UpdateProductErrorImpl _value,
+      $Res Function(_$UpdateProductErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$UpdateProductErrorImpl(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProductErrorImpl implements UpdateProductError {
+  const _$UpdateProductErrorImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'ProductState.updateProductError(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProductErrorImpl &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProductErrorImplCopyWith<_$UpdateProductErrorImpl> get copyWith =>
+      __$$UpdateProductErrorImplCopyWithImpl<_$UpdateProductErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getNewProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getNewProductError,
+    required TResult Function(ProductResponse data) getNewProductSuccess,
+    required TResult Function(List<DataProductResponse> getFoundData)
+        addNewProductItemToList,
+    required TResult Function(RangeValues selectedRange) selectedRangeState,
+    required TResult Function(int selectedOption) selectedOptionState,
+    required TResult Function() getAllProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
+    required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
+  }) {
+    return updateProductError(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getNewProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult? Function(ProductResponse data)? getNewProductSuccess,
+    TResult? Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult? Function(RangeValues selectedRange)? selectedRangeState,
+    TResult? Function(int selectedOption)? selectedOptionState,
+    TResult? Function()? getAllProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
+  }) {
+    return updateProductError?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getNewProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult Function(ProductResponse data)? getNewProductSuccess,
+    TResult Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult Function(RangeValues selectedRange)? selectedRangeState,
+    TResult Function(int selectedOption)? selectedOptionState,
+    TResult Function()? getAllProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateProductError != null) {
+      return updateProductError(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetNewProductLoading value) getNewProductLoading,
+    required TResult Function(GetNewProductError value) getNewProductError,
+    required TResult Function(GetNewProductSuccess value) getNewProductSuccess,
+    required TResult Function(AddNewProductItemToList value)
+        addNewProductItemToList,
+    required TResult Function(SelectedRangeState value) selectedRangeState,
+    required TResult Function(SelectedOptionState value) selectedOptionState,
+    required TResult Function(GetAllProductLoading value) getAllProductLoading,
+    required TResult Function(GetAllProductError value) getAllProductError,
+    required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
+  }) {
+    return updateProductError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult? Function(GetNewProductError value)? getNewProductError,
+    TResult? Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult? Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult? Function(SelectedRangeState value)? selectedRangeState,
+    TResult? Function(SelectedOptionState value)? selectedOptionState,
+    TResult? Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult? Function(GetAllProductError value)? getAllProductError,
+    TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
+  }) {
+    return updateProductError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult Function(GetNewProductError value)? getNewProductError,
+    TResult Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult Function(SelectedRangeState value)? selectedRangeState,
+    TResult Function(SelectedOptionState value)? selectedOptionState,
+    TResult Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult Function(GetAllProductError value)? getAllProductError,
+    TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateProductError != null) {
+      return updateProductError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProductError implements ProductState {
+  const factory UpdateProductError(final ApiErrorModel apiErrorModel) =
+      _$UpdateProductErrorImpl;
+
+  ApiErrorModel get apiErrorModel;
+  @JsonKey(ignore: true)
+  _$$UpdateProductErrorImplCopyWith<_$UpdateProductErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProductSuccessImplCopyWith<$Res> {
+  factory _$$UpdateProductSuccessImplCopyWith(_$UpdateProductSuccessImpl value,
+          $Res Function(_$UpdateProductSuccessImpl) then) =
+      __$$UpdateProductSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<DataProductResponse> data});
+}
+
+/// @nodoc
+class __$$UpdateProductSuccessImplCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res, _$UpdateProductSuccessImpl>
+    implements _$$UpdateProductSuccessImplCopyWith<$Res> {
+  __$$UpdateProductSuccessImplCopyWithImpl(_$UpdateProductSuccessImpl _value,
+      $Res Function(_$UpdateProductSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateProductSuccessImpl(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<DataProductResponse>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
+  const _$UpdateProductSuccessImpl(final List<DataProductResponse> data)
+      : _data = data;
+
+  final List<DataProductResponse> _data;
+  @override
+  List<DataProductResponse> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'ProductState.updateProductSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProductSuccessImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProductSuccessImplCopyWith<_$UpdateProductSuccessImpl>
+      get copyWith =>
+          __$$UpdateProductSuccessImplCopyWithImpl<_$UpdateProductSuccessImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getNewProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getNewProductError,
+    required TResult Function(ProductResponse data) getNewProductSuccess,
+    required TResult Function(List<DataProductResponse> getFoundData)
+        addNewProductItemToList,
+    required TResult Function(RangeValues selectedRange) selectedRangeState,
+    required TResult Function(int selectedOption) selectedOptionState,
+    required TResult Function() getAllProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
+    required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function(String id) updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
+  }) {
+    return updateProductSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getNewProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult? Function(ProductResponse data)? getNewProductSuccess,
+    TResult? Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult? Function(RangeValues selectedRange)? selectedRangeState,
+    TResult? Function(int selectedOption)? selectedOptionState,
+    TResult? Function()? getAllProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function(String id)? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
+  }) {
+    return updateProductSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getNewProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult Function(ProductResponse data)? getNewProductSuccess,
+    TResult Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult Function(RangeValues selectedRange)? selectedRangeState,
+    TResult Function(int selectedOption)? selectedOptionState,
+    TResult Function()? getAllProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function(String id)? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateProductSuccess != null) {
+      return updateProductSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetNewProductLoading value) getNewProductLoading,
+    required TResult Function(GetNewProductError value) getNewProductError,
+    required TResult Function(GetNewProductSuccess value) getNewProductSuccess,
+    required TResult Function(AddNewProductItemToList value)
+        addNewProductItemToList,
+    required TResult Function(SelectedRangeState value) selectedRangeState,
+    required TResult Function(SelectedOptionState value) selectedOptionState,
+    required TResult Function(GetAllProductLoading value) getAllProductLoading,
+    required TResult Function(GetAllProductError value) getAllProductError,
+    required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
+  }) {
+    return updateProductSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult? Function(GetNewProductError value)? getNewProductError,
+    TResult? Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult? Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult? Function(SelectedRangeState value)? selectedRangeState,
+    TResult? Function(SelectedOptionState value)? selectedOptionState,
+    TResult? Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult? Function(GetAllProductError value)? getAllProductError,
+    TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
+  }) {
+    return updateProductSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult Function(GetNewProductError value)? getNewProductError,
+    TResult Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult Function(SelectedRangeState value)? selectedRangeState,
+    TResult Function(SelectedOptionState value)? selectedOptionState,
+    TResult Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult Function(GetAllProductError value)? getAllProductError,
+    TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (updateProductSuccess != null) {
+      return updateProductSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProductSuccess implements ProductState {
+  const factory UpdateProductSuccess(final List<DataProductResponse> data) =
+      _$UpdateProductSuccessImpl;
+
+  List<DataProductResponse> get data;
+  @JsonKey(ignore: true)
+  _$$UpdateProductSuccessImplCopyWith<_$UpdateProductSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

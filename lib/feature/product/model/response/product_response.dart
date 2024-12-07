@@ -8,16 +8,38 @@ class ProductResponse {
   String? message;
 
   @JsonKey(name: "data")
-  List<DataProductResponse>? data;
+  dynamic data;
 
   ProductResponse({this.status, this.message, this.data});
 
-  //from json
-  factory ProductResponse.fromJson(Map<String, dynamic> json) =>
-      _$ProductResponseFromJson(json);
+  factory ProductResponse.fromJson(Map<String, dynamic> json) {
+    final response = _$ProductResponseFromJson(json);
 
-  //to json
-  Map<String, dynamic> toJson() => _$ProductResponseToJson(this);
+    if (json['data'] is List) {
+      response.data = (json['data'] as List)
+          .map((item) => DataProductResponse.fromJson(item))
+          .toList();
+    } else if (json['data'] is Map<String, dynamic>) {
+      response.data = DataProductResponse.fromJson(json['data']);
+    }
+
+    return response;
+  }
+
+  // to json
+  Map<String, dynamic> toJson() {
+    final json = _$ProductResponseToJson(this);
+
+    if (data is List<DataProductResponse>) {
+      json['data'] = (data as List<DataProductResponse>)
+          .map((item) => item.toJson())
+          .toList();
+    } else if (data is DataProductResponse) {
+      json['data'] = (data as DataProductResponse).toJson();
+    }
+
+    return json;
+  }
 }
 
 @JsonSerializable()

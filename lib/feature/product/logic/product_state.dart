@@ -27,4 +27,13 @@ class ProductState with _$ProductState {
 
   const factory ProductState.getAllProductSuccess(ProductResponse data) =
       GetAllProductSuccess;
+
+  //get product State
+  const factory ProductState.updateProductLoading(String id) = UpdateProductLoading;
+  const factory ProductState.updateProductError(ApiErrorModel apiErrorModel) =
+      UpdateProductError;
+
+  const factory ProductState.updateProductSuccess(
+      List<DataProductResponse> data) =
+     UpdateProductSuccess;
 }

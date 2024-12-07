@@ -22,33 +22,38 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
 
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
-        return Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Text(
-                context.translate(AppStrings.products),
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(fontSize: responsive.setTextSize(4)),
-              ),
-            ),
-            floatingActionButton: (state is GetAllProductLoading)
-                ? const SizedBox()
-                : FloatingActionButton(
-                    backgroundColor: ColorManger.brun,
-                    onPressed: () {
-                      showCreateAndEditImageBannerDialog(
-                          context, null, context.read<BannerCubit>());
-                    },
-                    child: Icon(
-                      Icons.add,
-                      color: ColorManger.white,
-                    ),
+        return Stack(
+          children: [
+            Scaffold(
+                appBar: AppBar(
+                  centerTitle: true,
+                  title: Text(
+                    context.translate(AppStrings.products),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4)),
                   ),
-            body: state is GetAllProductLoading
-                ? const GetProductLoadingWidget()
-                : const GetProductSuccessWidget());
+                ),
+                floatingActionButton: (state is GetAllProductLoading)
+                    ? const SizedBox()
+                    : FloatingActionButton(
+                        backgroundColor: ColorManger.brun,
+                        onPressed: () {
+                          showCreateAndEditImageBannerDialog(
+                              context, null, context.read<BannerCubit>());
+                        },
+                        child: Icon(
+                          Icons.add,
+                          color: ColorManger.white,
+                        ),
+                      ),
+                body: state is GetAllProductLoading
+                    ? const GetProductLoadingWidget()
+                    : GetProductSuccessWidget(state: state)),
+            LoadingOverlay(isLoading: state is UpdateProductLoading)
+          ],
+        );
       },
     );
   }

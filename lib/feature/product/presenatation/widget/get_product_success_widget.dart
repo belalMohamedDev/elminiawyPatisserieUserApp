@@ -1,11 +1,13 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:elminiawy/feature/product/presenatation/widget/title_description_text_and_rating_column.dart';
+import 'package:flutter/cupertino.dart';
 
 class GetProductSuccessWidget extends StatelessWidget {
   const GetProductSuccessWidget({
     super.key,
+    required this.state,
   });
-
+  final ProductState state;
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
@@ -69,19 +71,23 @@ class GetProductSuccessWidget extends StatelessWidget {
                     ),
                   ),
                   responsive.setSizeBox(width: 3),
-                  Container(
-                    height: responsive.setHeight(6),
-                    width: responsive.setWidth(12),
-                    decoration: BoxDecoration(
-                      color: ColorManger.brownLight,
-                      borderRadius:
-                          BorderRadius.circular(responsive.setBorderRadius(3)),
-                    ),
-                    child: Center(
-                        child: Icon(
-                      Icons.edit,
-                      color: ColorManger.brun,
-                    )),
+                  InkWell(
+                    onTap: () {
+                      showEditProductActionDialog(context, products[index]);
+                    },
+                    child: Container(
+                        height: responsive.setHeight(6),
+                        width: responsive.setWidth(12),
+                        decoration: BoxDecoration(
+                          color: ColorManger.brownLight,
+                          borderRadius: BorderRadius.circular(
+                              responsive.setBorderRadius(3)),
+                        ),
+                        child: Center(
+                            child: Icon(
+                          Icons.edit,
+                          color: ColorManger.brun,
+                        ))),
                   ),
                   responsive.setSizeBox(width: 3),
                   Container(
@@ -106,4 +112,75 @@ class GetProductSuccessWidget extends StatelessWidget {
       },
     );
   }
+}
+
+void showEditProductActionDialog(
+  BuildContext context,
+  DataProductResponse product,
+) {
+  showCupertinoModalPopup(
+    context: context,
+    builder: (_) => CupertinoActionSheet(
+      title: Text(
+        context.translate(AppStrings.actions),
+        style: TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+      ),
+      actions: [
+        CupertinoActionSheetAction(
+          onPressed: () {
+            Navigator.pop(context);
+            // showEditPopup(
+            //   category,
+            //   context,
+            // );
+          },
+          child: Text(
+            context.translate(AppStrings.edit),
+            style:
+                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+          ),
+        ),
+        CupertinoActionSheetAction(
+          onPressed: () {
+            Navigator.pop(context);
+            // context.read<CategoryCubit>().pickImage(
+            //       ImageSource.gallery,
+            //       category.sId,
+            //     );
+          },
+          child: Text(
+            context.translate(AppStrings.editImage),
+            style:
+                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+          ),
+          // const Text('Edit Image'),
+        ),
+        CupertinoActionSheetAction(
+          onPressed: () {
+            Navigator.pop(context);
+            context.read<ProductCubit>().fetchUpdateProduct(
+                  id: product.sId!,
+                  active: !product.active!,
+                );
+          },
+          child: Text(
+            product.active == true
+                ? context.translate(AppStrings.deActive)
+                : context.translate(AppStrings.active),
+            style:
+                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+          ),
+        ),
+      ],
+      cancelButton: CupertinoActionSheetAction(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Text(
+          context.translate(AppStrings.cancel),
+          style: TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+        ),
+      ),
+    ),
+  );
 }

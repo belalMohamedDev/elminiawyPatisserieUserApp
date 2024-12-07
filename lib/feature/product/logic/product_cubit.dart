@@ -63,7 +63,7 @@ class ProductCubit extends Cubit<ProductState> {
     String? description,
     String? subCategory,
   }) async {
-    emit(const ProductState.getAllProductLoading());
+    emit(ProductState.updateProductLoading(id));
 
     final response = await _productRepository.updateProductRepo(
         id: id,
@@ -76,14 +76,17 @@ class ProductCubit extends Cubit<ProductState> {
 
     response.when(
       success: (dataResponse) {
-        if (dataResponse.data!.isNotEmpty) {
-          _allProduct = [];
-          _allProduct.addAll(dataResponse.data!);
+        final updatedIndex =
+            _allProduct.indexWhere((product) => product.sId == id);
+
+        if (updatedIndex != -1) {
+          _allProduct[updatedIndex] = dataResponse.data;
         }
-        emit(ProductState.getAllProductSuccess(dataResponse));
+
+        emit(ProductState.updateProductSuccess([..._allProduct]));
       },
       failure: (error) {
-        ProductState.getAllProductError(error);
+        ProductState.updateProductError(error);
       },
     );
   }

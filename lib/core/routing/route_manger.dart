@@ -33,15 +33,13 @@ class RouteGenerator {
           ),
         );
 
-
-     case Routes.adminProduct:
+      case Routes.adminProduct:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => instance<ProductCubit>(),
             child: const AdminProductScreen(),
           ),
         );
-
 
       case Routes.registerRoute:
         return MaterialPageRoute(
