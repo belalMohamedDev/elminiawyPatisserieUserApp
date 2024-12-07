@@ -10,7 +10,7 @@ class WishListCubit extends Cubit<WishListState> {
   final WishListRepositoryImplement _wishListRepository;
 
   Map<String, bool> favorites = {};
-  List<WishListProductData> dataList = [];
+  List<DataProductResponse> dataList = [];
 
   Future<void> getWishList() async {
     emit(const WishListState.getWishListLoading());

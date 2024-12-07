@@ -232,9 +232,11 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<BannerResponse> getBannersServic() async {
+  Future<BannerResponse> getBannersService(
+      Map<String, dynamic> requestQuary) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(requestQuary);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<BannerResponse>(Options(
@@ -450,9 +452,11 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<CategoryResponse> getCategoriesService(String sort) async {
+  Future<CategoryResponse> getCategoriesService(
+      Map<String, dynamic> requestQuary) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'sort': sort};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(requestQuary);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<CategoryResponse>(Options(
@@ -932,12 +936,12 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<WishListProduct> getWishList() async {
+  Future<ProductResponse> getWishList() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<WishListProduct>(Options(
+    final _options = _setStreamType<ProductResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -954,9 +958,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late WishListProduct _value;
+    late ProductResponse _value;
     try {
-      _value = WishListProduct.fromJson(_result.data!);
+      _value = ProductResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -965,12 +969,12 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<WishListProduct> addOrRemoveProductFromWishList(String product) async {
+  Future<ProductResponse> addOrRemoveProductFromWishList(String product) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'product': product};
-    final _options = _setStreamType<WishListProduct>(Options(
+    final _options = _setStreamType<ProductResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -987,9 +991,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late WishListProduct _value;
+    late ProductResponse _value;
     try {
-      _value = WishListProduct.fromJson(_result.data!);
+      _value = ProductResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -41,7 +41,9 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.banner)
-  Future<BannerResponse> getBannersServic();
+  Future<BannerResponse> getBannersService(
+     @Queries() Map<String, dynamic> requestQuary,
+  );
 
   @POST(ApiConstants.banner)
   @MultiPart()
@@ -72,7 +74,8 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.category)
   Future<CategoryResponse> getCategoriesService(
-    @Query("sort") String sort,
+   
+       @Queries() Map<String, dynamic> requestQuary,
   );
 
   @PUT("${ApiConstants.category}/{id}")
@@ -142,10 +145,10 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.wishList)
-  Future<WishListProduct> getWishList();
+  Future<ProductResponse> getWishList();
 
   @POST(ApiConstants.wishList)
-  Future<WishListProduct> addOrRemoveProductFromWishList(
+  Future<ProductResponse> addOrRemoveProductFromWishList(
       @Field("product") String product);
 
   @POST(ApiConstants.logOut)

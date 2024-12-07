@@ -230,9 +230,17 @@ class HomeBody extends StatelessWidget {
                   context.pushNamed(
                       Routes.notification); // Navigate to notification screen
                 },
-                icon: Icon(
-                  IconlyBold.notification,
-                  color: ColorManger.brun,
+                icon: Container(
+                  height: responsive.setHeight(4.5),
+                  width: responsive.setWidth(9.8),
+                  decoration: BoxDecoration(
+                      color: ColorManger.brownLight,
+                      borderRadius:
+                          BorderRadius.circular(responsive.setBorderRadius(5))),
+                  child: Icon(
+                    IconlyBold.notification,
+                    color: ColorManger.brun,
+                  ),
                 ),
               ),
             );

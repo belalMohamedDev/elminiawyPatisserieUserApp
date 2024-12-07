@@ -122,10 +122,10 @@ class BannerCubit extends Cubit<BannerState> {
     );
   }
 
-  Future<void> getBanners() async {
+  Future<void> getBanners({String? endDate}) async {
     emit(const BannerState.getBannersLoading());
 
-    final response = await _bannerRepository.getBannerRepo();
+    final response = await _bannerRepository.getBannerRepo(endDate: endDate);
 
     response.when(
       success: (dataResponse) {

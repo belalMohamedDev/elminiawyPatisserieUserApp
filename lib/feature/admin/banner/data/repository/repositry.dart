@@ -3,7 +3,7 @@ import 'dart:io';
 import '../../../../../core/common/shared/shared_imports.dart';
 
 abstract class BannerRepository {
-  Future<ApiResult<BannerResponse>> getBannerRepo();
+  Future<ApiResult<BannerResponse>> getBannerRepo({String? endDate});
   Future<ApiResult<ApiSuccessGeneralModel>> deleteBannerRepo(String id);
   Future<ApiResult<BannerResponse>> createNewBannerRepo(
       String startDate, String endDate, File image);
@@ -21,9 +21,12 @@ class BannerRepositoryImplement implements BannerRepository {
   final AppServiceClient _apiService;
 
   @override
-  Future<ApiResult<BannerResponse>> getBannerRepo() async {
+  Future<ApiResult<BannerResponse>> getBannerRepo({String? endDate}) async {
+    final Map<String, dynamic> queryRequest = {
+      if (endDate != null) 'endDate': endDate,
+    };
     try {
-      final response = await _apiService.getBannersServic();
+      final response = await _apiService.getBannersService(queryRequest);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

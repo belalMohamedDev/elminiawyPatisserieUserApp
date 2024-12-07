@@ -1,10 +1,10 @@
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class WishListRepository {
-  Future<ApiResult<WishListProduct>> addOrRemoveProductFromWishList(
+  Future<ApiResult<ProductResponse>> addOrRemoveProductFromWishList(
       String product);
 
-  Future<ApiResult<WishListProduct>> getWishList();
+  Future<ApiResult<ProductResponse>> getWishList();
 }
 
 class WishListRepositoryImplement implements WishListRepository {
@@ -13,7 +13,7 @@ class WishListRepositoryImplement implements WishListRepository {
 
 
   @override
-  Future<ApiResult<WishListProduct>> addOrRemoveProductFromWishList(
+  Future<ApiResult<ProductResponse>> addOrRemoveProductFromWishList(
       String product) async {
 
       try {
@@ -27,7 +27,7 @@ class WishListRepositoryImplement implements WishListRepository {
   }
 
   @override
-  Future<ApiResult<WishListProduct>> getWishList() async {
+  Future<ApiResult<ProductResponse>> getWishList() async {
 
       try {
         final response = await _apiService.getWishList();

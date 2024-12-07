@@ -20,7 +20,7 @@ class ProductCubit extends Cubit<ProductState> {
     emit(const ProductState.getNewProductLoading());
 
     final response =
-        await _productRepository.getNewProduct(active: "true", limit: "10");
+        await _productRepository.getNewProduct( limit: "10");
 
     response.when(
       success: (dataResponse) {

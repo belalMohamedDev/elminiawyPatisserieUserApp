@@ -5,7 +5,7 @@ import '../../../../core/common/shared/shared_imports.dart'; // Import the share
 class ProductGridViewSuccessState extends StatelessWidget {
   final List<DataProductResponse>? dataList; // List of products from the API
   final bool isSearchActive; // Indicates if the search is active
-  final List<WishListProductData>? wishListData; // Wishlist product data
+
   final List<Products>? allProductList; // Complete list of products
 
   final int? grideViewIndex; // Index for how many items to show
@@ -17,7 +17,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
     this.isSearchActive = false,
     this.grideViewIndex,
     this.physics,
-    this.wishListData,
+ 
     this.allProductList,
   });
 
@@ -29,7 +29,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     // Determine which list to display (dataList, wishListData, or allProductList)
-    final List displayList = (dataList ?? wishListData ?? allProductList ?? []);
+    final List displayList = (dataList  ?? allProductList ?? []);
 
     final int maxItemCount = displayList.length;
 
@@ -241,9 +241,17 @@ class ProductGridViewSuccessState extends StatelessWidget {
           Padding(
             padding: responsive.setPadding(top: 2.5, right: 5),
             child: CachedNetworkImage(
-              imageUrl: product.image!,
+              imageUrl: product.image ?? "",
               placeholder: (context, url) => const LoadingShimmer(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+              errorWidget: (context, url, error) => Center(
+                  child: Padding(
+                padding: responsive.setPadding(left: 5),
+                child: Icon(
+                  Icons.error,
+                  size: responsive.setIconSize(10),
+                  color: ColorManger.brun,
+                ),
+              )),
             ),
           ),
         ],

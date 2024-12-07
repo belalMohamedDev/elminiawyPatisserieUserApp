@@ -33,10 +33,12 @@ class CategoryCubit extends Cubit<CategoryState> {
     }
   }
 
-  Future<void> getCategories({String sort = 'createdAt'}) async {
+  Future<void> getCategories(
+      {String sort = 'createdAt', String? active }) async {
     emit(const CategoryState.getCategoriesLoading());
 
-    final response = await _categoryRepositoryImplement.getCategoriesRepo(sort);
+    final response = await _categoryRepositoryImplement.getCategoriesRepo(
+        sort: sort, active: active);
 
     response.when(
       success: (dataResponse) {

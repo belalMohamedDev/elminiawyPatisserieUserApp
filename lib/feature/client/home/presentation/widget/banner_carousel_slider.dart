@@ -13,7 +13,7 @@ class BannerCarouselSlider extends StatelessWidget {
     return BlocConsumer<BannerCubit, BannerState>(
       listener: (context, state) {
         if (state is GetBannersError) {
-          context.read<BannerCubit>().getBanners();
+          context.read<BannerCubit>().getBanners(endDate: "true");
         }
       },
       // Define when the widget should rebuild (only for loading, success, and error states)

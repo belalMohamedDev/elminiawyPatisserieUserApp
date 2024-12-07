@@ -56,7 +56,7 @@ class CategoryListViewBuilder extends StatelessWidget {
         BlocConsumer<CategoryCubit, CategoryState>(
           listener: (context, state) {
             if (state is GetCategoriesError) {
-              context.read<CategoryCubit>().getCategories();
+              context.read<CategoryCubit>().getCategories(active: 'true');
             }
           },
           builder: (context, state) {
@@ -145,10 +145,9 @@ class CategoryListViewBuilder extends StatelessWidget {
                         ),
                       ],
                       child: ProductBaseOnCategory(
-                        categoryId:
-                            state.data[index].sId!, // Pass category ID
-                        categoryName: state
-                            .data[index].title!, // Pass category name
+                        categoryId: state.data[index].sId!, // Pass category ID
+                        categoryName:
+                            state.data[index].title!, // Pass category name
                       ),
                     ),
                   ),

@@ -4,7 +4,7 @@ part 'search_state.dart';
 part 'search_bloc.freezed.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  final ProductRepository _searchInProductRepository;
+  final ProductRepositoryImplement _searchInProductRepository;
 
   int selectedOption =
       1; // 1: A to Z, 2: Z to A, 3: Low to High, 4: High to Low

@@ -13,10 +13,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+   
       context.read<AppLogicCubit>().stream.listen((locale) async {
         await Future.wait([
-          context.read<BannerCubit>().getBanners(),
-          context.read<CategoryCubit>().getCategories(),
+          context.read<BannerCubit>().getBanners(endDate: "true"),
+          context.read<CategoryCubit>().getCategories(active: 'true'),
           context.read<ProductCubit>().fetchGetNewProductToUser(),
         ]);
         if (AppInitialRoute.isAnonymousUser == false) {
@@ -29,8 +30,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
       });
 
       await Future.wait([
-        context.read<BannerCubit>().getBanners(),
-        context.read<CategoryCubit>().getCategories(),
+        context.read<BannerCubit>().getBanners(endDate: "true"),
+        context.read<CategoryCubit>().getCategories(active: 'true'),
         context.read<ProductCubit>().fetchGetNewProductToUser(),
       ]);
 

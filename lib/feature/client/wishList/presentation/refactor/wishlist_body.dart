@@ -1,6 +1,4 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
-
 
 class WishListBody extends StatelessWidget {
   const WishListBody({super.key});
@@ -22,9 +20,10 @@ class WishListBody extends StatelessWidget {
           return const EmptyWishListScreen();
         }
         return ProductGridViewSuccessState(
-          wishListData: context.read<WishListCubit>().dataList,
+          dataList: context.read<WishListCubit>().dataList,
         );
       },
     );
   }
 }
+                                                                                                                                                                                  

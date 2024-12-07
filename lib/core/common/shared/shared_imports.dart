@@ -279,13 +279,11 @@ export 'package:elminiawy/feature/client/profile/presentation/widget/log_out_log
 export 'package:elminiawy/feature/client/profile/presentation/widget/profile_column_card.dart';
 export 'package:elminiawy/feature/client/profile/presentation/widget/setting_change_bottom_sheet.dart';
 export 'package:elminiawy/feature/client/search/bloc/search_bloc.dart';
-export 'package:elminiawy/feature/client/search/model/repository/repositry.dart';
 export 'package:elminiawy/feature/client/search/presentation/refactor/search_body.dart';
 export 'package:elminiawy/feature/client/search/presentation/screen/empty_search.dart';
 export 'package:elminiawy/feature/client/search/presentation/screen/search_screen.dart';
 export 'package:elminiawy/feature/client/search/presentation/widget/filter_bottom_sheet.dart';
 export 'package:elminiawy/feature/client/wishList/cubit/wish_list_cubit.dart';
-export 'package:elminiawy/feature/client/wishList/data/model/getWishListResponse/response.dart';
 export 'package:elminiawy/feature/client/wishList/data/repository/repository.dart';
 export 'package:elminiawy/feature/client/wishList/presentation/refactor/wishlist_body.dart';
 export 'package:elminiawy/feature/client/wishList/presentation/screen/empty_screen.dart';

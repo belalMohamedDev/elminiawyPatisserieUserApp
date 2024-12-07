@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-
 abstract class CategoryRepository {
-  Future<ApiResult<CategoryResponse>> getCategoriesRepo(String sort);
+  Future<ApiResult<CategoryResponse>> getCategoriesRepo(
+      {String? sort, String? active});
   Future<ApiResult<CategoryResponse>> updateCategoriesTitleRepo(
     String id,
     String? titleAr,
@@ -36,9 +36,16 @@ class CategoryRepositoryImplement implements CategoryRepository {
   final AppServiceClient _apiService;
 
   @override
-  Future<ApiResult<CategoryResponse>> getCategoriesRepo(String sort) async {
+  Future<ApiResult<CategoryResponse>> getCategoriesRepo(
+      {String? sort, String? active}) async {
+
+
+    final Map<String, dynamic> queryRequest = {
+      if (sort != null) 'sort': sort,
+      if (active != null) 'active': active,
+    };
     try {
-      final response = await _apiService.getCategoriesService(sort);
+      final response = await _apiService.getCategoriesService(queryRequest);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -50,7 +57,6 @@ class CategoryRepositoryImplement implements CategoryRepository {
       String id, String? titleAr, String? titleEn) async {
     final Map<String, dynamic> requestBody = {
       'title': {"ar": titleAr, "en": titleEn},
-  
     };
     try {
       final response =
