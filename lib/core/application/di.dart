@@ -134,6 +134,7 @@ Future<void> _initProduct() async {
       () => ProductRepositoryImplement(instance()));
   instance.registerLazySingleton<ProductCubit>(() => ProductCubit(
         instance(),
+        instance(),
       ));
 }
 

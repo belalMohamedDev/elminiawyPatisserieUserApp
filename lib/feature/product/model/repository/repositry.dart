@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import '../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class ProductRepository {
@@ -17,6 +19,11 @@ abstract class ProductRepository {
     String? price,
     String? description,
     String? subCategory,
+  });
+
+  Future<ApiResult<ProductResponse>> updateProductImageRepo({
+    required String id,
+    required File image,
   });
 
   Future<ApiResult<ProductResponse>> getAllProductRepo();
@@ -81,6 +88,17 @@ class ProductRepositoryImplement implements ProductRepository {
 
     try {
       final response = await _apiService.updateProductService(id, requestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ProductResponse>> updateProductImageRepo(
+      {required String id, required File image}) async {
+    try {
+      final response = await _apiService.updateProductImageService(id, image);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

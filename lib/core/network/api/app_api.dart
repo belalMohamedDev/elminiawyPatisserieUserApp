@@ -42,7 +42,7 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.banner)
   Future<BannerResponse> getBannersService(
-     @Queries() Map<String, dynamic> requestQuary,
+    @Queries() Map<String, dynamic> requestQuary,
   );
 
   @POST(ApiConstants.banner)
@@ -74,8 +74,7 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.category)
   Future<CategoryResponse> getCategoriesService(
-   
-       @Queries() Map<String, dynamic> requestQuary,
+    @Queries() Map<String, dynamic> requestQuary,
   );
 
   @PUT("${ApiConstants.category}/{id}")
@@ -136,13 +135,18 @@ abstract class AppServiceClient {
   @GET(ApiConstants.product)
   Future<ProductResponse> getAllProductService();
 
-
   @PUT("${ApiConstants.product}/{id}")
   Future<ProductResponse> updateProductService(
     @Path("id") String id,
     @Body() Map<String, dynamic> requestBody,
   );
 
+  @PUT("${ApiConstants.product}/{id}")
+  @MultiPart()
+  Future<ProductResponse> updateProductImageService(
+    @Path("id") String id,
+    @Part() File image,
+  );
 
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> searchInProductService(

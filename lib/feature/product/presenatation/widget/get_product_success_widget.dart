@@ -143,10 +143,10 @@ void showEditProductActionDialog(
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
-            // context.read<CategoryCubit>().pickImage(
-            //       ImageSource.gallery,
-            //       category.sId,
-            //     );
+            context.read<ProductCubit>().pickImage(
+                  ImageSource.gallery,
+                  product.sId,
+                );
           },
           child: Text(
             context.translate(AppStrings.editImage),

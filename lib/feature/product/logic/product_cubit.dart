@@ -1,12 +1,16 @@
+import 'dart:io';
+
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 part 'product_state.dart';
 part 'product_cubit.freezed.dart';
 
 class ProductCubit extends Cubit<ProductState> {
-  ProductCubit(this._productRepository) : super(const ProductState.initial());
+  ProductCubit(this._productRepository, this._imagePicker)
+      : super(const ProductState.initial());
   final ProductRepositoryImplement _productRepository;
   final TextEditingController search = TextEditingController();
+  final ImagePicker _imagePicker;
 
   List<DataProductResponse> _newProduct = [];
 
@@ -73,6 +77,43 @@ class ProductCubit extends Cubit<ProductState> {
         enTitle: enTitle,
         price: price,
         subCategory: subCategory);
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _allProduct.indexWhere((product) => product.sId == id);
+
+        if (updatedIndex != -1) {
+          _allProduct[updatedIndex] = dataResponse.data;
+        }
+
+        emit(ProductState.updateProductSuccess([..._allProduct]));
+      },
+      failure: (error) {
+        ProductState.updateProductError(error);
+      },
+    );
+  }
+
+  Future<void> pickImage(
+    ImageSource source,
+    String? id,
+  ) async {
+    final pickedImage = await _imagePicker.pickImage(source: source);
+    if (pickedImage != null) {
+      final imageFile = File(pickedImage.path);
+      await fetchUpdateProductImage(id: id!, image: imageFile);
+    }
+  }
+
+  Future<void> fetchUpdateProductImage({
+    required String id,
+    required File image,
+  }) async {
+    emit(ProductState.updateProductLoading(id));
+
+    final response =
+        await _productRepository.updateProductImageRepo(id: id, image: image);
 
     response.when(
       success: (dataResponse) {
