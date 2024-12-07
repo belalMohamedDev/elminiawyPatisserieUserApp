@@ -52,7 +52,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         }
 
         // Attempt to fetch search results with price range and sort option
-        final response = await _searchInProductRepository.getNewProduct(
+        final response = await _searchInProductRepository.getNewProductRepo(
             keyword: value.trim(), price: priceRange, sort: sort);
 
         // Handle the search response

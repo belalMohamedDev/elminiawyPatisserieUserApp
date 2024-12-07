@@ -124,17 +124,24 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.newProduct)
-  Future<ProductResponse> getNewProductToUser(
+  Future<ProductResponse> getNewProductToUserServices(
     @Query("limit") String? limit,
   );
 
   @GET(ApiConstants.newProduct)
-  Future<ProductResponse> getUserProduct(
+  Future<ProductResponse> getUserProductService(
     @Queries() Map<String, dynamic> requestQuary,
   );
 
   @GET(ApiConstants.product)
-  Future<ProductResponse> getAllProduct();
+  Future<ProductResponse> getAllProductService();
+
+
+  @PUT("${ApiConstants.product}/{id}")
+  Future<ProductResponse> updateProductService(
+    @Path("id") String id,
+    @Body() Map<String, dynamic> requestBody,
+  );
 
 
   @GET(ApiConstants.newProduct)
@@ -145,19 +152,19 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.wishList)
-  Future<ProductResponse> getWishList();
+  Future<ProductResponse> getWishListService();
 
   @POST(ApiConstants.wishList)
-  Future<ProductResponse> addOrRemoveProductFromWishList(
+  Future<ProductResponse> addOrRemoveProductFromWishListService(
       @Field("product") String product);
 
   @POST(ApiConstants.logOut)
-  Future<ApiSuccessGeneralModel> logOut(
+  Future<ApiSuccessGeneralModel> logOutService(
     @Field("refreshToken") String refreshToken,
   );
 
   @POST(ApiConstants.address)
-  Future<CreateAddressResponse> createAddress(
+  Future<CreateAddressResponse> createAddressService(
     @Body() Map<String, dynamic> createAddressRequestBody,
   );
 
@@ -167,16 +174,16 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.address)
-  Future<GetAddressResponse> getAllAddress();
+  Future<GetAddressResponse> getAllAddressService();
 
   @PUT('${ApiConstants.address}/{id}')
-  Future<CreateAddressResponse> updateAddress(
+  Future<CreateAddressResponse> updateAddressService(
     @Path("id") String id,
     @Body() Map<String, dynamic> createAddressRequestBody,
   );
 
   @DELETE('${ApiConstants.address}/{id}')
-  Future<ApiSuccessGeneralModel> deleteAddress(
+  Future<ApiSuccessGeneralModel> deleteAddressService(
     @Path("id") String id,
   );
 

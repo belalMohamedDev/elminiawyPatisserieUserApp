@@ -27,7 +27,7 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
       CreateAddressRequestBody createAddressRequestBody) async {
     
       try {
-        final response = await _apiService.createAddress(
+        final response = await _apiService.createAddressService(
           createAddressRequestBody.toFilteredJson(),
         );
         return ApiResult.success(response);
@@ -41,7 +41,7 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
   Future<ApiResult<GetAddressResponse>> getAllAddress() async {
    
       try {
-        final response = await _apiService.getAllAddress();
+        final response = await _apiService.getAllAddressService();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -53,7 +53,7 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
   Future<ApiResult<ApiSuccessGeneralModel>> removeAddress(String id) async {
  
       try {
-        final response = await _apiService.deleteAddress(id);
+        final response = await _apiService.deleteAddressService(id);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -66,7 +66,7 @@ class UserAddressRepositoryImplement implements UserAddressRepository {
       String id, CreateAddressRequestBody createAddressRequestBody) async {
    
       try {
-        final response = await _apiService.updateAddress(
+        final response = await _apiService.updateAddressService(
             id, createAddressRequestBody.toFilteredJson());
         return ApiResult.success(response);
       } catch (error) {

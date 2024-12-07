@@ -19,8 +19,7 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> fetchGetNewProductToUser() async {
     emit(const ProductState.getNewProductLoading());
 
-    final response =
-        await _productRepository.getNewProduct( limit: "10");
+    final response = await _productRepository.getNewProductRepo(limit: "10");
 
     response.when(
       success: (dataResponse) {
@@ -39,7 +38,41 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> fetchGetAllProduct() async {
     emit(const ProductState.getAllProductLoading());
 
-    final response = await _productRepository.getAllProduct();
+    final response = await _productRepository.getAllProductRepo();
+
+    response.when(
+      success: (dataResponse) {
+        if (dataResponse.data!.isNotEmpty) {
+          _allProduct = [];
+          _allProduct.addAll(dataResponse.data!);
+        }
+        emit(ProductState.getAllProductSuccess(dataResponse));
+      },
+      failure: (error) {
+        ProductState.getAllProductError(error);
+      },
+    );
+  }
+
+  Future<void> fetchUpdateProduct({
+    bool? active,
+    String? arTitle,
+    required String id,
+    String? enTitle,
+    String? price,
+    String? description,
+    String? subCategory,
+  }) async {
+    emit(const ProductState.getAllProductLoading());
+
+    final response = await _productRepository.updateProductRepo(
+        id: id,
+        active: active,
+        arTitle: arTitle,
+        description: description,
+        enTitle: enTitle,
+        price: price,
+        subCategory: subCategory);
 
     response.when(
       success: (dataResponse) {

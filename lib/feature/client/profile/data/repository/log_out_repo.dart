@@ -8,7 +8,7 @@ class LogOutRepository {
   Future<ApiResult<ApiSuccessGeneralModel>> logOut(String refreshToken) async {
 
       try {
-        final response = await _apiService.logOut(refreshToken);
+        final response = await _apiService.logOutService(refreshToken);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));

@@ -792,7 +792,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ProductResponse> getNewProductToUser(String? limit) async {
+  Future<ProductResponse> getNewProductToUserServices(String? limit) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'limit': limit};
     queryParameters.removeWhere((k, v) => v == null);
@@ -826,7 +826,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ProductResponse> getUserProduct(
+  Future<ProductResponse> getUserProductService(
       Map<String, dynamic> requestQuary) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -861,7 +861,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ProductResponse> getAllProduct() async {
+  Future<ProductResponse> getAllProductService() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -874,6 +874,43 @@ class _AppServiceClient implements AppServiceClient {
         .compose(
           _dio.options,
           '/v1/api/product',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ProductResponse _value;
+    try {
+      _value = ProductResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ProductResponse> updateProductService(
+    String id,
+    Map<String, dynamic> requestBody,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(requestBody);
+    final _options = _setStreamType<ProductResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/v1/api/product/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -936,7 +973,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ProductResponse> getWishList() async {
+  Future<ProductResponse> getWishListService() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -969,7 +1006,8 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ProductResponse> addOrRemoveProductFromWishList(String product) async {
+  Future<ProductResponse> addOrRemoveProductFromWishListService(
+      String product) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -1002,7 +1040,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ApiSuccessGeneralModel> logOut(String refreshToken) async {
+  Future<ApiSuccessGeneralModel> logOutService(String refreshToken) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -1035,7 +1073,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<CreateAddressResponse> createAddress(
+  Future<CreateAddressResponse> createAddressService(
       Map<String, dynamic> createAddressRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -1105,7 +1143,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<GetAddressResponse> getAllAddress() async {
+  Future<GetAddressResponse> getAllAddressService() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -1138,7 +1176,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<CreateAddressResponse> updateAddress(
+  Future<CreateAddressResponse> updateAddressService(
     String id,
     Map<String, dynamic> createAddressRequestBody,
   ) async {
@@ -1175,7 +1213,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<ApiSuccessGeneralModel> deleteAddress(String id) async {
+  Future<ApiSuccessGeneralModel> deleteAddressService(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

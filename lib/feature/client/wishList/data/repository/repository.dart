@@ -18,7 +18,7 @@ class WishListRepositoryImplement implements WishListRepository {
 
       try {
         final response =
-            await _apiService.addOrRemoveProductFromWishList(product);
+            await _apiService.addOrRemoveProductFromWishListService(product);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -30,7 +30,7 @@ class WishListRepositoryImplement implements WishListRepository {
   Future<ApiResult<ProductResponse>> getWishList() async {
 
       try {
-        final response = await _apiService.getWishList();
+        final response = await _apiService.getWishListService();
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));
