@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/product/presenatation/widget/get_product_loading_widget.dart';
 import 'package:elminiawy/feature/product/presenatation/widget/get_product_success_widget.dart';
 
 class AdminProductScreen extends StatefulWidget {
@@ -32,9 +33,23 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
                     .copyWith(fontSize: responsive.setTextSize(4)),
               ),
             ),
-            body: const GetProductSuccessWidget());
+            floatingActionButton: (state is GetAllProductLoading)
+                ? const SizedBox()
+                : FloatingActionButton(
+                    backgroundColor: ColorManger.brun,
+                    onPressed: () {
+                      showCreateAndEditImageBannerDialog(
+                          context, null, context.read<BannerCubit>());
+                    },
+                    child: Icon(
+                      Icons.add,
+                      color: ColorManger.white,
+                    ),
+                  ),
+            body: state is GetAllProductLoading
+                ? const GetProductLoadingWidget()
+                : const GetProductSuccessWidget());
       },
     );
   }
 }
-
