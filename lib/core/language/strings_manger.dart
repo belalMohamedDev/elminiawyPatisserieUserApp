@@ -17,6 +17,10 @@ class AppStrings {
   static const String startDate = "startDate";
   static const String endDate = "endDate";
 
+  static const String enterArabicDescription = "enterArabicDescription";
+  static const String enterEnglishDescription = "enterEnglishDescription";
+  static const String enterPrice = "enterPrice";
+
   static const String subCategory = "subCategory";
   static const String banners = "banners";
   static const String products = "products";

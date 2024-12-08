@@ -126,7 +126,9 @@
 
 
 
-
+  "enterArabicDescription": "Enter Arabic Description",
+  "enterEnglishDescription": "Enter English Description",
+"enterPrice": "Enter Price",
 
 
   "additionalDirectionsOptional": "Additional directions (optional)",

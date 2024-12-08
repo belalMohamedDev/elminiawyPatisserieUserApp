@@ -35,8 +35,15 @@ class RouteGenerator {
 
       case Routes.adminProduct:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<ProductCubit>(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => instance<ProductCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => instance<SubCategoriesCubit>(),
+              ),
+            ],
             child: const AdminProductScreen(),
           ),
         );

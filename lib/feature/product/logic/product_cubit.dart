@@ -11,6 +11,11 @@ class ProductCubit extends Cubit<ProductState> {
   final ProductRepositoryImplement _productRepository;
   final TextEditingController search = TextEditingController();
   final ImagePicker _imagePicker;
+  final TextEditingController arTitleController = TextEditingController();
+  final TextEditingController enTitleController = TextEditingController();
+  final TextEditingController arDescriptionController = TextEditingController();
+  final TextEditingController enDescriptionController = TextEditingController();
+  final TextEditingController priceController = TextEditingController();
 
   List<DataProductResponse> _newProduct = [];
 
@@ -60,11 +65,7 @@ class ProductCubit extends Cubit<ProductState> {
 
   Future<void> fetchUpdateProduct({
     bool? active,
-    String? arTitle,
     required String id,
-    String? enTitle,
-    String? price,
-    String? description,
     String? subCategory,
   }) async {
     emit(ProductState.updateProductLoading(id));
@@ -72,10 +73,11 @@ class ProductCubit extends Cubit<ProductState> {
     final response = await _productRepository.updateProductRepo(
         id: id,
         active: active,
-        arTitle: arTitle,
-        description: description,
-        enTitle: enTitle,
-        price: price,
+        arDescription: arDescriptionController.text.trim(),
+        enDescription: enDescriptionController.text.trim(),
+        arTitle: arTitleController.text.trim(),
+        enTitle: enTitleController.text.trim(),
+        price: priceController.text.trim(),
         subCategory: subCategory);
 
     response.when(
@@ -86,6 +88,12 @@ class ProductCubit extends Cubit<ProductState> {
         if (updatedIndex != -1) {
           _allProduct[updatedIndex] = dataResponse.data;
         }
+
+        arTitleController.clear();
+        enTitleController.clear();
+        arDescriptionController.clear();
+        enDescriptionController.clear();
+        priceController.clear();
 
         emit(ProductState.updateProductSuccess([..._allProduct]));
       },

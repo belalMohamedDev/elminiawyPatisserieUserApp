@@ -43,6 +43,12 @@
   "title":"العنوان",
 "enterArabicTitle": "أدخل العنوان باللغة العربية",
 "enterEnglishTitle": "أدخل العنوان باللغة الإنجليزية",
+
+"enterArabicDescription": "أدخل الوصف باللغة العربية",
+"enterEnglishDescription": "أدخل الوصف باللغة الإنجليزية",
+"enterPrice": "أدخل السعر",
+
+
   "somethingWrongWithYourConnection": "هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد لحظة.",
   "area": "المنطقة",
   "thisAccountNotAccessInThisApp": "هذا الحساب لا يمكن الوصول إليه في هذا التطبيق",

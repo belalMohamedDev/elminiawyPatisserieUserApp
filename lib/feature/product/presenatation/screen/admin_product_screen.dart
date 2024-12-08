@@ -13,6 +13,8 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
   @override
   void initState() {
     context.read<ProductCubit>().fetchGetAllProduct();
+    context.read<SubCategoriesCubit>().fetchGetSubCategories();
+
     super.initState();
   }
 

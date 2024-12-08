@@ -17,7 +17,8 @@ abstract class ProductRepository {
     required String id,
     String? enTitle,
     String? price,
-    String? description,
+    String? arDescription,
+    String? enDescription,
     String? subCategory,
   });
 
@@ -75,13 +76,15 @@ class ProductRepositoryImplement implements ProductRepository {
       String? arTitle,
       String? enTitle,
       String? price,
-      String? description,
+      String? arDescription,
+      String? enDescription,
       String? subCategory}) async {
     final Map<String, dynamic> requestBody = {
       if (price != null) 'price': price,
-      if (description != null) 'description': description,
+      if (arDescription!.isNotEmpty && enDescription!.isNotEmpty)
+        'description': {"ar": arDescription, "en": enDescription},
       if (subCategory != null) 'subCategory': subCategory,
-      if (arTitle != null && enTitle != null)
+      if (arTitle!.isNotEmpty && enTitle!.isNotEmpty)
         'title': {"ar": arTitle, "en": enTitle},
       if (active != null) 'active': active,
     };
