@@ -25,6 +25,14 @@ class ProductCubit extends Cubit<ProductState> {
 
   List<DataProductResponse> get allProduct => _allProduct;
 
+  String? subCategoryValueId;
+  void setSubCategoryId(String value) {
+    subCategoryValueId = value;
+  }
+
+
+
+
   Future<void> fetchGetNewProductToUser() async {
     emit(const ProductState.getNewProductLoading());
 
@@ -66,7 +74,7 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> fetchUpdateProduct({
     bool? active,
     required String id,
-    String? subCategory,
+
   }) async {
     emit(ProductState.updateProductLoading(id));
 
@@ -78,7 +86,7 @@ class ProductCubit extends Cubit<ProductState> {
         arTitle: arTitleController.text.trim(),
         enTitle: enTitleController.text.trim(),
         price: priceController.text.trim(),
-        subCategory: subCategory);
+        subCategory: subCategoryValueId);
 
     response.when(
       success: (dataResponse) {

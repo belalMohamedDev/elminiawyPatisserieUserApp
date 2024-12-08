@@ -80,7 +80,7 @@ class ProductRepositoryImplement implements ProductRepository {
       String? enDescription,
       String? subCategory}) async {
     final Map<String, dynamic> requestBody = {
-      if (price != null) 'price': price,
+      if (price!.isNotEmpty) 'price': price,
       if (arDescription!.isNotEmpty && enDescription!.isNotEmpty)
         'description': {"ar": arDescription, "en": enDescription},
       if (subCategory != null) 'subCategory': subCategory,

@@ -12,9 +12,11 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   final TextEditingController enTitleController = TextEditingController();
 
   List<SubCategoryResponseData> _subCategories = [];
+  final List<String?> _subCategoryTitleData = [];
 
   List<SubCategoryResponseData> get subCategories => _subCategories;
 
+  List<String?> get subCategoriesTitle => _subCategoryTitleData;
   String? categoryValueId;
 
   bool? active;
@@ -25,6 +27,18 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   void setActiveStatus(bool value) {
     active = value;
     emit(SubCategoriesState.updateActiveStatus(active));
+  }
+
+  String? returnSubCategoryIdType(String value) {
+    try {
+      final subCategory = _subCategories.firstWhere(
+        (subCategory) => subCategory.title == value,
+      );
+
+      return subCategory.sId;
+    } catch (e) {
+      return null;
+    }
   }
 
   Future<void> fetchCreationNewSubCategory() async {
@@ -64,6 +78,11 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
 
     response.when(
       success: (dataResponse) {
+        _subCategoryTitleData.clear(); // Clear old data
+        dataResponse.data?.forEach((subCategory) {
+          _subCategoryTitleData.add(subCategory.title); // Add new titles
+        });
+
         _subCategories = dataResponse.data!;
         emit(SubCategoriesState.getSubCategoriesSuccess(_subCategories));
       },

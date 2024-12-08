@@ -191,7 +191,8 @@ void showProductEditPopup(DataProductResponse product, BuildContext context) {
   showCupertinoModalPopup(
     context: context,
     builder: (_) => CupertinoActionSheet(
-      title: Text("${product.title} ${context.translate(AppStrings.category)}",
+      title: Text(
+          "${product.title} ${context.translate(AppStrings.subCategory)}",
           style: Theme.of(context)
               .textTheme
               .bodySmall!
@@ -283,6 +284,18 @@ void showProductEditPopup(DataProductResponse product, BuildContext context) {
                 width: 0.6,
               ),
             ),
+          ),
+          responsive.setSizeBox(height: 2),
+          CustomDropdownButtonFormField(
+            value: "Add New Sub Category",
+            items: context.read<SubCategoriesCubit>().subCategoriesTitle,
+            onChanged: (value) {
+              String? subCategoryId = context
+                  .read<SubCategoriesCubit>()
+                  .returnSubCategoryIdType(value!);
+
+              context.read<ProductCubit>().setSubCategoryId(subCategoryId!);
+            },
           ),
           responsive.setSizeBox(height: 1),
         ],
