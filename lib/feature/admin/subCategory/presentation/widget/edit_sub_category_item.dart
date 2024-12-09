@@ -61,7 +61,7 @@ void showEditAndCreateSubCategoryDialog(
             responsive.setSizeBox(height: 2),
             CustomDropdownButtonFormField(
               value: subCategory == null
-                  ? "Add New Sub Category"
+                  ?  context.translate(AppStrings.addNewSubCategory) 
                   : subCategory.title,
               items: categoryCubit.categoriesTitle,
               onChanged: (value) {

@@ -1,6 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/product/presenatation/widget/get_product_loading_widget.dart';
-import 'package:elminiawy/feature/product/presenatation/widget/get_product_success_widget.dart';
 
 class AdminProductScreen extends StatefulWidget {
   const AdminProductScreen({super.key});

@@ -117,7 +117,6 @@ export 'package:elminiawy/feature/admin/drawer/presentation/widget/animated_cont
 export 'package:elminiawy/feature/admin/drawer/presentation/widget/drawer_stack_view.dart';
 export 'package:elminiawy/feature/admin/home/logic/admin_home_cubit.dart';
 export 'package:elminiawy/feature/admin/home/presentation/screen/home_admin_screen.dart';
-export 'package:elminiawy/feature/product/logic/product_cubit.dart';
 export 'package:elminiawy/feature/admin/subCategory/data/model/response/sub_category_response.dart';
 export 'package:elminiawy/feature/admin/subCategory/data/repository/sub_category_repo.dart';
 export 'package:elminiawy/feature/admin/subCategory/logic/sub_categories_cubit.dart';
@@ -235,9 +234,6 @@ export 'package:elminiawy/feature/client/home/presentation/screen/home_screen.da
 export 'package:elminiawy/feature/client/home/presentation/widget/banner_carousel_slider.dart';
 export 'package:elminiawy/feature/client/home/presentation/widget/category_list_view_builder.dart';
 export 'package:elminiawy/feature/client/home/presentation/widget/new_product_gride_view.dart';
-export 'package:elminiawy/feature/product/model/repository/repositry.dart';
-export 'package:elminiawy/feature/product/model/response/product_response.dart';
-export 'package:elminiawy/feature/product/presenatation/screen/new_product_screen.dart';
 export 'package:elminiawy/feature/client/notification/data/model/user_notification_resp.dart';
 export 'package:elminiawy/feature/client/notification/data/repository/user_notification_repo.dart';
 export 'package:elminiawy/feature/client/notification/logic/cubit/user_notification_cubit.dart';
@@ -292,4 +288,15 @@ export 'package:elminiawy/feature/onBoarding/presentation/screen/on_boarding_vie
 export 'package:elminiawy/feature/onBoarding/presentation/widget/continue_without_signing_up.dart';
 export 'package:elminiawy/feature/onBoarding/presentation/widget/get_started_button.dart';
 export 'package:elminiawy/feature/onBoarding/presentation/widget/title_and_head_line_text.dart';
+export 'package:elminiawy/feature/product/logic/product_cubit.dart';
+export 'package:elminiawy/feature/product/model/repository/repositry.dart';
+export 'package:elminiawy/feature/product/model/response/product_response.dart';
+export 'package:elminiawy/feature/product/presenatation/screen/admin_product_screen.dart';
+export 'package:elminiawy/feature/product/presenatation/screen/new_product_screen.dart';
+export 'package:elminiawy/feature/product/presenatation/widget/get_product_loading_widget.dart';
+export 'package:elminiawy/feature/product/presenatation/widget/get_product_success_widget.dart';
+export 'package:elminiawy/feature/product/presenatation/widget/show_edit_product_action_dialog.dart';
+export 'package:elminiawy/feature/product/presenatation/widget/show_product_edit_popup.dart';
+export 'package:elminiawy/feature/product/presenatation/widget/show_product_price_edit_popup.dart';
+export 'package:elminiawy/feature/product/presenatation/widget/title_description_text_and_rating_column.dart';
 export 'package:elminiawy/firebase_options.dart';
