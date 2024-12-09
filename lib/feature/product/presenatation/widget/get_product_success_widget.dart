@@ -90,21 +90,28 @@ class GetProductSuccessWidget extends StatelessWidget {
                         ))),
                   ),
                   responsive.setSizeBox(width: 3),
-                  Container(
-                    height: responsive.setHeight(6),
-                    width: responsive.setWidth(12),
-                    decoration: BoxDecoration(
-                      color: products[index].active == true
-                          ? Colors.green
-                          : ColorManger.redError,
-                      borderRadius:
-                          BorderRadius.circular(responsive.setBorderRadius(3)),
+                  InkWell(
+                    onTap: () {
+                      context.read<ProductCubit>().fetchDeleteProduct(
+                            products[index].sId!,
+                          );
+                    },
+                    child: Container(
+                      height: responsive.setHeight(6),
+                      width: responsive.setWidth(12),
+                      decoration: BoxDecoration(
+                        color: products[index].active == true
+                            ? Colors.green
+                            : ColorManger.redError,
+                        borderRadius: BorderRadius.circular(
+                            responsive.setBorderRadius(3)),
+                      ),
+                      child: Center(
+                          child: Icon(
+                        Icons.delete_outline_rounded,
+                        color: ColorManger.white,
+                      )),
                     ),
-                    child: Center(
-                        child: Icon(
-                      Icons.delete_outline_rounded,
-                      color: ColorManger.white,
-                    )),
                   ),
                 ],
               ),

@@ -39,13 +39,13 @@ class ProductCubit extends Cubit<ProductState> {
     response.when(
       success: (dataResponse) {
         final updatedIndex =
-            _newProduct.indexWhere((product) => product.sId == id);
+            _allProduct.indexWhere((product) => product.sId == id);
 
         if (updatedIndex != -1) {
-          _newProduct.removeAt(updatedIndex);
+          _allProduct.removeAt(updatedIndex);
         }
 
-        emit(ProductState.updateProductSuccess([..._newProduct]));
+        emit(ProductState.updateProductSuccess([..._allProduct]));
       },
       failure: (error) {
         emit(ProductState.updateProductError(error));
