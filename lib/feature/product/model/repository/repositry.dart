@@ -26,6 +26,10 @@ abstract class ProductRepository {
     required String id,
     required File image,
   });
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteProductRepo({
+    required String id,
+ 
+  });
 
   Future<ApiResult<ProductResponse>> getAllProductRepo();
 }
@@ -102,6 +106,18 @@ class ProductRepositoryImplement implements ProductRepository {
       {required String id, required File image}) async {
     try {
       final response = await _apiService.updateProductImageService(id, image);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+
+   @override
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteProductRepo(
+      {required String id}) async {
+    try {
+      final response = await _apiService.deleteProductService(id);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

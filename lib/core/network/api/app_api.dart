@@ -148,6 +148,12 @@ abstract class AppServiceClient {
     @Part() File image,
   );
 
+  
+  @DELETE("${ApiConstants.product}/{id}")
+  Future<ApiSuccessGeneralModel> deleteProductService(
+    @Path("id") String id,
+  );
+
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> searchInProductService(
     @Query("sort") String? sort,

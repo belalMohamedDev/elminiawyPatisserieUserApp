@@ -30,8 +30,28 @@ class ProductCubit extends Cubit<ProductState> {
     subCategoryValueId = value;
   }
 
+  Future<void> fetchDeleteProduct(
+    String? id,
+  ) async {
+    emit(ProductState.updateProductLoading(id!));
+    final response = await _productRepository.deleteProductRepo(id: id);
 
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _newProduct.indexWhere((product) => product.sId == id);
 
+        if (updatedIndex != -1) {
+          _newProduct.removeAt(updatedIndex);
+        }
+
+        emit(ProductState.updateProductSuccess([..._newProduct]));
+      },
+      failure: (error) {
+        emit(ProductState.updateProductError(error));
+      },
+    );
+  }
 
   Future<void> fetchGetNewProductToUser() async {
     emit(const ProductState.getNewProductLoading());
@@ -74,7 +94,6 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> fetchUpdateProduct({
     bool? active,
     required String id,
-
   }) async {
     emit(ProductState.updateProductLoading(id));
 
