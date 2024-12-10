@@ -975,6 +975,79 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
+  Future<ProductResponse> createProductService(
+    String arTitle,
+    String enTitle,
+    String subCategory,
+    String enDescription,
+    String arDescription,
+    String price,
+    File image,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.fields.add(MapEntry(
+      'title.ar',
+      arTitle,
+    ));
+    _data.fields.add(MapEntry(
+      'title.en',
+      enTitle,
+    ));
+    _data.fields.add(MapEntry(
+      'subCategory',
+      subCategory,
+    ));
+    _data.fields.add(MapEntry(
+      'description.en',
+      enDescription,
+    ));
+    _data.fields.add(MapEntry(
+      'description.ar',
+      arDescription,
+    ));
+    _data.fields.add(MapEntry(
+      'price',
+      price,
+    ));
+    _data.files.add(MapEntry(
+      'image',
+      MultipartFile.fromFileSync(
+        image.path,
+        filename: image.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _options = _setStreamType<ProductResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+        .compose(
+          _dio.options,
+          '/v1/api/product',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ProductResponse _value;
+    try {
+      _value = ProductResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<ApiSuccessGeneralModel> deleteProductService(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

@@ -33,8 +33,8 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> fetchDeleteProduct(
     String? id,
   ) async {
-    emit(ProductState.updateProductLoading(id!));
-    final response = await _productRepository.deleteProductRepo(id: id);
+    emit(const ProductState.updateProductLoading());
+    final response = await _productRepository.deleteProductRepo(id: id!);
 
     response.when(
       success: (dataResponse) {
@@ -95,7 +95,7 @@ class ProductCubit extends Cubit<ProductState> {
     bool? active,
     required String id,
   }) async {
-    emit(ProductState.updateProductLoading(id));
+    emit(const ProductState.updateProductLoading());
 
     final response = await _productRepository.updateProductRepo(
         id: id,
@@ -130,6 +130,38 @@ class ProductCubit extends Cubit<ProductState> {
     );
   }
 
+  Future<void> fetchCreateProduct({
+    required File image,
+  }) async {
+    emit(const ProductState.updateProductLoading());
+
+    final response = await _productRepository.createProductRepo(
+        image: image,
+        arDescription: arDescriptionController.text.trim(),
+        enDescription: enDescriptionController.text.trim(),
+        arTitle: arTitleController.text.trim(),
+        enTitle: enTitleController.text.trim(),
+        price: priceController.text.trim(),
+        subCategory: subCategoryValueId!);
+
+    response.when(
+      success: (dataResponse) {
+        _allProduct.insert(0, dataResponse.data);
+
+        arTitleController.clear();
+        enTitleController.clear();
+        arDescriptionController.clear();
+        enDescriptionController.clear();
+        priceController.clear();
+
+        emit(ProductState.updateProductSuccess([..._allProduct]));
+      },
+      failure: (error) {
+        ProductState.updateProductError(error);
+      },
+    );
+  }
+
   Future<void> pickImage(
     ImageSource source,
     String? id,
@@ -137,8 +169,9 @@ class ProductCubit extends Cubit<ProductState> {
     final pickedImage = await _imagePicker.pickImage(source: source);
     if (pickedImage != null) {
       final imageFile = File(pickedImage.path);
-      //id==null?:
-       await fetchUpdateProductImage(id: id!, image: imageFile);
+      id == null
+          ? await fetchCreateProduct(image: imageFile)
+          : await fetchUpdateProductImage(id: id, image: imageFile);
     }
   }
 
@@ -146,7 +179,7 @@ class ProductCubit extends Cubit<ProductState> {
     required String id,
     required File image,
   }) async {
-    emit(ProductState.updateProductLoading(id));
+    emit(const ProductState.updateProductLoading());
 
     final response =
         await _productRepository.updateProductImageRepo(id: id, image: image);

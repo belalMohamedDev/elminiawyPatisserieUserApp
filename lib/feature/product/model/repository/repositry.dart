@@ -22,13 +22,21 @@ abstract class ProductRepository {
     String? subCategory,
   });
 
+  Future<ApiResult<ProductResponse>> createProductRepo(
+      {required String arTitle,
+      required String enTitle,
+      required String price,
+      required String arDescription,
+      required String enDescription,
+      required String subCategory,
+      required File image});
+
   Future<ApiResult<ProductResponse>> updateProductImageRepo({
     required String id,
     required File image,
   });
   Future<ApiResult<ApiSuccessGeneralModel>> deleteProductRepo({
     required String id,
- 
   });
 
   Future<ApiResult<ProductResponse>> getAllProductRepo();
@@ -74,6 +82,24 @@ class ProductRepositoryImplement implements ProductRepository {
   }
 
   @override
+  Future<ApiResult<ProductResponse>> createProductRepo(
+      {required String arTitle,
+      required String enTitle,
+      required String price,
+      required String arDescription,
+      required String enDescription,
+      required String subCategory,
+      required File image}) async {
+    try {
+      final response = await _apiService.createProductService(arTitle, enTitle,
+          subCategory, enDescription, arDescription, price, image);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
   Future<ApiResult<ProductResponse>> updateProductRepo(
       {bool? active,
       required String id,
@@ -112,8 +138,7 @@ class ProductRepositoryImplement implements ProductRepository {
     }
   }
 
-
-   @override
+  @override
   Future<ApiResult<ApiSuccessGeneralModel>> deleteProductRepo(
       {required String id}) async {
     try {

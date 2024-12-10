@@ -148,7 +148,18 @@ abstract class AppServiceClient {
     @Part() File image,
   );
 
-  
+  @POST(ApiConstants.product)
+  @MultiPart()
+  Future<ProductResponse> createProductService(
+    @Part(name: "title.ar") String arTitle,
+    @Part(name: "title.en") String enTitle,
+    @Part(name: "subCategory") String subCategory,
+    @Part(name: "description.en") String enDescription,
+    @Part(name: "description.ar") String arDescription,
+    @Part(name: "price") String price,
+    @Part() File image,
+  );
+
   @DELETE("${ApiConstants.product}/{id}")
   Future<ApiSuccessGeneralModel> deleteProductService(
     @Path("id") String id,
