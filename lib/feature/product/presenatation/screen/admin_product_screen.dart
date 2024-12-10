@@ -40,8 +40,13 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
                     : FloatingActionButton(
                         backgroundColor: ColorManger.brun,
                         onPressed: () {
-                          showCreateAndEditImageBannerDialog(
-                              context, null, context.read<BannerCubit>());
+                          // showCreateAndEditImageBannerDialog(
+                          //     context, null, context.read<BannerCubit>());
+
+                          showProductEditPopup(
+                            null,
+                            context,
+                          );
                         },
                         child: Icon(
                           Icons.add,

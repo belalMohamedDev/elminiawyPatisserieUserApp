@@ -1,14 +1,14 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:flutter/cupertino.dart';
 
-void showProductEditPopup(DataProductResponse product, BuildContext context) {
+void showProductEditPopup(DataProductResponse? product, BuildContext context) {
   final responsive = ResponsiveUtils(context);
 
   showCupertinoModalPopup(
     context: context,
     builder: (_) => CupertinoActionSheet(
       title: Text(
-          "${product.title} ${context.translate(AppStrings.subCategory)}",
+          "${product == null ? context.translate(AppStrings.addNew) : product.title} ${product == null ? context.translate(AppStrings.products) : context.translate(AppStrings.subCategory)}",
           style: Theme.of(context)
               .textTheme
               .bodySmall!
@@ -119,11 +119,18 @@ void showProductEditPopup(DataProductResponse product, BuildContext context) {
       actions: [
         CupertinoActionSheetAction(
           onPressed: () {
-            context.read<ProductCubit>().fetchUpdateProduct(id: product.sId!);
+            product == null
+                ? context
+                    .read<ProductCubit>()
+                    .pickImage(ImageSource.gallery, null)
+                : context
+                    .read<ProductCubit>()
+                    .fetchUpdateProduct(id: product.sId!);
             Navigator.pop(context);
           },
           child: Text(
-            context.translate(AppStrings.save),
+            context.translate(
+                product == null ? AppStrings.addImage : AppStrings.save),
             style:
                 TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
           ),

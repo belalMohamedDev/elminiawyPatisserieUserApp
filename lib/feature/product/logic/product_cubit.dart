@@ -137,7 +137,8 @@ class ProductCubit extends Cubit<ProductState> {
     final pickedImage = await _imagePicker.pickImage(source: source);
     if (pickedImage != null) {
       final imageFile = File(pickedImage.path);
-      await fetchUpdateProductImage(id: id!, image: imageFile);
+      //id==null?:
+       await fetchUpdateProductImage(id: id!, image: imageFile);
     }
   }
 
