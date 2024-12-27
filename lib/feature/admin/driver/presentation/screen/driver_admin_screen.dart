@@ -1,5 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/admin/driver/presentation/widget/all_driver_not_active_table.dart';
 
 class AdminDriversScreen extends StatefulWidget {
   const AdminDriversScreen({super.key});
@@ -13,11 +12,18 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
   late TabController _tabController;
   @override
   void initState() {
-    context.read<DriverCubit>().fetchGetAllNotActiveDriver();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future.wait([
+        context.read<DriverCubit>().fetchGetAllActiveDriver(),
+        context.read<DriverCubit>().fetchGetAllNotActiveDriver(),
+      ]);
+    });
+
     _tabController = TabController(length: 2, vsync: this);
     _tabController.addListener(() {
       setState(() {});
     });
+
     super.initState();
   }
 
@@ -89,7 +95,11 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
           child: TabBarView(
             controller: _tabController,
             children: [
-              AllDriverNotActiveTable(state: state),
+              DriverTable(state: state),
+              DriverTable(
+                state: state,
+                isActive: false,
+              ),
             ],
           ),
         ),

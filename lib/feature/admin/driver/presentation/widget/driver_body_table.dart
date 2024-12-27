@@ -1,17 +1,22 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-class AllDriverNotActiveTable extends StatelessWidget {
-  const AllDriverNotActiveTable({
+class DriverTable extends StatelessWidget {
+  const DriverTable({
     super.key,
     required this.state,
+    this.isActive = true,
   });
 
   final DriverState state;
 
+  final bool isActive;
+
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
-
+    List<DataAuthResponse> data = isActive
+        ? context.read<DriverCubit>().allActiveDriver
+        : context.read<DriverCubit>().allNotActiveDriver;
     return Column(
       children: [
         DataTable(
@@ -61,7 +66,7 @@ class AllDriverNotActiveTable extends StatelessWidget {
             ),
           ],
           rows: [
-            ...context.read<DriverCubit>().allNotActiveDriver.map((item) {
+            ...data.map((item) {
               return DataRow(
                 onSelectChanged: (_) {},
                 cells: [
