@@ -10,9 +10,7 @@ AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) => AuthResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       accessToken: json['accessToken'] as String?,
-      data: json['data'] == null
-          ? null
-          : DataAuthResponse.fromJson(json['data'] as Map<String, dynamic>),
+      data: json['data'],
     );
 
 Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>

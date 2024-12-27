@@ -149,7 +149,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
             Material(
               color: Colors.transparent,
               child: ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.adminDrivers);
+                },
                 horizontalTitleGap: 25.0,
                 leading: Image.asset(
                   ImageAsset.deliveryBike,

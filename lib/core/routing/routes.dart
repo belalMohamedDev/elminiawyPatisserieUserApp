@@ -32,5 +32,6 @@ class Routes {
   static const String orderDetails = "OrderDetails";
   static const String adminCategory = "adminCategory";
   static const String adminProduct = "adminProduct";
+  static const String adminDrivers = "adminDrivers";
   
 }

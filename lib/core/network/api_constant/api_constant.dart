@@ -27,6 +27,7 @@ class ApiConstants {
   static const String product = '/v1/api/product';
   static const String newProduct = '/v1/api/product/newProduct';
   static const String wishList = '/v1/api/wishList';
+  static const String driver = '/v1/api/driver';
 
 
   static const String address = '/v1/api/address';
