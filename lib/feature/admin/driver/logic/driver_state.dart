@@ -10,4 +10,15 @@ class DriverState with _$DriverState {
 
   const factory DriverState.getAllNotActiveDriverSuccess(AuthResponse data) =
       GetAllNotActiveDriverSuccess;
+
+
+
+      
+  const factory DriverState.getAllActiveDriverLoading() =
+      GetAllActiveDriverLoading;
+  const factory DriverState.getAllActiveDriverError(
+      ApiErrorModel apiErrorModel) = GetAllActiveDriverError;
+
+  const factory DriverState.getAllActiveDriverSuccess(AuthResponse data) =
+      GetAllActiveDriverSuccess;
 }

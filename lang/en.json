@@ -12,6 +12,13 @@
   "toGetStartedSignInToYourAccount": "To get started, sign in to your account.",
   "searchProducts": "Search Products",
   "sortBy": "Sort By",
+
+
+  "allActiveDriver": "Active Drivers",
+  "allNotActiveDriver": "Inactive Drivers",
+
+
+
   "nameAToZ": "Name: A to Z",
   "nameZToA": "Name: Z to A",
   "applyFilter": "Apply Filter",

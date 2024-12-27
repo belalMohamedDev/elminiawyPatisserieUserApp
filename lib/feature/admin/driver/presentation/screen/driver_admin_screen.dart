@@ -8,17 +8,23 @@ class AdminDriversScreen extends StatefulWidget {
   State<AdminDriversScreen> createState() => _AdminDriversScreenState();
 }
 
-class _AdminDriversScreenState extends State<AdminDriversScreen> {
+class _AdminDriversScreenState extends State<AdminDriversScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
   @override
   void initState() {
     context.read<DriverCubit>().fetchGetAllNotActiveDriver();
-
+    _tabController = TabController(length: 2, vsync: this);
+    _tabController.addListener(() {
+      setState(() {});
+    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
+
     return BlocBuilder<DriverCubit, DriverState>(
       builder: (context, state) {
         return Scaffold(
@@ -34,24 +40,60 @@ class _AdminDriversScreenState extends State<AdminDriversScreen> {
             ),
             floatingActionButton: FloatingActionButton(
               backgroundColor: ColorManger.brun,
-              onPressed: () { },
+              onPressed: () {},
               child: Icon(
                 Icons.add,
                 color: ColorManger.white,
               ),
             ),
-            body: Column(
-              children: [
-                AllDriverNotActiveTable(state: state),
-                responsive.setSizeBox(height: 3),
-                if (state is GetAllNotActiveDriverLoading ||
-                    state is GetAllNotActiveDriverError)
-                  CircularProgressIndicator(
-                    color: ColorManger.brun,
-                  ),
-              ],
-            ));
+            body: _tabDriverBodyBar(context, state));
       },
+    );
+  }
+
+  Column _tabDriverBodyBar(BuildContext context, DriverState state) {
+    final responsive = ResponsiveUtils(context);
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[100],
+          ),
+          child: TabBar(
+            controller: _tabController,
+            tabs: [
+              Tab(
+                text: context.translate(AppStrings.allActiveDriver),
+              ),
+              Tab(text: context.translate(AppStrings.allNotActiveDriver)),
+            ],
+            labelColor: ColorManger.brun, // Text color of selected tab
+            unselectedLabelColor: ColorManger.brun,
+            unselectedLabelStyle: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
+            labelStyle: Theme.of(context)
+                .textTheme
+                .titleLarge!
+                .copyWith(fontSize: responsive.setTextSize(4)),
+
+            indicatorSize: TabBarIndicatorSize.tab,
+            dividerColor: Colors.transparent,
+            indicator: BoxDecoration(
+              color: Colors.grey[300],
+            ), // Remove default indicator
+          ),
+        ),
+        Expanded(
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              AllDriverNotActiveTable(state: state),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

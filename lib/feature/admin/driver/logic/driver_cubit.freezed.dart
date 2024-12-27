@@ -23,6 +23,10 @@ mixin _$DriverState {
     required TResult Function(ApiErrorModel apiErrorModel)
         getAllNotActiveDriverError,
     required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +35,9 @@ mixin _$DriverState {
     TResult? Function()? getAllNotActiveDriverLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +46,9 @@ mixin _$DriverState {
     TResult Function()? getAllNotActiveDriverLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +61,12 @@ mixin _$DriverState {
         getAllNotActiveDriverError,
     required TResult Function(GetAllNotActiveDriverSuccess value)
         getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +78,11 @@ mixin _$DriverState {
         getAllNotActiveDriverError,
     TResult? Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +94,11 @@ mixin _$DriverState {
         getAllNotActiveDriverError,
     TResult Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +165,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function(ApiErrorModel apiErrorModel)
         getAllNotActiveDriverError,
     required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
   }) {
     return initial();
   }
@@ -150,6 +180,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getAllNotActiveDriverLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
   }) {
     return initial?.call();
   }
@@ -161,6 +194,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getAllNotActiveDriverLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -179,6 +215,12 @@ class _$InitialImpl implements _Initial {
         getAllNotActiveDriverError,
     required TResult Function(GetAllNotActiveDriverSuccess value)
         getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
   }) {
     return initial(this);
   }
@@ -193,6 +235,11 @@ class _$InitialImpl implements _Initial {
         getAllNotActiveDriverError,
     TResult? Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
   }) {
     return initial?.call(this);
   }
@@ -207,6 +254,11 @@ class _$InitialImpl implements _Initial {
         getAllNotActiveDriverError,
     TResult Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -267,6 +319,10 @@ class _$GetAllNotActiveDriverLoadingImpl
     required TResult Function(ApiErrorModel apiErrorModel)
         getAllNotActiveDriverError,
     required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverLoading();
   }
@@ -278,6 +334,9 @@ class _$GetAllNotActiveDriverLoadingImpl
     TResult? Function()? getAllNotActiveDriverLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverLoading?.call();
   }
@@ -289,6 +348,9 @@ class _$GetAllNotActiveDriverLoadingImpl
     TResult Function()? getAllNotActiveDriverLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (getAllNotActiveDriverLoading != null) {
@@ -307,6 +369,12 @@ class _$GetAllNotActiveDriverLoadingImpl
         getAllNotActiveDriverError,
     required TResult Function(GetAllNotActiveDriverSuccess value)
         getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverLoading(this);
   }
@@ -321,6 +389,11 @@ class _$GetAllNotActiveDriverLoadingImpl
         getAllNotActiveDriverError,
     TResult? Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverLoading?.call(this);
   }
@@ -335,6 +408,11 @@ class _$GetAllNotActiveDriverLoadingImpl
         getAllNotActiveDriverError,
     TResult Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (getAllNotActiveDriverLoading != null) {
@@ -422,6 +500,10 @@ class _$GetAllNotActiveDriverErrorImpl implements GetAllNotActiveDriverError {
     required TResult Function(ApiErrorModel apiErrorModel)
         getAllNotActiveDriverError,
     required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverError(apiErrorModel);
   }
@@ -433,6 +515,9 @@ class _$GetAllNotActiveDriverErrorImpl implements GetAllNotActiveDriverError {
     TResult? Function()? getAllNotActiveDriverLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverError?.call(apiErrorModel);
   }
@@ -444,6 +529,9 @@ class _$GetAllNotActiveDriverErrorImpl implements GetAllNotActiveDriverError {
     TResult Function()? getAllNotActiveDriverLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (getAllNotActiveDriverError != null) {
@@ -462,6 +550,12 @@ class _$GetAllNotActiveDriverErrorImpl implements GetAllNotActiveDriverError {
         getAllNotActiveDriverError,
     required TResult Function(GetAllNotActiveDriverSuccess value)
         getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverError(this);
   }
@@ -476,6 +570,11 @@ class _$GetAllNotActiveDriverErrorImpl implements GetAllNotActiveDriverError {
         getAllNotActiveDriverError,
     TResult? Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverError?.call(this);
   }
@@ -490,6 +589,11 @@ class _$GetAllNotActiveDriverErrorImpl implements GetAllNotActiveDriverError {
         getAllNotActiveDriverError,
     TResult Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (getAllNotActiveDriverError != null) {
@@ -583,6 +687,10 @@ class _$GetAllNotActiveDriverSuccessImpl
     required TResult Function(ApiErrorModel apiErrorModel)
         getAllNotActiveDriverError,
     required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverSuccess(data);
   }
@@ -594,6 +702,9 @@ class _$GetAllNotActiveDriverSuccessImpl
     TResult? Function()? getAllNotActiveDriverLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverSuccess?.call(data);
   }
@@ -605,6 +716,9 @@ class _$GetAllNotActiveDriverSuccessImpl
     TResult Function()? getAllNotActiveDriverLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
     TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (getAllNotActiveDriverSuccess != null) {
@@ -623,6 +737,12 @@ class _$GetAllNotActiveDriverSuccessImpl
         getAllNotActiveDriverError,
     required TResult Function(GetAllNotActiveDriverSuccess value)
         getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverSuccess(this);
   }
@@ -637,6 +757,11 @@ class _$GetAllNotActiveDriverSuccessImpl
         getAllNotActiveDriverError,
     TResult? Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
   }) {
     return getAllNotActiveDriverSuccess?.call(this);
   }
@@ -651,6 +776,11 @@ class _$GetAllNotActiveDriverSuccessImpl
         getAllNotActiveDriverError,
     TResult Function(GetAllNotActiveDriverSuccess value)?
         getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
     required TResult orElse(),
   }) {
     if (getAllNotActiveDriverSuccess != null) {
@@ -668,5 +798,529 @@ abstract class GetAllNotActiveDriverSuccess implements DriverState {
   @JsonKey(ignore: true)
   _$$GetAllNotActiveDriverSuccessImplCopyWith<
           _$GetAllNotActiveDriverSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllActiveDriverLoadingImplCopyWith<$Res> {
+  factory _$$GetAllActiveDriverLoadingImplCopyWith(
+          _$GetAllActiveDriverLoadingImpl value,
+          $Res Function(_$GetAllActiveDriverLoadingImpl) then) =
+      __$$GetAllActiveDriverLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetAllActiveDriverLoadingImplCopyWithImpl<$Res>
+    extends _$DriverStateCopyWithImpl<$Res, _$GetAllActiveDriverLoadingImpl>
+    implements _$$GetAllActiveDriverLoadingImplCopyWith<$Res> {
+  __$$GetAllActiveDriverLoadingImplCopyWithImpl(
+      _$GetAllActiveDriverLoadingImpl _value,
+      $Res Function(_$GetAllActiveDriverLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAllActiveDriverLoadingImpl implements GetAllActiveDriverLoading {
+  const _$GetAllActiveDriverLoadingImpl();
+
+  @override
+  String toString() {
+    return 'DriverState.getAllActiveDriverLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllActiveDriverLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllNotActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllNotActiveDriverError,
+    required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllNotActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllNotActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
+    TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllActiveDriverLoading != null) {
+      return getAllActiveDriverLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetAllNotActiveDriverLoading value)
+        getAllNotActiveDriverLoading,
+    required TResult Function(GetAllNotActiveDriverError value)
+        getAllNotActiveDriverError,
+    required TResult Function(GetAllNotActiveDriverSuccess value)
+        getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetAllNotActiveDriverLoading value)?
+        getAllNotActiveDriverLoading,
+    TResult? Function(GetAllNotActiveDriverError value)?
+        getAllNotActiveDriverError,
+    TResult? Function(GetAllNotActiveDriverSuccess value)?
+        getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetAllNotActiveDriverLoading value)?
+        getAllNotActiveDriverLoading,
+    TResult Function(GetAllNotActiveDriverError value)?
+        getAllNotActiveDriverError,
+    TResult Function(GetAllNotActiveDriverSuccess value)?
+        getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllActiveDriverLoading != null) {
+      return getAllActiveDriverLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllActiveDriverLoading implements DriverState {
+  const factory GetAllActiveDriverLoading() = _$GetAllActiveDriverLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetAllActiveDriverErrorImplCopyWith<$Res> {
+  factory _$$GetAllActiveDriverErrorImplCopyWith(
+          _$GetAllActiveDriverErrorImpl value,
+          $Res Function(_$GetAllActiveDriverErrorImpl) then) =
+      __$$GetAllActiveDriverErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$GetAllActiveDriverErrorImplCopyWithImpl<$Res>
+    extends _$DriverStateCopyWithImpl<$Res, _$GetAllActiveDriverErrorImpl>
+    implements _$$GetAllActiveDriverErrorImplCopyWith<$Res> {
+  __$$GetAllActiveDriverErrorImplCopyWithImpl(
+      _$GetAllActiveDriverErrorImpl _value,
+      $Res Function(_$GetAllActiveDriverErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$GetAllActiveDriverErrorImpl(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllActiveDriverErrorImpl implements GetAllActiveDriverError {
+  const _$GetAllActiveDriverErrorImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'DriverState.getAllActiveDriverError(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllActiveDriverErrorImpl &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllActiveDriverErrorImplCopyWith<_$GetAllActiveDriverErrorImpl>
+      get copyWith => __$$GetAllActiveDriverErrorImplCopyWithImpl<
+          _$GetAllActiveDriverErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllNotActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllNotActiveDriverError,
+    required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverError(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllNotActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverError?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllNotActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
+    TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllActiveDriverError != null) {
+      return getAllActiveDriverError(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetAllNotActiveDriverLoading value)
+        getAllNotActiveDriverLoading,
+    required TResult Function(GetAllNotActiveDriverError value)
+        getAllNotActiveDriverError,
+    required TResult Function(GetAllNotActiveDriverSuccess value)
+        getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetAllNotActiveDriverLoading value)?
+        getAllNotActiveDriverLoading,
+    TResult? Function(GetAllNotActiveDriverError value)?
+        getAllNotActiveDriverError,
+    TResult? Function(GetAllNotActiveDriverSuccess value)?
+        getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetAllNotActiveDriverLoading value)?
+        getAllNotActiveDriverLoading,
+    TResult Function(GetAllNotActiveDriverError value)?
+        getAllNotActiveDriverError,
+    TResult Function(GetAllNotActiveDriverSuccess value)?
+        getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllActiveDriverError != null) {
+      return getAllActiveDriverError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllActiveDriverError implements DriverState {
+  const factory GetAllActiveDriverError(final ApiErrorModel apiErrorModel) =
+      _$GetAllActiveDriverErrorImpl;
+
+  ApiErrorModel get apiErrorModel;
+  @JsonKey(ignore: true)
+  _$$GetAllActiveDriverErrorImplCopyWith<_$GetAllActiveDriverErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllActiveDriverSuccessImplCopyWith<$Res> {
+  factory _$$GetAllActiveDriverSuccessImplCopyWith(
+          _$GetAllActiveDriverSuccessImpl value,
+          $Res Function(_$GetAllActiveDriverSuccessImpl) then) =
+      __$$GetAllActiveDriverSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AuthResponse data});
+}
+
+/// @nodoc
+class __$$GetAllActiveDriverSuccessImplCopyWithImpl<$Res>
+    extends _$DriverStateCopyWithImpl<$Res, _$GetAllActiveDriverSuccessImpl>
+    implements _$$GetAllActiveDriverSuccessImplCopyWith<$Res> {
+  __$$GetAllActiveDriverSuccessImplCopyWithImpl(
+      _$GetAllActiveDriverSuccessImpl _value,
+      $Res Function(_$GetAllActiveDriverSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GetAllActiveDriverSuccessImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as AuthResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllActiveDriverSuccessImpl implements GetAllActiveDriverSuccess {
+  const _$GetAllActiveDriverSuccessImpl(this.data);
+
+  @override
+  final AuthResponse data;
+
+  @override
+  String toString() {
+    return 'DriverState.getAllActiveDriverSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllActiveDriverSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllActiveDriverSuccessImplCopyWith<_$GetAllActiveDriverSuccessImpl>
+      get copyWith => __$$GetAllActiveDriverSuccessImplCopyWithImpl<
+          _$GetAllActiveDriverSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getAllNotActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllNotActiveDriverError,
+    required TResult Function(AuthResponse data) getAllNotActiveDriverSuccess,
+    required TResult Function() getAllActiveDriverLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getAllActiveDriverError,
+    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getAllNotActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult? Function()? getAllActiveDriverLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getAllNotActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllNotActiveDriverError,
+    TResult Function(AuthResponse data)? getAllNotActiveDriverSuccess,
+    TResult Function()? getAllActiveDriverLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
+    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllActiveDriverSuccess != null) {
+      return getAllActiveDriverSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetAllNotActiveDriverLoading value)
+        getAllNotActiveDriverLoading,
+    required TResult Function(GetAllNotActiveDriverError value)
+        getAllNotActiveDriverError,
+    required TResult Function(GetAllNotActiveDriverSuccess value)
+        getAllNotActiveDriverSuccess,
+    required TResult Function(GetAllActiveDriverLoading value)
+        getAllActiveDriverLoading,
+    required TResult Function(GetAllActiveDriverError value)
+        getAllActiveDriverError,
+    required TResult Function(GetAllActiveDriverSuccess value)
+        getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetAllNotActiveDriverLoading value)?
+        getAllNotActiveDriverLoading,
+    TResult? Function(GetAllNotActiveDriverError value)?
+        getAllNotActiveDriverError,
+    TResult? Function(GetAllNotActiveDriverSuccess value)?
+        getAllNotActiveDriverSuccess,
+    TResult? Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult? Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
+  }) {
+    return getAllActiveDriverSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetAllNotActiveDriverLoading value)?
+        getAllNotActiveDriverLoading,
+    TResult Function(GetAllNotActiveDriverError value)?
+        getAllNotActiveDriverError,
+    TResult Function(GetAllNotActiveDriverSuccess value)?
+        getAllNotActiveDriverSuccess,
+    TResult Function(GetAllActiveDriverLoading value)?
+        getAllActiveDriverLoading,
+    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
+    TResult Function(GetAllActiveDriverSuccess value)?
+        getAllActiveDriverSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllActiveDriverSuccess != null) {
+      return getAllActiveDriverSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAllActiveDriverSuccess implements DriverState {
+  const factory GetAllActiveDriverSuccess(final AuthResponse data) =
+      _$GetAllActiveDriverSuccessImpl;
+
+  AuthResponse get data;
+  @JsonKey(ignore: true)
+  _$$GetAllActiveDriverSuccessImplCopyWith<_$GetAllActiveDriverSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

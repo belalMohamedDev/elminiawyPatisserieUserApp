@@ -30,6 +30,11 @@
   "update": "تحديث",
   "driverName": "اسم السائق",
 
+
+    "allActiveDriver": "السائقين النشطين",
+  "allNotActiveDriver": "السائقين غير النشطين",
+
+
 "subCategory": "الفئات الفرعية",
 "banners": "لافتات",
 "products": "المنتجات",

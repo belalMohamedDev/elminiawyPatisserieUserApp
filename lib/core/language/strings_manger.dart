@@ -316,6 +316,10 @@ class AppStrings {
   static const String theOrderAcceptedByRestaurant =
       "theOrderAcceptedByRestaurant";
   static const String currentOrders = "currentOrders";
+
+  static const String allActiveDriver = "allActiveDriver";
+  static const String allNotActiveDriver = "allNotActiveDriver";
+
   static const String previousOrders = "previousOrders";
   static const String accountInformation = "accountInformation";
   static const String changePassword = "changePassword";
