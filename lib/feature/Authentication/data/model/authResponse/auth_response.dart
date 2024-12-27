@@ -51,13 +51,20 @@ class DataAuthResponse {
   String? refreshToken;
   String? role;
 
+  String? image;
+  bool? driverActive;
+  bool? completeData;
+
   DataAuthResponse(
       {this.sId,
       this.name,
       this.email,
       this.phone,
       this.refreshToken,
-      this.role});
+      this.role,
+      this.image,
+      this.driverActive,
+      this.completeData});
 
   //from json
   factory DataAuthResponse.fromJson(Map<String, dynamic> json) =>
