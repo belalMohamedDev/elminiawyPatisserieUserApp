@@ -27,7 +27,8 @@ Future<void> initAppModule() async {
     _initSearch(),
     _initSignInWithGoogleAndApple(),
     _initAdminHome(),
-    _initSubCategory()
+    _initSubCategory(),
+    _initDriver()
   ]);
 }
 
@@ -59,6 +60,18 @@ Future<void> _initBanner() async {
             ))
     ..registerFactory<BannerCubit>(() => BannerCubit(
           instance(),
+          instance(),
+        ));
+}
+
+Future<void> _initDriver() async {
+
+  instance
+    ..registerLazySingleton<DriverRepositoryImplement>(
+        () => DriverRepositoryImplement(
+              instance(),
+            ))
+    ..registerFactory<DriverCubit>(() => DriverCubit(
           instance(),
         ));
 }
@@ -233,7 +246,7 @@ Future<void> _initNotification() async {
 
 Future<void> _initSearch() async {
   instance
-    // ..registerLazySingleton<SearchInProductRepository>(
-    //     () => SearchInProductRepository(instance()))
-    .registerLazySingleton<SearchBloc>(() => SearchBloc(instance()));
+      // ..registerLazySingleton<SearchInProductRepository>(
+      //     () => SearchInProductRepository(instance()))
+      .registerLazySingleton<SearchBloc>(() => SearchBloc(instance()));
 }
