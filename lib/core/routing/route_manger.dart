@@ -34,7 +34,10 @@ class RouteGenerator {
 
       case Routes.adminDrivers:
         return MaterialPageRoute(
-          builder: (_) => const AdminDriversScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => instance<DriverCubit>(),
+            child: const AdminDriversScreen(),
+          ),
         );
       case Routes.adminProduct:
         return MaterialPageRoute(

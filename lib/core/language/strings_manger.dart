@@ -13,6 +13,7 @@ class AppStrings {
   static const String deActive = "deActive";
   static const String active = "active";
   static const String discount = "discount";
+  static const String driverName = "driverName";
 
   static const String startDate = "startDate";
   static const String endDate = "endDate";
