@@ -175,10 +175,13 @@ abstract class AppServiceClient {
   @GET("${ApiConstants.driver}/allDriverNotActive")
   Future<AuthResponse> getAllDriverNotActiveService();
 
+  @PUT("${ApiConstants.driver}/{id}/active")
+  Future<AuthResponse> activeDriverService(
+    @Path("id") String id,
+  );
 
   @GET("${ApiConstants.driver}/allDriverActive")
   Future<AuthResponse> getAllDriverActiveService();
-
 
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();

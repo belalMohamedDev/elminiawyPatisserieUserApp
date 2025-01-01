@@ -12,8 +12,7 @@ class DriverCubit extends Cubit<DriverState> {
 
   List<DataAuthResponse> get allNotActiveDriver => _allNotActiveDriver;
 
-
-    List<DataAuthResponse> _allActiveDriver = [];
+  List<DataAuthResponse> _allActiveDriver = [];
 
   List<DataAuthResponse> get allActiveDriver => _allActiveDriver;
 
@@ -49,6 +48,30 @@ class DriverCubit extends Cubit<DriverState> {
       },
       failure: (error) {
         DriverState.getAllActiveDriverError(error);
+      },
+    );
+  }
+
+  Future<void> fetchDriverActive(String id) async {
+    emit(const DriverState.driverActivedLoading());
+
+    final response = await _driverRepository.driverActivedRepo(id);
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _allNotActiveDriver.indexWhere((deiver) => deiver.sId == id);
+
+        if (updatedIndex != -1) {
+          _allNotActiveDriver.removeAt(updatedIndex);
+        }
+
+        _allActiveDriver.add(dataResponse.data!);
+
+        emit(DriverState.driverActivedSuccess(dataResponse));
+      },
+      failure: (error) {
+        DriverState.driverActivedError(error);
       },
     );
   }
