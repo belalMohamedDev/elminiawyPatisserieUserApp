@@ -33,26 +33,31 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
 
     return BlocBuilder<DriverCubit, DriverState>(
       builder: (context, state) {
-        return Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Text(
-                context.translate(AppStrings.driver),
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(fontSize: responsive.setTextSize(4)),
-              ),
-            ),
-            floatingActionButton: FloatingActionButton(
-              backgroundColor: ColorManger.brun,
-              onPressed: () {},
-              child: Icon(
-                Icons.add,
-                color: ColorManger.white,
-              ),
-            ),
-            body: _tabDriverBodyBar(context, state));
+        return Stack(
+          children: [
+            Scaffold(
+                appBar: AppBar(
+                  centerTitle: true,
+                  title: Text(
+                    context.translate(AppStrings.driver),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4)),
+                  ),
+                ),
+                floatingActionButton: FloatingActionButton(
+                  backgroundColor: ColorManger.brun,
+                  onPressed: () {},
+                  child: Icon(
+                    Icons.add,
+                    color: ColorManger.white,
+                  ),
+                ),
+                body: _tabDriverBodyBar(context, state)),
+            LoadingOverlay(isLoading: state is DriverActivedLoading)
+          ],
+        );
       },
     );
   }

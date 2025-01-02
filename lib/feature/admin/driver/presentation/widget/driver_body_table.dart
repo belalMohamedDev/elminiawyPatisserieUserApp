@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:flutter/cupertino.dart';
 
 class DriverTable extends StatelessWidget {
   const DriverTable({
@@ -68,7 +69,11 @@ class DriverTable extends StatelessWidget {
           rows: [
             ...data.map((item) {
               return DataRow(
-                onSelectChanged: (_) {},
+                onSelectChanged: (_) {
+                  if (!isActive) {
+                    showEditNOTActiveActionDialog(context, item);
+                  }
+                },
                 cells: [
                   DataCell(
                     responsive.setSizeBox(
@@ -125,4 +130,54 @@ class DriverTable extends StatelessWidget {
       ],
     );
   }
+}
+
+void showEditNOTActiveActionDialog(
+  BuildContext context,
+  DataAuthResponse authData,
+) {
+  showCupertinoModalPopup(
+    context: context,
+    builder: (_) => CupertinoActionSheet(
+      title: Text(
+        context.translate(AppStrings.actions),
+        style: TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+      ),
+      actions: [
+        CupertinoActionSheetAction(
+          onPressed: () {
+            Navigator.pop(context);
+            context.read<DriverCubit>().fetchDriverActive(authData.sId!);
+          },
+          child: Text(
+            context.translate(AppStrings.active),
+            style:
+                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+          ),
+        ),
+        CupertinoActionSheetAction(
+          onPressed: () {
+            Navigator.pop(context);
+            // deleteSubCategoryItem(
+            //     context, subCategory, context.read<SubCategoriesCubit>());
+          },
+          isDestructiveAction: true,
+          child: Text(
+            context.translate(AppStrings.delete),
+            style:
+                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+          ),
+        ),
+      ],
+      cancelButton: CupertinoActionSheetAction(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Text(
+          context.translate(AppStrings.cancel),
+          style: TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+        ),
+      ),
+    ),
+  );
 }
