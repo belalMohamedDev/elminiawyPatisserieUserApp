@@ -70,9 +70,7 @@ class DriverTable extends StatelessWidget {
             ...data.map((item) {
               return DataRow(
                 onSelectChanged: (_) {
-                  if (!isActive) {
-                    showEditNOTActiveActionDialog(context, item);
-                  }
+                  showeDriverEditActionDialog(context, item, isActive);
                 },
                 cells: [
                   DataCell(
@@ -132,10 +130,8 @@ class DriverTable extends StatelessWidget {
   }
 }
 
-void showEditNOTActiveActionDialog(
-  BuildContext context,
-  DataAuthResponse authData,
-) {
+void showeDriverEditActionDialog(
+    BuildContext context, DataAuthResponse authData, bool isActive) {
   showCupertinoModalPopup(
     context: context,
     builder: (_) => CupertinoActionSheet(
@@ -144,24 +140,25 @@ void showEditNOTActiveActionDialog(
         style: TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
       ),
       actions: [
-        CupertinoActionSheetAction(
-          onPressed: () {
-            Navigator.pop(context);
-            context.read<DriverCubit>().fetchDriverActive(authData.sId!);
-          },
-          child: Text(
-            context.translate(AppStrings.active),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+        if (!isActive) ...[
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              context.read<DriverCubit>().fetchDriverActive(authData.sId!);
+            },
+            child: Text(
+              context.translate(AppStrings.active),
+              style:
+                  TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            ),
           ),
-        ),
+        ],
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
             context
                 .read<DriverCubit>()
-                .fetchDeleteDriver(id: authData.sId!, isActive: false);
-          
+                .fetchDeleteDriver(id: authData.sId!, isActive: isActive);
           },
           isDestructiveAction: true,
           child: Text(

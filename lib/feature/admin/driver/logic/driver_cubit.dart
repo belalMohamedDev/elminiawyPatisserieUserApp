@@ -77,7 +77,7 @@ class DriverCubit extends Cubit<DriverState> {
   }
 
   Future<void> fetchDeleteDriver(
-      {required String id, bool isActive = true}) async {
+      {required String id, required bool isActive}) async {
     emit(const DriverState.deleteDriverLoading());
 
     final response = await _driverRepository.deleteDriverRepo(id);
