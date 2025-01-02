@@ -55,7 +55,9 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                   ),
                 ),
                 body: _tabDriverBodyBar(context, state)),
-            LoadingOverlay(isLoading: state is DriverActivedLoading)
+            LoadingOverlay(
+                isLoading: state is DriverActivedLoading ||
+                    state is DeleteDriverLoading)
           ],
         );
       },

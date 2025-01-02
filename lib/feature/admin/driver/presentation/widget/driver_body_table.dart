@@ -158,8 +158,10 @@ void showEditNOTActiveActionDialog(
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
-            // deleteSubCategoryItem(
-            //     context, subCategory, context.read<SubCategoriesCubit>());
+            context
+                .read<DriverCubit>()
+                .fetchDeleteDriver(id: authData.sId!, isActive: false);
+          
           },
           isDestructiveAction: true,
           child: Text(
