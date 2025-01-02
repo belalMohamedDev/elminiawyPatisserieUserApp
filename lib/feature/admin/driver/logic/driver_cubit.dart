@@ -75,4 +75,36 @@ class DriverCubit extends Cubit<DriverState> {
       },
     );
   }
+
+  Future<void> fetchDeleteDriver(
+      {required String id, bool isActive = true}) async {
+    emit(const DriverState.deleteDriverLoading());
+
+    final response = await _driverRepository.deleteDriverRepo(id);
+
+    response.when(
+      success: (dataResponse) {
+        if (isActive) {
+          final updatedIndex =
+              _allActiveDriver.indexWhere((deiver) => deiver.sId == id);
+
+          if (updatedIndex != -1) {
+            _allActiveDriver.removeAt(updatedIndex);
+          }
+        } else {
+          final updatedIndex =
+              _allNotActiveDriver.indexWhere((deiver) => deiver.sId == id);
+
+          if (updatedIndex != -1) {
+            _allNotActiveDriver.removeAt(updatedIndex);
+          }
+        }
+
+        emit(DriverState.deleteDriverSuccess(dataResponse));
+      },
+      failure: (error) {
+        DriverState.deleteDriverError(error);
+      },
+    );
+  }
 }

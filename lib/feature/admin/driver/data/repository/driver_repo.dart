@@ -6,6 +6,9 @@ abstract class DriverRepository {
   Future<ApiResult<AuthResponse>> driverActivedRepo(
     String id,
   );
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteDriverRepo(
+    String id,
+  );
 }
 
 class DriverRepositoryImplement implements DriverRepository {
@@ -34,9 +37,19 @@ class DriverRepositoryImplement implements DriverRepository {
   }
 
   @override
-  Future<ApiResult<AuthResponse>> driverActivedRepo(  String id) async {
+  Future<ApiResult<AuthResponse>> driverActivedRepo(String id) async {
     try {
       final response = await _apiService.activeDriverService(id);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteDriverRepo(String id) async {
+    try {
+      final response = await _apiService.deleteUserService(id);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

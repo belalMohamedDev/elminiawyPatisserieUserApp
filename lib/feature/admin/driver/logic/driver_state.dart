@@ -30,4 +30,14 @@ class DriverState with _$DriverState {
 
   const factory DriverState.driverActivedSuccess(AuthResponse data) =
       GDriverActivedSuccess;
+
+
+
+
+const factory DriverState.deleteDriverLoading() = DeleteDriverLoading;
+  const factory DriverState.deleteDriverError(ApiErrorModel apiErrorModel) =
+      DeleteDriverError;
+
+  const factory DriverState.deleteDriverSuccess(ApiSuccessGeneralModel data) =
+      DeleteDriverSuccess;
 }

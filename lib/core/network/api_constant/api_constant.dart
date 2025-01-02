@@ -29,6 +29,8 @@ class ApiConstants {
   static const String wishList = '/v1/api/wishList';
   static const String driver = '/v1/api/driver';
 
+  static const String user = '/v1/api/user';
+
 
   static const String address = '/v1/api/address';
   static const String cart = '/v1/api/cart';

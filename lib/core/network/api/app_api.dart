@@ -183,6 +183,11 @@ abstract class AppServiceClient {
   @GET("${ApiConstants.driver}/allDriverActive")
   Future<AuthResponse> getAllDriverActiveService();
 
+  @DELETE("${ApiConstants.user}/{id}")
+  Future<ApiSuccessGeneralModel> deleteUserService(
+    @Path("id") String id,
+  );
+
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();
 
