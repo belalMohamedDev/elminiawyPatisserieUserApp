@@ -1,5 +1,4 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/admin/admins/data/repository/admins_repo.dart';
 
 part 'admins_state.dart';
 part 'admins_cubit.freezed.dart';
