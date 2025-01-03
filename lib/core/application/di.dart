@@ -28,7 +28,8 @@ Future<void> initAppModule() async {
     _initSignInWithGoogleAndApple(),
     _initAdminHome(),
     _initSubCategory(),
-    _initDriver()
+    _initDriver(),
+    _initAdmins()
   ]);
 }
 
@@ -65,13 +66,23 @@ Future<void> _initBanner() async {
 }
 
 Future<void> _initDriver() async {
-
   instance
     ..registerLazySingleton<DriverRepositoryImplement>(
         () => DriverRepositoryImplement(
               instance(),
             ))
     ..registerFactory<DriverCubit>(() => DriverCubit(
+          instance(),
+        ));
+}
+
+Future<void> _initAdmins() async {
+  instance
+    ..registerLazySingleton<AdminsRepositoryImplement>(
+        () => AdminsRepositoryImplement(
+              instance(),
+            ))
+    ..registerFactory<AdminsCubit>(() => AdminsCubit(
           instance(),
         ));
 }

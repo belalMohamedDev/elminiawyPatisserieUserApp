@@ -32,6 +32,14 @@ class RouteGenerator {
           ),
         );
 
+      case Routes.admin:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<AdminsCubit>(),
+            child: const AdminsScreen(),
+          ),
+        );
+
       case Routes.adminDrivers:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

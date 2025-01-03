@@ -106,6 +106,7 @@ export 'package:elminiawy/core/utils/map.dart';
 export 'package:elminiawy/core/utils/responsive_utils.dart';
 export 'package:elminiawy/feature/admin/admins/data/repository/admins_repo.dart';
 export 'package:elminiawy/feature/admin/admins/logic/admins_cubit.dart';
+export 'package:elminiawy/feature/admin/admins/presentation/screen/admins_screen.dart';
 export 'package:elminiawy/feature/admin/banner/data/repository/repositry.dart';
 export 'package:elminiawy/feature/admin/banner/data/response/banner_response.dart';
 export 'package:elminiawy/feature/admin/banner/logic/banner_cubit.dart';
