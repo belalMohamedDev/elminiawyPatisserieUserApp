@@ -22,6 +22,10 @@ mixin _$AdminsState {
     required TResult Function() getActiveAdminsLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
     required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +34,9 @@ mixin _$AdminsState {
     TResult? Function()? getActiveAdminsLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +45,9 @@ mixin _$AdminsState {
     TResult Function()? getActiveAdminsLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +59,12 @@ mixin _$AdminsState {
     required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
     required TResult Function(GetActiveAdminsSuccess value)
         getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +73,9 @@ mixin _$AdminsState {
     TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +84,9 @@ mixin _$AdminsState {
     TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +152,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function() getActiveAdminsLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
     required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
   }) {
     return initial();
   }
@@ -141,6 +167,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getActiveAdminsLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
   }) {
     return initial?.call();
   }
@@ -152,6 +181,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getActiveAdminsLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -169,6 +201,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
     required TResult Function(GetActiveAdminsSuccess value)
         getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
   }) {
     return initial(this);
   }
@@ -180,6 +218,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
   }) {
     return initial?.call(this);
   }
@@ -191,6 +232,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -249,6 +293,10 @@ class _$GetActiveAdminsLoadingImpl implements GetActiveAdminsLoading {
     required TResult Function() getActiveAdminsLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
     required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsLoading();
   }
@@ -260,6 +308,9 @@ class _$GetActiveAdminsLoadingImpl implements GetActiveAdminsLoading {
     TResult? Function()? getActiveAdminsLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsLoading?.call();
   }
@@ -271,6 +322,9 @@ class _$GetActiveAdminsLoadingImpl implements GetActiveAdminsLoading {
     TResult Function()? getActiveAdminsLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (getActiveAdminsLoading != null) {
@@ -288,6 +342,12 @@ class _$GetActiveAdminsLoadingImpl implements GetActiveAdminsLoading {
     required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
     required TResult Function(GetActiveAdminsSuccess value)
         getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsLoading(this);
   }
@@ -299,6 +359,9 @@ class _$GetActiveAdminsLoadingImpl implements GetActiveAdminsLoading {
     TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsLoading?.call(this);
   }
@@ -310,6 +373,9 @@ class _$GetActiveAdminsLoadingImpl implements GetActiveAdminsLoading {
     TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (getActiveAdminsLoading != null) {
@@ -394,6 +460,10 @@ class _$GetActiveAdminsErrorImpl implements GetActiveAdminsError {
     required TResult Function() getActiveAdminsLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
     required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsError(apiErrorModel);
   }
@@ -405,6 +475,9 @@ class _$GetActiveAdminsErrorImpl implements GetActiveAdminsError {
     TResult? Function()? getActiveAdminsLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsError?.call(apiErrorModel);
   }
@@ -416,6 +489,9 @@ class _$GetActiveAdminsErrorImpl implements GetActiveAdminsError {
     TResult Function()? getActiveAdminsLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (getActiveAdminsError != null) {
@@ -433,6 +509,12 @@ class _$GetActiveAdminsErrorImpl implements GetActiveAdminsError {
     required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
     required TResult Function(GetActiveAdminsSuccess value)
         getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsError(this);
   }
@@ -444,6 +526,9 @@ class _$GetActiveAdminsErrorImpl implements GetActiveAdminsError {
     TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsError?.call(this);
   }
@@ -455,6 +540,9 @@ class _$GetActiveAdminsErrorImpl implements GetActiveAdminsError {
     TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (getActiveAdminsError != null) {
@@ -545,6 +633,10 @@ class _$GetActiveAdminsSuccessImpl implements GetActiveAdminsSuccess {
     required TResult Function() getActiveAdminsLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
     required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsSuccess(data);
   }
@@ -556,6 +648,9 @@ class _$GetActiveAdminsSuccessImpl implements GetActiveAdminsSuccess {
     TResult? Function()? getActiveAdminsLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsSuccess?.call(data);
   }
@@ -567,6 +662,9 @@ class _$GetActiveAdminsSuccessImpl implements GetActiveAdminsSuccess {
     TResult Function()? getActiveAdminsLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
     TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (getActiveAdminsSuccess != null) {
@@ -584,6 +682,12 @@ class _$GetActiveAdminsSuccessImpl implements GetActiveAdminsSuccess {
     required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
     required TResult Function(GetActiveAdminsSuccess value)
         getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsSuccess(this);
   }
@@ -595,6 +699,9 @@ class _$GetActiveAdminsSuccessImpl implements GetActiveAdminsSuccess {
     TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
   }) {
     return getActiveAdminsSuccess?.call(this);
   }
@@ -606,6 +713,9 @@ class _$GetActiveAdminsSuccessImpl implements GetActiveAdminsSuccess {
     TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
     TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
     TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
     required TResult orElse(),
   }) {
     if (getActiveAdminsSuccess != null) {
@@ -622,5 +732,493 @@ abstract class GetActiveAdminsSuccess implements AdminsState {
   AuthResponse get data;
   @JsonKey(ignore: true)
   _$$GetActiveAdminsSuccessImplCopyWith<_$GetActiveAdminsSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetInActiveAdminsLoadingImplCopyWith<$Res> {
+  factory _$$GetInActiveAdminsLoadingImplCopyWith(
+          _$GetInActiveAdminsLoadingImpl value,
+          $Res Function(_$GetInActiveAdminsLoadingImpl) then) =
+      __$$GetInActiveAdminsLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetInActiveAdminsLoadingImplCopyWithImpl<$Res>
+    extends _$AdminsStateCopyWithImpl<$Res, _$GetInActiveAdminsLoadingImpl>
+    implements _$$GetInActiveAdminsLoadingImplCopyWith<$Res> {
+  __$$GetInActiveAdminsLoadingImplCopyWithImpl(
+      _$GetInActiveAdminsLoadingImpl _value,
+      $Res Function(_$GetInActiveAdminsLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetInActiveAdminsLoadingImpl implements GetInActiveAdminsLoading {
+  const _$GetInActiveAdminsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AdminsState.getInActiveAdminsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetInActiveAdminsLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
+    required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
+    TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
+    TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
+    required TResult orElse(),
+  }) {
+    if (getInActiveAdminsLoading != null) {
+      return getInActiveAdminsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetActiveAdminsLoading value)
+        getActiveAdminsLoading,
+    required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
+    required TResult Function(GetActiveAdminsSuccess value)
+        getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
+    TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
+    TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
+    TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
+    TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
+    required TResult orElse(),
+  }) {
+    if (getInActiveAdminsLoading != null) {
+      return getInActiveAdminsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInActiveAdminsLoading implements AdminsState {
+  const factory GetInActiveAdminsLoading() = _$GetInActiveAdminsLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetInActiveAdminsErrorImplCopyWith<$Res> {
+  factory _$$GetInActiveAdminsErrorImplCopyWith(
+          _$GetInActiveAdminsErrorImpl value,
+          $Res Function(_$GetInActiveAdminsErrorImpl) then) =
+      __$$GetInActiveAdminsErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$GetInActiveAdminsErrorImplCopyWithImpl<$Res>
+    extends _$AdminsStateCopyWithImpl<$Res, _$GetInActiveAdminsErrorImpl>
+    implements _$$GetInActiveAdminsErrorImplCopyWith<$Res> {
+  __$$GetInActiveAdminsErrorImplCopyWithImpl(
+      _$GetInActiveAdminsErrorImpl _value,
+      $Res Function(_$GetInActiveAdminsErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$GetInActiveAdminsErrorImpl(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetInActiveAdminsErrorImpl implements GetInActiveAdminsError {
+  const _$GetInActiveAdminsErrorImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'AdminsState.getInActiveAdminsError(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetInActiveAdminsErrorImpl &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetInActiveAdminsErrorImplCopyWith<_$GetInActiveAdminsErrorImpl>
+      get copyWith => __$$GetInActiveAdminsErrorImplCopyWithImpl<
+          _$GetInActiveAdminsErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
+    required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsError(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
+    TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsError?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
+    TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
+    required TResult orElse(),
+  }) {
+    if (getInActiveAdminsError != null) {
+      return getInActiveAdminsError(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetActiveAdminsLoading value)
+        getActiveAdminsLoading,
+    required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
+    required TResult Function(GetActiveAdminsSuccess value)
+        getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
+    TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
+    TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
+    TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
+    TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
+    required TResult orElse(),
+  }) {
+    if (getInActiveAdminsError != null) {
+      return getInActiveAdminsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInActiveAdminsError implements AdminsState {
+  const factory GetInActiveAdminsError(final ApiErrorModel apiErrorModel) =
+      _$GetInActiveAdminsErrorImpl;
+
+  ApiErrorModel get apiErrorModel;
+  @JsonKey(ignore: true)
+  _$$GetInActiveAdminsErrorImplCopyWith<_$GetInActiveAdminsErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetInActiveAdminsSuccessImplCopyWith<$Res> {
+  factory _$$GetInActiveAdminsSuccessImplCopyWith(
+          _$GetInActiveAdminsSuccessImpl value,
+          $Res Function(_$GetInActiveAdminsSuccessImpl) then) =
+      __$$GetInActiveAdminsSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AuthResponse data});
+}
+
+/// @nodoc
+class __$$GetInActiveAdminsSuccessImplCopyWithImpl<$Res>
+    extends _$AdminsStateCopyWithImpl<$Res, _$GetInActiveAdminsSuccessImpl>
+    implements _$$GetInActiveAdminsSuccessImplCopyWith<$Res> {
+  __$$GetInActiveAdminsSuccessImplCopyWithImpl(
+      _$GetInActiveAdminsSuccessImpl _value,
+      $Res Function(_$GetInActiveAdminsSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GetInActiveAdminsSuccessImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as AuthResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetInActiveAdminsSuccessImpl implements GetInActiveAdminsSuccess {
+  const _$GetInActiveAdminsSuccessImpl(this.data);
+
+  @override
+  final AuthResponse data;
+
+  @override
+  String toString() {
+    return 'AdminsState.getInActiveAdminsSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetInActiveAdminsSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetInActiveAdminsSuccessImplCopyWith<_$GetInActiveAdminsSuccessImpl>
+      get copyWith => __$$GetInActiveAdminsSuccessImplCopyWithImpl<
+          _$GetInActiveAdminsSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getActiveAdminsError,
+    required TResult Function(AuthResponse data) getActiveAdminsSuccess,
+    required TResult Function() getInActiveAdminsLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getInActiveAdminsError,
+    required TResult Function(AuthResponse data) getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
+    TResult? Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult? Function()? getInActiveAdminsLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult? Function(AuthResponse data)? getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getActiveAdminsError,
+    TResult Function(AuthResponse data)? getActiveAdminsSuccess,
+    TResult Function()? getInActiveAdminsLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getInActiveAdminsError,
+    TResult Function(AuthResponse data)? getInActiveAdminsSuccess,
+    required TResult orElse(),
+  }) {
+    if (getInActiveAdminsSuccess != null) {
+      return getInActiveAdminsSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetActiveAdminsLoading value)
+        getActiveAdminsLoading,
+    required TResult Function(GetActiveAdminsError value) getActiveAdminsError,
+    required TResult Function(GetActiveAdminsSuccess value)
+        getActiveAdminsSuccess,
+    required TResult Function(GetInActiveAdminsLoading value)
+        getInActiveAdminsLoading,
+    required TResult Function(GetInActiveAdminsError value)
+        getInActiveAdminsError,
+    required TResult Function(GetInActiveAdminsSuccess value)
+        getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
+    TResult? Function(GetActiveAdminsError value)? getActiveAdminsError,
+    TResult? Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult? Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult? Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult? Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
+  }) {
+    return getInActiveAdminsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetActiveAdminsLoading value)? getActiveAdminsLoading,
+    TResult Function(GetActiveAdminsError value)? getActiveAdminsError,
+    TResult Function(GetActiveAdminsSuccess value)? getActiveAdminsSuccess,
+    TResult Function(GetInActiveAdminsLoading value)? getInActiveAdminsLoading,
+    TResult Function(GetInActiveAdminsError value)? getInActiveAdminsError,
+    TResult Function(GetInActiveAdminsSuccess value)? getInActiveAdminsSuccess,
+    required TResult orElse(),
+  }) {
+    if (getInActiveAdminsSuccess != null) {
+      return getInActiveAdminsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetInActiveAdminsSuccess implements AdminsState {
+  const factory GetInActiveAdminsSuccess(final AuthResponse data) =
+      _$GetInActiveAdminsSuccessImpl;
+
+  AuthResponse get data;
+  @JsonKey(ignore: true)
+  _$$GetInActiveAdminsSuccessImplCopyWith<_$GetInActiveAdminsSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

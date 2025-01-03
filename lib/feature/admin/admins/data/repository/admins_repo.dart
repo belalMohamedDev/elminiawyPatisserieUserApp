@@ -2,6 +2,7 @@ import '../../../../../core/common/shared/shared_imports.dart';
 
 abstract class AdminsRepository {
   Future<ApiResult<AuthResponse>> getAllActiveAdminsRepo();
+  Future<ApiResult<AuthResponse>> getAllInActiveAdminsRepo();
   // Future<ApiResult<ApiSuccessGeneralModel>> deleteBannerRepo(String id);
   // Future<ApiResult<BannerResponse>> createNewBannerRepo(
   //     String startDate, String endDate, File image);
@@ -22,6 +23,16 @@ class AdminsRepositoryImplement implements AdminsRepository {
   Future<ApiResult<AuthResponse>> getAllActiveAdminsRepo() async {
     try {
       final response = await _apiService.getAllActiveAdminsService();
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<AuthResponse>> getAllInActiveAdminsRepo() async {
+    try {
+      final response = await _apiService.getAllInActiveAdminsService();
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

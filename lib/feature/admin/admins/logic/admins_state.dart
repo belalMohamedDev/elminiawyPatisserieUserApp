@@ -11,4 +11,13 @@ const factory AdminsState.getActiveAdminsLoading() = GetActiveAdminsLoading;
 
   const factory AdminsState.getActiveAdminsSuccess(AuthResponse data) =
       GetActiveAdminsSuccess;
+
+
+        
+const factory AdminsState.getInActiveAdminsLoading() = GetInActiveAdminsLoading;
+  const factory AdminsState.getInActiveAdminsError(ApiErrorModel apiErrorModel) =
+      GetInActiveAdminsError;
+
+  const factory AdminsState.getInActiveAdminsSuccess(AuthResponse data) =
+      GetInActiveAdminsSuccess;
 }

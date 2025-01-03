@@ -31,4 +31,27 @@ class AdminsCubit extends Cubit<AdminsState> {
       },
     );
   }
+
+  List<DataAuthResponse> _allInActiveAdmins = [];
+
+  List<DataAuthResponse> get allInActiveAdmins => _allInActiveAdmins;
+
+  Future<void> fetchGetAllInActiveAdmins() async {
+    emit(const AdminsState.getInActiveAdminsLoading());
+
+    final response =
+        await _adminsRepositoryImplement.getAllInActiveAdminsRepo();
+
+    response.when(
+      success: (dataResponse) {
+        _allInActiveAdmins = [];
+        _allInActiveAdmins.addAll(dataResponse.data!);
+
+        emit(AdminsState.getInActiveAdminsSuccess(dataResponse));
+      },
+      failure: (error) {
+        AdminsState.getInActiveAdminsError(error);
+      },
+    );
+  }
 }

@@ -191,7 +191,8 @@ abstract class AppServiceClient {
   @GET(ApiConstants.admin)
   Future<AuthResponse> getAllActiveAdminsService();
 
-  
+  @GET("${ApiConstants.admin}/inActive")
+  Future<AuthResponse> getAllInActiveAdminsService();
 
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();
