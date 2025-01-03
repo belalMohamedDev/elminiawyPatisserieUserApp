@@ -320,6 +320,13 @@ class AppStrings {
   static const String allActiveDriver = "allActiveDriver";
   static const String allNotActiveDriver = "allNotActiveDriver";
 
+
+ static const String activeAdmins = "activeAdmins";
+  static const String notActiveAdmins = "notActiveAdmins";
+
+
+
+
   static const String previousOrders = "previousOrders";
   static const String accountInformation = "accountInformation";
   static const String changePassword = "changePassword";

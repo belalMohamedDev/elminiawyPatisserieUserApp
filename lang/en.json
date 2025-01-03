@@ -19,6 +19,10 @@
 
 
 
+  "activeAdmins": "Active Admins",
+  "notActiveAdmins": "Inactive Admins",
+
+
   "nameAToZ": "Name: A to Z",
   "nameZToA": "Name: Z to A",
   "applyFilter": "Apply Filter",

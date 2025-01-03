@@ -31,6 +31,9 @@
   "driverName": "اسم السائق",
 
 
+    "activeAdmins": "الادمن النشطين",
+  "notActiveAdmins": "الادمن غير النشطين",
+
     "allActiveDriver": "السائقين النشطين",
   "allNotActiveDriver": "السائقين غير النشطين",
 
