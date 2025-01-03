@@ -188,6 +188,11 @@ abstract class AppServiceClient {
     @Path("id") String id,
   );
 
+  @GET(ApiConstants.admin)
+  Future<AuthResponse> getAllActiveAdminsService();
+
+  
+
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();
 
