@@ -21,13 +21,17 @@ class HomeOrderCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final responsive = ResponsiveUtils(context);
+
     return Container(
-        height: 130,
-        width: 170,
+        height: responsive.setHeight(15),
+        width: responsive.setWidth(43.5),
         decoration: BoxDecoration(
-            color: cardColor, borderRadius: BorderRadius.circular(20)),
+            color: cardColor, borderRadius: BorderRadius.circular(responsive.setBorderRadius(3.8))),
         child: Padding(
-          padding: const EdgeInsets.only(left: 20.0, bottom: 10, top: 20),
+          padding: responsive.setPadding(top: 2, left: 4,bottom: 1.5),
+
+
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,15 +39,15 @@ class HomeOrderCardWidget extends StatelessWidget {
               Image.asset(
                 image,
                 color: cardContentColor,
-                height: 32,
+                height: responsive.setHeight(4),
               ),
               Text(
                 title,
-                style: TextStyle(color: cardContentColor, fontSize: 15),
+                style: TextStyle(color: cardContentColor, fontSize: responsive.setTextSize(4)),
               ),
               Text(
                 number,
-                style: TextStyle(color: cardContentColor, fontSize:isSalesToday?18: 25),
+                style: TextStyle(color: cardContentColor, fontSize:responsive.setTextSize(isSalesToday?4:5)),
               )
             ],
           ),

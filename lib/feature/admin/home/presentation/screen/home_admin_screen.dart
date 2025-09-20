@@ -1,4 +1,7 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/admin/home/presentation/widget/home_app_bar.dart';
+
+import '../widget/home_orders.dart';
 
 class AdminHomeScreen extends StatefulWidget {
   const AdminHomeScreen({super.key});
@@ -42,58 +45,22 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 ..rotateZ(adminHomeCubit.rotate)
                 ..scale(adminHomeCubit.scaleFactor),
               duration: const Duration(milliseconds: 250),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Stack(
                 children: [
-                  Padding(
-                    padding: responsive.setPadding(top: 5, left: 4),
-                    child: adminHomeCubit.drawerIsOpen
-                        ? Container(
-                            decoration: BoxDecoration(
-                                color: ColorManger.brun,
-                                borderRadius: BorderRadius.circular(
-                                    responsive.setBorderRadius(3))),
-                            child: IconButton(
-                                onPressed: () {
-                                  adminHomeCubit.drawerOpenOrClose(
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    false,
-                                  );
-                                },
-                                icon: Icon(
-                                  IconlyBold.arrowRight,
-                                  color: ColorManger.white,
-                                )),
-                          )
-                        : Container(
-                            decoration: BoxDecoration(
-                                color: ColorManger.brun,
-                                borderRadius: BorderRadius.circular(
-                                    responsive.setBorderRadius(2))),
-                            child: IconButton(
-                                onPressed: () {
-                                  adminHomeCubit.drawerOpenOrClose(
-                                      responsive.setWidth(60),
-                                      responsive.setHeight(8),
-                                      0.85,
-                                      270.05,
-                                      true);
-                                },
-                                icon: Image.asset(ImageAsset.menu,
-                                    height: responsive.setHeight(3.5),
-                                    color: ColorManger.white)),
-                          ),
+                  Column(
+                    children: [
+                      HomeAppBar(adminHomeCubit: adminHomeCubit),
+const HomeOrders()
+
+                    ],
                   ),
-                  const Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 20.0, right: 20, top: 240),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [],
-                      ),
+                  Positioned(
+                    right: 30,
+                    bottom: 60,
+                    child: FloatingActionButton(
+                      onPressed: () {},
+                      backgroundColor: ColorManger.brun,
+                      child: Icon(Icons.add, color: ColorManger.backgroundItem),
                     ),
                   ),
                 ],
@@ -105,3 +72,4 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
     );
   }
 }
+

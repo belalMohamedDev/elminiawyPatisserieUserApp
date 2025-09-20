@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:retrofit/retrofit.dart';
 
-import '../../../../../core/common/shared/shared_imports.dart'; //
+import '../../../../../core/common/shared/shared_imports.dart';
 
 part 'app_api.g.dart';
 

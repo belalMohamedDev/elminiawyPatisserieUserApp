@@ -15,6 +15,8 @@ class AppStrings {
   static const String discount = "discount";
   static const String driverName = "driverName";
 
+  static const String adminName = "adminName";
+
   static const String startDate = "startDate";
   static const String endDate = "endDate";
 
