@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
+import '../../feature/admin/home/presentation/screen/complete_orders.dart';
 import '../../feature/admin/home/presentation/screen/new_orders.dart';
 
 class RouteGenerator {
@@ -253,6 +254,18 @@ class RouteGenerator {
           builder: (_) =>BlocProvider(
             create: (context) => instance<AdminHomeCubit>(),
             child: const NewOrders(),
+          ),
+
+
+
+        );
+
+
+      case Routes.completeOrders:
+        return MaterialPageRoute(
+          builder: (_) =>BlocProvider(
+            create: (context) => instance<AdminHomeCubit>(),
+            child: const CompleteOrdersView(),
           ),
 
 

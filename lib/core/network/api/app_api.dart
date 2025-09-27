@@ -310,4 +310,7 @@ abstract class AppServiceClient {
 
   @GET('${ApiConstants.order}/admin/pending')
   Future<GetOrdersResponse> getAllPendingOrdersToAdminService();
+
+  @GET('${ApiConstants.order}/admin')
+  Future<GetOrdersResponse> getAllCompleteOrdersToAdminService();
 }

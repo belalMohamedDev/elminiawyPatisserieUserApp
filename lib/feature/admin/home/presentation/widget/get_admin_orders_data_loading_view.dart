@@ -1,12 +1,12 @@
 import '../../../../../core/common/shared/shared_imports.dart';
 
-class GetPendingAdminOrdersLoadingView extends StatelessWidget {
-  const GetPendingAdminOrdersLoadingView({
-    super.key,
+class GetAdminOrdersDataLoadingView extends StatelessWidget {
+  const GetAdminOrdersDataLoadingView({
+    super.key,  this.isCompleteOrder =false,
 
   });
 
-
+  final bool isCompleteOrder;
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
@@ -15,7 +15,7 @@ class GetPendingAdminOrdersLoadingView extends StatelessWidget {
         padding:
         responsive.setPadding(left: 4, right: 4, bottom: 2),
         child: Container(
-          height: responsive.setHeight(17),
+          height: responsive.setHeight(isCompleteOrder?12:17),
           width: responsive.screenWidth,
           decoration: BoxDecoration(
               color: ColorManger.backgroundItem,
@@ -23,7 +23,7 @@ class GetPendingAdminOrdersLoadingView extends StatelessWidget {
                   responsive.setBorderRadius(4))),
           child: Padding(
             padding: responsive.setPadding(
-                left: 3, top: 2.4, bottom: 0.5, right: 3),
+                left: 3, top: isCompleteOrder?3.8:2.4, bottom: 0.5, right: 3),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -139,10 +139,10 @@ class GetPendingAdminOrdersLoadingView extends StatelessWidget {
                 ),
 
 
-                const Spacer(),
+                isCompleteOrder?const SizedBox(): const Spacer(),
 
 
-                Row(
+                isCompleteOrder?const SizedBox():  Row(
 
                   children: [
 
@@ -170,7 +170,7 @@ class GetPendingAdminOrdersLoadingView extends StatelessWidget {
           ),
         ),
       ),
-      itemCount: 5,
+      itemCount:isCompleteOrder?7: 5,
     );
   }
 }
