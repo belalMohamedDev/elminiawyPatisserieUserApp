@@ -92,7 +92,7 @@ class OrderDetails extends StatelessWidget {
                         final orderId = order?.sId ??
                             paymentCubit.createOrderResponseData?.sId;
                         if (orderId != null) {
-                          paymentCubit.ordercancelSummit(orderId);
+                          paymentCubit.orderCancelSummit(orderId);
                         }
                       },
                       widget: Text(context.translate(AppStrings.yesCancel),

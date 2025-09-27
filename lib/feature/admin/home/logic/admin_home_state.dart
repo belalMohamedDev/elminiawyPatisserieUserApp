@@ -10,4 +10,18 @@ class AdminHomeState with _$AdminHomeState {
     required double scaleFactor,
     required bool drawerIsOpen,
   }) = _DrawerState;
+
+
+
+
+  const factory AdminHomeState.getPendingAdminOrdersLoading() =
+  GetPendingAdminOrdersLoading;
+
+
+  const factory AdminHomeState.getPendingAdminOrdersError(
+      ApiErrorModel apiErrorModel) = GetPendingAdminOrdersError;
+
+  const factory AdminHomeState.getPendingAdminOrdersSuccess(
+      GetOrdersResponse getOrdersResponse
+      ) = GetPendingAdminOrdersSuccess;
 }

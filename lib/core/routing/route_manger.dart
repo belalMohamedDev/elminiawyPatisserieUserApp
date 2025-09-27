@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
+import '../../feature/admin/home/presentation/screen/new_orders.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
@@ -245,6 +246,19 @@ class RouteGenerator {
             child: const UserNotificationScreen(),
           ),
         );
+
+
+      case Routes.newOrders:
+        return MaterialPageRoute(
+          builder: (_) =>BlocProvider(
+            create: (context) => instance<AdminHomeCubit>(),
+            child: const NewOrders(),
+          ),
+
+
+
+        );
+
 
       case Routes.orderPlaced:
         return MaterialPageRoute(

@@ -47,7 +47,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     );
   }
 
-  Future<void> ordercancelSummit(String id) async {
+  Future<void> orderCancelSummit(String id) async {
     emit(const PaymentState.createCashOrderLoading());
 
     final response =

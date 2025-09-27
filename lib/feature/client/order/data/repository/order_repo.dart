@@ -38,7 +38,7 @@ class OrderRepositoryImplement implements OrderRepository {
       String id) async {
  
       try {
-        final response = await _apiService.orderCancellService(id);
+        final response = await _apiService.orderCancelService(id);
         return ApiResult.success(response);
       } catch (error) {
         return ApiResult.failure(ApiErrorHandler.handle(error));

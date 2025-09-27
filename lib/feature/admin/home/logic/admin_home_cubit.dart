@@ -1,10 +1,14 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:intl/intl.dart';
+
+import '../data/repository/repo.dart';
+
 
 part 'admin_home_state.dart';
 part 'admin_home_cubit.freezed.dart';
 
 class AdminHomeCubit extends Cubit<AdminHomeState> {
-  AdminHomeCubit() : super(const AdminHomeState.initial());
+  AdminHomeCubit(this._adminOrderRepositoryImplement) : super(const AdminHomeState.initial());
 
   double xOffset = 0;
   double yOffset = 0;
@@ -29,6 +33,50 @@ void drawerOpenOrClose(double xOffset, double yOffset, double scaleFactor,
       drawerIsOpen: this.drawerIsOpen,
     ));
   }
+
+
+
+  // Function to format
+  String formatDate(String isoDate) {
+    DateTime dateTime = DateTime.parse(isoDate);
+    return DateFormat("hh:mm a").format(dateTime);
+  }
+
+
+  final OrderAdminRepositoryImplement _adminOrderRepositoryImplement;
+
+  List<GetOrdersResponseData> getPendingOrders = [];
+
+
+  Future<void> getAdminOrdersPendingSummit() async {
+    emit(const AdminHomeState.getPendingAdminOrdersLoading());
+
+
+    final response =
+    await _adminOrderRepositoryImplement.getAllOrderPendingToAdminRepository();
+
+    response.when(
+      success: (response) {
+
+         getPendingOrders = [];
+         getPendingOrders = response.data ?? [];
+
+
+        emit(AdminHomeState.getPendingAdminOrdersSuccess(response));
+      },
+      failure: (error) {
+
+        emit(
+          AdminHomeState.getPendingAdminOrdersError(
+              error),
+        );
+      },
+    );
+
+
+}
+
+
 
 
 }

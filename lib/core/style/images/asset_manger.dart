@@ -28,11 +28,15 @@ class ImageAsset {
   static const String whishList = "$imagePath/whishList.png";
   static const String noAddress = "$imagePath/noAddress.svg";
   static const String upload = "$imagePath/upload.png";
-
+  static const String money = "$imagePath/money.png";
+  static const String groceries = "$imagePath/groceries.png";
+  static const String debitCard = "$imagePath/debit-card.png";
+  static const String calendar = "$imagePath/calendar.png";
   static const String shoppingBag = "$imagePath/shopping-bag.png";
   static const String basket = "$imagePath/basket.png";
   static const String menu = "$imagePath/menu.png";
-
+  static const String user = "$imagePath/user.png";
+  static const String phone = "$imagePath/phone.png";
   static const String orderCancel = "$imagePath/cancel.png";
   static const String orderDelivered = "$imagePath/order_delivered.png";
   static const String orderWaiting = "$imagePath/order_waiting.png";

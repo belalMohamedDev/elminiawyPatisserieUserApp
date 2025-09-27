@@ -1,6 +1,6 @@
 class ApiConstants {
-   static const String baseUrl = 'https://elminiawy-patisserie.vercel.app';
-   static const int apiTimeOut = 120 * 1000;
+  static const String baseUrl = 'https://elminiawy-patisserie.vercel.app';
+  static const int apiTimeOut = 120 * 1000;
 
   static const String login = '/v1/api/auth/login';
   static const String google = '/v1/api/auth/google';
@@ -11,15 +11,13 @@ class ApiConstants {
   static const String refreshToken = '$baseUrl/v1/api/auth/token';
   static const String logOut = '/v1/api/auth/logout';
 
-
   static const String updateMyImage = '/v1/api/user/updateMyImage';
   static const String updateMyPassword = '/v1/api/user/updateMyPassword';
   static const String updateMyData = '/v1/api/user/updateMyData';
   static const String deleteMyAccount = '/v1/api/user/deleteMe';
-  static const String updateMyEmailAddress = '/v1/api/user/updateMyEmailAddress';
+  static const String updateMyEmailAddress =
+      '/v1/api/user/updateMyEmailAddress';
   static const String notification = '/v1/api/notification';
-
-
 
   static const String banner = '/v1/api/banner';
   static const String category = '/v1/api/categories';
@@ -32,17 +30,12 @@ class ApiConstants {
 
   static const String user = '/v1/api/user';
 
-
   static const String address = '/v1/api/address';
   static const String cart = '/v1/api/cart';
 
   static const String storeAddress = '/v1/api/store/address';
 
   static const String order = '/v1/api/order';
-
-
-
-
 
 
 }

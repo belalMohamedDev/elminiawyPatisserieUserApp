@@ -13,7 +13,7 @@ class AdminHomeScreen extends StatefulWidget {
 class _AdminHomeScreenState extends State<AdminHomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final responsive = ResponsiveUtils(context);
+   // final responsive = ResponsiveUtils(context);
     return BlocBuilder<AdminHomeCubit, AdminHomeState>(
       builder: (context, state) {
         final adminHomeCubit = context.read<AdminHomeCubit>();
@@ -50,8 +50,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   Column(
                     children: [
                       HomeAppBar(adminHomeCubit: adminHomeCubit),
-const HomeOrders()
-
+                      HomeOrders(adminHomeCubit: adminHomeCubit)
                     ],
                   ),
                   Positioned(
@@ -72,4 +71,3 @@ const HomeOrders()
     );
   }
 }
-

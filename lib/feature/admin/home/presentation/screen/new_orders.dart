@@ -1,10 +1,37 @@
 import '../../../../../core/common/shared/shared_imports.dart';
+import '../widget/get_pending_admin_orders_loading_view.dart';
+import '../widget/get_pending_admin_orders_success_view.dart';
 
-class NewOrders extends StatelessWidget {
+class NewOrders extends StatefulWidget {
   const NewOrders({super.key});
 
   @override
+  State<NewOrders> createState() => _NewOrdersState();
+}
+
+class _NewOrdersState extends State<NewOrders> {
+  @override
+  void initState() {
+    context.read<AdminHomeCubit>().getAdminOrdersPendingSummit();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+        appBar: AppBar(
+            title: const Text(
+          "New Orders Today",
+          style: TextStyle(
+            fontSize: 17,
+          ),
+        )),
+        body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
+          builder: (context, state) {
+            return state is GetPendingAdminOrdersSuccess
+                ? const GetPendingAdminOrdersSuccessView()
+                : const GetPendingAdminOrdersLoadingView();
+          },
+        ));
   }
 }

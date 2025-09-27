@@ -287,7 +287,7 @@ abstract class AppServiceClient {
   );
 
   @PUT('${ApiConstants.order}/{id}/cancelled')
-  Future<CreateOrderResponse> orderCancellService(
+  Future<CreateOrderResponse> orderCancelService(
     @Path("id") String id,
   );
 
@@ -307,4 +307,7 @@ abstract class AppServiceClient {
   Future<UserNotificationResponse> deleteUserNotificationService(
     @Path("id") String id,
   );
+
+  @GET('${ApiConstants.order}/admin/pending')
+  Future<GetOrdersResponse> getAllPendingOrdersToAdminService();
 }

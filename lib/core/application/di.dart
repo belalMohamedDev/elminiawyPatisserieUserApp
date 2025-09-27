@@ -1,6 +1,7 @@
 import 'package:flutter_google_maps_webservices/places.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
+import '../../feature/admin/home/data/repository/repo.dart';
 
 final instance = GetIt.instance;
 
@@ -88,8 +89,14 @@ Future<void> _initAdmins() async {
 }
 
 Future<void> _initAdminHome() async {
+
+  instance
+    ..registerLazySingleton<OrderAdminRepositoryImplement>(
+            () => OrderAdminRepositoryImplement(
+          instance(),
+        ))
   // //home repository
-  instance.registerFactory<AdminHomeCubit>(() => AdminHomeCubit());
+  ..registerFactory<AdminHomeCubit>(() => AdminHomeCubit(instance(),));
 }
 
 Future<void> _initCategory() async {
@@ -104,6 +111,13 @@ Future<void> _initCategory() async {
           instance(),
         ));
 }
+
+
+
+
+
+
+
 
 Future<void> _initSubCategory() async {
   // //home repository

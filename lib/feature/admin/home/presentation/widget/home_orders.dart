@@ -3,8 +3,9 @@ import 'home_order_card_widget.dart';
 
 class HomeOrders extends StatelessWidget {
   const HomeOrders({
-    super.key,
+    super.key, required this.adminHomeCubit,
   });
+  final AdminHomeCubit adminHomeCubit;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,8 @@ class HomeOrders extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                   // context.pushNamed(Routes.);
+
+                    context.pushNamed(Routes.newOrders);
                   },
                   child: HomeOrderCardWidget(
                     title: "New Orders",
