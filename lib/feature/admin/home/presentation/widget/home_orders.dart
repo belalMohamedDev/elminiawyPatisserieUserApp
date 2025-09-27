@@ -31,12 +31,18 @@ class HomeOrders extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                HomeOrderCardWidget(
-                  title: "Completed Orders",
-                  number: '8',
-                  image: ImageAsset.orderDelivered,
-                  cardContentColor: ColorManger.brun,
-                  cardColor: ColorManger.brownLight,
+                GestureDetector(
+                  onTap: () {
+                    context.pushNamed(Routes.completeOrders);
+
+                  },
+                  child: HomeOrderCardWidget(
+                    title: "Completed Orders",
+                    number: '8',
+                    image: ImageAsset.orderDelivered,
+                    cardContentColor: ColorManger.brun,
+                    cardColor: ColorManger.brownLight,
+                  ),
                 ),
               ],
             ),

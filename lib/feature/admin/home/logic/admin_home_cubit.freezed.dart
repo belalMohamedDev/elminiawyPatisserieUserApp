@@ -22,11 +22,10 @@ mixin _$AdminHomeState {
     required TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)
         drawerState,
-    required TResult Function() getPendingAdminOrdersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getPendingAdminOrdersError,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,10 +34,10 @@ mixin _$AdminHomeState {
     TResult? Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult? Function()? getPendingAdminOrdersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,10 +46,10 @@ mixin _$AdminHomeState {
     TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult Function()? getPendingAdminOrdersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -58,36 +57,29 @@ mixin _$AdminHomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_DrawerState value) drawerState,
-    required TResult Function(GetPendingAdminOrdersLoading value)
-        getPendingAdminOrdersLoading,
-    required TResult Function(GetPendingAdminOrdersError value)
-        getPendingAdminOrdersError,
-    required TResult Function(GetPendingAdminOrdersSuccess value)
-        getPendingAdminOrdersSuccess,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_DrawerState value)? drawerState,
-    TResult? Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult? Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult? Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_DrawerState value)? drawerState,
-    TResult Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,11 +145,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)
         drawerState,
-    required TResult Function() getPendingAdminOrdersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getPendingAdminOrdersError,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
     return initial();
   }
@@ -169,10 +160,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult? Function()? getPendingAdminOrdersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
     return initial?.call();
   }
@@ -184,10 +175,10 @@ class _$InitialImpl implements _Initial {
     TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult Function()? getPendingAdminOrdersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -201,12 +192,11 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_DrawerState value) drawerState,
-    required TResult Function(GetPendingAdminOrdersLoading value)
-        getPendingAdminOrdersLoading,
-    required TResult Function(GetPendingAdminOrdersError value)
-        getPendingAdminOrdersError,
-    required TResult Function(GetPendingAdminOrdersSuccess value)
-        getPendingAdminOrdersSuccess,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
   }) {
     return initial(this);
   }
@@ -216,12 +206,9 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_DrawerState value)? drawerState,
-    TResult? Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult? Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult? Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
   }) {
     return initial?.call(this);
   }
@@ -231,12 +218,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_DrawerState value)? drawerState,
-    TResult Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -363,11 +347,10 @@ class _$DrawerStateImpl implements _DrawerState {
     required TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)
         drawerState,
-    required TResult Function() getPendingAdminOrdersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getPendingAdminOrdersError,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
     return drawerState(xOffset, yOffset, rotate, scaleFactor, drawerIsOpen);
   }
@@ -379,10 +362,10 @@ class _$DrawerStateImpl implements _DrawerState {
     TResult? Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult? Function()? getPendingAdminOrdersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
     return drawerState?.call(
         xOffset, yOffset, rotate, scaleFactor, drawerIsOpen);
@@ -395,10 +378,10 @@ class _$DrawerStateImpl implements _DrawerState {
     TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult Function()? getPendingAdminOrdersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
     if (drawerState != null) {
@@ -412,12 +395,11 @@ class _$DrawerStateImpl implements _DrawerState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_DrawerState value) drawerState,
-    required TResult Function(GetPendingAdminOrdersLoading value)
-        getPendingAdminOrdersLoading,
-    required TResult Function(GetPendingAdminOrdersError value)
-        getPendingAdminOrdersError,
-    required TResult Function(GetPendingAdminOrdersSuccess value)
-        getPendingAdminOrdersSuccess,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
   }) {
     return drawerState(this);
   }
@@ -427,12 +409,9 @@ class _$DrawerStateImpl implements _DrawerState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_DrawerState value)? drawerState,
-    TResult? Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult? Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult? Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
   }) {
     return drawerState?.call(this);
   }
@@ -442,12 +421,9 @@ class _$DrawerStateImpl implements _DrawerState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_DrawerState value)? drawerState,
-    TResult Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
     if (drawerState != null) {
@@ -476,40 +452,37 @@ abstract class _DrawerState implements AdminHomeState {
 }
 
 /// @nodoc
-abstract class _$$GetPendingAdminOrdersLoadingImplCopyWith<$Res> {
-  factory _$$GetPendingAdminOrdersLoadingImplCopyWith(
-          _$GetPendingAdminOrdersLoadingImpl value,
-          $Res Function(_$GetPendingAdminOrdersLoadingImpl) then) =
-      __$$GetPendingAdminOrdersLoadingImplCopyWithImpl<$Res>;
+abstract class _$$GetAdminOrdersLoadingImplCopyWith<$Res> {
+  factory _$$GetAdminOrdersLoadingImplCopyWith(
+          _$GetAdminOrdersLoadingImpl value,
+          $Res Function(_$GetAdminOrdersLoadingImpl) then) =
+      __$$GetAdminOrdersLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetPendingAdminOrdersLoadingImplCopyWithImpl<$Res>
-    extends _$AdminHomeStateCopyWithImpl<$Res,
-        _$GetPendingAdminOrdersLoadingImpl>
-    implements _$$GetPendingAdminOrdersLoadingImplCopyWith<$Res> {
-  __$$GetPendingAdminOrdersLoadingImplCopyWithImpl(
-      _$GetPendingAdminOrdersLoadingImpl _value,
-      $Res Function(_$GetPendingAdminOrdersLoadingImpl) _then)
+class __$$GetAdminOrdersLoadingImplCopyWithImpl<$Res>
+    extends _$AdminHomeStateCopyWithImpl<$Res, _$GetAdminOrdersLoadingImpl>
+    implements _$$GetAdminOrdersLoadingImplCopyWith<$Res> {
+  __$$GetAdminOrdersLoadingImplCopyWithImpl(_$GetAdminOrdersLoadingImpl _value,
+      $Res Function(_$GetAdminOrdersLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetPendingAdminOrdersLoadingImpl
-    implements GetPendingAdminOrdersLoading {
-  const _$GetPendingAdminOrdersLoadingImpl();
+class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
+  const _$GetAdminOrdersLoadingImpl();
 
   @override
   String toString() {
-    return 'AdminHomeState.getPendingAdminOrdersLoading()';
+    return 'AdminHomeState.getAdminOrdersLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetPendingAdminOrdersLoadingImpl);
+            other is _$GetAdminOrdersLoadingImpl);
   }
 
   @override
@@ -522,13 +495,12 @@ class _$GetPendingAdminOrdersLoadingImpl
     required TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)
         drawerState,
-    required TResult Function() getPendingAdminOrdersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getPendingAdminOrdersError,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersLoading();
+    return getAdminOrdersLoading();
   }
 
   @override
@@ -538,12 +510,12 @@ class _$GetPendingAdminOrdersLoadingImpl
     TResult? Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult? Function()? getPendingAdminOrdersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersLoading?.call();
+    return getAdminOrdersLoading?.call();
   }
 
   @override
@@ -553,14 +525,14 @@ class _$GetPendingAdminOrdersLoadingImpl
     TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult Function()? getPendingAdminOrdersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
-    if (getPendingAdminOrdersLoading != null) {
-      return getPendingAdminOrdersLoading();
+    if (getAdminOrdersLoading != null) {
+      return getAdminOrdersLoading();
     }
     return orElse();
   }
@@ -570,14 +542,13 @@ class _$GetPendingAdminOrdersLoadingImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_DrawerState value) drawerState,
-    required TResult Function(GetPendingAdminOrdersLoading value)
-        getPendingAdminOrdersLoading,
-    required TResult Function(GetPendingAdminOrdersError value)
-        getPendingAdminOrdersError,
-    required TResult Function(GetPendingAdminOrdersSuccess value)
-        getPendingAdminOrdersSuccess,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersLoading(this);
+    return getAdminOrdersLoading(this);
   }
 
   @override
@@ -585,14 +556,11 @@ class _$GetPendingAdminOrdersLoadingImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_DrawerState value)? drawerState,
-    TResult? Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult? Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult? Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersLoading?.call(this);
+    return getAdminOrdersLoading?.call(this);
   }
 
   @override
@@ -600,43 +568,37 @@ class _$GetPendingAdminOrdersLoadingImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_DrawerState value)? drawerState,
-    TResult Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
-    if (getPendingAdminOrdersLoading != null) {
-      return getPendingAdminOrdersLoading(this);
+    if (getAdminOrdersLoading != null) {
+      return getAdminOrdersLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class GetPendingAdminOrdersLoading implements AdminHomeState {
-  const factory GetPendingAdminOrdersLoading() =
-      _$GetPendingAdminOrdersLoadingImpl;
+abstract class GetAdminOrdersLoading implements AdminHomeState {
+  const factory GetAdminOrdersLoading() = _$GetAdminOrdersLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$GetPendingAdminOrdersErrorImplCopyWith<$Res> {
-  factory _$$GetPendingAdminOrdersErrorImplCopyWith(
-          _$GetPendingAdminOrdersErrorImpl value,
-          $Res Function(_$GetPendingAdminOrdersErrorImpl) then) =
-      __$$GetPendingAdminOrdersErrorImplCopyWithImpl<$Res>;
+abstract class _$$GetAdminOrdersErrorImplCopyWith<$Res> {
+  factory _$$GetAdminOrdersErrorImplCopyWith(_$GetAdminOrdersErrorImpl value,
+          $Res Function(_$GetAdminOrdersErrorImpl) then) =
+      __$$GetAdminOrdersErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
-class __$$GetPendingAdminOrdersErrorImplCopyWithImpl<$Res>
-    extends _$AdminHomeStateCopyWithImpl<$Res, _$GetPendingAdminOrdersErrorImpl>
-    implements _$$GetPendingAdminOrdersErrorImplCopyWith<$Res> {
-  __$$GetPendingAdminOrdersErrorImplCopyWithImpl(
-      _$GetPendingAdminOrdersErrorImpl _value,
-      $Res Function(_$GetPendingAdminOrdersErrorImpl) _then)
+class __$$GetAdminOrdersErrorImplCopyWithImpl<$Res>
+    extends _$AdminHomeStateCopyWithImpl<$Res, _$GetAdminOrdersErrorImpl>
+    implements _$$GetAdminOrdersErrorImplCopyWith<$Res> {
+  __$$GetAdminOrdersErrorImplCopyWithImpl(_$GetAdminOrdersErrorImpl _value,
+      $Res Function(_$GetAdminOrdersErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -644,7 +606,7 @@ class __$$GetPendingAdminOrdersErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? apiErrorModel = null,
   }) {
-    return _then(_$GetPendingAdminOrdersErrorImpl(
+    return _then(_$GetAdminOrdersErrorImpl(
       null == apiErrorModel
           ? _value.apiErrorModel
           : apiErrorModel // ignore: cast_nullable_to_non_nullable
@@ -655,22 +617,22 @@ class __$$GetPendingAdminOrdersErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
-  const _$GetPendingAdminOrdersErrorImpl(this.apiErrorModel);
+class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
+  const _$GetAdminOrdersErrorImpl(this.apiErrorModel);
 
   @override
   final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'AdminHomeState.getPendingAdminOrdersError(apiErrorModel: $apiErrorModel)';
+    return 'AdminHomeState.getAdminOrdersError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetPendingAdminOrdersErrorImpl &&
+            other is _$GetAdminOrdersErrorImpl &&
             (identical(other.apiErrorModel, apiErrorModel) ||
                 other.apiErrorModel == apiErrorModel));
   }
@@ -681,9 +643,9 @@ class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetPendingAdminOrdersErrorImplCopyWith<_$GetPendingAdminOrdersErrorImpl>
-      get copyWith => __$$GetPendingAdminOrdersErrorImplCopyWithImpl<
-          _$GetPendingAdminOrdersErrorImpl>(this, _$identity);
+  _$$GetAdminOrdersErrorImplCopyWith<_$GetAdminOrdersErrorImpl> get copyWith =>
+      __$$GetAdminOrdersErrorImplCopyWithImpl<_$GetAdminOrdersErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -692,13 +654,12 @@ class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
     required TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)
         drawerState,
-    required TResult Function() getPendingAdminOrdersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getPendingAdminOrdersError,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersError(apiErrorModel);
+    return getAdminOrdersError(apiErrorModel);
   }
 
   @override
@@ -708,12 +669,12 @@ class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
     TResult? Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult? Function()? getPendingAdminOrdersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersError?.call(apiErrorModel);
+    return getAdminOrdersError?.call(apiErrorModel);
   }
 
   @override
@@ -723,14 +684,14 @@ class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
     TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult Function()? getPendingAdminOrdersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
-    if (getPendingAdminOrdersError != null) {
-      return getPendingAdminOrdersError(apiErrorModel);
+    if (getAdminOrdersError != null) {
+      return getAdminOrdersError(apiErrorModel);
     }
     return orElse();
   }
@@ -740,14 +701,13 @@ class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_DrawerState value) drawerState,
-    required TResult Function(GetPendingAdminOrdersLoading value)
-        getPendingAdminOrdersLoading,
-    required TResult Function(GetPendingAdminOrdersError value)
-        getPendingAdminOrdersError,
-    required TResult Function(GetPendingAdminOrdersSuccess value)
-        getPendingAdminOrdersSuccess,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersError(this);
+    return getAdminOrdersError(this);
   }
 
   @override
@@ -755,14 +715,11 @@ class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_DrawerState value)? drawerState,
-    TResult? Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult? Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult? Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersError?.call(this);
+    return getAdminOrdersError?.call(this);
   }
 
   @override
@@ -770,49 +727,44 @@ class _$GetPendingAdminOrdersErrorImpl implements GetPendingAdminOrdersError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_DrawerState value)? drawerState,
-    TResult Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
-    if (getPendingAdminOrdersError != null) {
-      return getPendingAdminOrdersError(this);
+    if (getAdminOrdersError != null) {
+      return getAdminOrdersError(this);
     }
     return orElse();
   }
 }
 
-abstract class GetPendingAdminOrdersError implements AdminHomeState {
-  const factory GetPendingAdminOrdersError(final ApiErrorModel apiErrorModel) =
-      _$GetPendingAdminOrdersErrorImpl;
+abstract class GetAdminOrdersError implements AdminHomeState {
+  const factory GetAdminOrdersError(final ApiErrorModel apiErrorModel) =
+      _$GetAdminOrdersErrorImpl;
 
   ApiErrorModel get apiErrorModel;
   @JsonKey(ignore: true)
-  _$$GetPendingAdminOrdersErrorImplCopyWith<_$GetPendingAdminOrdersErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetAdminOrdersErrorImplCopyWith<_$GetAdminOrdersErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetPendingAdminOrdersSuccessImplCopyWith<$Res> {
-  factory _$$GetPendingAdminOrdersSuccessImplCopyWith(
-          _$GetPendingAdminOrdersSuccessImpl value,
-          $Res Function(_$GetPendingAdminOrdersSuccessImpl) then) =
-      __$$GetPendingAdminOrdersSuccessImplCopyWithImpl<$Res>;
+abstract class _$$GetAdminOrdersSuccessImplCopyWith<$Res> {
+  factory _$$GetAdminOrdersSuccessImplCopyWith(
+          _$GetAdminOrdersSuccessImpl value,
+          $Res Function(_$GetAdminOrdersSuccessImpl) then) =
+      __$$GetAdminOrdersSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({GetOrdersResponse getOrdersResponse});
 }
 
 /// @nodoc
-class __$$GetPendingAdminOrdersSuccessImplCopyWithImpl<$Res>
-    extends _$AdminHomeStateCopyWithImpl<$Res,
-        _$GetPendingAdminOrdersSuccessImpl>
-    implements _$$GetPendingAdminOrdersSuccessImplCopyWith<$Res> {
-  __$$GetPendingAdminOrdersSuccessImplCopyWithImpl(
-      _$GetPendingAdminOrdersSuccessImpl _value,
-      $Res Function(_$GetPendingAdminOrdersSuccessImpl) _then)
+class __$$GetAdminOrdersSuccessImplCopyWithImpl<$Res>
+    extends _$AdminHomeStateCopyWithImpl<$Res, _$GetAdminOrdersSuccessImpl>
+    implements _$$GetAdminOrdersSuccessImplCopyWith<$Res> {
+  __$$GetAdminOrdersSuccessImplCopyWithImpl(_$GetAdminOrdersSuccessImpl _value,
+      $Res Function(_$GetAdminOrdersSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -820,7 +772,7 @@ class __$$GetPendingAdminOrdersSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? getOrdersResponse = null,
   }) {
-    return _then(_$GetPendingAdminOrdersSuccessImpl(
+    return _then(_$GetAdminOrdersSuccessImpl(
       null == getOrdersResponse
           ? _value.getOrdersResponse
           : getOrdersResponse // ignore: cast_nullable_to_non_nullable
@@ -831,23 +783,22 @@ class __$$GetPendingAdminOrdersSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetPendingAdminOrdersSuccessImpl
-    implements GetPendingAdminOrdersSuccess {
-  const _$GetPendingAdminOrdersSuccessImpl(this.getOrdersResponse);
+class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
+  const _$GetAdminOrdersSuccessImpl(this.getOrdersResponse);
 
   @override
   final GetOrdersResponse getOrdersResponse;
 
   @override
   String toString() {
-    return 'AdminHomeState.getPendingAdminOrdersSuccess(getOrdersResponse: $getOrdersResponse)';
+    return 'AdminHomeState.getAdminOrdersSuccess(getOrdersResponse: $getOrdersResponse)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetPendingAdminOrdersSuccessImpl &&
+            other is _$GetAdminOrdersSuccessImpl &&
             (identical(other.getOrdersResponse, getOrdersResponse) ||
                 other.getOrdersResponse == getOrdersResponse));
   }
@@ -858,10 +809,9 @@ class _$GetPendingAdminOrdersSuccessImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetPendingAdminOrdersSuccessImplCopyWith<
-          _$GetPendingAdminOrdersSuccessImpl>
-      get copyWith => __$$GetPendingAdminOrdersSuccessImplCopyWithImpl<
-          _$GetPendingAdminOrdersSuccessImpl>(this, _$identity);
+  _$$GetAdminOrdersSuccessImplCopyWith<_$GetAdminOrdersSuccessImpl>
+      get copyWith => __$$GetAdminOrdersSuccessImplCopyWithImpl<
+          _$GetAdminOrdersSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -870,13 +820,12 @@ class _$GetPendingAdminOrdersSuccessImpl
     required TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)
         drawerState,
-    required TResult Function() getPendingAdminOrdersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getPendingAdminOrdersError,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersSuccess(getOrdersResponse);
+    return getAdminOrdersSuccess(getOrdersResponse);
   }
 
   @override
@@ -886,12 +835,12 @@ class _$GetPendingAdminOrdersSuccessImpl
     TResult? Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult? Function()? getPendingAdminOrdersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersSuccess?.call(getOrdersResponse);
+    return getAdminOrdersSuccess?.call(getOrdersResponse);
   }
 
   @override
@@ -901,14 +850,14 @@ class _$GetPendingAdminOrdersSuccessImpl
     TResult Function(double xOffset, double yOffset, double rotate,
             double scaleFactor, bool drawerIsOpen)?
         drawerState,
-    TResult Function()? getPendingAdminOrdersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getPendingAdminOrdersError,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
-        getPendingAdminOrdersSuccess,
+        getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
-    if (getPendingAdminOrdersSuccess != null) {
-      return getPendingAdminOrdersSuccess(getOrdersResponse);
+    if (getAdminOrdersSuccess != null) {
+      return getAdminOrdersSuccess(getOrdersResponse);
     }
     return orElse();
   }
@@ -918,14 +867,13 @@ class _$GetPendingAdminOrdersSuccessImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_DrawerState value) drawerState,
-    required TResult Function(GetPendingAdminOrdersLoading value)
-        getPendingAdminOrdersLoading,
-    required TResult Function(GetPendingAdminOrdersError value)
-        getPendingAdminOrdersError,
-    required TResult Function(GetPendingAdminOrdersSuccess value)
-        getPendingAdminOrdersSuccess,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersSuccess(this);
+    return getAdminOrdersSuccess(this);
   }
 
   @override
@@ -933,14 +881,11 @@ class _$GetPendingAdminOrdersSuccessImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_DrawerState value)? drawerState,
-    TResult? Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult? Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult? Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
   }) {
-    return getPendingAdminOrdersSuccess?.call(this);
+    return getAdminOrdersSuccess?.call(this);
   }
 
   @override
@@ -948,29 +893,24 @@ class _$GetPendingAdminOrdersSuccessImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_DrawerState value)? drawerState,
-    TResult Function(GetPendingAdminOrdersLoading value)?
-        getPendingAdminOrdersLoading,
-    TResult Function(GetPendingAdminOrdersError value)?
-        getPendingAdminOrdersError,
-    TResult Function(GetPendingAdminOrdersSuccess value)?
-        getPendingAdminOrdersSuccess,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
     required TResult orElse(),
   }) {
-    if (getPendingAdminOrdersSuccess != null) {
-      return getPendingAdminOrdersSuccess(this);
+    if (getAdminOrdersSuccess != null) {
+      return getAdminOrdersSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class GetPendingAdminOrdersSuccess implements AdminHomeState {
-  const factory GetPendingAdminOrdersSuccess(
-          final GetOrdersResponse getOrdersResponse) =
-      _$GetPendingAdminOrdersSuccessImpl;
+abstract class GetAdminOrdersSuccess implements AdminHomeState {
+  const factory GetAdminOrdersSuccess(
+      final GetOrdersResponse getOrdersResponse) = _$GetAdminOrdersSuccessImpl;
 
   GetOrdersResponse get getOrdersResponse;
   @JsonKey(ignore: true)
-  _$$GetPendingAdminOrdersSuccessImplCopyWith<
-          _$GetPendingAdminOrdersSuccessImpl>
+  _$$GetAdminOrdersSuccessImplCopyWith<_$GetAdminOrdersSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

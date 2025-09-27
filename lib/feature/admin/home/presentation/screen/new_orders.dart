@@ -1,6 +1,6 @@
 import '../../../../../core/common/shared/shared_imports.dart';
-import '../widget/get_pending_admin_orders_loading_view.dart';
-import '../widget/get_pending_admin_orders_success_view.dart';
+import '../widget/get_admin_orders_data_loading_view.dart';
+import '../widget/get_admin_orders_data_success_view.dart';
 
 class NewOrders extends StatefulWidget {
   const NewOrders({super.key});
@@ -12,7 +12,7 @@ class NewOrders extends StatefulWidget {
 class _NewOrdersState extends State<NewOrders> {
   @override
   void initState() {
-    context.read<AdminHomeCubit>().getAdminOrdersPendingSummit();
+    context.read<AdminHomeCubit>().getAdminOrdersSummit(0);
     super.initState();
   }
 
@@ -28,9 +28,9 @@ class _NewOrdersState extends State<NewOrders> {
         )),
         body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
           builder: (context, state) {
-            return state is GetPendingAdminOrdersSuccess
-                ? const GetPendingAdminOrdersSuccessView()
-                : const GetPendingAdminOrdersLoadingView();
+            return state is GetAdminOrdersSuccess
+                ? const GetAdminOrdersDataSuccessView()
+                : const GetAdminOrdersDataLoadingView();
           },
         ));
   }

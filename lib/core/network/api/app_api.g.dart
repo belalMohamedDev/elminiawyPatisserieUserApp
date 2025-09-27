@@ -2204,9 +2204,9 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<GetOrdersResponse> getAllPendingOrdersToAdminService() async {
+  Future<GetOrdersResponse> getAllAdminOrdersService(int status) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'status': status};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<GetOrdersResponse>(Options(
@@ -2216,7 +2216,7 @@ class _AppServiceClient implements AppServiceClient {
     )
         .compose(
           _dio.options,
-          '/v1/api/order/admin/pending',
+          '/v1/api/order/admin',
           queryParameters: queryParameters,
           data: _data,
         )
