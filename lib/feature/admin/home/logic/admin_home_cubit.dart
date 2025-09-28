@@ -1,6 +1,6 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:intl/intl.dart';
 
+import '../data/model/response/get_order_count_status.dart';
 import '../data/repository/repo.dart';
 
 part 'admin_home_state.dart';
@@ -36,11 +36,6 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     ));
   }
 
-  // Function to format
-  String formatDate(String isoDate) {
-    DateTime dateTime = DateTime.parse(isoDate);
-    return DateFormat("hh:mm a").format(dateTime);
-  }
 
   List<GetOrdersResponseData> getAdminOrders = [];
 
@@ -73,6 +68,39 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
   }
 
 
+
+
+
+
+  GetOrderStatusCountResponse?  getOrdersStatusAndSalesTodayCount ;
+
+  Future<void>  getOrdersStatusAndSalesTodayCountSummit(int status) async {
+    if (isClosed) return;
+    emit(const AdminHomeState.getOrdersStatusAndSalesTodayCountLoading());
+
+    final response = await _adminOrderRepositoryImplement
+        .getOrdersStatusAndSalesTodayCountRepository();
+
+    if (isClosed) return;
+
+    response.when(
+      success: (response) {
+        getOrdersStatusAndSalesTodayCount = response;
+     
+
+        if (!isClosed) {
+          emit(AdminHomeState.getOrdersStatusAndSalesTodayCountSuccess(response));
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(
+            AdminHomeState.getOrdersStatusAndSalesTodayCountError(error),
+          );
+        }
+      },
+    );
+  }
 
 
 

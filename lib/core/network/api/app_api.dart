@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../core/common/shared/shared_imports.dart';
+import '../../../feature/admin/home/data/model/response/get_order_count_status.dart';
 
 part 'app_api.g.dart';
 
@@ -310,6 +311,10 @@ abstract class AppServiceClient {
 
   @GET('${ApiConstants.order}/admin')
   Future<GetOrdersResponse> getAllAdminOrdersService(
-      @Query("status") int status,
-      );
+    @Query("status") int status,
+  );
+
+  @GET('${ApiConstants.order}/admin/status')
+  Future<GetOrderStatusCountResponse>
+      getOrdersStatusAndSalesTodayCountService();
 }

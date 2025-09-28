@@ -26,6 +26,12 @@ mixin _$AdminHomeState {
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,11 @@ mixin _$AdminHomeState {
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +61,11 @@ mixin _$AdminHomeState {
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +78,12 @@ mixin _$AdminHomeState {
     required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
     required TResult Function(GetAdminOrdersSuccess value)
         getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +93,12 @@ mixin _$AdminHomeState {
     TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +108,12 @@ mixin _$AdminHomeState {
     TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -149,6 +183,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return initial();
   }
@@ -164,6 +204,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return initial?.call();
   }
@@ -179,6 +224,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -197,6 +247,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
     required TResult Function(GetAdminOrdersSuccess value)
         getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return initial(this);
   }
@@ -209,6 +265,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return initial?.call(this);
   }
@@ -221,6 +283,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -351,6 +419,12 @@ class _$DrawerStateImpl implements _DrawerState {
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return drawerState(xOffset, yOffset, rotate, scaleFactor, drawerIsOpen);
   }
@@ -366,6 +440,11 @@ class _$DrawerStateImpl implements _DrawerState {
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return drawerState?.call(
         xOffset, yOffset, rotate, scaleFactor, drawerIsOpen);
@@ -382,6 +461,11 @@ class _$DrawerStateImpl implements _DrawerState {
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (drawerState != null) {
@@ -400,6 +484,12 @@ class _$DrawerStateImpl implements _DrawerState {
     required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
     required TResult Function(GetAdminOrdersSuccess value)
         getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return drawerState(this);
   }
@@ -412,6 +502,12 @@ class _$DrawerStateImpl implements _DrawerState {
     TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return drawerState?.call(this);
   }
@@ -424,6 +520,12 @@ class _$DrawerStateImpl implements _DrawerState {
     TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (drawerState != null) {
@@ -499,6 +601,12 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersLoading();
   }
@@ -514,6 +622,11 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersLoading?.call();
   }
@@ -529,6 +642,11 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (getAdminOrdersLoading != null) {
@@ -547,6 +665,12 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
     required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
     required TResult Function(GetAdminOrdersSuccess value)
         getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersLoading(this);
   }
@@ -559,6 +683,12 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
     TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersLoading?.call(this);
   }
@@ -571,6 +701,12 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
     TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (getAdminOrdersLoading != null) {
@@ -658,6 +794,12 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersError(apiErrorModel);
   }
@@ -673,6 +815,11 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersError?.call(apiErrorModel);
   }
@@ -688,6 +835,11 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (getAdminOrdersError != null) {
@@ -706,6 +858,12 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
     required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
     required TResult Function(GetAdminOrdersSuccess value)
         getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersError(this);
   }
@@ -718,6 +876,12 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
     TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersError?.call(this);
   }
@@ -730,6 +894,12 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
     TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (getAdminOrdersError != null) {
@@ -824,6 +994,12 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersSuccess(getOrdersResponse);
   }
@@ -839,6 +1015,11 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersSuccess?.call(getOrdersResponse);
   }
@@ -854,6 +1035,11 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (getAdminOrdersSuccess != null) {
@@ -872,6 +1058,12 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
     required TResult Function(GetAdminOrdersSuccess value)
         getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersSuccess(this);
   }
@@ -884,6 +1076,12 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
   }) {
     return getAdminOrdersSuccess?.call(this);
   }
@@ -896,6 +1094,12 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
     TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
     TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
     required TResult orElse(),
   }) {
     if (getAdminOrdersSuccess != null) {
@@ -912,5 +1116,599 @@ abstract class GetAdminOrdersSuccess implements AdminHomeState {
   GetOrdersResponse get getOrdersResponse;
   @JsonKey(ignore: true)
   _$$GetAdminOrdersSuccessImplCopyWith<_$GetAdminOrdersSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetOrdersStatusAndSalesTodayCountLoadingImplCopyWith<$Res> {
+  factory _$$GetOrdersStatusAndSalesTodayCountLoadingImplCopyWith(
+          _$GetOrdersStatusAndSalesTodayCountLoadingImpl value,
+          $Res Function(_$GetOrdersStatusAndSalesTodayCountLoadingImpl) then) =
+      __$$GetOrdersStatusAndSalesTodayCountLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetOrdersStatusAndSalesTodayCountLoadingImplCopyWithImpl<$Res>
+    extends _$AdminHomeStateCopyWithImpl<$Res,
+        _$GetOrdersStatusAndSalesTodayCountLoadingImpl>
+    implements _$$GetOrdersStatusAndSalesTodayCountLoadingImplCopyWith<$Res> {
+  __$$GetOrdersStatusAndSalesTodayCountLoadingImplCopyWithImpl(
+      _$GetOrdersStatusAndSalesTodayCountLoadingImpl _value,
+      $Res Function(_$GetOrdersStatusAndSalesTodayCountLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetOrdersStatusAndSalesTodayCountLoadingImpl
+    implements GetOrdersStatusAndSalesTodayCountLoading {
+  const _$GetOrdersStatusAndSalesTodayCountLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AdminHomeState.getOrdersStatusAndSalesTodayCountLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetOrdersStatusAndSalesTodayCountLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)
+        drawerState,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
+    required TResult Function(GetOrdersResponse getOrdersResponse)
+        getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)?
+        drawerState,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
+    TResult? Function(GetOrdersResponse getOrdersResponse)?
+        getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)?
+        drawerState,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
+    TResult Function(GetOrdersResponse getOrdersResponse)?
+        getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+    required TResult orElse(),
+  }) {
+    if (getOrdersStatusAndSalesTodayCountLoading != null) {
+      return getOrdersStatusAndSalesTodayCountLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_DrawerState value) drawerState,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DrawerState value)? drawerState,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_DrawerState value)? drawerState,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+    required TResult orElse(),
+  }) {
+    if (getOrdersStatusAndSalesTodayCountLoading != null) {
+      return getOrdersStatusAndSalesTodayCountLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrdersStatusAndSalesTodayCountLoading
+    implements AdminHomeState {
+  const factory GetOrdersStatusAndSalesTodayCountLoading() =
+      _$GetOrdersStatusAndSalesTodayCountLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWith<$Res> {
+  factory _$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWith(
+          _$GetOrdersStatusAndSalesTodayCountErrorImpl value,
+          $Res Function(_$GetOrdersStatusAndSalesTodayCountErrorImpl) then) =
+      __$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ApiErrorModel apiErrorModel});
+}
+
+/// @nodoc
+class __$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWithImpl<$Res>
+    extends _$AdminHomeStateCopyWithImpl<$Res,
+        _$GetOrdersStatusAndSalesTodayCountErrorImpl>
+    implements _$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWith<$Res> {
+  __$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWithImpl(
+      _$GetOrdersStatusAndSalesTodayCountErrorImpl _value,
+      $Res Function(_$GetOrdersStatusAndSalesTodayCountErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? apiErrorModel = null,
+  }) {
+    return _then(_$GetOrdersStatusAndSalesTodayCountErrorImpl(
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetOrdersStatusAndSalesTodayCountErrorImpl
+    implements GetOrdersStatusAndSalesTodayCountError {
+  const _$GetOrdersStatusAndSalesTodayCountErrorImpl(this.apiErrorModel);
+
+  @override
+  final ApiErrorModel apiErrorModel;
+
+  @override
+  String toString() {
+    return 'AdminHomeState.getOrdersStatusAndSalesTodayCountError(apiErrorModel: $apiErrorModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetOrdersStatusAndSalesTodayCountErrorImpl &&
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWith<
+          _$GetOrdersStatusAndSalesTodayCountErrorImpl>
+      get copyWith =>
+          __$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWithImpl<
+              _$GetOrdersStatusAndSalesTodayCountErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)
+        drawerState,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
+    required TResult Function(GetOrdersResponse getOrdersResponse)
+        getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountError(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)?
+        drawerState,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
+    TResult? Function(GetOrdersResponse getOrdersResponse)?
+        getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountError?.call(apiErrorModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)?
+        drawerState,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
+    TResult Function(GetOrdersResponse getOrdersResponse)?
+        getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+    required TResult orElse(),
+  }) {
+    if (getOrdersStatusAndSalesTodayCountError != null) {
+      return getOrdersStatusAndSalesTodayCountError(apiErrorModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_DrawerState value) drawerState,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DrawerState value)? drawerState,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_DrawerState value)? drawerState,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+    required TResult orElse(),
+  }) {
+    if (getOrdersStatusAndSalesTodayCountError != null) {
+      return getOrdersStatusAndSalesTodayCountError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrdersStatusAndSalesTodayCountError
+    implements AdminHomeState {
+  const factory GetOrdersStatusAndSalesTodayCountError(
+          final ApiErrorModel apiErrorModel) =
+      _$GetOrdersStatusAndSalesTodayCountErrorImpl;
+
+  ApiErrorModel get apiErrorModel;
+  @JsonKey(ignore: true)
+  _$$GetOrdersStatusAndSalesTodayCountErrorImplCopyWith<
+          _$GetOrdersStatusAndSalesTodayCountErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWith<$Res> {
+  factory _$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWith(
+          _$GetOrdersStatusAndSalesTodayCountSuccessImpl value,
+          $Res Function(_$GetOrdersStatusAndSalesTodayCountSuccessImpl) then) =
+      __$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GetOrderStatusCountResponse getOrderStatusCountResponse});
+}
+
+/// @nodoc
+class __$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWithImpl<$Res>
+    extends _$AdminHomeStateCopyWithImpl<$Res,
+        _$GetOrdersStatusAndSalesTodayCountSuccessImpl>
+    implements _$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWith<$Res> {
+  __$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWithImpl(
+      _$GetOrdersStatusAndSalesTodayCountSuccessImpl _value,
+      $Res Function(_$GetOrdersStatusAndSalesTodayCountSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? getOrderStatusCountResponse = null,
+  }) {
+    return _then(_$GetOrdersStatusAndSalesTodayCountSuccessImpl(
+      null == getOrderStatusCountResponse
+          ? _value.getOrderStatusCountResponse
+          : getOrderStatusCountResponse // ignore: cast_nullable_to_non_nullable
+              as GetOrderStatusCountResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetOrdersStatusAndSalesTodayCountSuccessImpl
+    implements GetOrdersStatusAndSalesTodayCountSuccess {
+  const _$GetOrdersStatusAndSalesTodayCountSuccessImpl(
+      this.getOrderStatusCountResponse);
+
+  @override
+  final GetOrderStatusCountResponse getOrderStatusCountResponse;
+
+  @override
+  String toString() {
+    return 'AdminHomeState.getOrdersStatusAndSalesTodayCountSuccess(getOrderStatusCountResponse: $getOrderStatusCountResponse)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetOrdersStatusAndSalesTodayCountSuccessImpl &&
+            (identical(other.getOrderStatusCountResponse,
+                    getOrderStatusCountResponse) ||
+                other.getOrderStatusCountResponse ==
+                    getOrderStatusCountResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, getOrderStatusCountResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWith<
+          _$GetOrdersStatusAndSalesTodayCountSuccessImpl>
+      get copyWith =>
+          __$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWithImpl<
+              _$GetOrdersStatusAndSalesTodayCountSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)
+        drawerState,
+    required TResult Function() getAdminOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
+    required TResult Function(GetOrdersResponse getOrdersResponse)
+        getAdminOrdersSuccess,
+    required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(
+            GetOrderStatusCountResponse getOrderStatusCountResponse)
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountSuccess(
+        getOrderStatusCountResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)?
+        drawerState,
+    TResult? Function()? getAdminOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
+    TResult? Function(GetOrdersResponse getOrdersResponse)?
+        getAdminOrdersSuccess,
+    TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountSuccess
+        ?.call(getOrderStatusCountResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(double xOffset, double yOffset, double rotate,
+            double scaleFactor, bool drawerIsOpen)?
+        drawerState,
+    TResult Function()? getAdminOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
+    TResult Function(GetOrdersResponse getOrdersResponse)?
+        getAdminOrdersSuccess,
+    TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(ApiErrorModel apiErrorModel)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrderStatusCountResponse getOrderStatusCountResponse)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+    required TResult orElse(),
+  }) {
+    if (getOrdersStatusAndSalesTodayCountSuccess != null) {
+      return getOrdersStatusAndSalesTodayCountSuccess(
+          getOrderStatusCountResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_DrawerState value) drawerState,
+    required TResult Function(GetAdminOrdersLoading value)
+        getAdminOrdersLoading,
+    required TResult Function(GetAdminOrdersError value) getAdminOrdersError,
+    required TResult Function(GetAdminOrdersSuccess value)
+        getAdminOrdersSuccess,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)
+        getOrdersStatusAndSalesTodayCountLoading,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountError value)
+        getOrdersStatusAndSalesTodayCountError,
+    required TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_DrawerState value)? drawerState,
+    TResult? Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult? Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult? Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult? Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+  }) {
+    return getOrdersStatusAndSalesTodayCountSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_DrawerState value)? drawerState,
+    TResult Function(GetAdminOrdersLoading value)? getAdminOrdersLoading,
+    TResult Function(GetAdminOrdersError value)? getAdminOrdersError,
+    TResult Function(GetAdminOrdersSuccess value)? getAdminOrdersSuccess,
+    TResult Function(GetOrdersStatusAndSalesTodayCountLoading value)?
+        getOrdersStatusAndSalesTodayCountLoading,
+    TResult Function(GetOrdersStatusAndSalesTodayCountError value)?
+        getOrdersStatusAndSalesTodayCountError,
+    TResult Function(GetOrdersStatusAndSalesTodayCountSuccess value)?
+        getOrdersStatusAndSalesTodayCountSuccess,
+    required TResult orElse(),
+  }) {
+    if (getOrdersStatusAndSalesTodayCountSuccess != null) {
+      return getOrdersStatusAndSalesTodayCountSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetOrdersStatusAndSalesTodayCountSuccess
+    implements AdminHomeState {
+  const factory GetOrdersStatusAndSalesTodayCountSuccess(
+          final GetOrderStatusCountResponse getOrderStatusCountResponse) =
+      _$GetOrdersStatusAndSalesTodayCountSuccessImpl;
+
+  GetOrderStatusCountResponse get getOrderStatusCountResponse;
+  @JsonKey(ignore: true)
+  _$$GetOrdersStatusAndSalesTodayCountSuccessImplCopyWith<
+          _$GetOrdersStatusAndSalesTodayCountSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

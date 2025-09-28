@@ -18,4 +18,14 @@ class AdminHomeState with _$AdminHomeState {
 
   const factory AdminHomeState.getAdminOrdersSuccess(
       GetOrdersResponse getOrdersResponse) = GetAdminOrdersSuccess;
+
+  const factory AdminHomeState.getOrdersStatusAndSalesTodayCountLoading() =
+      GetOrdersStatusAndSalesTodayCountLoading;
+
+  const factory AdminHomeState.getOrdersStatusAndSalesTodayCountError(
+      ApiErrorModel apiErrorModel) = GetOrdersStatusAndSalesTodayCountError;
+
+  const factory AdminHomeState.getOrdersStatusAndSalesTodayCountSuccess(
+          GetOrderStatusCountResponse getOrderStatusCountResponse) =
+      GetOrdersStatusAndSalesTodayCountSuccess;
 }
