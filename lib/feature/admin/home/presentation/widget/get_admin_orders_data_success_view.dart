@@ -1,26 +1,24 @@
 import '../../../../../core/common/shared/shared_imports.dart';
 
-class GetAdminOrdersDataSuccessView extends StatelessWidget {
-  const GetAdminOrdersDataSuccessView({
-    super.key,  this.isCompleteOrder=false,
+class GetPendingAdminOrdersSuccessView extends StatelessWidget {
+  const GetPendingAdminOrdersSuccessView({
+    super.key,
 
   });
 
-
-  final bool isCompleteOrder;
 
 
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
     final getPendingOrders =
-        context.read<AdminHomeCubit>().getAdminOrders;
+        context.read<AdminHomeCubit>().getPendingOrders;
     return ListView.builder(
       itemBuilder: (context, index) => Padding(
         padding:
         responsive.setPadding(left: 4, right: 4, bottom: 2),
         child: Container(
-          height: responsive.setHeight( isCompleteOrder?12:   18),
+          height: responsive.setHeight(18),
           width: responsive.screenWidth,
           decoration: BoxDecoration(
               color: ColorManger.backgroundItem,
@@ -126,10 +124,10 @@ class GetAdminOrdersDataSuccessView extends StatelessWidget {
                 ),
 
 
-                isCompleteOrder?const SizedBox():     const Spacer(),
+                const Spacer(),
 
 
-                isCompleteOrder?const SizedBox():      Row(
+                Row(
 
                   children: [
                     SizedBox(

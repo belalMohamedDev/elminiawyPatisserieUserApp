@@ -308,8 +308,6 @@ abstract class AppServiceClient {
     @Path("id") String id,
   );
 
-  @GET('${ApiConstants.order}/admin')
-  Future<GetOrdersResponse> getAllAdminOrdersService(
-    @Query("status") int status,
-  );
+  @GET('${ApiConstants.order}/admin/pending')
+  Future<GetOrdersResponse> getAllPendingOrdersToAdminService();
 }
