@@ -74,7 +74,7 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
 
   GetOrderStatusCountResponse?  getOrdersStatusAndSalesTodayCount ;
 
-  Future<void>  getOrdersStatusAndSalesTodayCountSummit(int status) async {
+  Future<void>  getOrdersStatusAndSalesTodayCountSummit() async {
     if (isClosed) return;
     emit(const AdminHomeState.getOrdersStatusAndSalesTodayCountLoading());
 
