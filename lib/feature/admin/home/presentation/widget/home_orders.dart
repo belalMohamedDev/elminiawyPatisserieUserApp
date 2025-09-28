@@ -3,7 +3,8 @@ import 'home_order_card_widget.dart';
 
 class HomeOrders extends StatelessWidget {
   const HomeOrders({
-    super.key, required this.adminHomeCubit,
+    super.key,
+    required this.adminHomeCubit,
   });
   final AdminHomeCubit adminHomeCubit;
 
@@ -13,13 +14,11 @@ class HomeOrders extends StatelessWidget {
       children: [
         Center(
           child: Padding(
-            padding: const EdgeInsets.only(
-                left: 20.0, right: 20, top: 30),
+            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 30),
             child: Row(
               children: [
                 GestureDetector(
                   onTap: () {
-
                     context.pushNamed(Routes.newOrders);
                   },
                   child: HomeOrderCardWidget(
@@ -34,7 +33,6 @@ class HomeOrders extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     context.pushNamed(Routes.completeOrders);
-
                   },
                   child: HomeOrderCardWidget(
                     title: "Completed Orders",
@@ -50,16 +48,20 @@ class HomeOrders extends StatelessWidget {
         ),
         Center(
           child: Padding(
-            padding: const EdgeInsets.only(
-                left: 20.0, right: 20, top: 10),
+            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
             child: Row(
               children: [
-                HomeOrderCardWidget(
-                  title: "Cancelled Orders",
-                  number: '2',
-                  image: ImageAsset.orderCancel,
-                  cardContentColor: ColorManger.brun,
-                  cardColor: ColorManger.brownLight,
+                GestureDetector(
+                  child: HomeOrderCardWidget(
+                    title: "Cancelled Orders",
+                    number: '2',
+                    image: ImageAsset.orderCancel,
+                    cardContentColor: ColorManger.brun,
+                    cardColor: ColorManger.brownLight,
+                  ),
+                  onTap: () {
+                    context.pushNamed(Routes.cancelledOrders);
+                  },
                 ),
                 const Spacer(),
                 HomeOrderCardWidget(
@@ -78,4 +80,3 @@ class HomeOrders extends StatelessWidget {
     );
   }
 }
-

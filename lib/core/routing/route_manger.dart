@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
+import '../../feature/admin/home/presentation/screen/canelled_orders.dart';
 import '../../feature/admin/home/presentation/screen/complete_orders.dart';
 import '../../feature/admin/home/presentation/screen/new_orders.dart';
 
@@ -248,30 +249,29 @@ class RouteGenerator {
           ),
         );
 
-
       case Routes.newOrders:
         return MaterialPageRoute(
-          builder: (_) =>BlocProvider(
+          builder: (_) => BlocProvider(
             create: (context) => instance<AdminHomeCubit>(),
             child: const NewOrders(),
           ),
-
-
-
         );
-
 
       case Routes.completeOrders:
         return MaterialPageRoute(
-          builder: (_) =>BlocProvider(
+          builder: (_) => BlocProvider(
             create: (context) => instance<AdminHomeCubit>(),
             child: const CompleteOrdersView(),
           ),
-
-
-
         );
 
+      case Routes.cancelledOrders:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<AdminHomeCubit>(),
+            child: const CancelledOrders(),
+          ),
+        );
 
       case Routes.orderPlaced:
         return MaterialPageRoute(
