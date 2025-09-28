@@ -206,23 +206,55 @@ class _DrawerScreenState extends State<DrawerScreen> {
               ),
             ),
             const Spacer(),
-            Material(
-              color: Colors.transparent,
-              child: ListTile(
-                onTap: () {},
-                horizontalTitleGap: 25.0,
-                leading: Icon(
-                  IconlyBold.logout,
-                  color: ColorManger.white,
-                ),
-                title: Text(
-                  context.translate(AppStrings.logOut),
-                  style: TextStyle(
-                    color: ColorManger.white,
-                    fontSize: responsive.setTextSize(3.8),
+            BlocConsumer<LogOutCubit, LogOutState>(
+              listener: (context, state) async {
+                if (state is LogOutSuccess) {
+                  ShowToast.showToastSuccessTop(
+                      message: state.successMessage, context: context);
+                  await AppLogout().logOutThenNavigateToLogin();
+                } else if (state is LogOutError) {
+                  ShowToast.showToastErrorTop(
+                      errorMessage: state.apiErrorModel.message!,
+                      context: context);
+                  if (state.apiErrorModel.statusCode == 400) {
+                    await AppLogout().logOutThenNavigateToLogin();
+                  }
+                }
+              },
+              builder: (context, state) {
+                return Material(
+                  color: Colors.transparent,
+                  child: ListTile(
+                    onTap: () async {
+                      context
+                          .read<LogOutCubit>()
+                          .checkTokenThenDoLogOut(context);
+                    },
+                    horizontalTitleGap: 25.0,
+                    leading: Icon(
+                      IconlyBold.logout,
+                      color: ColorManger.white,
+                    ),
+                    title: state is LogOutLoading
+                        ?  SizedBox(
+                            height: responsive.setHeight(3.8),
+                            width: responsive.setWidth(3.8),
+                            child: const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ):Text(
+                            context.translate(AppStrings.logOut),
+                            style: TextStyle(
+                              color: ColorManger.white,
+                              fontSize: responsive.setTextSize(3.8),
+                            ),
+                          )
+                        ,
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ],
         ),

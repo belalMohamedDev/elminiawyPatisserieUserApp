@@ -133,8 +133,15 @@ class RouteGenerator {
 
       case Routes.adminMenue:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AdminHomeCubit>(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => instance<AdminHomeCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => instance<LogOutCubit>(),
+              ),
+            ],
             child: const DrawerStackView(),
           ),
         );
