@@ -60,6 +60,7 @@ class BannerCarouselSlider extends StatelessWidget {
                 borderRadius: BorderRadius.circular(responsive
                     .setBorderRadius(2)), // Set rounded corners for the banners
                 child: CachedNetworkImage(
+                  
                   imageUrl:
                       banner.image!, // Load the banner image from the network
                   width: responsive.setWidth(89), // Set banner width

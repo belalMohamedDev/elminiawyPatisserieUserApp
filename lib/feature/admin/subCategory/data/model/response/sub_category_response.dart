@@ -51,6 +51,8 @@ class SubCategoryResponseData {
   CategoryDataToSubCategory? category;
   String? createdAt;
   String? updatedAt;
+  String? image;
+
 
   SubCategoryResponseData(
       {this.title,
@@ -58,7 +60,8 @@ class SubCategoryResponseData {
       this.active,
       this.category,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt,
+      this.image});
 
   factory SubCategoryResponseData.fromJson(Map<String, dynamic> json) =>
       _$SubCategoryResponseDataFromJson(json);

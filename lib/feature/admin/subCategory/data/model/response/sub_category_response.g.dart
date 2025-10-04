@@ -33,6 +33,7 @@ SubCategoryResponseData _$SubCategoryResponseDataFromJson(
               json['category'] as Map<String, dynamic>),
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$SubCategoryResponseDataToJson(
@@ -44,6 +45,7 @@ Map<String, dynamic> _$SubCategoryResponseDataToJson(
       'category': instance.category,
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
+      'image': instance.image,
     };
 
 CategoryDataToSubCategory _$CategoryDataToSubCategoryFromJson(

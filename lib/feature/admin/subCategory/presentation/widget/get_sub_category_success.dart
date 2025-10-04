@@ -44,9 +44,23 @@ class GetSubCategoryDataSuccess extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: responsive.setHeight(1.2)),
-                  Image.asset(
-                    ImageAsset.croissant,
-                    height: responsive.setHeight(5.5),
+                  // Image.asset(
+                  //   ImageAsset.croissant,
+                  //   height: responsive.setHeight(5.5),
+                  // ),
+                  CachedNetworkImage(
+                    imageUrl: item.image!,
+                    height: responsive.setHeight(7), // Image height
+                    // Load category image from network
+                    placeholder: (context, url) => LoadingShimmer(
+                      height:
+                          responsive.setHeight(12), // Placeholder image height
+                      width: responsive.setWidth(12), // Placeholder image width
+                      borderRadius: responsive.setBorderRadius(
+                          2), // Rounded corners for placeholder
+                    ),
+                    errorWidget: (context, url, error) => const Icon(Icons
+                        .error), // Display error icon if image fails to load
                   ),
                   SizedBox(height: responsive.setHeight(2.5)),
                   Text(
@@ -126,6 +140,3 @@ class GetSubCategoryDataSuccess extends StatelessWidget {
         }));
   }
 }
-
-
-        
