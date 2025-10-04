@@ -9,7 +9,7 @@ class MapState with _$MapState {
   const factory MapState.loaded(
       LatLng currentPosition, Map<String, Marker> markers) = Loaded;
 
-  const factory MapState.searchResults(List<Prediction> predictions) = SearchResults;
+  const factory MapState.searchResults(List<MapBoxPlace> placesList) = SearchResults;
 
   const factory MapState.error(String message) = Error;
 

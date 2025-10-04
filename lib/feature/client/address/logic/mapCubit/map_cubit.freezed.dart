@@ -23,7 +23,7 @@ mixin _$MapState {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -40,7 +40,7 @@ mixin _$MapState {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -56,7 +56,7 @@ mixin _$MapState {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -184,7 +184,7 @@ class _$InitialImpl implements Initial {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -204,7 +204,7 @@ class _$InitialImpl implements Initial {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -223,7 +223,7 @@ class _$InitialImpl implements Initial {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -354,7 +354,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -374,7 +374,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -393,7 +393,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -566,7 +566,7 @@ class _$LoadedImpl implements Loaded {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -586,7 +586,7 @@ class _$LoadedImpl implements Loaded {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -605,7 +605,7 @@ class _$LoadedImpl implements Loaded {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -707,7 +707,7 @@ abstract class _$$SearchResultsImplCopyWith<$Res> {
           _$SearchResultsImpl value, $Res Function(_$SearchResultsImpl) then) =
       __$$SearchResultsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Prediction> predictions});
+  $Res call({List<MapBoxPlace> placesList});
 }
 
 /// @nodoc
@@ -721,13 +721,13 @@ class __$$SearchResultsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? predictions = null,
+    Object? placesList = null,
   }) {
     return _then(_$SearchResultsImpl(
-      null == predictions
-          ? _value._predictions
-          : predictions // ignore: cast_nullable_to_non_nullable
-              as List<Prediction>,
+      null == placesList
+          ? _value._placesList
+          : placesList // ignore: cast_nullable_to_non_nullable
+              as List<MapBoxPlace>,
     ));
   }
 }
@@ -735,20 +735,20 @@ class __$$SearchResultsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SearchResultsImpl implements SearchResults {
-  const _$SearchResultsImpl(final List<Prediction> predictions)
-      : _predictions = predictions;
+  const _$SearchResultsImpl(final List<MapBoxPlace> placesList)
+      : _placesList = placesList;
 
-  final List<Prediction> _predictions;
+  final List<MapBoxPlace> _placesList;
   @override
-  List<Prediction> get predictions {
-    if (_predictions is EqualUnmodifiableListView) return _predictions;
+  List<MapBoxPlace> get placesList {
+    if (_placesList is EqualUnmodifiableListView) return _placesList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_predictions);
+    return EqualUnmodifiableListView(_placesList);
   }
 
   @override
   String toString() {
-    return 'MapState.searchResults(predictions: $predictions)';
+    return 'MapState.searchResults(placesList: $placesList)';
   }
 
   @override
@@ -757,12 +757,12 @@ class _$SearchResultsImpl implements SearchResults {
         (other.runtimeType == runtimeType &&
             other is _$SearchResultsImpl &&
             const DeepCollectionEquality()
-                .equals(other._predictions, _predictions));
+                .equals(other._placesList, _placesList));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_predictions));
+      runtimeType, const DeepCollectionEquality().hash(_placesList));
 
   @JsonKey(ignore: true)
   @override
@@ -778,7 +778,7 @@ class _$SearchResultsImpl implements SearchResults {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -788,7 +788,7 @@ class _$SearchResultsImpl implements SearchResults {
     required TResult Function(CheckLocationAvailableResponse data)
         checkAddressAvailableSuccess,
   }) {
-    return searchResults(predictions);
+    return searchResults(placesList);
   }
 
   @override
@@ -798,7 +798,7 @@ class _$SearchResultsImpl implements SearchResults {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -807,7 +807,7 @@ class _$SearchResultsImpl implements SearchResults {
     TResult? Function(CheckLocationAvailableResponse data)?
         checkAddressAvailableSuccess,
   }) {
-    return searchResults?.call(predictions);
+    return searchResults?.call(placesList);
   }
 
   @override
@@ -817,7 +817,7 @@ class _$SearchResultsImpl implements SearchResults {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -828,7 +828,7 @@ class _$SearchResultsImpl implements SearchResults {
     required TResult orElse(),
   }) {
     if (searchResults != null) {
-      return searchResults(predictions);
+      return searchResults(placesList);
     }
     return orElse();
   }
@@ -902,10 +902,10 @@ class _$SearchResultsImpl implements SearchResults {
 }
 
 abstract class SearchResults implements MapState {
-  const factory SearchResults(final List<Prediction> predictions) =
+  const factory SearchResults(final List<MapBoxPlace> placesList) =
       _$SearchResultsImpl;
 
-  List<Prediction> get predictions;
+  List<MapBoxPlace> get placesList;
   @JsonKey(ignore: true)
   _$$SearchResultsImplCopyWith<_$SearchResultsImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -980,7 +980,7 @@ class _$ErrorImpl implements Error {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -1000,7 +1000,7 @@ class _$ErrorImpl implements Error {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -1019,7 +1019,7 @@ class _$ErrorImpl implements Error {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -1182,7 +1182,7 @@ class _$ToggleMapStateImpl implements ToggleMapState {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -1202,7 +1202,7 @@ class _$ToggleMapStateImpl implements ToggleMapState {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -1221,7 +1221,7 @@ class _$ToggleMapStateImpl implements ToggleMapState {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -1387,7 +1387,7 @@ class _$SetStringHomeLocationStateImpl implements SetStringHomeLocationState {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -1407,7 +1407,7 @@ class _$SetStringHomeLocationStateImpl implements SetStringHomeLocationState {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -1426,7 +1426,7 @@ class _$SetStringHomeLocationStateImpl implements SetStringHomeLocationState {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -1567,7 +1567,7 @@ class _$CheckAddressAvailableLoadingImpl
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -1587,7 +1587,7 @@ class _$CheckAddressAvailableLoadingImpl
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -1606,7 +1606,7 @@ class _$CheckAddressAvailableLoadingImpl
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -1768,7 +1768,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -1788,7 +1788,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -1807,7 +1807,7 @@ class _$CheckAddressAvailableErrorImpl implements CheckAddressAvailableError {
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,
@@ -1975,7 +1975,7 @@ class _$CheckAddressAvailableSuccessImpl
     required TResult Function(
             LatLng currentPosition, Map<String, Marker> markers)
         loaded,
-    required TResult Function(List<Prediction> predictions) searchResults,
+    required TResult Function(List<MapBoxPlace> placesList) searchResults,
     required TResult Function(String message) error,
     required TResult Function(MapType mapType) toggleMapState,
     required TResult Function(String homeLocation) setStringHomeLocationState,
@@ -1995,7 +1995,7 @@ class _$CheckAddressAvailableSuccessImpl
     TResult? Function()? loading,
     TResult? Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult? Function(List<Prediction> predictions)? searchResults,
+    TResult? Function(List<MapBoxPlace> placesList)? searchResults,
     TResult? Function(String message)? error,
     TResult? Function(MapType mapType)? toggleMapState,
     TResult? Function(String homeLocation)? setStringHomeLocationState,
@@ -2014,7 +2014,7 @@ class _$CheckAddressAvailableSuccessImpl
     TResult Function()? loading,
     TResult Function(LatLng currentPosition, Map<String, Marker> markers)?
         loaded,
-    TResult Function(List<Prediction> predictions)? searchResults,
+    TResult Function(List<MapBoxPlace> placesList)? searchResults,
     TResult Function(String message)? error,
     TResult Function(MapType mapType)? toggleMapState,
     TResult Function(String homeLocation)? setStringHomeLocationState,

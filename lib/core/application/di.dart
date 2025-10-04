@@ -1,4 +1,4 @@
-import 'package:flutter_google_maps_webservices/places.dart';
+import 'package:mapbox_search/mapbox_search.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 import '../../feature/admin/home/data/repository/repo.dart';
@@ -89,14 +89,15 @@ Future<void> _initAdmins() async {
 }
 
 Future<void> _initAdminHome() async {
-
   instance
     ..registerLazySingleton<OrderAdminRepositoryImplement>(
-            () => OrderAdminRepositoryImplement(
+        () => OrderAdminRepositoryImplement(
+              instance(),
+            ))
+    // //home repository
+    ..registerFactory<AdminHomeCubit>(() => AdminHomeCubit(
           instance(),
-        ))
-  // //home repository
-  ..registerFactory<AdminHomeCubit>(() => AdminHomeCubit(instance(),));
+        ));
 }
 
 Future<void> _initCategory() async {
@@ -112,13 +113,6 @@ Future<void> _initCategory() async {
         ));
 }
 
-
-
-
-
-
-
-
 Future<void> _initSubCategory() async {
   // //home repository
   instance
@@ -132,9 +126,16 @@ Future<void> _initSubCategory() async {
 }
 
 Future<void> _initPlaces() async {
-  final places = GoogleMapsPlaces(apiKey: EnvVariable.instance.mapKey);
+  //final places = GoogleMapsPlaces(apiKey: EnvVariable.instance.mapKey);
 
-  instance.registerLazySingleton<GoogleMapsPlaces>(() => places);
+    final geocoding = GeoCodingApi(
+      apiKey: EnvVariable.instance.mapKey,
+      country: "EG", 
+      limit: 6,
+      types: [PlaceType.address, PlaceType.place],
+    );
+  // instance.registerLazySingleton<GoogleMapsPlaces>(() => places);
+  instance.registerLazySingleton<GeoCodingApi>(() => geocoding);
 }
 
 Future<void> _initLogin() async {

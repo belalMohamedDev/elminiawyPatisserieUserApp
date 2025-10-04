@@ -1,19 +1,20 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:flutter_google_maps_webservices/places.dart';
+import 'package:mapbox_search/mapbox_search.dart';
 
 part 'map_state.dart';
 part 'map_cubit.freezed.dart';
 
 class MapCubit extends Cubit<MapState> {
-  MapCubit(this.places, this._userAddressRepository)
+  MapCubit(this.geoCoding, this._userAddressRepository)
       : super(const MapState.initial());
 
   final UserAddressRepositoryImplement _userAddressRepository;
 
   final context = instance<GlobalKey<NavigatorState>>().currentState!.context;
+  final GeoCodingApi geoCoding;
 
-  final GoogleMapsPlaces
-      places; // Instance of GoogleMapsPlaces for search functionality
+  // final GoogleMapsPlaces
+  //     places; // Instance of GoogleMapsPlaces for search functionality
   late GoogleMapController mapController; // Controller to manage Google Map
   late GoogleMapController
       newAddressMapController; // Controller to manage Google Map
@@ -45,27 +46,23 @@ class MapCubit extends Cubit<MapState> {
   }
 
   // Move the map to the location selected from the search results
-  Future<void> moveToLocationInTextFormField(Prediction prediction) async {
+  Future<void> moveToLocationInTextFormField(MapBoxPlace place) async {
     emit(const MapState.loading());
 
     try {
       // Fetch place details using place ID
-      PlacesDetailsResponse response =
-          await places.getDetailsByPlaceId(prediction.placeId!);
+      // PlacesDetailsResponse response =
+      //     await places.getDetailsByPlaceId(prediction.placeId!);
 
-      if (response.isOkay) {
-        double lat = response.result.geometry!.location.lat;
-        double lng = response.result.geometry!.location.lng;
-        LatLng newPosition = LatLng(lat, lng);
+      double lat = place.geometry?.coordinates.lat ?? 0.0;
+      double lng = place.geometry?.coordinates.long ?? 0.0;
+      LatLng newPosition = LatLng(lat, lng);
 
-        // Animate the map camera to the new location
-        await _animateCameraToPosition(newPosition);
+      // Animate the map camera to the new location
+      await _animateCameraToPosition(newPosition);
 
-        // Add a marker for the new location
-        await _addMarkerAndCheckAddress(newPosition);
-      } else {
-        emit(const MapState.error("Error moving to location."));
-      }
+      // Add a marker for the new location
+      await _addMarkerAndCheckAddress(newPosition);
     } catch (e) {
       emit(MapState.error("Error moving to location: $e"));
     }
@@ -229,13 +226,31 @@ class MapCubit extends Cubit<MapState> {
 
     try {
       // Perform the location search
-      PlacesAutocompleteResponse response =
-          await places.autocomplete(query.trim());
-      if (response.isOkay) {
-        emit(MapState.searchResults(response.predictions));
-      } else {
-        emit(const MapState.error("Error searching for location."));
-      }
+      final ApiResponse<List<MapBoxPlace>> response = await geoCoding.getPlaces(
+        query.trim(),
+        // proximity اختياري عشان تُعطي أفضل نتائج حوالين نقطة:
+        // proximity: Location(lat: targetPosition.latitude, long: targetPosition.longitude),
+      );
+
+      // if (response.isOkay) {
+      //   emit(MapState.searchResults(response.predictions));
+      // } else {
+      //   emit(const MapState.error("Error searching for location."));
+      // }
+
+      response.fold(
+        (placesList) {
+          // placesList: List<MapBoxPlace>
+          // **مهم**: MapState.searchResults لازم تتقبّل نوع اللي هتبعته هنا.
+          // لو MapState حالياً متوقع Google Predictions هتحتاج:
+          //  - تحول MapBoxPlace -> نموذج موحد (مثلاً SearchSuggestion)
+          //  - أو تضيف حالة جديدة في MapState
+          emit(MapState.searchResults(placesList)); // عدّل حسب تعريفك
+        },
+        (failure) {
+          emit(MapState.error(failure.toString()));
+        },
+      );
     } catch (e) {
       emit(MapState.error("Error searching for location: $e"));
     }
