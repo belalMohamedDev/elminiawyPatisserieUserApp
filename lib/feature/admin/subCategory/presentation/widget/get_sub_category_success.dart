@@ -44,10 +44,7 @@ class GetSubCategoryDataSuccess extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: responsive.setHeight(1.2)),
-                  // Image.asset(
-                  //   ImageAsset.croissant,
-                  //   height: responsive.setHeight(5.5),
-                  // ),
+                
                   CachedNetworkImage(
                     imageUrl: item.image!,
                     height: responsive.setHeight(7), // Image height

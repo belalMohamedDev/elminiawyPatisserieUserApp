@@ -28,22 +28,6 @@ Map<String, dynamic> _$GetAddressResponseToJson(GetAddressResponse instance) =>
       'data': instance.data,
     };
 
-PaginationRuslt _$PaginationRusltFromJson(Map<String, dynamic> json) =>
-    PaginationRuslt(
-      currentPage: (json['currentPage'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt(),
-      skip: (json['skip'] as num?)?.toInt(),
-      numberOfPages: (json['numberOfPages'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$PaginationRusltToJson(PaginationRuslt instance) =>
-    <String, dynamic>{
-      'currentPage': instance.currentPage,
-      'limit': instance.limit,
-      'skip': instance.skip,
-      'numberOfPages': instance.numberOfPages,
-    };
-
 GetAddressResponseData _$GetAddressResponseDataFromJson(
         Map<String, dynamic> json) =>
     GetAddressResponseData(

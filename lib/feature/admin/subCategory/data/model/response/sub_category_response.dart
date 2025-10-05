@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/core/network/paginationRuslt/pagination_ruslt_response.dart';
 
 part 'sub_category_response.g.dart';
 
@@ -6,6 +7,7 @@ part 'sub_category_response.g.dart';
 class SubCategoryResponse {
   bool? status;
   String? message;
+  PaginationRuslt? paginationRuslt;
   dynamic data;
 
   SubCategoryResponse({this.status, this.message, this.data});
@@ -41,6 +43,8 @@ class SubCategoryResponse {
     return json;
   }
 }
+
+
 
 @JsonSerializable()
 class SubCategoryResponseData {

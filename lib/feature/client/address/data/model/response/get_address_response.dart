@@ -1,3 +1,4 @@
+import 'package:elminiawy/core/network/paginationRuslt/pagination_ruslt_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_address_response.g.dart';
@@ -21,24 +22,7 @@ class GetAddressResponse {
   Map<String, dynamic> toJson() => _$GetAddressResponseToJson(this);
 }
 
-@JsonSerializable()
-class PaginationRuslt {
-  int? currentPage;
-  int? limit;
-  int? skip;
-  int? numberOfPages;
 
-  PaginationRuslt(
-      {this.currentPage, this.limit, this.skip, this.numberOfPages});
-
-      
-  //from json
-  factory PaginationRuslt.fromJson(Map<String, dynamic> json) =>
-      _$PaginationRusltFromJson(json);
-
-  //to json
-  Map<String, dynamic> toJson() => _$PaginationRusltToJson(this);
-}
 
 @JsonSerializable()
 class GetAddressResponseData {

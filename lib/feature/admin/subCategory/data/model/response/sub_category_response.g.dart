@@ -11,13 +11,17 @@ SubCategoryResponse _$SubCategoryResponseFromJson(Map<String, dynamic> json) =>
       status: json['status'] as bool?,
       message: json['message'] as String?,
       data: json['data'],
-    );
+    )..paginationRuslt = json['paginationRuslt'] == null
+        ? null
+        : PaginationRuslt.fromJson(
+            json['paginationRuslt'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$SubCategoryResponseToJson(
         SubCategoryResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
+      'paginationRuslt': instance.paginationRuslt,
       'data': instance.data,
     };
 
