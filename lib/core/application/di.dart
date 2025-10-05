@@ -121,7 +121,7 @@ Future<void> _initSubCategory() async {
               instance(),
             ))
     ..registerFactory<SubCategoriesCubit>(() => SubCategoriesCubit(
-          instance(),
+          instance(), instance(),
         ));
 }
 

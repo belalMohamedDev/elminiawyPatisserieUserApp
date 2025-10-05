@@ -29,6 +29,15 @@ class SubCategoriesState with _$SubCategoriesState {
   const factory SubCategoriesState.updateSubCategoriesSuccess(
       List<SubCategoryResponseData> data) = UpdateSubCategoriesSuccess;
 
+
+        const factory SubCategoriesState.updateSubCategoriesImageLoading(String id) =
+      UpdateSubCategoriesImageLoading;
+  const factory SubCategoriesState.updateSubCategoriesImageError(
+      ApiErrorModel apiErrorModel) = UpdateSubCategoriesImageError;
+
+  const factory SubCategoriesState.updateSubCategoriesImageSuccess(
+      List<SubCategoryResponseData> data) = UpdateSubCategoriesImageSuccess;
+
       
   const factory SubCategoriesState.updateActiveStatus(
       bool? value) = UpdateActiveStatus;

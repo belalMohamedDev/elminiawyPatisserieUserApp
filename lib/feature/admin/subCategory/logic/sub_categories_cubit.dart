@@ -1,12 +1,14 @@
+import 'dart:io';
+
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 part 'sub_categories_state.dart';
 part 'sub_categories_cubit.freezed.dart';
 
 class SubCategoriesCubit extends Cubit<SubCategoriesState> {
-  SubCategoriesCubit(this._subCategoryRepositoryImplement)
+  SubCategoriesCubit(this._subCategoryRepositoryImplement, this._imagePicker)
       : super(const SubCategoriesState.initial());
-
+  final ImagePicker _imagePicker;
   final SubCategoryRepositoryImplement _subCategoryRepositoryImplement;
   final TextEditingController arTitleController = TextEditingController();
   final TextEditingController enTitleController = TextEditingController();
@@ -170,6 +172,48 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
       },
       failure: (error) {
         emit(SubCategoriesState.deleteSubCategoriesError(error));
+      },
+    );
+  }
+
+
+
+  
+  Future<void> pickImage(
+    ImageSource source,
+    String? id,
+  ) async {
+    final pickedImage = await _imagePicker.pickImage(source: source);
+    if (pickedImage != null) {
+      final imageFile = File(pickedImage.path);
+      id == null
+          ? await fetchCreationNewSubCategory()
+          : await fetchUpdateSubCategoriesImage(id: id, image: imageFile);
+    }
+  }
+
+  Future<void> fetchUpdateSubCategoriesImage({
+    required String id,
+    required File image,
+  }) async {
+    emit(SubCategoriesState.updateSubCategoriesImageLoading(id));
+
+    final response =
+        await _subCategoryRepositoryImplement.updateSubCategoriesImageRepo( id, image);
+
+    response.when(
+      success: (dataResponse) {
+        final updatedIndex =
+            _subCategories.indexWhere((subCategory) => subCategory.sId == id);
+
+        if (updatedIndex != -1) {
+          _subCategories[updatedIndex] = dataResponse.data;
+        }
+
+        emit(SubCategoriesState.updateSubCategoriesImageSuccess([..._subCategories]));
+      },
+      failure: (error) {
+        emit(SubCategoriesState.updateSubCategoriesImageError(error));
       },
     );
   }

@@ -37,8 +37,8 @@ class GetSubCategoryDataSuccess extends StatelessWidget {
               ),
               child: GestureDetector(
                 onTap: () {
-                  context.read<SubCategoriesCubit>().fetchUpdateSubCategories(
-                      id: item.sId, active: !item.active!);
+                  context.read<SubCategoriesCubit>().pickImage(
+                       ImageSource.gallery, item.sId);
                 },
                 child: Container(
                   decoration: BoxDecoration(

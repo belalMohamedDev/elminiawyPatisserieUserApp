@@ -101,7 +101,7 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
                   const GetSubCategoryDataLoading(),
                 LoadingOverlay(
                     isLoading: state is CreateSubCategoriesLoading ||
-                        state is UpdateSubCategoriesLoading ||
+                        state is UpdateSubCategoriesLoading ||   state is UpdateSubCategoriesImageLoading ||
                         state is DeleteSubCategoriesLoading),
               ],
             ),
