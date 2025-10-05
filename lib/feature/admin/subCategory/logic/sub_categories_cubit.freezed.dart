@@ -20,6 +20,7 @@ mixin _$SubCategoriesState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -46,6 +47,7 @@ mixin _$SubCategoriesState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -68,6 +70,7 @@ mixin _$SubCategoriesState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -92,6 +95,8 @@ mixin _$SubCategoriesState {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -121,6 +126,8 @@ mixin _$SubCategoriesState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -145,6 +152,8 @@ mixin _$SubCategoriesState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -226,6 +235,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -255,6 +265,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -280,6 +291,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -310,6 +322,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -342,6 +356,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -369,6 +385,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -444,6 +462,7 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -473,6 +492,7 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -498,6 +518,7 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -528,6 +549,8 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -560,6 +583,8 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -587,6 +612,8 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -616,6 +643,236 @@ class _$GetSubCategoriesLoadingImpl implements GetSubCategoriesLoading {
 
 abstract class GetSubCategoriesLoading implements SubCategoriesState {
   const factory GetSubCategoriesLoading() = _$GetSubCategoriesLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$SubCategoriesLoadingFromPaginationImplCopyWith<$Res> {
+  factory _$$SubCategoriesLoadingFromPaginationImplCopyWith(
+          _$SubCategoriesLoadingFromPaginationImpl value,
+          $Res Function(_$SubCategoriesLoadingFromPaginationImpl) then) =
+      __$$SubCategoriesLoadingFromPaginationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SubCategoriesLoadingFromPaginationImplCopyWithImpl<$Res>
+    extends _$SubCategoriesStateCopyWithImpl<$Res,
+        _$SubCategoriesLoadingFromPaginationImpl>
+    implements _$$SubCategoriesLoadingFromPaginationImplCopyWith<$Res> {
+  __$$SubCategoriesLoadingFromPaginationImplCopyWithImpl(
+      _$SubCategoriesLoadingFromPaginationImpl _value,
+      $Res Function(_$SubCategoriesLoadingFromPaginationImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SubCategoriesLoadingFromPaginationImpl
+    implements SubCategoriesLoadingFromPagination {
+  const _$SubCategoriesLoadingFromPaginationImpl();
+
+  @override
+  String toString() {
+    return 'SubCategoriesState.getSubCategoriesFromPaginationLoadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubCategoriesLoadingFromPaginationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        getSubCategoriesSuccess,
+    required TResult Function(String id) deleteSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        deleteSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        deleteSubCategoriesSuccess,
+    required TResult Function(String id) updateSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        updateSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        updateSubCategoriesSuccess,
+    required TResult Function(bool? value) updateActiveStatus,
+    required TResult Function() createSubCategoriesLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        createSubCategoriesError,
+    required TResult Function(List<SubCategoryResponseData> data)
+        createSubCategoriesSuccess,
+  }) {
+    return getSubCategoriesFromPaginationLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
+    TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult? Function(String id)? deleteSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+    TResult? Function(String id)? updateSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        updateSubCategoriesSuccess,
+    TResult? Function(bool? value)? updateActiveStatus,
+    TResult? Function()? createSubCategoriesLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? createSubCategoriesError,
+    TResult? Function(List<SubCategoryResponseData> data)?
+        createSubCategoriesSuccess,
+  }) {
+    return getSubCategoriesFromPaginationLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
+    TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        getSubCategoriesSuccess,
+    TResult Function(String id)? deleteSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? deleteSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        deleteSubCategoriesSuccess,
+    TResult Function(String id)? updateSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        updateSubCategoriesSuccess,
+    TResult Function(bool? value)? updateActiveStatus,
+    TResult Function()? createSubCategoriesLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? createSubCategoriesError,
+    TResult Function(List<SubCategoryResponseData> data)?
+        createSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (getSubCategoriesFromPaginationLoadingState != null) {
+      return getSubCategoriesFromPaginationLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetSubCategoriesLoading value)
+        getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
+    required TResult Function(GetSubCategoriesError value)
+        getSubCategoriesError,
+    required TResult Function(GetSubCategoriesSuccess value)
+        getSubCategoriesSuccess,
+    required TResult Function(DeleteSubCategoriesLoading value)
+        deleteSubCategoriesLoading,
+    required TResult Function(DeleteSubCategoriesError value)
+        deleteSubCategoriesError,
+    required TResult Function(DeleteSubCategoriesSuccess value)
+        deleteSubCategoriesSuccess,
+    required TResult Function(UpdateSubCategoriesLoading value)
+        updateSubCategoriesLoading,
+    required TResult Function(UpdateSubCategoriesError value)
+        updateSubCategoriesError,
+    required TResult Function(UpdateSubCategoriesSuccess value)
+        updateSubCategoriesSuccess,
+    required TResult Function(UpdateActiveStatus value) updateActiveStatus,
+    required TResult Function(CreateSubCategoriesLoading value)
+        createSubCategoriesLoading,
+    required TResult Function(createSubCategoriesError value)
+        createSubCategoriesError,
+    required TResult Function(CreateSubCategoriesSuccess value)
+        createSubCategoriesSuccess,
+  }) {
+    return getSubCategoriesFromPaginationLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
+    TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult? Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult? Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult? Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+    TResult? Function(UpdateSubCategoriesLoading value)?
+        updateSubCategoriesLoading,
+    TResult? Function(UpdateSubCategoriesError value)? updateSubCategoriesError,
+    TResult? Function(UpdateSubCategoriesSuccess value)?
+        updateSubCategoriesSuccess,
+    TResult? Function(UpdateActiveStatus value)? updateActiveStatus,
+    TResult? Function(CreateSubCategoriesLoading value)?
+        createSubCategoriesLoading,
+    TResult? Function(createSubCategoriesError value)? createSubCategoriesError,
+    TResult? Function(CreateSubCategoriesSuccess value)?
+        createSubCategoriesSuccess,
+  }) {
+    return getSubCategoriesFromPaginationLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
+    TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
+    TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
+    TResult Function(DeleteSubCategoriesLoading value)?
+        deleteSubCategoriesLoading,
+    TResult Function(DeleteSubCategoriesError value)? deleteSubCategoriesError,
+    TResult Function(DeleteSubCategoriesSuccess value)?
+        deleteSubCategoriesSuccess,
+    TResult Function(UpdateSubCategoriesLoading value)?
+        updateSubCategoriesLoading,
+    TResult Function(UpdateSubCategoriesError value)? updateSubCategoriesError,
+    TResult Function(UpdateSubCategoriesSuccess value)?
+        updateSubCategoriesSuccess,
+    TResult Function(UpdateActiveStatus value)? updateActiveStatus,
+    TResult Function(CreateSubCategoriesLoading value)?
+        createSubCategoriesLoading,
+    TResult Function(createSubCategoriesError value)? createSubCategoriesError,
+    TResult Function(CreateSubCategoriesSuccess value)?
+        createSubCategoriesSuccess,
+    required TResult orElse(),
+  }) {
+    if (getSubCategoriesFromPaginationLoadingState != null) {
+      return getSubCategoriesFromPaginationLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SubCategoriesLoadingFromPagination
+    implements SubCategoriesState {
+  const factory SubCategoriesLoadingFromPagination() =
+      _$SubCategoriesLoadingFromPaginationImpl;
 }
 
 /// @nodoc
@@ -687,6 +944,7 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -716,6 +974,7 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -741,6 +1000,7 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -771,6 +1031,8 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -803,6 +1065,8 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -830,6 +1094,8 @@ class _$GetSubCategoriesErrorImpl implements GetSubCategoriesError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -944,6 +1210,7 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -973,6 +1240,7 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -998,6 +1266,7 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -1028,6 +1297,8 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -1060,6 +1331,8 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -1087,6 +1360,8 @@ class _$GetSubCategoriesSuccessImpl implements GetSubCategoriesSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -1194,6 +1469,7 @@ class _$DeleteSubCategoriesLoadingImpl implements DeleteSubCategoriesLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -1223,6 +1499,7 @@ class _$DeleteSubCategoriesLoadingImpl implements DeleteSubCategoriesLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -1248,6 +1525,7 @@ class _$DeleteSubCategoriesLoadingImpl implements DeleteSubCategoriesLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -1278,6 +1556,8 @@ class _$DeleteSubCategoriesLoadingImpl implements DeleteSubCategoriesLoading {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -1310,6 +1590,8 @@ class _$DeleteSubCategoriesLoadingImpl implements DeleteSubCategoriesLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -1337,6 +1619,8 @@ class _$DeleteSubCategoriesLoadingImpl implements DeleteSubCategoriesLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -1445,6 +1729,7 @@ class _$DeleteSubCategoriesErrorImpl implements DeleteSubCategoriesError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -1474,6 +1759,7 @@ class _$DeleteSubCategoriesErrorImpl implements DeleteSubCategoriesError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -1499,6 +1785,7 @@ class _$DeleteSubCategoriesErrorImpl implements DeleteSubCategoriesError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -1529,6 +1816,8 @@ class _$DeleteSubCategoriesErrorImpl implements DeleteSubCategoriesError {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -1561,6 +1850,8 @@ class _$DeleteSubCategoriesErrorImpl implements DeleteSubCategoriesError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -1588,6 +1879,8 @@ class _$DeleteSubCategoriesErrorImpl implements DeleteSubCategoriesError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -1703,6 +1996,7 @@ class _$DeleteSubCategoriesSuccessImpl implements DeleteSubCategoriesSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -1732,6 +2026,7 @@ class _$DeleteSubCategoriesSuccessImpl implements DeleteSubCategoriesSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -1757,6 +2052,7 @@ class _$DeleteSubCategoriesSuccessImpl implements DeleteSubCategoriesSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -1787,6 +2083,8 @@ class _$DeleteSubCategoriesSuccessImpl implements DeleteSubCategoriesSuccess {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -1819,6 +2117,8 @@ class _$DeleteSubCategoriesSuccessImpl implements DeleteSubCategoriesSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -1846,6 +2146,8 @@ class _$DeleteSubCategoriesSuccessImpl implements DeleteSubCategoriesSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -1954,6 +2256,7 @@ class _$UpdateSubCategoriesLoadingImpl implements UpdateSubCategoriesLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -1983,6 +2286,7 @@ class _$UpdateSubCategoriesLoadingImpl implements UpdateSubCategoriesLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2008,6 +2312,7 @@ class _$UpdateSubCategoriesLoadingImpl implements UpdateSubCategoriesLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2038,6 +2343,8 @@ class _$UpdateSubCategoriesLoadingImpl implements UpdateSubCategoriesLoading {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -2070,6 +2377,8 @@ class _$UpdateSubCategoriesLoadingImpl implements UpdateSubCategoriesLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -2097,6 +2406,8 @@ class _$UpdateSubCategoriesLoadingImpl implements UpdateSubCategoriesLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -2205,6 +2516,7 @@ class _$UpdateSubCategoriesErrorImpl implements UpdateSubCategoriesError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -2234,6 +2546,7 @@ class _$UpdateSubCategoriesErrorImpl implements UpdateSubCategoriesError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2259,6 +2572,7 @@ class _$UpdateSubCategoriesErrorImpl implements UpdateSubCategoriesError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2289,6 +2603,8 @@ class _$UpdateSubCategoriesErrorImpl implements UpdateSubCategoriesError {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -2321,6 +2637,8 @@ class _$UpdateSubCategoriesErrorImpl implements UpdateSubCategoriesError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -2348,6 +2666,8 @@ class _$UpdateSubCategoriesErrorImpl implements UpdateSubCategoriesError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -2463,6 +2783,7 @@ class _$UpdateSubCategoriesSuccessImpl implements UpdateSubCategoriesSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -2492,6 +2813,7 @@ class _$UpdateSubCategoriesSuccessImpl implements UpdateSubCategoriesSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2517,6 +2839,7 @@ class _$UpdateSubCategoriesSuccessImpl implements UpdateSubCategoriesSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2547,6 +2870,8 @@ class _$UpdateSubCategoriesSuccessImpl implements UpdateSubCategoriesSuccess {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -2579,6 +2904,8 @@ class _$UpdateSubCategoriesSuccessImpl implements UpdateSubCategoriesSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -2606,6 +2933,8 @@ class _$UpdateSubCategoriesSuccessImpl implements UpdateSubCategoriesSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -2711,6 +3040,7 @@ class _$UpdateActiveStatusImpl implements UpdateActiveStatus {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -2740,6 +3070,7 @@ class _$UpdateActiveStatusImpl implements UpdateActiveStatus {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2765,6 +3096,7 @@ class _$UpdateActiveStatusImpl implements UpdateActiveStatus {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2795,6 +3127,8 @@ class _$UpdateActiveStatusImpl implements UpdateActiveStatus {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -2827,6 +3161,8 @@ class _$UpdateActiveStatusImpl implements UpdateActiveStatus {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -2854,6 +3190,8 @@ class _$UpdateActiveStatusImpl implements UpdateActiveStatus {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -2935,6 +3273,7 @@ class _$CreateSubCategoriesLoadingImpl implements CreateSubCategoriesLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -2964,6 +3303,7 @@ class _$CreateSubCategoriesLoadingImpl implements CreateSubCategoriesLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -2989,6 +3329,7 @@ class _$CreateSubCategoriesLoadingImpl implements CreateSubCategoriesLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -3019,6 +3360,8 @@ class _$CreateSubCategoriesLoadingImpl implements CreateSubCategoriesLoading {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -3051,6 +3394,8 @@ class _$CreateSubCategoriesLoadingImpl implements CreateSubCategoriesLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -3078,6 +3423,8 @@ class _$CreateSubCategoriesLoadingImpl implements CreateSubCategoriesLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -3180,6 +3527,7 @@ class _$createSubCategoriesErrorImpl implements createSubCategoriesError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -3209,6 +3557,7 @@ class _$createSubCategoriesErrorImpl implements createSubCategoriesError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -3234,6 +3583,7 @@ class _$createSubCategoriesErrorImpl implements createSubCategoriesError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -3264,6 +3614,8 @@ class _$createSubCategoriesErrorImpl implements createSubCategoriesError {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -3296,6 +3648,8 @@ class _$createSubCategoriesErrorImpl implements createSubCategoriesError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -3323,6 +3677,8 @@ class _$createSubCategoriesErrorImpl implements createSubCategoriesError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?
@@ -3438,6 +3794,7 @@ class _$CreateSubCategoriesSuccessImpl implements CreateSubCategoriesSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getSubCategoriesLoading,
+    required TResult Function() getSubCategoriesFromPaginationLoadingState,
     required TResult Function(ApiErrorModel apiErrorModel)
         getSubCategoriesError,
     required TResult Function(List<SubCategoryResponseData> data)
@@ -3467,6 +3824,7 @@ class _$CreateSubCategoriesSuccessImpl implements CreateSubCategoriesSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getSubCategoriesLoading,
+    TResult? Function()? getSubCategoriesFromPaginationLoadingState,
     TResult? Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult? Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -3492,6 +3850,7 @@ class _$CreateSubCategoriesSuccessImpl implements CreateSubCategoriesSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getSubCategoriesLoading,
+    TResult Function()? getSubCategoriesFromPaginationLoadingState,
     TResult Function(ApiErrorModel apiErrorModel)? getSubCategoriesError,
     TResult Function(List<SubCategoryResponseData> data)?
         getSubCategoriesSuccess,
@@ -3522,6 +3881,8 @@ class _$CreateSubCategoriesSuccessImpl implements CreateSubCategoriesSuccess {
     required TResult Function(_Initial value) initial,
     required TResult Function(GetSubCategoriesLoading value)
         getSubCategoriesLoading,
+    required TResult Function(SubCategoriesLoadingFromPagination value)
+        getSubCategoriesFromPaginationLoadingState,
     required TResult Function(GetSubCategoriesError value)
         getSubCategoriesError,
     required TResult Function(GetSubCategoriesSuccess value)
@@ -3554,6 +3915,8 @@ class _$CreateSubCategoriesSuccessImpl implements CreateSubCategoriesSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult? Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult? Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult? Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult? Function(DeleteSubCategoriesLoading value)?
@@ -3581,6 +3944,8 @@ class _$CreateSubCategoriesSuccessImpl implements CreateSubCategoriesSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(GetSubCategoriesLoading value)? getSubCategoriesLoading,
+    TResult Function(SubCategoriesLoadingFromPagination value)?
+        getSubCategoriesFromPaginationLoadingState,
     TResult Function(GetSubCategoriesError value)? getSubCategoriesError,
     TResult Function(GetSubCategoriesSuccess value)? getSubCategoriesSuccess,
     TResult Function(DeleteSubCategoriesLoading value)?

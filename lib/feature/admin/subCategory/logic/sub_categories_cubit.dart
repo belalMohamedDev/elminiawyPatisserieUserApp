@@ -70,20 +70,35 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
     }
   }
 
-  Future<void> fetchGetSubCategories() async {
-    emit(const SubCategoriesState.getSubCategoriesLoading());
+  int page = 1;
+  int theLastPage = 0;
+
+  Future<void> fetchGetSubCategories({fromPagination = false}) async {
+    if (fromPagination) {
+      emit(const SubCategoriesState
+          .getSubCategoriesFromPaginationLoadingState());
+    } else {
+      emit(const SubCategoriesState.getSubCategoriesLoading());
+    }
 
     final response =
-        await _subCategoryRepositoryImplement.getSubCategoriesRepo();
+        await _subCategoryRepositoryImplement.getSubCategoriesRepo(16, page);
 
     response.when(
       success: (dataResponse) {
-        _subCategoryTitleData.clear(); // Clear old data
-        dataResponse.data?.forEach((subCategory) {
-          _subCategoryTitleData.add(subCategory.title); // Add new titles
-        });
+        //@TODO: handle pagination properly
+        // _subCategoryTitleData.clear(); // Clear old data
+        // dataResponse.data?.forEach((subCategory) {
+        //   _subCategoryTitleData.add(subCategory.title); // Add new titles
+        // });
 
-        _subCategories = dataResponse.data!;
+        if (dataResponse.data!.isNotEmpty) {
+          _subCategories.addAll(dataResponse.data!);
+          page++;
+        }else{
+          theLastPage = page;
+        }
+
         emit(SubCategoriesState.getSubCategoriesSuccess(_subCategories));
       },
       failure: (error) {

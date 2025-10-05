@@ -105,7 +105,10 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.subCategories)
-  Future<SubCategoryResponse> getSubCategoriesService();
+  Future<SubCategoryResponse> getSubCategoriesService(
+     @Query("limit") int ? limit,
+    @Query("page") int ? page
+  );
 
   @DELETE("${ApiConstants.subCategories}/{id}")
   Future<ApiSuccessGeneralModel> deleteSubCategoriesService(

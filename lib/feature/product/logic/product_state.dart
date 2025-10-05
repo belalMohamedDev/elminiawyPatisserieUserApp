@@ -22,6 +22,7 @@ class ProductState with _$ProductState {
       SelectedOptionState;
 
   const factory ProductState.getAllProductLoading() = GetAllProductLoading;
+  
   const factory ProductState.getAllProductError(ApiErrorModel apiErrorModel) =
       GetAllProductError;
 

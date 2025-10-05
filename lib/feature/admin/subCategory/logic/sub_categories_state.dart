@@ -6,6 +6,7 @@ class SubCategoriesState with _$SubCategoriesState {
 
   const factory SubCategoriesState.getSubCategoriesLoading() =
       GetSubCategoriesLoading;
+ const factory SubCategoriesState.getSubCategoriesFromPaginationLoadingState() = SubCategoriesLoadingFromPagination;
   const factory SubCategoriesState.getSubCategoriesError(
       ApiErrorModel apiErrorModel) = GetSubCategoriesError;
 

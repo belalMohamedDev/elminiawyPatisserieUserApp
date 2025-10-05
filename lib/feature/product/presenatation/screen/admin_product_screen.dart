@@ -11,6 +11,7 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
   @override
   void initState() {
     context.read<ProductCubit>().fetchGetAllProduct();
+    //TODO: implement pagination
     context.read<SubCategoriesCubit>().fetchGetSubCategories();
 
     super.initState();

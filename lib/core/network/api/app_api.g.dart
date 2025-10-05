@@ -654,9 +654,16 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<SubCategoryResponse> getSubCategoriesService() async {
+  Future<SubCategoryResponse> getSubCategoriesService(
+    int? limit,
+    int? page,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'limit': limit,
+      r'page': page,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<SubCategoryResponse>(Options(
