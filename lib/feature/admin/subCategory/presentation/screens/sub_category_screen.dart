@@ -14,9 +14,10 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
   @override
   void initState() {
     super.initState();
-    //@TODO: fetch data
-    context.read<SubCategoriesCubit>().fetchGetSubCategories();
-    context.read<CategoryCubit>().getCategories();
+    Future.wait([
+      context.read<SubCategoriesCubit>().fetchGetSubCategories(),
+      context.read<CategoryCubit>().getCategories(),
+    ]);
   }
 
   @override

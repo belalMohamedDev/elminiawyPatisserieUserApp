@@ -12,7 +12,9 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
   void initState() {
     context.read<ProductCubit>().fetchGetAllProduct();
     //TODO: implement pagination
-    context.read<SubCategoriesCubit>().fetchGetSubCategories();
+    context
+        .read<SubCategoriesCubit>()
+        .fetchGetSubCategories(disablePagination: true);
 
     super.initState();
   }

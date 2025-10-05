@@ -11,7 +11,7 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   final TextEditingController arTitleController = TextEditingController();
   final TextEditingController enTitleController = TextEditingController();
 
-  List<SubCategoryResponseData> _subCategories = [];
+  final List<SubCategoryResponseData> _subCategories = [];
   final List<String?> _subCategoryTitleData = [];
 
   List<SubCategoryResponseData> get subCategories => _subCategories;
@@ -73,7 +73,8 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   int page = 1;
   int theLastPage = 0;
 
-  Future<void> fetchGetSubCategories({fromPagination = false}) async {
+  Future<void> fetchGetSubCategories(
+      {fromPagination = false, disablePagination = false}) async {
     if (fromPagination) {
       emit(const SubCategoriesState
           .getSubCategoriesFromPaginationLoadingState());
@@ -81,8 +82,10 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
       emit(const SubCategoriesState.getSubCategoriesLoading());
     }
 
-    final response =
-        await _subCategoryRepositoryImplement.getSubCategoriesRepo(16, page);
+    final int effectivePage = disablePagination ? -1 : page;
+
+    final response = await _subCategoryRepositoryImplement.getSubCategoriesRepo(
+        16, effectivePage);
 
     response.when(
       success: (dataResponse) {
@@ -92,11 +95,26 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
         //   _subCategoryTitleData.add(subCategory.title); // Add new titles
         // });
 
-        if (dataResponse.data!.isNotEmpty) {
-          _subCategories.addAll(dataResponse.data!);
-          page++;
-        }else{
-          theLastPage = page;
+        // if (dataResponse.data!.isNotEmpty) {
+        //   _subCategories.addAll(dataResponse.data!);
+        //   page++;
+        // }else{
+        //   theLastPage = page;
+        // }
+
+        if (disablePagination) {
+          _subCategoryTitleData.clear();
+          dataResponse.data?.forEach((subCategory) {
+            _subCategoryTitleData.add(subCategory.title);
+          });
+        } else {
+          // ✅ مع pagination
+          if (dataResponse.data != null && dataResponse.data!.isNotEmpty) {
+            _subCategories.addAll(dataResponse.data!);
+            page++;
+          } else {
+            theLastPage = page;
+          }
         }
 
         emit(SubCategoriesState.getSubCategoriesSuccess(_subCategories));
