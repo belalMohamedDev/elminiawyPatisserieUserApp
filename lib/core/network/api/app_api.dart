@@ -121,6 +121,13 @@ abstract class AppServiceClient {
     @Body() Map<String, dynamic> requestBody,
   );
 
+  @PUT("${ApiConstants.subCategories}/{id}")
+  @MultiPart()
+  Future<SubCategoryResponse> updateSubCategoriesImageService(
+    @Path("id") String id,
+    @Part() File image,
+  );
+
   @POST(ApiConstants.subCategories)
   Future<SubCategoryResponse> createNewSubCategoriesService(
     @Body() Map<String, dynamic> requestBody,

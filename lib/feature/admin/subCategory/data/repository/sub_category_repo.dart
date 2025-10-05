@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 abstract class SubCategoryRepository {
@@ -5,6 +7,9 @@ abstract class SubCategoryRepository {
       int? limit, int? page);
   Future<ApiResult<SubCategoryResponse>> updateSubCategoriesRepo(String id,
       String? titleAr, String? titleEn, bool? active, String? categoryId);
+
+  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesImageRepo(
+      String id, File image);
 
   Future<ApiResult<ApiSuccessGeneralModel>> deleteSubCategoriesrepo(
     String id,
@@ -86,6 +91,18 @@ class SubCategoryRepositoryImplement implements SubCategoryRepository {
     try {
       final response =
           await _apiService.createNewSubCategoriesService(requestBody);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<SubCategoryResponse>> updateSubCategoriesImageRepo(
+      String id, File image) async {
+    try {
+      final response =
+          await _apiService.updateSubCategoriesImageService(id, image);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

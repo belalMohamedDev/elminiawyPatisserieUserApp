@@ -89,26 +89,12 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
 
     response.when(
       success: (dataResponse) {
-        //@TODO: handle pagination properly
-        // _subCategoryTitleData.clear(); // Clear old data
-        // dataResponse.data?.forEach((subCategory) {
-        //   _subCategoryTitleData.add(subCategory.title); // Add new titles
-        // });
-
-        // if (dataResponse.data!.isNotEmpty) {
-        //   _subCategories.addAll(dataResponse.data!);
-        //   page++;
-        // }else{
-        //   theLastPage = page;
-        // }
-
         if (disablePagination) {
           _subCategoryTitleData.clear();
           dataResponse.data?.forEach((subCategory) {
             _subCategoryTitleData.add(subCategory.title);
           });
         } else {
-          // ✅ مع pagination
           if (dataResponse.data != null && dataResponse.data!.isNotEmpty) {
             _subCategories.addAll(dataResponse.data!);
             page++;
