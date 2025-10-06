@@ -1,7 +1,5 @@
 import '../../../../../../core/common/shared/shared_imports.dart'; //
 
-
-
 class ProductBottomSheet extends StatelessWidget {
   const ProductBottomSheet(
       {super.key, required this.index, required this.displayList});
@@ -27,7 +25,7 @@ class ProductBottomSheet extends StatelessWidget {
             _productImageRatingNameAndFavoritRow(product, context, responsive),
             responsive.setSizeBox(height: 2),
             Text(
-              context.translate(AppStrings.description) ,
+              context.translate(AppStrings.description),
               style: Theme.of(context)
                   .textTheme
                   .titleLarge!
@@ -35,7 +33,7 @@ class ProductBottomSheet extends StatelessWidget {
             ),
             responsive.setSizeBox(height: 0.5),
             Text(
-              '  ${displayList[index].description!}',
+              '${displayList[index].description!}',
               style: Theme.of(context)
                   .textTheme
                   .bodySmall!
@@ -125,7 +123,7 @@ class ProductBottomSheet extends StatelessWidget {
                           .setWidth(3), // Spacer between spinner and text
                     ),
                     Text(
-                      context.translate(AppStrings.loading)  ,
+                      context.translate(AppStrings.loading),
                       style:
                           Theme.of(context).textTheme.headlineSmall?.copyWith(
                                 fontSize: responsive.setTextSize(3.8),
@@ -134,7 +132,7 @@ class ProductBottomSheet extends StatelessWidget {
                   ],
                 ),
                 orElse: () => Text(
-                 context.translate( AppStrings.addToCart),
+                  context.translate(AppStrings.addToCart),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontSize: responsive.setTextSize(3.8),
                       ),
@@ -217,7 +215,7 @@ class ProductBottomSheet extends StatelessWidget {
           ),
           responsive.setSizeBox(height: 1.2),
           Text(
-            '${ context.translate(AppStrings.price)}   ${displayList[index].price!}  ${ context.translate(AppStrings.egy)}',
+            '${context.translate(AppStrings.price)}   ${displayList[index].price!}  ${context.translate(AppStrings.egy)}',
             style: Theme.of(context)
                 .textTheme
                 .bodySmall!

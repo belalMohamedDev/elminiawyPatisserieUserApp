@@ -6,12 +6,13 @@ class ProductBaseOnCategoryBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
+      padding:
+          EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h, bottom: 20.h),
       child: Column(
         children: [
           const SearchRow(),
           SizedBox(
-            height: 40.h,
+            height: 20.h,
           ),
           BlocBuilder<ProductBasedOnCategoryCubit, ProductBasedOnCategoryState>(
             buildWhen: (previous, current) =>
@@ -33,7 +34,7 @@ class ProductBaseOnCategoryBody extends StatelessWidget {
                   children: [
                     _subCategorySuccessState(context),
                     SizedBox(
-                      height: 40.h,
+                      height: 15.h,
                     ),
                   ],
                 );
@@ -48,8 +49,10 @@ class ProductBaseOnCategoryBody extends StatelessWidget {
             builder: (context, state) {
               return state.maybeWhen(
                 filterProductListSuccess: (productList) {
-                  return ProductGridViewSuccessState(
-                      allProductList: productList);
+                  return Expanded(
+                    child: ProductGridViewSuccessState(
+                        allProductList: productList),
+                  );
                 },
                 orElse: () {
                   return const SizedBox.shrink();
@@ -137,7 +140,7 @@ SizedBox _subCategorySuccessState(BuildContext context) {
 
 SizedBox _subCategoryLoadingAndErrorState() {
   return SizedBox(
-    height: 100.h,
+    height: 70.h,
     child: ListView.builder(
       itemCount: 10,
       scrollDirection: Axis.horizontal,

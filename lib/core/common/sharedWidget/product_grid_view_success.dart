@@ -17,7 +17,6 @@ class ProductGridViewSuccessState extends StatelessWidget {
     this.isSearchActive = false,
     this.grideViewIndex,
     this.physics,
- 
     this.allProductList,
   });
 
@@ -29,7 +28,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     // Determine which list to display (dataList, wishListData, or allProductList)
-    final List displayList = (dataList  ?? allProductList ?? []);
+    final List displayList = (dataList ?? allProductList ?? []);
 
     final int maxItemCount = displayList.length;
 
@@ -46,7 +45,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
       crossAxisCount: 2, // Number of columns in the grid
       crossAxisSpacing: 12, // Spacing between grid items
       mainAxisSpacing: 15, // Spacing between grid rows
-      childAspectRatio: 0.7, // Aspect ratio for grid items
+      childAspectRatio: 0.59, // Aspect ratio for grid items
       children: List.generate(
         itemCount,
         (index) => InkWell(
@@ -70,6 +69,18 @@ class ProductGridViewSuccessState extends StatelessWidget {
                     _productTitleAndSomeInformationText(
                         responsive, displayList, index, context, isEnLocale)
                   ],
+                ),
+// Display product price
+                Positioned(
+                  bottom: 8,
+                  left: isEnLocale ? 5 : null,
+                  right: isEnLocale ? null : 5,
+                  child: Text(
+                    " ${displayList[index].price!} ${context.translate(AppStrings.egy)}",
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        fontSize: responsive.setTextSize(4),
+                        color: ColorManger.brun),
+                  ),
                 ),
                 // Add to order button
                 _addOrderButton(
@@ -142,7 +153,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
       bool isEnLocale) {
     return Padding(
       padding: responsive.setPadding(
-          left: isEnLocale ? 4 : null, top: 2, right: isEnLocale ? null : 3),
+          left: isEnLocale ? 2 : null, top: 1.5, right: isEnLocale ? null : 3),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -152,7 +163,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
-                .copyWith(fontSize: responsive.setTextSize(4)),
+                .copyWith(fontSize: responsive.setTextSize(3.8)),
           ),
           responsive.setSizeBox(height: 0.5),
           // Display product description
@@ -162,15 +173,8 @@ class ProductGridViewSuccessState extends StatelessWidget {
                 .textTheme
                 .bodySmall!
                 .copyWith(fontSize: responsive.setTextSize(3)),
-          ),
-          responsive.setSizeBox(height: 0.5),
-          // Display product price
-          Text(
-            " ${displayList[index].price!} ${context.translate(AppStrings.egy)}",
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(fontSize: responsive.setTextSize(3)),
+            maxLines: 3, // 👈 عدد السطور المسموح بيها
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -189,7 +193,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(responsive.setBorderRadius(2)),
               topRight: Radius.circular(responsive.setBorderRadius(2))),
-          color: ColorManger.brownLight),
+          color: ColorManger.brownLight.withOpacity(0.1)),
       child: Stack(
         children: [
           // Wishlist button
