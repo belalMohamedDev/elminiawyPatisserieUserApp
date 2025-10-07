@@ -17,7 +17,7 @@ class ProductBottomSheet extends StatelessWidget {
     return Padding(
       padding: responsive.setPadding(left: 5, right: 5, bottom: 4),
       child: SizedBox(
-        height: responsive.setHeight(32),
+        height: responsive.setHeight(35),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -152,6 +152,7 @@ class ProductBottomSheet extends StatelessWidget {
         Padding(
           padding: responsive.setPadding(top: 3),
           child: Container(
+            width: responsive.setWidth(28),
             decoration: BoxDecoration(
               color: ColorManger.backgroundItem,
               borderRadius:
@@ -165,7 +166,7 @@ class ProductBottomSheet extends StatelessWidget {
             ),
           ),
         ),
-        responsive.setSizeBox(width: 4),
+        responsive.setSizeBox(width: 3),
         _namePriceAndRatingColumn(context, responsive),
         const Spacer(),
         _wishListContainer(context, product, responsive),
@@ -177,51 +178,54 @@ class ProductBottomSheet extends StatelessWidget {
       BuildContext context, ResponsiveUtils responsive) {
     return Padding(
       padding: responsive.setPadding(top: 3),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            displayList[index].title!,
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(fontSize: responsive.setTextSize(4)),
-          ),
-          responsive.setSizeBox(height: 1.2),
-          IgnorePointer(
-            ignoring: true,
-            child: RatingBar(
-                initialRating: displayList[index].ratingsAverage!,
-                direction: Axis.horizontal,
-                itemSize: responsive.setIconSize(4),
-                itemCount: 5,
-                allowHalfRating: true,
-                itemPadding: responsive.setPadding(right: 0.5),
-                onRatingUpdate: (rating) {},
-                ratingWidget: RatingWidget(
-                    full: Icon(
-                      IconlyBold.star,
-                      color: ColorManger.brown,
-                    ),
-                    half: Icon(
-                      IconlyBold.star,
-                      color: ColorManger.brun,
-                    ),
-                    empty: Icon(
-                      IconlyBroken.star,
-                      color: ColorManger.brunLight,
-                    ))),
-          ),
-          responsive.setSizeBox(height: 1.2),
-          Text(
-            '${context.translate(AppStrings.price)}   ${displayList[index].price!}  ${context.translate(AppStrings.egy)}',
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(fontSize: responsive.setTextSize(3.5)),
-          ),
-        ],
+      child: SizedBox(
+        width: responsive.setWidth(42),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              displayList[index].title!,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: responsive.setTextSize(3.8)),
+            ),
+            responsive.setSizeBox(height: 1.2),
+            IgnorePointer(
+              ignoring: true,
+              child: RatingBar(
+                  initialRating: displayList[index].ratingsAverage!,
+                  direction: Axis.horizontal,
+                  itemSize: responsive.setIconSize(4),
+                  itemCount: 5,
+                  allowHalfRating: true,
+                  itemPadding: responsive.setPadding(right: 0.5),
+                  onRatingUpdate: (rating) {},
+                  ratingWidget: RatingWidget(
+                      full: Icon(
+                        IconlyBold.star,
+                        color: ColorManger.brown,
+                      ),
+                      half: Icon(
+                        IconlyBold.star,
+                        color: ColorManger.brun,
+                      ),
+                      empty: Icon(
+                        IconlyBroken.star,
+                        color: ColorManger.brunLight,
+                      ))),
+            ),
+            responsive.setSizeBox(height: 1.2),
+            Text(
+              '${context.translate(AppStrings.price)}   ${displayList[index].price!}  ${context.translate(AppStrings.egy)}',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(fontSize: responsive.setTextSize(3.5)),
+            ),
+          ],
+        ),
       ),
     );
   }

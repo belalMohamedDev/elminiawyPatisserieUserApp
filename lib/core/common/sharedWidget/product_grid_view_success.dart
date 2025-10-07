@@ -160,6 +160,8 @@ class ProductGridViewSuccessState extends StatelessWidget {
           // Display product title
           Text(
             displayList[index].title!,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -173,7 +175,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
                 .textTheme
                 .bodySmall!
                 .copyWith(fontSize: responsive.setTextSize(3)),
-            maxLines: 3, // 👈 عدد السطور المسموح بيها
+            maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),
         ],
