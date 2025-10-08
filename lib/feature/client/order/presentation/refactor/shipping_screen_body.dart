@@ -141,7 +141,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                                   responsive.setSizeBox(width: 2),
                                   ConstrainedBox(
                                     constraints:
-                                        BoxConstraints(maxWidth: 240.w),
+                                        BoxConstraints(maxWidth: 220.w),
                                     child: Text(
                                       userAddressCubit
                                           .addressDataList[index].region!,

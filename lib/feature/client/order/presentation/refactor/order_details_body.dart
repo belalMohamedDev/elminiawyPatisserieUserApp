@@ -110,6 +110,7 @@ class OrderDetailsBody extends StatelessWidget {
                 children: [
                   responsive.setSizeBox(width: 3),
                   Container(
+                    width: responsive.setWidth(20),
                     decoration: BoxDecoration(
                       color: ColorManger.brownLight,
                       borderRadius:

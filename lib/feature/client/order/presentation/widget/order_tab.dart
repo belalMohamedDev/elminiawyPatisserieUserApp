@@ -7,6 +7,8 @@ class OrdersTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final responsive = ResponsiveUtils(context);
+
     return ListView.builder(
       itemCount: getOrdersResponseData.length,
       itemBuilder: (context, index) {
@@ -38,6 +40,7 @@ class OrdersTab extends StatelessWidget {
                     width: 10.w,
                   ),
                   Container(
+                    width: responsive.setWidth(20),
                     decoration: BoxDecoration(
                       color: ColorManger.brownLight,
                       borderRadius: BorderRadius.circular(14.r),
