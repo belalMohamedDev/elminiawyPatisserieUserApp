@@ -287,6 +287,7 @@ class AppStrings {
   static const String totalPrice = "totalPrice";
   static const String shippingPrice = "shippingPrice";
   static const String taxPrice = "taxPrice";
+  static const String product = "Product";
   static const String orderStatus = "orderStatus";
   static const String orderHasBeenPlacedAt = "orderHasBeenPlacedAt";
   static const String preparing = "preparing";
