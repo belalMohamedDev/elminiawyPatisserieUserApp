@@ -57,71 +57,75 @@ class OrderDetailsScreen extends StatelessWidget {
               child: responsive.setSizeBox(height: 1),
             ),
             SliverToBoxAdapter(
-              child: Container(
-                width: double.infinity,
-                height: responsive.setHeight(8),
-                decoration: BoxDecoration(
-                    color: ColorManger.backgroundItem,
-                    borderRadius:
-                        BorderRadius.circular(responsive.setBorderRadius(3))),
-                child: Padding(
-                  padding: responsive.setPadding(left: 3, right: 3),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(IconlyBroken.profile,
-                              color: ColorManger.brun,
-                              size: responsive.setHeight(2.5)),
-                          responsive.setSizeBox(width: 2),
-                          Text(orderModel.user?.name ?? '',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      color: ColorManger.brun,
-                                      fontSize: responsive.setTextSize(3.5))),
-                        ],
-                      ),
-                      responsive.setSizeBox(height: 0.5),
-                      Row(
-                        children: [
-                          Icon(IconlyBroken.message,
-                              color: ColorManger.brun,
-                              size: responsive.setHeight(2.5)),
-                          responsive.setSizeBox(width: 2),
-                          Text(orderModel.user?.email ?? '',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      color: ColorManger.brun,
-                                      fontSize: responsive.setTextSize(3.5))),
-                          responsive.setSizeBox(width: 8),
-                          Icon(IconlyBroken.call,
-                              color: ColorManger.brun,
-                              size: responsive.setHeight(2.5)),
-                          responsive.setSizeBox(width: 2),
-                          Text(orderModel.user?.phone ?? '',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      color: ColorManger.brun,
-                                      fontSize: responsive.setTextSize(3.5))),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              child: _userInformationContainer(responsive, context),
             )
           ],
         ),
       ),
     );
+  }
+
+  Container _userInformationContainer(ResponsiveUtils responsive, BuildContext context) {
+    return Container(
+              width: double.infinity,
+              height: responsive.setHeight(8),
+              decoration: BoxDecoration(
+                  color: ColorManger.backgroundItem,
+                  borderRadius:
+                      BorderRadius.circular(responsive.setBorderRadius(3))),
+              child: Padding(
+                padding: responsive.setPadding(left: 3, right: 3),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(IconlyBroken.profile,
+                            color: ColorManger.brun,
+                            size: responsive.setHeight(2.5)),
+                        responsive.setSizeBox(width: 2),
+                        Text(orderModel.user?.name ?? '',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                    color: ColorManger.brun,
+                                    fontSize: responsive.setTextSize(3.5))),
+                      ],
+                    ),
+                    responsive.setSizeBox(height: 0.5),
+                    Row(
+                      children: [
+                        Icon(IconlyBroken.message,
+                            color: ColorManger.brun,
+                            size: responsive.setHeight(2.5)),
+                        responsive.setSizeBox(width: 2),
+                        Text(orderModel.user?.email ?? '',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                    color: ColorManger.brun,
+                                    fontSize: responsive.setTextSize(3.5))),
+                        responsive.setSizeBox(width: 8),
+                        Icon(IconlyBroken.call,
+                            color: ColorManger.brun,
+                            size: responsive.setHeight(2.5)),
+                        responsive.setSizeBox(width: 2),
+                        Text(orderModel.user?.phone ?? '',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                    color: ColorManger.brun,
+                                    fontSize: responsive.setTextSize(3.5))),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            );
   }
 
   Container _noteContainer(ResponsiveUtils responsive, BuildContext context) {
