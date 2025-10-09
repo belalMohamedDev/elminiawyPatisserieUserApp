@@ -329,7 +329,8 @@ abstract class AppServiceClient {
   @PUT('${ApiConstants.order}/admin/{id}')
   Future<OrderResponse> updateAdminStatusOrdersService(
     @Path("id") String id,
-    @Field("adminAcceptedAt") String adminAcceptedAt,
+    @Field("adminAcceptedAt") String? adminAcceptedAt,
+    @Field("canceledAt") String? canceledAt,
     @Field("status") int status,
   );
 }

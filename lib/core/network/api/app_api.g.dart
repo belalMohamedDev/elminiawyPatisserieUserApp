@@ -2324,16 +2324,20 @@ class _AppServiceClient implements AppServiceClient {
   @override
   Future<OrderResponse> updateAdminStatusOrdersService(
     String id,
-    String adminAcceptedAt,
+    String? adminAcceptedAt,
+    String? canceledAt,
     int status,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = {
       'adminAcceptedAt': adminAcceptedAt,
+      'canceledAt': canceledAt,
       'status': status,
     };
+    _data.removeWhere((k, v) => v == null);
     final _options = _setStreamType<OrderResponse>(Options(
       method: 'PUT',
       headers: _headers,

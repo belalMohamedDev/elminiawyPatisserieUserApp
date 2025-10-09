@@ -135,11 +135,13 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                         ? getPendingOrders[index]
                                             .canceledAt!
                                             .getFormattedDate()
-                                        : isCompleteOrder?getPendingOrders[index]
-                                            .adminCompletedAt!
-                                            .getFormattedDate():getPendingOrders[index]
-                                            .createdAt!
-                                            .getFormattedDate(),
+                                        : isCompleteOrder
+                                            ? getPendingOrders[index]
+                                                .adminCompletedAt!
+                                                .getFormattedDate()
+                                            : getPendingOrders[index]
+                                                .createdAt!
+                                                .getFormattedDate(),
                                     style: TextStyle(
                                         color: ColorManger.brun,
                                         fontSize: responsive.setTextSize(3.9)),
@@ -167,7 +169,16 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                                 BorderRadius.circular(8),
                                           ),
                                         ),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          context
+                                              .read<AdminHomeCubit>()
+                                              .updateAdminOrderStatusSummit(
+                                                  getPendingOrders[index].sId!,
+                                                  "",
+                                                  DateTime.now()
+                                                      .toIso8601String(),
+                                                  5);
+                                        },
                                         child: const Text("Cancel")),
                                   ),
                                   const Spacer(),
@@ -187,6 +198,9 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                               .read<AdminHomeCubit>()
                                               .updateAdminOrderStatusSummit(
                                                   getPendingOrders[index].sId!,
+                                                  DateTime.now()
+                                                      .toIso8601String(),
+                                                  "",
                                                   1);
                                         },
                                         child: const Text("Accept")),
