@@ -103,14 +103,19 @@ class _HomeOrdersState extends State<HomeOrders> {
                           },
                         ),
                         const Spacer(),
-                        HomeOrderCardWidget(
-                          title: "Sales Today",
-                          number:
-                              '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.first.totalSalesToday ?? 0} EGP',
-                          image: ImageAsset.checkOut,
-                          cardContentColor: ColorManger.backgroundItem,
-                          cardColor: ColorManger.brunLight,
-                          isSalesToday: true,
+                        GestureDetector(
+                          onTap: () {
+                            context.pushNamed(Routes.pendingOrders);
+                          },
+                          child: HomeOrderCardWidget(
+                            title: "Pending Orders",
+                            number:
+                                '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.first.pendingOrders ?? 0} ',
+                            image: ImageAsset.orderWaiting,
+                            cardContentColor: ColorManger.white,
+                            cardColor: const Color(0xffe68636).withOpacity(0.8),
+                            // isSalesToday: true,
+                          ),
                         ),
                       ],
                     ),

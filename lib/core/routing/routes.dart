@@ -37,4 +37,6 @@ class Routes {
   static const String newOrders = "newOrders";
   static const String completeOrders = "completeOrders";
   static const String cancelledOrders = "CancelledOrders";
+
+  static const String pendingOrders = "PendingOrders";
 }

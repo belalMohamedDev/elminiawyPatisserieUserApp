@@ -29,18 +29,21 @@ class GetOrderStatusCountResponse {
 
 class Data {
   int? newOrders;
+  int? pendingOrders;
   int? completeOrders;
   int? cancelledOrders;
   int? totalSalesToday;
 
   Data(
       {this.newOrders,
-        this.completeOrders,
-        this.cancelledOrders,
-        this.totalSalesToday});
+      this.pendingOrders,
+      this.completeOrders,
+      this.cancelledOrders,
+      this.totalSalesToday});
 
   Data.fromJson(Map<String, dynamic> json) {
     newOrders = json['newOrders'];
+    pendingOrders = json['pendingOrders'];
     completeOrders = json['completeOrders'];
     cancelledOrders = json['cancelledOrders'];
     totalSalesToday = json['totalSalesToday'];
@@ -49,6 +52,7 @@ class Data {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['newOrders'] = newOrders;
+    data['pendingOrders'] = pendingOrders;
     data['completeOrders'] = completeOrders;
     data['cancelledOrders'] = cancelledOrders;
     data['totalSalesToday'] = totalSalesToday;

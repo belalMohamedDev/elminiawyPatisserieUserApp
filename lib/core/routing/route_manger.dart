@@ -4,6 +4,7 @@ import '../../../../core/common/shared/shared_imports.dart';
 import '../../feature/admin/home/presentation/screen/canelled_orders.dart';
 import '../../feature/admin/home/presentation/screen/complete_orders.dart';
 import '../../feature/admin/home/presentation/screen/new_orders.dart';
+import '../../feature/admin/home/presentation/screen/pending_orders.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
@@ -277,6 +278,14 @@ class RouteGenerator {
           builder: (_) => BlocProvider(
             create: (context) => instance<AdminHomeCubit>(),
             child: const CancelledOrders(),
+          ),
+        );
+
+      case Routes.pendingOrders:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<AdminHomeCubit>(),
+            child: const PendingOrders(),
           ),
         );
 
