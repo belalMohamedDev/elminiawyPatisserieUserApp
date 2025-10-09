@@ -66,14 +66,22 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     );
   }
 
-  Future<void> updateAdminOrderStatusSummit(String id, String? adminAcceptedAt,
-      String? canceledAt, int status) async {
+  Future<void> updateAdminOrderStatusSummit(
+      {required String id,
+      String? adminAcceptedAt,
+      String? adminCompletedAt,
+      String? canceledAt,
+      required int status}) async {
     if (isClosed) return;
     emit(const AdminHomeState.updateAdminOrderStatusLoading());
 
     final response =
         await _adminOrderRepositoryImplement.updateAdminOrderStatusRepository(
-            id, adminAcceptedAt, canceledAt, status);
+            id: id,
+            adminAcceptedAt: adminAcceptedAt,
+            adminCompletedAt: adminCompletedAt,
+            canceledAt: canceledAt,
+            status: status);
 
     if (isClosed) return;
 

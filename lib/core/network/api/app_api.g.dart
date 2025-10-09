@@ -2325,6 +2325,7 @@ class _AppServiceClient implements AppServiceClient {
   Future<OrderResponse> updateAdminStatusOrdersService(
     String id,
     String? adminAcceptedAt,
+    String? adminCompletedAt,
     String? canceledAt,
     int status,
   ) async {
@@ -2334,6 +2335,7 @@ class _AppServiceClient implements AppServiceClient {
     final _headers = <String, dynamic>{};
     final _data = {
       'adminAcceptedAt': adminAcceptedAt,
+      'adminCompletedAt': adminCompletedAt,
       'canceledAt': canceledAt,
       'status': status,
     };

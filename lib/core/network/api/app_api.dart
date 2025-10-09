@@ -330,6 +330,7 @@ abstract class AppServiceClient {
   Future<OrderResponse> updateAdminStatusOrdersService(
     @Path("id") String id,
     @Field("adminAcceptedAt") String? adminAcceptedAt,
+    @Field("adminCompletedAt") String? adminCompletedAt,
     @Field("canceledAt") String? canceledAt,
     @Field("status") int status,
   );

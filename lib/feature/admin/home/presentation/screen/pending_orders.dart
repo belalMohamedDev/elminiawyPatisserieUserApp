@@ -17,20 +17,28 @@ class _PendingOrdersState extends State<PendingOrders> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            title: const Text(
-          "Pending Orders",
-          style: TextStyle(
-            fontSize: 17,
-          ),
-        )),
-        body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
-          builder: (context, state) {
-            return GetAdminOrdersDataBodyView(
-              state,
-            );
-          },
-        ));
+    return BlocBuilder<AdminHomeCubit, AdminHomeState>(
+      builder: (context, state) {
+        return Stack(
+          children: [
+            Scaffold(
+                appBar: AppBar(
+                    title: const Text(
+                  "Pending Orders",
+                  style: TextStyle(
+                    fontSize: 17,
+                  ),
+                )),
+                body: GetAdminOrdersDataBodyView(
+                  state,
+                  isPendingOrder: true,
+                )),
+            LoadingOverlay(
+              isLoading: state is UpdateAdminOrderStatusLoading,
+            ),
+          ],
+        );
+      },
+    );
   }
 }

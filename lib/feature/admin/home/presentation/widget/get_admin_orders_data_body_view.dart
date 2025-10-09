@@ -9,18 +9,23 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
     super.key,
     this.isCompleteOrder = false,
     this.isCancelledOrder = false,
+    this.isPendingOrder = false,
   });
 
   final AdminHomeState state;
   final bool isCompleteOrder;
   final bool isCancelledOrder;
+  final bool isPendingOrder;
 
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
     final getPendingOrders = context.read<AdminHomeCubit>().getAdminOrders;
     return state is GetAdminOrdersLoading || state is GetAdminOrdersError
-        ? GetAdminOrdersDataLoadingView(isCompleteOrder: isCompleteOrder)
+        ? GetAdminOrdersDataLoadingView(
+            isCompleteOrder: isCompleteOrder,
+            isPendingOrder: isPendingOrder,
+          )
         : ListView.builder(
             itemBuilder: (context, index) => GestureDetector(
               onTap: () {
@@ -139,9 +144,13 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                             ? getPendingOrders[index]
                                                 .adminCompletedAt!
                                                 .getFormattedDate()
-                                            : getPendingOrders[index]
-                                                .createdAt!
-                                                .getFormattedDate(),
+                                            : isPendingOrder
+                                                ? getPendingOrders[index]
+                                                    .adminAcceptedAt!
+                                                    .getFormattedDate()
+                                                : getPendingOrders[index]
+                                                    .createdAt!
+                                                    .getFormattedDate(),
                                     style: TextStyle(
                                         color: ColorManger.brun,
                                         fontSize: responsive.setTextSize(3.9)),
@@ -156,13 +165,44 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                             ? const SizedBox()
                             : Row(
                                 children: [
+                                  isPendingOrder
+                                      ? const SizedBox()
+                                      : SizedBox(
+                                          width: 160,
+                                          height: 35,
+                                          child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: ColorManger
+                                                    .brunLight
+                                                    .withOpacity(0.4),
+                                                foregroundColor: Colors.white,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                context
+                                                    .read<AdminHomeCubit>()
+                                                    .updateAdminOrderStatusSummit(
+                                                        id: getPendingOrders[
+                                                                index]
+                                                            .sId!,
+                                                        status: 5,
+                                                        canceledAt: DateTime
+                                                                .now()
+                                                            .toIso8601String());
+                                              },
+                                              child: const Text("Cancel")),
+                                        ),
+                                  isPendingOrder
+                                      ? const SizedBox()
+                                      : const Spacer(),
                                   SizedBox(
-                                    width: 160,
-                                    height: 40,
+                                    width: isPendingOrder ? 330 : 160,
+                                    height: 35,
                                     child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor:
-                                              ColorManger.brunLight,
                                           foregroundColor: Colors.white,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -170,40 +210,30 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                           ),
                                         ),
                                         onPressed: () {
-                                          context
-                                              .read<AdminHomeCubit>()
-                                              .updateAdminOrderStatusSummit(
-                                                  getPendingOrders[index].sId!,
-                                                  "",
-                                                  DateTime.now()
-                                                      .toIso8601String(),
-                                                  5);
+                                          isPendingOrder
+                                              ? context
+                                                  .read<AdminHomeCubit>()
+                                                  .updateAdminOrderStatusSummit(
+                                                      id: getPendingOrders[index]
+                                                          .sId!,
+                                                      adminCompletedAt:
+                                                          DateTime.now()
+                                                              .toIso8601String(),
+                                                      status: 2)
+                                              : context
+                                                  .read<AdminHomeCubit>()
+                                                  .updateAdminOrderStatusSummit(
+                                                      id: getPendingOrders[
+                                                              index]
+                                                          .sId!,
+                                                      adminAcceptedAt: DateTime
+                                                              .now()
+                                                          .toIso8601String(),
+                                                      status: 1);
                                         },
-                                        child: const Text("Cancel")),
-                                  ),
-                                  const Spacer(),
-                                  SizedBox(
-                                    width: 160,
-                                    height: 40,
-                                    child: ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                          foregroundColor: Colors.white,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          context
-                                              .read<AdminHomeCubit>()
-                                              .updateAdminOrderStatusSummit(
-                                                  getPendingOrders[index].sId!,
-                                                  DateTime.now()
-                                                      .toIso8601String(),
-                                                  "",
-                                                  1);
-                                        },
-                                        child: const Text("Accept")),
+                                        child: Text(isPendingOrder
+                                            ? "Order Done"
+                                            : "Accept")),
                                   ),
                                 ],
                               ),
