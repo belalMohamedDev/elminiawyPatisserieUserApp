@@ -14,7 +14,7 @@ class PaymentState with _$PaymentState {
      ApiErrorModel apiErrorModel) = CreateCashOrderError;
 
   const factory PaymentState.createCashOrderSuccess(
-      CreateOrderResponse createOrderResponse) = CreateCashOrderSuccess;
+    OrderResponse createOrderResponse) = CreateCashOrderSuccess;
 
   const factory PaymentState.getCompleteOrdersLoading() = GetCompleteOrdersLoading;
   const factory PaymentState.getCompleteOrdersError(

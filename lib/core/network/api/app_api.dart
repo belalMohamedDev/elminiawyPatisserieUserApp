@@ -106,9 +106,7 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.subCategories)
   Future<SubCategoryResponse> getSubCategoriesService(
-     @Query("limit") int ? limit,
-    @Query("page") int ? page
-  );
+      @Query("limit") int? limit, @Query("page") int? page);
 
   @DELETE("${ApiConstants.subCategories}/{id}")
   Future<ApiSuccessGeneralModel> deleteSubCategoriesService(
@@ -293,12 +291,12 @@ abstract class AppServiceClient {
   Future<ApiSuccessGeneralModel> deleteMyAccountService();
 
   @POST(ApiConstants.order)
-  Future<CreateOrderResponse> createCashOrderService(
+  Future<OrderResponse> createCashOrderService(
     @Body() CreateOrderRequestBody createOrderRequestBody,
   );
 
   @PUT('${ApiConstants.order}/{id}/cancelled')
-  Future<CreateOrderResponse> orderCancelService(
+  Future<OrderResponse> orderCancelService(
     @Path("id") String id,
   );
 
@@ -327,4 +325,11 @@ abstract class AppServiceClient {
   @GET('${ApiConstants.order}/admin/status')
   Future<GetOrderStatusCountResponse>
       getOrdersStatusAndSalesTodayCountService();
+
+  @PUT('${ApiConstants.order}/admin/{id}')
+  Future<OrderResponse> updateAdminStatusOrdersService(
+    @Path("id") String id,
+    @Field("adminAcceptedAt") String adminAcceptedAt,
+    @Field("status") int status,
+  );
 }

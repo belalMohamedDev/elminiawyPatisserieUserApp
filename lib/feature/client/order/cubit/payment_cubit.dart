@@ -10,7 +10,7 @@ class PaymentCubit extends Cubit<PaymentState> {
   String choosePaymentMethod = 'Cash';
   final OrderRepositoryImplement _orderRepositoryImplement;
   TextEditingController notesController = TextEditingController();
-  CreateOrderResponseData? createOrderResponseData;
+  OrderResponseData? createOrderResponseData;
   List<GetOrdersResponseData> getCurrentOrders = [];
   List<GetOrdersResponseData> getPerviousOrders = [];
 

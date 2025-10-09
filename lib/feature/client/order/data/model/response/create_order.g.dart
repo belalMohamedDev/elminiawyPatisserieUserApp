@@ -6,27 +6,24 @@ part of 'create_order.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CreateOrderResponse _$CreateOrderResponseFromJson(Map<String, dynamic> json) =>
-    CreateOrderResponse(
+OrderResponse _$OrderResponseFromJson(Map<String, dynamic> json) =>
+    OrderResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
-          : CreateOrderResponseData.fromJson(
-              json['data'] as Map<String, dynamic>),
+          : OrderResponseData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CreateOrderResponseToJson(
-        CreateOrderResponse instance) =>
+Map<String, dynamic> _$OrderResponseToJson(OrderResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
       'data': instance.data,
     };
 
-CreateOrderResponseData _$CreateOrderResponseDataFromJson(
-        Map<String, dynamic> json) =>
-    CreateOrderResponseData(
+OrderResponseData _$OrderResponseDataFromJson(Map<String, dynamic> json) =>
+    OrderResponseData(
       sId: json['_id'] as String?,
       user: json['user'] == null
           ? null
@@ -53,8 +50,7 @@ CreateOrderResponseData _$CreateOrderResponseDataFromJson(
       updatedAt: json['updatedAt'] as String?,
     );
 
-Map<String, dynamic> _$CreateOrderResponseDataToJson(
-        CreateOrderResponseData instance) =>
+Map<String, dynamic> _$OrderResponseDataToJson(OrderResponseData instance) =>
     <String, dynamic>{
       '_id': instance.sId,
       'user': instance.user,

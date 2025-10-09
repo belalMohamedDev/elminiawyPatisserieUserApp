@@ -87,10 +87,10 @@ class OrderDetailsBody extends StatelessWidget {
   }
 
   SliverList _productItemSliverList(
-      CreateOrderResponseData? createOrderResponse,
+      OrderResponseData? orderResponse,
       GetOrdersResponseData? order,
       ResponsiveUtils responsive) {
-    final cartItems = order?.cartItems ?? createOrderResponse?.cartItems;
+    final cartItems = order?.cartItems ?? orderResponse?.cartItems;
 
     return SliverList(
         delegate: SliverChildBuilderDelegate(childCount: cartItems!.length,
@@ -118,7 +118,7 @@ class OrderDetailsBody extends StatelessWidget {
                     ),
                     child: CachedNetworkImage(
                       imageUrl: order?.cartItems?[index].product?.image ??
-                          createOrderResponse
+                          orderResponse
                               ?.cartItems?[index].product?.image ??
                           '',
                       height: responsive.setHeight(8),
@@ -132,7 +132,7 @@ class OrderDetailsBody extends StatelessWidget {
                   ),
                   responsive.setSizeBox(width: 2),
                   _namePriceAndRatingColumn(
-                      order, index, createOrderResponse, context, responsive),
+                      order, index, orderResponse, context, responsive),
                   const Spacer(),
                 ],
               ),
@@ -144,10 +144,10 @@ class OrderDetailsBody extends StatelessWidget {
   Column _namePriceAndRatingColumn(
       GetOrdersResponseData? order,
       int index,
-      CreateOrderResponseData? createOrderResponse,
+      OrderResponseData? orderResponse,
       BuildContext context,
       ResponsiveUtils responsive) {
-    dynamic response = order ?? createOrderResponse;
+    dynamic response = order ?? orderResponse;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,10 +196,10 @@ class OrderDetailsBody extends StatelessWidget {
 
   Container _orderShippingInformation(
       BuildContext context,
-      CreateOrderResponseData? createOrderResponse,
+      OrderResponseData? orderResponse,
       GetOrdersResponseData? order,
       bool isEnLocale) {
-    dynamic response = order ?? createOrderResponse;
+    dynamic response = order ?? orderResponse;
 
     return Container(
       width: double.infinity,
@@ -417,11 +417,11 @@ class OrderDetailsBody extends StatelessWidget {
 
   Container _orderStautsStepper(
       BuildContext context,
-      CreateOrderResponseData? createOrderResponse,
+      OrderResponseData? orderResponse,
       GetOrdersResponseData? order,
       ResponsiveUtils responsive,
       bool isEnLocale) {
-    dynamic response = order ?? createOrderResponse;
+    dynamic response = order ?? orderResponse;
 
     int orderStatus = response!.status;
     String createAt = response.createdAt;
@@ -459,13 +459,15 @@ class OrderDetailsBody extends StatelessWidget {
                           isCompleted: orderStatus >= 0,
                           title: context.translate(AppStrings.orderPlaced),
                           isEnLocale: isEnLocale,
-                          subTitle: '${createAt.getFormattedDate()} .'),
+                          subTitle:
+                              '${createAt.getFormattedDateAndHourse()} .'),
                       _buildLine(orderStatus > 0, isEnLocale),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 1,
                           title: context.translate(AppStrings.preparing),
-                          subTitle: '${adminAcceptedAt.getFormattedDate()} .',
+                          subTitle:
+                              '${adminAcceptedAt.getFormattedDateAndHourse()} .',
                           isEnLocale: isEnLocale),
                       _buildLine(orderStatus > 1, isEnLocale),
                       _buildStep(
@@ -474,21 +476,23 @@ class OrderDetailsBody extends StatelessWidget {
                           title: context.translate(
                               AppStrings.theOrderAcceptedByRestaurant),
                           isEnLocale: isEnLocale,
-                          subTitle: '${adminCompletedAt.getFormattedDate()} .'),
+                          subTitle:
+                              '${adminCompletedAt.getFormattedDateAndHourse()} .'),
                       _buildLine(orderStatus > 2, isEnLocale),
                       _buildStep(
                           context: context,
                           isCompleted: orderStatus >= 3,
                           isEnLocale: isEnLocale,
                           title: context.translate(AppStrings.onItsWay),
-                          subTitle: '${driverAcceptedAt.getFormattedDate()} .'),
+                          subTitle:
+                              '${driverAcceptedAt.getFormattedDateAndHourse()} .'),
                       _buildLine(orderStatus > 3, isEnLocale),
                       _buildStep(
                         context: context,
                         isCompleted: orderStatus >= 4,
                         isEnLocale: isEnLocale,
                         title: context.translate(AppStrings.delivered),
-                        subTitle: '${paitAt.getFormattedDate()} .',
+                        subTitle: '${paitAt.getFormattedDateAndHourse()} .',
                       ),
                     ],
                   )
@@ -500,7 +504,8 @@ class OrderDetailsBody extends StatelessWidget {
                           isCompleted: orderStatus == 5,
                           title: context.translate(AppStrings.orderPlaced),
                           isEnLocale: isEnLocale,
-                          subTitle: '${createAt.getFormattedDate()} .'),
+                          subTitle:
+                              '${createAt.getFormattedDateAndHourse()} .'),
                       _buildLine(orderStatus == 5, isEnLocale),
                       _buildStep(
                           isCancelled: true,
@@ -521,10 +526,10 @@ class OrderDetailsBody extends StatelessWidget {
 
   Container _orderIdContainer(
       BuildContext context,
-      CreateOrderResponseData? createOrderResponse,
+      OrderResponseData? orderResponse,
       GetOrdersResponseData? order,
       ResponsiveUtils responsive) {
-    dynamic response = order ?? createOrderResponse;
+    dynamic response = order ?? orderResponse;
 
     int orderStatus = response!.status!;
     return Container(

@@ -4,10 +4,10 @@ import '../../../../../core/common/shared/shared_imports.dart'; //
 
 
 abstract class OrderRepository {
-  Future<ApiResult<CreateOrderResponse>> createCashOrder(
+  Future<ApiResult<OrderResponse>> createCashOrder(
       CreateOrderRequestBody createOrderRequestBody);
 
-  Future<ApiResult<CreateOrderResponse>> orderCancelledRepository(String id);
+  Future<ApiResult<OrderResponse>> orderCancelledRepository(String id);
 
 
   Future<ApiResult<GetOrdersResponse>> getAllOrderCompleteRepository();
@@ -20,7 +20,7 @@ class OrderRepositoryImplement implements OrderRepository {
 
 
   @override
-  Future<ApiResult<CreateOrderResponse>> createCashOrder(
+  Future<ApiResult<OrderResponse>> createCashOrder(
       CreateOrderRequestBody createOrderRequestBody) async {
  
       try {
@@ -34,7 +34,7 @@ class OrderRepositoryImplement implements OrderRepository {
   }
 
   @override
-  Future<ApiResult<CreateOrderResponse>> orderCancelledRepository(
+  Future<ApiResult<OrderResponse>> orderCancelledRepository(
       String id) async {
  
       try {

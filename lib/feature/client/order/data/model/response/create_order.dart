@@ -2,23 +2,23 @@ import 'package:json_annotation/json_annotation.dart';
 part 'create_order.g.dart';
 
 @JsonSerializable()
-class CreateOrderResponse {
+class OrderResponse {
   bool? status;
   String? message;
-  CreateOrderResponseData? data;
+  OrderResponseData? data;
 
-  CreateOrderResponse({this.status, this.message, this.data});
+  OrderResponse({this.status, this.message, this.data});
 
   //from json
-  factory CreateOrderResponse.fromJson(Map<String, dynamic> json) =>
-      _$CreateOrderResponseFromJson(json);
+  factory OrderResponse.fromJson(Map<String, dynamic> json) =>
+      _$OrderResponseFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$CreateOrderResponseToJson(this);
+  Map<String, dynamic> toJson() => _$OrderResponseToJson(this);
 }
 
 @JsonSerializable()
-class CreateOrderResponseData {
+class OrderResponseData {
   @JsonKey(name: "_id")
   String? sId;
   UserOrderData? user;
@@ -39,7 +39,7 @@ class CreateOrderResponseData {
   String? adminCompletedAt;
   String? driverAcceptedAt;
 
-  CreateOrderResponseData(
+  OrderResponseData(
       {this.sId,
       this.user,
       this.notes,
@@ -59,11 +59,11 @@ class CreateOrderResponseData {
       this.updatedAt});
 
   //from json
-  factory CreateOrderResponseData.fromJson(Map<String, dynamic> json) =>
-      _$CreateOrderResponseDataFromJson(json);
+  factory OrderResponseData.fromJson(Map<String, dynamic> json) =>
+      _$OrderResponseDataFromJson(json);
 
   //to json
-  Map<String, dynamic> toJson() => _$CreateOrderResponseDataToJson(this);
+  Map<String, dynamic> toJson() => _$OrderResponseDataToJson(this);
 }
 
 @JsonSerializable()

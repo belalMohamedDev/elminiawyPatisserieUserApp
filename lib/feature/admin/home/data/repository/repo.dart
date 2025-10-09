@@ -4,6 +4,8 @@ import '../../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class AdminOrderRepository {
   Future<ApiResult<GetOrdersResponse>> getAllAdminOrderRepository(int status);
+  Future<ApiResult<OrderResponse>> updateAdminOrderStatusRepository(
+      String id, int status);
   Future<ApiResult<GetOrderStatusCountResponse>>
       getOrdersStatusAndSalesTodayCountRepository();
 }
@@ -30,6 +32,19 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
     try {
       final response =
           await _apiService.getOrdersStatusAndSalesTodayCountService();
+
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<OrderResponse>> updateAdminOrderStatusRepository(
+      String id, int status) async {
+    try {
+      final response = await _apiService.updateAdminStatusOrdersService(
+          id, DateTime.now().toIso8601String(), status);
 
       return ApiResult.success(response);
     } catch (error) {

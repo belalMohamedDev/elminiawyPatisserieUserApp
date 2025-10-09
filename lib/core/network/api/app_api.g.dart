@@ -2021,14 +2021,14 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<CreateOrderResponse> createCashOrderService(
+  Future<OrderResponse> createCashOrderService(
       CreateOrderRequestBody createOrderRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(createOrderRequestBody.toJson());
-    final _options = _setStreamType<CreateOrderResponse>(Options(
+    final _options = _setStreamType<OrderResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -2045,9 +2045,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CreateOrderResponse _value;
+    late OrderResponse _value;
     try {
-      _value = CreateOrderResponse.fromJson(_result.data!);
+      _value = OrderResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -2056,12 +2056,12 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<CreateOrderResponse> orderCancelService(String id) async {
+  Future<OrderResponse> orderCancelService(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<CreateOrderResponse>(Options(
+    final _options = _setStreamType<OrderResponse>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
@@ -2078,9 +2078,9 @@ class _AppServiceClient implements AppServiceClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CreateOrderResponse _value;
+    late OrderResponse _value;
     try {
-      _value = CreateOrderResponse.fromJson(_result.data!);
+      _value = OrderResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -2314,6 +2314,46 @@ class _AppServiceClient implements AppServiceClient {
     late GetOrderStatusCountResponse _value;
     try {
       _value = GetOrderStatusCountResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<OrderResponse> updateAdminStatusOrdersService(
+    String id,
+    String adminAcceptedAt,
+    int status,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {
+      'adminAcceptedAt': adminAcceptedAt,
+      'status': status,
+    };
+    final _options = _setStreamType<OrderResponse>(Options(
+      method: 'PUT',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/v1/api/order/admin/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late OrderResponse _value;
+    try {
+      _value = OrderResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

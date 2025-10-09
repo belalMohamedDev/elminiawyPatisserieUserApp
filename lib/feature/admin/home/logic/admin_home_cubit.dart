@@ -36,15 +36,14 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     ));
   }
 
-
   List<GetOrdersResponseData> getAdminOrders = [];
 
   Future<void> getAdminOrdersSummit(int status) async {
     if (isClosed) return;
     emit(const AdminHomeState.getAdminOrdersLoading());
 
-    final response = await _adminOrderRepositoryImplement
-        .getAllAdminOrderRepository(status);
+    final response =
+        await _adminOrderRepositoryImplement.getAllAdminOrderRepository(status);
 
     if (isClosed) return;
 
@@ -67,14 +66,42 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     );
   }
 
+  Future<void> updateAdminOrderStatusSummit(String id, int status) async {
+    if (isClosed) return;
+    emit(const AdminHomeState.updateAdminOrderStatusLoading());
 
+    final response = await _adminOrderRepositoryImplement
+        .updateAdminOrderStatusRepository(id, status);
 
+    if (isClosed) return;
 
+    response.when(
+      success: (response) {
+     
+        final updatedIndex =
+            getAdminOrders.indexWhere((order) => order.sId == id);
 
+        if (updatedIndex != -1) {
+          getAdminOrders.removeAt(updatedIndex);
+        }
 
-  GetOrderStatusCountResponse?  getOrdersStatusAndSalesTodayCount ;
+        if (!isClosed) {
+          emit(AdminHomeState.updateAdminOrderStatusSuccess(response));
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(
+            AdminHomeState.updateAdminOrderStatusError(error),
+          );
+        }
+      },
+    );
+  }
 
-  Future<void>  getOrdersStatusAndSalesTodayCountSummit() async {
+  GetOrderStatusCountResponse? getOrdersStatusAndSalesTodayCount;
+
+  Future<void> getOrdersStatusAndSalesTodayCountSummit() async {
     if (isClosed) return;
     emit(const AdminHomeState.getOrdersStatusAndSalesTodayCountLoading());
 
@@ -86,10 +113,10 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     response.when(
       success: (response) {
         getOrdersStatusAndSalesTodayCount = response;
-     
 
         if (!isClosed) {
-          emit(AdminHomeState.getOrdersStatusAndSalesTodayCountSuccess(response));
+          emit(AdminHomeState.getOrdersStatusAndSalesTodayCountSuccess(
+              response));
         }
       },
       failure: (error) {
@@ -101,13 +128,4 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
       },
     );
   }
-
-
-
-
 }
-
-
-
-
-

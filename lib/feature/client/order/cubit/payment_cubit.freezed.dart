@@ -23,7 +23,7 @@ mixin _$PaymentState {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -44,7 +44,7 @@ mixin _$PaymentState {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -63,8 +63,7 @@ mixin _$PaymentState {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -196,7 +195,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -220,7 +219,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -242,8 +241,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -404,7 +402,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -428,7 +426,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -450,8 +448,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -618,7 +615,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -642,7 +639,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -664,8 +661,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -807,7 +803,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -831,7 +827,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -853,8 +849,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1017,7 +1012,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1041,7 +1036,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -1063,8 +1058,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1168,7 +1162,7 @@ abstract class _$$CreateCashOrderSuccessImplCopyWith<$Res> {
           $Res Function(_$CreateCashOrderSuccessImpl) then) =
       __$$CreateCashOrderSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CreateOrderResponse createOrderResponse});
+  $Res call({OrderResponse createOrderResponse});
 }
 
 /// @nodoc
@@ -1189,7 +1183,7 @@ class __$$CreateCashOrderSuccessImplCopyWithImpl<$Res>
       null == createOrderResponse
           ? _value.createOrderResponse
           : createOrderResponse // ignore: cast_nullable_to_non_nullable
-              as CreateOrderResponse,
+              as OrderResponse,
     ));
   }
 }
@@ -1200,7 +1194,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
   const _$CreateCashOrderSuccessImpl(this.createOrderResponse);
 
   @override
-  final CreateOrderResponse createOrderResponse;
+  final OrderResponse createOrderResponse;
 
   @override
   String toString() {
@@ -1234,7 +1228,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1258,7 +1252,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -1280,8 +1274,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1370,10 +1363,9 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
 
 abstract class CreateCashOrderSuccess implements PaymentState {
   const factory CreateCashOrderSuccess(
-          final CreateOrderResponse createOrderResponse) =
-      _$CreateCashOrderSuccessImpl;
+      final OrderResponse createOrderResponse) = _$CreateCashOrderSuccessImpl;
 
-  CreateOrderResponse get createOrderResponse;
+  OrderResponse get createOrderResponse;
   @JsonKey(ignore: true)
   _$$CreateCashOrderSuccessImplCopyWith<_$CreateCashOrderSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1425,7 +1417,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1449,7 +1441,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -1471,8 +1463,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1636,7 +1627,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1660,7 +1651,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -1682,8 +1673,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1853,7 +1843,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1877,7 +1867,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -1899,8 +1889,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -2044,7 +2033,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -2068,7 +2057,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -2090,8 +2079,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -2254,7 +2242,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -2278,7 +2266,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -2300,8 +2288,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -2471,7 +2458,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     required TResult Function(String choosePayment) choosePayment,
     required TResult Function() createCashOrderLoading,
     required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
-    required TResult Function(CreateOrderResponse createOrderResponse)
+    required TResult Function(OrderResponse createOrderResponse)
         createCashOrderSuccess,
     required TResult Function() getCompleteOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -2495,7 +2482,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult? Function(String choosePayment)? choosePayment,
     TResult? Function()? createCashOrderLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult? Function(CreateOrderResponse createOrderResponse)?
+    TResult? Function(OrderResponse createOrderResponse)?
         createCashOrderSuccess,
     TResult? Function()? getCompleteOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
@@ -2517,8 +2504,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult Function(String choosePayment)? choosePayment,
     TResult Function()? createCashOrderLoading,
     TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
-    TResult Function(CreateOrderResponse createOrderResponse)?
-        createCashOrderSuccess,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
     TResult Function()? getCompleteOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
