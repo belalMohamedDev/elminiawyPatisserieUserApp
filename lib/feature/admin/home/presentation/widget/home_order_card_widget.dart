@@ -24,7 +24,7 @@ class HomeOrderCardWidget extends StatelessWidget {
 
     return Container(
         height: responsive.setHeight(20),
-        width: responsive.setWidth(43.5),
+        width: responsive.setWidth(44.5),
         decoration: BoxDecoration(
             color: cardColor,
             borderRadius: BorderRadius.circular(responsive.setBorderRadius(3))),

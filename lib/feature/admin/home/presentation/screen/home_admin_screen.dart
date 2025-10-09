@@ -13,7 +13,7 @@ class AdminHomeScreen extends StatefulWidget {
 class _AdminHomeScreenState extends State<AdminHomeScreen> {
   @override
   Widget build(BuildContext context) {
-   // final responsive = ResponsiveUtils(context);
+    // final responsive = ResponsiveUtils(context);
     return BlocBuilder<AdminHomeCubit, AdminHomeState>(
       builder: (context, state) {
         final adminHomeCubit = context.read<AdminHomeCubit>();
@@ -47,11 +47,22 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
               duration: const Duration(milliseconds: 250),
               child: Stack(
                 children: [
-                  Column(
-                    children: [
-                      HomeAppBar(adminHomeCubit: adminHomeCubit),
-                      HomeOrders(adminHomeCubit: adminHomeCubit)
-                    ],
+                  RefreshIndicator(
+                    color: ColorManger.brun,
+                    backgroundColor:
+                        ColorManger.backgroundItem, 
+                    strokeWidth: 3, 
+                    onRefresh: () async {
+                      await context
+                          .read<AdminHomeCubit>()
+                          .getOrdersStatusAndSalesTodayCountSummit();
+                    },
+                    child: ListView(
+                      children: [
+                        HomeAppBar(adminHomeCubit: adminHomeCubit),
+                        HomeOrders(adminHomeCubit: adminHomeCubit)
+                      ],
+                    ),
                   ),
                   Positioned(
                     right: 30,
