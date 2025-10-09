@@ -60,6 +60,7 @@ class GetOrdersResponseData {
   String? adminAcceptedAt;
   String? adminCompletedAt;
   String? driverAcceptedAt;
+  String? canceledAt;
 
   GetOrdersResponseData(
       {this.sId,
@@ -77,7 +78,7 @@ class GetOrdersResponseData {
       this.adminAcceptedAt,
       this.driverAcceptedAt,
       this.adminCompletedAt,
-      this.createdAt,
+      this.createdAt,this.canceledAt,
       this.updatedAt});
 
   //from json

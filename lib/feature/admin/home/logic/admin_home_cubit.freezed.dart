@@ -24,7 +24,7 @@ mixin _$AdminHomeState {
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -35,7 +35,7 @@ mixin _$AdminHomeState {
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ mixin _$AdminHomeState {
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -56,7 +56,7 @@ mixin _$AdminHomeState {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +68,7 @@ mixin _$AdminHomeState {
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -77,7 +77,7 @@ mixin _$AdminHomeState {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) =>
@@ -212,7 +212,7 @@ class _$InitialImpl implements _Initial {
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -223,7 +223,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return initial();
@@ -238,7 +238,7 @@ class _$InitialImpl implements _Initial {
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -247,7 +247,7 @@ class _$InitialImpl implements _Initial {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return initial?.call();
@@ -262,7 +262,7 @@ class _$InitialImpl implements _Initial {
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -271,7 +271,7 @@ class _$InitialImpl implements _Initial {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -479,7 +479,7 @@ class _$DrawerStateImpl implements _DrawerState {
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -490,7 +490,7 @@ class _$DrawerStateImpl implements _DrawerState {
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return drawerState(xOffset, yOffset, rotate, scaleFactor, drawerIsOpen);
@@ -505,7 +505,7 @@ class _$DrawerStateImpl implements _DrawerState {
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -514,7 +514,7 @@ class _$DrawerStateImpl implements _DrawerState {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return drawerState?.call(
@@ -530,7 +530,7 @@ class _$DrawerStateImpl implements _DrawerState {
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -539,7 +539,7 @@ class _$DrawerStateImpl implements _DrawerState {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -692,7 +692,7 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -703,7 +703,7 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return getAdminOrdersLoading();
@@ -718,7 +718,7 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -727,7 +727,7 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return getAdminOrdersLoading?.call();
@@ -742,7 +742,7 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -751,7 +751,7 @@ class _$GetAdminOrdersLoadingImpl implements GetAdminOrdersLoading {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -916,7 +916,7 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -927,7 +927,7 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return getAdminOrdersError(apiErrorModel);
@@ -942,7 +942,7 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -951,7 +951,7 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return getAdminOrdersError?.call(apiErrorModel);
@@ -966,7 +966,7 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -975,7 +975,7 @@ class _$GetAdminOrdersErrorImpl implements GetAdminOrdersError {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -1081,7 +1081,7 @@ abstract class _$$GetAdminOrdersSuccessImplCopyWith<$Res> {
           $Res Function(_$GetAdminOrdersSuccessImpl) then) =
       __$$GetAdminOrdersSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({GetOrdersResponse getOrdersResponse});
+  $Res call({List<GetOrdersResponseData> getOrdersResponse});
 }
 
 /// @nodoc
@@ -1099,9 +1099,9 @@ class __$$GetAdminOrdersSuccessImplCopyWithImpl<$Res>
   }) {
     return _then(_$GetAdminOrdersSuccessImpl(
       null == getOrdersResponse
-          ? _value.getOrdersResponse
+          ? _value._getOrdersResponse
           : getOrdersResponse // ignore: cast_nullable_to_non_nullable
-              as GetOrdersResponse,
+              as List<GetOrdersResponseData>,
     ));
   }
 }
@@ -1109,10 +1109,18 @@ class __$$GetAdminOrdersSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
-  const _$GetAdminOrdersSuccessImpl(this.getOrdersResponse);
+  const _$GetAdminOrdersSuccessImpl(
+      final List<GetOrdersResponseData> getOrdersResponse)
+      : _getOrdersResponse = getOrdersResponse;
 
+  final List<GetOrdersResponseData> _getOrdersResponse;
   @override
-  final GetOrdersResponse getOrdersResponse;
+  List<GetOrdersResponseData> get getOrdersResponse {
+    if (_getOrdersResponse is EqualUnmodifiableListView)
+      return _getOrdersResponse;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_getOrdersResponse);
+  }
 
   @override
   String toString() {
@@ -1124,12 +1132,13 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAdminOrdersSuccessImpl &&
-            (identical(other.getOrdersResponse, getOrdersResponse) ||
-                other.getOrdersResponse == getOrdersResponse));
+            const DeepCollectionEquality()
+                .equals(other._getOrdersResponse, _getOrdersResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getOrdersResponse);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_getOrdersResponse));
 
   @JsonKey(ignore: true)
   @override
@@ -1147,7 +1156,7 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1158,7 +1167,7 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return getAdminOrdersSuccess(getOrdersResponse);
@@ -1173,7 +1182,7 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -1182,7 +1191,7 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return getAdminOrdersSuccess?.call(getOrdersResponse);
@@ -1197,7 +1206,7 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -1206,7 +1215,7 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -1297,9 +1306,10 @@ class _$GetAdminOrdersSuccessImpl implements GetAdminOrdersSuccess {
 
 abstract class GetAdminOrdersSuccess implements AdminHomeState {
   const factory GetAdminOrdersSuccess(
-      final GetOrdersResponse getOrdersResponse) = _$GetAdminOrdersSuccessImpl;
+          final List<GetOrdersResponseData> getOrdersResponse) =
+      _$GetAdminOrdersSuccessImpl;
 
-  GetOrdersResponse get getOrdersResponse;
+  List<GetOrdersResponseData> get getOrdersResponse;
   @JsonKey(ignore: true)
   _$$GetAdminOrdersSuccessImplCopyWith<_$GetAdminOrdersSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1354,7 +1364,7 @@ class _$GetOrdersStatusAndSalesTodayCountLoadingImpl
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1365,7 +1375,7 @@ class _$GetOrdersStatusAndSalesTodayCountLoadingImpl
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return getOrdersStatusAndSalesTodayCountLoading();
@@ -1380,7 +1390,7 @@ class _$GetOrdersStatusAndSalesTodayCountLoadingImpl
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -1389,7 +1399,7 @@ class _$GetOrdersStatusAndSalesTodayCountLoadingImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return getOrdersStatusAndSalesTodayCountLoading?.call();
@@ -1404,7 +1414,7 @@ class _$GetOrdersStatusAndSalesTodayCountLoadingImpl
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -1413,7 +1423,7 @@ class _$GetOrdersStatusAndSalesTodayCountLoadingImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -1586,7 +1596,7 @@ class _$GetOrdersStatusAndSalesTodayCountErrorImpl
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1597,7 +1607,7 @@ class _$GetOrdersStatusAndSalesTodayCountErrorImpl
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return getOrdersStatusAndSalesTodayCountError(apiErrorModel);
@@ -1612,7 +1622,7 @@ class _$GetOrdersStatusAndSalesTodayCountErrorImpl
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -1621,7 +1631,7 @@ class _$GetOrdersStatusAndSalesTodayCountErrorImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return getOrdersStatusAndSalesTodayCountError?.call(apiErrorModel);
@@ -1636,7 +1646,7 @@ class _$GetOrdersStatusAndSalesTodayCountErrorImpl
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -1645,7 +1655,7 @@ class _$GetOrdersStatusAndSalesTodayCountErrorImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -1828,7 +1838,7 @@ class _$GetOrdersStatusAndSalesTodayCountSuccessImpl
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -1839,7 +1849,7 @@ class _$GetOrdersStatusAndSalesTodayCountSuccessImpl
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return getOrdersStatusAndSalesTodayCountSuccess(
@@ -1855,7 +1865,7 @@ class _$GetOrdersStatusAndSalesTodayCountSuccessImpl
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -1864,7 +1874,7 @@ class _$GetOrdersStatusAndSalesTodayCountSuccessImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return getOrdersStatusAndSalesTodayCountSuccess
@@ -1880,7 +1890,7 @@ class _$GetOrdersStatusAndSalesTodayCountSuccessImpl
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -1889,7 +1899,7 @@ class _$GetOrdersStatusAndSalesTodayCountSuccessImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -2041,7 +2051,7 @@ class _$UpdateAdminOrderStatusLoadingImpl
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -2052,7 +2062,7 @@ class _$UpdateAdminOrderStatusLoadingImpl
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return updateAdminOrderStatusLoading();
@@ -2067,7 +2077,7 @@ class _$UpdateAdminOrderStatusLoadingImpl
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -2076,7 +2086,7 @@ class _$UpdateAdminOrderStatusLoadingImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return updateAdminOrderStatusLoading?.call();
@@ -2091,7 +2101,7 @@ class _$UpdateAdminOrderStatusLoadingImpl
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -2100,7 +2110,7 @@ class _$UpdateAdminOrderStatusLoadingImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -2269,7 +2279,7 @@ class _$UpdateAdminOrderStatusErrorImpl implements UpdateAdminOrderStatusError {
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -2280,7 +2290,7 @@ class _$UpdateAdminOrderStatusErrorImpl implements UpdateAdminOrderStatusError {
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return updateAdminOrderStatusError(apiErrorModel);
@@ -2295,7 +2305,7 @@ class _$UpdateAdminOrderStatusErrorImpl implements UpdateAdminOrderStatusError {
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -2304,7 +2314,7 @@ class _$UpdateAdminOrderStatusErrorImpl implements UpdateAdminOrderStatusError {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return updateAdminOrderStatusError?.call(apiErrorModel);
@@ -2319,7 +2329,7 @@ class _$UpdateAdminOrderStatusErrorImpl implements UpdateAdminOrderStatusError {
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -2328,7 +2338,7 @@ class _$UpdateAdminOrderStatusErrorImpl implements UpdateAdminOrderStatusError {
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -2434,7 +2444,7 @@ abstract class _$$UpdateAdminOrderStatusSuccessImplCopyWith<$Res> {
           $Res Function(_$UpdateAdminOrderStatusSuccessImpl) then) =
       __$$UpdateAdminOrderStatusSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({OrderResponse getOrdersResponse});
+  $Res call({List<GetOrdersResponseData> getOrdersResponse});
 }
 
 /// @nodoc
@@ -2454,9 +2464,9 @@ class __$$UpdateAdminOrderStatusSuccessImplCopyWithImpl<$Res>
   }) {
     return _then(_$UpdateAdminOrderStatusSuccessImpl(
       null == getOrdersResponse
-          ? _value.getOrdersResponse
+          ? _value._getOrdersResponse
           : getOrdersResponse // ignore: cast_nullable_to_non_nullable
-              as OrderResponse,
+              as List<GetOrdersResponseData>,
     ));
   }
 }
@@ -2465,10 +2475,18 @@ class __$$UpdateAdminOrderStatusSuccessImplCopyWithImpl<$Res>
 
 class _$UpdateAdminOrderStatusSuccessImpl
     implements UpdateAdminOrderStatusSuccess {
-  const _$UpdateAdminOrderStatusSuccessImpl(this.getOrdersResponse);
+  const _$UpdateAdminOrderStatusSuccessImpl(
+      final List<GetOrdersResponseData> getOrdersResponse)
+      : _getOrdersResponse = getOrdersResponse;
 
+  final List<GetOrdersResponseData> _getOrdersResponse;
   @override
-  final OrderResponse getOrdersResponse;
+  List<GetOrdersResponseData> get getOrdersResponse {
+    if (_getOrdersResponse is EqualUnmodifiableListView)
+      return _getOrdersResponse;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_getOrdersResponse);
+  }
 
   @override
   String toString() {
@@ -2480,12 +2498,13 @@ class _$UpdateAdminOrderStatusSuccessImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateAdminOrderStatusSuccessImpl &&
-            (identical(other.getOrdersResponse, getOrdersResponse) ||
-                other.getOrdersResponse == getOrdersResponse));
+            const DeepCollectionEquality()
+                .equals(other._getOrdersResponse, _getOrdersResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getOrdersResponse);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_getOrdersResponse));
 
   @JsonKey(ignore: true)
   @override
@@ -2504,7 +2523,7 @@ class _$UpdateAdminOrderStatusSuccessImpl
         drawerState,
     required TResult Function() getAdminOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAdminOrdersError,
-    required TResult Function(GetOrdersResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         getAdminOrdersSuccess,
     required TResult Function() getOrdersStatusAndSalesTodayCountLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
@@ -2515,7 +2534,7 @@ class _$UpdateAdminOrderStatusSuccessImpl
     required TResult Function() updateAdminOrderStatusLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         updateAdminOrderStatusError,
-    required TResult Function(OrderResponse getOrdersResponse)
+    required TResult Function(List<GetOrdersResponseData> getOrdersResponse)
         updateAdminOrderStatusSuccess,
   }) {
     return updateAdminOrderStatusSuccess(getOrdersResponse);
@@ -2530,7 +2549,7 @@ class _$UpdateAdminOrderStatusSuccessImpl
         drawerState,
     TResult? Function()? getAdminOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult? Function(GetOrdersResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult? Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult? Function(ApiErrorModel apiErrorModel)?
@@ -2539,7 +2558,7 @@ class _$UpdateAdminOrderStatusSuccessImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult? Function()? updateAdminOrderStatusLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult? Function(OrderResponse getOrdersResponse)?
+    TResult? Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
   }) {
     return updateAdminOrderStatusSuccess?.call(getOrdersResponse);
@@ -2554,7 +2573,7 @@ class _$UpdateAdminOrderStatusSuccessImpl
         drawerState,
     TResult Function()? getAdminOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAdminOrdersError,
-    TResult Function(GetOrdersResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         getAdminOrdersSuccess,
     TResult Function()? getOrdersStatusAndSalesTodayCountLoading,
     TResult Function(ApiErrorModel apiErrorModel)?
@@ -2563,7 +2582,7 @@ class _$UpdateAdminOrderStatusSuccessImpl
         getOrdersStatusAndSalesTodayCountSuccess,
     TResult Function()? updateAdminOrderStatusLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateAdminOrderStatusError,
-    TResult Function(OrderResponse getOrdersResponse)?
+    TResult Function(List<GetOrdersResponseData> getOrdersResponse)?
         updateAdminOrderStatusSuccess,
     required TResult orElse(),
   }) {
@@ -2654,10 +2673,10 @@ class _$UpdateAdminOrderStatusSuccessImpl
 
 abstract class UpdateAdminOrderStatusSuccess implements AdminHomeState {
   const factory UpdateAdminOrderStatusSuccess(
-          final OrderResponse getOrdersResponse) =
+          final List<GetOrdersResponseData> getOrdersResponse) =
       _$UpdateAdminOrderStatusSuccessImpl;
 
-  OrderResponse get getOrdersResponse;
+  List<GetOrdersResponseData> get getOrdersResponse;
   @JsonKey(ignore: true)
   _$$UpdateAdminOrderStatusSuccessImplCopyWith<
           _$UpdateAdminOrderStatusSuccessImpl>

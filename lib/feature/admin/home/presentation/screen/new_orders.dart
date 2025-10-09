@@ -1,6 +1,5 @@
 import '../../../../../core/common/shared/shared_imports.dart';
-import '../widget/get_admin_orders_data_loading_view.dart';
-import '../widget/get_admin_orders_data_success_view.dart';
+import '../widget/get_admin_orders_data_body_view.dart';
 
 class NewOrders extends StatefulWidget {
   const NewOrders({super.key});
@@ -18,20 +17,29 @@ class _NewOrdersState extends State<NewOrders> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            title: const Text(
-              "New Orders Today",
-              style: TextStyle(
-                fontSize: 17,
-              ),
-            )),
-        body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
-          builder: (context, state) {
-            return state is GetAdminOrdersSuccess
-                ? const GetAdminOrdersDataSuccessView()
-                : const GetAdminOrdersDataLoadingView();
-          },
-        ));
+    return BlocBuilder<AdminHomeCubit, AdminHomeState>(
+      builder: (context, state) {
+        return Stack(
+          children: [
+            Scaffold(
+                appBar: AppBar(
+                    title: const Text(
+                  "New Orders Today",
+                  style: TextStyle(
+                    fontSize: 17,
+                  ),
+                )),
+                body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
+                  builder: (context, state) {
+                    return GetAdminOrdersDataBodyView(state);
+                  },
+                )),
+            LoadingOverlay(
+              isLoading: state is UpdateAdminOrderStatusLoading,
+            ),
+          ],
+        );
+      },
+    );
   }
 }

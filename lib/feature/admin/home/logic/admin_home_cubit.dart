@@ -53,7 +53,7 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
         getAdminOrders = response.data ?? [];
 
         if (!isClosed) {
-          emit(AdminHomeState.getAdminOrdersSuccess(response));
+          emit(AdminHomeState.getAdminOrdersSuccess(getAdminOrders));
         }
       },
       failure: (error) {
@@ -77,7 +77,6 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
 
     response.when(
       success: (response) {
-     
         final updatedIndex =
             getAdminOrders.indexWhere((order) => order.sId == id);
 
@@ -85,8 +84,10 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
           getAdminOrders.removeAt(updatedIndex);
         }
 
+   
+
         if (!isClosed) {
-          emit(AdminHomeState.updateAdminOrderStatusSuccess(response));
+          emit(AdminHomeState.updateAdminOrderStatusSuccess(getAdminOrders));
         }
       },
       failure: (error) {

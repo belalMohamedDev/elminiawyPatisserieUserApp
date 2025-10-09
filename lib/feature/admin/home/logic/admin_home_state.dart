@@ -17,7 +17,7 @@ class AdminHomeState with _$AdminHomeState {
       ApiErrorModel apiErrorModel) = GetAdminOrdersError;
 
   const factory AdminHomeState.getAdminOrdersSuccess(
-      GetOrdersResponse getOrdersResponse) = GetAdminOrdersSuccess;
+      List<GetOrdersResponseData> getOrdersResponse) = GetAdminOrdersSuccess;
 
   const factory AdminHomeState.getOrdersStatusAndSalesTodayCountLoading() =
       GetOrdersStatusAndSalesTodayCountLoading;
@@ -37,5 +37,5 @@ class AdminHomeState with _$AdminHomeState {
   const factory AdminHomeState.updateAdminOrderStatusError(
       ApiErrorModel apiErrorModel) = UpdateAdminOrderStatusError;
   const factory AdminHomeState.updateAdminOrderStatusSuccess(
-      OrderResponse getOrdersResponse) = UpdateAdminOrderStatusSuccess;
+      List<GetOrdersResponseData> getOrdersResponse) = UpdateAdminOrderStatusSuccess;
 }

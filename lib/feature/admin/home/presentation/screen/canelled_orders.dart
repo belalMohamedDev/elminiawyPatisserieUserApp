@@ -1,7 +1,6 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-import '../widget/get_admin_orders_data_loading_view.dart';
-import '../widget/get_admin_orders_data_success_view.dart';
+import '../widget/get_admin_orders_data_body_view.dart';
 
 class CancelledOrders extends StatefulWidget {
   const CancelledOrders({super.key});
@@ -30,13 +29,12 @@ class _CancelledOrdersState extends State<CancelledOrders> {
         )),
         body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
           builder: (context, state) {
-            return state is GetAdminOrdersSuccess
-                ? const GetAdminOrdersDataSuccessView(
-                    isCompleteOrder: true,
-                  )
-                : const GetAdminOrdersDataLoadingView(
-                    isCompleteOrder: true,
-                  );
+            return GetAdminOrdersDataBodyView(
+              state,
+              isCompleteOrder: true,isCancelledOrder: true,
+            );
+
+   
           },
         ));
   }

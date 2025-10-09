@@ -74,6 +74,7 @@ GetOrdersResponseData _$GetOrdersResponseDataFromJson(
       driverAcceptedAt: json['driverAcceptedAt'] as String?,
       adminCompletedAt: json['adminCompletedAt'] as String?,
       createdAt: json['createdAt'] as String?,
+      canceledAt: json['canceledAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
 
@@ -97,6 +98,7 @@ Map<String, dynamic> _$GetOrdersResponseDataToJson(
       'adminAcceptedAt': instance.adminAcceptedAt,
       'adminCompletedAt': instance.adminCompletedAt,
       'driverAcceptedAt': instance.driverAcceptedAt,
+      'canceledAt': instance.canceledAt,
     };
 
 GetOrdersUser _$GetOrdersUserFromJson(Map<String, dynamic> json) =>
