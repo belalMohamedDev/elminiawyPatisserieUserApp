@@ -2,6 +2,7 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:elminiawy/feature/admin/home/presentation/widget/home_app_bar.dart';
 
 import '../widget/home_orders.dart';
+import '../widget/home_sales.dart';
 
 class AdminHomeScreen extends StatefulWidget {
   const AdminHomeScreen({super.key});
@@ -49,9 +50,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                 children: [
                   RefreshIndicator(
                     color: ColorManger.brun,
-                    backgroundColor:
-                        ColorManger.backgroundItem, 
-                    strokeWidth: 3, 
+                    backgroundColor: ColorManger.backgroundItem,
+                    strokeWidth: 3,
                     onRefresh: () async {
                       await context
                           .read<AdminHomeCubit>()
@@ -60,7 +60,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: ListView(
                       children: [
                         HomeAppBar(adminHomeCubit: adminHomeCubit),
-                        HomeOrders(adminHomeCubit: adminHomeCubit)
+                        HomeOrders(adminHomeCubit: adminHomeCubit),
+                        const HomeSales(),
                       ],
                     ),
                   ),

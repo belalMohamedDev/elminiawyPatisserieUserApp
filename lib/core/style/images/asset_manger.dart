@@ -42,6 +42,7 @@ class ImageAsset {
   static const String orderWaiting = "$imagePath/order_waiting.png";
   static const String cake = "$imagePath/cake.png";
   static const String croissant = "$imagePath/croissant.png";
+  static const String increase = "$imagePath/increase.png";
 
 
   static const String noCart = "$imagePath/noCart.svg";
