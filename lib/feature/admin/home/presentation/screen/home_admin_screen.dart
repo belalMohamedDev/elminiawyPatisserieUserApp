@@ -69,7 +69,18 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     right: 30,
                     bottom: 60,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BlocProvider(
+                                create: (context) => instance<CategoryCubit>(),
+                                child: const CategoryView(
+                                  isCategoryCartToAdmin: true,
+                                ),
+                              ),
+                            ));
+                      },
                       backgroundColor: ColorManger.brun,
                       child: Icon(Icons.add, color: ColorManger.backgroundItem),
                     ),

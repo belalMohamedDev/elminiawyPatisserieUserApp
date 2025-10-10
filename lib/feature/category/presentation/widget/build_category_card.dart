@@ -4,9 +4,11 @@ class BuildCategoryCard extends StatelessWidget {
   const BuildCategoryCard({
     super.key,
     this.category,
+    required this.isCategoryCartToAdmin,
   });
 
   final CategoryResponseData? category;
+  final bool isCategoryCartToAdmin;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,9 @@ class BuildCategoryCard extends StatelessWidget {
           ),
           responsive.setSizeBox(height: 2),
           Text(
-            category == null ?      context.translate(AppStrings.addNew) : category!.title!,
+            category == null
+                ? context.translate(AppStrings.addNew)
+                : category!.title!,
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
@@ -55,14 +59,16 @@ class BuildCategoryCard extends StatelessWidget {
             width: responsive.setWidth(8),
             height: responsive.setHeight(0.5),
             borderRadius: responsive.setBorderRadius(2),
-            baseColor: AppInitialRoute.role == "admin"
+            baseColor: AppInitialRoute.role == "admin" &&
+                    isCategoryCartToAdmin == false
                 ? category == null
                     ? null
                     : category!.active == true
                         ? Colors.green.shade600
                         : Colors.red.shade600
                 : null,
-            highlightColor: AppInitialRoute.role == "admin"
+            highlightColor: AppInitialRoute.role == "admin" &&
+                    isCategoryCartToAdmin == false
                 ? category == null
                     ? null
                     : category!.active == true

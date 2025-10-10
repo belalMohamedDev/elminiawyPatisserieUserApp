@@ -1,7 +1,8 @@
 import '../../../../../core/common/shared/shared_imports.dart';
 
 class CategoryView extends StatefulWidget {
-  const CategoryView({super.key});
+  const CategoryView({super.key, this.isCategoryCartToAdmin = false});
+  final bool isCategoryCartToAdmin;
 
   @override
   State<CategoryView> createState() => _CategoryViewState();
@@ -20,16 +21,17 @@ class _CategoryViewState extends State<CategoryView> {
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: AppInitialRoute.role == "admin"
-            ? Text(context.translate(AppStrings.category),
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(fontSize: responsive.setTextSize(4)))
-            : null,
-      ),
+      appBar: AppInitialRoute.role == "admin" &&
+              widget.isCategoryCartToAdmin == false
+          ? AppBar(
+              centerTitle: true,
+              title: Text(context.translate(AppStrings.category),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: responsive.setTextSize(4))),
+            )
+          : null,
       body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
           if (state is GetCategoriesLoading || state is GetCategoriesError) {
@@ -38,7 +40,9 @@ class _CategoryViewState extends State<CategoryView> {
 
           return Stack(
             children: [
-              CategorySuccessWidget(categoryState: state),
+              CategorySuccessWidget(
+                  categoryState: state,
+                  isCategoryCartToAdmin: widget.isCategoryCartToAdmin),
               LoadingOverlay(isLoading: state is CreateCategoriesLoading)
             ],
           );
