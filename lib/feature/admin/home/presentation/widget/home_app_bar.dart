@@ -61,12 +61,51 @@ class HomeAppBar extends StatelessWidget {
               style: TextStyle(color: ColorManger.brun, fontSize: 18),
             ),
             const Spacer(),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.notifications,
+            // IconButton(
+            //     onPressed: () {},
+            //     icon: Icon(
+            //       Icons.notifications,
+            //       color: ColorManger.brun,
+            //     ))
+
+            GestureDetector(
+              onTap: () {
+                context.pushNamed(Routes.cart);
+              },
+              child: Container(
+                height: responsive.setHeight(4.5),
+                width: responsive.setWidth(9.8),
+                decoration: BoxDecoration(
+                    color: ColorManger.brownLight,
+                    borderRadius:
+                        BorderRadius.circular(responsive.setBorderRadius(5))),
+                child: Icon(
+                  IconlyBold.bag,
                   color: ColorManger.brun,
-                ))
+                ),
+              ),
+            ),
+
+            responsive.setSizeBox(width: 1),
+
+            IconButton(
+              onPressed: () {
+                Navigator.of(context, rootNavigator: !false)
+                    .pushNamed(Routes.notification);
+              },
+              icon: Container(
+                height: responsive.setHeight(4.5),
+                width: responsive.setWidth(9.8),
+                decoration: BoxDecoration(
+                    color: ColorManger.brownLight,
+                    borderRadius:
+                        BorderRadius.circular(responsive.setBorderRadius(5))),
+                child: Icon(
+                  IconlyBold.notification,
+                  color: ColorManger.brun,
+                ),
+              ),
+            )
           ],
         ));
   }
