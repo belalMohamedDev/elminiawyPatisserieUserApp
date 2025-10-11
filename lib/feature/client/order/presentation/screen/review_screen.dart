@@ -89,11 +89,17 @@ class ReviewPaymentScreen extends StatelessWidget {
                             errorMessage: apiErrorModel.message!,
                             context: context),
                     createCashOrderSuccess: (data) {
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        Routes.orderPlaced,
-                        (route) => false,
-                      );
+                      AppInitialRoute.role == "admin"
+                          ? Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              Routes.adminMenue,
+                              (route) => false,
+                            )
+                          : Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              Routes.orderPlaced,
+                              (route) => false,
+                            );
                     });
               },
               builder: (context, state) {
@@ -101,12 +107,16 @@ class ReviewPaymentScreen extends StatelessWidget {
                     onPressed: () {
                       if (paymentCuibt.choosePaymentMethod.startsWith('Cash')) {
                         paymentCuibt.createCashOrderSummit(
-                            userAddressCubit
-                                .addressDataList[paymentCuibt.selectedIndex]
-                                .sId!,
-                            userAddressCubit
-                                .addressDataList[paymentCuibt.selectedIndex]
-                                .nearbyStoreAddress!);
+                            AppInitialRoute.role == "admin"
+                                ? null
+                                : userAddressCubit
+                                    .addressDataList[paymentCuibt.selectedIndex]
+                                    .sId!,
+                            AppInitialRoute.role == "admin"
+                                ? AppInitialRoute.storeAddressId
+                                : userAddressCubit
+                                    .addressDataList[paymentCuibt.selectedIndex]
+                                    .nearbyStoreAddress!);
                       }
                     },
                     widget: state.maybeWhen(

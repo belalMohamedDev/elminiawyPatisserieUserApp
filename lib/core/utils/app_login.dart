@@ -42,12 +42,22 @@ class AppLogin {
       await SharedPrefHelper.setSecuredString(
           PrefKeys.role, authResponse.data!.role!);
 
-      AppInitialRoute.role=authResponse.data!.role!;
+      AppInitialRoute.role = authResponse.data!.role!;
     }
 
+    if (authResponse.data!.storeAddress.sId != null) {
+      await SharedPrefHelper.setSecuredString(
+          PrefKeys.storeAddressId, authResponse.data!.storeAddress.sId!);
 
+      AppInitialRoute.storeAddressId = authResponse.data!.storeAddress.sId!;
+    }
 
-    
+    if (authResponse.data!.storeAddress.region.en != null) {
+      await SharedPrefHelper.setSecuredString(
+          PrefKeys.storeRegion, authResponse.data!.storeAddress.region.en!);
+
+      AppInitialRoute.storeRegion = authResponse.data!.storeAddress.region.en!;
+    }
 
     if (!isChangeUserPassword) {
       // Set login status to true and navigate to the map screen

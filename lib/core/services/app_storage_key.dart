@@ -1,5 +1,3 @@
-
-
 class PrefKeys {
   static const String prefsKeyIsUserLoggedIn = 'PREFS_KEY_IS_USER_LOGGED_IN';
   static const String prefsKeyOnBoardingScreenView =
@@ -20,4 +18,6 @@ class PrefKeys {
   static const String prefsKeyAnonymousUser = 'prefsKeyAnonymousUser';
   static const String prefsSetLoginMap = 'prefsSetLoginMap';
   static const String prefsLanguage = 'prefsLanguageLogic';
+  static const String storeAddressId = 'storeAddressId';
+  static const String storeRegion = 'storeRegion';
 }

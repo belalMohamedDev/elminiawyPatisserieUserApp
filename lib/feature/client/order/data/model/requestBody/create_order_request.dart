@@ -1,15 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'create_order_request.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class CreateOrderRequestBody {
   CreateOrderRequestBody({
-    required this.shippingAddress,
+     this.shippingAddress,
     required this.nearbyStoreAddress,
     required this.notes,
   });
 
-  final String shippingAddress;
+  final String? shippingAddress;
   final String nearbyStoreAddress;
   final String notes;
 

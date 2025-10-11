@@ -113,20 +113,24 @@ class CartView extends StatelessWidget {
               builder: (context, state) {
                 return CustomButton(
                   onPressed: () {
-                    if (state is CreateNewAddressSuccess ||
-                        state is GetAllAddressSuccess ||
-                        state is RemoveAddressSuccess ||
-                        state is UpdateAddressSuccess) {
-                      if (context
-                          .read<UserAddressCubit>()
-                          .addressDataList
-                          .isNotEmpty) {
-                        context.pushNamed(Routes.shippingAddress);
-                      } else {
-                        context.pushNamed(Routes.map);
+                    if (AppInitialRoute.role == "admin") {
+                      context.pushNamed(Routes.shippingReviewScreen);
+                    } else {
+                      if (state is CreateNewAddressSuccess ||
+                          state is GetAllAddressSuccess ||
+                          state is RemoveAddressSuccess ||
+                          state is UpdateAddressSuccess) {
+                        if (context
+                            .read<UserAddressCubit>()
+                            .addressDataList
+                            .isNotEmpty) {
+                          context.pushNamed(Routes.shippingAddress);
+                        } else {
+                          context.pushNamed(Routes.map);
 
-                        context.read<UserAddressCubit>().isPaymentAddress =
-                            true;
+                          context.read<UserAddressCubit>().isPaymentAddress =
+                              true;
+                        }
                       }
                     }
                   },

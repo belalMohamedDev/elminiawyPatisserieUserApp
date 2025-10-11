@@ -8,9 +8,11 @@ class ReviewPaymentBody extends StatelessWidget {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
-    final addressData = context
-        .read<UserAddressCubit>()
-        .addressDataList[context.read<PaymentCubit>().selectedIndex];
+    final addressData = AppInitialRoute.role == "admin"
+        ? null
+        : context
+            .read<UserAddressCubit>()
+            .addressDataList[context.read<PaymentCubit>().selectedIndex];
 
     return Padding(
       padding: responsive.setPadding(top: 3, right: 6, left: 6, bottom: 5),
@@ -18,9 +20,11 @@ class ReviewPaymentBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CheckOutProcessing(screenIndex: 3),
+            AppInitialRoute.role == "admin"
+                ? const SizedBox()
+                : const CheckOutProcessing(screenIndex: 3),
             responsive.setSizeBox(
-              height: 3,
+              height: AppInitialRoute.role == "admin" ? 0 : 3,
             ),
             Text(
               context.translate(AppStrings.shippingAddress),
@@ -62,7 +66,9 @@ class ReviewPaymentBody extends StatelessWidget {
                         ConstrainedBox(
                           constraints: BoxConstraints(maxWidth: 275.w),
                           child: Text(
-                            addressData.region!,
+                            addressData != null
+                                ? (addressData.region ?? "")
+                                : AppInitialRoute.storeRegion,
                             maxLines: 1,
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.ellipsis,
@@ -79,7 +85,7 @@ class ReviewPaymentBody extends StatelessWidget {
                 ),
               ),
             ),
-            // _shippingAddresssContainer(context, responsive),
+
             responsive.setSizeBox(
               height: 0.5,
             ),

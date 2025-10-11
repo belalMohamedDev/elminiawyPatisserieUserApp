@@ -24,13 +24,14 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(PaymentState.choosePayment(choosePaymentMethod));
   }
 
-  Future<void> createCashOrderSummit(String shippingAddressId,String nearbyStoreAddress) async {
+  Future<void> createCashOrderSummit(
+      String? shippingAddressId, String nearbyStoreAddress) async {
     emit(const PaymentState.createCashOrderLoading());
 
     final response = await _orderRepositoryImplement.createCashOrder(
         CreateOrderRequestBody(
             shippingAddress: shippingAddressId,
-            nearbyStoreAddress:nearbyStoreAddress,
+            nearbyStoreAddress: nearbyStoreAddress,
             notes: notesController.text.trim()));
 
     response.when(
@@ -40,8 +41,7 @@ class PaymentCubit extends Cubit<PaymentState> {
       },
       failure: (error) {
         emit(
-          PaymentState.createCashOrderError(
-              error),
+          PaymentState.createCashOrderError(error),
         );
       },
     );
@@ -55,14 +55,12 @@ class PaymentCubit extends Cubit<PaymentState> {
 
     response.when(
       success: (response) {
-        
         createOrderResponseData = response.data;
         emit(PaymentState.createCashOrderSuccess(response));
       },
       failure: (error) {
         emit(
-          PaymentState.createCashOrderError(
-              error),
+          PaymentState.createCashOrderError(error),
         );
       },
     );
@@ -83,8 +81,7 @@ class PaymentCubit extends Cubit<PaymentState> {
       },
       failure: (error) {
         emit(
-          PaymentState.getCompleteOrdersError(
-            error),
+          PaymentState.getCompleteOrdersError(error),
         );
       },
     );
@@ -105,8 +102,7 @@ class PaymentCubit extends Cubit<PaymentState> {
       },
       failure: (error) {
         emit(
-          PaymentState.getCompleteOrdersError(
-           error),
+          PaymentState.getCompleteOrdersError(error),
         );
       },
     );
