@@ -107,7 +107,7 @@ Future<void> _initCategory() async {
         () => CategoryRepositoryImplement(
               instance(),
             ))
-    ..registerFactory<CategoryCubit>(() => CategoryCubit(
+    ..registerLazySingleton<CategoryCubit>(() => CategoryCubit(
           instance(),
           instance(),
         ));
@@ -121,19 +121,20 @@ Future<void> _initSubCategory() async {
               instance(),
             ))
     ..registerFactory<SubCategoriesCubit>(() => SubCategoriesCubit(
-          instance(), instance(),
+          instance(),
+          instance(),
         ));
 }
 
 Future<void> _initPlaces() async {
   //final places = GoogleMapsPlaces(apiKey: EnvVariable.instance.mapKey);
 
-    final geocoding = GeoCodingApi(
-      apiKey: EnvVariable.instance.mapKey,
-      country: "EG", 
-      limit: 6,
-      types: [PlaceType.address, PlaceType.place],
-    );
+  final geocoding = GeoCodingApi(
+    apiKey: EnvVariable.instance.mapKey,
+    country: "EG",
+    limit: 6,
+    types: [PlaceType.address, PlaceType.place],
+  );
   // instance.registerLazySingleton<GoogleMapsPlaces>(() => places);
   instance.registerLazySingleton<GeoCodingApi>(() => geocoding);
 }

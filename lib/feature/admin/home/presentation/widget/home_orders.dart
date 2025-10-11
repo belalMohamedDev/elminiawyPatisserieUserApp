@@ -21,7 +21,8 @@ class _HomeOrdersState extends State<HomeOrders> {
 
     Future.wait([
       context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCountSummit(),
-      context.read<CartCubit>().getCartItem()
+      context.read<CartCubit>().getCartItem(),
+      context.read<CategoryCubit>().getCategories()
     ]);
 
     _timer = Timer.periodic(const Duration(minutes: 1), (timer) {

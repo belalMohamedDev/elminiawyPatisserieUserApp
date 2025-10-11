@@ -73,8 +73,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => BlocProvider(
-                                create: (context) => instance<CategoryCubit>(),
+                              builder: (context) => BlocProvider.value(
+                                value: instance<CategoryCubit>(),
                                 child: const CategoryView(
                                   isCategoryCartToAdmin: true,
                                 ),

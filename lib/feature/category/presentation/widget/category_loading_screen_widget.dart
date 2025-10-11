@@ -2,14 +2,17 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 class CategoryloadingScreenWidget extends StatelessWidget {
   const CategoryloadingScreenWidget({
-    super.key,
+    super.key,required this.isCategoryCartToAdmin
   });
+  final bool isCategoryCartToAdmin;
 
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
     return Padding(
-      padding: responsive.setPadding(left: 5, right: 5),
+      padding: responsive.setPadding(left: 5, right: 5,top:  AppInitialRoute.role == "admin" && isCategoryCartToAdmin == false
+              ? 2
+              : 5 ),
       child: GridView.count(
         crossAxisCount: 3,
         childAspectRatio: 0.7,
