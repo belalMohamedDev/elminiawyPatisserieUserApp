@@ -8,24 +8,32 @@ class HomeSales extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
-    return Padding(
-      padding: responsive.setPadding(left: 4, top: 1.5, right: 4),
-      child: Row(
-        children: [
-          _salesWidget(responsive, context, ImageAsset.money, "Sales Today",
-              "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP"),
-          const Spacer(),
-          _salesWidget(responsive, context, ImageAsset.increase, "Sales Week",
-              "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP"),
-          const Spacer(),
-          _salesWidget(
-              responsive,
-              context,
-              ImageAsset.groceries,
-              "Products sold",
-              "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
-        ],
-      ),
+    return BlocBuilder<AdminHomeCubit, AdminHomeState>(
+      builder: (context, state) {
+        return Padding(
+          padding: responsive.setPadding(left: 4, top: 1.5, right: 4),
+          child: Row(
+            children: [
+              _salesWidget(responsive, context, ImageAsset.money, "Sales Today",
+                  "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP"),
+              const Spacer(),
+              _salesWidget(
+                  responsive,
+                  context,
+                  ImageAsset.increase,
+                  "Sales Week",
+                  "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP"),
+              const Spacer(),
+              _salesWidget(
+                  responsive,
+                  context,
+                  ImageAsset.groceries,
+                  "Products sold",
+                  "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
+            ],
+          ),
+        );
+      },
     );
   }
 
