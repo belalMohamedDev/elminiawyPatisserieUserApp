@@ -35,6 +35,7 @@ class ProductCartItem extends StatelessWidget {
               width: 10.w,
             ),
             Container(
+              width: 70.w,
               decoration: BoxDecoration(
                 color: ColorManger.brownLight,
                 borderRadius: BorderRadius.circular(14.r),

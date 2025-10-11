@@ -181,7 +181,7 @@ class ProductBottomSheet extends StatelessWidget {
     return Padding(
       padding: responsive.setPadding(top: 3),
       child: SizedBox(
-        width: responsive.setWidth(42),
+        width: responsive.setWidth(AppInitialRoute.role == "admin" ? 55 : 42),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
