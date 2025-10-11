@@ -1,6 +1,5 @@
 import '../../../../../../core/common/shared/shared_imports.dart'; //
 
-
 class AnimatedCartItems extends StatefulWidget {
   const AnimatedCartItems({
     super.key,
@@ -32,7 +31,6 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
     final newItems =
         List.from(context.read<CartCubit>().cartData?.data?.cartItems ?? []);
 
-
     if (newItems.length > _oldItems.length) {
       for (int i = 0; i < newItems.length; i++) {
         if (!_containsItem(_oldItems, newItems[i].sId ?? "")) {
@@ -42,10 +40,7 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
           );
         }
       }
-    }
-
-
-    else if (newItems.length < _oldItems.length) {
+    } else if (newItems.length < _oldItems.length) {
       for (int i = 0; i < _oldItems.length; i++) {
         if (!_containsItem(
             newItems.cast<GetCartItems>(), _oldItems[i].sId ?? "")) {
@@ -137,7 +132,6 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
     final isDeleting = widget.cartState is DeleteCartItemLoading &&
         (widget.cartState as DeleteCartItemLoading).id == item.sId;
 
-    // ✨ أنيميشن انزلاق + تلاشي لطيف
     final offsetTween = Tween<Offset>(
       begin: removed ? const Offset(0, 0) : const Offset(0, 1),
       end: removed ? const Offset(1.5, 0) : Offset.zero,
@@ -159,32 +153,37 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
               color: ColorManger.white,
               borderRadius: BorderRadius.circular(50),
             ),
-            child: isDeleting
-                ? Center(
-                    child: CircularProgressIndicator(
-                      color: ColorManger.brun,
-                    ),
-                  )
-                : CachedNetworkImage(
-                    imageUrl: item.product?.image ?? "",
-                    placeholder: (context, url) => const LoadingShimmer(),
-                    errorWidget: (context, url, error) => Center(
-                      child: Padding(
-                        padding: responsive.setPadding(left: 5),
-                        child: Icon(
-                          Icons.error,
-                          size: responsive.setIconSize(10),
-                          color: ColorManger.brun,
-                        ),
+            child: Stack(
+              children: [
+                CachedNetworkImage(
+                  imageUrl: item.product?.image ?? "",
+                  placeholder: (context, url) => const LoadingShimmer(),
+                  errorWidget: (context, url, error) => Center(
+                    child: Padding(
+                      padding: responsive.setPadding(left: 5),
+                      child: Icon(
+                        Icons.error,
+                        size: responsive.setIconSize(10),
+                        color: ColorManger.brun,
                       ),
                     ),
                   ),
+                ),
+                isDeleting
+                    ? Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            color: ColorManger.brun,
+                          ),
+                        ),
+                      )
+                    : const SizedBox()
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-
-

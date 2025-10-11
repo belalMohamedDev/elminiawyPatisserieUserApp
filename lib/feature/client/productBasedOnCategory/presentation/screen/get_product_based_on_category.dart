@@ -36,8 +36,13 @@ class _ProductBaseOnCategoryState extends State<ProductBaseOnCategory> {
                 .titleLarge!
                 .copyWith(fontSize: 16.sp)),
       ),
-      body: const Stack(
-        children: [ProductBaseOnCategoryBody(), ViewBasketCartWidget()],
+      body: Stack(
+        children: [
+          const ProductBaseOnCategoryBody(),
+          AppInitialRoute.role == "admin"
+              ? const ViewBasketCartWidget()
+              : const SizedBox()
+        ],
       ),
     );
   }

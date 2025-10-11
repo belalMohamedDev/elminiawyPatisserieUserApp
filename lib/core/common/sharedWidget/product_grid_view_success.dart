@@ -199,50 +199,56 @@ class ProductGridViewSuccessState extends StatelessWidget {
       child: Stack(
         children: [
           // Wishlist button
-          Positioned(
-            right: isEnLocale ? 0 : null,
-            left: isEnLocale ? null : 0,
-            top: 2,
-            child: IconButton(
-              onPressed: () {
-                // Add or remove product from wishlist using WishListCubit
-                context
-                    .read<WishListCubit>()
-                    .addOrRemoveProductFromWish(product.sId!);
-              },
-              icon: BlocConsumer<WishListCubit, WishListState>(
-                listener: (context, state) {
-                  // Show error message if failed to add/remove from wishlist
-                  state.whenOrNull(
-                    addOrRemoveProductFromWishListError: (apiErrorModel) =>
-                        ShowToast.showToastErrorTop(
-                            errorMessage: apiErrorModel.message!,
-                            context: context),
-                  );
-                },
-                builder: (context, state) {
-                  // Check if the product is in the wishlist
-                  bool isInWishlist = context
+          AppInitialRoute.role == "admin"
+              ? const SizedBox()
+              : Positioned(
+                  right: isEnLocale ? 0 : null,
+                  left: isEnLocale ? null : 0,
+                  top: 2,
+                  child: IconButton(
+                    onPressed: () {
+                      // Add or remove product from wishlist using WishListCubit
+                      context
                           .read<WishListCubit>()
-                          .favorites
-                          .containsKey(product.sId) &&
-                      context.read<WishListCubit>().favorites[product.sId]!;
+                          .addOrRemoveProductFromWish(product.sId!);
+                    },
+                    icon: BlocConsumer<WishListCubit, WishListState>(
+                      listener: (context, state) {
+                        // Show error message if failed to add/remove from wishlist
+                        state.whenOrNull(
+                          addOrRemoveProductFromWishListError:
+                              (apiErrorModel) => ShowToast.showToastErrorTop(
+                                  errorMessage: apiErrorModel.message!,
+                                  context: context),
+                        );
+                      },
+                      builder: (context, state) {
+                        // Check if the product is in the wishlist
+                        bool isInWishlist = context
+                                .read<WishListCubit>()
+                                .favorites
+                                .containsKey(product.sId) &&
+                            context
+                                .read<WishListCubit>()
+                                .favorites[product.sId]!;
 
-                  return Container(
-                    height: responsive.setHeight(4),
-                    width: responsive.setWidth(8.5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(
-                            responsive.setBorderRadius(2)),
-                        color: ColorManger.offWhite),
-                    child: Icon(
-                        isInWishlist ? IconlyBold.heart : IconlyBroken.heart,
-                        color: ColorManger.brunLight),
-                  );
-                },
-              ),
-            ),
-          ),
+                        return Container(
+                          height: responsive.setHeight(4),
+                          width: responsive.setWidth(8.5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                  responsive.setBorderRadius(2)),
+                              color: ColorManger.offWhite),
+                          child: Icon(
+                              isInWishlist
+                                  ? IconlyBold.heart
+                                  : IconlyBroken.heart,
+                              color: ColorManger.brunLight),
+                        );
+                      },
+                    ),
+                  ),
+                ),
           // Product image
           Padding(
             padding: responsive.setPadding(top: 2.5, right: 5),

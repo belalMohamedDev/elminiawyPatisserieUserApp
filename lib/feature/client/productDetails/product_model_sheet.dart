@@ -169,7 +169,9 @@ class ProductBottomSheet extends StatelessWidget {
         responsive.setSizeBox(width: 3),
         _namePriceAndRatingColumn(context, responsive),
         const Spacer(),
-        _wishListContainer(context, product, responsive),
+        AppInitialRoute.role == "admin"
+            ? const SizedBox()
+            : _wishListContainer(context, product, responsive),
       ],
     );
   }
