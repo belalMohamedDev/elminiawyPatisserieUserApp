@@ -50,7 +50,7 @@ class DataAuthResponse {
   String? phone;
   String? refreshToken;
   String? role;
-
+  UserStoreAddress? storeAddress;
   String? image;
   bool? driverActive;
   bool? completeData;
@@ -63,6 +63,7 @@ class DataAuthResponse {
       this.refreshToken,
       this.role,
       this.image,
+      this.storeAddress,
       this.driverActive,
       this.completeData});
 
@@ -72,4 +73,54 @@ class DataAuthResponse {
 
   //to json
   Map<String, dynamic> toJson() => _$DataAuthResponseToJson(this);
+}
+
+@JsonSerializable()
+class UserStoreAddress {
+  UserStoreLocation? location;
+  UserStoreLocalization? branchArea;
+  UserStoreLocalization? briefness;
+  UserStoreLocalization? region;
+  @JsonKey(name: "_id")
+  String? sId;
+
+  UserStoreAddress(
+      {this.location, this.branchArea, this.briefness, this.region, this.sId});
+
+  //from json
+  factory UserStoreAddress.fromJson(Map<String, dynamic> json) =>
+      _$UserStoreAddressFromJson(json);
+
+  //to json
+  Map<String, dynamic> toJson() => _$UserStoreAddressToJson(this);
+}
+
+@JsonSerializable()
+class UserStoreLocation {
+  String? type;
+  List<double>? coordinates;
+
+  UserStoreLocation({this.type, this.coordinates});
+
+  //from json
+  factory UserStoreLocation.fromJson(Map<String, dynamic> json) =>
+      _$UserStoreLocationFromJson(json);
+
+  //to json
+  Map<String, dynamic> toJson() => _$UserStoreLocationToJson(this);
+}
+
+@JsonSerializable()
+class UserStoreLocalization {
+  String? en;
+  String? ar;
+
+  UserStoreLocalization({this.en, this.ar});
+
+  //from json
+  factory UserStoreLocalization.fromJson(Map<String, dynamic> json) =>
+      _$UserStoreLocalizationFromJson(json);
+
+  //to json
+  Map<String, dynamic> toJson() => _$UserStoreLocalizationToJson(this);
 }

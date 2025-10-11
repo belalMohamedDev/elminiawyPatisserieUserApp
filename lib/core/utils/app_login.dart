@@ -45,6 +45,10 @@ class AppLogin {
       AppInitialRoute.role=authResponse.data!.role!;
     }
 
+
+
+    
+
     if (!isChangeUserPassword) {
       // Set login status to true and navigate to the map screen
       SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);

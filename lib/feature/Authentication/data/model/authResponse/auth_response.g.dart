@@ -30,6 +30,10 @@ DataAuthResponse _$DataAuthResponseFromJson(Map<String, dynamic> json) =>
       refreshToken: json['refreshToken'] as String?,
       role: json['role'] as String?,
       image: json['image'] as String?,
+      storeAddress: json['storeAddress'] == null
+          ? null
+          : UserStoreAddress.fromJson(
+              json['storeAddress'] as Map<String, dynamic>),
       driverActive: json['driverActive'] as bool?,
       completeData: json['completeData'] as bool?,
     );
@@ -42,7 +46,66 @@ Map<String, dynamic> _$DataAuthResponseToJson(DataAuthResponse instance) =>
       'phone': instance.phone,
       'refreshToken': instance.refreshToken,
       'role': instance.role,
+      'storeAddress': instance.storeAddress,
       'image': instance.image,
       'driverActive': instance.driverActive,
       'completeData': instance.completeData,
+    };
+
+UserStoreAddress _$UserStoreAddressFromJson(Map<String, dynamic> json) =>
+    UserStoreAddress(
+      location: json['location'] == null
+          ? null
+          : UserStoreLocation.fromJson(
+              json['location'] as Map<String, dynamic>),
+      branchArea: json['branchArea'] == null
+          ? null
+          : UserStoreLocalization.fromJson(
+              json['branchArea'] as Map<String, dynamic>),
+      briefness: json['briefness'] == null
+          ? null
+          : UserStoreLocalization.fromJson(
+              json['briefness'] as Map<String, dynamic>),
+      region: json['region'] == null
+          ? null
+          : UserStoreLocalization.fromJson(
+              json['region'] as Map<String, dynamic>),
+      sId: json['_id'] as String?,
+    );
+
+Map<String, dynamic> _$UserStoreAddressToJson(UserStoreAddress instance) =>
+    <String, dynamic>{
+      'location': instance.location,
+      'branchArea': instance.branchArea,
+      'briefness': instance.briefness,
+      'region': instance.region,
+      '_id': instance.sId,
+    };
+
+UserStoreLocation _$UserStoreLocationFromJson(Map<String, dynamic> json) =>
+    UserStoreLocation(
+      type: json['type'] as String?,
+      coordinates: (json['coordinates'] as List<dynamic>?)
+          ?.map((e) => (e as num).toDouble())
+          .toList(),
+    );
+
+Map<String, dynamic> _$UserStoreLocationToJson(UserStoreLocation instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+      'coordinates': instance.coordinates,
+    };
+
+UserStoreLocalization _$UserStoreLocalizationFromJson(
+        Map<String, dynamic> json) =>
+    UserStoreLocalization(
+      en: json['en'] as String?,
+      ar: json['ar'] as String?,
+    );
+
+Map<String, dynamic> _$UserStoreLocalizationToJson(
+        UserStoreLocalization instance) =>
+    <String, dynamic>{
+      'en': instance.en,
+      'ar': instance.ar,
     };
