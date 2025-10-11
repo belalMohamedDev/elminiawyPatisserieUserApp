@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 part 'cart_state.dart';
@@ -16,7 +15,7 @@ class CartCubit extends Cubit<CartState> {
   final TextEditingController applyCouponController = TextEditingController();
 
   Future<void> addItemToCart(String productId) async {
-    emit( CartState.addItemToCartLoading(productId));
+    emit(CartState.addItemToCartLoading(productId));
 
     final response = await _cartRepositoryImplement.addItemToCart(
         AddItemToCartRequestBody(product: productId, quantity: quantityItem));
@@ -31,8 +30,7 @@ class CartCubit extends Cubit<CartState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.deleteCartItemError(
-                error),
+            CartState.deleteCartItemError(error),
           );
         }
       },
@@ -57,7 +55,7 @@ class CartCubit extends Cubit<CartState> {
     response.when(
       success: (dataResponse) {
         cartData = dataResponse;
-     
+
         emit(CartState.getCartItemSuccess(dataResponse));
       },
       failure: (error) async {
@@ -67,8 +65,7 @@ class CartCubit extends Cubit<CartState> {
             await getCartItem(); // Retry the request
           } else {
             emit(
-              CartState.getCartItemError(
-                error),
+              CartState.getCartItemError(error),
             );
             _retryCount = 0;
           }
@@ -80,7 +77,7 @@ class CartCubit extends Cubit<CartState> {
   //------------------------------------------------------------------------
 
   Future<void> removeItem(String id) async {
-    emit(const CartState.deleteCartItemLoading());
+    emit(CartState.deleteCartItemLoading(id));
 
     final response = await _cartRepositoryImplement.removeItemFromCart(id);
 
@@ -93,8 +90,7 @@ class CartCubit extends Cubit<CartState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.deleteCartItemError(
-               error),
+            CartState.deleteCartItemError(error),
           );
         }
       },
@@ -116,8 +112,7 @@ class CartCubit extends Cubit<CartState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.deleteCartItemError(
-               error),
+            CartState.deleteCartItemError(error),
           );
         }
       },
@@ -140,8 +135,7 @@ class CartCubit extends Cubit<CartState> {
       failure: (error) {
         if (error.statusCode != 401) {
           emit(
-            CartState.deleteCartItemError(
-                error),
+            CartState.deleteCartItemError(error),
           );
         }
       },
@@ -170,8 +164,7 @@ class CartCubit extends Cubit<CartState> {
 
           if (error.statusCode != 401) {
             emit(
-              CartState.deleteCartItemError(
-                error),
+              CartState.deleteCartItemError(error),
             );
           }
         },

@@ -140,6 +140,9 @@ class RouteGenerator {
                 create: (context) => instance<AdminHomeCubit>(),
               ),
               BlocProvider(
+                create: (context) => instance<CartCubit>(),
+              ),
+              BlocProvider(
                 create: (context) => instance<LogOutCubit>(),
               ),
             ],

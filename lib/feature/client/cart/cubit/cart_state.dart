@@ -25,7 +25,7 @@ class CartState with _$CartState {
 
   const factory CartState.deleteCartItemError(
        ApiErrorModel apiErrorModel) = DeleteCartItemError;
-  const factory CartState.deleteCartItemLoading() = DeleteCartItemLoading;
+  const factory CartState.deleteCartItemLoading(String id) = DeleteCartItemLoading;
   const factory CartState.deleteCartLoading() = DeleteCartLoading;
 
   const factory CartState.applyCouponLoading() = ApplyCouponLoading;
