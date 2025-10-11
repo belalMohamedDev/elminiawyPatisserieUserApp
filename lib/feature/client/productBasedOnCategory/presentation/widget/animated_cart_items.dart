@@ -99,26 +99,61 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
             ),
           ),
           SizedBox(width: responsive.setWidth(1)),
-          Container(
-            margin: responsive.setMargin(top: 2, bottom: 2),
-            height: responsive.setHeight(8),
-            width: responsive.setWidth(0.5),
-            color: ColorManger.backgroundItem.withOpacity(0.7),
-          ),
-          SizedBox(width: responsive.setWidth(3)),
-          Text(
-            "View Basket",
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(fontSize: 12.sp, color: ColorManger.white),
-          ),
-          Image.asset(
-            ImageAsset.basket,
-            height: responsive.setIconSize(12),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(_createCartRoute());
+            },
+            child: Row(
+              children: [
+                Container(
+                  margin: responsive.setMargin(top: 2, bottom: 2),
+                  height: responsive.setHeight(8),
+                  width: responsive.setWidth(0.5),
+                  color: ColorManger.backgroundItem.withOpacity(0.7),
+                ),
+                SizedBox(width: responsive.setWidth(3)),
+                Text(
+                  "View Basket",
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: 12.sp, color: ColorManger.white),
+                ),
+                Image.asset(
+                  ImageAsset.basket,
+                  height: responsive.setIconSize(12),
+                ),
+              ],
+            ),
           ),
         ],
       ),
+    );
+  }
+
+  Route _createCartRoute() {
+    return PageRouteBuilder(
+      transitionDuration: const Duration(milliseconds: 500),
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          MultiBlocProvider(
+        providers: [
+          BlocProvider.value(
+            value: instance<UserAddressCubit>(),
+          ),
+          BlocProvider.value(
+            value: instance<CartCubit>(),
+          ),
+        ],
+        child: const CartView(),
+      ),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        final tween = Tween(begin: const Offset(0, 1), end: Offset.zero)
+            .chain(CurveTween(curve: Curves.easeOutBack));
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
     );
   }
 
