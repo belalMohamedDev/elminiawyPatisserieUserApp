@@ -1,3 +1,4 @@
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mapbox_search/mapbox_search.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
@@ -40,6 +41,8 @@ Future<void> _initAppModule() async {
   await ScreenUtil.ensureScreenSize();
 
   Bloc.observer = AppBlocObserver();
+
+    await Hive.initFlutter();
 
   final navigatorKey = GlobalKey<NavigatorState>();
   instance.registerLazySingleton<ImagePicker>(ImagePicker.new);

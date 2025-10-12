@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/category/data/localDataSource/category_local_data_source.dart';
 
 abstract class CategoryRepository {
   Future<ApiResult<CategoryResponse>> getCategoriesRepo(
@@ -38,18 +39,35 @@ class CategoryRepositoryImplement implements CategoryRepository {
   @override
   Future<ApiResult<CategoryResponse>> getCategoriesRepo(
       {String? sort, String? active}) async {
-
-
     final Map<String, dynamic> queryRequest = {
       if (sort != null) 'sort': sort,
       if (active != null) 'active': active,
     };
     try {
+      final cachedData = await CategoryLocalDataSource.getCachedCategoryData();
+
+      if (cachedData != null) {
+        final model = CategoryResponse.fromJson(cachedData);
+
+        _refreshFromServer(queryRequest);
+        return ApiResult.success(model);
+      }
+
       final response = await _apiService.getCategoriesService(queryRequest);
+
+      await CategoryLocalDataSource.saveCategoryData(response.toJson());
+
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
+  }
+
+  Future<void> _refreshFromServer(Map<String, dynamic> queryRequest) async {
+    try {
+      final response = await _apiService.getCategoriesService(queryRequest);
+      await CategoryLocalDataSource.saveCategoryData(response.toJson());
+    } catch (_) {}
   }
 
   @override
