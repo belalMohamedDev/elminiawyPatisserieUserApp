@@ -1,4 +1,3 @@
-
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 class AppBlocObserver extends BlocObserver {
@@ -28,11 +27,19 @@ class AppBlocObserver extends BlocObserver {
     Transition<dynamic, dynamic> transition,
   ) {
     super.onTransition(bloc, transition);
-    debugPrint('bloc from transition -- ${bloc.toString()} \n transition -- ${transition.toString()} ');
+    debugPrint(
+        'bloc from transition -- ${bloc.toString()} \n transition -- ${transition.toString()} ');
   }
 
   @override
   void onError(BlocBase<dynamic> bloc, Object error, StackTrace stackTrace) {
+    if (error
+        .toString()
+        .contains('Cannot emit new states after calling close')) {
+      debugPrint('⚠️ تم تجاهل خطأ emit بعد close في ${bloc.runtimeType}');
+      return;
+    }
+
     debugPrint('onError -- ${bloc.runtimeType}');
     super.onError(bloc, error, stackTrace);
   }
