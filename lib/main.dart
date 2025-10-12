@@ -1,5 +1,4 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:elminiawy/core/network/error_handler/app_error_handler.dart';
 
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
@@ -17,7 +16,7 @@ void main() async {
 
   await initAppModule();
 
-  AppErrorHandler.init();
+  // AppErrorHandler.init();
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: ColorManger.white,

@@ -29,6 +29,7 @@ mixin _$ProductState {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -48,6 +49,7 @@ mixin _$ProductState {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -66,6 +68,7 @@ mixin _$ProductState {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -85,6 +88,8 @@ mixin _$ProductState {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -102,6 +107,8 @@ mixin _$ProductState {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -119,6 +126,8 @@ mixin _$ProductState {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -194,6 +203,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -216,6 +226,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -237,6 +248,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -262,6 +274,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -282,6 +296,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -302,6 +318,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -368,6 +386,7 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -390,6 +409,7 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -411,6 +431,7 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -436,6 +457,8 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -456,6 +479,8 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -476,6 +501,8 @@ class _$GetNewProductLoadingImpl implements GetNewProductLoading {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -569,6 +596,7 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -591,6 +619,7 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -612,6 +641,7 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -637,6 +667,8 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -657,6 +689,8 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -677,6 +711,8 @@ class _$GetNewProductErrorImpl implements GetNewProductError {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -776,6 +812,7 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -798,6 +835,7 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -819,6 +857,7 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -844,6 +883,8 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -864,6 +905,8 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -884,6 +927,8 @@ class _$GetNewProductSuccessImpl implements GetNewProductSuccess {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -993,6 +1038,7 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -1015,6 +1061,7 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1036,6 +1083,7 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1061,6 +1109,8 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -1081,6 +1131,8 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1101,6 +1153,8 @@ class _$AddNewProductItemToListImpl implements AddNewProductItemToList {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1201,6 +1255,7 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -1223,6 +1278,7 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1244,6 +1300,7 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1269,6 +1326,8 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -1289,6 +1348,8 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1309,6 +1370,8 @@ class _$SelectedRangeStateImpl implements SelectedRangeState {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1408,6 +1471,7 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -1430,6 +1494,7 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1451,6 +1516,7 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1476,6 +1542,8 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -1496,6 +1564,8 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1516,6 +1586,8 @@ class _$SelectedOptionStateImpl implements SelectedOptionState {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1588,6 +1660,7 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -1610,6 +1683,7 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1631,6 +1705,7 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1656,6 +1731,8 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -1676,6 +1753,8 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1696,6 +1775,8 @@ class _$GetAllProductLoadingImpl implements GetAllProductLoading {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1789,6 +1870,7 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -1811,6 +1893,7 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1832,6 +1915,7 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -1857,6 +1941,8 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -1877,6 +1963,8 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1897,6 +1985,8 @@ class _$GetAllProductErrorImpl implements GetAllProductError {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -1996,6 +2086,7 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -2018,6 +2109,7 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2039,6 +2131,7 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2064,6 +2157,8 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -2084,6 +2179,8 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -2104,6 +2201,8 @@ class _$GetAllProductSuccessImpl implements GetAllProductSuccess {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -2124,6 +2223,194 @@ abstract class GetAllProductSuccess implements ProductState {
   @JsonKey(ignore: true)
   _$$GetAllProductSuccessImplCopyWith<_$GetAllProductSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AllProductSLoadingFromPaginationImplCopyWith<$Res> {
+  factory _$$AllProductSLoadingFromPaginationImplCopyWith(
+          _$AllProductSLoadingFromPaginationImpl value,
+          $Res Function(_$AllProductSLoadingFromPaginationImpl) then) =
+      __$$AllProductSLoadingFromPaginationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AllProductSLoadingFromPaginationImplCopyWithImpl<$Res>
+    extends _$ProductStateCopyWithImpl<$Res,
+        _$AllProductSLoadingFromPaginationImpl>
+    implements _$$AllProductSLoadingFromPaginationImplCopyWith<$Res> {
+  __$$AllProductSLoadingFromPaginationImplCopyWithImpl(
+      _$AllProductSLoadingFromPaginationImpl _value,
+      $Res Function(_$AllProductSLoadingFromPaginationImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AllProductSLoadingFromPaginationImpl
+    implements AllProductSLoadingFromPagination {
+  const _$AllProductSLoadingFromPaginationImpl();
+
+  @override
+  String toString() {
+    return 'ProductState.getAllProductSFromPaginationLoadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AllProductSLoadingFromPaginationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getNewProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getNewProductError,
+    required TResult Function(ProductResponse data) getNewProductSuccess,
+    required TResult Function(List<DataProductResponse> getFoundData)
+        addNewProductItemToList,
+    required TResult Function(RangeValues selectedRange) selectedRangeState,
+    required TResult Function(int selectedOption) selectedOptionState,
+    required TResult Function() getAllProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
+    required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
+    required TResult Function() updateProductLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
+    required TResult Function(List<DataProductResponse> data)
+        updateProductSuccess,
+  }) {
+    return getAllProductSFromPaginationLoadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getNewProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult? Function(ProductResponse data)? getNewProductSuccess,
+    TResult? Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult? Function(RangeValues selectedRange)? selectedRangeState,
+    TResult? Function(int selectedOption)? selectedOptionState,
+    TResult? Function()? getAllProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
+    TResult? Function()? updateProductLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
+  }) {
+    return getAllProductSFromPaginationLoadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getNewProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getNewProductError,
+    TResult Function(ProductResponse data)? getNewProductSuccess,
+    TResult Function(List<DataProductResponse> getFoundData)?
+        addNewProductItemToList,
+    TResult Function(RangeValues selectedRange)? selectedRangeState,
+    TResult Function(int selectedOption)? selectedOptionState,
+    TResult Function()? getAllProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
+    TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
+    TResult Function()? updateProductLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
+    TResult Function(List<DataProductResponse> data)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllProductSFromPaginationLoadingState != null) {
+      return getAllProductSFromPaginationLoadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetNewProductLoading value) getNewProductLoading,
+    required TResult Function(GetNewProductError value) getNewProductError,
+    required TResult Function(GetNewProductSuccess value) getNewProductSuccess,
+    required TResult Function(AddNewProductItemToList value)
+        addNewProductItemToList,
+    required TResult Function(SelectedRangeState value) selectedRangeState,
+    required TResult Function(SelectedOptionState value) selectedOptionState,
+    required TResult Function(GetAllProductLoading value) getAllProductLoading,
+    required TResult Function(GetAllProductError value) getAllProductError,
+    required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
+    required TResult Function(UpdateProductLoading value) updateProductLoading,
+    required TResult Function(UpdateProductError value) updateProductError,
+    required TResult Function(UpdateProductSuccess value) updateProductSuccess,
+  }) {
+    return getAllProductSFromPaginationLoadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult? Function(GetNewProductError value)? getNewProductError,
+    TResult? Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult? Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult? Function(SelectedRangeState value)? selectedRangeState,
+    TResult? Function(SelectedOptionState value)? selectedOptionState,
+    TResult? Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult? Function(GetAllProductError value)? getAllProductError,
+    TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
+    TResult? Function(UpdateProductLoading value)? updateProductLoading,
+    TResult? Function(UpdateProductError value)? updateProductError,
+    TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
+  }) {
+    return getAllProductSFromPaginationLoadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetNewProductLoading value)? getNewProductLoading,
+    TResult Function(GetNewProductError value)? getNewProductError,
+    TResult Function(GetNewProductSuccess value)? getNewProductSuccess,
+    TResult Function(AddNewProductItemToList value)? addNewProductItemToList,
+    TResult Function(SelectedRangeState value)? selectedRangeState,
+    TResult Function(SelectedOptionState value)? selectedOptionState,
+    TResult Function(GetAllProductLoading value)? getAllProductLoading,
+    TResult Function(GetAllProductError value)? getAllProductError,
+    TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
+    TResult Function(UpdateProductLoading value)? updateProductLoading,
+    TResult Function(UpdateProductError value)? updateProductError,
+    TResult Function(UpdateProductSuccess value)? updateProductSuccess,
+    required TResult orElse(),
+  }) {
+    if (getAllProductSFromPaginationLoadingState != null) {
+      return getAllProductSFromPaginationLoadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AllProductSLoadingFromPagination implements ProductState {
+  const factory AllProductSLoadingFromPagination() =
+      _$AllProductSLoadingFromPaginationImpl;
 }
 
 /// @nodoc
@@ -2176,6 +2463,7 @@ class _$UpdateProductLoadingImpl implements UpdateProductLoading {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -2198,6 +2486,7 @@ class _$UpdateProductLoadingImpl implements UpdateProductLoading {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2219,6 +2508,7 @@ class _$UpdateProductLoadingImpl implements UpdateProductLoading {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2244,6 +2534,8 @@ class _$UpdateProductLoadingImpl implements UpdateProductLoading {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -2264,6 +2556,8 @@ class _$UpdateProductLoadingImpl implements UpdateProductLoading {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -2284,6 +2578,8 @@ class _$UpdateProductLoadingImpl implements UpdateProductLoading {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -2377,6 +2673,7 @@ class _$UpdateProductErrorImpl implements UpdateProductError {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -2399,6 +2696,7 @@ class _$UpdateProductErrorImpl implements UpdateProductError {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2420,6 +2718,7 @@ class _$UpdateProductErrorImpl implements UpdateProductError {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2445,6 +2744,8 @@ class _$UpdateProductErrorImpl implements UpdateProductError {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -2465,6 +2766,8 @@ class _$UpdateProductErrorImpl implements UpdateProductError {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -2485,6 +2788,8 @@ class _$UpdateProductErrorImpl implements UpdateProductError {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -2591,6 +2896,7 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
     required TResult Function() getAllProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) getAllProductError,
     required TResult Function(ProductResponse data) getAllProductSuccess,
+    required TResult Function() getAllProductSFromPaginationLoadingState,
     required TResult Function() updateProductLoading,
     required TResult Function(ApiErrorModel apiErrorModel) updateProductError,
     required TResult Function(List<DataProductResponse> data)
@@ -2613,6 +2919,7 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
     TResult? Function()? getAllProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult? Function(ProductResponse data)? getAllProductSuccess,
+    TResult? Function()? getAllProductSFromPaginationLoadingState,
     TResult? Function()? updateProductLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult? Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2634,6 +2941,7 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
     TResult Function()? getAllProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getAllProductError,
     TResult Function(ProductResponse data)? getAllProductSuccess,
+    TResult Function()? getAllProductSFromPaginationLoadingState,
     TResult Function()? updateProductLoading,
     TResult Function(ApiErrorModel apiErrorModel)? updateProductError,
     TResult Function(List<DataProductResponse> data)? updateProductSuccess,
@@ -2659,6 +2967,8 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
     required TResult Function(GetAllProductLoading value) getAllProductLoading,
     required TResult Function(GetAllProductError value) getAllProductError,
     required TResult Function(GetAllProductSuccess value) getAllProductSuccess,
+    required TResult Function(AllProductSLoadingFromPagination value)
+        getAllProductSFromPaginationLoadingState,
     required TResult Function(UpdateProductLoading value) updateProductLoading,
     required TResult Function(UpdateProductError value) updateProductError,
     required TResult Function(UpdateProductSuccess value) updateProductSuccess,
@@ -2679,6 +2989,8 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
     TResult? Function(GetAllProductLoading value)? getAllProductLoading,
     TResult? Function(GetAllProductError value)? getAllProductError,
     TResult? Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult? Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult? Function(UpdateProductLoading value)? updateProductLoading,
     TResult? Function(UpdateProductError value)? updateProductError,
     TResult? Function(UpdateProductSuccess value)? updateProductSuccess,
@@ -2699,6 +3011,8 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
     TResult Function(GetAllProductLoading value)? getAllProductLoading,
     TResult Function(GetAllProductError value)? getAllProductError,
     TResult Function(GetAllProductSuccess value)? getAllProductSuccess,
+    TResult Function(AllProductSLoadingFromPagination value)?
+        getAllProductSFromPaginationLoadingState,
     TResult Function(UpdateProductLoading value)? updateProductLoading,
     TResult Function(UpdateProductError value)? updateProductError,
     TResult Function(UpdateProductSuccess value)? updateProductSuccess,

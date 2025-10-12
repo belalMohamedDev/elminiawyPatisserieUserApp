@@ -21,7 +21,7 @@ class ProductCubit extends Cubit<ProductState> {
 
   List<DataProductResponse> get dataList => _newProduct;
 
-  List<DataProductResponse> _allProduct = [];
+  final List<DataProductResponse> _allProduct = [];
 
   List<DataProductResponse> get allProduct => _allProduct;
 
@@ -72,16 +72,25 @@ class ProductCubit extends Cubit<ProductState> {
     );
   }
 
-  Future<void> fetchGetAllProduct() async {
-    emit(const ProductState.getAllProductLoading());
+  int page = 1;
+  int theLastPage = 0;
 
-    final response = await _productRepository.getAllProductRepo();
+  Future<void> fetchGetAllProduct({fromPagination = false}) async {
+    if (fromPagination) {
+      emit(const ProductState.getAllProductSFromPaginationLoadingState());
+    } else {
+      emit(const ProductState.getAllProductLoading());
+    }
+
+    final response = await _productRepository.getAllProductRepo(10, page);
 
     response.when(
       success: (dataResponse) {
-        if (dataResponse.data!.isNotEmpty) {
-          _allProduct = [];
+        if (dataResponse.data != null && dataResponse.data!.isNotEmpty) {
           _allProduct.addAll(dataResponse.data!);
+          page++;
+        } else {
+          theLastPage = page;
         }
         emit(ProductState.getAllProductSuccess(dataResponse));
       },

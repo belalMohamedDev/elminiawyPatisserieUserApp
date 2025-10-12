@@ -501,11 +501,11 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPosition = null,
+    Object? currentPosition = freezed,
     Object? markers = null,
   }) {
     return _then(_$LoadedImpl(
-      null == currentPosition
+      freezed == currentPosition
           ? _value.currentPosition
           : currentPosition // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -543,13 +543,15 @@ class _$LoadedImpl implements Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            (identical(other.currentPosition, currentPosition) ||
-                other.currentPosition == currentPosition) &&
+            const DeepCollectionEquality()
+                .equals(other.currentPosition, currentPosition) &&
             const DeepCollectionEquality().equals(other._markers, _markers));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentPosition,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(currentPosition),
       const DeepCollectionEquality().hash(_markers));
 
   @JsonKey(ignore: true)

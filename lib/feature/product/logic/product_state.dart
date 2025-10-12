@@ -22,12 +22,15 @@ class ProductState with _$ProductState {
       SelectedOptionState;
 
   const factory ProductState.getAllProductLoading() = GetAllProductLoading;
-  
+
   const factory ProductState.getAllProductError(ApiErrorModel apiErrorModel) =
       GetAllProductError;
 
   const factory ProductState.getAllProductSuccess(ProductResponse data) =
       GetAllProductSuccess;
+
+  const factory ProductState.getAllProductSFromPaginationLoadingState() =
+      AllProductSLoadingFromPagination;
 
   //get product State
   const factory ProductState.updateProductLoading() = UpdateProductLoading;
@@ -35,6 +38,5 @@ class ProductState with _$ProductState {
       UpdateProductError;
 
   const factory ProductState.updateProductSuccess(
-      List<DataProductResponse> data) =
-     UpdateProductSuccess;
+      List<DataProductResponse> data) = UpdateProductSuccess;
 }

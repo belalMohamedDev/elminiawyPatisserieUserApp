@@ -8,13 +8,17 @@ class AdminProductScreen extends StatefulWidget {
 }
 
 class _AdminProductScreenState extends State<AdminProductScreen> {
+  bool isLoadingMore = false;
   @override
   void initState() {
-    context.read<ProductCubit>().fetchGetAllProduct();
-    //TODO: implement pagination
-    context
-        .read<SubCategoriesCubit>()
-        .fetchGetSubCategories(disablePagination: true);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.wait([
+        context.read<ProductCubit>().fetchGetAllProduct(),
+        context
+            .read<SubCategoriesCubit>()
+            .fetchGetSubCategories(disablePagination: true)
+      ]);
+    });
 
     super.initState();
   }
@@ -28,6 +32,7 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
         return Stack(
           children: [
             Scaffold(
+                resizeToAvoidBottomInset: true,
                 appBar: AppBar(
                   centerTitle: true,
                   title: Text(
@@ -58,7 +63,32 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
                       ),
                 body: state is GetAllProductLoading
                     ? const GetProductLoadingWidget()
-                    : GetProductSuccessWidget(state: state)),
+                    : NotificationListener<ScrollNotification>(
+                        onNotification: (notification) {
+                          if (notification is ScrollUpdateNotification &&
+                              !isLoadingMore &&
+                              state is! SubCategoriesLoadingFromPagination &&
+                              context.read<ProductCubit>().theLastPage !=
+                                  context.read<ProductCubit>().page) {
+                            final currentScroll = notification.metrics.pixels;
+                            final maxScroll =
+                                notification.metrics.maxScrollExtent;
+                            const prefetchThreshold = 1200;
+
+                            if (currentScroll >=
+                                    maxScroll - prefetchThreshold &&
+                                !isLoadingMore) {
+                              isLoadingMore = true;
+
+                              context
+                                  .read<ProductCubit>()
+                                  .fetchGetAllProduct(fromPagination: true)
+                                  .whenComplete(() => isLoadingMore = false);
+                            }
+                          }
+                          return false;
+                        },
+                        child: GetProductSuccessWidget(state: state))),
             LoadingOverlay(isLoading: state is UpdateProductLoading)
           ],
         );

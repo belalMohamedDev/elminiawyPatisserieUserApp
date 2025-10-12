@@ -42,7 +42,7 @@ Future<void> _initAppModule() async {
 
   Bloc.observer = AppBlocObserver();
 
-    await Hive.initFlutter();
+  await Hive.initFlutter();
 
   final navigatorKey = GlobalKey<NavigatorState>();
   instance.registerLazySingleton<ImagePicker>(ImagePicker.new);
@@ -175,7 +175,7 @@ Future<void> _initForgetPassword() async {
 Future<void> _initProduct() async {
   instance.registerLazySingleton<ProductRepositoryImplement>(
       () => ProductRepositoryImplement(instance()));
-  instance.registerLazySingleton<ProductCubit>(() => ProductCubit(
+  instance.registerFactory<ProductCubit>(() => ProductCubit(
         instance(),
         instance(),
       ));

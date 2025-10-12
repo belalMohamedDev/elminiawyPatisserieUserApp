@@ -839,7 +839,7 @@ class __$$UpdateAddressRegionImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
-    Object? latLng = null,
+    Object? latLng = freezed,
     Object? markData = null,
   }) {
     return _then(_$UpdateAddressRegionImpl(
@@ -847,7 +847,7 @@ class __$$UpdateAddressRegionImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      latLng: null == latLng
+      latLng: freezed == latLng
           ? _value.latLng
           : latLng // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -891,12 +891,15 @@ class _$UpdateAddressRegionImpl implements UpdateAddressRegion {
         (other.runtimeType == runtimeType &&
             other is _$UpdateAddressRegionImpl &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.latLng, latLng) || other.latLng == latLng) &&
+            const DeepCollectionEquality().equals(other.latLng, latLng) &&
             const DeepCollectionEquality().equals(other._markData, _markData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, latLng,
+  int get hashCode => Object.hash(
+      runtimeType,
+      message,
+      const DeepCollectionEquality().hash(latLng),
       const DeepCollectionEquality().hash(_markData));
 
   @JsonKey(ignore: true)

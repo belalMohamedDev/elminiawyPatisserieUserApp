@@ -142,7 +142,8 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.product)
-  Future<ProductResponse> getAllProductService();
+  Future<ProductResponse> getAllProductService(
+      @Query("limit") int? limit, @Query("page") int? page);
 
   @PUT("${ApiConstants.product}/{id}")
   Future<ProductResponse> updateProductService(

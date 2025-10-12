@@ -39,7 +39,7 @@ abstract class ProductRepository {
     required String id,
   });
 
-  Future<ApiResult<ProductResponse>> getAllProductRepo();
+  Future<ApiResult<ProductResponse>> getAllProductRepo(int? limit, int? page);
 }
 
 class ProductRepositoryImplement implements ProductRepository {
@@ -72,9 +72,10 @@ class ProductRepositoryImplement implements ProductRepository {
   }
 
   @override
-  Future<ApiResult<ProductResponse>> getAllProductRepo() async {
+  Future<ApiResult<ProductResponse>> getAllProductRepo(
+      int? limit, int? page) async {
     try {
-      final response = await _apiService.getAllProductService();
+      final response = await _apiService.getAllProductService(limit, page);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
