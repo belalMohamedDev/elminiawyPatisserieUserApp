@@ -51,7 +51,7 @@ class GetProductSuccessWidget extends StatelessWidget {
                   TitleDescriptionTextAndRatingColumn(
                     product: products[index],
                   ),
-                  responsive.setSizeBox(width: 5),
+                  responsive.setSizeBox(width: 2),
                   InkWell(
                     onTap: () {
                       showProductPriceEditPopup(products[index], context);
@@ -123,6 +123,3 @@ class GetProductSuccessWidget extends StatelessWidget {
     );
   }
 }
-
-
-
