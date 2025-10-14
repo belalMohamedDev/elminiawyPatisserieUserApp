@@ -107,16 +107,20 @@ class ReviewPaymentScreen extends StatelessWidget {
                     onPressed: () {
                       if (paymentCuibt.choosePaymentMethod.startsWith('Cash')) {
                         paymentCuibt.createCashOrderSummit(
-                            AppInitialRoute.role == "admin"
+                            orderSource: AppInitialRoute.role == "admin"
+                                ? "instore"
+                                : "app",
+                            shippingAddressId: AppInitialRoute.role == "admin"
                                 ? null
                                 : userAddressCubit
                                     .addressDataList[paymentCuibt.selectedIndex]
                                     .sId!,
-                            AppInitialRoute.role == "admin"
-                                ? AppInitialRoute.storeAddressId
+                            nearbyStoreAddress: userAddressCubit
+                                    .addressDataList.isEmpty
+                                ? null
                                 : userAddressCubit
                                     .addressDataList[paymentCuibt.selectedIndex]
-                                    .nearbyStoreAddress!);
+                                    .nearbyStoreAddress);
                       }
                     },
                     widget: state.maybeWhen(

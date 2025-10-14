@@ -175,7 +175,7 @@ Future<void> _initForgetPassword() async {
 Future<void> _initProduct() async {
   instance.registerLazySingleton<ProductRepositoryImplement>(
       () => ProductRepositoryImplement(instance()));
-  instance.registerFactory<ProductCubit>(() => ProductCubit(
+  instance.registerLazySingleton<ProductCubit>(() => ProductCubit(
         instance(),
         instance(),
       ));

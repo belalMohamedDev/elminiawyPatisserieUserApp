@@ -4,14 +4,25 @@ part 'create_order_request.g.dart';
 @JsonSerializable(includeIfNull: false)
 class CreateOrderRequestBody {
   CreateOrderRequestBody({
-     this.shippingAddress,
-    required this.nearbyStoreAddress,
-    required this.notes,
+    this.shippingAddress,
+    this.nearbyStoreAddress,
+    this.notes,
+    this.customerName,
+    this.customerPhone,
+    this.customerAddressText ,
+    this.orderSource
   });
 
   final String? shippingAddress;
-  final String nearbyStoreAddress;
-  final String notes;
+  final String? nearbyStoreAddress;
+  final String? notes;
+
+
+//admin side
+  final String? customerName;
+  final String? customerPhone;
+  final String? customerAddressText;
+  final String? orderSource;
 
   //from json
   factory CreateOrderRequestBody.fromJson(Map<String, dynamic> json) =>

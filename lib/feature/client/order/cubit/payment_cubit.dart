@@ -10,6 +10,11 @@ class PaymentCubit extends Cubit<PaymentState> {
   String choosePaymentMethod = 'Cash';
   final OrderRepositoryImplement _orderRepositoryImplement;
   TextEditingController notesController = TextEditingController();
+
+  TextEditingController customerNameController = TextEditingController();
+  TextEditingController customerPhoneController = TextEditingController();
+  TextEditingController customerAddressTextController = TextEditingController();
+
   OrderResponseData? createOrderResponseData;
   List<GetOrdersResponseData> getCurrentOrders = [];
   List<GetOrdersResponseData> getPerviousOrders = [];
@@ -25,14 +30,28 @@ class PaymentCubit extends Cubit<PaymentState> {
   }
 
   Future<void> createCashOrderSummit(
-      String? shippingAddressId, String nearbyStoreAddress) async {
+      {String? shippingAddressId,
+      String? nearbyStoreAddress,
+      String? orderSource}) async {
     emit(const PaymentState.createCashOrderLoading());
 
-    final response = await _orderRepositoryImplement.createCashOrder(
-        CreateOrderRequestBody(
-            shippingAddress: shippingAddressId,
-            nearbyStoreAddress: nearbyStoreAddress,
-            notes: notesController.text.trim()));
+    final response =
+        await _orderRepositoryImplement.createCashOrder(CreateOrderRequestBody(
+      shippingAddress: shippingAddressId,
+      nearbyStoreAddress: nearbyStoreAddress,
+      notes:
+          notesController.text.isNotEmpty ? notesController.text.trim() : null,
+      customerName: customerNameController.text.isNotEmpty
+          ? customerNameController.text.trim()
+          : null,
+      customerPhone: customerPhoneController.text.isNotEmpty
+          ? customerPhoneController.text.trim()
+          : null,
+      customerAddressText: customerAddressTextController.text.isNotEmpty
+          ? customerAddressTextController.text.trim()
+          : null,
+      orderSource: orderSource,
+    ));
 
     response.when(
       success: (response) {

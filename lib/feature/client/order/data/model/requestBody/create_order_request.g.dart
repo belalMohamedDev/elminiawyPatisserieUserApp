@@ -10,8 +10,12 @@ CreateOrderRequestBody _$CreateOrderRequestBodyFromJson(
         Map<String, dynamic> json) =>
     CreateOrderRequestBody(
       shippingAddress: json['shippingAddress'] as String?,
-      nearbyStoreAddress: json['nearbyStoreAddress'] as String,
-      notes: json['notes'] as String,
+      nearbyStoreAddress: json['nearbyStoreAddress'] as String?,
+      notes: json['notes'] as String?,
+      customerName: json['customerName'] as String?,
+      customerPhone: json['customerPhone'] as String?,
+      customerAddressText: json['customerAddressText'] as String?,
+      orderSource: json['orderSource'] as String?,
     );
 
 Map<String, dynamic> _$CreateOrderRequestBodyToJson(
@@ -25,7 +29,11 @@ Map<String, dynamic> _$CreateOrderRequestBodyToJson(
   }
 
   writeNotNull('shippingAddress', instance.shippingAddress);
-  val['nearbyStoreAddress'] = instance.nearbyStoreAddress;
-  val['notes'] = instance.notes;
+  writeNotNull('nearbyStoreAddress', instance.nearbyStoreAddress);
+  writeNotNull('notes', instance.notes);
+  writeNotNull('customerName', instance.customerName);
+  writeNotNull('customerPhone', instance.customerPhone);
+  writeNotNull('customerAddressText', instance.customerAddressText);
+  writeNotNull('orderSource', instance.orderSource);
   return val;
 }
