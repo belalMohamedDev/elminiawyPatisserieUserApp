@@ -89,6 +89,10 @@ class ReviewPaymentScreen extends StatelessWidget {
                             errorMessage: apiErrorModel.message!,
                             context: context),
                     createCashOrderSuccess: (data) {
+                      paymentCuibt.customerNameController.clear();
+                      paymentCuibt.customerPhoneController.clear();
+                      paymentCuibt.customerAddressTextController.clear();
+                      paymentCuibt.changeOrderType("Store Pickup");
                       AppInitialRoute.role == "admin"
                           ? Navigator.pushNamedAndRemoveUntil(
                               context,
@@ -108,7 +112,7 @@ class ReviewPaymentScreen extends StatelessWidget {
                       if (paymentCuibt.choosePaymentMethod.startsWith('Cash')) {
                         paymentCuibt.createCashOrderSummit(
                             orderSource: AppInitialRoute.role == "admin"
-                                ? "instore"
+                                ? paymentCuibt.orderSourceForApi
                                 : "app",
                             shippingAddressId: AppInitialRoute.role == "admin"
                                 ? null

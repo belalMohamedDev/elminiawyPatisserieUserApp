@@ -1,11 +1,18 @@
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
-class ReviewPaymentBody extends StatelessWidget {
+class ReviewPaymentBody extends StatefulWidget {
   const ReviewPaymentBody({super.key});
 
   @override
+  State<ReviewPaymentBody> createState() => _ReviewPaymentBodyState();
+}
+
+class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
+    with SingleTickerProviderStateMixin {
+  @override
   Widget build(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
+    final paymentCuibt = context.read<PaymentCubit>();
+
     final responsive = ResponsiveUtils(context);
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
     final addressData = AppInitialRoute.role == "admin"
@@ -33,14 +40,42 @@ class ReviewPaymentBody extends StatelessWidget {
                   .titleLarge!
                   .copyWith(fontSize: responsive.setTextSize(4)),
             ),
+
             Padding(
               padding: responsive.setPadding(bottom: 1, top: 0.8),
               child: InkWell(
-                onTap: () {
-                  context.read<UserAddressCubit>().isPaymentAddress = true;
+                onTap: () async {
+                  if (AppInitialRoute.role == "admin") {
+                    final selected = await showMenu<String>(
+                      color: ColorManger.backgroundItem,
+                      context: context,
+                      position: RelativeRect.fromLTRB(
+                          100,
+                          responsive.setHeight(25.5),
+                          responsive.setWidth(6.5),
+                          100),
+                      items: [
+                        const PopupMenuItem(
+                          value: "Store Pickup",
+                          child: Text("Store Pickup"),
+                        ),
+                        const PopupMenuItem(
+                          value: "By Phone",
+                          child: Text("By Phone"),
+                        ),
+                      ],
+                    );
 
-                  Navigator.of(context, rootNavigator: !false)
-                      .popAndPushNamed(Routes.map);
+                    if (selected != null &&
+                        selected != paymentCuibt.selectedOption) {
+                      paymentCuibt.changeOrderType(selected);
+                    }
+                  } else {
+                    context.read<UserAddressCubit>().isPaymentAddress = true;
+
+                    Navigator.of(context, rootNavigator: !false)
+                        .popAndPushNamed(Routes.map);
+                  }
                 },
                 child: Container(
                   width: double.infinity,
@@ -66,9 +101,9 @@ class ReviewPaymentBody extends StatelessWidget {
                         ConstrainedBox(
                           constraints: BoxConstraints(maxWidth: 275.w),
                           child: Text(
-                            addressData != null
-                                ? (addressData.region ?? "")
-                                : AppInitialRoute.storeRegion,
+                            AppInitialRoute.role == "admin"
+                                ? paymentCuibt.selectedOption
+                                : addressData!.region ?? "",
                             maxLines: 1,
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.ellipsis,
@@ -84,78 +119,163 @@ class ReviewPaymentBody extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+
+            /// Animated Container for "By Phone"
+            BlocBuilder<PaymentCubit, PaymentState>(
+              builder: (context, state) {
+                return AnimatedSize(
+                  duration: const Duration(milliseconds: 400),
+                  curve: Curves.easeInOut,
+                  child: paymentCuibt.isPhoneOrder
+                      ? Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.all(12.w),
+                          decoration: BoxDecoration(
+                            color: ColorManger.backgroundItem,
+                            borderRadius: BorderRadius.circular(12),
+                            border:
+                                Border.all(color: ColorManger.backgroundItem),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              _buildTextField(
+                                controller: paymentCuibt.customerNameController,
+                                label: "Customer Name",
+                                icon: Icons.person,
+                              ),
+                              SizedBox(height: 10.h),
+                              _buildTextField(
+                                controller:
+                                    paymentCuibt.customerPhoneController,
+                                label: "Customer Phone",
+                                icon: Icons.phone,
+                                keyboardType: TextInputType.phone,
+                              ),
+                              SizedBox(height: 10.h),
+                              _buildTextField(
+                                controller:
+                                    paymentCuibt.customerAddressTextController,
+                                label: "Customer Address",
+                                icon: Icons.location_on,
+                              ),
+                            ],
+                          ),
+                        )
+                      : const SizedBox(),
+                );
+              },
             ),
 
             responsive.setSizeBox(
-              height: 0.5,
+              height: 1,
             ),
-            Text(
-              context.translate(AppStrings.payment),
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(fontSize: responsive.setTextSize(4)),
-            ),
-            Padding(
-              padding: responsive.setPadding(bottom: 1, top: 0.8),
-              child: InkWell(
-                onTap: () {
-                  context.read<UserAddressCubit>().isPaymentAddress = true;
 
-                  Navigator.of(context, rootNavigator: !false)
-                      .popAndPushNamed(Routes.map);
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: responsive.setHeight(6),
-                  decoration: BoxDecoration(
-                    color: ColorManger.backgroundItem,
-                    borderRadius:
-                        BorderRadius.circular(responsive.setBorderRadius(2)),
-                    border: Border.all(
-                        color: ColorManger.brownLight,
-                        width: responsive.setWidth(0.1)),
+            AppInitialRoute.role == "admin"
+                ? const SizedBox()
+                : Text(
+                    context.translate(AppStrings.payment),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: responsive.setTextSize(4)),
                   ),
-                  child: Padding(
-                    padding: responsive.setPadding(
-                        left: isEnLocale ? 2 : 0, right: isEnLocale ? 0 : 2),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.credit_card,
-                          color: ColorManger.brun,
+            AppInitialRoute.role == "admin"
+                ? const SizedBox()
+                : Padding(
+                    padding: responsive.setPadding(bottom: 1, top: 0.8),
+                    child: InkWell(
+                      onTap: () {
+                        context.read<UserAddressCubit>().isPaymentAddress =
+                            true;
+
+                        Navigator.of(context, rootNavigator: !false)
+                            .popAndPushNamed(Routes.map);
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: responsive.setHeight(6),
+                        decoration: BoxDecoration(
+                          color: ColorManger.backgroundItem,
+                          borderRadius: BorderRadius.circular(
+                              responsive.setBorderRadius(2)),
+                          border: Border.all(
+                              color: ColorManger.brownLight,
+                              width: responsive.setWidth(0.1)),
                         ),
-                        responsive.setSizeBox(width: 1.5),
-                        ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 275.w),
-                          child: Text(
-                            context.read<PaymentCubit>().choosePaymentMethod ==
-                                    'Cash'
-                                ? context.translate(AppStrings.cashOnDelivery)
-                                : context
-                                    .translate(AppStrings.creditOrDebitCard),
-                            maxLines: 1,
-                            textAlign: TextAlign.start,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(
-                                    fontSize: responsive.setTextSize(3.5)),
+                        child: Padding(
+                          padding: responsive.setPadding(
+                              left: isEnLocale ? 2 : 0,
+                              right: isEnLocale ? 0 : 2),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.credit_card,
+                                color: ColorManger.brun,
+                              ),
+                              responsive.setSizeBox(width: 1.5),
+                              ConstrainedBox(
+                                constraints: BoxConstraints(maxWidth: 275.w),
+                                child: Text(
+                                  context
+                                              .read<PaymentCubit>()
+                                              .choosePaymentMethod ==
+                                          'Cash'
+                                      ? context
+                                          .translate(AppStrings.cashOnDelivery)
+                                      : context.translate(
+                                          AppStrings.creditOrDebitCard),
+                                  maxLines: 1,
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge!
+                                      .copyWith(
+                                          fontSize:
+                                              responsive.setTextSize(3.5)),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
-            ),
             // _paymentMethodContainer(context, responsive),
             responsive.setSizeBox(
               height: 0.5,
             ),
             _addNotes(context, responsive)
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextField({
+    required TextEditingController controller,
+    required String label,
+    required IconData icon,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return TextField(
+      controller: controller,
+      keyboardType: keyboardType,
+      decoration: InputDecoration(
+        prefixIcon: Icon(icon, color: ColorManger.brown),
+        labelText: label,
+        labelStyle: TextStyle(color: ColorManger.brown),
+        filled: true,
+        fillColor: Colors.white,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManger.backgroundItem),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManger.backgroundItem, width: 1.2),
+          borderRadius: BorderRadius.circular(12),
         ),
       ),
     );
@@ -205,74 +325,4 @@ class ReviewPaymentBody extends StatelessWidget {
       ],
     );
   }
-
-  // Container _shippingAddresssContainer(
-  //     BuildContext context, ResponsiveUtils responsive) {
-
-  //   return Container(
-  //     height: responsive.setHeight(12),
-  //     width: double.infinity,
-  //     decoration: BoxDecoration(
-  //       color: ColorManger.backgroundItem,
-  //       borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
-  //       border: Border.all(
-  //         color: ColorManger.brownLight,
-  //         width: responsive.setWidth(0.2),
-  //       ),
-  //     ),
-  //     child: Padding(
-  //       padding: responsive.setPadding(top: 2, left: 5, right: 5),
-  //       child: Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         children: [
-  //           Row(
-  //             children: [
-  //               Text(context.translate(AppStrings.shippingAddress),
-  //                   style: Theme.of(context)
-  //                       .textTheme
-  //                       .titleLarge!
-  //                       .copyWith(fontSize: responsive.setTextSize(4))),
-  //               const Spacer(),
-  //               InkWell(
-  //                   onTap: () {
-  //                     context.pop();
-
-  //                     context.pop();
-  //                   },
-  //                   child: Icon(IconlyBold.location, color: ColorManger.brun)),
-  //               responsive.setSizeBox(width: 1),
-  //               InkWell(
-  //                 onTap: () {
-  //                   context.pop();
-  //                   context.pop();
-  //                 },
-  //                 child: Text(
-  //                   context.translate(AppStrings.change),
-  //                   style: Theme.of(context)
-  //                       .textTheme
-  //                       .titleMedium!
-  //                       .copyWith(fontSize: responsive.setTextSize(4)),
-  //                 ),
-  //               ),
-  //             ],
-  //           ),
-  //           responsive.setSizeBox(height: 2),
-  //           Row(
-  //             children: [
-  //               Icon(IconlyBold.location, color: ColorManger.brun),
-  //               responsive.setSizeBox(width: 1),
-  //               Text(
-  //                 addressData.buildingName!,
-  //                 style: Theme.of(context)
-  //                     .textTheme
-  //                     .titleMedium!
-  //                     .copyWith(fontSize: responsive.setTextSize(4)),
-  //               ),
-  //             ],
-  //           ),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
 }

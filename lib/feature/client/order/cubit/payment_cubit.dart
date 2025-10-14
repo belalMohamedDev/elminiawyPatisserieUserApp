@@ -19,6 +19,24 @@ class PaymentCubit extends Cubit<PaymentState> {
   List<GetOrdersResponseData> getCurrentOrders = [];
   List<GetOrdersResponseData> getPerviousOrders = [];
 
+  String _selectedOption = "Store Pickup";
+
+  String get selectedOption => _selectedOption;
+  bool get isPhoneOrder => _selectedOption == "By Phone";
+
+  static const Map<String, String> orderSourceMap = {
+    "Store Pickup": "in_store",
+    "By Phone": "phone",
+  };
+
+  String get orderSourceForApi => orderSourceMap[_selectedOption] ?? "app";
+
+  void changeOrderType(String value) {
+    _selectedOption = value;
+
+    emit(PaymentState.orderTypeChanged(value));
+  }
+
   void changeShippingIndex(int index) {
     selectedIndex = index;
     emit(PaymentState.changeShippingIndex(selectedIndex));

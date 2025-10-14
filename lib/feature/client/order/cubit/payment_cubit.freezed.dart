@@ -30,6 +30,7 @@ mixin _$PaymentState {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -50,6 +51,7 @@ mixin _$PaymentState {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -68,6 +70,7 @@ mixin _$PaymentState {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -91,6 +94,7 @@ mixin _$PaymentState {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -110,6 +114,7 @@ mixin _$PaymentState {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -126,6 +131,7 @@ mixin _$PaymentState {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -202,6 +208,7 @@ class _$InitialImpl implements _Initial {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -225,6 +232,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -246,6 +254,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -275,6 +284,7 @@ class _$InitialImpl implements _Initial {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -297,6 +307,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -316,6 +327,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -409,6 +421,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -432,6 +445,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -453,6 +467,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -482,6 +497,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -504,6 +520,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -523,6 +540,7 @@ class _$ChangeShippingIndexImpl implements ChangeShippingIndex {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -622,6 +640,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -645,6 +664,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -666,6 +686,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -695,6 +716,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -717,6 +739,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -736,6 +759,7 @@ class _$ChoosePaymentImpl implements ChoosePayment {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -810,6 +834,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -833,6 +858,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -854,6 +880,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -883,6 +910,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -905,6 +933,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -924,6 +953,7 @@ class _$CreateCashOrderLoadingImpl implements CreateCashOrderLoading {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1019,6 +1049,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -1042,6 +1073,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -1063,6 +1095,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1092,6 +1125,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -1114,6 +1148,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1133,6 +1168,7 @@ class _$CreateCashOrderErrorImpl implements CreateCashOrderError {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1235,6 +1271,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -1258,6 +1295,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -1279,6 +1317,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1308,6 +1347,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -1330,6 +1370,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1349,6 +1390,7 @@ class _$CreateCashOrderSuccessImpl implements CreateCashOrderSuccess {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1424,6 +1466,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -1447,6 +1490,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -1468,6 +1512,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1497,6 +1542,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -1519,6 +1565,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1538,6 +1585,7 @@ class _$GetCompleteOrdersLoadingImpl implements GetCompleteOrdersLoading {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1634,6 +1682,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -1657,6 +1706,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -1678,6 +1728,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1707,6 +1758,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -1729,6 +1781,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1748,6 +1801,7 @@ class _$GetCompleteOrdersErrorImpl implements GetCompleteOrdersError {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1850,6 +1904,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -1873,6 +1928,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -1894,6 +1950,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -1923,6 +1980,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -1945,6 +2003,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1964,6 +2023,7 @@ class _$GetCompleteOrdersSuccessImpl implements GetCompleteOrdersSuccess {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -1985,6 +2045,226 @@ abstract class GetCompleteOrdersSuccess implements PaymentState {
   @JsonKey(ignore: true)
   _$$GetCompleteOrdersSuccessImplCopyWith<_$GetCompleteOrdersSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OrderTypeChangedImplCopyWith<$Res> {
+  factory _$$OrderTypeChangedImplCopyWith(_$OrderTypeChangedImpl value,
+          $Res Function(_$OrderTypeChangedImpl) then) =
+      __$$OrderTypeChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String selectedType});
+}
+
+/// @nodoc
+class __$$OrderTypeChangedImplCopyWithImpl<$Res>
+    extends _$PaymentStateCopyWithImpl<$Res, _$OrderTypeChangedImpl>
+    implements _$$OrderTypeChangedImplCopyWith<$Res> {
+  __$$OrderTypeChangedImplCopyWithImpl(_$OrderTypeChangedImpl _value,
+      $Res Function(_$OrderTypeChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedType = null,
+  }) {
+    return _then(_$OrderTypeChangedImpl(
+      null == selectedType
+          ? _value.selectedType
+          : selectedType // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OrderTypeChangedImpl implements OrderTypeChanged {
+  const _$OrderTypeChangedImpl(this.selectedType);
+
+  @override
+  final String selectedType;
+
+  @override
+  String toString() {
+    return 'PaymentState.orderTypeChanged(selectedType: $selectedType)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OrderTypeChangedImpl &&
+            (identical(other.selectedType, selectedType) ||
+                other.selectedType == selectedType));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedType);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OrderTypeChangedImplCopyWith<_$OrderTypeChangedImpl> get copyWith =>
+      __$$OrderTypeChangedImplCopyWithImpl<_$OrderTypeChangedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeShippingIndex,
+    required TResult Function(String choosePayment) choosePayment,
+    required TResult Function() createCashOrderLoading,
+    required TResult Function(ApiErrorModel apiErrorModel) createCashOrderError,
+    required TResult Function(OrderResponse createOrderResponse)
+        createCashOrderSuccess,
+    required TResult Function() getCompleteOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getCompleteOrdersError,
+    required TResult Function(GetOrdersResponse getOrdersResponse)
+        getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
+    required TResult Function() getPendingOrdersLoading,
+    required TResult Function(ApiErrorModel apiErrorModel)
+        getPendingOrdersError,
+    required TResult Function(GetOrdersResponse getOrdersResponse)
+        getPendingOrdersSuccess,
+  }) {
+    return orderTypeChanged(selectedType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeShippingIndex,
+    TResult? Function(String choosePayment)? choosePayment,
+    TResult? Function()? createCashOrderLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? createCashOrderError,
+    TResult? Function(OrderResponse createOrderResponse)?
+        createCashOrderSuccess,
+    TResult? Function()? getCompleteOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
+    TResult? Function(GetOrdersResponse getOrdersResponse)?
+        getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
+    TResult? Function()? getPendingOrdersLoading,
+    TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
+    TResult? Function(GetOrdersResponse getOrdersResponse)?
+        getPendingOrdersSuccess,
+  }) {
+    return orderTypeChanged?.call(selectedType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeShippingIndex,
+    TResult Function(String choosePayment)? choosePayment,
+    TResult Function()? createCashOrderLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? createCashOrderError,
+    TResult Function(OrderResponse createOrderResponse)? createCashOrderSuccess,
+    TResult Function()? getCompleteOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
+    TResult Function(GetOrdersResponse getOrdersResponse)?
+        getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
+    TResult Function()? getPendingOrdersLoading,
+    TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
+    TResult Function(GetOrdersResponse getOrdersResponse)?
+        getPendingOrdersSuccess,
+    required TResult orElse(),
+  }) {
+    if (orderTypeChanged != null) {
+      return orderTypeChanged(selectedType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(ChangeShippingIndex value) changeShippingIndex,
+    required TResult Function(ChoosePayment value) choosePayment,
+    required TResult Function(CreateCashOrderLoading value)
+        createCashOrderLoading,
+    required TResult Function(CreateCashOrderError value) createCashOrderError,
+    required TResult Function(CreateCashOrderSuccess value)
+        createCashOrderSuccess,
+    required TResult Function(GetCompleteOrdersLoading value)
+        getCompleteOrdersLoading,
+    required TResult Function(GetCompleteOrdersError value)
+        getCompleteOrdersError,
+    required TResult Function(GetCompleteOrdersSuccess value)
+        getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
+    required TResult Function(GetPendingOrdersLoading value)
+        getPendingOrdersLoading,
+    required TResult Function(GetPendingOrdersError value)
+        getPendingOrdersError,
+    required TResult Function(GetPendingOrdersSuccess value)
+        getPendingOrdersSuccess,
+  }) {
+    return orderTypeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult? Function(ChoosePayment value)? choosePayment,
+    TResult? Function(CreateCashOrderLoading value)? createCashOrderLoading,
+    TResult? Function(CreateCashOrderError value)? createCashOrderError,
+    TResult? Function(CreateCashOrderSuccess value)? createCashOrderSuccess,
+    TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
+    TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
+    TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
+    TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
+    TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
+    TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
+  }) {
+    return orderTypeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(ChangeShippingIndex value)? changeShippingIndex,
+    TResult Function(ChoosePayment value)? choosePayment,
+    TResult Function(CreateCashOrderLoading value)? createCashOrderLoading,
+    TResult Function(CreateCashOrderError value)? createCashOrderError,
+    TResult Function(CreateCashOrderSuccess value)? createCashOrderSuccess,
+    TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
+    TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
+    TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
+    TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
+    TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
+    TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
+    required TResult orElse(),
+  }) {
+    if (orderTypeChanged != null) {
+      return orderTypeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OrderTypeChanged implements PaymentState {
+  const factory OrderTypeChanged(final String selectedType) =
+      _$OrderTypeChangedImpl;
+
+  String get selectedType;
+  @JsonKey(ignore: true)
+  _$$OrderTypeChangedImplCopyWith<_$OrderTypeChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2040,6 +2320,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -2063,6 +2344,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -2084,6 +2366,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -2113,6 +2396,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -2135,6 +2419,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -2154,6 +2439,7 @@ class _$GetPendingOrdersLoadingImpl implements GetPendingOrdersLoading {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -2249,6 +2535,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -2272,6 +2559,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -2293,6 +2581,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -2322,6 +2611,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -2344,6 +2634,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -2363,6 +2654,7 @@ class _$GetPendingOrdersErrorImpl implements GetPendingOrdersError {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -2465,6 +2757,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
         getCompleteOrdersError,
     required TResult Function(GetOrdersResponse getOrdersResponse)
         getCompleteOrdersSuccess,
+    required TResult Function(String selectedType) orderTypeChanged,
     required TResult Function() getPendingOrdersLoading,
     required TResult Function(ApiErrorModel apiErrorModel)
         getPendingOrdersError,
@@ -2488,6 +2781,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult? Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult? Function(String selectedType)? orderTypeChanged,
     TResult? Function()? getPendingOrdersLoading,
     TResult? Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult? Function(GetOrdersResponse getOrdersResponse)?
@@ -2509,6 +2803,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult Function(ApiErrorModel apiErrorModel)? getCompleteOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
         getCompleteOrdersSuccess,
+    TResult Function(String selectedType)? orderTypeChanged,
     TResult Function()? getPendingOrdersLoading,
     TResult Function(ApiErrorModel apiErrorModel)? getPendingOrdersError,
     TResult Function(GetOrdersResponse getOrdersResponse)?
@@ -2538,6 +2833,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
         getCompleteOrdersError,
     required TResult Function(GetCompleteOrdersSuccess value)
         getCompleteOrdersSuccess,
+    required TResult Function(OrderTypeChanged value) orderTypeChanged,
     required TResult Function(GetPendingOrdersLoading value)
         getPendingOrdersLoading,
     required TResult Function(GetPendingOrdersError value)
@@ -2560,6 +2856,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult? Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult? Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult? Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult? Function(OrderTypeChanged value)? orderTypeChanged,
     TResult? Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult? Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult? Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
@@ -2579,6 +2876,7 @@ class _$GetPendingOrdersSuccessImpl implements GetPendingOrdersSuccess {
     TResult Function(GetCompleteOrdersLoading value)? getCompleteOrdersLoading,
     TResult Function(GetCompleteOrdersError value)? getCompleteOrdersError,
     TResult Function(GetCompleteOrdersSuccess value)? getCompleteOrdersSuccess,
+    TResult Function(OrderTypeChanged value)? orderTypeChanged,
     TResult Function(GetPendingOrdersLoading value)? getPendingOrdersLoading,
     TResult Function(GetPendingOrdersError value)? getPendingOrdersError,
     TResult Function(GetPendingOrdersSuccess value)? getPendingOrdersSuccess,
