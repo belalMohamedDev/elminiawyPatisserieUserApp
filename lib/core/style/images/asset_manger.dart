@@ -29,6 +29,9 @@ class ImageAsset {
   static const String noAddress = "$imagePath/noAddress.svg";
   static const String upload = "$imagePath/upload.png";
   static const String money = "$imagePath/money.png";
+  static const String labelPrice = "$imagePath/label_price.png";
+  static const String shipingPrice = "$imagePath/shiping_price.png";
+  static const String taxPrice = "$imagePath/tax_price.png";
   static const String groceries = "$imagePath/groceries.png";
   static const String debitCard = "$imagePath/debit-card.png";
   static const String calendar = "$imagePath/calendar.png";

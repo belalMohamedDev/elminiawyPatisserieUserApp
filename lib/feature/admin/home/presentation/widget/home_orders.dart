@@ -85,10 +85,10 @@ class _HomeOrdersState extends State<HomeOrders> {
                   children: [
                     GestureDetector(
                       child: HomeOrderCardWidget(
-                        title: "Cancelled Orders",
+                        title: "Delivered Orders",
                         number:
                             '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}',
-                        image: ImageAsset.orderCancel,
+                        image: ImageAsset.deliveryBike,
                         cardContentColor: ColorManger.brun,
                         cardColor: ColorManger.brownLight,
                       ),
@@ -115,6 +115,43 @@ class _HomeOrdersState extends State<HomeOrders> {
                 ),
               ),
             ),
+            // Center(
+            //   child: Padding(
+            //     padding: const EdgeInsets.only(left: 15.0, right: 15, top: 10),
+            //     child: Row(
+            //       children: [
+            //         GestureDetector(
+            //           child: HomeOrderCardWidget(
+            //             title: "Cancelled Orders",
+            //             number:
+            //                 '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}',
+            //             image: ImageAsset.orderCancel,
+            //             cardContentColor: ColorManger.brun,
+            //             cardColor: ColorManger.brownLight,
+            //           ),
+            //           onTap: () {
+            //             context.pushNamed(Routes.cancelledOrders);
+            //           },
+            //         ),
+            //         const Spacer(),
+            //         GestureDetector(
+            //           onTap: () {
+            //             context.pushNamed(Routes.pendingOrders);
+            //           },
+            //           child: HomeOrderCardWidget(
+            //             title: "Pending Orders",
+            //             number:
+            //                 '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.pendingOrders ?? 0} ',
+            //             image: ImageAsset.orderWaiting,
+            //             cardContentColor: ColorManger.white,
+            //             cardColor: const Color(0xffe68636).withOpacity(0.8),
+            //             // isSalesToday: true,
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
         );
       },

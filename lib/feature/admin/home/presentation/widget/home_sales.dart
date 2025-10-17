@@ -14,31 +14,46 @@ class HomeSales extends StatelessWidget {
           padding: responsive.setPadding(left: 4, top: 1.5, right: 4),
           child: Row(
             children: [
-              _salesWidget(responsive, context, ImageAsset.money, "Sales Today",
-                  "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP"),
+              SalesContainerWidget(
+                  image: ImageAsset.money,
+                  titleText: "Sales Today",
+                  bodyText:
+                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP"),
               const Spacer(),
-              _salesWidget(
-                  responsive,
-                  context,
-                  ImageAsset.increase,
-                  "Sales Week",
-                  "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP"),
+              SalesContainerWidget(
+                  image: ImageAsset.increase,
+                  titleText: "Sales Week",
+                  bodyText:
+                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP"),
               const Spacer(),
-              _salesWidget(
-                  responsive,
-                  context,
-                  ImageAsset.groceries,
-                  "Products sold",
-                  "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
+              SalesContainerWidget(
+                  image: ImageAsset.groceries,
+                  titleText: "Products sold",
+                  bodyText:
+                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
             ],
           ),
         );
       },
     );
   }
+}
 
-  Container _salesWidget(ResponsiveUtils responsive, BuildContext context,
-      String image, String titleText, String bodyText) {
+class SalesContainerWidget extends StatelessWidget {
+  const SalesContainerWidget({
+    super.key,
+    required this.image,
+    required this.titleText,
+    required this.bodyText,
+  });
+
+  final String image;
+  final String titleText;
+  final String bodyText;
+
+  @override
+  Widget build(BuildContext context) {
+    final responsive = ResponsiveUtils(context);
     return Container(
       height: responsive.setHeight(12),
       width: responsive.setWidth(29),
@@ -49,7 +64,7 @@ class HomeSales extends StatelessWidget {
       child: Padding(
         padding: responsive.setPadding(
           left: 2,
-          top: 0.5,
+          top: 0.9,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

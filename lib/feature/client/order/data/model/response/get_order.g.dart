@@ -75,6 +75,10 @@ GetOrdersResponseData _$GetOrdersResponseDataFromJson(
       adminCompletedAt: json['adminCompletedAt'] as String?,
       createdAt: json['createdAt'] as String?,
       canceledAt: json['canceledAt'] as String?,
+      customerName: json['customerName'] as String?,
+      customerPhone: json['customerPhone'] as String?,
+      customerAddressText: json['customerAddressText'] as String?,
+      orderSource: json['orderSource'] as String?,
       updatedAt: json['updatedAt'] as String?,
     );
 
@@ -95,6 +99,10 @@ Map<String, dynamic> _$GetOrdersResponseDataToJson(
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
       'paitAt': instance.paitAt,
+      'customerName': instance.customerName,
+      'customerPhone': instance.customerPhone,
+      'customerAddressText': instance.customerAddressText,
+      'orderSource': instance.orderSource,
       'adminAcceptedAt': instance.adminAcceptedAt,
       'adminCompletedAt': instance.adminCompletedAt,
       'driverAcceptedAt': instance.driverAcceptedAt,

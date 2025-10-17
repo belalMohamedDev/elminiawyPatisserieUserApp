@@ -43,21 +43,25 @@ class OrderDetailsScreen extends StatelessWidget {
             ),
             _productItemSliverList(orderModel, responsive),
             SliverToBoxAdapter(
-              child: orderModel.notes != ""
-                  ? _noteContainer(responsive, context)
+              child: orderModel.notes.isNullOrEmpty()
+                  ? const SizedBox()
+                  : _noteContainer(responsive, context),
+            ),
+            SliverToBoxAdapter(
+              child: responsive.setSizeBox(height: 1),
+            ),
+            SliverToBoxAdapter(
+              child: _orderShippingInformation(
+                  context, orderModel, isEnLocale, responsive),
+            ),
+            SliverToBoxAdapter(
+              child: responsive.setSizeBox(height: 1),
+            ),
+            SliverToBoxAdapter(
+              child: orderModel.shippingAddress != null ||
+                      orderModel.orderSource == "phone"
+                  ? _userInformationContainer(responsive, context)
                   : const SizedBox(),
-            ),
-            SliverToBoxAdapter(
-              child: responsive.setSizeBox(height: 1),
-            ),
-            SliverToBoxAdapter(
-              child: _orderShippingInformation(context, orderModel, isEnLocale),
-            ),
-            SliverToBoxAdapter(
-              child: responsive.setSizeBox(height: 1),
-            ),
-            SliverToBoxAdapter(
-              child: _userInformationContainer(responsive, context),
             )
           ],
         ),
@@ -65,67 +69,39 @@ class OrderDetailsScreen extends StatelessWidget {
     );
   }
 
-  Container _userInformationContainer(ResponsiveUtils responsive, BuildContext context) {
+  Container _userInformationContainer(
+      ResponsiveUtils responsive, BuildContext context) {
     return Container(
-              width: double.infinity,
-              height: responsive.setHeight(8),
-              decoration: BoxDecoration(
-                  color: ColorManger.backgroundItem,
-                  borderRadius:
-                      BorderRadius.circular(responsive.setBorderRadius(3))),
-              child: Padding(
-                padding: responsive.setPadding(left: 3, right: 3),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(IconlyBroken.profile,
-                            color: ColorManger.brun,
-                            size: responsive.setHeight(2.5)),
-                        responsive.setSizeBox(width: 2),
-                        Text(orderModel.user?.name ?? '',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    color: ColorManger.brun,
-                                    fontSize: responsive.setTextSize(3.5))),
-                      ],
-                    ),
-                    responsive.setSizeBox(height: 0.5),
-                    Row(
-                      children: [
-                        Icon(IconlyBroken.message,
-                            color: ColorManger.brun,
-                            size: responsive.setHeight(2.5)),
-                        responsive.setSizeBox(width: 2),
-                        Text(orderModel.user?.email ?? '',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    color: ColorManger.brun,
-                                    fontSize: responsive.setTextSize(3.5))),
-                        responsive.setSizeBox(width: 8),
-                        Icon(IconlyBroken.call,
-                            color: ColorManger.brun,
-                            size: responsive.setHeight(2.5)),
-                        responsive.setSizeBox(width: 2),
-                        Text(orderModel.user?.phone ?? '',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    color: ColorManger.brun,
-                                    fontSize: responsive.setTextSize(3.5))),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            );
+      width: double.infinity,
+      height: responsive.setHeight(6),
+      decoration: BoxDecoration(
+          color: ColorManger.backgroundItem,
+          borderRadius: BorderRadius.circular(responsive.setBorderRadius(2.5))),
+      child: Padding(
+        padding: responsive.setPadding(left: 3, right: 3),
+        child: Row(
+          children: [
+            Icon(IconlyBold.profile,
+                color: ColorManger.brun, size: responsive.setHeight(2)),
+            responsive.setSizeBox(width: 2),
+            Text(
+                "${orderModel.shippingAddress != null ? orderModel.user?.name ?? '' : orderModel.customerName}",
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: ColorManger.brun,
+                    fontSize: responsive.setTextSize(3.5))),
+            responsive.setSizeBox(width: 10),
+            Icon(IconlyBold.call,
+                color: ColorManger.brun, size: responsive.setHeight(2)),
+            responsive.setSizeBox(width: 2),
+            Text(
+                "${orderModel.shippingAddress != null ? orderModel.shippingAddress?.phone ?? '' : orderModel.customerPhone}",
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: ColorManger.brun,
+                    fontSize: responsive.setTextSize(3.5))),
+          ],
+        ),
+      ),
+    );
   }
 
   Container _noteContainer(ResponsiveUtils responsive, BuildContext context) {
@@ -157,7 +133,10 @@ class OrderDetailsScreen extends StatelessWidget {
   }
 
   Container _orderShippingInformation(
-      BuildContext context, GetOrdersResponseData? order, bool isEnLocale) {
+      BuildContext context,
+      GetOrdersResponseData? order,
+      bool isEnLocale,
+      ResponsiveUtils responsive) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -170,11 +149,15 @@ class OrderDetailsScreen extends StatelessWidget {
           children: [
             Row(
               children: [
+                Image.asset(
+                  ImageAsset.labelPrice,
+                  height: responsive.setHeight(3.5),
+                ),
                 SizedBox(
-                  width: 5.w,
+                  width: 10.w,
                 ),
                 Text(
-                    "${context.translate(AppStrings.totalPrice)}  ${order!.totalOrderPrice ?? ''}  ${context.translate(AppStrings.egy)}",
+                    "${order!.totalOrderPrice ?? ''}  ${context.translate(AppStrings.egy)}",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
@@ -215,11 +198,14 @@ class OrderDetailsScreen extends StatelessWidget {
               color: ColorManger.brownLight,
             ),
             SizedBox(
-              height: order.shippingAddress != null ? 10.h : 0,
+              height:
+                  order.shippingAddress != null || order.orderSource == "phone"
+                      ? 10.h
+                      : 0,
             ),
-            order.shippingAddress != null
+            order.shippingAddress != null || order.orderSource == "phone"
                 ? Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(
                         IconlyBold.location,
@@ -230,7 +216,7 @@ class OrderDetailsScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                            "${order.shippingAddress?.phone ?? ''},   ${order.shippingAddress?.region ?? ''}",
+                            "${order.shippingAddress != null ? order.shippingAddress?.phone ?? '' : order.customerPhone},   ${order.shippingAddress != null ? order.shippingAddress?.region ?? '' : order.customerAddressText}",
                             softWrap: true,
                             maxLines: null,
                             overflow: TextOverflow.visible,
@@ -245,17 +231,24 @@ class OrderDetailsScreen extends StatelessWidget {
             SizedBox(
               height: 5.h,
             ),
-            order.shippingAddress != null
+            order.shippingAddress != null || order.orderSource == "phone"
                 ? Divider(
                     color: ColorManger.brownLight,
                   )
                 : const SizedBox(),
             SizedBox(
-              height: 10.h,
+              height: 5.h,
             ),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Image.asset(
+                  ImageAsset.shipingPrice,
+                  height: responsive.setHeight(2.6),
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
                 Text(context.translate(AppStrings.shippingPrice),
                     style: Theme.of(context)
                         .textTheme
@@ -271,11 +264,18 @@ class OrderDetailsScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 5.h,
+              height: 8.h,
             ),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Image.asset(
+                  ImageAsset.taxPrice,
+                  height: responsive.setHeight(2.6),
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
                 Text(context.translate(AppStrings.taxPrice),
                     style: Theme.of(context)
                         .textTheme

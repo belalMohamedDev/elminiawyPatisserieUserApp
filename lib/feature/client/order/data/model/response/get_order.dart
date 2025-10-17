@@ -57,6 +57,11 @@ class GetOrdersResponseData {
   String? updatedAt;
   String? paitAt;
 
+  String? customerName;
+  String? customerPhone;
+  String? customerAddressText;
+  String? orderSource;
+
   String? adminAcceptedAt;
   String? adminCompletedAt;
   String? driverAcceptedAt;
@@ -78,7 +83,12 @@ class GetOrdersResponseData {
       this.adminAcceptedAt,
       this.driverAcceptedAt,
       this.adminCompletedAt,
-      this.createdAt,this.canceledAt,
+      this.createdAt,
+      this.canceledAt,
+      this.customerName,
+      this.customerPhone,
+      this.customerAddressText,
+      this.orderSource,
       this.updatedAt});
 
   //from json
