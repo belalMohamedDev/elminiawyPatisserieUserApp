@@ -10,12 +10,14 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
     this.isCompleteOrder = false,
     this.isCancelledOrder = false,
     this.isPendingOrder = false,
+    this.isDeliveredOrder = false,
   });
 
   final AdminHomeState state;
   final bool isCompleteOrder;
   final bool isCancelledOrder;
   final bool isPendingOrder;
+  final bool isDeliveredOrder;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,8 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
     return state is GetAdminOrdersLoading || state is GetAdminOrdersError
         ? GetAdminOrdersDataLoadingView(
             isCompleteOrder: isCompleteOrder,
-            isPendingOrder: isPendingOrder,
+            isPendingOrder:
+                isDeliveredOrder == true ? isDeliveredOrder : isPendingOrder,
           )
         : ListView.builder(
             itemBuilder: (context, index) => GestureDetector(
@@ -148,9 +151,13 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                                 ? getPendingOrders[index]
                                                     .adminAcceptedAt!
                                                     .getFormattedDate()
-                                                : getPendingOrders[index]
-                                                    .createdAt!
-                                                    .getFormattedDate(),
+                                                : isDeliveredOrder
+                                                    ? getPendingOrders[index]
+                                                        .adminCompletedAt!
+                                                        .getFormattedDate()
+                                                    : getPendingOrders[index]
+                                                        .createdAt!
+                                                        .getFormattedDate(),
                                     style: TextStyle(
                                         color: ColorManger.brun,
                                         fontSize: responsive.setTextSize(3.9)),
@@ -165,7 +172,7 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                             ? const SizedBox()
                             : Row(
                                 children: [
-                                  isPendingOrder
+                                  isPendingOrder || isDeliveredOrder
                                       ? const SizedBox()
                                       : SizedBox(
                                           width: 160,
@@ -195,14 +202,18 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                               },
                                               child: const Text("Cancel")),
                                         ),
-                                  isPendingOrder
+                                  isPendingOrder || isDeliveredOrder
                                       ? const SizedBox()
                                       : const Spacer(),
                                   SizedBox(
-                                    width: isPendingOrder ? 330 : 160,
+                                    width: isPendingOrder || isDeliveredOrder
+                                        ? responsive.screenWidth * 0.86
+                                        : 160,
                                     height: 35,
                                     child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
+                                          backgroundColor:
+                                              ColorManger.brun.withOpacity(0.7),
                                           foregroundColor: Colors.white,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -233,7 +244,9 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                         },
                                         child: Text(isPendingOrder
                                             ? "Order Done"
-                                            : "Accept")),
+                                            : isDeliveredOrder
+                                                ? "Order Delivered"
+                                                : "Accept")),
                                   ),
                                 ],
                               ),

@@ -93,7 +93,7 @@ class _HomeOrdersState extends State<HomeOrders> {
                         cardColor: ColorManger.brownLight,
                       ),
                       onTap: () {
-                        context.pushNamed(Routes.cancelledOrders);
+                        context.pushNamed(Routes.deliveredOrders);
                       },
                     ),
                     const Spacer(),

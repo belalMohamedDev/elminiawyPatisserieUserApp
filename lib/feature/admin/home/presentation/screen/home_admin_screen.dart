@@ -67,11 +67,16 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                               left: 4, top: 1.5, right: 4),
                           child: Row(
                             children: [
-                              SalesContainerWidget(
-                                  image: ImageAsset.orderCancel,
-                                  titleText: "Cancelled Orders",
-                                  bodyText:
-                                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}"),
+                              GestureDetector(
+                                onTap: () {
+                                  context.pushNamed(Routes.cancelledOrders);
+                                },
+                                child: SalesContainerWidget(
+                                    image: ImageAsset.orderCancel,
+                                    titleText: "Cancelled Orders",
+                                    bodyText:
+                                        "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}"),
+                              ),
                               const Spacer(),
                               SalesContainerWidget(
                                   image: ImageAsset.user,
