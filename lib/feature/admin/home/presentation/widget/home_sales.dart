@@ -45,11 +45,13 @@ class SalesContainerWidget extends StatelessWidget {
     required this.image,
     required this.titleText,
     required this.bodyText,
+    this.imageColor,
   });
 
   final String image;
   final String titleText;
   final String bodyText;
+  final Color? imageColor;
 
   @override
   Widget build(BuildContext context) {
@@ -70,8 +72,10 @@ class SalesContainerWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
+
               image,
               height: responsive.setHeight(4),
+              color: imageColor,
             ),
             responsive.setSizeBox(height: 1),
             Text(

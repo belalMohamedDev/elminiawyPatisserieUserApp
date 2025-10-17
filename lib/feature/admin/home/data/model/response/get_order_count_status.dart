@@ -25,6 +25,9 @@ class GetOrderStatusCountResponse {
 class Data {
   int? newOrders;
   int? pendingOrders;
+  int? pendingDriver;
+  int? deliveredOrders;
+  int? topProducts;
   int? completeOrders;
   int? cancelledOrders;
   int? totalSalesToday;
@@ -38,6 +41,9 @@ class Data {
       this.cancelledOrders,
       this.totalSalesToday,
       this.totalSalesLastWeek,
+      this.deliveredOrders,
+      this.pendingDriver,
+      this.topProducts,
       this.totalItemsSoldLastWeek});
 
   Data.fromJson(Map<String, dynamic> json) {
@@ -48,6 +54,9 @@ class Data {
     totalSalesToday = json['totalSalesToday'];
     totalSalesLastWeek = json['totalSalesLastWeek'];
     totalItemsSoldLastWeek = json['totalItemsSoldLastWeek'];
+    deliveredOrders = json['DeliveredOrders'];
+    pendingDriver = json['pendingDriver'];
+    topProducts = json['topProducts'];
   }
 
   Map<String, dynamic> toJson() {
@@ -59,6 +68,9 @@ class Data {
     data['totalSalesToday'] = totalSalesToday;
     data['totalSalesLastWeek'] = totalSalesLastWeek;
     data['totalItemsSoldLastWeek'] = totalItemsSoldLastWeek;
+    data['DeliveredOrders'] = deliveredOrders;
+    data['pendingDriver'] = pendingDriver;
+    data['topProducts'] = topProducts;
     return data;
   }
 }

@@ -67,28 +67,30 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                               left: 4, top: 1.5, right: 4),
                           child: Row(
                             children: [
+                              SalesContainerWidget(
+                                  image: ImageAsset.driver,
+                                  titleText: "Pending driver",
+                                  bodyText:
+                                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.pendingDriver ?? 0}"),
+                              const Spacer(),
                               GestureDetector(
                                 onTap: () {
                                   context.pushNamed(Routes.cancelledOrders);
                                 },
                                 child: SalesContainerWidget(
-                                    image: ImageAsset.orderCancel,
+                                    image: ImageAsset.deliveryCancelled,
                                     titleText: "Cancelled Orders",
+                                    imageColor: const Color(0xffe68636)
+                                        .withOpacity(0.9),
                                     bodyText:
                                         "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}"),
                               ),
                               const Spacer(),
                               SalesContainerWidget(
-                                  image: ImageAsset.user,
-                                  titleText: "Top Customers",
-                                  bodyText:
-                                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0}"),
-                              const Spacer(),
-                              SalesContainerWidget(
-                                  image: ImageAsset.dessert,
+                                  image: ImageAsset.cakeBox,
                                   titleText: "Top Products",
                                   bodyText:
-                                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
+                                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.topProducts ?? 0}"),
                             ],
                           ),
                         ),

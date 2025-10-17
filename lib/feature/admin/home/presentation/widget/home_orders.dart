@@ -87,7 +87,7 @@ class _HomeOrdersState extends State<HomeOrders> {
                       child: HomeOrderCardWidget(
                         title: "Delivered Orders",
                         number:
-                            '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}',
+                            '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.deliveredOrders ?? 0}',
                         image: ImageAsset.deliveryBike,
                         cardContentColor: ColorManger.brun,
                         cardColor: ColorManger.brownLight,
