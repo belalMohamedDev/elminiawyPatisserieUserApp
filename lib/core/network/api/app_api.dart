@@ -332,7 +332,9 @@ abstract class AppServiceClient {
     @Path("id") String id,
     @Field("adminAcceptedAt") String? adminAcceptedAt,
     @Field("adminCompletedAt") String? adminCompletedAt,
+    @Field("driverDeliveredAt") String? driverDeliveredAt,
     @Field("canceledAt") String? canceledAt,
     @Field("status") int status,
+    
   );
 }

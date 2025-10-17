@@ -52,10 +52,11 @@ class GetOrdersResponseData {
   OrdersShippingAddress? shippingAddress;
   double? totalOrderPrice;
   String? paymentMethodType;
-  bool? isPaid;
+ 
   String? createdAt;
   String? updatedAt;
-  String? paitAt;
+
+  String? driverDeliveredAt;
 
   String? customerName;
   String? customerPhone;
@@ -78,8 +79,8 @@ class GetOrdersResponseData {
       this.shippingAddress,
       this.totalOrderPrice,
       this.paymentMethodType,
-      this.isPaid,
-      this.paitAt,
+      this.driverDeliveredAt,
+    
       this.adminAcceptedAt,
       this.driverAcceptedAt,
       this.adminCompletedAt,

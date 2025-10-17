@@ -2333,6 +2333,7 @@ class _AppServiceClient implements AppServiceClient {
     String id,
     String? adminAcceptedAt,
     String? adminCompletedAt,
+    String? driverDeliveredAt,
     String? canceledAt,
     int status,
   ) async {
@@ -2343,6 +2344,7 @@ class _AppServiceClient implements AppServiceClient {
     final _data = {
       'adminAcceptedAt': adminAcceptedAt,
       'adminCompletedAt': adminCompletedAt,
+      'driverDeliveredAt': driverDeliveredAt,
       'canceledAt': canceledAt,
       'status': status,
     };

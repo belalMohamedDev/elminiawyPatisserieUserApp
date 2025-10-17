@@ -70,6 +70,7 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
       {required String id,
       String? adminAcceptedAt,
       String? adminCompletedAt,
+      String? driverDeliveredAt,
       String? canceledAt,
       required int status}) async {
     if (isClosed) return;
@@ -81,6 +82,7 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
             adminAcceptedAt: adminAcceptedAt,
             adminCompletedAt: adminCompletedAt,
             canceledAt: canceledAt,
+            driverDeliveredAt: driverDeliveredAt,
             status: status);
 
     if (isClosed) return;

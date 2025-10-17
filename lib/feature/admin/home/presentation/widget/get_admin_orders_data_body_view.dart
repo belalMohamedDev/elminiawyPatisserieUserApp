@@ -138,6 +138,7 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                   const SizedBox(
                                     height: 15,
                                   ),
+                                  //@TODO
                                   Text(
                                     isCancelledOrder
                                         ? getPendingOrders[index]
@@ -145,7 +146,7 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                             .getFormattedDate()
                                         : isCompleteOrder
                                             ? getPendingOrders[index]
-                                                .adminCompletedAt!
+                                                .driverDeliveredAt!
                                                 .getFormattedDate()
                                             : isPendingOrder
                                                 ? getPendingOrders[index]
@@ -225,22 +226,38 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                               ? context
                                                   .read<AdminHomeCubit>()
                                                   .updateAdminOrderStatusSummit(
-                                                      id: getPendingOrders[index]
-                                                          .sId!,
+                                                      id:
+                                                          getPendingOrders[
+                                                                  index]
+                                                              .sId!,
                                                       adminCompletedAt:
-                                                          DateTime.now()
+                                                          DateTime
+                                                                  .now()
                                                               .toIso8601String(),
                                                       status: 2)
-                                              : context
-                                                  .read<AdminHomeCubit>()
-                                                  .updateAdminOrderStatusSummit(
-                                                      id: getPendingOrders[
-                                                              index]
-                                                          .sId!,
-                                                      adminAcceptedAt: DateTime
-                                                              .now()
-                                                          .toIso8601String(),
-                                                      status: 1);
+                                              : isDeliveredOrder
+                                                  ? context
+                                                      .read<AdminHomeCubit>()
+                                                      .updateAdminOrderStatusSummit(
+                                                          id:
+                                                              getPendingOrders[
+                                                                      index]
+                                                                  .sId!,
+                                                          driverDeliveredAt:
+                                                              DateTime
+                                                                      .now()
+                                                                  .toIso8601String(),
+                                                          status: 4)
+                                                  : context
+                                                      .read<AdminHomeCubit>()
+                                                      .updateAdminOrderStatusSummit(
+                                                          id: getPendingOrders[
+                                                                  index]
+                                                              .sId!,
+                                                          adminAcceptedAt: DateTime
+                                                                  .now()
+                                                              .toIso8601String(),
+                                                          status: 1);
                                         },
                                         child: Text(isPendingOrder
                                             ? "Order Done"

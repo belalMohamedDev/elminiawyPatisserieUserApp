@@ -9,6 +9,7 @@ abstract class AdminOrderRepository {
       String? adminAcceptedAt,
       String? adminCompletedAt,
       String? canceledAt,
+      String? driverDeliveredAt,
       required int status});
   Future<ApiResult<GetOrderStatusCountResponse>>
       getOrdersStatusAndSalesTodayCountRepository();
@@ -49,10 +50,16 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
       String? adminAcceptedAt,
       String? adminCompletedAt,
       String? canceledAt,
+      String? driverDeliveredAt,
       required int status}) async {
     try {
       final response = await _apiService.updateAdminStatusOrdersService(
-          id, adminAcceptedAt, adminCompletedAt, canceledAt, status);
+          id,
+          adminAcceptedAt,
+          adminCompletedAt,
+          canceledAt,
+          driverDeliveredAt,
+          status);
 
       return ApiResult.success(response);
     } catch (error) {
