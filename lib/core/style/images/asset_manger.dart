@@ -9,7 +9,7 @@ class ImageAsset {
   static const String faceBook = "$imagePath/facebook.png";
   static const String apple = "$imagePath/apple.png";
   static const String google = "$imagePath/google.png";
-
+  static const String driverPerson = "$imagePath/driver_person.png";
   static const String newItem = "$imagePath/newItem.png";
   static const String guestIconGreen = "$imagePath/guest_icon.png";
   static const String pickMarker = "$imagePath/pick_marker.png";
@@ -49,7 +49,7 @@ class ImageAsset {
   static const String increase = "$imagePath/increase.png";
   static const String deliveryCancelled = "$imagePath/delivery-cancelled.png";
   static const String cakeBox = "$imagePath/cake-box.png";
-
+  static const String stationery = "$imagePath/stationery.png";
   static const String noCart = "$imagePath/noCart.svg";
   static const String noSearch = "$imagePath/noSearch.svg";
   static const String noOrder = "$imagePath/noOrder.svg";

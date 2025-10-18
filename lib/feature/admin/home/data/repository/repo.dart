@@ -10,6 +10,8 @@ abstract class AdminOrderRepository {
       String? adminCompletedAt,
       String? canceledAt,
       String? driverDeliveredAt,
+      String? driverId,
+      String? driverAcceptedAt,
       required int status});
   Future<ApiResult<GetOrderStatusCountResponse>>
       getOrdersStatusAndSalesTodayCountRepository();
@@ -49,7 +51,8 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
       {required String id,
       String? adminAcceptedAt,
       String? adminCompletedAt,
-      String? canceledAt,
+      String? canceledAt,  String? driverId,
+      String? driverAcceptedAt,
       String? driverDeliveredAt,
       required int status}) async {
     try {
@@ -59,6 +62,8 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
           adminCompletedAt,
           driverDeliveredAt,
           canceledAt,
+          driverId,
+          driverAcceptedAt,
           status);
 
       return ApiResult.success(response);

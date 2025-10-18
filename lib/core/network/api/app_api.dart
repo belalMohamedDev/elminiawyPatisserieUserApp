@@ -334,6 +334,8 @@ abstract class AppServiceClient {
     @Field("adminCompletedAt") String? adminCompletedAt,
     @Field("driverDeliveredAt") String? driverDeliveredAt,
     @Field("canceledAt") String? canceledAt,
+    @Field("driverId") String? driverId,
+    @Field("driverAcceptedAt") String? driverAcceptedAt,
     @Field("status") int status,
     
   );

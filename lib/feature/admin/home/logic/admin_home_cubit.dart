@@ -71,6 +71,8 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
       String? adminAcceptedAt,
       String? adminCompletedAt,
       String? driverDeliveredAt,
+      String? driverId,
+      String? driverAcceptedAt,
       String? canceledAt,
       required int status}) async {
     if (isClosed) return;
@@ -83,6 +85,8 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
             adminCompletedAt: adminCompletedAt,
             canceledAt: canceledAt,
             driverDeliveredAt: driverDeliveredAt,
+            driverId: driverId,
+            driverAcceptedAt: driverAcceptedAt,
             status: status);
 
     if (isClosed) return;
@@ -131,8 +135,6 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
         }
       },
       failure: (error) {
-        print(error);
-        print("error");
         if (!isClosed) {
           emit(
             AdminHomeState.getOrdersStatusAndSalesTodayCountError(error),

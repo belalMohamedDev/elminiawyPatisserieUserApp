@@ -2335,6 +2335,8 @@ class _AppServiceClient implements AppServiceClient {
     String? adminCompletedAt,
     String? driverDeliveredAt,
     String? canceledAt,
+    String? driverId,
+    String? driverAcceptedAt,
     int status,
   ) async {
     final _extra = <String, dynamic>{};
@@ -2346,6 +2348,8 @@ class _AppServiceClient implements AppServiceClient {
       'adminCompletedAt': adminCompletedAt,
       'driverDeliveredAt': driverDeliveredAt,
       'canceledAt': canceledAt,
+      'driverId': driverId,
+      'driverAcceptedAt': driverAcceptedAt,
       'status': status,
     };
     _data.removeWhere((k, v) => v == null);

@@ -1,3 +1,4 @@
+import 'package:elminiawy/feature/admin/home/presentation/screen/assign_driver.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/order_details_screen.dart';
 import 'package:elminiawy/feature/admin/home/presentation/widget/get_admin_orders_data_loading_view.dart';
 
@@ -34,12 +35,15 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
         : ListView.builder(
             itemBuilder: (context, index) => GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => OrderDetailsScreen(
-                              orderModel: getPendingOrders[index],
-                            )));
+                if (!isPendingDriver) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => OrderDetailsScreen(
+                                orderModel: getPendingOrders[index],
+                              )));
+                  return;
+                }
               },
               child: Padding(
                 padding: responsive.setPadding(left: 4, right: 4, bottom: 2),
@@ -140,7 +144,6 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                   const SizedBox(
                                     height: 15,
                                   ),
-                                  //@TODO
                                   Text(
                                     isCancelledOrder
                                         ? getPendingOrders[index]
@@ -213,11 +216,15 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                               },
                                               child: const Text("Cancel")),
                                         ),
-                                  isPendingOrder || isDeliveredOrder
+                                  isPendingOrder ||
+                                          isDeliveredOrder ||
+                                          isPendingDriver
                                       ? const SizedBox()
                                       : const Spacer(),
                                   SizedBox(
-                                    width: isPendingOrder || isDeliveredOrder
+                                    width: isPendingOrder ||
+                                            isDeliveredOrder ||
+                                            isPendingDriver
                                         ? responsive.screenWidth * 0.86
                                         : 160,
                                     height: 35,
@@ -231,55 +238,133 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                                 BorderRadius.circular(8),
                                           ),
                                         ),
-                                        onPressed: () {
-                                          isPendingOrder
-                                              ? getPendingOrders[index].orderSource ==
-                                                      "in_store"
-                                                  ? context
-                                                      .read<AdminHomeCubit>()
-                                                      .updateAdminOrderStatusSummit(
-                                                          id: getPendingOrders[index]
-                                                              .sId!,
-                                                          driverDeliveredAt:
-                                                              DateTime.now()
-                                                                  .toIso8601String(),
-                                                          status: 4)
-                                                  : context
-                                                      .read<AdminHomeCubit>()
-                                                      .updateAdminOrderStatusSummit(
-                                                          id: getPendingOrders[index]
-                                                              .sId!,
-                                                          adminCompletedAt:
-                                                              DateTime.now()
-                                                                  .toIso8601String(),
-                                                          status: 2)
-                                              : isDeliveredOrder
-                                                  ? context
-                                                      .read<AdminHomeCubit>()
-                                                      .updateAdminOrderStatusSummit(
-                                                          id: getPendingOrders[index]
-                                                              .sId!,
-                                                          driverDeliveredAt:
-                                                              DateTime.now()
-                                                                  .toIso8601String(),
-                                                          status: 4)
-                                                  : context
-                                                      .read<AdminHomeCubit>()
-                                                      .updateAdminOrderStatusSummit(
-                                                          id: getPendingOrders[index]
-                                                              .sId!,
-                                                          adminAcceptedAt: DateTime.now()
-                                                              .toIso8601String(),
-                                                          status: 1);
+                                        onPressed: () async {
+                                          final adminCubit =
+                                              context.read<AdminHomeCubit>();
+                                          final order = getPendingOrders[index];
+
+                                          if (isPendingOrder) {
+                                            if (order.orderSource ==
+                                                "in_store") {
+                                              await adminCubit
+                                                  .updateAdminOrderStatusSummit(
+                                                id: order.sId!,
+                                                driverDeliveredAt:
+                                                    DateTime.now()
+                                                        .toIso8601String(),
+                                                status: 4,
+                                              );
+                                            } else {
+                                              await adminCubit
+                                                  .updateAdminOrderStatusSummit(
+                                                id: order.sId!,
+                                                adminCompletedAt: DateTime.now()
+                                                    .toIso8601String(),
+                                                status: 2,
+                                              );
+                                            }
+
+                                            adminCubit.getAdminOrders
+                                                .removeWhere(
+                                                    (e) => e.sId == order.sId);
+                                            adminCubit.emit(AdminHomeState
+                                                .updateAdminOrderStatusSuccess(
+                                                    adminCubit.getAdminOrders));
+
+                                            if (Navigator.canPop(context)) {
+                                              Navigator.pop(context, true);
+                                            }
+                                          } else if (isDeliveredOrder) {
+                                            await adminCubit
+                                                .updateAdminOrderStatusSummit(
+                                              id: order.sId!,
+                                              driverDeliveredAt: DateTime.now()
+                                                  .toIso8601String(),
+                                              status: 4,
+                                            );
+
+                                            adminCubit.getAdminOrders
+                                                .removeWhere(
+                                                    (e) => e.sId == order.sId);
+                                            adminCubit.emit(AdminHomeState
+                                                .updateAdminOrderStatusSuccess(
+                                                    adminCubit.getAdminOrders));
+                                            if (Navigator.canPop(context)) {
+                                              Navigator.pop(context, true);
+                                            }
+                                          } else if (isPendingDriver) {
+                                            final result = await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    MultiBlocProvider(
+                                                  providers: [
+                                                    BlocProvider(
+                                                        create: (context) =>
+                                                            instance<
+                                                                AdminHomeCubit>()),
+                                                    BlocProvider(
+                                                        create: (context) =>
+                                                            instance<
+                                                                DriverCubit>()),
+                                                  ],
+                                                  child: AssignDriver(
+                                                      orderModel: order),
+                                                ),
+                                              ),
+                                            );
+
+                                            // ✅ لما ترجع بنتيجة true امسح الأوردر
+                                            if (result == true) {
+                                              adminCubit.getAdminOrders
+                                                  .removeWhere((e) =>
+                                                      e.sId == order.sId);
+                                              adminCubit.emit(AdminHomeState
+                                                  .updateAdminOrderStatusSuccess(
+                                                      adminCubit
+                                                          .getAdminOrders));
+                                            }
+                                          } else {
+                                            // ✅ قبول الأوردر (Pending)
+                                            await adminCubit
+                                                .updateAdminOrderStatusSummit(
+                                              id: order.sId!,
+                                              adminAcceptedAt: DateTime.now()
+                                                  .toIso8601String(),
+                                              status: 1,
+                                            );
+
+                                            adminCubit.getAdminOrders
+                                                .removeWhere(
+                                                    (e) => e.sId == order.sId);
+                                            adminCubit.emit(AdminHomeState
+                                                .updateAdminOrderStatusSuccess(
+                                                    adminCubit.getAdminOrders));
+                                            if (Navigator.canPop(context)) {
+                                              Navigator.pop(context, true);
+                                            }
+                                          }
                                         },
                                         child: Text(isPendingOrder
                                             ? "Order Done"
                                             : isDeliveredOrder
                                                 ? "Order Delivered"
-                                                : "Accept")),
+                                                : isPendingDriver
+                                                    ? "Assign Driver"
+                                                    : "Accept")),
                                   ),
                                 ],
                               ),
+
+                        //  BlocProvider(
+                        //                                           create: (context) =>
+                        //                                               instance<DriverCubit>(),
+                        //                                           child:
+                        //                                               AssignDriver(
+                        //                                             orderModel:
+                        //                                                 getPendingOrders[index],
+                        //                                           ),
+                        //                                         ))
                         const Spacer(),
                       ],
                     ),

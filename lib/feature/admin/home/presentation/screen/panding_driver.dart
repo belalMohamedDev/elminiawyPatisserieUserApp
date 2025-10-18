@@ -33,7 +33,7 @@ class _PendingDriverState extends State<PendingDriver> {
                 )),
                 body: GetAdminOrdersDataBodyView(
                   state,
-                  isDeliveredOrder: true,
+                  isPendingDriver: true,
                 )),
             LoadingOverlay(
               isLoading: state is UpdateAdminOrderStatusLoading,
