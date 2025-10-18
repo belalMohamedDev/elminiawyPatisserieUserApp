@@ -10,6 +10,7 @@ class HomeSales extends StatelessWidget {
     final responsive = ResponsiveUtils(context);
     return BlocBuilder<AdminHomeCubit, AdminHomeState>(
       builder: (context, state) {
+        final adminHomeCubit = context.read<AdminHomeCubit>();
         return Padding(
           padding: responsive.setPadding(left: 4, top: 1.5, right: 4),
           child: Row(
@@ -18,19 +19,19 @@ class HomeSales extends StatelessWidget {
                   image: ImageAsset.money,
                   titleText: "Sales Today",
                   bodyText:
-                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP"),
+                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP"),
               const Spacer(),
               SalesContainerWidget(
                   image: ImageAsset.increase,
                   titleText: "Sales Week",
                   bodyText:
-                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP"),
+                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP"),
               const Spacer(),
               SalesContainerWidget(
                   image: ImageAsset.groceries,
                   titleText: "Products sold",
                   bodyText:
-                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
+                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
             ],
           ),
         );
@@ -72,7 +73,6 @@ class SalesContainerWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-
               image,
               height: responsive.setHeight(4),
               color: imageColor,

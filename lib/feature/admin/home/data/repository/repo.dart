@@ -57,8 +57,8 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
           id,
           adminAcceptedAt,
           adminCompletedAt,
-          canceledAt,
           driverDeliveredAt,
+          canceledAt,
           status);
 
       return ApiResult.success(response);

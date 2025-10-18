@@ -1,5 +1,6 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
+import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
 import 'package:elminiawy/feature/client/cart/presentation/screen/admin_check_out_order_screen.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
@@ -302,6 +303,13 @@ class RouteGenerator {
           ),
         );
 
+      case Routes.pendingDrivers:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<AdminHomeCubit>(),
+            child: const PendingDriver(),
+          ),
+        );
       case Routes.pendingOrders:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(

@@ -131,6 +131,8 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
         }
       },
       failure: (error) {
+        print(error);
+        print("error");
         if (!isClosed) {
           emit(
             AdminHomeState.getOrdersStatusAndSalesTodayCountError(error),

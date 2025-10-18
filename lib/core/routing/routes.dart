@@ -39,6 +39,6 @@ class Routes {
   static const String cancelledOrders = "CancelledOrders";
   static const String deliveredOrders = "DeliveredOrders";
   static const String adminCheckOutOrderScreen = "AdminCheckOutOrderScreen";
-
   static const String pendingOrders = "PendingOrders";
+  static const String pendingDrivers = "PendingDrivers";
 }

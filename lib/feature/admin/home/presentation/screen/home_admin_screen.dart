@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/admin/home/presentation/widget/driver_order.dart';
 import 'package:elminiawy/feature/admin/home/presentation/widget/home_app_bar.dart';
 
 import '../widget/home_orders.dart';
@@ -12,13 +13,34 @@ class AdminHomeScreen extends StatefulWidget {
 }
 
 class _AdminHomeScreenState extends State<AdminHomeScreen> {
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.wait([
+      context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCountSummit(),
+      context.read<CartCubit>().getCartItem(),
+      context.read<CategoryCubit>().getCategories()
+    ]);
+
+    _timer = Timer.periodic(const Duration(minutes: 1), (timer) {
+      context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCountSummit();
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final responsive = ResponsiveUtils(context);
-
     return BlocBuilder<AdminHomeCubit, AdminHomeState>(
       builder: (context, state) {
-        final adminHomeCubit = context.read<AdminHomeCubit>();
+        final adminHomeCubit = context.watch<AdminHomeCubit>();
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle.light.copyWith(
               statusBarColor: adminHomeCubit.drawerIsOpen
@@ -61,39 +83,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: ListView(
                       children: [
                         HomeAppBar(adminHomeCubit: adminHomeCubit),
-                        HomeOrders(adminHomeCubit: adminHomeCubit),
-                        Padding(
-                          padding: responsive.setPadding(
-                              left: 4, top: 1.5, right: 4),
-                          child: Row(
-                            children: [
-                              SalesContainerWidget(
-                                  image: ImageAsset.driver,
-                                  titleText: "Pending driver",
-                                  bodyText:
-                                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.pendingDriver ?? 0}"),
-                              const Spacer(),
-                              GestureDetector(
-                                onTap: () {
-                                  context.pushNamed(Routes.cancelledOrders);
-                                },
-                                child: SalesContainerWidget(
-                                    image: ImageAsset.deliveryCancelled,
-                                    titleText: "Cancelled Orders",
-                                    imageColor: const Color(0xffe68636)
-                                        .withOpacity(0.9),
-                                    bodyText:
-                                        "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}"),
-                              ),
-                              const Spacer(),
-                              SalesContainerWidget(
-                                  image: ImageAsset.cakeBox,
-                                  titleText: "Top Products",
-                                  bodyText:
-                                      "${context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCount?.data!.topProducts ?? 0}"),
-                            ],
-                          ),
-                        ),
+                        const HomeOrders(),
+                        const DriverOrder(),
                         const HomeSales(),
                       ],
                     ),

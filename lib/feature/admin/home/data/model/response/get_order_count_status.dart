@@ -1,14 +1,16 @@
 class GetOrderStatusCountResponse {
   bool? status;
   String? message;
-  Data? data;
+  GetOrderStatusCountDataResponse? data;
 
   GetOrderStatusCountResponse({this.status, this.message, this.data});
 
   GetOrderStatusCountResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    data = json['data'] != null ? Data.fromJson(json['data']) : null;
+    data = json['data'] != null
+        ? GetOrderStatusCountDataResponse.fromJson(json['data'])
+        : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -22,40 +24,41 @@ class GetOrderStatusCountResponse {
   }
 }
 
-class Data {
+class GetOrderStatusCountDataResponse {
   int? newOrders;
   int? pendingOrders;
   int? pendingDriver;
   int? deliveredOrders;
-  int? topProducts;
   int? completeOrders;
   int? cancelledOrders;
-  int? totalSalesToday;
-  int? totalSalesLastWeek;
+  double? totalSalesToday;
+  double? totalSalesLastWeek;
   int? totalItemsSoldLastWeek;
+  int? topProducts;
 
-  Data(
-      {this.newOrders,
-      this.pendingOrders,
-      this.completeOrders,
-      this.cancelledOrders,
-      this.totalSalesToday,
-      this.totalSalesLastWeek,
-      this.deliveredOrders,
-      this.pendingDriver,
-      this.topProducts,
-      this.totalItemsSoldLastWeek});
+  GetOrderStatusCountDataResponse({
+    this.newOrders,
+    this.pendingOrders,
+    this.pendingDriver,
+    this.deliveredOrders,
+    this.completeOrders,
+    this.cancelledOrders,
+    this.totalSalesToday,
+    this.totalSalesLastWeek,
+    this.totalItemsSoldLastWeek,
+    this.topProducts,
+  });
 
-  Data.fromJson(Map<String, dynamic> json) {
+  GetOrderStatusCountDataResponse.fromJson(Map<String, dynamic> json) {
     newOrders = json['newOrders'];
     pendingOrders = json['pendingOrders'];
+    pendingDriver = json['pendingDriver'];
+    deliveredOrders = json['DeliveredOrders'];
     completeOrders = json['completeOrders'];
     cancelledOrders = json['cancelledOrders'];
-    totalSalesToday = json['totalSalesToday'];
-    totalSalesLastWeek = json['totalSalesLastWeek'];
+    totalSalesToday = (json['totalSalesToday'] ?? 0).toDouble();
+    totalSalesLastWeek = (json['totalSalesLastWeek'] ?? 0).toDouble();
     totalItemsSoldLastWeek = json['totalItemsSoldLastWeek'];
-    deliveredOrders = json['DeliveredOrders'];
-    pendingDriver = json['pendingDriver'];
     topProducts = json['topProducts'];
   }
 
@@ -63,13 +66,13 @@ class Data {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['newOrders'] = newOrders;
     data['pendingOrders'] = pendingOrders;
+    data['pendingDriver'] = pendingDriver;
+    data['DeliveredOrders'] = deliveredOrders;
     data['completeOrders'] = completeOrders;
     data['cancelledOrders'] = cancelledOrders;
     data['totalSalesToday'] = totalSalesToday;
     data['totalSalesLastWeek'] = totalSalesLastWeek;
     data['totalItemsSoldLastWeek'] = totalItemsSoldLastWeek;
-    data['DeliveredOrders'] = deliveredOrders;
-    data['pendingDriver'] = pendingDriver;
     data['topProducts'] = topProducts;
     return data;
   }

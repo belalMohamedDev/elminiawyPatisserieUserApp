@@ -1,45 +1,16 @@
 import '../../../../../core/common/shared/shared_imports.dart';
 import 'home_order_card_widget.dart';
 
-class HomeOrders extends StatefulWidget {
+class HomeOrders extends StatelessWidget {
   const HomeOrders({
     super.key,
-    required this.adminHomeCubit,
   });
-  final AdminHomeCubit adminHomeCubit;
-
-  @override
-  State<HomeOrders> createState() => _HomeOrdersState();
-}
-
-class _HomeOrdersState extends State<HomeOrders> {
-  Timer? _timer;
-
-  @override
-  void initState() {
-    super.initState();
-
-    Future.wait([
-      context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCountSummit(),
-      context.read<CartCubit>().getCartItem(),
-      context.read<CategoryCubit>().getCategories()
-    ]);
-
-    _timer = Timer.periodic(const Duration(minutes: 1), (timer) {
-      context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCountSummit();
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AdminHomeCubit, AdminHomeState>(
       builder: (context, state) {
+        final adminHomeCubit = context.watch<AdminHomeCubit>();
         return Column(
           children: [
             Center(
@@ -54,7 +25,7 @@ class _HomeOrdersState extends State<HomeOrders> {
                       child: HomeOrderCardWidget(
                         title: "New Orders",
                         number:
-                            '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.newOrders ?? 0}',
+                            '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.newOrders ?? 0}',
                         image: ImageAsset.order,
                         cardContentColor: ColorManger.backgroundItem,
                         cardColor: ColorManger.brun,
@@ -68,7 +39,7 @@ class _HomeOrdersState extends State<HomeOrders> {
                       child: HomeOrderCardWidget(
                         title: "Completed Orders",
                         number:
-                            '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.completeOrders ?? 0}',
+                            '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.completeOrders ?? 0}',
                         image: ImageAsset.orderDelivered,
                         cardContentColor: ColorManger.brun,
                         cardColor: ColorManger.brownLight,
@@ -87,7 +58,7 @@ class _HomeOrdersState extends State<HomeOrders> {
                       child: HomeOrderCardWidget(
                         title: "Delivered Orders",
                         number:
-                            '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.deliveredOrders ?? 0}',
+                            '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.deliveredOrders ?? 0}',
                         image: ImageAsset.deliveryBike,
                         cardContentColor: ColorManger.brun,
                         cardColor: ColorManger.brownLight,
@@ -104,7 +75,7 @@ class _HomeOrdersState extends State<HomeOrders> {
                       child: HomeOrderCardWidget(
                         title: "Pending Orders",
                         number:
-                            '${widget.adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.pendingOrders ?? 0} ',
+                            '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.pendingOrders ?? 0} ',
                         image: ImageAsset.orderWaiting,
                         cardContentColor: ColorManger.white,
                         cardColor: const Color(0xffe68636).withOpacity(0.8),

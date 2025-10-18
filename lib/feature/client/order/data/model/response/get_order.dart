@@ -52,7 +52,9 @@ class GetOrdersResponseData {
   OrdersShippingAddress? shippingAddress;
   double? totalOrderPrice;
   String? paymentMethodType;
- 
+
+  int? orderNumber;
+
   String? createdAt;
   String? updatedAt;
 
@@ -80,7 +82,7 @@ class GetOrdersResponseData {
       this.totalOrderPrice,
       this.paymentMethodType,
       this.driverDeliveredAt,
-    
+      this.orderNumber,
       this.adminAcceptedAt,
       this.driverAcceptedAt,
       this.adminCompletedAt,
