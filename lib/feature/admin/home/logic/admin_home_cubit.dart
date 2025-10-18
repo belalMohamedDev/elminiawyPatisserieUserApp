@@ -66,6 +66,11 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     );
   }
 
+  void removeOrderLocally(String orderId) {
+    getAdminOrders.removeWhere((e) => e.sId == orderId);
+    emit(AdminHomeState.updateAdminOrderStatusSuccess(getAdminOrders));
+  }
+
   Future<void> updateAdminOrderStatusSummit(
       {required String id,
       String? adminAcceptedAt,
