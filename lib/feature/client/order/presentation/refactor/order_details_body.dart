@@ -86,10 +86,8 @@ class OrderDetailsBody extends StatelessWidget {
     );
   }
 
-  SliverList _productItemSliverList(
-      OrderResponseData? orderResponse,
-      GetOrdersResponseData? order,
-      ResponsiveUtils responsive) {
+  SliverList _productItemSliverList(OrderResponseData? orderResponse,
+      GetOrdersResponseData? order, ResponsiveUtils responsive) {
     final cartItems = order?.cartItems ?? orderResponse?.cartItems;
 
     return SliverList(
@@ -118,8 +116,7 @@ class OrderDetailsBody extends StatelessWidget {
                     ),
                     child: CachedNetworkImage(
                       imageUrl: order?.cartItems?[index].product?.image ??
-                          orderResponse
-                              ?.cartItems?[index].product?.image ??
+                          orderResponse?.cartItems?[index].product?.image ??
                           '',
                       height: responsive.setHeight(8),
                       placeholder: (context, url) => Image.asset(
@@ -426,7 +423,7 @@ class OrderDetailsBody extends StatelessWidget {
     int orderStatus = response!.status;
     String createAt = response.createdAt;
     String updatedAt = response.updatedAt;
-    String paitAt = response.paitAt ?? updatedAt;
+    String paitAt = response.driverDeliveredAt ?? updatedAt;
     String adminAcceptedAt = response.adminAcceptedAt ?? updatedAt;
     String adminCompletedAt = response.adminCompletedAt ?? updatedAt;
     String driverAcceptedAt = response.driverAcceptedAt ?? updatedAt;

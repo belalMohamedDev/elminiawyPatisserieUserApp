@@ -1,7 +1,6 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
-import 'package:elminiawy/feature/client/cart/presentation/screen/admin_check_out_order_screen.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 import '../../feature/admin/home/presentation/screen/canelled_orders.dart';
@@ -133,11 +132,6 @@ class RouteGenerator {
             value: instance<MapCubit>(),
             child: const MapScreen(),
           ),
-        );
-
-      case Routes.adminCheckOutOrderScreen:
-        return MaterialPageRoute(
-          builder: (_) => const AdminCheckOutOrderScreen(),
         );
 
       case Routes.adminMenue:

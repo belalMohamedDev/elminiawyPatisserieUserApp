@@ -19,7 +19,8 @@ class OrderResponse {
 
 @JsonSerializable()
 class OrderResponseData {
-  @JsonKey(name: "_id")
+
+ @JsonKey(name: "_id")
   String? sId;
   UserOrderData? user;
   String? notes;
@@ -30,14 +31,23 @@ class OrderResponseData {
   OrderShippingAddress? shippingAddress;
   double? totalOrderPrice;
   String? paymentMethodType;
+
+  int? orderNumber;
+
   String? createdAt;
   String? updatedAt;
-  bool? isPaid;
-  String? paitAt;
+
+  String? driverDeliveredAt;
+
+  String? customerName;
+  String? customerPhone;
+  String? customerAddressText;
+  String? orderSource;
 
   String? adminAcceptedAt;
   String? adminCompletedAt;
   String? driverAcceptedAt;
+  String? canceledAt;
 
   OrderResponseData(
       {this.sId,
@@ -50,13 +60,32 @@ class OrderResponseData {
       this.shippingAddress,
       this.totalOrderPrice,
       this.paymentMethodType,
-      this.isPaid,
-      this.paitAt,
+      this.driverDeliveredAt,
+      this.orderNumber,
       this.adminAcceptedAt,
-      this.adminCompletedAt,
       this.driverAcceptedAt,
+      this.adminCompletedAt,
       this.createdAt,
+      this.canceledAt,
+      this.customerName,
+      this.customerPhone,
+      this.customerAddressText,
+      this.orderSource,
       this.updatedAt});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   //from json
   factory OrderResponseData.fromJson(Map<String, dynamic> json) =>
