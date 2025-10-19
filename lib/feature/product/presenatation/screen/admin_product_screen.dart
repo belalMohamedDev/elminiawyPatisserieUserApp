@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 
 class AdminProductScreen extends StatefulWidget {
   const AdminProductScreen({super.key});
@@ -13,7 +14,7 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.wait([
-        context.read<ProductCubit>().fetchGetAllProduct(),
+        context.read<AdminProductCubit>().fetchGetAllProduct(),
         context
             .read<SubCategoriesCubit>()
             .fetchGetSubCategories(disablePagination: true)
@@ -27,7 +28,7 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
 
-    return BlocBuilder<ProductCubit, ProductState>(
+    return BlocBuilder<AdminProductCubit, AdminProductState>(
       builder: (context, state) {
         return Stack(
           children: [
@@ -68,8 +69,8 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
                           if (notification is ScrollUpdateNotification &&
                               !isLoadingMore &&
                               state is! SubCategoriesLoadingFromPagination &&
-                              context.read<ProductCubit>().theLastPage !=
-                                  context.read<ProductCubit>().page) {
+                              context.read<AdminProductCubit>().theLastPage !=
+                                  context.read<AdminProductCubit>().page) {
                             final currentScroll = notification.metrics.pixels;
                             final maxScroll =
                                 notification.metrics.maxScrollExtent;
@@ -81,7 +82,7 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
                               isLoadingMore = true;
 
                               context
-                                  .read<ProductCubit>()
+                                  .read<AdminProductCubit>()
                                   .fetchGetAllProduct(fromPagination: true)
                                   .whenComplete(() => isLoadingMore = false);
                             }

@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 import 'package:flutter/cupertino.dart';
 
 void showProductEditPopup(DataProductResponse? product, BuildContext context) {
@@ -17,7 +18,7 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
         children: [
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
-            controller: context.read<ProductCubit>().arTitleController,
+            controller: context.read<AdminProductCubit>().arTitleController,
             placeholder: context.translate(AppStrings.enterArabicTitle),
             style: Theme.of(context)
                 .textTheme
@@ -35,7 +36,7 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
           ),
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
-            controller: context.read<ProductCubit>().enTitleController,
+            controller: context.read<AdminProductCubit>().enTitleController,
             placeholder: context.translate(AppStrings.enterEnglishTitle),
             style: Theme.of(context)
                 .textTheme
@@ -52,7 +53,7 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
           ),
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
-            controller: context.read<ProductCubit>().arDescriptionController,
+            controller: context.read<AdminProductCubit>().arDescriptionController,
             placeholder: context.translate(AppStrings.enterArabicDescription),
             style: Theme.of(context)
                 .textTheme
@@ -69,7 +70,7 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
           ),
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
-            controller: context.read<ProductCubit>().enDescriptionController,
+            controller: context.read<AdminProductCubit>().enDescriptionController,
             placeholder: context.translate(AppStrings.enterEnglishDescription),
             style: Theme.of(context)
                 .textTheme
@@ -86,7 +87,7 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
           ),
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
-            controller: context.read<ProductCubit>().priceController,
+            controller: context.read<AdminProductCubit>().priceController,
             placeholder: context.translate(AppStrings.enterPrice),
             style: Theme.of(context)
                 .textTheme
@@ -110,7 +111,7 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
                   .read<SubCategoriesCubit>()
                   .returnSubCategoryIdType(value!);
 
-              context.read<ProductCubit>().setSubCategoryId(subCategoryId!);
+              context.read<AdminProductCubit>().setSubCategoryId(subCategoryId!);
             },
           ),
           responsive.setSizeBox(height: 1),
@@ -121,10 +122,10 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
           onPressed: () {
             product == null
                 ? context
-                    .read<ProductCubit>()
+                    .read<AdminProductCubit>()
                     .pickImage(ImageSource.gallery, null)
                 : context
-                    .read<ProductCubit>()
+                    .read<AdminProductCubit>()
                     .fetchUpdateProduct(id: product.sId!);
             Navigator.pop(context);
           },

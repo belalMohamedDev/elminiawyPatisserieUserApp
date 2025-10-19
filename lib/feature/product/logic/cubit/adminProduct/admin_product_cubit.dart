@@ -2,38 +2,41 @@ import 'dart:io';
 
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-part 'product_state.dart';
-part 'product_cubit.freezed.dart';
+part 'admin_product_state.dart';
+part '../admin_product_cubit.freezed.dart';
 
-class ProductCubit extends Cubit<ProductState> {
-  ProductCubit(this._productRepository, this._imagePicker)
-      : super(const ProductState.initial());
+class AdminProductCubit extends Cubit<AdminProductState> {
+  AdminProductCubit(this._imagePicker, this._productRepository) : super(const AdminProductState.initial());
+
+
+  final List<DataProductResponse> _allProduct = [];
+
+  List<DataProductResponse> get allProduct => _allProduct;
+
   final ProductRepositoryImplement _productRepository;
+
   final TextEditingController search = TextEditingController();
   final ImagePicker _imagePicker;
+
+
   final TextEditingController arTitleController = TextEditingController();
   final TextEditingController enTitleController = TextEditingController();
   final TextEditingController arDescriptionController = TextEditingController();
   final TextEditingController enDescriptionController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
 
-  List<DataProductResponse> _newProduct = [];
 
-  List<DataProductResponse> get dataList => _newProduct;
-
-  final List<DataProductResponse> _allProduct = [];
-
-  List<DataProductResponse> get allProduct => _allProduct;
 
   String? subCategoryValueId;
   void setSubCategoryId(String value) {
     subCategoryValueId = value;
   }
 
+
   Future<void> fetchDeleteProduct(
     String? id,
   ) async {
-    emit(const ProductState.updateProductLoading());
+    emit(const AdminProductState.updateProductLoading());
     final response = await _productRepository.deleteProductRepo(id: id!);
 
     response.when(
@@ -45,41 +48,25 @@ class ProductCubit extends Cubit<ProductState> {
           _allProduct.removeAt(updatedIndex);
         }
 
-        emit(ProductState.updateProductSuccess([..._allProduct]));
+        emit(AdminProductState.updateProductSuccess([..._allProduct]));
       },
       failure: (error) {
-        emit(ProductState.updateProductError(error));
+        emit(AdminProductState.updateProductError(error));
       },
     );
   }
 
-  Future<void> fetchGetNewProductToUser() async {
-    emit(const ProductState.getNewProductLoading());
 
-    final response = await _productRepository.getNewProductRepo(limit: "10");
 
-    response.when(
-      success: (dataResponse) {
-        if (dataResponse.data!.isNotEmpty) {
-          _newProduct = [];
-          _newProduct.addAll(dataResponse.data!);
-        }
-        emit(ProductState.getNewProductSuccess(dataResponse));
-      },
-      failure: (error) {
-        ProductState.getNewProductError(error);
-      },
-    );
-  }
 
-  int page = 1;
+    int page = 1;
   int theLastPage = 0;
 
   Future<void> fetchGetAllProduct({fromPagination = false}) async {
     if (fromPagination) {
-      emit(const ProductState.getAllProductSFromPaginationLoadingState());
+      emit(const AdminProductState.getAllProductSFromPaginationLoadingState());
     } else {
-      emit(const ProductState.getAllProductLoading());
+      emit(const AdminProductState.getAllProductLoading());
     }
 
     final response = await _productRepository.getAllProductRepo(10, page);
@@ -92,19 +79,21 @@ class ProductCubit extends Cubit<ProductState> {
         } else {
           theLastPage = page;
         }
-        emit(ProductState.getAllProductSuccess(dataResponse));
+        emit(AdminProductState.getAllProductSuccess(dataResponse));
       },
       failure: (error) {
-        ProductState.getAllProductError(error);
+        
+         emit(AdminProductState.getAllProductError(error));
       },
     );
   }
 
-  Future<void> fetchUpdateProduct({
+
+    Future<void> fetchUpdateProduct({
     bool? active,
     required String id,
   }) async {
-    emit(const ProductState.updateProductLoading());
+    emit(const AdminProductState.updateProductLoading());
 
     final response = await _productRepository.updateProductRepo(
         id: id,
@@ -131,18 +120,20 @@ class ProductCubit extends Cubit<ProductState> {
         enDescriptionController.clear();
         priceController.clear();
 
-        emit(ProductState.updateProductSuccess([..._allProduct]));
+        emit(AdminProductState.updateProductSuccess([..._allProduct]));
       },
       failure: (error) {
-        ProductState.updateProductError(error);
+        
+         emit(AdminProductState.updateProductError(error));
       },
     );
   }
 
+
   Future<void> fetchCreateProduct({
     required File image,
   }) async {
-    emit(const ProductState.updateProductLoading());
+    emit(const AdminProductState.updateProductLoading());
 
     final response = await _productRepository.createProductRepo(
         image: image,
@@ -163,10 +154,10 @@ class ProductCubit extends Cubit<ProductState> {
         enDescriptionController.clear();
         priceController.clear();
 
-        emit(ProductState.updateProductSuccess([..._allProduct]));
+        emit(AdminProductState.updateProductSuccess([..._allProduct]));
       },
       failure: (error) {
-        ProductState.updateProductError(error);
+        emit(AdminProductState.updateProductError(error));
       },
     );
   }
@@ -188,7 +179,7 @@ class ProductCubit extends Cubit<ProductState> {
     required String id,
     required File image,
   }) async {
-    emit(const ProductState.updateProductLoading());
+    emit(const AdminProductState.updateProductLoading());
 
     final response =
         await _productRepository.updateProductImageRepo(id: id, image: image);
@@ -202,11 +193,24 @@ class ProductCubit extends Cubit<ProductState> {
           _allProduct[updatedIndex] = dataResponse.data;
         }
 
-        emit(ProductState.updateProductSuccess([..._allProduct]));
+        emit(AdminProductState.updateProductSuccess([..._allProduct]));
       },
       failure: (error) {
-        ProductState.updateProductError(error);
+        emit(AdminProductState.updateProductError(error));
       },
     );
   }
+
+
+
+
+
+
+
 }
+
+
+
+
+
+

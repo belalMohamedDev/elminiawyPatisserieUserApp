@@ -1,15 +1,16 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 
 class GetProductSuccessWidget extends StatelessWidget {
   const GetProductSuccessWidget({
     super.key,
     required this.state,
   });
-  final ProductState state;
+  final AdminProductState state;
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
-    final products = context.read<ProductCubit>().allProduct;
+    final products = context.read<AdminProductCubit>().allProduct;
     return ListView.builder(
       itemCount: products.length,
       itemBuilder: (context, index) {
@@ -95,7 +96,7 @@ class GetProductSuccessWidget extends StatelessWidget {
                   responsive.setSizeBox(width: 3),
                   InkWell(
                     onTap: () {
-                      context.read<ProductCubit>().fetchDeleteProduct(
+                      context.read<AdminProductCubit>().fetchDeleteProduct(
                             products[index].sId!,
                           );
                     },

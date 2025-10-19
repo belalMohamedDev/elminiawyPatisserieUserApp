@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
+import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 import '../../feature/admin/home/presentation/screen/canelled_orders.dart';
@@ -58,7 +59,7 @@ class RouteGenerator {
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(
-                create: (context) => instance<ProductCubit>(),
+                create: (context) => instance<AdminProductCubit>(),
               ),
               BlocProvider(
                 create: (context) => instance<SubCategoriesCubit>(),

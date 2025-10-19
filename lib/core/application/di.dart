@@ -1,3 +1,4 @@
+import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mapbox_search/mapbox_search.dart';
 
@@ -176,6 +177,10 @@ Future<void> _initProduct() async {
   instance.registerLazySingleton<ProductRepositoryImplement>(
       () => ProductRepositoryImplement(instance()));
   instance.registerLazySingleton<ProductCubit>(() => ProductCubit(
+        instance(),
+      ));
+
+  instance.registerFactory<AdminProductCubit>(() => AdminProductCubit(
         instance(),
         instance(),
       ));

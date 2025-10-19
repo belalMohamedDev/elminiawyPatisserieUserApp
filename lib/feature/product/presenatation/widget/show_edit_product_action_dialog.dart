@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 import 'package:flutter/cupertino.dart';
 
 void showEditProductActionDialog(
@@ -30,7 +31,7 @@ void showEditProductActionDialog(
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
-            context.read<ProductCubit>().pickImage(
+            context.read<AdminProductCubit>().pickImage(
                   ImageSource.gallery,
                   product.sId,
                 );
@@ -45,7 +46,7 @@ void showEditProductActionDialog(
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
-            context.read<ProductCubit>().fetchUpdateProduct(
+            context.read<AdminProductCubit>().fetchUpdateProduct(
                   id: product.sId!,
                   active: !product.active!,
                 );

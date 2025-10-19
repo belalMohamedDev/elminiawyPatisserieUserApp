@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 import 'package:flutter/cupertino.dart';
 
 void showProductPriceEditPopup(
@@ -17,7 +18,7 @@ void showProductPriceEditPopup(
         children: [
           responsive.setSizeBox(height: 2),
           CupertinoTextField(
-            controller: context.read<ProductCubit>().priceController,
+            controller: context.read<AdminProductCubit>().priceController,
             placeholder: context.translate(AppStrings.enterPrice),
             style: Theme.of(context)
                 .textTheme
@@ -38,7 +39,7 @@ void showProductPriceEditPopup(
       actions: [
         CupertinoActionSheetAction(
           onPressed: () {
-            context.read<ProductCubit>().fetchUpdateProduct(id: product.sId!);
+            context.read<AdminProductCubit>().fetchUpdateProduct(id: product.sId!);
             Navigator.pop(context);
           },
           child: Text(
