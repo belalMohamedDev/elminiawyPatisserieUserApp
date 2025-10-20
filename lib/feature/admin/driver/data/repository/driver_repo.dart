@@ -1,7 +1,7 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 abstract class DriverRepository {
-  Future<ApiResult<AuthResponse>> getAllNotActiveDriverRepo();
+  Future<ApiResult<AuthResponse>> getAllDriverRepo();
   Future<ApiResult<AuthResponse>> getAllActiveDriverRepo();
   Future<ApiResult<AuthResponse>> driverActivedRepo(
     String id,
@@ -17,9 +17,9 @@ class DriverRepositoryImplement implements DriverRepository {
   final AppServiceClient _apiService;
 
   @override
-  Future<ApiResult<AuthResponse>> getAllNotActiveDriverRepo() async {
+  Future<ApiResult<AuthResponse>> getAllDriverRepo() async {
     try {
-      final response = await _apiService.getAllDriverNotActiveService();
+      final response = await _apiService.getAllDriverService();
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

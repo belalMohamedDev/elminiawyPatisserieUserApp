@@ -4,12 +4,12 @@ part of 'driver_cubit.dart';
 class DriverState with _$DriverState {
   const factory DriverState.initial() = _Initial;
 
-    const factory DriverState.getAllNotActiveDriverLoading() = GetAllNotActiveDriverLoading;
-  const factory DriverState.getAllNotActiveDriverError(ApiErrorModel apiErrorModel) =
-      GetAllNotActiveDriverError;
+    const factory DriverState.getAllDriverLoading() = GetAllDriverLoading;
+  const factory DriverState.getAllDriverError(ApiErrorModel apiErrorModel) =
+      GetAllDriverError;
 
-  const factory DriverState.getAllNotActiveDriverSuccess(AuthResponse data) =
-      GetAllNotActiveDriverSuccess;
+  const factory DriverState.getAllDriverSuccess(AuthResponse data) =
+      GetAllDriverSuccess;
 
 
 

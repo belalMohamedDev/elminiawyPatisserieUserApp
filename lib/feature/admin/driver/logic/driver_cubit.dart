@@ -8,28 +8,29 @@ class DriverCubit extends Cubit<DriverState> {
 
   final DriverRepositoryImplement _driverRepository;
 
-  List<DataAuthResponse> _allNotActiveDriver = [];
+  List<DataAuthResponse> _allDriver = [];
 
-  List<DataAuthResponse> get allNotActiveDriver => _allNotActiveDriver;
+  List<DataAuthResponse> get allDriver => _allDriver;
 
   List<DataAuthResponse> _allActiveDriver = [];
 
   List<DataAuthResponse> get allActiveDriver => _allActiveDriver;
 
-  Future<void> fetchGetAllNotActiveDriver() async {
-    emit(const DriverState.getAllNotActiveDriverLoading());
+  Future<void> fetchGetAllDriver() async {
+    emit(const DriverState.getAllDriverLoading());
 
-    final response = await _driverRepository.getAllNotActiveDriverRepo();
+    final response = await _driverRepository.getAllDriverRepo();
 
     response.when(
       success: (dataResponse) {
-        _allNotActiveDriver = [];
-        _allNotActiveDriver.addAll(dataResponse.data!);
+        _allDriver = [];
+        _allDriver.addAll(dataResponse.data!);
 
-        emit(DriverState.getAllNotActiveDriverSuccess(dataResponse));
+        emit(DriverState.getAllDriverSuccess(dataResponse));
       },
       failure: (error) {
-        DriverState.getAllNotActiveDriverError(error);
+        emit(DriverState.getAllDriverError(error));
+   
       },
     );
   }
@@ -47,7 +48,7 @@ class DriverCubit extends Cubit<DriverState> {
         emit(DriverState.getAllActiveDriverSuccess(dataResponse));
       },
       failure: (error) {
-        DriverState.getAllActiveDriverError(error);
+        emit(DriverState.getAllActiveDriverError(error)) ;
       },
     );
   }
@@ -60,13 +61,13 @@ class DriverCubit extends Cubit<DriverState> {
     response.when(
       success: (dataResponse) {
         final updatedIndex =
-            _allNotActiveDriver.indexWhere((deiver) => deiver.sId == id);
+            _allDriver.indexWhere((deiver) => deiver.sId == id);
 
         if (updatedIndex != -1) {
-          _allNotActiveDriver.removeAt(updatedIndex);
+          _allDriver.removeAt(updatedIndex);
         }
 
-        _allActiveDriver.add(dataResponse.data!);
+        _allDriver.add(dataResponse.data!);
 
         emit(DriverState.driverActivedSuccess(dataResponse));
       },
@@ -86,17 +87,17 @@ class DriverCubit extends Cubit<DriverState> {
       success: (dataResponse) {
         if (isActive) {
           final updatedIndex =
-              _allActiveDriver.indexWhere((deiver) => deiver.sId == id);
+              _allDriver.indexWhere((deiver) => deiver.sId == id);
 
           if (updatedIndex != -1) {
-            _allActiveDriver.removeAt(updatedIndex);
+            _allDriver.removeAt(updatedIndex);
           }
         } else {
           final updatedIndex =
-              _allNotActiveDriver.indexWhere((deiver) => deiver.sId == id);
+              _allDriver.indexWhere((deiver) => deiver.sId == id);
 
           if (updatedIndex != -1) {
-            _allNotActiveDriver.removeAt(updatedIndex);
+            _allDriver.removeAt(updatedIndex);
           }
         }
 

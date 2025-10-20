@@ -6,10 +6,22 @@ class AuthResponse {
   bool? status;
   String? message;
   String? accessToken;
+
+  int? total;
+  int? active;
+  int? inactive;
+
   @JsonKey(name: "data")
   dynamic data;
 
-  AuthResponse({this.status, this.message, this.accessToken, this.data});
+  AuthResponse(
+      {this.status,
+      this.message,
+      this.accessToken,
+      this.data,
+      this.total,
+      this.active,
+      this.inactive});
 
   factory AuthResponse.fromJson(Map<String, dynamic> json) {
     final response = _$AuthResponseFromJson(json);

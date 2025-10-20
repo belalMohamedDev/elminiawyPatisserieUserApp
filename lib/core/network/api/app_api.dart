@@ -182,8 +182,8 @@ abstract class AppServiceClient {
     @Query("price") String? price,
   );
 
-  @GET("${ApiConstants.driver}/allDriverNotActive")
-  Future<AuthResponse> getAllDriverNotActiveService();
+  @GET("${ApiConstants.driver}/allDriver")
+  Future<AuthResponse> getAllDriverService();
 
   @PUT("${ApiConstants.driver}/{id}/active")
   Future<AuthResponse> activeDriverService(

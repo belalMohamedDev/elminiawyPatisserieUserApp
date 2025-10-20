@@ -11,6 +11,9 @@ AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) => AuthResponse(
       message: json['message'] as String?,
       accessToken: json['accessToken'] as String?,
       data: json['data'],
+      total: (json['total'] as num?)?.toInt(),
+      active: (json['active'] as num?)?.toInt(),
+      inactive: (json['inactive'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>
@@ -18,6 +21,9 @@ Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>
       'status': instance.status,
       'message': instance.message,
       'accessToken': instance.accessToken,
+      'total': instance.total,
+      'active': instance.active,
+      'inactive': instance.inactive,
       'data': instance.data,
     };
 

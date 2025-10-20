@@ -1181,7 +1181,7 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<AuthResponse> getAllDriverNotActiveService() async {
+  Future<AuthResponse> getAllDriverService() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -1193,7 +1193,7 @@ class _AppServiceClient implements AppServiceClient {
     )
         .compose(
           _dio.options,
-          '/v1/api/driver/allDriverNotActive',
+          '/v1/api/driver/allDriver',
           queryParameters: queryParameters,
           data: _data,
         )

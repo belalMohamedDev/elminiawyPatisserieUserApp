@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 part 'admin_product_state.dart';
-part '../admin_product_cubit.freezed.dart';
+part 'admin_product_cubit.freezed.dart';
 
 class AdminProductCubit extends Cubit<AdminProductState> {
   AdminProductCubit(this._imagePicker, this._productRepository) : super(const AdminProductState.initial());
