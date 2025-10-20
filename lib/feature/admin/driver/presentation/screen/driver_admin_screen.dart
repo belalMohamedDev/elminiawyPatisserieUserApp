@@ -96,7 +96,6 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                       ],
                     ),
                   ),
-                  // SizedBox(height: responsive.setHeight(2)),
                   Container(
                     margin: responsive.setMargin(left: 5, right: 5, bottom: 1),
                     height: responsive.setHeight(10),
@@ -167,103 +166,10 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                     ),
                   ),
                   SizedBox(height: responsive.setHeight(1)),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: driver.length,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          margin: responsive.setMargin(
-                              left: 5, right: 5, bottom: 1.5),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.1),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: const Offset(
-                                    0, 3), // changes position of shadow
-                              ),
-                            ],
-                            borderRadius: BorderRadius.circular(
-                                responsive.setBorderRadius(3)),
-                            color: ColorManger.backgroundItem,
-                          ),
-                          child: ListTile(
-                            leading: ClipRRect(
-                              borderRadius: BorderRadius.circular(
-                                  responsive.setBorderRadius(3)),
-                              child: CachedNetworkImage(
-                                imageUrl: driver[index].image ?? "",
-                                // height: responsive.setHeight(10),
-                                width: responsive.setWidth(15),
-                                fit: BoxFit.cover,
-                                placeholder: (context, url) => LoadingShimmer(
-                                  height: responsive.setHeight(12),
-                                  width: responsive.setWidth(12),
-                                  borderRadius: responsive.setBorderRadius(2),
-                                ),
-                                errorWidget: (context, url, error) =>
-                                    Image.asset(ImageAsset.driverPerson),
-                              ),
-                            ),
-                            title: Text(
-                              driver[index].name ?? "",
-                              style: TextStyle(
-                                  fontSize: responsive.setTextSize(3.5),
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorManger.brun),
-                            ),
-                            subtitle: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(
-                                      IconlyBold.call,
-                                      color: ColorManger.brunLight,
-                                      size: responsive.setTextSize(3.8),
-                                    ),
-                                    SizedBox(width: responsive.setWidth(2)),
-                                    Text(
-                                      driver[index].phone ?? "",
-                                      style: TextStyle(
-                                          fontSize: responsive.setTextSize(3.2),
-                                          color: ColorManger.brunLight),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      IconlyBold.message,
-                                      color: ColorManger.brunLight,
-                                      size: responsive.setTextSize(3.8),
-                                    ),
-                                    SizedBox(width: responsive.setWidth(2)),
-                                    Text(
-                                      driver[index].email ?? "",
-                                      style: TextStyle(
-                                          fontSize: responsive.setTextSize(3.2),
-                                          color: ColorManger.brunLight),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            trailing: GestureDetector(
-                              child: Icon(IconlyBold.moreCircle,
-                                  color: driver[index].driverActive == false &&
-                                          driver[index].completeData == true
-                                      ? Colors.red
-                                      : driver[index].completeData == false
-                                          ? Colors.yellow.shade800
-                                          : Colors.green.shade800,
-                                  size: responsive.setIconSize(6)),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  )
+                  if (state is GetAllDriverSuccess)
+                    _getAllDriverDataSuccess(driver, responsive),
+                  if (state is GetAllDriverLoading)
+                    _getAllDriverDataLoading(responsive),
                 ],
               ),
 
@@ -275,6 +181,182 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
           ],
         );
       },
+    );
+  }
+
+  Expanded _getAllDriverDataSuccess(
+      List<DataAuthResponse> driver, ResponsiveUtils responsive) {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: driver.length,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: responsive.setMargin(left: 5, right: 5, bottom: 1.5),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.1),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3), // changes position of shadow
+                ),
+              ],
+              borderRadius:
+                  BorderRadius.circular(responsive.setBorderRadius(3)),
+              color: ColorManger.backgroundItem,
+            ),
+            child: ListTile(
+              leading: ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(responsive.setBorderRadius(3)),
+                child: CachedNetworkImage(
+                  imageUrl: driver[index].image ?? "",
+                  // height: responsive.setHeight(10),
+                  width: responsive.setWidth(15),
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => LoadingShimmer(
+                    height: responsive.setHeight(12),
+                    width: responsive.setWidth(12),
+                    borderRadius: responsive.setBorderRadius(2),
+                  ),
+                  errorWidget: (context, url, error) =>
+                      Image.asset(ImageAsset.driverPerson),
+                ),
+              ),
+              title: Text(
+                driver[index].name ?? "",
+                style: TextStyle(
+                    fontSize: responsive.setTextSize(3.5),
+                    fontWeight: FontWeight.bold,
+                    color: ColorManger.brun),
+              ),
+              subtitle: Column(
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        IconlyBold.call,
+                        color: ColorManger.brunLight,
+                        size: responsive.setTextSize(3.8),
+                      ),
+                      SizedBox(width: responsive.setWidth(2)),
+                      Text(
+                        driver[index].phone ?? "",
+                        style: TextStyle(
+                            fontSize: responsive.setTextSize(3.2),
+                            color: ColorManger.brunLight),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        IconlyBold.message,
+                        color: ColorManger.brunLight,
+                        size: responsive.setTextSize(3.8),
+                      ),
+                      SizedBox(width: responsive.setWidth(2)),
+                      Text(
+                        driver[index].email ?? "",
+                        style: TextStyle(
+                            fontSize: responsive.setTextSize(3.2),
+                            color: ColorManger.brunLight),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              trailing: GestureDetector(
+                child: Icon(IconlyBold.moreCircle,
+                    color: driver[index].driverActive == false &&
+                            driver[index].completeData == true
+                        ? Colors.red
+                        : driver[index].completeData == false
+                            ? Colors.yellow.shade800
+                            : Colors.green.shade800,
+                    size: responsive.setIconSize(6)),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Expanded _getAllDriverDataLoading(ResponsiveUtils responsive) {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: 6,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: responsive.setMargin(left: 5, right: 5, bottom: 1.5),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.1),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3), // changes position of shadow
+                ),
+              ],
+              borderRadius:
+                  BorderRadius.circular(responsive.setBorderRadius(3)),
+              color: ColorManger.backgroundItem,
+            ),
+            child: ListTile(
+              leading: LoadingShimmer(
+                width: responsive.setWidth(15),
+                borderRadius: 12.r,
+              ),
+              title: LoadingShimmer(
+                height: responsive.setHeight(0.8),
+                borderRadius: 12.r,
+              ),
+              subtitle: Column(
+                children: [
+                  responsive.setSizeBox(height: 1),
+                  Row(
+                    children: [
+                      LoadingShimmer(
+                        height: responsive.setHeight(0.8),
+                        borderRadius: 12.r,
+                      ),
+                      SizedBox(width: responsive.setWidth(2)),
+                      LoadingShimmer(
+                        height: responsive.setHeight(0.8),
+                        width: responsive.setWidth(40),
+                        borderRadius: 12.r,
+                      ),
+                    ],
+                  ),
+                  responsive.setSizeBox(height: 0.5),
+                  Row(
+                    children: [
+                      LoadingShimmer(
+                        height: responsive.setHeight(0.8),
+                        borderRadius: 12.r,
+                      ),
+                      SizedBox(width: responsive.setWidth(2)),
+                      LoadingShimmer(
+                        height: responsive.setHeight(0.8),
+                        width: responsive.setWidth(40),
+                        borderRadius: 12.r,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              trailing: LoadingShimmer(
+                height: responsive.setHeight(2.5),
+                width: responsive.setWidth(5),
+                borderRadius: 50.r,
+                highlightColor: Colors.green,
+                baseColor: Colors.green.shade700,
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }
