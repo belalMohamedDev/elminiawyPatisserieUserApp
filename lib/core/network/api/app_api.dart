@@ -199,10 +199,8 @@ abstract class AppServiceClient {
   );
 
   @GET(ApiConstants.admin)
-  Future<AuthResponse> getAllActiveAdminsService();
+  Future<AuthResponse> getAllAdminsService();
 
-  @GET("${ApiConstants.admin}/inActive")
-  Future<AuthResponse> getAllInActiveAdminsService();
 
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();
@@ -337,6 +335,5 @@ abstract class AppServiceClient {
     @Field("driverId") String? driverId,
     @Field("driverAcceptedAt") String? driverAcceptedAt,
     @Field("status") int status,
-    
   );
 }

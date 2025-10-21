@@ -66,6 +66,7 @@ class DataAuthResponse {
   String? image;
   bool? driverActive;
   bool? completeData;
+  bool? active;
 
   DataAuthResponse(
       {this.sId,
@@ -76,7 +77,7 @@ class DataAuthResponse {
       this.role,
       this.image,
       this.storeAddress,
-      this.driverActive,
+      this.driverActive,this.active,
       this.completeData});
 
   //from json

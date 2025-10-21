@@ -13,10 +13,10 @@ class AdminsCubit extends Cubit<AdminsState> {
 
   List<DataAuthResponse> get allActiveAdmins => _allActiveAdmins;
 
-  Future<void> fetchGetAllActiveAdmins() async {
+  Future<void> fetchGetAllAdmins() async {
     emit(const AdminsState.getActiveAdminsLoading());
 
-    final response = await _adminsRepositoryImplement.getAllActiveAdminsRepo();
+    final response = await _adminsRepositoryImplement.getAllAdminsRepo();
 
     response.when(
       success: (dataResponse) {
@@ -26,31 +26,12 @@ class AdminsCubit extends Cubit<AdminsState> {
         emit(AdminsState.getActiveAdminsSuccess(dataResponse));
       },
       failure: (error) {
-        AdminsState.getActiveAdminsError(error);
+        print(error.message);
+        emit(AdminsState.getActiveAdminsError(error));
       },
     );
   }
 
-  List<DataAuthResponse> _allInActiveAdmins = [];
 
-  List<DataAuthResponse> get allInActiveAdmins => _allInActiveAdmins;
-
-  Future<void> fetchGetAllInActiveAdmins() async {
-    emit(const AdminsState.getInActiveAdminsLoading());
-
-    final response =
-        await _adminsRepositoryImplement.getAllInActiveAdminsRepo();
-
-    response.when(
-      success: (dataResponse) {
-        _allInActiveAdmins = [];
-        _allInActiveAdmins.addAll(dataResponse.data!);
-
-        emit(AdminsState.getInActiveAdminsSuccess(dataResponse));
-      },
-      failure: (error) {
-        AdminsState.getInActiveAdminsError(error);
-      },
-    );
-  }
+  
 }

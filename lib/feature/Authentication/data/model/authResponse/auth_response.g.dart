@@ -41,6 +41,7 @@ DataAuthResponse _$DataAuthResponseFromJson(Map<String, dynamic> json) =>
           : UserStoreAddress.fromJson(
               json['storeAddress'] as Map<String, dynamic>),
       driverActive: json['driverActive'] as bool?,
+      active: json['active'] as bool?,
       completeData: json['completeData'] as bool?,
     );
 
@@ -56,6 +57,7 @@ Map<String, dynamic> _$DataAuthResponseToJson(DataAuthResponse instance) =>
       'image': instance.image,
       'driverActive': instance.driverActive,
       'completeData': instance.completeData,
+      'active': instance.active,
     };
 
 UserStoreAddress _$UserStoreAddressFromJson(Map<String, dynamic> json) =>
