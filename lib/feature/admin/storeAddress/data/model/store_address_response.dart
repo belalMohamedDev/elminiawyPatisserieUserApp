@@ -1,11 +1,11 @@
-class BranchStoreAddreesResponse {
+class BranchStoreAddressResponse {
 	bool? status;
 	String? message;
 	List<Data>? data;
 
-	BranchStoreAddreesResponse({this.status, this.message, this.data});
+	BranchStoreAddressResponse({this.status, this.message, this.data});
 
-	BranchStoreAddreesResponse.fromJson(Map<String, dynamic> json) {
+	BranchStoreAddressResponse.fromJson(Map<String, dynamic> json) {
 		status = json['status'];
 		message = json['message'];
 		if (json['data'] != null) {

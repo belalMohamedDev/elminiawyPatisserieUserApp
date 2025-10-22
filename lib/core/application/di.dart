@@ -1,3 +1,5 @@
+import 'package:elminiawy/feature/admin/storeAddress/data/logic/store_address_cubit.dart';
+import 'package:elminiawy/feature/admin/storeAddress/data/repository/store_address_repo.dart';
 import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mapbox_search/mapbox_search.dart';
@@ -32,7 +34,8 @@ Future<void> initAppModule() async {
     _initAdminHome(),
     _initSubCategory(),
     _initDriver(),
-    _initAdmins()
+    _initAdmins(),
+    _initStoreAddress()
   ]);
 }
 
@@ -114,6 +117,20 @@ Future<void> _initCategory() async {
     ..registerLazySingleton<CategoryCubit>(() => CategoryCubit(
           instance(),
           instance(),
+        ));
+}
+
+
+Future<void> _initStoreAddress() async {
+  
+  instance
+    ..registerLazySingleton<BranchStoreAddressRepositoryImplement>(
+        () => BranchStoreAddressRepositoryImplement(
+              instance(),
+            ))
+    ..registerFactory<StoreAddressCubit>(() => StoreAddressCubit(
+          instance(),
+          
         ));
 }
 

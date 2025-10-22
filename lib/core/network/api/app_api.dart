@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:elminiawy/feature/admin/storeAddress/data/model/store_address_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../core/common/shared/shared_imports.dart';
@@ -181,6 +182,11 @@ abstract class AppServiceClient {
     @Query("keyword") String? keyword,
     @Query("price") String? price,
   );
+
+  
+  @GET(ApiConstants.storeAddress)
+  Future<BranchStoreAddressResponse> getAllBranchStoreAddressService();
+
 
   @GET("${ApiConstants.driver}/allDriver")
   Future<AuthResponse> getAllDriverService();
