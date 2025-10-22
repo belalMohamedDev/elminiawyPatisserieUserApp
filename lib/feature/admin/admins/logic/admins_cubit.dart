@@ -26,7 +26,7 @@ class AdminsCubit extends Cubit<AdminsState> {
         emit(AdminsState.getActiveAdminsSuccess(dataResponse));
       },
       failure: (error) {
-        print(error.message);
+      
         emit(AdminsState.getActiveAdminsError(error));
       },
     );

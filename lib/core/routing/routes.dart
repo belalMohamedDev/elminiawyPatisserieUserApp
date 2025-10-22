@@ -41,4 +41,5 @@ class Routes {
   static const String adminCheckOutOrderScreen = "AdminCheckOutOrderScreen";
   static const String pendingOrders = "PendingOrders";
   static const String pendingDrivers = "PendingDrivers";
+  static const String storeAddress = "StoreAddress";
 }

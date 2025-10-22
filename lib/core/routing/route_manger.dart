@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
+import 'package:elminiawy/feature/admin/storeAddress/presentation/screens/store_address_screen.dart';
 import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
@@ -67,6 +68,11 @@ class RouteGenerator {
             ],
             child: const AdminProductScreen(),
           ),
+        );
+
+      case Routes.storeAddress:
+        return MaterialPageRoute(
+          builder: (_) => const StoreAddressScreen(),
         );
 
       case Routes.registerRoute:

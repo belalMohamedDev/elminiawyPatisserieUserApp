@@ -12,9 +12,7 @@ class _AdminsScreenState extends State<AdminsScreen>
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await Future.wait([
-        context.read<AdminsCubit>().fetchGetAllAdmins(),
-      ]);
+      context.read<AdminsCubit>().fetchGetAllAdmins();
     });
 
     super.initState();

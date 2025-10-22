@@ -16,7 +16,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
       color: ColorManger.brun,
       child: Padding(
         padding:
-            responsive.setPadding(top: 23, left: 1.5, right: 45, bottom: 8),
+            responsive.setPadding(top: 20, left: 1.5, right: 45, bottom: 8),
         child: Column(
           children: [
             Material(
@@ -127,25 +127,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 ),
               ),
             ),
-            // Material(
-            //   color: Colors.transparent,
-            //   child: ListTile(
-            //     onTap: () {},
-            //     horizontalTitleGap: 25.0,
-            //     leading: Image.asset(
-            //       ImageAsset.order,
-            //       color: ColorManger.white,
-            //       height: responsive.setHeight(2.4),
-            //     ),
-            //     title: Text(
-            //       context.translate(AppStrings.orders),
-            //       style: Theme.of(context)
-            //           .textTheme
-            //           .headlineSmall!
-            //           .copyWith(fontSize: responsive.setTextSize(3.8)),
-            //     ),
-            //   ),
-            // ),
             Material(
               color: Colors.transparent,
               child: ListTile(
@@ -170,14 +151,16 @@ class _DrawerScreenState extends State<DrawerScreen> {
             Material(
               color: Colors.transparent,
               child: ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.storeAddress);
+                },
                 horizontalTitleGap: 25.0,
                 leading: Icon(
-                  IconlyBold.user3,
+                  IconlyBold.location,
                   color: ColorManger.white,
                 ),
                 title: Text(
-                  context.translate(AppStrings.users),
+                  "Store Address",
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -198,6 +181,24 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 ),
                 title: Text(
                   context.translate(AppStrings.admins),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                ),
+              ),
+            ),
+            Material(
+              color: Colors.transparent,
+              child: ListTile(
+                onTap: () {},
+                horizontalTitleGap: 25.0,
+                leading: Icon(
+                  IconlyBold.setting,
+                  color: ColorManger.white,
+                ),
+                title: Text(
+                  context.translate(AppStrings.settings),
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -236,7 +237,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                       color: ColorManger.white,
                     ),
                     title: state is LogOutLoading
-                        ?  SizedBox(
+                        ? SizedBox(
                             height: responsive.setHeight(3.8),
                             width: responsive.setWidth(3.8),
                             child: const Center(
@@ -244,14 +245,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                 color: Colors.white,
                               ),
                             ),
-                          ):Text(
+                          )
+                        : Text(
                             context.translate(AppStrings.logOut),
                             style: TextStyle(
                               color: ColorManger.white,
                               fontSize: responsive.setTextSize(3.8),
                             ),
-                          )
-                        ,
+                          ),
                   ),
                 );
               },
