@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
+import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
 import 'package:elminiawy/feature/admin/storeAddress/presentation/screens/store_address_screen.dart';
 import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
 
@@ -72,7 +73,14 @@ class RouteGenerator {
 
       case Routes.storeAddress:
         return MaterialPageRoute(
-          builder: (_) => const StoreAddressScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => instance<StoreAddressCubit>(),
+            child: const StoreAddressScreen(),
+          ),
+          
+          
+          
+          
         );
 
       case Routes.registerRoute:

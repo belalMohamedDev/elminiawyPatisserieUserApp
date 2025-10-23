@@ -1,5 +1,7 @@
-import 'package:elminiawy/core/utils/responsive_utils.dart';
-import 'package:flutter/material.dart';
+import 'package:elminiawy/core/common/shared/shared_imports.dart';
+
+import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
+
 
 class StoreAddressScreen extends StatefulWidget {
   const StoreAddressScreen({super.key});
@@ -9,6 +11,13 @@ class StoreAddressScreen extends StatefulWidget {
 }
 
 class _StoreAddressScreenState extends State<StoreAddressScreen> {
+  @override
+  void initState() {
+    context.read<StoreAddressCubit>().fetchStoreAddressDriver();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
@@ -22,6 +31,14 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
               .titleLarge!
               .copyWith(fontSize: responsive.setTextSize(4)),
         ),
+      ),
+
+      body: Column(
+        children: [
+          ListTile(
+            
+          )
+        ],
       ),
     );
   }
