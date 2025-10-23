@@ -36,6 +36,7 @@ class Data {
   String? sId;
   String? createdAt;
   String? updatedAt;
+  bool? active;
 
   Data(
       {this.location,
@@ -44,7 +45,7 @@ class Data {
       this.briefness,
       this.region,
       this.sId,
-      this.createdAt,
+      this.createdAt,this.active,
       this.updatedAt});
 
   Data.fromJson(Map<String, dynamic> json) {
@@ -54,6 +55,7 @@ class Data {
         ? DeliveryZone.fromJson(json['deliveryZone'])
         : null;
     branchArea = json['BranchArea'];
+    active = json['active'];
     briefness = json['briefness'];
     region = json['region'];
     sId = json['_id'];
@@ -72,6 +74,7 @@ class Data {
     data['BranchArea'] = branchArea;
     data['briefness'] = briefness;
     data['region'] = region;
+    data['active'] = active;
     data['_id'] = sId;
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;

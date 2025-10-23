@@ -15,6 +15,9 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
 
   List<Data> get allStoreAddress => _allStoreAddress;
 
+  int activeStores = 0;
+  int deActiveStores = 0;
+
   Future<void> fetchStoreAddressDriver() async {
     emit(const StoreAddressState.getStoreAddressLoading());
 
@@ -25,6 +28,11 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
       success: (dataResponse) {
         _allStoreAddress = [];
         _allStoreAddress.addAll(dataResponse.data!);
+
+        activeStores =
+            _allStoreAddress.where((store) => store.active == true).length;
+        deActiveStores =
+            _allStoreAddress.where((store) => store.active == false).length;
 
         emit(StoreAddressState.getStoreAddressSuccess(dataResponse));
       },
