@@ -49,6 +49,22 @@ class RouteGenerator {
           ),
         );
 
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => instance<LogOutCubit>(),
+              ),
+              BlocProvider(
+                create: (context) =>
+                    instance<AuthenticationWithGoogleAndAppleCubit>(),
+              ),
+            ],
+            child: const ProfileView(),
+          ),
+        );
+
       case Routes.adminDrivers:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -77,10 +93,6 @@ class RouteGenerator {
             create: (context) => instance<StoreAddressCubit>(),
             child: const StoreAddressScreen(),
           ),
-          
-          
-          
-          
         );
 
       case Routes.registerRoute:

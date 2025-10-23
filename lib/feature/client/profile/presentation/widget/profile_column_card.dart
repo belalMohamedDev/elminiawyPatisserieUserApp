@@ -24,32 +24,36 @@ BlocBuilder profileColumnCard(BuildContext context) {
                           chaneProfileDataBottomSheet(context);
                         },
                 ),
-                CustomProfileCard(
-                  title: context.translate(AppStrings.myAddress),
-                  leadingIcon: IconlyBold.location,
-                  tap: initUserNameCheck
-                      ? () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.noRoute);
-                        }
-                      : () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.address);
-                        },
-                ),
-                CustomProfileCard(
-                  title: context.translate(AppStrings.myOrders),
-                  leadingIcon: IconlyBold.bag,
-                  tap: initUserNameCheck
-                      ? () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.noRoute);
-                        }
-                      : () {
-                          Navigator.of(context, rootNavigator: !false)
-                              .pushNamed(Routes.myOrder);
-                        },
-                ),
+                AppInitialRoute.role == "admin"
+                    ? const SizedBox()
+                    : CustomProfileCard(
+                        title: context.translate(AppStrings.myAddress),
+                        leadingIcon: IconlyBold.location,
+                        tap: initUserNameCheck
+                            ? () {
+                                Navigator.of(context, rootNavigator: !false)
+                                    .pushNamed(Routes.noRoute);
+                              }
+                            : () {
+                                Navigator.of(context, rootNavigator: !false)
+                                    .pushNamed(Routes.address);
+                              },
+                      ),
+                AppInitialRoute.role == "admin"
+                    ? const SizedBox()
+                    : CustomProfileCard(
+                        title: context.translate(AppStrings.myOrders),
+                        leadingIcon: IconlyBold.bag,
+                        tap: initUserNameCheck
+                            ? () {
+                                Navigator.of(context, rootNavigator: !false)
+                                    .pushNamed(Routes.noRoute);
+                              }
+                            : () {
+                                Navigator.of(context, rootNavigator: !false)
+                                    .pushNamed(Routes.myOrder);
+                              },
+                      ),
                 CustomProfileCard(
                   title: context.translate(AppStrings.settings),
                   leadingIcon: IconlyBold.setting,
@@ -57,7 +61,9 @@ BlocBuilder profileColumnCard(BuildContext context) {
                     settingChangeBottomSheet(context);
                   },
                 ),
-                logoutLogic(context)
+                AppInitialRoute.role == "admin"
+                    ? const SizedBox()
+                    : logoutLogic(context)
               ],
             ),
           ),

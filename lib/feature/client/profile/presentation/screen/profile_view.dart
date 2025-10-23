@@ -17,9 +17,11 @@ class _ProfileViewState extends State<ProfileView> {
         statusBarIconBrightness: Brightness.light,
       ),
     );
+
     context.read<LogOutCubit>().getUserName().then(
       (value) {
-        if (context.read<LogOutCubit>().initialUserName != 'Guest User') {
+        if (context.read<LogOutCubit>().initialUserName != 'Guest User' &&
+            AppInitialRoute.role != "admin") {
           WidgetsBinding.instance.addPostFrameCallback((_) async {
             await Future.wait([
               context.read<PaymentCubit>().getCompleteOrdersSummit(),
