@@ -14,7 +14,9 @@ class OrdersTab extends StatelessWidget {
       itemBuilder: (context, index) {
         final order = getOrdersResponseData[index];
         return Padding(
-          padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 15.h),
+          padding: EdgeInsets.symmetric(
+              horizontal: responsive.setWidth(4),
+              vertical: responsive.setHeight(0.5)),
           child: InkWell(
             onTap: () {
               Navigator.push(
@@ -71,37 +73,24 @@ class OrdersTab extends StatelessWidget {
                             .copyWith(fontSize: 12.sp),
                       ),
                       SizedBox(
-                        height: 6.h,
+                        height: 2.h,
                       ),
                       Text(
-                        '${context.translate(AppStrings.totalPrice)}  ${order.totalOrderPrice}',
+                        '${context.translate(AppStrings.totalPrice)}  ${order.totalOrderPrice}  ${context.translate(AppStrings.egy)}',
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
                             .copyWith(fontSize: 12.sp),
                       ),
                       SizedBox(
-                        height: 6.h,
+                        height: 2.h,
                       ),
                       Text(
-                        order.status == 0
-                            ? context.translate(AppStrings.orderPlaced)
-                            : order.status == 1
-                                ? context.translate(
-                                    AppStrings.yourOrderIsBeingPrepared)
-                                : order.status == 2
-                                    ? context.translate(
-                                        AppStrings.theOrderAcceptedByRestaurant)
-                                    : order.status == 3
-                                        ? context.translate(
-                                            AppStrings.yourOrderIsOnItsWay)
-                                        : order.status == 4
-                                            ? context.translate(AppStrings
-                                                .yourOrderWasDeliveredSuccessfully)
-                                            : order.status == 5
-                                                ? context.translate(AppStrings
-                                                    .yourOrderWasCancelled)
-                                                : '',
+                        order.status == 4
+                            ? context.translate(AppStrings.delivered)
+                            : order.status == 5
+                                ? context.translate(AppStrings.cancelled)
+                                : 'Processing',
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
                             color: order.status == 5
                                 ? ColorManger.redError
@@ -111,8 +100,16 @@ class OrdersTab extends StatelessWidget {
                             fontSize: 12.sp),
                       ),
                     ],
+                  ),
+                  const Spacer(),
+                  Icon(
+                    IconlyBold.arrowRightCircle,
+                    color: ColorManger.brun,
+                    size: 25.h,
+                  ),
+                  SizedBox(
+                    width: 10.w,
                   )
-                  // const Spacer(),
                 ],
               ),
             ),

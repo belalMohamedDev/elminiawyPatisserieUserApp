@@ -103,6 +103,9 @@ class PaymentCubit extends Cubit<PaymentState> {
     );
   }
 
+  int cancelledOrder = 0;
+  int deliveredOrder = 0;
+
   Future<void> getCompleteOrdersSummit() async {
     emit(const PaymentState.getCompleteOrdersLoading());
 
@@ -112,7 +115,13 @@ class PaymentCubit extends Cubit<PaymentState> {
     response.when(
       success: (response) {
         getPerviousOrders = [];
-        getPerviousOrders = response.data ?? []; // Ensure non-null
+        getPerviousOrders = response.data ?? [];
+
+        cancelledOrder =
+            getPerviousOrders.where((element) => element.status == 5).length;
+
+        deliveredOrder =
+            getPerviousOrders.where((element) => element.status == 4).length;
 
         emit(PaymentState.getCompleteOrdersSuccess(response));
       },
@@ -133,7 +142,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     response.when(
       success: (response) {
         getCurrentOrders = [];
-        getCurrentOrders = response.data ?? []; // Ensure non-null
+        getCurrentOrders = response.data ?? [];
 
         emit(PaymentState.getCompleteOrdersSuccess(response));
       },

@@ -145,8 +145,7 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                                   height: 5.h,
                                 ),
                                 ConstrainedBox(
-                                  constraints: BoxConstraints(
-                                      maxWidth: isEnLocale ? 280.w : 250.w),
+                                  constraints: BoxConstraints(maxWidth: 200.w),
                                   child: Text(
                                     userAddress.addressDataList[index].region ??
                                         '',

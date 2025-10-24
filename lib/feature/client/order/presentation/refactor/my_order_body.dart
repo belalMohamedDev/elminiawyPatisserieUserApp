@@ -28,6 +28,43 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
 
     return Column(
       children: [
+        BlocBuilder<PaymentCubit, PaymentState>(
+          builder: (context, state) {
+            return Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: responsive.setWidth(4),
+                  vertical: responsive.setHeight(1.2)),
+              child: SizedBox(
+                height: responsive.setHeight(12),
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    _buildSummaryCard(
+                        responsive,
+                        'Pending Order',
+                        '${context.read<PaymentCubit>().getCurrentOrders.length}',
+                        ColorManger.backgroundItem),
+                    SizedBox(width: responsive.setWidth(3.5)),
+                    _buildSummaryCard(
+                        responsive,
+                        'Delivered Order',
+                        '${context.read<PaymentCubit>().deliveredOrder}',
+                        ColorManger.backgroundItem),
+                    SizedBox(width: responsive.setWidth(3.5)),
+                    _buildSummaryCard(
+                        responsive,
+                        'Cancelled Order',
+                        '${context.read<PaymentCubit>().cancelledOrder}',
+                        ColorManger.backgroundItem),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+        SizedBox(
+          height: responsive.setHeight(1),
+        ),
         Padding(
           padding:
               EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h, bottom: 20.h),
@@ -142,6 +179,47 @@ class _MyOrdersBodyState extends State<MyOrdersBody>
   void dispose() {
     _tabController.dispose();
     super.dispose();
+  }
+
+  Widget _buildSummaryCard(
+      ResponsiveUtils responsive, String title, String value, Color bg) {
+    return Container(
+      width: responsive.setWidth(28),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.06),
+            spreadRadius: 1,
+            blurRadius: 6,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: responsive.setTextSize(3.5),
+              color: ColorManger.brunLight,
+            ),
+          ),
+          SizedBox(height: responsive.setHeight(2)),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: responsive.setTextSize(5),
+              color: ColorManger.brun,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Container _cardItemLoading() {
