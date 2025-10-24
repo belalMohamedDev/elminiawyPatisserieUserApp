@@ -30,9 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     // Delay the execution until after the first frame is rendered
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // Retrieve the saved username from secure shared preferences
-      // Call MapCubit's function to set the location to "Home"
-      context.read<MapCubit>().setLocationToHome();
+      context.read<LogOutCubit>().getUserName();
 
       // If the username is present, start listening and fetching notifications
       if (!AppInitialRoute.isAnonymousUser) {

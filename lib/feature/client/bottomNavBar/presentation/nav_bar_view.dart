@@ -12,37 +12,37 @@ class _BottomNavBarState extends State<BottomNavBar> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-   
-      context.read<AppLogicCubit>().stream.listen((locale) async {
-        await Future.wait([
-          context.read<BannerCubit>().getBanners(endDate: "true"),
-          context.read<CategoryCubit>().getCategories(active: 'true'),
-          context.read<ProductCubit>().fetchGetNewProductToUser(),
-        ]);
-        if (AppInitialRoute.isAnonymousUser == false) {
-          await Future.wait([
-            context.read<UserAddressCubit>().getUserAddress(),
-            context.read<CartCubit>().getCartItem(),
-            context.read<WishListCubit>().getWishList(),
-          ]);
-        }
-      });
+    
 
-      await Future.wait([
-        context.read<BannerCubit>().getBanners(endDate: "true"),
-        context.read<CategoryCubit>().getCategories(active: 'true'),
-        context.read<ProductCubit>().fetchGetNewProductToUser(),
-      ]);
+    _loadInitialData();
 
-      if (AppInitialRoute.isAnonymousUser == false) {
-        await Future.wait([
-          context.read<UserAddressCubit>().getUserAddress(),
-          context.read<CartCubit>().getCartItem(),
-          context.read<WishListCubit>().getWishList(),
-        ]);
-      }
+    context.read<AppLogicCubit>().stream.listen((locale) {
+      _reloadLocalizedData();
     });
+  }
+
+  Future<void> _loadInitialData() async {
+    await Future.wait([
+      context.read<BannerCubit>().getBanners(endDate: "true"),
+      context.read<CategoryCubit>().getCategories(active: 'true'),
+      context.read<ProductCubit>().fetchGetNewProductToUser(),
+    ]);
+
+    if (!AppInitialRoute.isAnonymousUser) {
+      await Future.wait([
+        context.read<UserAddressCubit>().getUserAddress(),
+        context.read<CartCubit>().getCartItem(),
+        context.read<WishListCubit>().getWishList(),
+      ]);
+    }
+  }
+
+  Future<void> _reloadLocalizedData() async {
+    await Future.wait([
+      context.read<BannerCubit>().getBanners(endDate: "true"),
+      context.read<CategoryCubit>().getCategories(active: 'true'),
+      context.read<ProductCubit>().fetchGetNewProductToUser(),
+    ]);
   }
 
   @override

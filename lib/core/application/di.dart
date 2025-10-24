@@ -120,9 +120,7 @@ Future<void> _initCategory() async {
         ));
 }
 
-
 Future<void> _initStoreAddress() async {
-  
   instance
     ..registerLazySingleton<BranchStoreAddressRepositoryImplement>(
         () => BranchStoreAddressRepositoryImplement(
@@ -130,7 +128,6 @@ Future<void> _initStoreAddress() async {
             ))
     ..registerFactory<StoreAddressCubit>(() => StoreAddressCubit(
           instance(),
-          
         ));
 }
 
@@ -217,7 +214,7 @@ Future<void> _initLogOut() async {
     ..registerLazySingleton<LogOutRepository>(() => LogOutRepository(
           instance(),
         ))
-    ..registerFactory<LogOutCubit>(() => LogOutCubit(
+    ..registerLazySingleton<LogOutCubit>(() => LogOutCubit(
           instance(),
         ));
 }

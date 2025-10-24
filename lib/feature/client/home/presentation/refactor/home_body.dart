@@ -19,21 +19,20 @@ class HomeBody extends StatelessWidget {
     final responsive = ResponsiveUtils(context);
 
     return Padding(
-      padding: responsive.setPadding(left: 5.5, right: 5.5, bottom: 2),
+      padding: responsive.setPadding(left: 5.5, right: 5.5, bottom: 2, top: 1),
       child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Display the location and notification row at the top
-              _locationAndNotificationRow(context),
-              // Show the location name for the home screen
-              _locationName(context),
-              responsive.setSizeBox(height: 3), // Adds vertical space
+              _welcomAndNotificationRow(context),
+
+              responsive.setSizeBox(height: 2), // Adds vertical space
               const SearchRow(), // Search bar row
-              responsive.setSizeBox(height: 4), // Adds vertical space
+              responsive.setSizeBox(height: 3), // Adds vertical space
               const BannerCarouselSlider(), // Image carousel for banners
-              responsive.setSizeBox(height: 4), // Adds vertical space
+              responsive.setSizeBox(height: 3), // Adds vertical space
               const CategoryListViewBuilder(), // Horizontal list view for categories
               const NewProductGrideView(), // Grid view for displaying new products
             ],
@@ -43,79 +42,44 @@ class HomeBody extends StatelessWidget {
     );
   }
 
-  /// Widget to display the user's current location with an option to navigate
-  /// to the `MapScreen` to select a new location.
-  InkWell _locationName(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments
-    final responsive = ResponsiveUtils(context);
-
-    return InkWell(
-      onTap: () {
-        // Navigate to the MapScreen to select a new location
-        Navigator.of(context, rootNavigator: true).push(
-          MaterialPageRoute(
-            builder: (context) => BlocProvider.value(
-              value: instance<MapCubit>(), // Provide MapCubit to the MapScreen
-              child: const MapScreen(isHomeMap: true), // Display home map
-            ),
-          ),
-        );
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Icon(
-            IconlyBold.location,
-            color: ColorManger.brun,
-            size: responsive.setIconSize(5),
-          ), // Location icon
-          SizedBox(width: responsive.setWidth(2)), // Horizontal spacing
-          // Display the current address from the MapCubit
-          BlocBuilder<MapCubit, MapState>(
-            builder: (context, state) {
-              return ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: responsive.setWidth(40)),
-                child: Text(
-                  context
-                      .read<MapCubit>()
-                      .homeScreenCurrentAddress, // Display address
-                  maxLines: 1,
-                  textAlign: TextAlign.start,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontSize: responsive.setTextSize(3.5),
-                      ),
-                ),
-              );
-            },
-          ),
-          SizedBox(width: responsive.setWidth(1)), // Horizontal spacing
-          // Icon to indicate dropdown or expandable content
-          Icon(
-            IconlyBold.arrowDown2,
-            color: Colors.black38,
-            size: responsive.setIconSize(4),
-          ),
-        ],
-      ),
-    );
-  }
-
   /// Widget that displays the location label and the notification icon.
   /// The notification icon shows a badge if there are unread notifications.
-  Row _locationAndNotificationRow(BuildContext context) {
+  Row _welcomAndNotificationRow(BuildContext context) {
     // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
     return Row(
       children: [
-        SizedBox(width: responsive.setWidth(2)), // Horizontal space
-        // Display the location label
-        Text(
-          context.translate(AppStrings.location),
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                fontSize: responsive.setTextSize(4),
-              ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BlocBuilder<LogOutCubit, LogOutState>(
+              builder: (context, state) {
+                final userName = context.read<LogOutCubit>().initialUserName;
+                final firstWord = userName.split(' ').first;
+                final formattedName = firstWord[0].toUpperCase() +
+                    firstWord.substring(1).toLowerCase();
+
+                return Text(
+                  context.translate("Hello, $formattedName 👋"),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        fontSize: responsive.setTextSize(4),
+                      ),
+                );
+              },
+            ),
+            responsive.setSizeBox(height: 0.5),
+            Text(
+              "Welcome to Patisserie App 🍰", // Display address
+              maxLines: 1,
+              textAlign: TextAlign.start,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+            )
+          ],
         ),
         const Spacer(), // Spacer to push the notification icon to the right
         // ValueListenableBuilder to listen for notification updates

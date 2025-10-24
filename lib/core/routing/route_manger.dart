@@ -243,6 +243,9 @@ class RouteGenerator {
               BlocProvider.value(
                 value: instance<UserAddressCubit>(),
               ),
+              BlocProvider.value(
+                value: instance<LogOutCubit>(),
+              ),
               BlocProvider(
                 create: (context) => instance<BannerCubit>(),
               ),

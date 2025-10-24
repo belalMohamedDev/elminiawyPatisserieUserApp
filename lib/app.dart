@@ -107,14 +107,10 @@ class _MyAppState extends State<MyApp> {
   String _getInitialRoute() {
     if (AppInitialRoute.isOnBoardingScreen) {
       if (AppInitialRoute.isAnonymousUser) {
-        return AppInitialRoute.isLocatedMap
-            ? Routes.bottomNavBarRoute
-            : Routes.map;
+        return Routes.bottomNavBarRoute;
       } else if (AppInitialRoute.isLoggedInUser) {
         if (AppInitialRoute.role == "user") {
-          return AppInitialRoute.isLocatedMap
-              ? Routes.bottomNavBarRoute
-              : Routes.map;
+          return Routes.bottomNavBarRoute;
         } else if (AppInitialRoute.role == "admin") {
           return Routes.adminMenue;
         } else {
