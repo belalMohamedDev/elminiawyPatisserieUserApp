@@ -25,7 +25,7 @@ class SignUpButton extends StatelessWidget {
             if (authResponse.data!.role == "user") {
               // Ensure the context is still mounted before navigating
               if (context.mounted) {
-                context.pushReplacementNamed(Routes.map);
+                context.pushReplacementNamed(Routes.bottomNavBarRoute);
               }
             } else if (authResponse.data!.role == "admin") {
               // Ensure the context is still mounted before navigating
