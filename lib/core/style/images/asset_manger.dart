@@ -17,6 +17,11 @@ class ImageAsset {
   static const String navigation = "$imagePath/navigation.png";
   static const String map = "$imagePath/map.png";
   static const String building = "$imagePath/building.png";
+
+  static const String buildingAddress = "$imagePath/buildingAddress.png";
+  static const String officeAddress = "$imagePath/officeAddress.png";
+  static const String homAddress = "$imagePath/homAddress.png";
+
   static const String bag = "$imagePath/bag.png";
   static const String order = "$imagePath/order.png";
   static const String honey = "$imagePath/honey.png";

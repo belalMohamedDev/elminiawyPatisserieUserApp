@@ -107,17 +107,17 @@ class UserAddressSuccessStateWidget extends StatelessWidget {
                               child: Image.asset(
                                 userAddress.addressDataList[index].alias ==
                                         'Apartment'
-                                    ? ImageAsset.building
+                                    ? ImageAsset.buildingAddress
                                     : userAddress
                                                 .addressDataList[index].alias ==
                                             'House'
-                                        ? ImageAsset.home
-                                        : ImageAsset.bag,
-                                height: 28.h,
+                                        ? ImageAsset.homAddress
+                                        : ImageAsset.officeAddress,
+                                height: 50.h,
                               ),
                             ),
                             SizedBox(
-                              width: 10.h,
+                              width: 15.h,
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
