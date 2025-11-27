@@ -1,3 +1,5 @@
+import 'package:elminiawy/feature/client/productBasedOnCategory/presentation/screen/empty_screen.dart';
+
 import '../../../../../../core/common/shared/shared_imports.dart'; //
 
 class ProductBaseOnCategoryBody extends StatelessWidget {
@@ -30,16 +32,18 @@ class ProductBaseOnCategoryBody extends StatelessWidget {
                   ),
                 );
               }, getProductSuccess: (getProduct) {
-                return Column(
-                  children: [
-                    _subCategorySuccessState(context),
-                    SizedBox(
-                      height: 15.h,
-                    ),
-                  ],
-                );
+                return getProduct.allProducts!.isEmpty
+                    ? const EmptySubCategoryScreen()
+                    : Column(
+                        children: [
+                          _subCategorySuccessState(context),
+                          SizedBox(
+                            height: 15.h,
+                          ),
+                        ],
+                      );
               }, orElse: () {
-                return const SizedBox.shrink();
+                return Image.asset(ImageAsset.noCategory);
               });
             },
           ),

@@ -57,6 +57,7 @@ class ImageAsset {
   static const String noNotification = "$imagePath/noNotification.svg";
   static const String noRoute = "$imagePath/noRoute.svg";
   static const String checkOut = "$imagePath/checkOut.png";
+  static const String noCategory = "$imagePath/noCategory.jpg";
   static const String noInternetConnection =
       "$imagePath/noInternetConnection.svg";
   static const String searchLoading = "$imagePath/searchLoading.svg";

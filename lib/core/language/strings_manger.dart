@@ -103,6 +103,11 @@ class AppStrings {
       "pleaseEnterValidSignUpPhoneNumber";
   static const String agreeWith = "agreeWith";
   static const String emptyWishList = "emptyWishList";
+
+  static const String emptyCategory = "emptyCategory";
+  static const String noProductsFoundInThisCategory = "noProductsFoundInThisCategory";
+
+
   static const String itSeemsLikeYouHavenAddedAnythingToYourWishlistYet =
       "itSeemsLikeYouHavenAddedAnythingToYourWishlistYet";
   static const String termsCondition = "termsCondition";
