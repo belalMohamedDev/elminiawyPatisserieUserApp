@@ -59,7 +59,7 @@ class CategorySuccessWidget extends StatelessWidget {
                     showEditCategoryActionDialog(
                         context, category[actualIndex]);
                   } else {
-                    Navigator.of(context).push(
+                    Navigator.of(context, rootNavigator: !false).push(
                       MaterialPageRoute(
                         builder: (context) => MultiBlocProvider(
                           providers: [

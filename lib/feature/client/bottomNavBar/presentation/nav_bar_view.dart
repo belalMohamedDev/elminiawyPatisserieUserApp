@@ -12,8 +12,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   void initState() {
     super.initState();
 
-    
-
     _loadInitialData();
 
     context.read<AppLogicCubit>().stream.listen((locale) {
