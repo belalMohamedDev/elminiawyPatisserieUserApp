@@ -47,7 +47,7 @@ class SubCategoriesState with _$SubCategoriesState {
         const factory SubCategoriesState.createSubCategoriesLoading( ) =
       CreateSubCategoriesLoading;
   const factory SubCategoriesState.createSubCategoriesError(
-      ApiErrorModel apiErrorModel) = createSubCategoriesError;
+      ApiErrorModel apiErrorModel) = CreateSubCategoriesError;
 
   const factory SubCategoriesState.createSubCategoriesSuccess(
       List<SubCategoryResponseData> data) = CreateSubCategoriesSuccess;

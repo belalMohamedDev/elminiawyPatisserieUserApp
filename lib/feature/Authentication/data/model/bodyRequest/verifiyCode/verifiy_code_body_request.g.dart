@@ -7,13 +7,9 @@ part of 'verifiy_code_body_request.dart';
 // **************************************************************************
 
 VerifyCodeRequestBody _$VerifyCodeRequestBodyFromJson(
-        Map<String, dynamic> json) =>
-    VerifyCodeRequestBody(
-      restCode: json['restCode'] as String,
-    );
+  Map<String, dynamic> json,
+) => VerifyCodeRequestBody(restCode: json['restCode'] as String);
 
 Map<String, dynamic> _$VerifyCodeRequestBodyToJson(
-        VerifyCodeRequestBody instance) =>
-    <String, dynamic>{
-      'restCode': instance.restCode,
-    };
+  VerifyCodeRequestBody instance,
+) => <String, dynamic>{'restCode': instance.restCode};

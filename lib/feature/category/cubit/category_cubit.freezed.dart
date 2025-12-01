@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1461 +9,646 @@ part of 'category_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$CategoryState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CategoryState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CategoryState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CategoryStateCopyWith<$Res> {
-  factory $CategoryStateCopyWith(
-          CategoryState value, $Res Function(CategoryState) then) =
-      _$CategoryStateCopyWithImpl<$Res, CategoryState>;
+class $CategoryStateCopyWith<$Res>  {
+$CategoryStateCopyWith(CategoryState _, $Res Function(CategoryState) __);
 }
 
-/// @nodoc
-class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
-    implements $CategoryStateCopyWith<$Res> {
-  _$CategoryStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [CategoryState].
+extension CategoryStatePatterns on CategoryState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetCategoriesLoading value)?  getCategoriesLoading,TResult Function( GetCategoriesError value)?  getCategoriesError,TResult Function( GetCategoriesSuccess value)?  getCategoriesSuccess,TResult Function( UpdateCategoriesLoading value)?  updateCategoriesLoading,TResult Function( UpdateCategoriesError value)?  updateCategoriesError,TResult Function( UpdateCategoriesSuccess value)?  updateCategoriesSuccess,TResult Function( CreateCategoriesLoading value)?  createCategoriesLoading,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case GetCategoriesLoading() when getCategoriesLoading != null:
+return getCategoriesLoading(_that);case GetCategoriesError() when getCategoriesError != null:
+return getCategoriesError(_that);case GetCategoriesSuccess() when getCategoriesSuccess != null:
+return getCategoriesSuccess(_that);case UpdateCategoriesLoading() when updateCategoriesLoading != null:
+return updateCategoriesLoading(_that);case UpdateCategoriesError() when updateCategoriesError != null:
+return updateCategoriesError(_that);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
+return updateCategoriesSuccess(_that);case CreateCategoriesLoading() when createCategoriesLoading != null:
+return createCategoriesLoading(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetCategoriesLoading value)  getCategoriesLoading,required TResult Function( GetCategoriesError value)  getCategoriesError,required TResult Function( GetCategoriesSuccess value)  getCategoriesSuccess,required TResult Function( UpdateCategoriesLoading value)  updateCategoriesLoading,required TResult Function( UpdateCategoriesError value)  updateCategoriesError,required TResult Function( UpdateCategoriesSuccess value)  updateCategoriesSuccess,required TResult Function( CreateCategoriesLoading value)  createCategoriesLoading,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case GetCategoriesLoading():
+return getCategoriesLoading(_that);case GetCategoriesError():
+return getCategoriesError(_that);case GetCategoriesSuccess():
+return getCategoriesSuccess(_that);case UpdateCategoriesLoading():
+return updateCategoriesLoading(_that);case UpdateCategoriesError():
+return updateCategoriesError(_that);case UpdateCategoriesSuccess():
+return updateCategoriesSuccess(_that);case CreateCategoriesLoading():
+return createCategoriesLoading(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetCategoriesLoading value)?  getCategoriesLoading,TResult? Function( GetCategoriesError value)?  getCategoriesError,TResult? Function( GetCategoriesSuccess value)?  getCategoriesSuccess,TResult? Function( UpdateCategoriesLoading value)?  updateCategoriesLoading,TResult? Function( UpdateCategoriesError value)?  updateCategoriesError,TResult? Function( UpdateCategoriesSuccess value)?  updateCategoriesSuccess,TResult? Function( CreateCategoriesLoading value)?  createCategoriesLoading,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case GetCategoriesLoading() when getCategoriesLoading != null:
+return getCategoriesLoading(_that);case GetCategoriesError() when getCategoriesError != null:
+return getCategoriesError(_that);case GetCategoriesSuccess() when getCategoriesSuccess != null:
+return getCategoriesSuccess(_that);case UpdateCategoriesLoading() when updateCategoriesLoading != null:
+return updateCategoriesLoading(_that);case UpdateCategoriesError() when updateCategoriesError != null:
+return updateCategoriesError(_that);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
+return updateCategoriesSuccess(_that);case CreateCategoriesLoading() when createCategoriesLoading != null:
+return createCategoriesLoading(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  getCategoriesError,TResult Function( List<CategoryResponseData> data)?  getCategoriesSuccess,TResult Function( String id)?  updateCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateCategoriesError,TResult Function( List<CategoryResponseData> data)?  updateCategoriesSuccess,TResult Function()?  createCategoriesLoading,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case GetCategoriesLoading() when getCategoriesLoading != null:
+return getCategoriesLoading();case GetCategoriesError() when getCategoriesError != null:
+return getCategoriesError(_that.apiErrorModel);case GetCategoriesSuccess() when getCategoriesSuccess != null:
+return getCategoriesSuccess(_that.data);case UpdateCategoriesLoading() when updateCategoriesLoading != null:
+return updateCategoriesLoading(_that.id);case UpdateCategoriesError() when updateCategoriesError != null:
+return updateCategoriesError(_that.apiErrorModel);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
+return updateCategoriesSuccess(_that.data);case CreateCategoriesLoading() when createCategoriesLoading != null:
+return createCategoriesLoading();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  getCategoriesError,required TResult Function( List<CategoryResponseData> data)  getCategoriesSuccess,required TResult Function( String id)  updateCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateCategoriesError,required TResult Function( List<CategoryResponseData> data)  updateCategoriesSuccess,required TResult Function()  createCategoriesLoading,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case GetCategoriesLoading():
+return getCategoriesLoading();case GetCategoriesError():
+return getCategoriesError(_that.apiErrorModel);case GetCategoriesSuccess():
+return getCategoriesSuccess(_that.data);case UpdateCategoriesLoading():
+return updateCategoriesLoading(_that.id);case UpdateCategoriesError():
+return updateCategoriesError(_that.apiErrorModel);case UpdateCategoriesSuccess():
+return updateCategoriesSuccess(_that.data);case CreateCategoriesLoading():
+return createCategoriesLoading();case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getCategoriesError,TResult? Function( List<CategoryResponseData> data)?  getCategoriesSuccess,TResult? Function( String id)?  updateCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateCategoriesError,TResult? Function( List<CategoryResponseData> data)?  updateCategoriesSuccess,TResult? Function()?  createCategoriesLoading,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case GetCategoriesLoading() when getCategoriesLoading != null:
+return getCategoriesLoading();case GetCategoriesError() when getCategoriesError != null:
+return getCategoriesError(_that.apiErrorModel);case GetCategoriesSuccess() when getCategoriesSuccess != null:
+return getCategoriesSuccess(_that.data);case UpdateCategoriesLoading() when updateCategoriesLoading != null:
+return updateCategoriesLoading(_that.id);case UpdateCategoriesError() when updateCategoriesError != null:
+return updateCategoriesError(_that.apiErrorModel);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
+return updateCategoriesSuccess(_that.data);case CreateCategoriesLoading() when createCategoriesLoading != null:
+return createCategoriesLoading();case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'CategoryState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements CategoryState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$GetCategoriesLoadingImplCopyWith<$Res> {
-  factory _$$GetCategoriesLoadingImplCopyWith(_$GetCategoriesLoadingImpl value,
-          $Res Function(_$GetCategoriesLoadingImpl) then) =
-      __$$GetCategoriesLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetCategoriesLoadingImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$GetCategoriesLoadingImpl>
-    implements _$$GetCategoriesLoadingImplCopyWith<$Res> {
-  __$$GetCategoriesLoadingImplCopyWithImpl(_$GetCategoriesLoadingImpl _value,
-      $Res Function(_$GetCategoriesLoadingImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetCategoriesLoadingImpl implements GetCategoriesLoading {
-  const _$GetCategoriesLoadingImpl();
 
-  @override
-  String toString() {
-    return 'CategoryState.getCategoriesLoading()';
-  }
+class _Initial implements CategoryState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetCategoriesLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return getCategoriesLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return getCategoriesLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (getCategoriesLoading != null) {
-      return getCategoriesLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return getCategoriesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return getCategoriesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (getCategoriesLoading != null) {
-      return getCategoriesLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class GetCategoriesLoading implements CategoryState {
-  const factory GetCategoriesLoading() = _$GetCategoriesLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CategoryState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class GetCategoriesLoading implements CategoryState {
+  const GetCategoriesLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetCategoriesLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CategoryState.getCategoriesLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class GetCategoriesError implements CategoryState {
+  const GetCategoriesError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetCategoriesErrorCopyWith<GetCategoriesError> get copyWith => _$GetCategoriesErrorCopyWithImpl<GetCategoriesError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetCategoriesError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'CategoryState.getCategoriesError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetCategoriesErrorImplCopyWith<$Res> {
-  factory _$$GetCategoriesErrorImplCopyWith(_$GetCategoriesErrorImpl value,
-          $Res Function(_$GetCategoriesErrorImpl) then) =
-      __$$GetCategoriesErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $GetCategoriesErrorCopyWith<$Res> implements $CategoryStateCopyWith<$Res> {
+  factory $GetCategoriesErrorCopyWith(GetCategoriesError value, $Res Function(GetCategoriesError) _then) = _$GetCategoriesErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetCategoriesErrorCopyWithImpl<$Res>
+    implements $GetCategoriesErrorCopyWith<$Res> {
+  _$GetCategoriesErrorCopyWithImpl(this._self, this._then);
+
+  final GetCategoriesError _self;
+  final $Res Function(GetCategoriesError) _then;
+
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(GetCategoriesError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$GetCategoriesErrorImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$GetCategoriesErrorImpl>
-    implements _$$GetCategoriesErrorImplCopyWith<$Res> {
-  __$$GetCategoriesErrorImplCopyWithImpl(_$GetCategoriesErrorImpl _value,
-      $Res Function(_$GetCategoriesErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$GetCategoriesErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetCategoriesErrorImpl implements GetCategoriesError {
-  const _$GetCategoriesErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class GetCategoriesSuccess implements CategoryState {
+  const GetCategoriesSuccess(final  List<CategoryResponseData> data): _data = data;
+  
 
-  @override
-  String toString() {
-    return 'CategoryState.getCategoriesError(apiErrorModel: $apiErrorModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetCategoriesErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetCategoriesErrorImplCopyWith<_$GetCategoriesErrorImpl> get copyWith =>
-      __$$GetCategoriesErrorImplCopyWithImpl<_$GetCategoriesErrorImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return getCategoriesError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return getCategoriesError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (getCategoriesError != null) {
-      return getCategoriesError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return getCategoriesError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return getCategoriesError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (getCategoriesError != null) {
-      return getCategoriesError(this);
-    }
-    return orElse();
-  }
+ final  List<CategoryResponseData> _data;
+ List<CategoryResponseData> get data {
+  if (_data is EqualUnmodifiableListView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_data);
 }
 
-abstract class GetCategoriesError implements CategoryState {
-  const factory GetCategoriesError(final ApiErrorModel apiErrorModel) =
-      _$GetCategoriesErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$GetCategoriesErrorImplCopyWith<_$GetCategoriesErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetCategoriesSuccessCopyWith<GetCategoriesSuccess> get copyWith => _$GetCategoriesSuccessCopyWithImpl<GetCategoriesSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetCategoriesSuccess&&const DeepCollectionEquality().equals(other._data, _data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
+
+@override
+String toString() {
+  return 'CategoryState.getCategoriesSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetCategoriesSuccessImplCopyWith<$Res> {
-  factory _$$GetCategoriesSuccessImplCopyWith(_$GetCategoriesSuccessImpl value,
-          $Res Function(_$GetCategoriesSuccessImpl) then) =
-      __$$GetCategoriesSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<CategoryResponseData> data});
+abstract mixin class $GetCategoriesSuccessCopyWith<$Res> implements $CategoryStateCopyWith<$Res> {
+  factory $GetCategoriesSuccessCopyWith(GetCategoriesSuccess value, $Res Function(GetCategoriesSuccess) _then) = _$GetCategoriesSuccessCopyWithImpl;
+@useResult
+$Res call({
+ List<CategoryResponseData> data
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetCategoriesSuccessCopyWithImpl<$Res>
+    implements $GetCategoriesSuccessCopyWith<$Res> {
+  _$GetCategoriesSuccessCopyWithImpl(this._self, this._then);
+
+  final GetCategoriesSuccess _self;
+  final $Res Function(GetCategoriesSuccess) _then;
+
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(GetCategoriesSuccess(
+null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as List<CategoryResponseData>,
+  ));
 }
 
-/// @nodoc
-class __$$GetCategoriesSuccessImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$GetCategoriesSuccessImpl>
-    implements _$$GetCategoriesSuccessImplCopyWith<$Res> {
-  __$$GetCategoriesSuccessImplCopyWithImpl(_$GetCategoriesSuccessImpl _value,
-      $Res Function(_$GetCategoriesSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$GetCategoriesSuccessImpl(
-      null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<CategoryResponseData>,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetCategoriesSuccessImpl implements GetCategoriesSuccess {
-  const _$GetCategoriesSuccessImpl(final List<CategoryResponseData> data)
-      : _data = data;
 
-  final List<CategoryResponseData> _data;
-  @override
-  List<CategoryResponseData> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+class UpdateCategoriesLoading implements CategoryState {
+  const UpdateCategoriesLoading(this.id);
+  
 
-  @override
-  String toString() {
-    return 'CategoryState.getCategoriesSuccess(data: $data)';
-  }
+ final  String id;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetCategoriesSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateCategoriesLoadingCopyWith<UpdateCategoriesLoading> get copyWith => _$UpdateCategoriesLoadingCopyWithImpl<UpdateCategoriesLoading>(this, _$identity);
 
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetCategoriesSuccessImplCopyWith<_$GetCategoriesSuccessImpl>
-      get copyWith =>
-          __$$GetCategoriesSuccessImplCopyWithImpl<_$GetCategoriesSuccessImpl>(
-              this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return getCategoriesSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return getCategoriesSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (getCategoriesSuccess != null) {
-      return getCategoriesSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return getCategoriesSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return getCategoriesSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (getCategoriesSuccess != null) {
-      return getCategoriesSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCategoriesLoading&&(identical(other.id, id) || other.id == id));
 }
 
-abstract class GetCategoriesSuccess implements CategoryState {
-  const factory GetCategoriesSuccess(final List<CategoryResponseData> data) =
-      _$GetCategoriesSuccessImpl;
 
-  List<CategoryResponseData> get data;
-  @JsonKey(ignore: true)
-  _$$GetCategoriesSuccessImplCopyWith<_$GetCategoriesSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'CategoryState.updateCategoriesLoading(id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateCategoriesLoadingImplCopyWith<$Res> {
-  factory _$$UpdateCategoriesLoadingImplCopyWith(
-          _$UpdateCategoriesLoadingImpl value,
-          $Res Function(_$UpdateCategoriesLoadingImpl) then) =
-      __$$UpdateCategoriesLoadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String id});
+abstract mixin class $UpdateCategoriesLoadingCopyWith<$Res> implements $CategoryStateCopyWith<$Res> {
+  factory $UpdateCategoriesLoadingCopyWith(UpdateCategoriesLoading value, $Res Function(UpdateCategoriesLoading) _then) = _$UpdateCategoriesLoadingCopyWithImpl;
+@useResult
+$Res call({
+ String id
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateCategoriesLoadingCopyWithImpl<$Res>
+    implements $UpdateCategoriesLoadingCopyWith<$Res> {
+  _$UpdateCategoriesLoadingCopyWithImpl(this._self, this._then);
+
+  final UpdateCategoriesLoading _self;
+  final $Res Function(UpdateCategoriesLoading) _then;
+
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
+  return _then(UpdateCategoriesLoading(
+null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateCategoriesLoadingImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$UpdateCategoriesLoadingImpl>
-    implements _$$UpdateCategoriesLoadingImplCopyWith<$Res> {
-  __$$UpdateCategoriesLoadingImplCopyWithImpl(
-      _$UpdateCategoriesLoadingImpl _value,
-      $Res Function(_$UpdateCategoriesLoadingImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$UpdateCategoriesLoadingImpl(
-      null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateCategoriesLoadingImpl implements UpdateCategoriesLoading {
-  const _$UpdateCategoriesLoadingImpl(this.id);
 
-  @override
-  final String id;
+class UpdateCategoriesError implements CategoryState {
+  const UpdateCategoriesError(this.apiErrorModel);
+  
 
-  @override
-  String toString() {
-    return 'CategoryState.updateCategoriesLoading(id: $id)';
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateCategoriesLoadingImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateCategoriesErrorCopyWith<UpdateCategoriesError> get copyWith => _$UpdateCategoriesErrorCopyWithImpl<UpdateCategoriesError>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateCategoriesLoadingImplCopyWith<_$UpdateCategoriesLoadingImpl>
-      get copyWith => __$$UpdateCategoriesLoadingImplCopyWithImpl<
-          _$UpdateCategoriesLoadingImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return updateCategoriesLoading(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return updateCategoriesLoading?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (updateCategoriesLoading != null) {
-      return updateCategoriesLoading(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return updateCategoriesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return updateCategoriesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (updateCategoriesLoading != null) {
-      return updateCategoriesLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCategoriesError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class UpdateCategoriesLoading implements CategoryState {
-  const factory UpdateCategoriesLoading(final String id) =
-      _$UpdateCategoriesLoadingImpl;
 
-  String get id;
-  @JsonKey(ignore: true)
-  _$$UpdateCategoriesLoadingImplCopyWith<_$UpdateCategoriesLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'CategoryState.updateCategoriesError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateCategoriesErrorImplCopyWith<$Res> {
-  factory _$$UpdateCategoriesErrorImplCopyWith(
-          _$UpdateCategoriesErrorImpl value,
-          $Res Function(_$UpdateCategoriesErrorImpl) then) =
-      __$$UpdateCategoriesErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $UpdateCategoriesErrorCopyWith<$Res> implements $CategoryStateCopyWith<$Res> {
+  factory $UpdateCategoriesErrorCopyWith(UpdateCategoriesError value, $Res Function(UpdateCategoriesError) _then) = _$UpdateCategoriesErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateCategoriesErrorCopyWithImpl<$Res>
+    implements $UpdateCategoriesErrorCopyWith<$Res> {
+  _$UpdateCategoriesErrorCopyWithImpl(this._self, this._then);
+
+  final UpdateCategoriesError _self;
+  final $Res Function(UpdateCategoriesError) _then;
+
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(UpdateCategoriesError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateCategoriesErrorImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$UpdateCategoriesErrorImpl>
-    implements _$$UpdateCategoriesErrorImplCopyWith<$Res> {
-  __$$UpdateCategoriesErrorImplCopyWithImpl(_$UpdateCategoriesErrorImpl _value,
-      $Res Function(_$UpdateCategoriesErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$UpdateCategoriesErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateCategoriesErrorImpl implements UpdateCategoriesError {
-  const _$UpdateCategoriesErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class UpdateCategoriesSuccess implements CategoryState {
+  const UpdateCategoriesSuccess(final  List<CategoryResponseData> data): _data = data;
+  
 
-  @override
-  String toString() {
-    return 'CategoryState.updateCategoriesError(apiErrorModel: $apiErrorModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateCategoriesErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateCategoriesErrorImplCopyWith<_$UpdateCategoriesErrorImpl>
-      get copyWith => __$$UpdateCategoriesErrorImplCopyWithImpl<
-          _$UpdateCategoriesErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return updateCategoriesError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return updateCategoriesError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (updateCategoriesError != null) {
-      return updateCategoriesError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return updateCategoriesError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return updateCategoriesError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (updateCategoriesError != null) {
-      return updateCategoriesError(this);
-    }
-    return orElse();
-  }
+ final  List<CategoryResponseData> _data;
+ List<CategoryResponseData> get data {
+  if (_data is EqualUnmodifiableListView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_data);
 }
 
-abstract class UpdateCategoriesError implements CategoryState {
-  const factory UpdateCategoriesError(final ApiErrorModel apiErrorModel) =
-      _$UpdateCategoriesErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$UpdateCategoriesErrorImplCopyWith<_$UpdateCategoriesErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateCategoriesSuccessCopyWith<UpdateCategoriesSuccess> get copyWith => _$UpdateCategoriesSuccessCopyWithImpl<UpdateCategoriesSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCategoriesSuccess&&const DeepCollectionEquality().equals(other._data, _data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
+
+@override
+String toString() {
+  return 'CategoryState.updateCategoriesSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateCategoriesSuccessImplCopyWith<$Res> {
-  factory _$$UpdateCategoriesSuccessImplCopyWith(
-          _$UpdateCategoriesSuccessImpl value,
-          $Res Function(_$UpdateCategoriesSuccessImpl) then) =
-      __$$UpdateCategoriesSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<CategoryResponseData> data});
+abstract mixin class $UpdateCategoriesSuccessCopyWith<$Res> implements $CategoryStateCopyWith<$Res> {
+  factory $UpdateCategoriesSuccessCopyWith(UpdateCategoriesSuccess value, $Res Function(UpdateCategoriesSuccess) _then) = _$UpdateCategoriesSuccessCopyWithImpl;
+@useResult
+$Res call({
+ List<CategoryResponseData> data
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateCategoriesSuccessCopyWithImpl<$Res>
+    implements $UpdateCategoriesSuccessCopyWith<$Res> {
+  _$UpdateCategoriesSuccessCopyWithImpl(this._self, this._then);
+
+  final UpdateCategoriesSuccess _self;
+  final $Res Function(UpdateCategoriesSuccess) _then;
+
+/// Create a copy of CategoryState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(UpdateCategoriesSuccess(
+null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as List<CategoryResponseData>,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateCategoriesSuccessImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$UpdateCategoriesSuccessImpl>
-    implements _$$UpdateCategoriesSuccessImplCopyWith<$Res> {
-  __$$UpdateCategoriesSuccessImplCopyWithImpl(
-      _$UpdateCategoriesSuccessImpl _value,
-      $Res Function(_$UpdateCategoriesSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$UpdateCategoriesSuccessImpl(
-      null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<CategoryResponseData>,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateCategoriesSuccessImpl implements UpdateCategoriesSuccess {
-  const _$UpdateCategoriesSuccessImpl(final List<CategoryResponseData> data)
-      : _data = data;
 
-  final List<CategoryResponseData> _data;
-  @override
-  List<CategoryResponseData> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+class CreateCategoriesLoading implements CategoryState {
+  const CreateCategoriesLoading();
+  
 
-  @override
-  String toString() {
-    return 'CategoryState.updateCategoriesSuccess(data: $data)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateCategoriesSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
 
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateCategoriesSuccessImplCopyWith<_$UpdateCategoriesSuccessImpl>
-      get copyWith => __$$UpdateCategoriesSuccessImplCopyWithImpl<
-          _$UpdateCategoriesSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return updateCategoriesSuccess(data);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return updateCategoriesSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (updateCategoriesSuccess != null) {
-      return updateCategoriesSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return updateCategoriesSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return updateCategoriesSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (updateCategoriesSuccess != null) {
-      return updateCategoriesSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateCategoriesLoading);
 }
 
-abstract class UpdateCategoriesSuccess implements CategoryState {
-  const factory UpdateCategoriesSuccess(final List<CategoryResponseData> data) =
-      _$UpdateCategoriesSuccessImpl;
 
-  List<CategoryResponseData> get data;
-  @JsonKey(ignore: true)
-  _$$UpdateCategoriesSuccessImplCopyWith<_$UpdateCategoriesSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CategoryState.createCategoriesLoading()';
 }
 
-/// @nodoc
-abstract class _$$CreateCategoriesLoadingImplCopyWith<$Res> {
-  factory _$$CreateCategoriesLoadingImplCopyWith(
-          _$CreateCategoriesLoadingImpl value,
-          $Res Function(_$CreateCategoriesLoadingImpl) then) =
-      __$$CreateCategoriesLoadingImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$CreateCategoriesLoadingImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$CreateCategoriesLoadingImpl>
-    implements _$$CreateCategoriesLoadingImplCopyWith<$Res> {
-  __$$CreateCategoriesLoadingImplCopyWithImpl(
-      _$CreateCategoriesLoadingImpl _value,
-      $Res Function(_$CreateCategoriesLoadingImpl) _then)
-      : super(_value, _then);
-}
 
-/// @nodoc
 
-class _$CreateCategoriesLoadingImpl implements CreateCategoriesLoading {
-  const _$CreateCategoriesLoadingImpl();
 
-  @override
-  String toString() {
-    return 'CategoryState.createCategoriesLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateCategoriesLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        getCategoriesSuccess,
-    required TResult Function(String id) updateCategoriesLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateCategoriesError,
-    required TResult Function(List<CategoryResponseData> data)
-        updateCategoriesSuccess,
-    required TResult Function() createCategoriesLoading,
-  }) {
-    return createCategoriesLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult? Function(String id)? updateCategoriesLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult? Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult? Function()? createCategoriesLoading,
-  }) {
-    return createCategoriesLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? getCategoriesSuccess,
-    TResult Function(String id)? updateCategoriesLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateCategoriesError,
-    TResult Function(List<CategoryResponseData> data)? updateCategoriesSuccess,
-    TResult Function()? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (createCategoriesLoading != null) {
-      return createCategoriesLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetCategoriesLoading value) getCategoriesLoading,
-    required TResult Function(GetCategoriesError value) getCategoriesError,
-    required TResult Function(GetCategoriesSuccess value) getCategoriesSuccess,
-    required TResult Function(UpdateCategoriesLoading value)
-        updateCategoriesLoading,
-    required TResult Function(UpdateCategoriesError value)
-        updateCategoriesError,
-    required TResult Function(UpdateCategoriesSuccess value)
-        updateCategoriesSuccess,
-    required TResult Function(CreateCategoriesLoading value)
-        createCategoriesLoading,
-  }) {
-    return createCategoriesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult? Function(GetCategoriesError value)? getCategoriesError,
-    TResult? Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult? Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult? Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult? Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult? Function(CreateCategoriesLoading value)? createCategoriesLoading,
-  }) {
-    return createCategoriesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetCategoriesLoading value)? getCategoriesLoading,
-    TResult Function(GetCategoriesError value)? getCategoriesError,
-    TResult Function(GetCategoriesSuccess value)? getCategoriesSuccess,
-    TResult Function(UpdateCategoriesLoading value)? updateCategoriesLoading,
-    TResult Function(UpdateCategoriesError value)? updateCategoriesError,
-    TResult Function(UpdateCategoriesSuccess value)? updateCategoriesSuccess,
-    TResult Function(CreateCategoriesLoading value)? createCategoriesLoading,
-    required TResult orElse(),
-  }) {
-    if (createCategoriesLoading != null) {
-      return createCategoriesLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CreateCategoriesLoading implements CategoryState {
-  const factory CreateCategoriesLoading() = _$CreateCategoriesLoadingImpl;
-}
+// dart format on

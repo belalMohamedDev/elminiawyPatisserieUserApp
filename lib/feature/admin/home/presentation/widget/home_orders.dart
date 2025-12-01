@@ -78,7 +78,7 @@ class HomeOrders extends StatelessWidget {
                             '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.pendingOrders ?? 0} ',
                         image: ImageAsset.orderWaiting,
                         cardContentColor: ColorManger.white,
-                        cardColor: const Color(0xffe68636).withOpacity(0.8),
+                        cardColor: const Color(0xffe68636).withValues(alpha: 0.8),
                         // isSalesToday: true,
                       ),
                     ),

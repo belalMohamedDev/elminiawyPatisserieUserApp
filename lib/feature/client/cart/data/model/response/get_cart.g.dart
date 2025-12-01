@@ -7,13 +7,13 @@ part of 'get_cart.dart';
 // **************************************************************************
 
 CartResponse _$CartResponseFromJson(Map<String, dynamic> json) => CartResponse(
-      status: json['status'] as bool?,
-      message: json['message'] as String?,
-      numOfCartItems: (json['numOfCartItems'] as num?)?.toInt(),
-      data: json['data'] == null
-          ? null
-          : GetCartDataResponse.fromJson(json['data'] as Map<String, dynamic>),
-    );
+  status: json['status'] as bool?,
+  message: json['message'] as String?,
+  numOfCartItems: (json['numOfCartItems'] as num?)?.toInt(),
+  data: json['data'] == null
+      ? null
+      : GetCartDataResponse.fromJson(json['data'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$CartResponseToJson(CartResponse instance) =>
     <String, dynamic>{
@@ -36,29 +36,29 @@ GetCartDataResponse _$GetCartDataResponseFromJson(Map<String, dynamic> json) =>
       shippingPrice: (json['shippingPrice'] as num?)?.toDouble(),
       taxPrice: (json['taxPrice'] as num?)?.toDouble(),
       totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
-      totalPriceAfterDiscount:
-          (json['totalPriceAfterDiscount'] as num?)?.toDouble(),
+      totalPriceAfterDiscount: (json['totalPriceAfterDiscount'] as num?)
+          ?.toDouble(),
     );
 
 Map<String, dynamic> _$GetCartDataResponseToJson(
-        GetCartDataResponse instance) =>
-    <String, dynamic>{
-      'sId': instance.sId,
-      'user': instance.user,
-      'cartItems': instance.cartItems,
-      'totalCartPrice': instance.totalCartPrice,
-      'shippingPrice': instance.shippingPrice,
-      'taxPrice': instance.taxPrice,
-      'totalOrderPrice': instance.totalOrderPrice,
-      'totalPriceAfterDiscount': instance.totalPriceAfterDiscount,
-    };
+  GetCartDataResponse instance,
+) => <String, dynamic>{
+  'sId': instance.sId,
+  'user': instance.user,
+  'cartItems': instance.cartItems,
+  'totalCartPrice': instance.totalCartPrice,
+  'shippingPrice': instance.shippingPrice,
+  'taxPrice': instance.taxPrice,
+  'totalOrderPrice': instance.totalOrderPrice,
+  'totalPriceAfterDiscount': instance.totalPriceAfterDiscount,
+};
 
 GetUserCart _$GetUserCartFromJson(Map<String, dynamic> json) => GetUserCart(
-      sId: json['sId'] as String?,
-      name: json['name'] as String?,
-      email: json['email'] as String?,
-      phone: json['phone'] as String?,
-    );
+  sId: json['sId'] as String?,
+  name: json['name'] as String?,
+  email: json['email'] as String?,
+  phone: json['phone'] as String?,
+);
 
 Map<String, dynamic> _$GetUserCartToJson(GetUserCart instance) =>
     <String, dynamic>{
@@ -69,14 +69,14 @@ Map<String, dynamic> _$GetUserCartToJson(GetUserCart instance) =>
     };
 
 GetCartItems _$GetCartItemsFromJson(Map<String, dynamic> json) => GetCartItems(
-      product: json['product'] == null
-          ? null
-          : GetCartProduct.fromJson(json['product'] as Map<String, dynamic>),
-      quantity: (json['quantity'] as num?)?.toInt(),
-      price: (json['price'] as num?)?.toDouble(),
-      sId: json['_id'] as String?,
-      totalItemPrice: (json['totalItemPrice'] as num?)?.toDouble(),
-    );
+  product: json['product'] == null
+      ? null
+      : GetCartProduct.fromJson(json['product'] as Map<String, dynamic>),
+  quantity: (json['quantity'] as num?)?.toInt(),
+  price: (json['price'] as num?)?.toDouble(),
+  sId: json['_id'] as String?,
+  totalItemPrice: (json['totalItemPrice'] as num?)?.toDouble(),
+);
 
 Map<String, dynamic> _$GetCartItemsToJson(GetCartItems instance) =>
     <String, dynamic>{

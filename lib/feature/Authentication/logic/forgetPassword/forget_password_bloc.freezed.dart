@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,6926 +9,2062 @@ part of 'forget_password_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$ForgetPasswordEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgetPasswordEvent);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ForgetPasswordEventCopyWith<$Res> {
-  factory $ForgetPasswordEventCopyWith(
-          ForgetPasswordEvent value, $Res Function(ForgetPasswordEvent) then) =
-      _$ForgetPasswordEventCopyWithImpl<$Res, ForgetPasswordEvent>;
+class $ForgetPasswordEventCopyWith<$Res>  {
+$ForgetPasswordEventCopyWith(ForgetPasswordEvent _, $Res Function(ForgetPasswordEvent) __);
 }
 
-/// @nodoc
-class _$ForgetPasswordEventCopyWithImpl<$Res, $Val extends ForgetPasswordEvent>
-    implements $ForgetPasswordEventCopyWith<$Res> {
-  _$ForgetPasswordEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [ForgetPasswordEvent].
+extension ForgetPasswordEventPatterns on ForgetPasswordEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Started value)?  started,TResult Function( UserForgetPasswordEmailAddressEvent value)?  userForgetPasswordEmailAddress,TResult Function( UserForgetPasswordButtonEvent value)?  userForgetPasswordButton,TResult Function( UserForgetPasswordOTPButtonEvent value)?  userForgetPasswordOTP,TResult Function( UserForgetPasswordVerifyButtonEvent value)?  userForgetPasswordVerifyButton,TResult Function( UserForgetNewPasswordEvent value)?  userForgetNewPassword,TResult Function( UserForgetNewPasswordButtonEvent value)?  userForgetNewPasswordButton,TResult Function( UserConfirmForgetNewPasswordEvent value)?  userConfirmForgetNewPassword,TResult Function( UserShowConfirmForgetNewPasswordEvent value)?  userShowConfirmForgetNewPassword,TResult Function( UserShowForgetNewPasswordEvent value)?  userShowForgetNewPassword,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Started() when started != null:
+return started(_that);case UserForgetPasswordEmailAddressEvent() when userForgetPasswordEmailAddress != null:
+return userForgetPasswordEmailAddress(_that);case UserForgetPasswordButtonEvent() when userForgetPasswordButton != null:
+return userForgetPasswordButton(_that);case UserForgetPasswordOTPButtonEvent() when userForgetPasswordOTP != null:
+return userForgetPasswordOTP(_that);case UserForgetPasswordVerifyButtonEvent() when userForgetPasswordVerifyButton != null:
+return userForgetPasswordVerifyButton(_that);case UserForgetNewPasswordEvent() when userForgetNewPassword != null:
+return userForgetNewPassword(_that);case UserForgetNewPasswordButtonEvent() when userForgetNewPasswordButton != null:
+return userForgetNewPasswordButton(_that);case UserConfirmForgetNewPasswordEvent() when userConfirmForgetNewPassword != null:
+return userConfirmForgetNewPassword(_that);case UserShowConfirmForgetNewPasswordEvent() when userShowConfirmForgetNewPassword != null:
+return userShowConfirmForgetNewPassword(_that);case UserShowForgetNewPasswordEvent() when userShowForgetNewPassword != null:
+return userShowForgetNewPassword(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Started value)  started,required TResult Function( UserForgetPasswordEmailAddressEvent value)  userForgetPasswordEmailAddress,required TResult Function( UserForgetPasswordButtonEvent value)  userForgetPasswordButton,required TResult Function( UserForgetPasswordOTPButtonEvent value)  userForgetPasswordOTP,required TResult Function( UserForgetPasswordVerifyButtonEvent value)  userForgetPasswordVerifyButton,required TResult Function( UserForgetNewPasswordEvent value)  userForgetNewPassword,required TResult Function( UserForgetNewPasswordButtonEvent value)  userForgetNewPasswordButton,required TResult Function( UserConfirmForgetNewPasswordEvent value)  userConfirmForgetNewPassword,required TResult Function( UserShowConfirmForgetNewPasswordEvent value)  userShowConfirmForgetNewPassword,required TResult Function( UserShowForgetNewPasswordEvent value)  userShowForgetNewPassword,}){
+final _that = this;
+switch (_that) {
+case _Started():
+return started(_that);case UserForgetPasswordEmailAddressEvent():
+return userForgetPasswordEmailAddress(_that);case UserForgetPasswordButtonEvent():
+return userForgetPasswordButton(_that);case UserForgetPasswordOTPButtonEvent():
+return userForgetPasswordOTP(_that);case UserForgetPasswordVerifyButtonEvent():
+return userForgetPasswordVerifyButton(_that);case UserForgetNewPasswordEvent():
+return userForgetNewPassword(_that);case UserForgetNewPasswordButtonEvent():
+return userForgetNewPasswordButton(_that);case UserConfirmForgetNewPasswordEvent():
+return userConfirmForgetNewPassword(_that);case UserShowConfirmForgetNewPasswordEvent():
+return userShowConfirmForgetNewPassword(_that);case UserShowForgetNewPasswordEvent():
+return userShowForgetNewPassword(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Started value)?  started,TResult? Function( UserForgetPasswordEmailAddressEvent value)?  userForgetPasswordEmailAddress,TResult? Function( UserForgetPasswordButtonEvent value)?  userForgetPasswordButton,TResult? Function( UserForgetPasswordOTPButtonEvent value)?  userForgetPasswordOTP,TResult? Function( UserForgetPasswordVerifyButtonEvent value)?  userForgetPasswordVerifyButton,TResult? Function( UserForgetNewPasswordEvent value)?  userForgetNewPassword,TResult? Function( UserForgetNewPasswordButtonEvent value)?  userForgetNewPasswordButton,TResult? Function( UserConfirmForgetNewPasswordEvent value)?  userConfirmForgetNewPassword,TResult? Function( UserShowConfirmForgetNewPasswordEvent value)?  userShowConfirmForgetNewPassword,TResult? Function( UserShowForgetNewPasswordEvent value)?  userShowForgetNewPassword,}){
+final _that = this;
+switch (_that) {
+case _Started() when started != null:
+return started(_that);case UserForgetPasswordEmailAddressEvent() when userForgetPasswordEmailAddress != null:
+return userForgetPasswordEmailAddress(_that);case UserForgetPasswordButtonEvent() when userForgetPasswordButton != null:
+return userForgetPasswordButton(_that);case UserForgetPasswordOTPButtonEvent() when userForgetPasswordOTP != null:
+return userForgetPasswordOTP(_that);case UserForgetPasswordVerifyButtonEvent() when userForgetPasswordVerifyButton != null:
+return userForgetPasswordVerifyButton(_that);case UserForgetNewPasswordEvent() when userForgetNewPassword != null:
+return userForgetNewPassword(_that);case UserForgetNewPasswordButtonEvent() when userForgetNewPasswordButton != null:
+return userForgetNewPasswordButton(_that);case UserConfirmForgetNewPasswordEvent() when userConfirmForgetNewPassword != null:
+return userConfirmForgetNewPassword(_that);case UserShowConfirmForgetNewPasswordEvent() when userShowConfirmForgetNewPassword != null:
+return userShowConfirmForgetNewPassword(_that);case UserShowForgetNewPasswordEvent() when userShowForgetNewPassword != null:
+return userShowForgetNewPassword(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  started,TResult Function( String value)?  userForgetPasswordEmailAddress,TResult Function()?  userForgetPasswordButton,TResult Function( String value)?  userForgetPasswordOTP,TResult Function()?  userForgetPasswordVerifyButton,TResult Function( String value)?  userForgetNewPassword,TResult Function()?  userForgetNewPasswordButton,TResult Function( String value)?  userConfirmForgetNewPassword,TResult Function()?  userShowConfirmForgetNewPassword,TResult Function()?  userShowForgetNewPassword,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Started() when started != null:
+return started();case UserForgetPasswordEmailAddressEvent() when userForgetPasswordEmailAddress != null:
+return userForgetPasswordEmailAddress(_that.value);case UserForgetPasswordButtonEvent() when userForgetPasswordButton != null:
+return userForgetPasswordButton();case UserForgetPasswordOTPButtonEvent() when userForgetPasswordOTP != null:
+return userForgetPasswordOTP(_that.value);case UserForgetPasswordVerifyButtonEvent() when userForgetPasswordVerifyButton != null:
+return userForgetPasswordVerifyButton();case UserForgetNewPasswordEvent() when userForgetNewPassword != null:
+return userForgetNewPassword(_that.value);case UserForgetNewPasswordButtonEvent() when userForgetNewPasswordButton != null:
+return userForgetNewPasswordButton();case UserConfirmForgetNewPasswordEvent() when userConfirmForgetNewPassword != null:
+return userConfirmForgetNewPassword(_that.value);case UserShowConfirmForgetNewPasswordEvent() when userShowConfirmForgetNewPassword != null:
+return userShowConfirmForgetNewPassword();case UserShowForgetNewPasswordEvent() when userShowForgetNewPassword != null:
+return userShowForgetNewPassword();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  started,required TResult Function( String value)  userForgetPasswordEmailAddress,required TResult Function()  userForgetPasswordButton,required TResult Function( String value)  userForgetPasswordOTP,required TResult Function()  userForgetPasswordVerifyButton,required TResult Function( String value)  userForgetNewPassword,required TResult Function()  userForgetNewPasswordButton,required TResult Function( String value)  userConfirmForgetNewPassword,required TResult Function()  userShowConfirmForgetNewPassword,required TResult Function()  userShowForgetNewPassword,}) {final _that = this;
+switch (_that) {
+case _Started():
+return started();case UserForgetPasswordEmailAddressEvent():
+return userForgetPasswordEmailAddress(_that.value);case UserForgetPasswordButtonEvent():
+return userForgetPasswordButton();case UserForgetPasswordOTPButtonEvent():
+return userForgetPasswordOTP(_that.value);case UserForgetPasswordVerifyButtonEvent():
+return userForgetPasswordVerifyButton();case UserForgetNewPasswordEvent():
+return userForgetNewPassword(_that.value);case UserForgetNewPasswordButtonEvent():
+return userForgetNewPasswordButton();case UserConfirmForgetNewPasswordEvent():
+return userConfirmForgetNewPassword(_that.value);case UserShowConfirmForgetNewPasswordEvent():
+return userShowConfirmForgetNewPassword();case UserShowForgetNewPasswordEvent():
+return userShowForgetNewPassword();case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  started,TResult? Function( String value)?  userForgetPasswordEmailAddress,TResult? Function()?  userForgetPasswordButton,TResult? Function( String value)?  userForgetPasswordOTP,TResult? Function()?  userForgetPasswordVerifyButton,TResult? Function( String value)?  userForgetNewPassword,TResult? Function()?  userForgetNewPasswordButton,TResult? Function( String value)?  userConfirmForgetNewPassword,TResult? Function()?  userShowConfirmForgetNewPassword,TResult? Function()?  userShowForgetNewPassword,}) {final _that = this;
+switch (_that) {
+case _Started() when started != null:
+return started();case UserForgetPasswordEmailAddressEvent() when userForgetPasswordEmailAddress != null:
+return userForgetPasswordEmailAddress(_that.value);case UserForgetPasswordButtonEvent() when userForgetPasswordButton != null:
+return userForgetPasswordButton();case UserForgetPasswordOTPButtonEvent() when userForgetPasswordOTP != null:
+return userForgetPasswordOTP(_that.value);case UserForgetPasswordVerifyButtonEvent() when userForgetPasswordVerifyButton != null:
+return userForgetPasswordVerifyButton();case UserForgetNewPasswordEvent() when userForgetNewPassword != null:
+return userForgetNewPassword(_that.value);case UserForgetNewPasswordButtonEvent() when userForgetNewPasswordButton != null:
+return userForgetNewPasswordButton();case UserConfirmForgetNewPasswordEvent() when userConfirmForgetNewPassword != null:
+return userConfirmForgetNewPassword(_that.value);case UserShowConfirmForgetNewPasswordEvent() when userShowConfirmForgetNewPassword != null:
+return userShowConfirmForgetNewPassword();case UserShowForgetNewPasswordEvent() when userShowForgetNewPassword != null:
+return userShowForgetNewPassword();case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
-
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.started()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return started?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements ForgetPasswordEvent {
-  const factory _Started() = _$StartedImpl;
-}
-
-/// @nodoc
-abstract class _$$UserForgetPasswordEmailAddressEventImplCopyWith<$Res> {
-  factory _$$UserForgetPasswordEmailAddressEventImplCopyWith(
-          _$UserForgetPasswordEmailAddressEventImpl value,
-          $Res Function(_$UserForgetPasswordEmailAddressEventImpl) then) =
-      __$$UserForgetPasswordEmailAddressEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
-}
-
-/// @nodoc
-class __$$UserForgetPasswordEmailAddressEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserForgetPasswordEmailAddressEventImpl>
-    implements _$$UserForgetPasswordEmailAddressEventImplCopyWith<$Res> {
-  __$$UserForgetPasswordEmailAddressEventImplCopyWithImpl(
-      _$UserForgetPasswordEmailAddressEventImpl _value,
-      $Res Function(_$UserForgetPasswordEmailAddressEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UserForgetPasswordEmailAddressEventImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserForgetPasswordEmailAddressEventImpl
-    implements UserForgetPasswordEmailAddressEvent {
-  const _$UserForgetPasswordEmailAddressEventImpl(this.value);
 
-  @override
-  final String value;
+class _Started implements ForgetPasswordEvent {
+  const _Started();
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userForgetPasswordEmailAddress(value: $value)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserForgetPasswordEmailAddressEventImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserForgetPasswordEmailAddressEventImplCopyWith<
-          _$UserForgetPasswordEmailAddressEventImpl>
-      get copyWith => __$$UserForgetPasswordEmailAddressEventImplCopyWithImpl<
-          _$UserForgetPasswordEmailAddressEventImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordEmailAddress(value);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordEmailAddress?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordEmailAddress != null) {
-      return userForgetPasswordEmailAddress(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordEmailAddress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordEmailAddress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordEmailAddress != null) {
-      return userForgetPasswordEmailAddress(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Started);
 }
 
-abstract class UserForgetPasswordEmailAddressEvent
-    implements ForgetPasswordEvent {
-  const factory UserForgetPasswordEmailAddressEvent(final String value) =
-      _$UserForgetPasswordEmailAddressEventImpl;
 
-  String get value;
-  @JsonKey(ignore: true)
-  _$$UserForgetPasswordEmailAddressEventImplCopyWith<
-          _$UserForgetPasswordEmailAddressEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.started()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class UserForgetPasswordEmailAddressEvent implements ForgetPasswordEvent {
+  const UserForgetPasswordEmailAddressEvent(this.value);
+  
+
+ final  String value;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserForgetPasswordEmailAddressEventCopyWith<UserForgetPasswordEmailAddressEvent> get copyWith => _$UserForgetPasswordEmailAddressEventCopyWithImpl<UserForgetPasswordEmailAddressEvent>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserForgetPasswordEmailAddressEvent&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userForgetPasswordEmailAddress(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserForgetPasswordButtonEventImplCopyWith<$Res> {
-  factory _$$UserForgetPasswordButtonEventImplCopyWith(
-          _$UserForgetPasswordButtonEventImpl value,
-          $Res Function(_$UserForgetPasswordButtonEventImpl) then) =
-      __$$UserForgetPasswordButtonEventImplCopyWithImpl<$Res>;
+abstract mixin class $UserForgetPasswordEmailAddressEventCopyWith<$Res> implements $ForgetPasswordEventCopyWith<$Res> {
+  factory $UserForgetPasswordEmailAddressEventCopyWith(UserForgetPasswordEmailAddressEvent value, $Res Function(UserForgetPasswordEmailAddressEvent) _then) = _$UserForgetPasswordEmailAddressEventCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserForgetPasswordEmailAddressEventCopyWithImpl<$Res>
+    implements $UserForgetPasswordEmailAddressEventCopyWith<$Res> {
+  _$UserForgetPasswordEmailAddressEventCopyWithImpl(this._self, this._then);
+
+  final UserForgetPasswordEmailAddressEvent _self;
+  final $Res Function(UserForgetPasswordEmailAddressEvent) _then;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserForgetPasswordEmailAddressEvent(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UserForgetPasswordButtonEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserForgetPasswordButtonEventImpl>
-    implements _$$UserForgetPasswordButtonEventImplCopyWith<$Res> {
-  __$$UserForgetPasswordButtonEventImplCopyWithImpl(
-      _$UserForgetPasswordButtonEventImpl _value,
-      $Res Function(_$UserForgetPasswordButtonEventImpl) _then)
-      : super(_value, _then);
+
 }
 
 /// @nodoc
 
-class _$UserForgetPasswordButtonEventImpl
-    implements UserForgetPasswordButtonEvent {
-  const _$UserForgetPasswordButtonEventImpl();
 
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userForgetPasswordButton()';
-  }
+class UserForgetPasswordButtonEvent implements ForgetPasswordEvent {
+  const UserForgetPasswordButtonEvent();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserForgetPasswordButtonEventImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordButton();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordButton?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordButton != null) {
-      return userForgetPasswordButton();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordButton(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordButton?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordButton != null) {
-      return userForgetPasswordButton(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserForgetPasswordButtonEvent);
 }
 
-abstract class UserForgetPasswordButtonEvent implements ForgetPasswordEvent {
-  const factory UserForgetPasswordButtonEvent() =
-      _$UserForgetPasswordButtonEventImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userForgetPasswordButton()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class UserForgetPasswordOTPButtonEvent implements ForgetPasswordEvent {
+  const UserForgetPasswordOTPButtonEvent(this.value);
+  
+
+ final  String value;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserForgetPasswordOTPButtonEventCopyWith<UserForgetPasswordOTPButtonEvent> get copyWith => _$UserForgetPasswordOTPButtonEventCopyWithImpl<UserForgetPasswordOTPButtonEvent>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserForgetPasswordOTPButtonEvent&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userForgetPasswordOTP(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserForgetPasswordOTPButtonEventImplCopyWith<$Res> {
-  factory _$$UserForgetPasswordOTPButtonEventImplCopyWith(
-          _$UserForgetPasswordOTPButtonEventImpl value,
-          $Res Function(_$UserForgetPasswordOTPButtonEventImpl) then) =
-      __$$UserForgetPasswordOTPButtonEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class $UserForgetPasswordOTPButtonEventCopyWith<$Res> implements $ForgetPasswordEventCopyWith<$Res> {
+  factory $UserForgetPasswordOTPButtonEventCopyWith(UserForgetPasswordOTPButtonEvent value, $Res Function(UserForgetPasswordOTPButtonEvent) _then) = _$UserForgetPasswordOTPButtonEventCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserForgetPasswordOTPButtonEventCopyWithImpl<$Res>
+    implements $UserForgetPasswordOTPButtonEventCopyWith<$Res> {
+  _$UserForgetPasswordOTPButtonEventCopyWithImpl(this._self, this._then);
+
+  final UserForgetPasswordOTPButtonEvent _self;
+  final $Res Function(UserForgetPasswordOTPButtonEvent) _then;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserForgetPasswordOTPButtonEvent(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UserForgetPasswordOTPButtonEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserForgetPasswordOTPButtonEventImpl>
-    implements _$$UserForgetPasswordOTPButtonEventImplCopyWith<$Res> {
-  __$$UserForgetPasswordOTPButtonEventImplCopyWithImpl(
-      _$UserForgetPasswordOTPButtonEventImpl _value,
-      $Res Function(_$UserForgetPasswordOTPButtonEventImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UserForgetPasswordOTPButtonEventImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserForgetPasswordOTPButtonEventImpl
-    implements UserForgetPasswordOTPButtonEvent {
-  const _$UserForgetPasswordOTPButtonEventImpl(this.value);
 
-  @override
-  final String value;
+class UserForgetPasswordVerifyButtonEvent implements ForgetPasswordEvent {
+  const UserForgetPasswordVerifyButtonEvent();
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userForgetPasswordOTP(value: $value)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserForgetPasswordOTPButtonEventImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserForgetPasswordOTPButtonEventImplCopyWith<
-          _$UserForgetPasswordOTPButtonEventImpl>
-      get copyWith => __$$UserForgetPasswordOTPButtonEventImplCopyWithImpl<
-          _$UserForgetPasswordOTPButtonEventImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordOTP(value);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordOTP?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordOTP != null) {
-      return userForgetPasswordOTP(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordOTP(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordOTP?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordOTP != null) {
-      return userForgetPasswordOTP(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserForgetPasswordVerifyButtonEvent);
 }
 
-abstract class UserForgetPasswordOTPButtonEvent implements ForgetPasswordEvent {
-  const factory UserForgetPasswordOTPButtonEvent(final String value) =
-      _$UserForgetPasswordOTPButtonEventImpl;
 
-  String get value;
-  @JsonKey(ignore: true)
-  _$$UserForgetPasswordOTPButtonEventImplCopyWith<
-          _$UserForgetPasswordOTPButtonEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userForgetPasswordVerifyButton()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class UserForgetNewPasswordEvent implements ForgetPasswordEvent {
+  const UserForgetNewPasswordEvent(this.value);
+  
+
+ final  String value;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserForgetNewPasswordEventCopyWith<UserForgetNewPasswordEvent> get copyWith => _$UserForgetNewPasswordEventCopyWithImpl<UserForgetNewPasswordEvent>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserForgetNewPasswordEvent&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userForgetNewPassword(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserForgetPasswordVerifyButtonEventImplCopyWith<$Res> {
-  factory _$$UserForgetPasswordVerifyButtonEventImplCopyWith(
-          _$UserForgetPasswordVerifyButtonEventImpl value,
-          $Res Function(_$UserForgetPasswordVerifyButtonEventImpl) then) =
-      __$$UserForgetPasswordVerifyButtonEventImplCopyWithImpl<$Res>;
+abstract mixin class $UserForgetNewPasswordEventCopyWith<$Res> implements $ForgetPasswordEventCopyWith<$Res> {
+  factory $UserForgetNewPasswordEventCopyWith(UserForgetNewPasswordEvent value, $Res Function(UserForgetNewPasswordEvent) _then) = _$UserForgetNewPasswordEventCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserForgetNewPasswordEventCopyWithImpl<$Res>
+    implements $UserForgetNewPasswordEventCopyWith<$Res> {
+  _$UserForgetNewPasswordEventCopyWithImpl(this._self, this._then);
+
+  final UserForgetNewPasswordEvent _self;
+  final $Res Function(UserForgetNewPasswordEvent) _then;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserForgetNewPasswordEvent(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UserForgetPasswordVerifyButtonEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserForgetPasswordVerifyButtonEventImpl>
-    implements _$$UserForgetPasswordVerifyButtonEventImplCopyWith<$Res> {
-  __$$UserForgetPasswordVerifyButtonEventImplCopyWithImpl(
-      _$UserForgetPasswordVerifyButtonEventImpl _value,
-      $Res Function(_$UserForgetPasswordVerifyButtonEventImpl) _then)
-      : super(_value, _then);
+
 }
 
 /// @nodoc
 
-class _$UserForgetPasswordVerifyButtonEventImpl
-    implements UserForgetPasswordVerifyButtonEvent {
-  const _$UserForgetPasswordVerifyButtonEventImpl();
 
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userForgetPasswordVerifyButton()';
-  }
+class UserForgetNewPasswordButtonEvent implements ForgetPasswordEvent {
+  const UserForgetNewPasswordButtonEvent();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserForgetPasswordVerifyButtonEventImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordVerifyButton();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordVerifyButton?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordVerifyButton != null) {
-      return userForgetPasswordVerifyButton();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordVerifyButton(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userForgetPasswordVerifyButton?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetPasswordVerifyButton != null) {
-      return userForgetPasswordVerifyButton(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserForgetNewPasswordButtonEvent);
 }
 
-abstract class UserForgetPasswordVerifyButtonEvent
-    implements ForgetPasswordEvent {
-  const factory UserForgetPasswordVerifyButtonEvent() =
-      _$UserForgetPasswordVerifyButtonEventImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userForgetNewPasswordButton()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class UserConfirmForgetNewPasswordEvent implements ForgetPasswordEvent {
+  const UserConfirmForgetNewPasswordEvent(this.value);
+  
+
+ final  String value;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserConfirmForgetNewPasswordEventCopyWith<UserConfirmForgetNewPasswordEvent> get copyWith => _$UserConfirmForgetNewPasswordEventCopyWithImpl<UserConfirmForgetNewPasswordEvent>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserConfirmForgetNewPasswordEvent&&(identical(other.value, value) || other.value == value));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userConfirmForgetNewPassword(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserForgetNewPasswordEventImplCopyWith<$Res> {
-  factory _$$UserForgetNewPasswordEventImplCopyWith(
-          _$UserForgetNewPasswordEventImpl value,
-          $Res Function(_$UserForgetNewPasswordEventImpl) then) =
-      __$$UserForgetNewPasswordEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class $UserConfirmForgetNewPasswordEventCopyWith<$Res> implements $ForgetPasswordEventCopyWith<$Res> {
+  factory $UserConfirmForgetNewPasswordEventCopyWith(UserConfirmForgetNewPasswordEvent value, $Res Function(UserConfirmForgetNewPasswordEvent) _then) = _$UserConfirmForgetNewPasswordEventCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserConfirmForgetNewPasswordEventCopyWithImpl<$Res>
+    implements $UserConfirmForgetNewPasswordEventCopyWith<$Res> {
+  _$UserConfirmForgetNewPasswordEventCopyWithImpl(this._self, this._then);
+
+  final UserConfirmForgetNewPasswordEvent _self;
+  final $Res Function(UserConfirmForgetNewPasswordEvent) _then;
+
+/// Create a copy of ForgetPasswordEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserConfirmForgetNewPasswordEvent(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UserForgetNewPasswordEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserForgetNewPasswordEventImpl>
-    implements _$$UserForgetNewPasswordEventImplCopyWith<$Res> {
-  __$$UserForgetNewPasswordEventImplCopyWithImpl(
-      _$UserForgetNewPasswordEventImpl _value,
-      $Res Function(_$UserForgetNewPasswordEventImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UserForgetNewPasswordEventImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserForgetNewPasswordEventImpl implements UserForgetNewPasswordEvent {
-  const _$UserForgetNewPasswordEventImpl(this.value);
 
-  @override
-  final String value;
+class UserShowConfirmForgetNewPasswordEvent implements ForgetPasswordEvent {
+  const UserShowConfirmForgetNewPasswordEvent();
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userForgetNewPassword(value: $value)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserForgetNewPasswordEventImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserForgetNewPasswordEventImplCopyWith<_$UserForgetNewPasswordEventImpl>
-      get copyWith => __$$UserForgetNewPasswordEventImplCopyWithImpl<
-          _$UserForgetNewPasswordEventImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userForgetNewPassword(value);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userForgetNewPassword?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetNewPassword != null) {
-      return userForgetNewPassword(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userForgetNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userForgetNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetNewPassword != null) {
-      return userForgetNewPassword(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserShowConfirmForgetNewPasswordEvent);
 }
 
-abstract class UserForgetNewPasswordEvent implements ForgetPasswordEvent {
-  const factory UserForgetNewPasswordEvent(final String value) =
-      _$UserForgetNewPasswordEventImpl;
 
-  String get value;
-  @JsonKey(ignore: true)
-  _$$UserForgetNewPasswordEventImplCopyWith<_$UserForgetNewPasswordEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userShowConfirmForgetNewPassword()';
 }
 
-/// @nodoc
-abstract class _$$UserForgetNewPasswordButtonEventImplCopyWith<$Res> {
-  factory _$$UserForgetNewPasswordButtonEventImplCopyWith(
-          _$UserForgetNewPasswordButtonEventImpl value,
-          $Res Function(_$UserForgetNewPasswordButtonEventImpl) then) =
-      __$$UserForgetNewPasswordButtonEventImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$UserForgetNewPasswordButtonEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserForgetNewPasswordButtonEventImpl>
-    implements _$$UserForgetNewPasswordButtonEventImplCopyWith<$Res> {
-  __$$UserForgetNewPasswordButtonEventImplCopyWithImpl(
-      _$UserForgetNewPasswordButtonEventImpl _value,
-      $Res Function(_$UserForgetNewPasswordButtonEventImpl) _then)
-      : super(_value, _then);
-}
+
+
 
 /// @nodoc
 
-class _$UserForgetNewPasswordButtonEventImpl
-    implements UserForgetNewPasswordButtonEvent {
-  const _$UserForgetNewPasswordButtonEventImpl();
 
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userForgetNewPasswordButton()';
-  }
+class UserShowForgetNewPasswordEvent implements ForgetPasswordEvent {
+  const UserShowForgetNewPasswordEvent();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserForgetNewPasswordButtonEventImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userForgetNewPasswordButton();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userForgetNewPasswordButton?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetNewPasswordButton != null) {
-      return userForgetNewPasswordButton();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userForgetNewPasswordButton(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userForgetNewPasswordButton?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userForgetNewPasswordButton != null) {
-      return userForgetNewPasswordButton(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserShowForgetNewPasswordEvent);
 }
 
-abstract class UserForgetNewPasswordButtonEvent implements ForgetPasswordEvent {
-  const factory UserForgetNewPasswordButtonEvent() =
-      _$UserForgetNewPasswordButtonEventImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordEvent.userShowForgetNewPassword()';
 }
 
-/// @nodoc
-abstract class _$$UserConfirmForgetNewPasswordEventImplCopyWith<$Res> {
-  factory _$$UserConfirmForgetNewPasswordEventImplCopyWith(
-          _$UserConfirmForgetNewPasswordEventImpl value,
-          $Res Function(_$UserConfirmForgetNewPasswordEventImpl) then) =
-      __$$UserConfirmForgetNewPasswordEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+
 }
 
-/// @nodoc
-class __$$UserConfirmForgetNewPasswordEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserConfirmForgetNewPasswordEventImpl>
-    implements _$$UserConfirmForgetNewPasswordEventImplCopyWith<$Res> {
-  __$$UserConfirmForgetNewPasswordEventImplCopyWithImpl(
-      _$UserConfirmForgetNewPasswordEventImpl _value,
-      $Res Function(_$UserConfirmForgetNewPasswordEventImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UserConfirmForgetNewPasswordEventImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
-/// @nodoc
-
-class _$UserConfirmForgetNewPasswordEventImpl
-    implements UserConfirmForgetNewPasswordEvent {
-  const _$UserConfirmForgetNewPasswordEventImpl(this.value);
-
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userConfirmForgetNewPassword(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserConfirmForgetNewPasswordEventImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserConfirmForgetNewPasswordEventImplCopyWith<
-          _$UserConfirmForgetNewPasswordEventImpl>
-      get copyWith => __$$UserConfirmForgetNewPasswordEventImplCopyWithImpl<
-          _$UserConfirmForgetNewPasswordEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userConfirmForgetNewPassword(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userConfirmForgetNewPassword?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userConfirmForgetNewPassword != null) {
-      return userConfirmForgetNewPassword(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userConfirmForgetNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userConfirmForgetNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userConfirmForgetNewPassword != null) {
-      return userConfirmForgetNewPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserConfirmForgetNewPasswordEvent
-    implements ForgetPasswordEvent {
-  const factory UserConfirmForgetNewPasswordEvent(final String value) =
-      _$UserConfirmForgetNewPasswordEventImpl;
-
-  String get value;
-  @JsonKey(ignore: true)
-  _$$UserConfirmForgetNewPasswordEventImplCopyWith<
-          _$UserConfirmForgetNewPasswordEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UserShowConfirmForgetNewPasswordEventImplCopyWith<$Res> {
-  factory _$$UserShowConfirmForgetNewPasswordEventImplCopyWith(
-          _$UserShowConfirmForgetNewPasswordEventImpl value,
-          $Res Function(_$UserShowConfirmForgetNewPasswordEventImpl) then) =
-      __$$UserShowConfirmForgetNewPasswordEventImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UserShowConfirmForgetNewPasswordEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserShowConfirmForgetNewPasswordEventImpl>
-    implements _$$UserShowConfirmForgetNewPasswordEventImplCopyWith<$Res> {
-  __$$UserShowConfirmForgetNewPasswordEventImplCopyWithImpl(
-      _$UserShowConfirmForgetNewPasswordEventImpl _value,
-      $Res Function(_$UserShowConfirmForgetNewPasswordEventImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$UserShowConfirmForgetNewPasswordEventImpl
-    implements UserShowConfirmForgetNewPasswordEvent {
-  const _$UserShowConfirmForgetNewPasswordEventImpl();
-
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userShowConfirmForgetNewPassword()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserShowConfirmForgetNewPasswordEventImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userShowConfirmForgetNewPassword();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userShowConfirmForgetNewPassword?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userShowConfirmForgetNewPassword != null) {
-      return userShowConfirmForgetNewPassword();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userShowConfirmForgetNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userShowConfirmForgetNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userShowConfirmForgetNewPassword != null) {
-      return userShowConfirmForgetNewPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserShowConfirmForgetNewPasswordEvent
-    implements ForgetPasswordEvent {
-  const factory UserShowConfirmForgetNewPasswordEvent() =
-      _$UserShowConfirmForgetNewPasswordEventImpl;
-}
-
-/// @nodoc
-abstract class _$$UserShowForgetNewPasswordEventImplCopyWith<$Res> {
-  factory _$$UserShowForgetNewPasswordEventImplCopyWith(
-          _$UserShowForgetNewPasswordEventImpl value,
-          $Res Function(_$UserShowForgetNewPasswordEventImpl) then) =
-      __$$UserShowForgetNewPasswordEventImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UserShowForgetNewPasswordEventImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordEventCopyWithImpl<$Res,
-        _$UserShowForgetNewPasswordEventImpl>
-    implements _$$UserShowForgetNewPasswordEventImplCopyWith<$Res> {
-  __$$UserShowForgetNewPasswordEventImplCopyWithImpl(
-      _$UserShowForgetNewPasswordEventImpl _value,
-      $Res Function(_$UserShowForgetNewPasswordEventImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$UserShowForgetNewPasswordEventImpl
-    implements UserShowForgetNewPasswordEvent {
-  const _$UserShowForgetNewPasswordEventImpl();
-
-  @override
-  String toString() {
-    return 'ForgetPasswordEvent.userShowForgetNewPassword()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserShowForgetNewPasswordEventImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String value) userForgetPasswordEmailAddress,
-    required TResult Function() userForgetPasswordButton,
-    required TResult Function(String value) userForgetPasswordOTP,
-    required TResult Function() userForgetPasswordVerifyButton,
-    required TResult Function(String value) userForgetNewPassword,
-    required TResult Function() userForgetNewPasswordButton,
-    required TResult Function(String value) userConfirmForgetNewPassword,
-    required TResult Function() userShowConfirmForgetNewPassword,
-    required TResult Function() userShowForgetNewPassword,
-  }) {
-    return userShowForgetNewPassword();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String value)? userForgetPasswordEmailAddress,
-    TResult? Function()? userForgetPasswordButton,
-    TResult? Function(String value)? userForgetPasswordOTP,
-    TResult? Function()? userForgetPasswordVerifyButton,
-    TResult? Function(String value)? userForgetNewPassword,
-    TResult? Function()? userForgetNewPasswordButton,
-    TResult? Function(String value)? userConfirmForgetNewPassword,
-    TResult? Function()? userShowConfirmForgetNewPassword,
-    TResult? Function()? userShowForgetNewPassword,
-  }) {
-    return userShowForgetNewPassword?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String value)? userForgetPasswordEmailAddress,
-    TResult Function()? userForgetPasswordButton,
-    TResult Function(String value)? userForgetPasswordOTP,
-    TResult Function()? userForgetPasswordVerifyButton,
-    TResult Function(String value)? userForgetNewPassword,
-    TResult Function()? userForgetNewPasswordButton,
-    TResult Function(String value)? userConfirmForgetNewPassword,
-    TResult Function()? userShowConfirmForgetNewPassword,
-    TResult Function()? userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userShowForgetNewPassword != null) {
-      return userShowForgetNewPassword();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(UserForgetPasswordEmailAddressEvent value)
-        userForgetPasswordEmailAddress,
-    required TResult Function(UserForgetPasswordButtonEvent value)
-        userForgetPasswordButton,
-    required TResult Function(UserForgetPasswordOTPButtonEvent value)
-        userForgetPasswordOTP,
-    required TResult Function(UserForgetPasswordVerifyButtonEvent value)
-        userForgetPasswordVerifyButton,
-    required TResult Function(UserForgetNewPasswordEvent value)
-        userForgetNewPassword,
-    required TResult Function(UserForgetNewPasswordButtonEvent value)
-        userForgetNewPasswordButton,
-    required TResult Function(UserConfirmForgetNewPasswordEvent value)
-        userConfirmForgetNewPassword,
-    required TResult Function(UserShowConfirmForgetNewPasswordEvent value)
-        userShowConfirmForgetNewPassword,
-    required TResult Function(UserShowForgetNewPasswordEvent value)
-        userShowForgetNewPassword,
-  }) {
-    return userShowForgetNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult? Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult? Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult? Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult? Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult? Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult? Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult? Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult? Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-  }) {
-    return userShowForgetNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(UserForgetPasswordEmailAddressEvent value)?
-        userForgetPasswordEmailAddress,
-    TResult Function(UserForgetPasswordButtonEvent value)?
-        userForgetPasswordButton,
-    TResult Function(UserForgetPasswordOTPButtonEvent value)?
-        userForgetPasswordOTP,
-    TResult Function(UserForgetPasswordVerifyButtonEvent value)?
-        userForgetPasswordVerifyButton,
-    TResult Function(UserForgetNewPasswordEvent value)? userForgetNewPassword,
-    TResult Function(UserForgetNewPasswordButtonEvent value)?
-        userForgetNewPasswordButton,
-    TResult Function(UserConfirmForgetNewPasswordEvent value)?
-        userConfirmForgetNewPassword,
-    TResult Function(UserShowConfirmForgetNewPasswordEvent value)?
-        userShowConfirmForgetNewPassword,
-    TResult Function(UserShowForgetNewPasswordEvent value)?
-        userShowForgetNewPassword,
-    required TResult orElse(),
-  }) {
-    if (userShowForgetNewPassword != null) {
-      return userShowForgetNewPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserShowForgetNewPasswordEvent implements ForgetPasswordEvent {
-  const factory UserShowForgetNewPasswordEvent() =
-      _$UserShowForgetNewPasswordEventImpl;
-}
 
 /// @nodoc
 mixin _$ForgetPasswordState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgetPasswordState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ForgetPasswordStateCopyWith<$Res> {
-  factory $ForgetPasswordStateCopyWith(
-          ForgetPasswordState value, $Res Function(ForgetPasswordState) then) =
-      _$ForgetPasswordStateCopyWithImpl<$Res, ForgetPasswordState>;
+class $ForgetPasswordStateCopyWith<$Res>  {
+$ForgetPasswordStateCopyWith(ForgetPasswordState _, $Res Function(ForgetPasswordState) __);
 }
 
-/// @nodoc
-class _$ForgetPasswordStateCopyWithImpl<$Res, $Val extends ForgetPasswordState>
-    implements $ForgetPasswordStateCopyWith<$Res> {
-  _$ForgetPasswordStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [ForgetPasswordState].
+extension ForgetPasswordStatePatterns on ForgetPasswordState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( ForgetPasswordLoadingData value)?  loading,TResult Function( ForgetPasswordButtonErrorData value)?  error,TResult Function( ForgetPasswordButtonSuccessData value)?  success,TResult Function( UserForgetEmailAddress value)?  userForgetEmailAddress,TResult Function( ContinueForgetButtonValidator value)?  userForgetButtonValidator,TResult Function( VerifyCodeLoadingData value)?  verifyCodeLoading,TResult Function( VerifyCodeButtonErrorData value)?  verifyCodeError,TResult Function( VerifyCodeButtonSuccessData value)?  verifyCodeSuccess,TResult Function( OtpVerifyCode value)?  otpVerifyCode,TResult Function( VerifyButtonValidator value)?  verifyButtonValidator,TResult Function( NewPasswordLoadingData value)?  newPasswordLoading,TResult Function( NewPasswordButtonErrorData value)?  newPasswordError,TResult Function( NewPasswordButtonSuccessData value)?  newPasswordSuccess,TResult Function( UserNewPassword value)?  userNewPassword,TResult Function( UserConfirmNewPassword value)?  userConfirmNewPassword,TResult Function( ShowNewPassword value)?  showNewPassword,TResult Function( ShowConfirmNewPassword value)?  showConfirmNewPassword,TResult Function( CreateNewPasswordValidator value)?  createNewPasswordValidator,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case ForgetPasswordLoadingData() when loading != null:
+return loading(_that);case ForgetPasswordButtonErrorData() when error != null:
+return error(_that);case ForgetPasswordButtonSuccessData() when success != null:
+return success(_that);case UserForgetEmailAddress() when userForgetEmailAddress != null:
+return userForgetEmailAddress(_that);case ContinueForgetButtonValidator() when userForgetButtonValidator != null:
+return userForgetButtonValidator(_that);case VerifyCodeLoadingData() when verifyCodeLoading != null:
+return verifyCodeLoading(_that);case VerifyCodeButtonErrorData() when verifyCodeError != null:
+return verifyCodeError(_that);case VerifyCodeButtonSuccessData() when verifyCodeSuccess != null:
+return verifyCodeSuccess(_that);case OtpVerifyCode() when otpVerifyCode != null:
+return otpVerifyCode(_that);case VerifyButtonValidator() when verifyButtonValidator != null:
+return verifyButtonValidator(_that);case NewPasswordLoadingData() when newPasswordLoading != null:
+return newPasswordLoading(_that);case NewPasswordButtonErrorData() when newPasswordError != null:
+return newPasswordError(_that);case NewPasswordButtonSuccessData() when newPasswordSuccess != null:
+return newPasswordSuccess(_that);case UserNewPassword() when userNewPassword != null:
+return userNewPassword(_that);case UserConfirmNewPassword() when userConfirmNewPassword != null:
+return userConfirmNewPassword(_that);case ShowNewPassword() when showNewPassword != null:
+return showNewPassword(_that);case ShowConfirmNewPassword() when showConfirmNewPassword != null:
+return showConfirmNewPassword(_that);case CreateNewPasswordValidator() when createNewPasswordValidator != null:
+return createNewPasswordValidator(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( ForgetPasswordLoadingData value)  loading,required TResult Function( ForgetPasswordButtonErrorData value)  error,required TResult Function( ForgetPasswordButtonSuccessData value)  success,required TResult Function( UserForgetEmailAddress value)  userForgetEmailAddress,required TResult Function( ContinueForgetButtonValidator value)  userForgetButtonValidator,required TResult Function( VerifyCodeLoadingData value)  verifyCodeLoading,required TResult Function( VerifyCodeButtonErrorData value)  verifyCodeError,required TResult Function( VerifyCodeButtonSuccessData value)  verifyCodeSuccess,required TResult Function( OtpVerifyCode value)  otpVerifyCode,required TResult Function( VerifyButtonValidator value)  verifyButtonValidator,required TResult Function( NewPasswordLoadingData value)  newPasswordLoading,required TResult Function( NewPasswordButtonErrorData value)  newPasswordError,required TResult Function( NewPasswordButtonSuccessData value)  newPasswordSuccess,required TResult Function( UserNewPassword value)  userNewPassword,required TResult Function( UserConfirmNewPassword value)  userConfirmNewPassword,required TResult Function( ShowNewPassword value)  showNewPassword,required TResult Function( ShowConfirmNewPassword value)  showConfirmNewPassword,required TResult Function( CreateNewPasswordValidator value)  createNewPasswordValidator,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case ForgetPasswordLoadingData():
+return loading(_that);case ForgetPasswordButtonErrorData():
+return error(_that);case ForgetPasswordButtonSuccessData():
+return success(_that);case UserForgetEmailAddress():
+return userForgetEmailAddress(_that);case ContinueForgetButtonValidator():
+return userForgetButtonValidator(_that);case VerifyCodeLoadingData():
+return verifyCodeLoading(_that);case VerifyCodeButtonErrorData():
+return verifyCodeError(_that);case VerifyCodeButtonSuccessData():
+return verifyCodeSuccess(_that);case OtpVerifyCode():
+return otpVerifyCode(_that);case VerifyButtonValidator():
+return verifyButtonValidator(_that);case NewPasswordLoadingData():
+return newPasswordLoading(_that);case NewPasswordButtonErrorData():
+return newPasswordError(_that);case NewPasswordButtonSuccessData():
+return newPasswordSuccess(_that);case UserNewPassword():
+return userNewPassword(_that);case UserConfirmNewPassword():
+return userConfirmNewPassword(_that);case ShowNewPassword():
+return showNewPassword(_that);case ShowConfirmNewPassword():
+return showConfirmNewPassword(_that);case CreateNewPasswordValidator():
+return createNewPasswordValidator(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( ForgetPasswordLoadingData value)?  loading,TResult? Function( ForgetPasswordButtonErrorData value)?  error,TResult? Function( ForgetPasswordButtonSuccessData value)?  success,TResult? Function( UserForgetEmailAddress value)?  userForgetEmailAddress,TResult? Function( ContinueForgetButtonValidator value)?  userForgetButtonValidator,TResult? Function( VerifyCodeLoadingData value)?  verifyCodeLoading,TResult? Function( VerifyCodeButtonErrorData value)?  verifyCodeError,TResult? Function( VerifyCodeButtonSuccessData value)?  verifyCodeSuccess,TResult? Function( OtpVerifyCode value)?  otpVerifyCode,TResult? Function( VerifyButtonValidator value)?  verifyButtonValidator,TResult? Function( NewPasswordLoadingData value)?  newPasswordLoading,TResult? Function( NewPasswordButtonErrorData value)?  newPasswordError,TResult? Function( NewPasswordButtonSuccessData value)?  newPasswordSuccess,TResult? Function( UserNewPassword value)?  userNewPassword,TResult? Function( UserConfirmNewPassword value)?  userConfirmNewPassword,TResult? Function( ShowNewPassword value)?  showNewPassword,TResult? Function( ShowConfirmNewPassword value)?  showConfirmNewPassword,TResult? Function( CreateNewPasswordValidator value)?  createNewPasswordValidator,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case ForgetPasswordLoadingData() when loading != null:
+return loading(_that);case ForgetPasswordButtonErrorData() when error != null:
+return error(_that);case ForgetPasswordButtonSuccessData() when success != null:
+return success(_that);case UserForgetEmailAddress() when userForgetEmailAddress != null:
+return userForgetEmailAddress(_that);case ContinueForgetButtonValidator() when userForgetButtonValidator != null:
+return userForgetButtonValidator(_that);case VerifyCodeLoadingData() when verifyCodeLoading != null:
+return verifyCodeLoading(_that);case VerifyCodeButtonErrorData() when verifyCodeError != null:
+return verifyCodeError(_that);case VerifyCodeButtonSuccessData() when verifyCodeSuccess != null:
+return verifyCodeSuccess(_that);case OtpVerifyCode() when otpVerifyCode != null:
+return otpVerifyCode(_that);case VerifyButtonValidator() when verifyButtonValidator != null:
+return verifyButtonValidator(_that);case NewPasswordLoadingData() when newPasswordLoading != null:
+return newPasswordLoading(_that);case NewPasswordButtonErrorData() when newPasswordError != null:
+return newPasswordError(_that);case NewPasswordButtonSuccessData() when newPasswordSuccess != null:
+return newPasswordSuccess(_that);case UserNewPassword() when userNewPassword != null:
+return userNewPassword(_that);case UserConfirmNewPassword() when userConfirmNewPassword != null:
+return userConfirmNewPassword(_that);case ShowNewPassword() when showNewPassword != null:
+return showNewPassword(_that);case ShowConfirmNewPassword() when showConfirmNewPassword != null:
+return showConfirmNewPassword(_that);case CreateNewPasswordValidator() when createNewPasswordValidator != null:
+return createNewPasswordValidator(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( ApiErrorModel apiErrorModel)?  error,TResult Function( ApiSuccessGeneralModel data)?  success,TResult Function( String value)?  userForgetEmailAddress,TResult Function( bool value)?  userForgetButtonValidator,TResult Function()?  verifyCodeLoading,TResult Function( ApiErrorModel apiErrorModel)?  verifyCodeError,TResult Function( ApiSuccessGeneralModel data)?  verifyCodeSuccess,TResult Function( String? value)?  otpVerifyCode,TResult Function( bool value)?  verifyButtonValidator,TResult Function()?  newPasswordLoading,TResult Function( ApiErrorModel apiErrorModel)?  newPasswordError,TResult Function( AuthResponse data)?  newPasswordSuccess,TResult Function( String value)?  userNewPassword,TResult Function( String value)?  userConfirmNewPassword,TResult Function( bool value)?  showNewPassword,TResult Function( bool value)?  showConfirmNewPassword,TResult Function( bool value)?  createNewPasswordValidator,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case ForgetPasswordLoadingData() when loading != null:
+return loading();case ForgetPasswordButtonErrorData() when error != null:
+return error(_that.apiErrorModel);case ForgetPasswordButtonSuccessData() when success != null:
+return success(_that.data);case UserForgetEmailAddress() when userForgetEmailAddress != null:
+return userForgetEmailAddress(_that.value);case ContinueForgetButtonValidator() when userForgetButtonValidator != null:
+return userForgetButtonValidator(_that.value);case VerifyCodeLoadingData() when verifyCodeLoading != null:
+return verifyCodeLoading();case VerifyCodeButtonErrorData() when verifyCodeError != null:
+return verifyCodeError(_that.apiErrorModel);case VerifyCodeButtonSuccessData() when verifyCodeSuccess != null:
+return verifyCodeSuccess(_that.data);case OtpVerifyCode() when otpVerifyCode != null:
+return otpVerifyCode(_that.value);case VerifyButtonValidator() when verifyButtonValidator != null:
+return verifyButtonValidator(_that.value);case NewPasswordLoadingData() when newPasswordLoading != null:
+return newPasswordLoading();case NewPasswordButtonErrorData() when newPasswordError != null:
+return newPasswordError(_that.apiErrorModel);case NewPasswordButtonSuccessData() when newPasswordSuccess != null:
+return newPasswordSuccess(_that.data);case UserNewPassword() when userNewPassword != null:
+return userNewPassword(_that.value);case UserConfirmNewPassword() when userConfirmNewPassword != null:
+return userConfirmNewPassword(_that.value);case ShowNewPassword() when showNewPassword != null:
+return showNewPassword(_that.value);case ShowConfirmNewPassword() when showConfirmNewPassword != null:
+return showConfirmNewPassword(_that.value);case CreateNewPasswordValidator() when createNewPasswordValidator != null:
+return createNewPasswordValidator(_that.value);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( ApiErrorModel apiErrorModel)  error,required TResult Function( ApiSuccessGeneralModel data)  success,required TResult Function( String value)  userForgetEmailAddress,required TResult Function( bool value)  userForgetButtonValidator,required TResult Function()  verifyCodeLoading,required TResult Function( ApiErrorModel apiErrorModel)  verifyCodeError,required TResult Function( ApiSuccessGeneralModel data)  verifyCodeSuccess,required TResult Function( String? value)  otpVerifyCode,required TResult Function( bool value)  verifyButtonValidator,required TResult Function()  newPasswordLoading,required TResult Function( ApiErrorModel apiErrorModel)  newPasswordError,required TResult Function( AuthResponse data)  newPasswordSuccess,required TResult Function( String value)  userNewPassword,required TResult Function( String value)  userConfirmNewPassword,required TResult Function( bool value)  showNewPassword,required TResult Function( bool value)  showConfirmNewPassword,required TResult Function( bool value)  createNewPasswordValidator,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case ForgetPasswordLoadingData():
+return loading();case ForgetPasswordButtonErrorData():
+return error(_that.apiErrorModel);case ForgetPasswordButtonSuccessData():
+return success(_that.data);case UserForgetEmailAddress():
+return userForgetEmailAddress(_that.value);case ContinueForgetButtonValidator():
+return userForgetButtonValidator(_that.value);case VerifyCodeLoadingData():
+return verifyCodeLoading();case VerifyCodeButtonErrorData():
+return verifyCodeError(_that.apiErrorModel);case VerifyCodeButtonSuccessData():
+return verifyCodeSuccess(_that.data);case OtpVerifyCode():
+return otpVerifyCode(_that.value);case VerifyButtonValidator():
+return verifyButtonValidator(_that.value);case NewPasswordLoadingData():
+return newPasswordLoading();case NewPasswordButtonErrorData():
+return newPasswordError(_that.apiErrorModel);case NewPasswordButtonSuccessData():
+return newPasswordSuccess(_that.data);case UserNewPassword():
+return userNewPassword(_that.value);case UserConfirmNewPassword():
+return userConfirmNewPassword(_that.value);case ShowNewPassword():
+return showNewPassword(_that.value);case ShowConfirmNewPassword():
+return showConfirmNewPassword(_that.value);case CreateNewPasswordValidator():
+return createNewPasswordValidator(_that.value);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( ApiErrorModel apiErrorModel)?  error,TResult? Function( ApiSuccessGeneralModel data)?  success,TResult? Function( String value)?  userForgetEmailAddress,TResult? Function( bool value)?  userForgetButtonValidator,TResult? Function()?  verifyCodeLoading,TResult? Function( ApiErrorModel apiErrorModel)?  verifyCodeError,TResult? Function( ApiSuccessGeneralModel data)?  verifyCodeSuccess,TResult? Function( String? value)?  otpVerifyCode,TResult? Function( bool value)?  verifyButtonValidator,TResult? Function()?  newPasswordLoading,TResult? Function( ApiErrorModel apiErrorModel)?  newPasswordError,TResult? Function( AuthResponse data)?  newPasswordSuccess,TResult? Function( String value)?  userNewPassword,TResult? Function( String value)?  userConfirmNewPassword,TResult? Function( bool value)?  showNewPassword,TResult? Function( bool value)?  showConfirmNewPassword,TResult? Function( bool value)?  createNewPasswordValidator,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case ForgetPasswordLoadingData() when loading != null:
+return loading();case ForgetPasswordButtonErrorData() when error != null:
+return error(_that.apiErrorModel);case ForgetPasswordButtonSuccessData() when success != null:
+return success(_that.data);case UserForgetEmailAddress() when userForgetEmailAddress != null:
+return userForgetEmailAddress(_that.value);case ContinueForgetButtonValidator() when userForgetButtonValidator != null:
+return userForgetButtonValidator(_that.value);case VerifyCodeLoadingData() when verifyCodeLoading != null:
+return verifyCodeLoading();case VerifyCodeButtonErrorData() when verifyCodeError != null:
+return verifyCodeError(_that.apiErrorModel);case VerifyCodeButtonSuccessData() when verifyCodeSuccess != null:
+return verifyCodeSuccess(_that.data);case OtpVerifyCode() when otpVerifyCode != null:
+return otpVerifyCode(_that.value);case VerifyButtonValidator() when verifyButtonValidator != null:
+return verifyButtonValidator(_that.value);case NewPasswordLoadingData() when newPasswordLoading != null:
+return newPasswordLoading();case NewPasswordButtonErrorData() when newPasswordError != null:
+return newPasswordError(_that.apiErrorModel);case NewPasswordButtonSuccessData() when newPasswordSuccess != null:
+return newPasswordSuccess(_that.data);case UserNewPassword() when userNewPassword != null:
+return userNewPassword(_that.value);case UserConfirmNewPassword() when userConfirmNewPassword != null:
+return userConfirmNewPassword(_that.value);case ShowNewPassword() when showNewPassword != null:
+return showNewPassword(_that.value);case ShowConfirmNewPassword() when showConfirmNewPassword != null:
+return showConfirmNewPassword(_that.value);case CreateNewPasswordValidator() when createNewPasswordValidator != null:
+return createNewPasswordValidator(_that.value);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'ForgetPasswordState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements ForgetPasswordState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$ForgetPasswordLoadingDataImplCopyWith<$Res> {
-  factory _$$ForgetPasswordLoadingDataImplCopyWith(
-          _$ForgetPasswordLoadingDataImpl value,
-          $Res Function(_$ForgetPasswordLoadingDataImpl) then) =
-      __$$ForgetPasswordLoadingDataImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ForgetPasswordLoadingDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$ForgetPasswordLoadingDataImpl>
-    implements _$$ForgetPasswordLoadingDataImplCopyWith<$Res> {
-  __$$ForgetPasswordLoadingDataImplCopyWithImpl(
-      _$ForgetPasswordLoadingDataImpl _value,
-      $Res Function(_$ForgetPasswordLoadingDataImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ForgetPasswordLoadingDataImpl implements ForgetPasswordLoadingData {
-  const _$ForgetPasswordLoadingDataImpl();
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.loading()';
-  }
+class _Initial implements ForgetPasswordState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgetPasswordLoadingDataImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return loading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return loading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class ForgetPasswordLoadingData implements ForgetPasswordState {
-  const factory ForgetPasswordLoadingData() = _$ForgetPasswordLoadingDataImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ForgetPasswordLoadingData implements ForgetPasswordState {
+  const ForgetPasswordLoadingData();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgetPasswordLoadingData);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordState.loading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ForgetPasswordButtonErrorData implements ForgetPasswordState {
+  const ForgetPasswordButtonErrorData(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ForgetPasswordButtonErrorDataCopyWith<ForgetPasswordButtonErrorData> get copyWith => _$ForgetPasswordButtonErrorDataCopyWithImpl<ForgetPasswordButtonErrorData>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgetPasswordButtonErrorData&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.error(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ForgetPasswordButtonErrorDataImplCopyWith<$Res> {
-  factory _$$ForgetPasswordButtonErrorDataImplCopyWith(
-          _$ForgetPasswordButtonErrorDataImpl value,
-          $Res Function(_$ForgetPasswordButtonErrorDataImpl) then) =
-      __$$ForgetPasswordButtonErrorDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $ForgetPasswordButtonErrorDataCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $ForgetPasswordButtonErrorDataCopyWith(ForgetPasswordButtonErrorData value, $Res Function(ForgetPasswordButtonErrorData) _then) = _$ForgetPasswordButtonErrorDataCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$ForgetPasswordButtonErrorDataCopyWithImpl<$Res>
+    implements $ForgetPasswordButtonErrorDataCopyWith<$Res> {
+  _$ForgetPasswordButtonErrorDataCopyWithImpl(this._self, this._then);
+
+  final ForgetPasswordButtonErrorData _self;
+  final $Res Function(ForgetPasswordButtonErrorData) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(ForgetPasswordButtonErrorData(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$ForgetPasswordButtonErrorDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$ForgetPasswordButtonErrorDataImpl>
-    implements _$$ForgetPasswordButtonErrorDataImplCopyWith<$Res> {
-  __$$ForgetPasswordButtonErrorDataImplCopyWithImpl(
-      _$ForgetPasswordButtonErrorDataImpl _value,
-      $Res Function(_$ForgetPasswordButtonErrorDataImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$ForgetPasswordButtonErrorDataImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ForgetPasswordButtonErrorDataImpl
-    implements ForgetPasswordButtonErrorData {
-  const _$ForgetPasswordButtonErrorDataImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class ForgetPasswordButtonSuccessData implements ForgetPasswordState {
+  const ForgetPasswordButtonSuccessData(this.data);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.error(apiErrorModel: $apiErrorModel)';
-  }
+ final  ApiSuccessGeneralModel data;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgetPasswordButtonErrorDataImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ForgetPasswordButtonSuccessDataCopyWith<ForgetPasswordButtonSuccessData> get copyWith => _$ForgetPasswordButtonSuccessDataCopyWithImpl<ForgetPasswordButtonSuccessData>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ForgetPasswordButtonErrorDataImplCopyWith<
-          _$ForgetPasswordButtonErrorDataImpl>
-      get copyWith => __$$ForgetPasswordButtonErrorDataImplCopyWithImpl<
-          _$ForgetPasswordButtonErrorDataImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return error(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return error?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ForgetPasswordButtonSuccessData&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class ForgetPasswordButtonErrorData implements ForgetPasswordState {
-  const factory ForgetPasswordButtonErrorData(
-      final ApiErrorModel apiErrorModel) = _$ForgetPasswordButtonErrorDataImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$ForgetPasswordButtonErrorDataImplCopyWith<
-          _$ForgetPasswordButtonErrorDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.success(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ForgetPasswordButtonSuccessDataImplCopyWith<$Res> {
-  factory _$$ForgetPasswordButtonSuccessDataImplCopyWith(
-          _$ForgetPasswordButtonSuccessDataImpl value,
-          $Res Function(_$ForgetPasswordButtonSuccessDataImpl) then) =
-      __$$ForgetPasswordButtonSuccessDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiSuccessGeneralModel data});
+abstract mixin class $ForgetPasswordButtonSuccessDataCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $ForgetPasswordButtonSuccessDataCopyWith(ForgetPasswordButtonSuccessData value, $Res Function(ForgetPasswordButtonSuccessData) _then) = _$ForgetPasswordButtonSuccessDataCopyWithImpl;
+@useResult
+$Res call({
+ ApiSuccessGeneralModel data
+});
+
+
+
+
+}
+/// @nodoc
+class _$ForgetPasswordButtonSuccessDataCopyWithImpl<$Res>
+    implements $ForgetPasswordButtonSuccessDataCopyWith<$Res> {
+  _$ForgetPasswordButtonSuccessDataCopyWithImpl(this._self, this._then);
+
+  final ForgetPasswordButtonSuccessData _self;
+  final $Res Function(ForgetPasswordButtonSuccessData) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(ForgetPasswordButtonSuccessData(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as ApiSuccessGeneralModel,
+  ));
 }
 
-/// @nodoc
-class __$$ForgetPasswordButtonSuccessDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$ForgetPasswordButtonSuccessDataImpl>
-    implements _$$ForgetPasswordButtonSuccessDataImplCopyWith<$Res> {
-  __$$ForgetPasswordButtonSuccessDataImplCopyWithImpl(
-      _$ForgetPasswordButtonSuccessDataImpl _value,
-      $Res Function(_$ForgetPasswordButtonSuccessDataImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$ForgetPasswordButtonSuccessDataImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as ApiSuccessGeneralModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ForgetPasswordButtonSuccessDataImpl
-    implements ForgetPasswordButtonSuccessData {
-  const _$ForgetPasswordButtonSuccessDataImpl(this.data);
 
-  @override
-  final ApiSuccessGeneralModel data;
+class UserForgetEmailAddress implements ForgetPasswordState {
+  const UserForgetEmailAddress(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.success(data: $data)';
-  }
+ final  String value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ForgetPasswordButtonSuccessDataImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserForgetEmailAddressCopyWith<UserForgetEmailAddress> get copyWith => _$UserForgetEmailAddressCopyWithImpl<UserForgetEmailAddress>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ForgetPasswordButtonSuccessDataImplCopyWith<
-          _$ForgetPasswordButtonSuccessDataImpl>
-      get copyWith => __$$ForgetPasswordButtonSuccessDataImplCopyWithImpl<
-          _$ForgetPasswordButtonSuccessDataImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return success(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return success?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserForgetEmailAddress&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class ForgetPasswordButtonSuccessData implements ForgetPasswordState {
-  const factory ForgetPasswordButtonSuccessData(
-          final ApiSuccessGeneralModel data) =
-      _$ForgetPasswordButtonSuccessDataImpl;
 
-  ApiSuccessGeneralModel get data;
-  @JsonKey(ignore: true)
-  _$$ForgetPasswordButtonSuccessDataImplCopyWith<
-          _$ForgetPasswordButtonSuccessDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.userForgetEmailAddress(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserForgetEmailAddressImplCopyWith<$Res> {
-  factory _$$UserForgetEmailAddressImplCopyWith(
-          _$UserForgetEmailAddressImpl value,
-          $Res Function(_$UserForgetEmailAddressImpl) then) =
-      __$$UserForgetEmailAddressImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class $UserForgetEmailAddressCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $UserForgetEmailAddressCopyWith(UserForgetEmailAddress value, $Res Function(UserForgetEmailAddress) _then) = _$UserForgetEmailAddressCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserForgetEmailAddressCopyWithImpl<$Res>
+    implements $UserForgetEmailAddressCopyWith<$Res> {
+  _$UserForgetEmailAddressCopyWithImpl(this._self, this._then);
+
+  final UserForgetEmailAddress _self;
+  final $Res Function(UserForgetEmailAddress) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserForgetEmailAddress(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UserForgetEmailAddressImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$UserForgetEmailAddressImpl>
-    implements _$$UserForgetEmailAddressImplCopyWith<$Res> {
-  __$$UserForgetEmailAddressImplCopyWithImpl(
-      _$UserForgetEmailAddressImpl _value,
-      $Res Function(_$UserForgetEmailAddressImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UserForgetEmailAddressImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserForgetEmailAddressImpl implements UserForgetEmailAddress {
-  const _$UserForgetEmailAddressImpl(this.value);
 
-  @override
-  final String value;
+class ContinueForgetButtonValidator implements ForgetPasswordState {
+  const ContinueForgetButtonValidator(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.userForgetEmailAddress(value: $value)';
-  }
+ final  bool value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserForgetEmailAddressImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ContinueForgetButtonValidatorCopyWith<ContinueForgetButtonValidator> get copyWith => _$ContinueForgetButtonValidatorCopyWithImpl<ContinueForgetButtonValidator>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserForgetEmailAddressImplCopyWith<_$UserForgetEmailAddressImpl>
-      get copyWith => __$$UserForgetEmailAddressImplCopyWithImpl<
-          _$UserForgetEmailAddressImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return userForgetEmailAddress(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return userForgetEmailAddress?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userForgetEmailAddress != null) {
-      return userForgetEmailAddress(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return userForgetEmailAddress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return userForgetEmailAddress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userForgetEmailAddress != null) {
-      return userForgetEmailAddress(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContinueForgetButtonValidator&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class UserForgetEmailAddress implements ForgetPasswordState {
-  const factory UserForgetEmailAddress(final String value) =
-      _$UserForgetEmailAddressImpl;
 
-  String get value;
-  @JsonKey(ignore: true)
-  _$$UserForgetEmailAddressImplCopyWith<_$UserForgetEmailAddressImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.userForgetButtonValidator(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ContinueForgetButtonValidatorImplCopyWith<$Res> {
-  factory _$$ContinueForgetButtonValidatorImplCopyWith(
-          _$ContinueForgetButtonValidatorImpl value,
-          $Res Function(_$ContinueForgetButtonValidatorImpl) then) =
-      __$$ContinueForgetButtonValidatorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
+abstract mixin class $ContinueForgetButtonValidatorCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $ContinueForgetButtonValidatorCopyWith(ContinueForgetButtonValidator value, $Res Function(ContinueForgetButtonValidator) _then) = _$ContinueForgetButtonValidatorCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
+
+
+
+
+}
+/// @nodoc
+class _$ContinueForgetButtonValidatorCopyWithImpl<$Res>
+    implements $ContinueForgetButtonValidatorCopyWith<$Res> {
+  _$ContinueForgetButtonValidatorCopyWithImpl(this._self, this._then);
+
+  final ContinueForgetButtonValidator _self;
+  final $Res Function(ContinueForgetButtonValidator) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(ContinueForgetButtonValidator(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$ContinueForgetButtonValidatorImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$ContinueForgetButtonValidatorImpl>
-    implements _$$ContinueForgetButtonValidatorImplCopyWith<$Res> {
-  __$$ContinueForgetButtonValidatorImplCopyWithImpl(
-      _$ContinueForgetButtonValidatorImpl _value,
-      $Res Function(_$ContinueForgetButtonValidatorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$ContinueForgetButtonValidatorImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ContinueForgetButtonValidatorImpl
-    implements ContinueForgetButtonValidator {
-  const _$ContinueForgetButtonValidatorImpl(this.value);
 
-  @override
-  final bool value;
+class VerifyCodeLoadingData implements ForgetPasswordState {
+  const VerifyCodeLoadingData();
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.userForgetButtonValidator(value: $value)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ContinueForgetButtonValidatorImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ContinueForgetButtonValidatorImplCopyWith<
-          _$ContinueForgetButtonValidatorImpl>
-      get copyWith => __$$ContinueForgetButtonValidatorImplCopyWithImpl<
-          _$ContinueForgetButtonValidatorImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return userForgetButtonValidator(value);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return userForgetButtonValidator?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userForgetButtonValidator != null) {
-      return userForgetButtonValidator(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return userForgetButtonValidator(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return userForgetButtonValidator?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userForgetButtonValidator != null) {
-      return userForgetButtonValidator(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is VerifyCodeLoadingData);
 }
 
-abstract class ContinueForgetButtonValidator implements ForgetPasswordState {
-  const factory ContinueForgetButtonValidator(final bool value) =
-      _$ContinueForgetButtonValidatorImpl;
 
-  bool get value;
-  @JsonKey(ignore: true)
-  _$$ContinueForgetButtonValidatorImplCopyWith<
-          _$ContinueForgetButtonValidatorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordState.verifyCodeLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class VerifyCodeButtonErrorData implements ForgetPasswordState {
+  const VerifyCodeButtonErrorData(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$VerifyCodeButtonErrorDataCopyWith<VerifyCodeButtonErrorData> get copyWith => _$VerifyCodeButtonErrorDataCopyWithImpl<VerifyCodeButtonErrorData>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is VerifyCodeButtonErrorData&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.verifyCodeError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$VerifyCodeLoadingDataImplCopyWith<$Res> {
-  factory _$$VerifyCodeLoadingDataImplCopyWith(
-          _$VerifyCodeLoadingDataImpl value,
-          $Res Function(_$VerifyCodeLoadingDataImpl) then) =
-      __$$VerifyCodeLoadingDataImplCopyWithImpl<$Res>;
+abstract mixin class $VerifyCodeButtonErrorDataCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $VerifyCodeButtonErrorDataCopyWith(VerifyCodeButtonErrorData value, $Res Function(VerifyCodeButtonErrorData) _then) = _$VerifyCodeButtonErrorDataCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$VerifyCodeButtonErrorDataCopyWithImpl<$Res>
+    implements $VerifyCodeButtonErrorDataCopyWith<$Res> {
+  _$VerifyCodeButtonErrorDataCopyWithImpl(this._self, this._then);
+
+  final VerifyCodeButtonErrorData _self;
+  final $Res Function(VerifyCodeButtonErrorData) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(VerifyCodeButtonErrorData(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$VerifyCodeLoadingDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$VerifyCodeLoadingDataImpl>
-    implements _$$VerifyCodeLoadingDataImplCopyWith<$Res> {
-  __$$VerifyCodeLoadingDataImplCopyWithImpl(_$VerifyCodeLoadingDataImpl _value,
-      $Res Function(_$VerifyCodeLoadingDataImpl) _then)
-      : super(_value, _then);
+
 }
 
 /// @nodoc
 
-class _$VerifyCodeLoadingDataImpl implements VerifyCodeLoadingData {
-  const _$VerifyCodeLoadingDataImpl();
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.verifyCodeLoading()';
-  }
+class VerifyCodeButtonSuccessData implements ForgetPasswordState {
+  const VerifyCodeButtonSuccessData(this.data);
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$VerifyCodeLoadingDataImpl);
-  }
+ final  ApiSuccessGeneralModel data;
 
-  @override
-  int get hashCode => runtimeType.hashCode;
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$VerifyCodeButtonSuccessDataCopyWith<VerifyCodeButtonSuccessData> get copyWith => _$VerifyCodeButtonSuccessDataCopyWithImpl<VerifyCodeButtonSuccessData>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return verifyCodeLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return verifyCodeLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyCodeLoading != null) {
-      return verifyCodeLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return verifyCodeLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return verifyCodeLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyCodeLoading != null) {
-      return verifyCodeLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is VerifyCodeButtonSuccessData&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class VerifyCodeLoadingData implements ForgetPasswordState {
-  const factory VerifyCodeLoadingData() = _$VerifyCodeLoadingDataImpl;
+
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.verifyCodeSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$VerifyCodeButtonErrorDataImplCopyWith<$Res> {
-  factory _$$VerifyCodeButtonErrorDataImplCopyWith(
-          _$VerifyCodeButtonErrorDataImpl value,
-          $Res Function(_$VerifyCodeButtonErrorDataImpl) then) =
-      __$$VerifyCodeButtonErrorDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $VerifyCodeButtonSuccessDataCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $VerifyCodeButtonSuccessDataCopyWith(VerifyCodeButtonSuccessData value, $Res Function(VerifyCodeButtonSuccessData) _then) = _$VerifyCodeButtonSuccessDataCopyWithImpl;
+@useResult
+$Res call({
+ ApiSuccessGeneralModel data
+});
+
+
+
+
+}
+/// @nodoc
+class _$VerifyCodeButtonSuccessDataCopyWithImpl<$Res>
+    implements $VerifyCodeButtonSuccessDataCopyWith<$Res> {
+  _$VerifyCodeButtonSuccessDataCopyWithImpl(this._self, this._then);
+
+  final VerifyCodeButtonSuccessData _self;
+  final $Res Function(VerifyCodeButtonSuccessData) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(VerifyCodeButtonSuccessData(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as ApiSuccessGeneralModel,
+  ));
 }
 
-/// @nodoc
-class __$$VerifyCodeButtonErrorDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$VerifyCodeButtonErrorDataImpl>
-    implements _$$VerifyCodeButtonErrorDataImplCopyWith<$Res> {
-  __$$VerifyCodeButtonErrorDataImplCopyWithImpl(
-      _$VerifyCodeButtonErrorDataImpl _value,
-      $Res Function(_$VerifyCodeButtonErrorDataImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$VerifyCodeButtonErrorDataImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$VerifyCodeButtonErrorDataImpl implements VerifyCodeButtonErrorData {
-  const _$VerifyCodeButtonErrorDataImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class OtpVerifyCode implements ForgetPasswordState {
+  const OtpVerifyCode(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.verifyCodeError(apiErrorModel: $apiErrorModel)';
-  }
+ final  String? value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$VerifyCodeButtonErrorDataImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$OtpVerifyCodeCopyWith<OtpVerifyCode> get copyWith => _$OtpVerifyCodeCopyWithImpl<OtpVerifyCode>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$VerifyCodeButtonErrorDataImplCopyWith<_$VerifyCodeButtonErrorDataImpl>
-      get copyWith => __$$VerifyCodeButtonErrorDataImplCopyWithImpl<
-          _$VerifyCodeButtonErrorDataImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return verifyCodeError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return verifyCodeError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyCodeError != null) {
-      return verifyCodeError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return verifyCodeError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return verifyCodeError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyCodeError != null) {
-      return verifyCodeError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OtpVerifyCode&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class VerifyCodeButtonErrorData implements ForgetPasswordState {
-  const factory VerifyCodeButtonErrorData(final ApiErrorModel apiErrorModel) =
-      _$VerifyCodeButtonErrorDataImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$VerifyCodeButtonErrorDataImplCopyWith<_$VerifyCodeButtonErrorDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.otpVerifyCode(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$VerifyCodeButtonSuccessDataImplCopyWith<$Res> {
-  factory _$$VerifyCodeButtonSuccessDataImplCopyWith(
-          _$VerifyCodeButtonSuccessDataImpl value,
-          $Res Function(_$VerifyCodeButtonSuccessDataImpl) then) =
-      __$$VerifyCodeButtonSuccessDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiSuccessGeneralModel data});
+abstract mixin class $OtpVerifyCodeCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $OtpVerifyCodeCopyWith(OtpVerifyCode value, $Res Function(OtpVerifyCode) _then) = _$OtpVerifyCodeCopyWithImpl;
+@useResult
+$Res call({
+ String? value
+});
+
+
+
+
+}
+/// @nodoc
+class _$OtpVerifyCodeCopyWithImpl<$Res>
+    implements $OtpVerifyCodeCopyWith<$Res> {
+  _$OtpVerifyCodeCopyWithImpl(this._self, this._then);
+
+  final OtpVerifyCode _self;
+  final $Res Function(OtpVerifyCode) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = freezed,}) {
+  return _then(OtpVerifyCode(
+freezed == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-class __$$VerifyCodeButtonSuccessDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$VerifyCodeButtonSuccessDataImpl>
-    implements _$$VerifyCodeButtonSuccessDataImplCopyWith<$Res> {
-  __$$VerifyCodeButtonSuccessDataImplCopyWithImpl(
-      _$VerifyCodeButtonSuccessDataImpl _value,
-      $Res Function(_$VerifyCodeButtonSuccessDataImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$VerifyCodeButtonSuccessDataImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as ApiSuccessGeneralModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$VerifyCodeButtonSuccessDataImpl implements VerifyCodeButtonSuccessData {
-  const _$VerifyCodeButtonSuccessDataImpl(this.data);
 
-  @override
-  final ApiSuccessGeneralModel data;
+class VerifyButtonValidator implements ForgetPasswordState {
+  const VerifyButtonValidator(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.verifyCodeSuccess(data: $data)';
-  }
+ final  bool value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$VerifyCodeButtonSuccessDataImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$VerifyButtonValidatorCopyWith<VerifyButtonValidator> get copyWith => _$VerifyButtonValidatorCopyWithImpl<VerifyButtonValidator>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$VerifyCodeButtonSuccessDataImplCopyWith<_$VerifyCodeButtonSuccessDataImpl>
-      get copyWith => __$$VerifyCodeButtonSuccessDataImplCopyWithImpl<
-          _$VerifyCodeButtonSuccessDataImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return verifyCodeSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return verifyCodeSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyCodeSuccess != null) {
-      return verifyCodeSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return verifyCodeSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return verifyCodeSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyCodeSuccess != null) {
-      return verifyCodeSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is VerifyButtonValidator&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class VerifyCodeButtonSuccessData implements ForgetPasswordState {
-  const factory VerifyCodeButtonSuccessData(final ApiSuccessGeneralModel data) =
-      _$VerifyCodeButtonSuccessDataImpl;
 
-  ApiSuccessGeneralModel get data;
-  @JsonKey(ignore: true)
-  _$$VerifyCodeButtonSuccessDataImplCopyWith<_$VerifyCodeButtonSuccessDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.verifyButtonValidator(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$OtpVerifyCodeImplCopyWith<$Res> {
-  factory _$$OtpVerifyCodeImplCopyWith(
-          _$OtpVerifyCodeImpl value, $Res Function(_$OtpVerifyCodeImpl) then) =
-      __$$OtpVerifyCodeImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? value});
+abstract mixin class $VerifyButtonValidatorCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $VerifyButtonValidatorCopyWith(VerifyButtonValidator value, $Res Function(VerifyButtonValidator) _then) = _$VerifyButtonValidatorCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
+
+
+
+
+}
+/// @nodoc
+class _$VerifyButtonValidatorCopyWithImpl<$Res>
+    implements $VerifyButtonValidatorCopyWith<$Res> {
+  _$VerifyButtonValidatorCopyWithImpl(this._self, this._then);
+
+  final VerifyButtonValidator _self;
+  final $Res Function(VerifyButtonValidator) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(VerifyButtonValidator(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$OtpVerifyCodeImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$OtpVerifyCodeImpl>
-    implements _$$OtpVerifyCodeImplCopyWith<$Res> {
-  __$$OtpVerifyCodeImplCopyWithImpl(
-      _$OtpVerifyCodeImpl _value, $Res Function(_$OtpVerifyCodeImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = freezed,
-  }) {
-    return _then(_$OtpVerifyCodeImpl(
-      freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$OtpVerifyCodeImpl implements OtpVerifyCode {
-  const _$OtpVerifyCodeImpl(this.value);
 
-  @override
-  final String? value;
+class NewPasswordLoadingData implements ForgetPasswordState {
+  const NewPasswordLoadingData();
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.otpVerifyCode(value: $value)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OtpVerifyCodeImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OtpVerifyCodeImplCopyWith<_$OtpVerifyCodeImpl> get copyWith =>
-      __$$OtpVerifyCodeImplCopyWithImpl<_$OtpVerifyCodeImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return otpVerifyCode(value);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return otpVerifyCode?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (otpVerifyCode != null) {
-      return otpVerifyCode(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return otpVerifyCode(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return otpVerifyCode?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (otpVerifyCode != null) {
-      return otpVerifyCode(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewPasswordLoadingData);
 }
 
-abstract class OtpVerifyCode implements ForgetPasswordState {
-  const factory OtpVerifyCode(final String? value) = _$OtpVerifyCodeImpl;
 
-  String? get value;
-  @JsonKey(ignore: true)
-  _$$OtpVerifyCodeImplCopyWith<_$OtpVerifyCodeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ForgetPasswordState.newPasswordLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class NewPasswordButtonErrorData implements ForgetPasswordState {
+  const NewPasswordButtonErrorData(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NewPasswordButtonErrorDataCopyWith<NewPasswordButtonErrorData> get copyWith => _$NewPasswordButtonErrorDataCopyWithImpl<NewPasswordButtonErrorData>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewPasswordButtonErrorData&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.newPasswordError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$VerifyButtonValidatorImplCopyWith<$Res> {
-  factory _$$VerifyButtonValidatorImplCopyWith(
-          _$VerifyButtonValidatorImpl value,
-          $Res Function(_$VerifyButtonValidatorImpl) then) =
-      __$$VerifyButtonValidatorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
+abstract mixin class $NewPasswordButtonErrorDataCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $NewPasswordButtonErrorDataCopyWith(NewPasswordButtonErrorData value, $Res Function(NewPasswordButtonErrorData) _then) = _$NewPasswordButtonErrorDataCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$NewPasswordButtonErrorDataCopyWithImpl<$Res>
+    implements $NewPasswordButtonErrorDataCopyWith<$Res> {
+  _$NewPasswordButtonErrorDataCopyWithImpl(this._self, this._then);
+
+  final NewPasswordButtonErrorData _self;
+  final $Res Function(NewPasswordButtonErrorData) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(NewPasswordButtonErrorData(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$VerifyButtonValidatorImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$VerifyButtonValidatorImpl>
-    implements _$$VerifyButtonValidatorImplCopyWith<$Res> {
-  __$$VerifyButtonValidatorImplCopyWithImpl(_$VerifyButtonValidatorImpl _value,
-      $Res Function(_$VerifyButtonValidatorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$VerifyButtonValidatorImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$VerifyButtonValidatorImpl implements VerifyButtonValidator {
-  const _$VerifyButtonValidatorImpl(this.value);
 
-  @override
-  final bool value;
+class NewPasswordButtonSuccessData implements ForgetPasswordState {
+  const NewPasswordButtonSuccessData(this.data);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.verifyButtonValidator(value: $value)';
-  }
+ final  AuthResponse data;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$VerifyButtonValidatorImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NewPasswordButtonSuccessDataCopyWith<NewPasswordButtonSuccessData> get copyWith => _$NewPasswordButtonSuccessDataCopyWithImpl<NewPasswordButtonSuccessData>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$VerifyButtonValidatorImplCopyWith<_$VerifyButtonValidatorImpl>
-      get copyWith => __$$VerifyButtonValidatorImplCopyWithImpl<
-          _$VerifyButtonValidatorImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return verifyButtonValidator(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return verifyButtonValidator?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyButtonValidator != null) {
-      return verifyButtonValidator(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return verifyButtonValidator(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return verifyButtonValidator?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (verifyButtonValidator != null) {
-      return verifyButtonValidator(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewPasswordButtonSuccessData&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class VerifyButtonValidator implements ForgetPasswordState {
-  const factory VerifyButtonValidator(final bool value) =
-      _$VerifyButtonValidatorImpl;
 
-  bool get value;
-  @JsonKey(ignore: true)
-  _$$VerifyButtonValidatorImplCopyWith<_$VerifyButtonValidatorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.newPasswordSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$NewPasswordLoadingDataImplCopyWith<$Res> {
-  factory _$$NewPasswordLoadingDataImplCopyWith(
-          _$NewPasswordLoadingDataImpl value,
-          $Res Function(_$NewPasswordLoadingDataImpl) then) =
-      __$$NewPasswordLoadingDataImplCopyWithImpl<$Res>;
+abstract mixin class $NewPasswordButtonSuccessDataCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $NewPasswordButtonSuccessDataCopyWith(NewPasswordButtonSuccessData value, $Res Function(NewPasswordButtonSuccessData) _then) = _$NewPasswordButtonSuccessDataCopyWithImpl;
+@useResult
+$Res call({
+ AuthResponse data
+});
+
+
+
+
+}
+/// @nodoc
+class _$NewPasswordButtonSuccessDataCopyWithImpl<$Res>
+    implements $NewPasswordButtonSuccessDataCopyWith<$Res> {
+  _$NewPasswordButtonSuccessDataCopyWithImpl(this._self, this._then);
+
+  final NewPasswordButtonSuccessData _self;
+  final $Res Function(NewPasswordButtonSuccessData) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(NewPasswordButtonSuccessData(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as AuthResponse,
+  ));
 }
 
-/// @nodoc
-class __$$NewPasswordLoadingDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$NewPasswordLoadingDataImpl>
-    implements _$$NewPasswordLoadingDataImplCopyWith<$Res> {
-  __$$NewPasswordLoadingDataImplCopyWithImpl(
-      _$NewPasswordLoadingDataImpl _value,
-      $Res Function(_$NewPasswordLoadingDataImpl) _then)
-      : super(_value, _then);
+
 }
 
 /// @nodoc
 
-class _$NewPasswordLoadingDataImpl implements NewPasswordLoadingData {
-  const _$NewPasswordLoadingDataImpl();
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.newPasswordLoading()';
-  }
+class UserNewPassword implements ForgetPasswordState {
+  const UserNewPassword(this.value);
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NewPasswordLoadingDataImpl);
-  }
+ final  String value;
 
-  @override
-  int get hashCode => runtimeType.hashCode;
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserNewPasswordCopyWith<UserNewPassword> get copyWith => _$UserNewPasswordCopyWithImpl<UserNewPassword>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return newPasswordLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return newPasswordLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (newPasswordLoading != null) {
-      return newPasswordLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return newPasswordLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return newPasswordLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (newPasswordLoading != null) {
-      return newPasswordLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserNewPassword&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class NewPasswordLoadingData implements ForgetPasswordState {
-  const factory NewPasswordLoadingData() = _$NewPasswordLoadingDataImpl;
+
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.userNewPassword(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$NewPasswordButtonErrorDataImplCopyWith<$Res> {
-  factory _$$NewPasswordButtonErrorDataImplCopyWith(
-          _$NewPasswordButtonErrorDataImpl value,
-          $Res Function(_$NewPasswordButtonErrorDataImpl) then) =
-      __$$NewPasswordButtonErrorDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $UserNewPasswordCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $UserNewPasswordCopyWith(UserNewPassword value, $Res Function(UserNewPassword) _then) = _$UserNewPasswordCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserNewPasswordCopyWithImpl<$Res>
+    implements $UserNewPasswordCopyWith<$Res> {
+  _$UserNewPasswordCopyWithImpl(this._self, this._then);
+
+  final UserNewPassword _self;
+  final $Res Function(UserNewPassword) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserNewPassword(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$NewPasswordButtonErrorDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$NewPasswordButtonErrorDataImpl>
-    implements _$$NewPasswordButtonErrorDataImplCopyWith<$Res> {
-  __$$NewPasswordButtonErrorDataImplCopyWithImpl(
-      _$NewPasswordButtonErrorDataImpl _value,
-      $Res Function(_$NewPasswordButtonErrorDataImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$NewPasswordButtonErrorDataImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$NewPasswordButtonErrorDataImpl implements NewPasswordButtonErrorData {
-  const _$NewPasswordButtonErrorDataImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class UserConfirmNewPassword implements ForgetPasswordState {
+  const UserConfirmNewPassword(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.newPasswordError(apiErrorModel: $apiErrorModel)';
-  }
+ final  String value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NewPasswordButtonErrorDataImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserConfirmNewPasswordCopyWith<UserConfirmNewPassword> get copyWith => _$UserConfirmNewPasswordCopyWithImpl<UserConfirmNewPassword>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NewPasswordButtonErrorDataImplCopyWith<_$NewPasswordButtonErrorDataImpl>
-      get copyWith => __$$NewPasswordButtonErrorDataImplCopyWithImpl<
-          _$NewPasswordButtonErrorDataImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return newPasswordError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return newPasswordError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (newPasswordError != null) {
-      return newPasswordError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return newPasswordError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return newPasswordError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (newPasswordError != null) {
-      return newPasswordError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserConfirmNewPassword&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class NewPasswordButtonErrorData implements ForgetPasswordState {
-  const factory NewPasswordButtonErrorData(final ApiErrorModel apiErrorModel) =
-      _$NewPasswordButtonErrorDataImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$NewPasswordButtonErrorDataImplCopyWith<_$NewPasswordButtonErrorDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.userConfirmNewPassword(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$NewPasswordButtonSuccessDataImplCopyWith<$Res> {
-  factory _$$NewPasswordButtonSuccessDataImplCopyWith(
-          _$NewPasswordButtonSuccessDataImpl value,
-          $Res Function(_$NewPasswordButtonSuccessDataImpl) then) =
-      __$$NewPasswordButtonSuccessDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AuthResponse data});
+abstract mixin class $UserConfirmNewPasswordCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $UserConfirmNewPasswordCopyWith(UserConfirmNewPassword value, $Res Function(UserConfirmNewPassword) _then) = _$UserConfirmNewPasswordCopyWithImpl;
+@useResult
+$Res call({
+ String value
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserConfirmNewPasswordCopyWithImpl<$Res>
+    implements $UserConfirmNewPasswordCopyWith<$Res> {
+  _$UserConfirmNewPasswordCopyWithImpl(this._self, this._then);
+
+  final UserConfirmNewPassword _self;
+  final $Res Function(UserConfirmNewPassword) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(UserConfirmNewPassword(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$NewPasswordButtonSuccessDataImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$NewPasswordButtonSuccessDataImpl>
-    implements _$$NewPasswordButtonSuccessDataImplCopyWith<$Res> {
-  __$$NewPasswordButtonSuccessDataImplCopyWithImpl(
-      _$NewPasswordButtonSuccessDataImpl _value,
-      $Res Function(_$NewPasswordButtonSuccessDataImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$NewPasswordButtonSuccessDataImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as AuthResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$NewPasswordButtonSuccessDataImpl
-    implements NewPasswordButtonSuccessData {
-  const _$NewPasswordButtonSuccessDataImpl(this.data);
 
-  @override
-  final AuthResponse data;
+class ShowNewPassword implements ForgetPasswordState {
+  const ShowNewPassword(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.newPasswordSuccess(data: $data)';
-  }
+ final  bool value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NewPasswordButtonSuccessDataImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ShowNewPasswordCopyWith<ShowNewPassword> get copyWith => _$ShowNewPasswordCopyWithImpl<ShowNewPassword>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NewPasswordButtonSuccessDataImplCopyWith<
-          _$NewPasswordButtonSuccessDataImpl>
-      get copyWith => __$$NewPasswordButtonSuccessDataImplCopyWithImpl<
-          _$NewPasswordButtonSuccessDataImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return newPasswordSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return newPasswordSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (newPasswordSuccess != null) {
-      return newPasswordSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return newPasswordSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return newPasswordSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (newPasswordSuccess != null) {
-      return newPasswordSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ShowNewPassword&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class NewPasswordButtonSuccessData implements ForgetPasswordState {
-  const factory NewPasswordButtonSuccessData(final AuthResponse data) =
-      _$NewPasswordButtonSuccessDataImpl;
 
-  AuthResponse get data;
-  @JsonKey(ignore: true)
-  _$$NewPasswordButtonSuccessDataImplCopyWith<
-          _$NewPasswordButtonSuccessDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.showNewPassword(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserNewPasswordImplCopyWith<$Res> {
-  factory _$$UserNewPasswordImplCopyWith(_$UserNewPasswordImpl value,
-          $Res Function(_$UserNewPasswordImpl) then) =
-      __$$UserNewPasswordImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class $ShowNewPasswordCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $ShowNewPasswordCopyWith(ShowNewPassword value, $Res Function(ShowNewPassword) _then) = _$ShowNewPasswordCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
+
+
+
+
+}
+/// @nodoc
+class _$ShowNewPasswordCopyWithImpl<$Res>
+    implements $ShowNewPasswordCopyWith<$Res> {
+  _$ShowNewPasswordCopyWithImpl(this._self, this._then);
+
+  final ShowNewPassword _self;
+  final $Res Function(ShowNewPassword) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(ShowNewPassword(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$UserNewPasswordImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$UserNewPasswordImpl>
-    implements _$$UserNewPasswordImplCopyWith<$Res> {
-  __$$UserNewPasswordImplCopyWithImpl(
-      _$UserNewPasswordImpl _value, $Res Function(_$UserNewPasswordImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UserNewPasswordImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserNewPasswordImpl implements UserNewPassword {
-  const _$UserNewPasswordImpl(this.value);
 
-  @override
-  final String value;
+class ShowConfirmNewPassword implements ForgetPasswordState {
+  const ShowConfirmNewPassword(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.userNewPassword(value: $value)';
-  }
+ final  bool value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserNewPasswordImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ShowConfirmNewPasswordCopyWith<ShowConfirmNewPassword> get copyWith => _$ShowConfirmNewPasswordCopyWithImpl<ShowConfirmNewPassword>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserNewPasswordImplCopyWith<_$UserNewPasswordImpl> get copyWith =>
-      __$$UserNewPasswordImplCopyWithImpl<_$UserNewPasswordImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return userNewPassword(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return userNewPassword?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userNewPassword != null) {
-      return userNewPassword(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return userNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return userNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userNewPassword != null) {
-      return userNewPassword(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ShowConfirmNewPassword&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class UserNewPassword implements ForgetPasswordState {
-  const factory UserNewPassword(final String value) = _$UserNewPasswordImpl;
 
-  String get value;
-  @JsonKey(ignore: true)
-  _$$UserNewPasswordImplCopyWith<_$UserNewPasswordImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.showConfirmNewPassword(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserConfirmNewPasswordImplCopyWith<$Res> {
-  factory _$$UserConfirmNewPasswordImplCopyWith(
-          _$UserConfirmNewPasswordImpl value,
-          $Res Function(_$UserConfirmNewPasswordImpl) then) =
-      __$$UserConfirmNewPasswordImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
+abstract mixin class $ShowConfirmNewPasswordCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $ShowConfirmNewPasswordCopyWith(ShowConfirmNewPassword value, $Res Function(ShowConfirmNewPassword) _then) = _$ShowConfirmNewPasswordCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
+
+
+
+
+}
+/// @nodoc
+class _$ShowConfirmNewPasswordCopyWithImpl<$Res>
+    implements $ShowConfirmNewPasswordCopyWith<$Res> {
+  _$ShowConfirmNewPasswordCopyWithImpl(this._self, this._then);
+
+  final ShowConfirmNewPassword _self;
+  final $Res Function(ShowConfirmNewPassword) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(ShowConfirmNewPassword(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-class __$$UserConfirmNewPasswordImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$UserConfirmNewPasswordImpl>
-    implements _$$UserConfirmNewPasswordImplCopyWith<$Res> {
-  __$$UserConfirmNewPasswordImplCopyWithImpl(
-      _$UserConfirmNewPasswordImpl _value,
-      $Res Function(_$UserConfirmNewPasswordImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$UserConfirmNewPasswordImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserConfirmNewPasswordImpl implements UserConfirmNewPassword {
-  const _$UserConfirmNewPasswordImpl(this.value);
 
-  @override
-  final String value;
+class CreateNewPasswordValidator implements ForgetPasswordState {
+  const CreateNewPasswordValidator(this.value);
+  
 
-  @override
-  String toString() {
-    return 'ForgetPasswordState.userConfirmNewPassword(value: $value)';
-  }
+ final  bool value;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserConfirmNewPasswordImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CreateNewPasswordValidatorCopyWith<CreateNewPasswordValidator> get copyWith => _$CreateNewPasswordValidatorCopyWithImpl<CreateNewPasswordValidator>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserConfirmNewPasswordImplCopyWith<_$UserConfirmNewPasswordImpl>
-      get copyWith => __$$UserConfirmNewPasswordImplCopyWithImpl<
-          _$UserConfirmNewPasswordImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return userConfirmNewPassword(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return userConfirmNewPassword?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userConfirmNewPassword != null) {
-      return userConfirmNewPassword(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return userConfirmNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return userConfirmNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (userConfirmNewPassword != null) {
-      return userConfirmNewPassword(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateNewPasswordValidator&&(identical(other.value, value) || other.value == value));
 }
 
-abstract class UserConfirmNewPassword implements ForgetPasswordState {
-  const factory UserConfirmNewPassword(final String value) =
-      _$UserConfirmNewPasswordImpl;
 
-  String get value;
-  @JsonKey(ignore: true)
-  _$$UserConfirmNewPasswordImplCopyWith<_$UserConfirmNewPasswordImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,value);
+
+@override
+String toString() {
+  return 'ForgetPasswordState.createNewPasswordValidator(value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ShowNewPasswordImplCopyWith<$Res> {
-  factory _$$ShowNewPasswordImplCopyWith(_$ShowNewPasswordImpl value,
-          $Res Function(_$ShowNewPasswordImpl) then) =
-      __$$ShowNewPasswordImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
-}
+abstract mixin class $CreateNewPasswordValidatorCopyWith<$Res> implements $ForgetPasswordStateCopyWith<$Res> {
+  factory $CreateNewPasswordValidatorCopyWith(CreateNewPasswordValidator value, $Res Function(CreateNewPasswordValidator) _then) = _$CreateNewPasswordValidatorCopyWithImpl;
+@useResult
+$Res call({
+ bool value
+});
 
+
+
+
+}
 /// @nodoc
-class __$$ShowNewPasswordImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$ShowNewPasswordImpl>
-    implements _$$ShowNewPasswordImplCopyWith<$Res> {
-  __$$ShowNewPasswordImplCopyWithImpl(
-      _$ShowNewPasswordImpl _value, $Res Function(_$ShowNewPasswordImpl) _then)
-      : super(_value, _then);
+class _$CreateNewPasswordValidatorCopyWithImpl<$Res>
+    implements $CreateNewPasswordValidatorCopyWith<$Res> {
+  _$CreateNewPasswordValidatorCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$ShowNewPasswordImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
+  final CreateNewPasswordValidator _self;
+  final $Res Function(CreateNewPasswordValidator) _then;
+
+/// Create a copy of ForgetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
+  return _then(CreateNewPasswordValidator(
+null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
 
-class _$ShowNewPasswordImpl implements ShowNewPassword {
-  const _$ShowNewPasswordImpl(this.value);
-
-  @override
-  final bool value;
-
-  @override
-  String toString() {
-    return 'ForgetPasswordState.showNewPassword(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ShowNewPasswordImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShowNewPasswordImplCopyWith<_$ShowNewPasswordImpl> get copyWith =>
-      __$$ShowNewPasswordImplCopyWithImpl<_$ShowNewPasswordImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return showNewPassword(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return showNewPassword?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (showNewPassword != null) {
-      return showNewPassword(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return showNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return showNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (showNewPassword != null) {
-      return showNewPassword(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class ShowNewPassword implements ForgetPasswordState {
-  const factory ShowNewPassword(final bool value) = _$ShowNewPasswordImpl;
-
-  bool get value;
-  @JsonKey(ignore: true)
-  _$$ShowNewPasswordImplCopyWith<_$ShowNewPasswordImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ShowConfirmNewPasswordImplCopyWith<$Res> {
-  factory _$$ShowConfirmNewPasswordImplCopyWith(
-          _$ShowConfirmNewPasswordImpl value,
-          $Res Function(_$ShowConfirmNewPasswordImpl) then) =
-      __$$ShowConfirmNewPasswordImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
-}
-
-/// @nodoc
-class __$$ShowConfirmNewPasswordImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$ShowConfirmNewPasswordImpl>
-    implements _$$ShowConfirmNewPasswordImplCopyWith<$Res> {
-  __$$ShowConfirmNewPasswordImplCopyWithImpl(
-      _$ShowConfirmNewPasswordImpl _value,
-      $Res Function(_$ShowConfirmNewPasswordImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$ShowConfirmNewPasswordImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ShowConfirmNewPasswordImpl implements ShowConfirmNewPassword {
-  const _$ShowConfirmNewPasswordImpl(this.value);
-
-  @override
-  final bool value;
-
-  @override
-  String toString() {
-    return 'ForgetPasswordState.showConfirmNewPassword(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ShowConfirmNewPasswordImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShowConfirmNewPasswordImplCopyWith<_$ShowConfirmNewPasswordImpl>
-      get copyWith => __$$ShowConfirmNewPasswordImplCopyWithImpl<
-          _$ShowConfirmNewPasswordImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return showConfirmNewPassword(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return showConfirmNewPassword?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (showConfirmNewPassword != null) {
-      return showConfirmNewPassword(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return showConfirmNewPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return showConfirmNewPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (showConfirmNewPassword != null) {
-      return showConfirmNewPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ShowConfirmNewPassword implements ForgetPasswordState {
-  const factory ShowConfirmNewPassword(final bool value) =
-      _$ShowConfirmNewPasswordImpl;
-
-  bool get value;
-  @JsonKey(ignore: true)
-  _$$ShowConfirmNewPasswordImplCopyWith<_$ShowConfirmNewPasswordImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CreateNewPasswordValidatorImplCopyWith<$Res> {
-  factory _$$CreateNewPasswordValidatorImplCopyWith(
-          _$CreateNewPasswordValidatorImpl value,
-          $Res Function(_$CreateNewPasswordValidatorImpl) then) =
-      __$$CreateNewPasswordValidatorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool value});
-}
-
-/// @nodoc
-class __$$CreateNewPasswordValidatorImplCopyWithImpl<$Res>
-    extends _$ForgetPasswordStateCopyWithImpl<$Res,
-        _$CreateNewPasswordValidatorImpl>
-    implements _$$CreateNewPasswordValidatorImplCopyWith<$Res> {
-  __$$CreateNewPasswordValidatorImplCopyWithImpl(
-      _$CreateNewPasswordValidatorImpl _value,
-      $Res Function(_$CreateNewPasswordValidatorImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$CreateNewPasswordValidatorImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CreateNewPasswordValidatorImpl implements CreateNewPasswordValidator {
-  const _$CreateNewPasswordValidatorImpl(this.value);
-
-  @override
-  final bool value;
-
-  @override
-  String toString() {
-    return 'ForgetPasswordState.createNewPasswordValidator(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateNewPasswordValidatorImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CreateNewPasswordValidatorImplCopyWith<_$CreateNewPasswordValidatorImpl>
-      get copyWith => __$$CreateNewPasswordValidatorImplCopyWithImpl<
-          _$CreateNewPasswordValidatorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ApiErrorModel apiErrorModel) error,
-    required TResult Function(ApiSuccessGeneralModel data) success,
-    required TResult Function(String value) userForgetEmailAddress,
-    required TResult Function(bool value) userForgetButtonValidator,
-    required TResult Function() verifyCodeLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) verifyCodeError,
-    required TResult Function(ApiSuccessGeneralModel data) verifyCodeSuccess,
-    required TResult Function(String? value) otpVerifyCode,
-    required TResult Function(bool value) verifyButtonValidator,
-    required TResult Function() newPasswordLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) newPasswordError,
-    required TResult Function(AuthResponse data) newPasswordSuccess,
-    required TResult Function(String value) userNewPassword,
-    required TResult Function(String value) userConfirmNewPassword,
-    required TResult Function(bool value) showNewPassword,
-    required TResult Function(bool value) showConfirmNewPassword,
-    required TResult Function(bool value) createNewPasswordValidator,
-  }) {
-    return createNewPasswordValidator(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ApiErrorModel apiErrorModel)? error,
-    TResult? Function(ApiSuccessGeneralModel data)? success,
-    TResult? Function(String value)? userForgetEmailAddress,
-    TResult? Function(bool value)? userForgetButtonValidator,
-    TResult? Function()? verifyCodeLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult? Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult? Function(String? value)? otpVerifyCode,
-    TResult? Function(bool value)? verifyButtonValidator,
-    TResult? Function()? newPasswordLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult? Function(AuthResponse data)? newPasswordSuccess,
-    TResult? Function(String value)? userNewPassword,
-    TResult? Function(String value)? userConfirmNewPassword,
-    TResult? Function(bool value)? showNewPassword,
-    TResult? Function(bool value)? showConfirmNewPassword,
-    TResult? Function(bool value)? createNewPasswordValidator,
-  }) {
-    return createNewPasswordValidator?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ApiErrorModel apiErrorModel)? error,
-    TResult Function(ApiSuccessGeneralModel data)? success,
-    TResult Function(String value)? userForgetEmailAddress,
-    TResult Function(bool value)? userForgetButtonValidator,
-    TResult Function()? verifyCodeLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? verifyCodeError,
-    TResult Function(ApiSuccessGeneralModel data)? verifyCodeSuccess,
-    TResult Function(String? value)? otpVerifyCode,
-    TResult Function(bool value)? verifyButtonValidator,
-    TResult Function()? newPasswordLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? newPasswordError,
-    TResult Function(AuthResponse data)? newPasswordSuccess,
-    TResult Function(String value)? userNewPassword,
-    TResult Function(String value)? userConfirmNewPassword,
-    TResult Function(bool value)? showNewPassword,
-    TResult Function(bool value)? showConfirmNewPassword,
-    TResult Function(bool value)? createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (createNewPasswordValidator != null) {
-      return createNewPasswordValidator(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ForgetPasswordLoadingData value) loading,
-    required TResult Function(ForgetPasswordButtonErrorData value) error,
-    required TResult Function(ForgetPasswordButtonSuccessData value) success,
-    required TResult Function(UserForgetEmailAddress value)
-        userForgetEmailAddress,
-    required TResult Function(ContinueForgetButtonValidator value)
-        userForgetButtonValidator,
-    required TResult Function(VerifyCodeLoadingData value) verifyCodeLoading,
-    required TResult Function(VerifyCodeButtonErrorData value) verifyCodeError,
-    required TResult Function(VerifyCodeButtonSuccessData value)
-        verifyCodeSuccess,
-    required TResult Function(OtpVerifyCode value) otpVerifyCode,
-    required TResult Function(VerifyButtonValidator value)
-        verifyButtonValidator,
-    required TResult Function(NewPasswordLoadingData value) newPasswordLoading,
-    required TResult Function(NewPasswordButtonErrorData value)
-        newPasswordError,
-    required TResult Function(NewPasswordButtonSuccessData value)
-        newPasswordSuccess,
-    required TResult Function(UserNewPassword value) userNewPassword,
-    required TResult Function(UserConfirmNewPassword value)
-        userConfirmNewPassword,
-    required TResult Function(ShowNewPassword value) showNewPassword,
-    required TResult Function(ShowConfirmNewPassword value)
-        showConfirmNewPassword,
-    required TResult Function(CreateNewPasswordValidator value)
-        createNewPasswordValidator,
-  }) {
-    return createNewPasswordValidator(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ForgetPasswordLoadingData value)? loading,
-    TResult? Function(ForgetPasswordButtonErrorData value)? error,
-    TResult? Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult? Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult? Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult? Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult? Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult? Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult? Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult? Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult? Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult? Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult? Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult? Function(UserNewPassword value)? userNewPassword,
-    TResult? Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult? Function(ShowNewPassword value)? showNewPassword,
-    TResult? Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult? Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-  }) {
-    return createNewPasswordValidator?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ForgetPasswordLoadingData value)? loading,
-    TResult Function(ForgetPasswordButtonErrorData value)? error,
-    TResult Function(ForgetPasswordButtonSuccessData value)? success,
-    TResult Function(UserForgetEmailAddress value)? userForgetEmailAddress,
-    TResult Function(ContinueForgetButtonValidator value)?
-        userForgetButtonValidator,
-    TResult Function(VerifyCodeLoadingData value)? verifyCodeLoading,
-    TResult Function(VerifyCodeButtonErrorData value)? verifyCodeError,
-    TResult Function(VerifyCodeButtonSuccessData value)? verifyCodeSuccess,
-    TResult Function(OtpVerifyCode value)? otpVerifyCode,
-    TResult Function(VerifyButtonValidator value)? verifyButtonValidator,
-    TResult Function(NewPasswordLoadingData value)? newPasswordLoading,
-    TResult Function(NewPasswordButtonErrorData value)? newPasswordError,
-    TResult Function(NewPasswordButtonSuccessData value)? newPasswordSuccess,
-    TResult Function(UserNewPassword value)? userNewPassword,
-    TResult Function(UserConfirmNewPassword value)? userConfirmNewPassword,
-    TResult Function(ShowNewPassword value)? showNewPassword,
-    TResult Function(ShowConfirmNewPassword value)? showConfirmNewPassword,
-    TResult Function(CreateNewPasswordValidator value)?
-        createNewPasswordValidator,
-    required TResult orElse(),
-  }) {
-    if (createNewPasswordValidator != null) {
-      return createNewPasswordValidator(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CreateNewPasswordValidator implements ForgetPasswordState {
-  const factory CreateNewPasswordValidator(final bool value) =
-      _$CreateNewPasswordValidatorImpl;
-
-  bool get value;
-  @JsonKey(ignore: true)
-  _$$CreateNewPasswordValidatorImplCopyWith<_$CreateNewPasswordValidatorImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

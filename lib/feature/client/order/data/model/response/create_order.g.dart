@@ -38,7 +38,8 @@ OrderResponseData _$OrderResponseDataFromJson(Map<String, dynamic> json) =>
       shippingAddress: json['shippingAddress'] == null
           ? null
           : OrderShippingAddress.fromJson(
-              json['shippingAddress'] as Map<String, dynamic>),
+              json['shippingAddress'] as Map<String, dynamic>,
+            ),
       totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
       paymentMethodType: json['paymentMethodType'] as String?,
       driverDeliveredAt: json['driverDeliveredAt'] as String?,
@@ -118,10 +119,10 @@ Map<String, dynamic> _$CartOrderItemsToJson(CartOrderItems instance) =>
     };
 
 ProductOrder _$ProductOrderFromJson(Map<String, dynamic> json) => ProductOrder(
-      title: json['title'] as String?,
-      sId: json['sId'] as String?,
-      image: json['image'] as String?,
-    )..ratingsAverage = (json['ratingsAverage'] as num?)?.toDouble();
+  title: json['title'] as String?,
+  sId: json['sId'] as String?,
+  image: json['image'] as String?,
+)..ratingsAverage = (json['ratingsAverage'] as num?)?.toDouble();
 
 Map<String, dynamic> _$ProductOrderToJson(ProductOrder instance) =>
     <String, dynamic>{
@@ -132,36 +133,36 @@ Map<String, dynamic> _$ProductOrderToJson(ProductOrder instance) =>
     };
 
 OrderShippingAddress _$OrderShippingAddressFromJson(
-        Map<String, dynamic> json) =>
-    OrderShippingAddress(
-      location: json['location'] == null
-          ? null
-          : OrderLocation.fromJson(json['location'] as Map<String, dynamic>),
-      sId: json['sId'] as String?,
-      alias: json['alias'] as String?,
-      buildingName: json['buildingName'] as String?,
-      apartmentNumber: json['apartmentNumber'] as String?,
-      floor: json['floor'] as String?,
-      region: json['region'] as String?,
-      streetName: json['streetName'] as String?,
-      phone: json['phone'] as String?,
-      user: json['user'] as String?,
-    );
+  Map<String, dynamic> json,
+) => OrderShippingAddress(
+  location: json['location'] == null
+      ? null
+      : OrderLocation.fromJson(json['location'] as Map<String, dynamic>),
+  sId: json['sId'] as String?,
+  alias: json['alias'] as String?,
+  buildingName: json['buildingName'] as String?,
+  apartmentNumber: json['apartmentNumber'] as String?,
+  floor: json['floor'] as String?,
+  region: json['region'] as String?,
+  streetName: json['streetName'] as String?,
+  phone: json['phone'] as String?,
+  user: json['user'] as String?,
+);
 
 Map<String, dynamic> _$OrderShippingAddressToJson(
-        OrderShippingAddress instance) =>
-    <String, dynamic>{
-      'location': instance.location,
-      'sId': instance.sId,
-      'alias': instance.alias,
-      'buildingName': instance.buildingName,
-      'apartmentNumber': instance.apartmentNumber,
-      'floor': instance.floor,
-      'region': instance.region,
-      'streetName': instance.streetName,
-      'phone': instance.phone,
-      'user': instance.user,
-    };
+  OrderShippingAddress instance,
+) => <String, dynamic>{
+  'location': instance.location,
+  'sId': instance.sId,
+  'alias': instance.alias,
+  'buildingName': instance.buildingName,
+  'apartmentNumber': instance.apartmentNumber,
+  'floor': instance.floor,
+  'region': instance.region,
+  'streetName': instance.streetName,
+  'phone': instance.phone,
+  'user': instance.user,
+};
 
 OrderLocation _$OrderLocationFromJson(Map<String, dynamic> json) =>
     OrderLocation(

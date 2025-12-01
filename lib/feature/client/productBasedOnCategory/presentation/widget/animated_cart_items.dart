@@ -74,7 +74,7 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
         color: ColorManger.brun,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withValues(alpha: 0.15),
             blurRadius: 6,
             offset: const Offset(0, 3),
           ),
@@ -109,7 +109,7 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
                   margin: responsive.setMargin(top: 2, bottom: 2),
                   height: responsive.setHeight(8),
                   width: responsive.setWidth(0.5),
-                  color: ColorManger.backgroundItem.withOpacity(0.7),
+                  color: ColorManger.backgroundItem.withValues(alpha: 0.7),
                 ),
                 SizedBox(width: responsive.setWidth(3)),
                 Text(

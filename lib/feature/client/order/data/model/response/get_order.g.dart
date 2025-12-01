@@ -13,10 +13,12 @@ GetOrdersResponse _$GetOrdersResponseFromJson(Map<String, dynamic> json) =>
       paginationRuslt: json['paginationRuslt'] == null
           ? null
           : PaginationGetOrdersRuslt.fromJson(
-              json['paginationRuslt'] as Map<String, dynamic>),
+              json['paginationRuslt'] as Map<String, dynamic>,
+            ),
       data: (json['data'] as List<dynamic>?)
           ?.map(
-              (e) => GetOrdersResponseData.fromJson(e as Map<String, dynamic>))
+            (e) => GetOrdersResponseData.fromJson(e as Map<String, dynamic>),
+          )
           .toList(),
     );
 
@@ -29,85 +31,86 @@ Map<String, dynamic> _$GetOrdersResponseToJson(GetOrdersResponse instance) =>
     };
 
 PaginationGetOrdersRuslt _$PaginationGetOrdersRusltFromJson(
-        Map<String, dynamic> json) =>
-    PaginationGetOrdersRuslt(
-      currentPage: (json['currentPage'] as num?)?.toInt(),
-      limit: (json['limit'] as num?)?.toInt(),
-      skip: (json['skip'] as num?)?.toInt(),
-      numberOfPages: (json['numberOfPages'] as num?)?.toInt(),
-      next: (json['next'] as num?)?.toInt(),
-    );
+  Map<String, dynamic> json,
+) => PaginationGetOrdersRuslt(
+  currentPage: (json['currentPage'] as num?)?.toInt(),
+  limit: (json['limit'] as num?)?.toInt(),
+  skip: (json['skip'] as num?)?.toInt(),
+  numberOfPages: (json['numberOfPages'] as num?)?.toInt(),
+  next: (json['next'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$PaginationGetOrdersRusltToJson(
-        PaginationGetOrdersRuslt instance) =>
-    <String, dynamic>{
-      'currentPage': instance.currentPage,
-      'limit': instance.limit,
-      'skip': instance.skip,
-      'numberOfPages': instance.numberOfPages,
-      'next': instance.next,
-    };
+  PaginationGetOrdersRuslt instance,
+) => <String, dynamic>{
+  'currentPage': instance.currentPage,
+  'limit': instance.limit,
+  'skip': instance.skip,
+  'numberOfPages': instance.numberOfPages,
+  'next': instance.next,
+};
 
 GetOrdersResponseData _$GetOrdersResponseDataFromJson(
-        Map<String, dynamic> json) =>
-    GetOrdersResponseData(
-      sId: json['_id'] as String?,
-      user: json['user'] == null
-          ? null
-          : GetOrdersUser.fromJson(json['user'] as Map<String, dynamic>),
-      notes: json['notes'] as String?,
-      status: (json['status'] as num?)?.toInt(),
-      cartItems: (json['cartItems'] as List<dynamic>?)
-          ?.map((e) => OrdersCartItems.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      taxPrice: (json['taxPrice'] as num?)?.toDouble(),
-      shippingPrice: (json['shippingPrice'] as num?)?.toDouble(),
-      shippingAddress: json['shippingAddress'] == null
-          ? null
-          : OrdersShippingAddress.fromJson(
-              json['shippingAddress'] as Map<String, dynamic>),
-      totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
-      paymentMethodType: json['paymentMethodType'] as String?,
-      driverDeliveredAt: json['driverDeliveredAt'] as String?,
-      orderNumber: (json['orderNumber'] as num?)?.toInt(),
-      adminAcceptedAt: json['adminAcceptedAt'] as String?,
-      driverAcceptedAt: json['driverAcceptedAt'] as String?,
-      adminCompletedAt: json['adminCompletedAt'] as String?,
-      createdAt: json['createdAt'] as String?,
-      canceledAt: json['canceledAt'] as String?,
-      customerName: json['customerName'] as String?,
-      customerPhone: json['customerPhone'] as String?,
-      customerAddressText: json['customerAddressText'] as String?,
-      orderSource: json['orderSource'] as String?,
-      updatedAt: json['updatedAt'] as String?,
-    );
+  Map<String, dynamic> json,
+) => GetOrdersResponseData(
+  sId: json['_id'] as String?,
+  user: json['user'] == null
+      ? null
+      : GetOrdersUser.fromJson(json['user'] as Map<String, dynamic>),
+  notes: json['notes'] as String?,
+  status: (json['status'] as num?)?.toInt(),
+  cartItems: (json['cartItems'] as List<dynamic>?)
+      ?.map((e) => OrdersCartItems.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  taxPrice: (json['taxPrice'] as num?)?.toDouble(),
+  shippingPrice: (json['shippingPrice'] as num?)?.toDouble(),
+  shippingAddress: json['shippingAddress'] == null
+      ? null
+      : OrdersShippingAddress.fromJson(
+          json['shippingAddress'] as Map<String, dynamic>,
+        ),
+  totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
+  paymentMethodType: json['paymentMethodType'] as String?,
+  driverDeliveredAt: json['driverDeliveredAt'] as String?,
+  orderNumber: (json['orderNumber'] as num?)?.toInt(),
+  adminAcceptedAt: json['adminAcceptedAt'] as String?,
+  driverAcceptedAt: json['driverAcceptedAt'] as String?,
+  adminCompletedAt: json['adminCompletedAt'] as String?,
+  createdAt: json['createdAt'] as String?,
+  canceledAt: json['canceledAt'] as String?,
+  customerName: json['customerName'] as String?,
+  customerPhone: json['customerPhone'] as String?,
+  customerAddressText: json['customerAddressText'] as String?,
+  orderSource: json['orderSource'] as String?,
+  updatedAt: json['updatedAt'] as String?,
+);
 
 Map<String, dynamic> _$GetOrdersResponseDataToJson(
-        GetOrdersResponseData instance) =>
-    <String, dynamic>{
-      '_id': instance.sId,
-      'user': instance.user,
-      'notes': instance.notes,
-      'status': instance.status,
-      'cartItems': instance.cartItems,
-      'taxPrice': instance.taxPrice,
-      'shippingPrice': instance.shippingPrice,
-      'shippingAddress': instance.shippingAddress,
-      'totalOrderPrice': instance.totalOrderPrice,
-      'paymentMethodType': instance.paymentMethodType,
-      'orderNumber': instance.orderNumber,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-      'driverDeliveredAt': instance.driverDeliveredAt,
-      'customerName': instance.customerName,
-      'customerPhone': instance.customerPhone,
-      'customerAddressText': instance.customerAddressText,
-      'orderSource': instance.orderSource,
-      'adminAcceptedAt': instance.adminAcceptedAt,
-      'adminCompletedAt': instance.adminCompletedAt,
-      'driverAcceptedAt': instance.driverAcceptedAt,
-      'canceledAt': instance.canceledAt,
-    };
+  GetOrdersResponseData instance,
+) => <String, dynamic>{
+  '_id': instance.sId,
+  'user': instance.user,
+  'notes': instance.notes,
+  'status': instance.status,
+  'cartItems': instance.cartItems,
+  'taxPrice': instance.taxPrice,
+  'shippingPrice': instance.shippingPrice,
+  'shippingAddress': instance.shippingAddress,
+  'totalOrderPrice': instance.totalOrderPrice,
+  'paymentMethodType': instance.paymentMethodType,
+  'orderNumber': instance.orderNumber,
+  'createdAt': instance.createdAt,
+  'updatedAt': instance.updatedAt,
+  'driverDeliveredAt': instance.driverDeliveredAt,
+  'customerName': instance.customerName,
+  'customerPhone': instance.customerPhone,
+  'customerAddressText': instance.customerAddressText,
+  'orderSource': instance.orderSource,
+  'adminAcceptedAt': instance.adminAcceptedAt,
+  'adminCompletedAt': instance.adminCompletedAt,
+  'driverAcceptedAt': instance.driverAcceptedAt,
+  'canceledAt': instance.canceledAt,
+};
 
 GetOrdersUser _$GetOrdersUserFromJson(Map<String, dynamic> json) =>
     GetOrdersUser(
@@ -162,40 +165,40 @@ Map<String, dynamic> _$OrdersProductToJson(OrdersProduct instance) =>
     };
 
 OrdersShippingAddress _$OrdersShippingAddressFromJson(
-        Map<String, dynamic> json) =>
-    OrdersShippingAddress(
-      location: json['location'] == null
-          ? null
-          : OrdersLocation.fromJson(json['location'] as Map<String, dynamic>),
-      sId: json['sId'] as String?,
-      alias: json['alias'] as String?,
-      buildingName: json['buildingName'] as String?,
-      apartmentNumber: json['apartmentNumber'] as String?,
-      floor: json['floor'] as String?,
-      region: json['region'] as String?,
-      streetName: json['streetName'] as String?,
-      phone: json['phone'] as String?,
-      user: json['user'] as String?,
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
-    );
+  Map<String, dynamic> json,
+) => OrdersShippingAddress(
+  location: json['location'] == null
+      ? null
+      : OrdersLocation.fromJson(json['location'] as Map<String, dynamic>),
+  sId: json['sId'] as String?,
+  alias: json['alias'] as String?,
+  buildingName: json['buildingName'] as String?,
+  apartmentNumber: json['apartmentNumber'] as String?,
+  floor: json['floor'] as String?,
+  region: json['region'] as String?,
+  streetName: json['streetName'] as String?,
+  phone: json['phone'] as String?,
+  user: json['user'] as String?,
+  createdAt: json['createdAt'] as String?,
+  updatedAt: json['updatedAt'] as String?,
+);
 
 Map<String, dynamic> _$OrdersShippingAddressToJson(
-        OrdersShippingAddress instance) =>
-    <String, dynamic>{
-      'location': instance.location,
-      'sId': instance.sId,
-      'alias': instance.alias,
-      'buildingName': instance.buildingName,
-      'apartmentNumber': instance.apartmentNumber,
-      'floor': instance.floor,
-      'region': instance.region,
-      'streetName': instance.streetName,
-      'phone': instance.phone,
-      'user': instance.user,
-      'createdAt': instance.createdAt,
-      'updatedAt': instance.updatedAt,
-    };
+  OrdersShippingAddress instance,
+) => <String, dynamic>{
+  'location': instance.location,
+  'sId': instance.sId,
+  'alias': instance.alias,
+  'buildingName': instance.buildingName,
+  'apartmentNumber': instance.apartmentNumber,
+  'floor': instance.floor,
+  'region': instance.region,
+  'streetName': instance.streetName,
+  'phone': instance.phone,
+  'user': instance.user,
+  'createdAt': instance.createdAt,
+  'updatedAt': instance.updatedAt,
+};
 
 OrdersLocation _$OrdersLocationFromJson(Map<String, dynamic> json) =>
     OrdersLocation(

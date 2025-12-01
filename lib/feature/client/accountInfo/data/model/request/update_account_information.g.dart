@@ -7,15 +7,12 @@ part of 'update_account_information.dart';
 // **************************************************************************
 
 UpdateAccountInformationRequestBody
-    _$UpdateAccountInformationRequestBodyFromJson(Map<String, dynamic> json) =>
-        UpdateAccountInformationRequestBody(
-          name: json['name'] as String,
-          phone: json['phone'] as String,
-        );
+_$UpdateAccountInformationRequestBodyFromJson(Map<String, dynamic> json) =>
+    UpdateAccountInformationRequestBody(
+      name: json['name'] as String,
+      phone: json['phone'] as String,
+    );
 
 Map<String, dynamic> _$UpdateAccountInformationRequestBodyToJson(
-        UpdateAccountInformationRequestBody instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'phone': instance.phone,
-    };
+  UpdateAccountInformationRequestBody instance,
+) => <String, dynamic>{'name': instance.name, 'phone': instance.phone};

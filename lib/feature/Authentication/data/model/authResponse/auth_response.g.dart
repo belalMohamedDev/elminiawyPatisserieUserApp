@@ -7,14 +7,14 @@ part of 'auth_response.dart';
 // **************************************************************************
 
 AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) => AuthResponse(
-      status: json['status'] as bool?,
-      message: json['message'] as String?,
-      accessToken: json['accessToken'] as String?,
-      data: json['data'],
-      total: (json['total'] as num?)?.toInt(),
-      active: (json['active'] as num?)?.toInt(),
-      inactive: (json['inactive'] as num?)?.toInt(),
-    );
+  status: json['status'] as bool?,
+  message: json['message'] as String?,
+  accessToken: json['accessToken'] as String?,
+  data: json['data'],
+  total: (json['total'] as num?)?.toInt(),
+  active: (json['active'] as num?)?.toInt(),
+  inactive: (json['inactive'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$AuthResponseToJson(AuthResponse instance) =>
     <String, dynamic>{
@@ -39,7 +39,8 @@ DataAuthResponse _$DataAuthResponseFromJson(Map<String, dynamic> json) =>
       storeAddress: json['storeAddress'] == null
           ? null
           : UserStoreAddress.fromJson(
-              json['storeAddress'] as Map<String, dynamic>),
+              json['storeAddress'] as Map<String, dynamic>,
+            ),
       driverActive: json['driverActive'] as bool?,
       active: json['active'] as bool?,
       completeData: json['completeData'] as bool?,
@@ -60,26 +61,27 @@ Map<String, dynamic> _$DataAuthResponseToJson(DataAuthResponse instance) =>
       'active': instance.active,
     };
 
-UserStoreAddress _$UserStoreAddressFromJson(Map<String, dynamic> json) =>
-    UserStoreAddress(
-      location: json['location'] == null
-          ? null
-          : UserStoreLocation.fromJson(
-              json['location'] as Map<String, dynamic>),
-      branchArea: json['branchArea'] == null
-          ? null
-          : UserStoreLocalization.fromJson(
-              json['branchArea'] as Map<String, dynamic>),
-      briefness: json['briefness'] == null
-          ? null
-          : UserStoreLocalization.fromJson(
-              json['briefness'] as Map<String, dynamic>),
-      region: json['region'] == null
-          ? null
-          : UserStoreLocalization.fromJson(
-              json['region'] as Map<String, dynamic>),
-      sId: json['_id'] as String?,
-    );
+UserStoreAddress _$UserStoreAddressFromJson(
+  Map<String, dynamic> json,
+) => UserStoreAddress(
+  location: json['location'] == null
+      ? null
+      : UserStoreLocation.fromJson(json['location'] as Map<String, dynamic>),
+  branchArea: json['branchArea'] == null
+      ? null
+      : UserStoreLocalization.fromJson(
+          json['branchArea'] as Map<String, dynamic>,
+        ),
+  briefness: json['briefness'] == null
+      ? null
+      : UserStoreLocalization.fromJson(
+          json['briefness'] as Map<String, dynamic>,
+        ),
+  region: json['region'] == null
+      ? null
+      : UserStoreLocalization.fromJson(json['region'] as Map<String, dynamic>),
+  sId: json['_id'] as String?,
+);
 
 Map<String, dynamic> _$UserStoreAddressToJson(UserStoreAddress instance) =>
     <String, dynamic>{
@@ -105,15 +107,10 @@ Map<String, dynamic> _$UserStoreLocationToJson(UserStoreLocation instance) =>
     };
 
 UserStoreLocalization _$UserStoreLocalizationFromJson(
-        Map<String, dynamic> json) =>
-    UserStoreLocalization(
-      en: json['en'] as String?,
-      ar: json['ar'] as String?,
-    );
+  Map<String, dynamic> json,
+) =>
+    UserStoreLocalization(en: json['en'] as String?, ar: json['ar'] as String?);
 
 Map<String, dynamic> _$UserStoreLocalizationToJson(
-        UserStoreLocalization instance) =>
-    <String, dynamic>{
-      'en': instance.en,
-      'ar': instance.ar,
-    };
+  UserStoreLocalization instance,
+) => <String, dynamic>{'en': instance.en, 'ar': instance.ar};

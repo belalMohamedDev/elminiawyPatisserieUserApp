@@ -57,7 +57,7 @@ class ProductBasedOnCategoryCubit extends Cubit<ProductBasedOnCategoryState> {
         subCategoryProducyList!));
   }
 
-  List<Products>? filterSubCategoryListById(subCategoryId) {
+  List<Products>? filterSubCategoryListById(String subCategoryId) {
     return subCategoryProductData
         ?.firstWhere(
           (element) => element.id == subCategoryId,

@@ -22,15 +22,15 @@ Future<dynamic> settingChangeBottomSheet(BuildContext context) {
                       ValueListenableBuilder(
                           valueListenable:
                               FirebaseCloudMessaging().isNotificationSubscribe,
-                          builder: (_, value, __) {
+                          builder: (_, value, _) {
                             return CustomProfileCard(
                               title: context.translate(AppStrings.notification),
                               actionWidget: Transform.scale(
                                 scale: 0.75,
                                 child: CupertinoSwitch(
                                   value: value,
-                                  activeColor: ColorManger.brun,
-                                  trackColor: ColorManger.brunLight,
+                                  activeTrackColor: ColorManger.brun,
+                                  inactiveTrackColor: ColorManger.brunLight,
                                   onChanged: (value) async {
                                     await FirebaseCloudMessaging()
                                         .toggleNotificationSubscription();
@@ -64,7 +64,7 @@ Future<dynamic> settingChangeBottomSheet(BuildContext context) {
                           scale: 0.75,
                           child: CupertinoSwitch(
                             value: false,
-                            activeColor: ColorManger.brun,
+                            activeTrackColor: ColorManger.brun,
                             onChanged: (value) {},
                           ),
                         ),

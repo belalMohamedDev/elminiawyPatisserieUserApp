@@ -61,7 +61,7 @@ class SalesContainerWidget extends StatelessWidget {
       height: responsive.setHeight(12),
       width: responsive.setWidth(29),
       decoration: BoxDecoration(
-        color: ColorManger.brownLight.withOpacity(0.09),
+        color: ColorManger.brownLight.withValues(alpha: 0.09),
         borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
       ),
       child: Padding(

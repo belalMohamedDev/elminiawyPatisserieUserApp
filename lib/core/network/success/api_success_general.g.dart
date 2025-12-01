@@ -7,15 +7,12 @@ part of 'api_success_general.dart';
 // **************************************************************************
 
 ApiSuccessGeneralModel _$ApiSuccessGeneralModelFromJson(
-        Map<String, dynamic> json) =>
-    ApiSuccessGeneralModel(
-      message: json['message'] as String?,
-      status: json['status'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => ApiSuccessGeneralModel(
+  message: json['message'] as String?,
+  status: json['status'] as bool?,
+);
 
 Map<String, dynamic> _$ApiSuccessGeneralModelToJson(
-        ApiSuccessGeneralModel instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-      'status': instance.status,
-    };
+  ApiSuccessGeneralModel instance,
+) => <String, dynamic>{'message': instance.message, 'status': instance.status};

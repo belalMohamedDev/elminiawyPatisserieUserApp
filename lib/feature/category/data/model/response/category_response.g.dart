@@ -21,25 +21,25 @@ Map<String, dynamic> _$CategoryResponseToJson(CategoryResponse instance) =>
     };
 
 CategoryResponseData _$CategoryResponseDataFromJson(
-        Map<String, dynamic> json) =>
-    CategoryResponseData(
-      title: json['title'] as String?,
-      sId: json['_id'] as String?,
-      active: json['active'] as bool?,
-      createdAt: json['createdAt'] as String?,
-      updatedAt: json['updatedAt'] as String?,
-      image: json['image'] as String?,
-      publicId: json['publicId'] as String?,
-    );
+  Map<String, dynamic> json,
+) => CategoryResponseData(
+  title: json['title'] as String?,
+  sId: json['_id'] as String?,
+  active: json['active'] as bool?,
+  createdAt: json['createdAt'] as String?,
+  updatedAt: json['updatedAt'] as String?,
+  image: json['image'] as String?,
+  publicId: json['publicId'] as String?,
+);
 
 Map<String, dynamic> _$CategoryResponseDataToJson(
-        CategoryResponseData instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      '_id': instance.sId,
-      'createdAt': instance.createdAt,
-      'active': instance.active,
-      'updatedAt': instance.updatedAt,
-      'image': instance.image,
-      'publicId': instance.publicId,
-    };
+  CategoryResponseData instance,
+) => <String, dynamic>{
+  'title': instance.title,
+  '_id': instance.sId,
+  'createdAt': instance.createdAt,
+  'active': instance.active,
+  'updatedAt': instance.updatedAt,
+  'image': instance.image,
+  'publicId': instance.publicId,
+};

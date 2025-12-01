@@ -35,8 +35,8 @@ class ProductGridViewSuccessState extends StatelessWidget {
     // If grideViewIndex is provided and less than max items, show limited items
     final int itemCount =
         (grideViewIndex != null && grideViewIndex! <= maxItemCount)
-            ? grideViewIndex!
-            : maxItemCount;
+        ? grideViewIndex!
+        : maxItemCount;
 
     return GridView.count(
       addAutomaticKeepAlives: true,
@@ -54,8 +54,9 @@ class ProductGridViewSuccessState extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               color: ColorManger.backgroundItem, // Background color of the item
-              borderRadius:
-                  BorderRadius.circular(responsive.setBorderRadius(2)),
+              borderRadius: BorderRadius.circular(
+                responsive.setBorderRadius(2),
+              ),
             ),
             child: Stack(
               children: [
@@ -64,13 +65,23 @@ class ProductGridViewSuccessState extends StatelessWidget {
                   children: [
                     // Image and wishlist icon
                     _wishListAndImageStack(
-                        context, index, displayList, responsive, isEnLocale),
+                      context,
+                      index,
+                      displayList,
+                      responsive,
+                      isEnLocale,
+                    ),
                     // Product title and information
                     _productTitleAndSomeInformationText(
-                        responsive, displayList, index, context, isEnLocale)
+                      responsive,
+                      displayList,
+                      index,
+                      context,
+                      isEnLocale,
+                    ),
                   ],
                 ),
-// Display product price
+                // Display product price
                 Positioned(
                   bottom: 8,
                   left: isEnLocale ? 5 : null,
@@ -78,13 +89,19 @@ class ProductGridViewSuccessState extends StatelessWidget {
                   child: Text(
                     " ${displayList[index].price!} ${context.translate(AppStrings.egy)}",
                     style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        fontSize: responsive.setTextSize(4),
-                        color: ColorManger.brun),
+                      fontSize: responsive.setTextSize(4),
+                      color: ColorManger.brun,
+                    ),
                   ),
                 ),
                 // Add to order button
                 _addOrderButton(
-                    context, displayList, index, responsive, isEnLocale)
+                  context,
+                  displayList,
+                  index,
+                  responsive,
+                  isEnLocale,
+                ),
               ],
             ),
           ),
@@ -94,8 +111,13 @@ class ProductGridViewSuccessState extends StatelessWidget {
   }
 
   /// Builds the add-to-cart button and handles the loading state for the add-to-cart action.
-  Positioned _addOrderButton(BuildContext context, List<dynamic> displayList,
-      int index, ResponsiveUtils responsive, bool isEnLocale) {
+  Positioned _addOrderButton(
+    BuildContext context,
+    List<dynamic> displayList,
+    int index,
+    ResponsiveUtils responsive,
+    bool isEnLocale,
+  ) {
     return Positioned(
       bottom: 0,
       right: isEnLocale ? 0 : null,
@@ -109,12 +131,16 @@ class ProductGridViewSuccessState extends StatelessWidget {
           height: responsive.setHeight(4),
           width: responsive.setWidth(8),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(
-                      responsive.setBorderRadius(isEnLocale ? 0 : 2)),
-                  bottomRight: Radius.circular(
-                      responsive.setBorderRadius(isEnLocale ? 2 : 0))),
-              color: ColorManger.brun),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(
+                responsive.setBorderRadius(isEnLocale ? 0 : 2),
+              ),
+              bottomRight: Radius.circular(
+                responsive.setBorderRadius(isEnLocale ? 2 : 0),
+              ),
+            ),
+            color: ColorManger.brun,
+          ),
           child: BlocBuilder<CartCubit, CartState>(
             builder: (context, state) {
               // Show loading spinner if the product is being added to cart
@@ -146,14 +172,18 @@ class ProductGridViewSuccessState extends StatelessWidget {
 
   /// Displays product title, description, and price information.
   Padding _productTitleAndSomeInformationText(
-      ResponsiveUtils responsive,
-      List<dynamic> displayList,
-      int index,
-      BuildContext context,
-      bool isEnLocale) {
+    ResponsiveUtils responsive,
+    List<dynamic> displayList,
+    int index,
+    BuildContext context,
+    bool isEnLocale,
+  ) {
     return Padding(
       padding: responsive.setPadding(
-          left: isEnLocale ? 2 : null, top: 1.5, right: isEnLocale ? null : 3),
+        left: isEnLocale ? 2 : null,
+        top: 1.5,
+        right: isEnLocale ? null : 3,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -162,19 +192,17 @@ class ProductGridViewSuccessState extends StatelessWidget {
             displayList[index].title!,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(fontSize: responsive.setTextSize(3.8)),
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+              fontSize: responsive.setTextSize(3.8),
+            ),
           ),
           responsive.setSizeBox(height: 0.5),
           // Display product description
           Text(
             displayList[index].description!,
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(fontSize: responsive.setTextSize(3)),
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              fontSize: responsive.setTextSize(3),
+            ),
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),
@@ -184,18 +212,25 @@ class ProductGridViewSuccessState extends StatelessWidget {
   }
 
   /// Displays the product image and wishlist button.
-  Container _wishListAndImageStack(BuildContext context, int index,
-      List displayList, ResponsiveUtils responsive, bool isEnLocale) {
+  Container _wishListAndImageStack(
+    BuildContext context,
+    int index,
+    List displayList,
+    ResponsiveUtils responsive,
+    bool isEnLocale,
+  ) {
     final product = displayList[index];
 
     return Container(
       height: responsive.setHeight(18),
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(responsive.setBorderRadius(2)),
-              topRight: Radius.circular(responsive.setBorderRadius(2))),
-          color: ColorManger.brownLight.withOpacity(0.1)),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(responsive.setBorderRadius(2)),
+          topRight: Radius.circular(responsive.setBorderRadius(2)),
+        ),
+        color: ColorManger.brownLight.withValues(alpha: 0.1),
+      ),
       child: Stack(
         children: [
           // Wishlist button
@@ -208,9 +243,9 @@ class ProductGridViewSuccessState extends StatelessWidget {
                   child: IconButton(
                     onPressed: () {
                       // Add or remove product from wishlist using WishListCubit
-                      context
-                          .read<WishListCubit>()
-                          .addOrRemoveProductFromWish(product.sId!);
+                      context.read<WishListCubit>().addOrRemoveProductFromWish(
+                        product.sId!,
+                      );
                     },
                     icon: BlocConsumer<WishListCubit, WishListState>(
                       listener: (context, state) {
@@ -218,16 +253,17 @@ class ProductGridViewSuccessState extends StatelessWidget {
                         state.whenOrNull(
                           addOrRemoveProductFromWishListError:
                               (apiErrorModel) => ShowToast.showToastErrorTop(
-                                  errorMessage: apiErrorModel.message!,
-                                  context: context),
+                                errorMessage: apiErrorModel.message!,
+                                context: context,
+                              ),
                         );
                       },
                       builder: (context, state) {
                         // Check if the product is in the wishlist
-                        bool isInWishlist = context
-                                .read<WishListCubit>()
-                                .favorites
-                                .containsKey(product.sId) &&
+                        bool isInWishlist =
+                            context.read<WishListCubit>().favorites.containsKey(
+                              product.sId,
+                            ) &&
                             context
                                 .read<WishListCubit>()
                                 .favorites[product.sId]!;
@@ -236,14 +272,17 @@ class ProductGridViewSuccessState extends StatelessWidget {
                           height: responsive.setHeight(4),
                           width: responsive.setWidth(8.5),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                  responsive.setBorderRadius(2)),
-                              color: ColorManger.offWhite),
+                            borderRadius: BorderRadius.circular(
+                              responsive.setBorderRadius(2),
+                            ),
+                            color: ColorManger.offWhite,
+                          ),
                           child: Icon(
-                              isInWishlist
-                                  ? IconlyBold.heart
-                                  : IconlyBroken.heart,
-                              color: ColorManger.brunLight),
+                            isInWishlist
+                                ? IconlyBold.heart
+                                : IconlyBroken.heart,
+                            color: ColorManger.brunLight,
+                          ),
                         );
                       },
                     ),
@@ -256,14 +295,15 @@ class ProductGridViewSuccessState extends StatelessWidget {
               imageUrl: product.image ?? "",
               placeholder: (context, url) => const LoadingShimmer(),
               errorWidget: (context, url, error) => Center(
-                  child: Padding(
-                padding: responsive.setPadding(left: 5),
-                child: Icon(
-                  Icons.error,
-                  size: responsive.setIconSize(10),
-                  color: ColorManger.brun,
+                child: Padding(
+                  padding: responsive.setPadding(left: 5),
+                  child: Icon(
+                    Icons.error,
+                    size: responsive.setIconSize(10),
+                    color: ColorManger.brun,
+                  ),
                 ),
-              )),
+              ),
             ),
           ),
         ],
@@ -272,8 +312,12 @@ class ProductGridViewSuccessState extends StatelessWidget {
   }
 
   /// Shows the product sorting bottom sheet with a list of products.
-  void showSortBottomSheet(BuildContext context, int index, List displayList,
-      ResponsiveUtils responsive) {
+  void showSortBottomSheet(
+    BuildContext context,
+    int index,
+    List displayList,
+    ResponsiveUtils responsive,
+  ) {
     showCupertinoModalBottomSheet(
       useRootNavigator: true,
       barrierColor: Colors.black54,
@@ -286,10 +330,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
           BlocProvider.value(value: instance<WishListCubit>()),
           BlocProvider.value(value: instance<CartCubit>()),
         ],
-        child: ProductBottomSheet(
-          index: index,
-          displayList: displayList,
-        ),
+        child: ProductBottomSheet(index: index, displayList: displayList),
       ),
     ).then((value) {
       // Reset the cart item quantity when the bottom sheet is closed

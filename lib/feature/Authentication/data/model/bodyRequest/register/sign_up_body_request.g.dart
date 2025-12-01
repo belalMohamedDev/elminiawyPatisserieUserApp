@@ -15,10 +15,10 @@ RegisterRequestBody _$RegisterRequestBodyFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$RegisterRequestBodyToJson(
-        RegisterRequestBody instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'email': instance.email,
-      'password': instance.password,
-      'phone': instance.phone,
-    };
+  RegisterRequestBody instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'email': instance.email,
+  'password': instance.password,
+  'phone': instance.phone,
+};

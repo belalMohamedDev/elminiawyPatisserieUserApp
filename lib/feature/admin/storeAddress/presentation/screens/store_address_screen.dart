@@ -86,7 +86,7 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
                       decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.1),
+                            color: Colors.grey.withValues(alpha: 0.1),
                             spreadRadius: 2,
                             blurRadius: 5,
                             offset: const Offset(
@@ -137,7 +137,7 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
                               ),
                               CupertinoSwitch(
                                 value: allStoreAddress[index].active!,
-                                activeColor: Colors.green.shade500,
+                                activeTrackColor: Colors.green.shade500,
                                 onChanged: (value) {},
                               ),
                             ],
@@ -162,7 +162,7 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
         borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.06),
+            color: Colors.grey.withValues(alpha: 0.06),
             spreadRadius: 1,
             blurRadius: 6,
             offset: const Offset(0, 3),

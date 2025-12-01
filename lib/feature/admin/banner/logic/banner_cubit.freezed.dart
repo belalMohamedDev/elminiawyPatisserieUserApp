@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,4521 +9,1384 @@ part of 'banner_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$BannerState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BannerState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BannerState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $BannerStateCopyWith<$Res> {
-  factory $BannerStateCopyWith(
-          BannerState value, $Res Function(BannerState) then) =
-      _$BannerStateCopyWithImpl<$Res, BannerState>;
+class $BannerStateCopyWith<$Res>  {
+$BannerStateCopyWith(BannerState _, $Res Function(BannerState) __);
 }
 
-/// @nodoc
-class _$BannerStateCopyWithImpl<$Res, $Val extends BannerState>
-    implements $BannerStateCopyWith<$Res> {
-  _$BannerStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [BannerState].
+extension BannerStatePatterns on BannerState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetBannersLoading value)?  getBannersLoading,TResult Function( ChangeCrouserIndex value)?  changeCrouserIndex,TResult Function( GetBannersError value)?  getBannersError,TResult Function( GetBannersSuccess value)?  getBannersSuccess,TResult Function( SetStartOrEndTextDate value)?  setStartOrEndTextDate,TResult Function( CreateBannersLoading value)?  createBannersLoading,TResult Function( CreateBannersError value)?  createBannersError,TResult Function( CreateBannersSuccess value)?  createBannersSuccess,TResult Function( DeleteBannersLoading value)?  deleteBannersLoading,TResult Function( DeleteBannersError value)?  deleteBannersError,TResult Function( DeleteBannersSuccess value)?  deleteBannersSuccess,TResult Function( UpdateImageBannersLoading value)?  updateImageBannersLoading,TResult Function( UpdateImageBannersError value)?  updateImageBannersError,TResult Function( UpdateImageBannersSuccess value)?  updateImageBannersSuccess,TResult Function( UpdateBannersLoading value)?  updateBannersLoading,TResult Function( UpdateBannersError value)?  updateBannersError,TResult Function( UpdateBannersSuccess value)?  updateBannersSuccess,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case GetBannersLoading() when getBannersLoading != null:
+return getBannersLoading(_that);case ChangeCrouserIndex() when changeCrouserIndex != null:
+return changeCrouserIndex(_that);case GetBannersError() when getBannersError != null:
+return getBannersError(_that);case GetBannersSuccess() when getBannersSuccess != null:
+return getBannersSuccess(_that);case SetStartOrEndTextDate() when setStartOrEndTextDate != null:
+return setStartOrEndTextDate(_that);case CreateBannersLoading() when createBannersLoading != null:
+return createBannersLoading(_that);case CreateBannersError() when createBannersError != null:
+return createBannersError(_that);case CreateBannersSuccess() when createBannersSuccess != null:
+return createBannersSuccess(_that);case DeleteBannersLoading() when deleteBannersLoading != null:
+return deleteBannersLoading(_that);case DeleteBannersError() when deleteBannersError != null:
+return deleteBannersError(_that);case DeleteBannersSuccess() when deleteBannersSuccess != null:
+return deleteBannersSuccess(_that);case UpdateImageBannersLoading() when updateImageBannersLoading != null:
+return updateImageBannersLoading(_that);case UpdateImageBannersError() when updateImageBannersError != null:
+return updateImageBannersError(_that);case UpdateImageBannersSuccess() when updateImageBannersSuccess != null:
+return updateImageBannersSuccess(_that);case UpdateBannersLoading() when updateBannersLoading != null:
+return updateBannersLoading(_that);case UpdateBannersError() when updateBannersError != null:
+return updateBannersError(_that);case UpdateBannersSuccess() when updateBannersSuccess != null:
+return updateBannersSuccess(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetBannersLoading value)  getBannersLoading,required TResult Function( ChangeCrouserIndex value)  changeCrouserIndex,required TResult Function( GetBannersError value)  getBannersError,required TResult Function( GetBannersSuccess value)  getBannersSuccess,required TResult Function( SetStartOrEndTextDate value)  setStartOrEndTextDate,required TResult Function( CreateBannersLoading value)  createBannersLoading,required TResult Function( CreateBannersError value)  createBannersError,required TResult Function( CreateBannersSuccess value)  createBannersSuccess,required TResult Function( DeleteBannersLoading value)  deleteBannersLoading,required TResult Function( DeleteBannersError value)  deleteBannersError,required TResult Function( DeleteBannersSuccess value)  deleteBannersSuccess,required TResult Function( UpdateImageBannersLoading value)  updateImageBannersLoading,required TResult Function( UpdateImageBannersError value)  updateImageBannersError,required TResult Function( UpdateImageBannersSuccess value)  updateImageBannersSuccess,required TResult Function( UpdateBannersLoading value)  updateBannersLoading,required TResult Function( UpdateBannersError value)  updateBannersError,required TResult Function( UpdateBannersSuccess value)  updateBannersSuccess,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case GetBannersLoading():
+return getBannersLoading(_that);case ChangeCrouserIndex():
+return changeCrouserIndex(_that);case GetBannersError():
+return getBannersError(_that);case GetBannersSuccess():
+return getBannersSuccess(_that);case SetStartOrEndTextDate():
+return setStartOrEndTextDate(_that);case CreateBannersLoading():
+return createBannersLoading(_that);case CreateBannersError():
+return createBannersError(_that);case CreateBannersSuccess():
+return createBannersSuccess(_that);case DeleteBannersLoading():
+return deleteBannersLoading(_that);case DeleteBannersError():
+return deleteBannersError(_that);case DeleteBannersSuccess():
+return deleteBannersSuccess(_that);case UpdateImageBannersLoading():
+return updateImageBannersLoading(_that);case UpdateImageBannersError():
+return updateImageBannersError(_that);case UpdateImageBannersSuccess():
+return updateImageBannersSuccess(_that);case UpdateBannersLoading():
+return updateBannersLoading(_that);case UpdateBannersError():
+return updateBannersError(_that);case UpdateBannersSuccess():
+return updateBannersSuccess(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetBannersLoading value)?  getBannersLoading,TResult? Function( ChangeCrouserIndex value)?  changeCrouserIndex,TResult? Function( GetBannersError value)?  getBannersError,TResult? Function( GetBannersSuccess value)?  getBannersSuccess,TResult? Function( SetStartOrEndTextDate value)?  setStartOrEndTextDate,TResult? Function( CreateBannersLoading value)?  createBannersLoading,TResult? Function( CreateBannersError value)?  createBannersError,TResult? Function( CreateBannersSuccess value)?  createBannersSuccess,TResult? Function( DeleteBannersLoading value)?  deleteBannersLoading,TResult? Function( DeleteBannersError value)?  deleteBannersError,TResult? Function( DeleteBannersSuccess value)?  deleteBannersSuccess,TResult? Function( UpdateImageBannersLoading value)?  updateImageBannersLoading,TResult? Function( UpdateImageBannersError value)?  updateImageBannersError,TResult? Function( UpdateImageBannersSuccess value)?  updateImageBannersSuccess,TResult? Function( UpdateBannersLoading value)?  updateBannersLoading,TResult? Function( UpdateBannersError value)?  updateBannersError,TResult? Function( UpdateBannersSuccess value)?  updateBannersSuccess,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case GetBannersLoading() when getBannersLoading != null:
+return getBannersLoading(_that);case ChangeCrouserIndex() when changeCrouserIndex != null:
+return changeCrouserIndex(_that);case GetBannersError() when getBannersError != null:
+return getBannersError(_that);case GetBannersSuccess() when getBannersSuccess != null:
+return getBannersSuccess(_that);case SetStartOrEndTextDate() when setStartOrEndTextDate != null:
+return setStartOrEndTextDate(_that);case CreateBannersLoading() when createBannersLoading != null:
+return createBannersLoading(_that);case CreateBannersError() when createBannersError != null:
+return createBannersError(_that);case CreateBannersSuccess() when createBannersSuccess != null:
+return createBannersSuccess(_that);case DeleteBannersLoading() when deleteBannersLoading != null:
+return deleteBannersLoading(_that);case DeleteBannersError() when deleteBannersError != null:
+return deleteBannersError(_that);case DeleteBannersSuccess() when deleteBannersSuccess != null:
+return deleteBannersSuccess(_that);case UpdateImageBannersLoading() when updateImageBannersLoading != null:
+return updateImageBannersLoading(_that);case UpdateImageBannersError() when updateImageBannersError != null:
+return updateImageBannersError(_that);case UpdateImageBannersSuccess() when updateImageBannersSuccess != null:
+return updateImageBannersSuccess(_that);case UpdateBannersLoading() when updateBannersLoading != null:
+return updateBannersLoading(_that);case UpdateBannersError() when updateBannersError != null:
+return updateBannersError(_that);case UpdateBannersSuccess() when updateBannersSuccess != null:
+return updateBannersSuccess(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getBannersLoading,TResult Function( int index)?  changeCrouserIndex,TResult Function( ApiErrorModel apiErrorModel)?  getBannersError,TResult Function( List<DataBannerResponse> data)?  getBannersSuccess,TResult Function( String text)?  setStartOrEndTextDate,TResult Function()?  createBannersLoading,TResult Function( ApiErrorModel apiErrorModel)?  createBannersError,TResult Function( List<DataBannerResponse> data)?  createBannersSuccess,TResult Function( String id)?  deleteBannersLoading,TResult Function( ApiErrorModel apiErrorModel)?  deleteBannersError,TResult Function( List<DataBannerResponse> data)?  deleteBannersSuccess,TResult Function( String id)?  updateImageBannersLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateImageBannersError,TResult Function( List<DataBannerResponse> data)?  updateImageBannersSuccess,TResult Function( String id)?  updateBannersLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateBannersError,TResult Function( List<DataBannerResponse> data)?  updateBannersSuccess,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case GetBannersLoading() when getBannersLoading != null:
+return getBannersLoading();case ChangeCrouserIndex() when changeCrouserIndex != null:
+return changeCrouserIndex(_that.index);case GetBannersError() when getBannersError != null:
+return getBannersError(_that.apiErrorModel);case GetBannersSuccess() when getBannersSuccess != null:
+return getBannersSuccess(_that.data);case SetStartOrEndTextDate() when setStartOrEndTextDate != null:
+return setStartOrEndTextDate(_that.text);case CreateBannersLoading() when createBannersLoading != null:
+return createBannersLoading();case CreateBannersError() when createBannersError != null:
+return createBannersError(_that.apiErrorModel);case CreateBannersSuccess() when createBannersSuccess != null:
+return createBannersSuccess(_that.data);case DeleteBannersLoading() when deleteBannersLoading != null:
+return deleteBannersLoading(_that.id);case DeleteBannersError() when deleteBannersError != null:
+return deleteBannersError(_that.apiErrorModel);case DeleteBannersSuccess() when deleteBannersSuccess != null:
+return deleteBannersSuccess(_that.data);case UpdateImageBannersLoading() when updateImageBannersLoading != null:
+return updateImageBannersLoading(_that.id);case UpdateImageBannersError() when updateImageBannersError != null:
+return updateImageBannersError(_that.apiErrorModel);case UpdateImageBannersSuccess() when updateImageBannersSuccess != null:
+return updateImageBannersSuccess(_that.data);case UpdateBannersLoading() when updateBannersLoading != null:
+return updateBannersLoading(_that.id);case UpdateBannersError() when updateBannersError != null:
+return updateBannersError(_that.apiErrorModel);case UpdateBannersSuccess() when updateBannersSuccess != null:
+return updateBannersSuccess(_that.data);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getBannersLoading,required TResult Function( int index)  changeCrouserIndex,required TResult Function( ApiErrorModel apiErrorModel)  getBannersError,required TResult Function( List<DataBannerResponse> data)  getBannersSuccess,required TResult Function( String text)  setStartOrEndTextDate,required TResult Function()  createBannersLoading,required TResult Function( ApiErrorModel apiErrorModel)  createBannersError,required TResult Function( List<DataBannerResponse> data)  createBannersSuccess,required TResult Function( String id)  deleteBannersLoading,required TResult Function( ApiErrorModel apiErrorModel)  deleteBannersError,required TResult Function( List<DataBannerResponse> data)  deleteBannersSuccess,required TResult Function( String id)  updateImageBannersLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateImageBannersError,required TResult Function( List<DataBannerResponse> data)  updateImageBannersSuccess,required TResult Function( String id)  updateBannersLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateBannersError,required TResult Function( List<DataBannerResponse> data)  updateBannersSuccess,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case GetBannersLoading():
+return getBannersLoading();case ChangeCrouserIndex():
+return changeCrouserIndex(_that.index);case GetBannersError():
+return getBannersError(_that.apiErrorModel);case GetBannersSuccess():
+return getBannersSuccess(_that.data);case SetStartOrEndTextDate():
+return setStartOrEndTextDate(_that.text);case CreateBannersLoading():
+return createBannersLoading();case CreateBannersError():
+return createBannersError(_that.apiErrorModel);case CreateBannersSuccess():
+return createBannersSuccess(_that.data);case DeleteBannersLoading():
+return deleteBannersLoading(_that.id);case DeleteBannersError():
+return deleteBannersError(_that.apiErrorModel);case DeleteBannersSuccess():
+return deleteBannersSuccess(_that.data);case UpdateImageBannersLoading():
+return updateImageBannersLoading(_that.id);case UpdateImageBannersError():
+return updateImageBannersError(_that.apiErrorModel);case UpdateImageBannersSuccess():
+return updateImageBannersSuccess(_that.data);case UpdateBannersLoading():
+return updateBannersLoading(_that.id);case UpdateBannersError():
+return updateBannersError(_that.apiErrorModel);case UpdateBannersSuccess():
+return updateBannersSuccess(_that.data);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getBannersLoading,TResult? Function( int index)?  changeCrouserIndex,TResult? Function( ApiErrorModel apiErrorModel)?  getBannersError,TResult? Function( List<DataBannerResponse> data)?  getBannersSuccess,TResult? Function( String text)?  setStartOrEndTextDate,TResult? Function()?  createBannersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  createBannersError,TResult? Function( List<DataBannerResponse> data)?  createBannersSuccess,TResult? Function( String id)?  deleteBannersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  deleteBannersError,TResult? Function( List<DataBannerResponse> data)?  deleteBannersSuccess,TResult? Function( String id)?  updateImageBannersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateImageBannersError,TResult? Function( List<DataBannerResponse> data)?  updateImageBannersSuccess,TResult? Function( String id)?  updateBannersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateBannersError,TResult? Function( List<DataBannerResponse> data)?  updateBannersSuccess,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case GetBannersLoading() when getBannersLoading != null:
+return getBannersLoading();case ChangeCrouserIndex() when changeCrouserIndex != null:
+return changeCrouserIndex(_that.index);case GetBannersError() when getBannersError != null:
+return getBannersError(_that.apiErrorModel);case GetBannersSuccess() when getBannersSuccess != null:
+return getBannersSuccess(_that.data);case SetStartOrEndTextDate() when setStartOrEndTextDate != null:
+return setStartOrEndTextDate(_that.text);case CreateBannersLoading() when createBannersLoading != null:
+return createBannersLoading();case CreateBannersError() when createBannersError != null:
+return createBannersError(_that.apiErrorModel);case CreateBannersSuccess() when createBannersSuccess != null:
+return createBannersSuccess(_that.data);case DeleteBannersLoading() when deleteBannersLoading != null:
+return deleteBannersLoading(_that.id);case DeleteBannersError() when deleteBannersError != null:
+return deleteBannersError(_that.apiErrorModel);case DeleteBannersSuccess() when deleteBannersSuccess != null:
+return deleteBannersSuccess(_that.data);case UpdateImageBannersLoading() when updateImageBannersLoading != null:
+return updateImageBannersLoading(_that.id);case UpdateImageBannersError() when updateImageBannersError != null:
+return updateImageBannersError(_that.apiErrorModel);case UpdateImageBannersSuccess() when updateImageBannersSuccess != null:
+return updateImageBannersSuccess(_that.data);case UpdateBannersLoading() when updateBannersLoading != null:
+return updateBannersLoading(_that.id);case UpdateBannersError() when updateBannersError != null:
+return updateBannersError(_that.apiErrorModel);case UpdateBannersSuccess() when updateBannersSuccess != null:
+return updateBannersSuccess(_that.data);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'BannerState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements BannerState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$GetBannersLoadingImplCopyWith<$Res> {
-  factory _$$GetBannersLoadingImplCopyWith(_$GetBannersLoadingImpl value,
-          $Res Function(_$GetBannersLoadingImpl) then) =
-      __$$GetBannersLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetBannersLoadingImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$GetBannersLoadingImpl>
-    implements _$$GetBannersLoadingImplCopyWith<$Res> {
-  __$$GetBannersLoadingImplCopyWithImpl(_$GetBannersLoadingImpl _value,
-      $Res Function(_$GetBannersLoadingImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetBannersLoadingImpl implements GetBannersLoading {
-  const _$GetBannersLoadingImpl();
 
-  @override
-  String toString() {
-    return 'BannerState.getBannersLoading()';
-  }
+class _Initial implements BannerState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetBannersLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return getBannersLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return getBannersLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (getBannersLoading != null) {
-      return getBannersLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return getBannersLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return getBannersLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (getBannersLoading != null) {
-      return getBannersLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class GetBannersLoading implements BannerState {
-  const factory GetBannersLoading() = _$GetBannersLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BannerState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class GetBannersLoading implements BannerState {
+  const GetBannersLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBannersLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BannerState.getBannersLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ChangeCrouserIndex implements BannerState {
+  const ChangeCrouserIndex(this.index);
+  
+
+ final  int index;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangeCrouserIndexCopyWith<ChangeCrouserIndex> get copyWith => _$ChangeCrouserIndexCopyWithImpl<ChangeCrouserIndex>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangeCrouserIndex&&(identical(other.index, index) || other.index == index));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,index);
+
+@override
+String toString() {
+  return 'BannerState.changeCrouserIndex(index: $index)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ChangeCrouserIndexImplCopyWith<$Res> {
-  factory _$$ChangeCrouserIndexImplCopyWith(_$ChangeCrouserIndexImpl value,
-          $Res Function(_$ChangeCrouserIndexImpl) then) =
-      __$$ChangeCrouserIndexImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int index});
+abstract mixin class $ChangeCrouserIndexCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $ChangeCrouserIndexCopyWith(ChangeCrouserIndex value, $Res Function(ChangeCrouserIndex) _then) = _$ChangeCrouserIndexCopyWithImpl;
+@useResult
+$Res call({
+ int index
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChangeCrouserIndexCopyWithImpl<$Res>
+    implements $ChangeCrouserIndexCopyWith<$Res> {
+  _$ChangeCrouserIndexCopyWithImpl(this._self, this._then);
+
+  final ChangeCrouserIndex _self;
+  final $Res Function(ChangeCrouserIndex) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? index = null,}) {
+  return _then(ChangeCrouserIndex(
+null == index ? _self.index : index // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-class __$$ChangeCrouserIndexImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$ChangeCrouserIndexImpl>
-    implements _$$ChangeCrouserIndexImplCopyWith<$Res> {
-  __$$ChangeCrouserIndexImplCopyWithImpl(_$ChangeCrouserIndexImpl _value,
-      $Res Function(_$ChangeCrouserIndexImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? index = null,
-  }) {
-    return _then(_$ChangeCrouserIndexImpl(
-      null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ChangeCrouserIndexImpl implements ChangeCrouserIndex {
-  const _$ChangeCrouserIndexImpl(this.index);
 
-  @override
-  final int index;
+class GetBannersError implements BannerState {
+  const GetBannersError(this.apiErrorModel);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.changeCrouserIndex(index: $index)';
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangeCrouserIndexImpl &&
-            (identical(other.index, index) || other.index == index));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetBannersErrorCopyWith<GetBannersError> get copyWith => _$GetBannersErrorCopyWithImpl<GetBannersError>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, index);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangeCrouserIndexImplCopyWith<_$ChangeCrouserIndexImpl> get copyWith =>
-      __$$ChangeCrouserIndexImplCopyWithImpl<_$ChangeCrouserIndexImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return changeCrouserIndex(index);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return changeCrouserIndex?.call(index);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (changeCrouserIndex != null) {
-      return changeCrouserIndex(index);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return changeCrouserIndex(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return changeCrouserIndex?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (changeCrouserIndex != null) {
-      return changeCrouserIndex(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBannersError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class ChangeCrouserIndex implements BannerState {
-  const factory ChangeCrouserIndex(final int index) = _$ChangeCrouserIndexImpl;
 
-  int get index;
-  @JsonKey(ignore: true)
-  _$$ChangeCrouserIndexImplCopyWith<_$ChangeCrouserIndexImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'BannerState.getBannersError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetBannersErrorImplCopyWith<$Res> {
-  factory _$$GetBannersErrorImplCopyWith(_$GetBannersErrorImpl value,
-          $Res Function(_$GetBannersErrorImpl) then) =
-      __$$GetBannersErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $GetBannersErrorCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $GetBannersErrorCopyWith(GetBannersError value, $Res Function(GetBannersError) _then) = _$GetBannersErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetBannersErrorCopyWithImpl<$Res>
+    implements $GetBannersErrorCopyWith<$Res> {
+  _$GetBannersErrorCopyWithImpl(this._self, this._then);
+
+  final GetBannersError _self;
+  final $Res Function(GetBannersError) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(GetBannersError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$GetBannersErrorImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$GetBannersErrorImpl>
-    implements _$$GetBannersErrorImplCopyWith<$Res> {
-  __$$GetBannersErrorImplCopyWithImpl(
-      _$GetBannersErrorImpl _value, $Res Function(_$GetBannersErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$GetBannersErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetBannersErrorImpl implements GetBannersError {
-  const _$GetBannersErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class GetBannersSuccess implements BannerState {
+  const GetBannersSuccess(final  List<DataBannerResponse> data): _data = data;
+  
 
-  @override
-  String toString() {
-    return 'BannerState.getBannersError(apiErrorModel: $apiErrorModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetBannersErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetBannersErrorImplCopyWith<_$GetBannersErrorImpl> get copyWith =>
-      __$$GetBannersErrorImplCopyWithImpl<_$GetBannersErrorImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return getBannersError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return getBannersError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (getBannersError != null) {
-      return getBannersError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return getBannersError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return getBannersError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (getBannersError != null) {
-      return getBannersError(this);
-    }
-    return orElse();
-  }
+ final  List<DataBannerResponse> _data;
+ List<DataBannerResponse> get data {
+  if (_data is EqualUnmodifiableListView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_data);
 }
 
-abstract class GetBannersError implements BannerState {
-  const factory GetBannersError(final ApiErrorModel apiErrorModel) =
-      _$GetBannersErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$GetBannersErrorImplCopyWith<_$GetBannersErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetBannersSuccessCopyWith<GetBannersSuccess> get copyWith => _$GetBannersSuccessCopyWithImpl<GetBannersSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBannersSuccess&&const DeepCollectionEquality().equals(other._data, _data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
+
+@override
+String toString() {
+  return 'BannerState.getBannersSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetBannersSuccessImplCopyWith<$Res> {
-  factory _$$GetBannersSuccessImplCopyWith(_$GetBannersSuccessImpl value,
-          $Res Function(_$GetBannersSuccessImpl) then) =
-      __$$GetBannersSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<DataBannerResponse> data});
+abstract mixin class $GetBannersSuccessCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $GetBannersSuccessCopyWith(GetBannersSuccess value, $Res Function(GetBannersSuccess) _then) = _$GetBannersSuccessCopyWithImpl;
+@useResult
+$Res call({
+ List<DataBannerResponse> data
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetBannersSuccessCopyWithImpl<$Res>
+    implements $GetBannersSuccessCopyWith<$Res> {
+  _$GetBannersSuccessCopyWithImpl(this._self, this._then);
+
+  final GetBannersSuccess _self;
+  final $Res Function(GetBannersSuccess) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(GetBannersSuccess(
+null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as List<DataBannerResponse>,
+  ));
 }
 
-/// @nodoc
-class __$$GetBannersSuccessImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$GetBannersSuccessImpl>
-    implements _$$GetBannersSuccessImplCopyWith<$Res> {
-  __$$GetBannersSuccessImplCopyWithImpl(_$GetBannersSuccessImpl _value,
-      $Res Function(_$GetBannersSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$GetBannersSuccessImpl(
-      null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<DataBannerResponse>,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetBannersSuccessImpl implements GetBannersSuccess {
-  const _$GetBannersSuccessImpl(final List<DataBannerResponse> data)
-      : _data = data;
 
-  final List<DataBannerResponse> _data;
-  @override
-  List<DataBannerResponse> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+class SetStartOrEndTextDate implements BannerState {
+  const SetStartOrEndTextDate(this.text);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.getBannersSuccess(data: $data)';
-  }
+ final  String text;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetBannersSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SetStartOrEndTextDateCopyWith<SetStartOrEndTextDate> get copyWith => _$SetStartOrEndTextDateCopyWithImpl<SetStartOrEndTextDate>(this, _$identity);
 
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetBannersSuccessImplCopyWith<_$GetBannersSuccessImpl> get copyWith =>
-      __$$GetBannersSuccessImplCopyWithImpl<_$GetBannersSuccessImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return getBannersSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return getBannersSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (getBannersSuccess != null) {
-      return getBannersSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return getBannersSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return getBannersSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (getBannersSuccess != null) {
-      return getBannersSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SetStartOrEndTextDate&&(identical(other.text, text) || other.text == text));
 }
 
-abstract class GetBannersSuccess implements BannerState {
-  const factory GetBannersSuccess(final List<DataBannerResponse> data) =
-      _$GetBannersSuccessImpl;
 
-  List<DataBannerResponse> get data;
-  @JsonKey(ignore: true)
-  _$$GetBannersSuccessImplCopyWith<_$GetBannersSuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,text);
+
+@override
+String toString() {
+  return 'BannerState.setStartOrEndTextDate(text: $text)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$SetStartOrEndTextDateImplCopyWith<$Res> {
-  factory _$$SetStartOrEndTextDateImplCopyWith(
-          _$SetStartOrEndTextDateImpl value,
-          $Res Function(_$SetStartOrEndTextDateImpl) then) =
-      __$$SetStartOrEndTextDateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String text});
+abstract mixin class $SetStartOrEndTextDateCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $SetStartOrEndTextDateCopyWith(SetStartOrEndTextDate value, $Res Function(SetStartOrEndTextDate) _then) = _$SetStartOrEndTextDateCopyWithImpl;
+@useResult
+$Res call({
+ String text
+});
+
+
+
+
+}
+/// @nodoc
+class _$SetStartOrEndTextDateCopyWithImpl<$Res>
+    implements $SetStartOrEndTextDateCopyWith<$Res> {
+  _$SetStartOrEndTextDateCopyWithImpl(this._self, this._then);
+
+  final SetStartOrEndTextDate _self;
+  final $Res Function(SetStartOrEndTextDate) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? text = null,}) {
+  return _then(SetStartOrEndTextDate(
+null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$SetStartOrEndTextDateImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$SetStartOrEndTextDateImpl>
-    implements _$$SetStartOrEndTextDateImplCopyWith<$Res> {
-  __$$SetStartOrEndTextDateImplCopyWithImpl(_$SetStartOrEndTextDateImpl _value,
-      $Res Function(_$SetStartOrEndTextDateImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? text = null,
-  }) {
-    return _then(_$SetStartOrEndTextDateImpl(
-      null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$SetStartOrEndTextDateImpl implements SetStartOrEndTextDate {
-  const _$SetStartOrEndTextDateImpl(this.text);
 
-  @override
-  final String text;
+class CreateBannersLoading implements BannerState {
+  const CreateBannersLoading();
+  
 
-  @override
-  String toString() {
-    return 'BannerState.setStartOrEndTextDate(text: $text)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SetStartOrEndTextDateImpl &&
-            (identical(other.text, text) || other.text == text));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, text);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetStartOrEndTextDateImplCopyWith<_$SetStartOrEndTextDateImpl>
-      get copyWith => __$$SetStartOrEndTextDateImplCopyWithImpl<
-          _$SetStartOrEndTextDateImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return setStartOrEndTextDate(text);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return setStartOrEndTextDate?.call(text);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (setStartOrEndTextDate != null) {
-      return setStartOrEndTextDate(text);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return setStartOrEndTextDate(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return setStartOrEndTextDate?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (setStartOrEndTextDate != null) {
-      return setStartOrEndTextDate(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateBannersLoading);
 }
 
-abstract class SetStartOrEndTextDate implements BannerState {
-  const factory SetStartOrEndTextDate(final String text) =
-      _$SetStartOrEndTextDateImpl;
 
-  String get text;
-  @JsonKey(ignore: true)
-  _$$SetStartOrEndTextDateImplCopyWith<_$SetStartOrEndTextDateImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BannerState.createBannersLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class CreateBannersError implements BannerState {
+  const CreateBannersError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CreateBannersErrorCopyWith<CreateBannersError> get copyWith => _$CreateBannersErrorCopyWithImpl<CreateBannersError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateBannersError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'BannerState.createBannersError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$CreateBannersLoadingImplCopyWith<$Res> {
-  factory _$$CreateBannersLoadingImplCopyWith(_$CreateBannersLoadingImpl value,
-          $Res Function(_$CreateBannersLoadingImpl) then) =
-      __$$CreateBannersLoadingImplCopyWithImpl<$Res>;
+abstract mixin class $CreateBannersErrorCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $CreateBannersErrorCopyWith(CreateBannersError value, $Res Function(CreateBannersError) _then) = _$CreateBannersErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$CreateBannersErrorCopyWithImpl<$Res>
+    implements $CreateBannersErrorCopyWith<$Res> {
+  _$CreateBannersErrorCopyWithImpl(this._self, this._then);
+
+  final CreateBannersError _self;
+  final $Res Function(CreateBannersError) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(CreateBannersError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$CreateBannersLoadingImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$CreateBannersLoadingImpl>
-    implements _$$CreateBannersLoadingImplCopyWith<$Res> {
-  __$$CreateBannersLoadingImplCopyWithImpl(_$CreateBannersLoadingImpl _value,
-      $Res Function(_$CreateBannersLoadingImpl) _then)
-      : super(_value, _then);
+
 }
 
 /// @nodoc
 
-class _$CreateBannersLoadingImpl implements CreateBannersLoading {
-  const _$CreateBannersLoadingImpl();
 
-  @override
-  String toString() {
-    return 'BannerState.createBannersLoading()';
-  }
+class CreateBannersSuccess implements BannerState {
+  const CreateBannersSuccess(final  List<DataBannerResponse> data): _data = data;
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateBannersLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return createBannersLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return createBannersLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (createBannersLoading != null) {
-      return createBannersLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return createBannersLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return createBannersLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (createBannersLoading != null) {
-      return createBannersLoading(this);
-    }
-    return orElse();
-  }
+ final  List<DataBannerResponse> _data;
+ List<DataBannerResponse> get data {
+  if (_data is EqualUnmodifiableListView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_data);
 }
 
-abstract class CreateBannersLoading implements BannerState {
-  const factory CreateBannersLoading() = _$CreateBannersLoadingImpl;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CreateBannersSuccessCopyWith<CreateBannersSuccess> get copyWith => _$CreateBannersSuccessCopyWithImpl<CreateBannersSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateBannersSuccess&&const DeepCollectionEquality().equals(other._data, _data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
+
+@override
+String toString() {
+  return 'BannerState.createBannersSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$CreateBannersErrorImplCopyWith<$Res> {
-  factory _$$CreateBannersErrorImplCopyWith(_$CreateBannersErrorImpl value,
-          $Res Function(_$CreateBannersErrorImpl) then) =
-      __$$CreateBannersErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $CreateBannersSuccessCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $CreateBannersSuccessCopyWith(CreateBannersSuccess value, $Res Function(CreateBannersSuccess) _then) = _$CreateBannersSuccessCopyWithImpl;
+@useResult
+$Res call({
+ List<DataBannerResponse> data
+});
+
+
+
+
+}
+/// @nodoc
+class _$CreateBannersSuccessCopyWithImpl<$Res>
+    implements $CreateBannersSuccessCopyWith<$Res> {
+  _$CreateBannersSuccessCopyWithImpl(this._self, this._then);
+
+  final CreateBannersSuccess _self;
+  final $Res Function(CreateBannersSuccess) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(CreateBannersSuccess(
+null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as List<DataBannerResponse>,
+  ));
 }
 
-/// @nodoc
-class __$$CreateBannersErrorImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$CreateBannersErrorImpl>
-    implements _$$CreateBannersErrorImplCopyWith<$Res> {
-  __$$CreateBannersErrorImplCopyWithImpl(_$CreateBannersErrorImpl _value,
-      $Res Function(_$CreateBannersErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$CreateBannersErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$CreateBannersErrorImpl implements CreateBannersError {
-  const _$CreateBannersErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class DeleteBannersLoading implements BannerState {
+  const DeleteBannersLoading(this.id);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.createBannersError(apiErrorModel: $apiErrorModel)';
-  }
+ final  String id;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateBannersErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DeleteBannersLoadingCopyWith<DeleteBannersLoading> get copyWith => _$DeleteBannersLoadingCopyWithImpl<DeleteBannersLoading>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CreateBannersErrorImplCopyWith<_$CreateBannersErrorImpl> get copyWith =>
-      __$$CreateBannersErrorImplCopyWithImpl<_$CreateBannersErrorImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return createBannersError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return createBannersError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (createBannersError != null) {
-      return createBannersError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return createBannersError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return createBannersError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (createBannersError != null) {
-      return createBannersError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteBannersLoading&&(identical(other.id, id) || other.id == id));
 }
 
-abstract class CreateBannersError implements BannerState {
-  const factory CreateBannersError(final ApiErrorModel apiErrorModel) =
-      _$CreateBannersErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$CreateBannersErrorImplCopyWith<_$CreateBannersErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'BannerState.deleteBannersLoading(id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$CreateBannersSuccessImplCopyWith<$Res> {
-  factory _$$CreateBannersSuccessImplCopyWith(_$CreateBannersSuccessImpl value,
-          $Res Function(_$CreateBannersSuccessImpl) then) =
-      __$$CreateBannersSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<DataBannerResponse> data});
+abstract mixin class $DeleteBannersLoadingCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $DeleteBannersLoadingCopyWith(DeleteBannersLoading value, $Res Function(DeleteBannersLoading) _then) = _$DeleteBannersLoadingCopyWithImpl;
+@useResult
+$Res call({
+ String id
+});
+
+
+
+
+}
+/// @nodoc
+class _$DeleteBannersLoadingCopyWithImpl<$Res>
+    implements $DeleteBannersLoadingCopyWith<$Res> {
+  _$DeleteBannersLoadingCopyWithImpl(this._self, this._then);
+
+  final DeleteBannersLoading _self;
+  final $Res Function(DeleteBannersLoading) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
+  return _then(DeleteBannersLoading(
+null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$CreateBannersSuccessImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$CreateBannersSuccessImpl>
-    implements _$$CreateBannersSuccessImplCopyWith<$Res> {
-  __$$CreateBannersSuccessImplCopyWithImpl(_$CreateBannersSuccessImpl _value,
-      $Res Function(_$CreateBannersSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$CreateBannersSuccessImpl(
-      null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<DataBannerResponse>,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$CreateBannersSuccessImpl implements CreateBannersSuccess {
-  const _$CreateBannersSuccessImpl(final List<DataBannerResponse> data)
-      : _data = data;
 
-  final List<DataBannerResponse> _data;
-  @override
-  List<DataBannerResponse> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+class DeleteBannersError implements BannerState {
+  const DeleteBannersError(this.apiErrorModel);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.createBannersSuccess(data: $data)';
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateBannersSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DeleteBannersErrorCopyWith<DeleteBannersError> get copyWith => _$DeleteBannersErrorCopyWithImpl<DeleteBannersError>(this, _$identity);
 
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CreateBannersSuccessImplCopyWith<_$CreateBannersSuccessImpl>
-      get copyWith =>
-          __$$CreateBannersSuccessImplCopyWithImpl<_$CreateBannersSuccessImpl>(
-              this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return createBannersSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return createBannersSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (createBannersSuccess != null) {
-      return createBannersSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return createBannersSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return createBannersSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (createBannersSuccess != null) {
-      return createBannersSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteBannersError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class CreateBannersSuccess implements BannerState {
-  const factory CreateBannersSuccess(final List<DataBannerResponse> data) =
-      _$CreateBannersSuccessImpl;
 
-  List<DataBannerResponse> get data;
-  @JsonKey(ignore: true)
-  _$$CreateBannersSuccessImplCopyWith<_$CreateBannersSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'BannerState.deleteBannersError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$DeleteBannersLoadingImplCopyWith<$Res> {
-  factory _$$DeleteBannersLoadingImplCopyWith(_$DeleteBannersLoadingImpl value,
-          $Res Function(_$DeleteBannersLoadingImpl) then) =
-      __$$DeleteBannersLoadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String id});
+abstract mixin class $DeleteBannersErrorCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $DeleteBannersErrorCopyWith(DeleteBannersError value, $Res Function(DeleteBannersError) _then) = _$DeleteBannersErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$DeleteBannersErrorCopyWithImpl<$Res>
+    implements $DeleteBannersErrorCopyWith<$Res> {
+  _$DeleteBannersErrorCopyWithImpl(this._self, this._then);
+
+  final DeleteBannersError _self;
+  final $Res Function(DeleteBannersError) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(DeleteBannersError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$DeleteBannersLoadingImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$DeleteBannersLoadingImpl>
-    implements _$$DeleteBannersLoadingImplCopyWith<$Res> {
-  __$$DeleteBannersLoadingImplCopyWithImpl(_$DeleteBannersLoadingImpl _value,
-      $Res Function(_$DeleteBannersLoadingImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$DeleteBannersLoadingImpl(
-      null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$DeleteBannersLoadingImpl implements DeleteBannersLoading {
-  const _$DeleteBannersLoadingImpl(this.id);
 
-  @override
-  final String id;
+class DeleteBannersSuccess implements BannerState {
+  const DeleteBannersSuccess(final  List<DataBannerResponse> data): _data = data;
+  
 
-  @override
-  String toString() {
-    return 'BannerState.deleteBannersLoading(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteBannersLoadingImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteBannersLoadingImplCopyWith<_$DeleteBannersLoadingImpl>
-      get copyWith =>
-          __$$DeleteBannersLoadingImplCopyWithImpl<_$DeleteBannersLoadingImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return deleteBannersLoading(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return deleteBannersLoading?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteBannersLoading != null) {
-      return deleteBannersLoading(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return deleteBannersLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return deleteBannersLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteBannersLoading != null) {
-      return deleteBannersLoading(this);
-    }
-    return orElse();
-  }
+ final  List<DataBannerResponse> _data;
+ List<DataBannerResponse> get data {
+  if (_data is EqualUnmodifiableListView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_data);
 }
 
-abstract class DeleteBannersLoading implements BannerState {
-  const factory DeleteBannersLoading(final String id) =
-      _$DeleteBannersLoadingImpl;
 
-  String get id;
-  @JsonKey(ignore: true)
-  _$$DeleteBannersLoadingImplCopyWith<_$DeleteBannersLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DeleteBannersSuccessCopyWith<DeleteBannersSuccess> get copyWith => _$DeleteBannersSuccessCopyWithImpl<DeleteBannersSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteBannersSuccess&&const DeepCollectionEquality().equals(other._data, _data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
+
+@override
+String toString() {
+  return 'BannerState.deleteBannersSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$DeleteBannersErrorImplCopyWith<$Res> {
-  factory _$$DeleteBannersErrorImplCopyWith(_$DeleteBannersErrorImpl value,
-          $Res Function(_$DeleteBannersErrorImpl) then) =
-      __$$DeleteBannersErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $DeleteBannersSuccessCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $DeleteBannersSuccessCopyWith(DeleteBannersSuccess value, $Res Function(DeleteBannersSuccess) _then) = _$DeleteBannersSuccessCopyWithImpl;
+@useResult
+$Res call({
+ List<DataBannerResponse> data
+});
+
+
+
+
+}
+/// @nodoc
+class _$DeleteBannersSuccessCopyWithImpl<$Res>
+    implements $DeleteBannersSuccessCopyWith<$Res> {
+  _$DeleteBannersSuccessCopyWithImpl(this._self, this._then);
+
+  final DeleteBannersSuccess _self;
+  final $Res Function(DeleteBannersSuccess) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(DeleteBannersSuccess(
+null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as List<DataBannerResponse>,
+  ));
 }
 
-/// @nodoc
-class __$$DeleteBannersErrorImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$DeleteBannersErrorImpl>
-    implements _$$DeleteBannersErrorImplCopyWith<$Res> {
-  __$$DeleteBannersErrorImplCopyWithImpl(_$DeleteBannersErrorImpl _value,
-      $Res Function(_$DeleteBannersErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$DeleteBannersErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$DeleteBannersErrorImpl implements DeleteBannersError {
-  const _$DeleteBannersErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class UpdateImageBannersLoading implements BannerState {
+  const UpdateImageBannersLoading(this.id);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.deleteBannersError(apiErrorModel: $apiErrorModel)';
-  }
+ final  String id;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteBannersErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateImageBannersLoadingCopyWith<UpdateImageBannersLoading> get copyWith => _$UpdateImageBannersLoadingCopyWithImpl<UpdateImageBannersLoading>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteBannersErrorImplCopyWith<_$DeleteBannersErrorImpl> get copyWith =>
-      __$$DeleteBannersErrorImplCopyWithImpl<_$DeleteBannersErrorImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return deleteBannersError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return deleteBannersError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteBannersError != null) {
-      return deleteBannersError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return deleteBannersError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return deleteBannersError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteBannersError != null) {
-      return deleteBannersError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateImageBannersLoading&&(identical(other.id, id) || other.id == id));
 }
 
-abstract class DeleteBannersError implements BannerState {
-  const factory DeleteBannersError(final ApiErrorModel apiErrorModel) =
-      _$DeleteBannersErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$DeleteBannersErrorImplCopyWith<_$DeleteBannersErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'BannerState.updateImageBannersLoading(id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$DeleteBannersSuccessImplCopyWith<$Res> {
-  factory _$$DeleteBannersSuccessImplCopyWith(_$DeleteBannersSuccessImpl value,
-          $Res Function(_$DeleteBannersSuccessImpl) then) =
-      __$$DeleteBannersSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<DataBannerResponse> data});
+abstract mixin class $UpdateImageBannersLoadingCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $UpdateImageBannersLoadingCopyWith(UpdateImageBannersLoading value, $Res Function(UpdateImageBannersLoading) _then) = _$UpdateImageBannersLoadingCopyWithImpl;
+@useResult
+$Res call({
+ String id
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateImageBannersLoadingCopyWithImpl<$Res>
+    implements $UpdateImageBannersLoadingCopyWith<$Res> {
+  _$UpdateImageBannersLoadingCopyWithImpl(this._self, this._then);
+
+  final UpdateImageBannersLoading _self;
+  final $Res Function(UpdateImageBannersLoading) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
+  return _then(UpdateImageBannersLoading(
+null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$DeleteBannersSuccessImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$DeleteBannersSuccessImpl>
-    implements _$$DeleteBannersSuccessImplCopyWith<$Res> {
-  __$$DeleteBannersSuccessImplCopyWithImpl(_$DeleteBannersSuccessImpl _value,
-      $Res Function(_$DeleteBannersSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$DeleteBannersSuccessImpl(
-      null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<DataBannerResponse>,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$DeleteBannersSuccessImpl implements DeleteBannersSuccess {
-  const _$DeleteBannersSuccessImpl(final List<DataBannerResponse> data)
-      : _data = data;
 
-  final List<DataBannerResponse> _data;
-  @override
-  List<DataBannerResponse> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+class UpdateImageBannersError implements BannerState {
+  const UpdateImageBannersError(this.apiErrorModel);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.deleteBannersSuccess(data: $data)';
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteBannersSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateImageBannersErrorCopyWith<UpdateImageBannersError> get copyWith => _$UpdateImageBannersErrorCopyWithImpl<UpdateImageBannersError>(this, _$identity);
 
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteBannersSuccessImplCopyWith<_$DeleteBannersSuccessImpl>
-      get copyWith =>
-          __$$DeleteBannersSuccessImplCopyWithImpl<_$DeleteBannersSuccessImpl>(
-              this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return deleteBannersSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return deleteBannersSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteBannersSuccess != null) {
-      return deleteBannersSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return deleteBannersSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return deleteBannersSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteBannersSuccess != null) {
-      return deleteBannersSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateImageBannersError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class DeleteBannersSuccess implements BannerState {
-  const factory DeleteBannersSuccess(final List<DataBannerResponse> data) =
-      _$DeleteBannersSuccessImpl;
 
-  List<DataBannerResponse> get data;
-  @JsonKey(ignore: true)
-  _$$DeleteBannersSuccessImplCopyWith<_$DeleteBannersSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'BannerState.updateImageBannersError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateImageBannersLoadingImplCopyWith<$Res> {
-  factory _$$UpdateImageBannersLoadingImplCopyWith(
-          _$UpdateImageBannersLoadingImpl value,
-          $Res Function(_$UpdateImageBannersLoadingImpl) then) =
-      __$$UpdateImageBannersLoadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String id});
+abstract mixin class $UpdateImageBannersErrorCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $UpdateImageBannersErrorCopyWith(UpdateImageBannersError value, $Res Function(UpdateImageBannersError) _then) = _$UpdateImageBannersErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateImageBannersErrorCopyWithImpl<$Res>
+    implements $UpdateImageBannersErrorCopyWith<$Res> {
+  _$UpdateImageBannersErrorCopyWithImpl(this._self, this._then);
+
+  final UpdateImageBannersError _self;
+  final $Res Function(UpdateImageBannersError) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(UpdateImageBannersError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateImageBannersLoadingImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$UpdateImageBannersLoadingImpl>
-    implements _$$UpdateImageBannersLoadingImplCopyWith<$Res> {
-  __$$UpdateImageBannersLoadingImplCopyWithImpl(
-      _$UpdateImageBannersLoadingImpl _value,
-      $Res Function(_$UpdateImageBannersLoadingImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$UpdateImageBannersLoadingImpl(
-      null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateImageBannersLoadingImpl implements UpdateImageBannersLoading {
-  const _$UpdateImageBannersLoadingImpl(this.id);
 
-  @override
-  final String id;
+class UpdateImageBannersSuccess implements BannerState {
+  const UpdateImageBannersSuccess(final  List<DataBannerResponse> data): _data = data;
+  
 
-  @override
-  String toString() {
-    return 'BannerState.updateImageBannersLoading(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateImageBannersLoadingImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateImageBannersLoadingImplCopyWith<_$UpdateImageBannersLoadingImpl>
-      get copyWith => __$$UpdateImageBannersLoadingImplCopyWithImpl<
-          _$UpdateImageBannersLoadingImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return updateImageBannersLoading(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return updateImageBannersLoading?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateImageBannersLoading != null) {
-      return updateImageBannersLoading(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return updateImageBannersLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return updateImageBannersLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateImageBannersLoading != null) {
-      return updateImageBannersLoading(this);
-    }
-    return orElse();
-  }
+ final  List<DataBannerResponse> _data;
+ List<DataBannerResponse> get data {
+  if (_data is EqualUnmodifiableListView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_data);
 }
 
-abstract class UpdateImageBannersLoading implements BannerState {
-  const factory UpdateImageBannersLoading(final String id) =
-      _$UpdateImageBannersLoadingImpl;
 
-  String get id;
-  @JsonKey(ignore: true)
-  _$$UpdateImageBannersLoadingImplCopyWith<_$UpdateImageBannersLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateImageBannersSuccessCopyWith<UpdateImageBannersSuccess> get copyWith => _$UpdateImageBannersSuccessCopyWithImpl<UpdateImageBannersSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateImageBannersSuccess&&const DeepCollectionEquality().equals(other._data, _data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
+
+@override
+String toString() {
+  return 'BannerState.updateImageBannersSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateImageBannersErrorImplCopyWith<$Res> {
-  factory _$$UpdateImageBannersErrorImplCopyWith(
-          _$UpdateImageBannersErrorImpl value,
-          $Res Function(_$UpdateImageBannersErrorImpl) then) =
-      __$$UpdateImageBannersErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $UpdateImageBannersSuccessCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $UpdateImageBannersSuccessCopyWith(UpdateImageBannersSuccess value, $Res Function(UpdateImageBannersSuccess) _then) = _$UpdateImageBannersSuccessCopyWithImpl;
+@useResult
+$Res call({
+ List<DataBannerResponse> data
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateImageBannersSuccessCopyWithImpl<$Res>
+    implements $UpdateImageBannersSuccessCopyWith<$Res> {
+  _$UpdateImageBannersSuccessCopyWithImpl(this._self, this._then);
+
+  final UpdateImageBannersSuccess _self;
+  final $Res Function(UpdateImageBannersSuccess) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(UpdateImageBannersSuccess(
+null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as List<DataBannerResponse>,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateImageBannersErrorImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$UpdateImageBannersErrorImpl>
-    implements _$$UpdateImageBannersErrorImplCopyWith<$Res> {
-  __$$UpdateImageBannersErrorImplCopyWithImpl(
-      _$UpdateImageBannersErrorImpl _value,
-      $Res Function(_$UpdateImageBannersErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$UpdateImageBannersErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateImageBannersErrorImpl implements UpdateImageBannersError {
-  const _$UpdateImageBannersErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class UpdateBannersLoading implements BannerState {
+  const UpdateBannersLoading(this.id);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.updateImageBannersError(apiErrorModel: $apiErrorModel)';
-  }
+ final  String id;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateImageBannersErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateBannersLoadingCopyWith<UpdateBannersLoading> get copyWith => _$UpdateBannersLoadingCopyWithImpl<UpdateBannersLoading>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateImageBannersErrorImplCopyWith<_$UpdateImageBannersErrorImpl>
-      get copyWith => __$$UpdateImageBannersErrorImplCopyWithImpl<
-          _$UpdateImageBannersErrorImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return updateImageBannersError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return updateImageBannersError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateImageBannersError != null) {
-      return updateImageBannersError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return updateImageBannersError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return updateImageBannersError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateImageBannersError != null) {
-      return updateImageBannersError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateBannersLoading&&(identical(other.id, id) || other.id == id));
 }
 
-abstract class UpdateImageBannersError implements BannerState {
-  const factory UpdateImageBannersError(final ApiErrorModel apiErrorModel) =
-      _$UpdateImageBannersErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$UpdateImageBannersErrorImplCopyWith<_$UpdateImageBannersErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'BannerState.updateBannersLoading(id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateImageBannersSuccessImplCopyWith<$Res> {
-  factory _$$UpdateImageBannersSuccessImplCopyWith(
-          _$UpdateImageBannersSuccessImpl value,
-          $Res Function(_$UpdateImageBannersSuccessImpl) then) =
-      __$$UpdateImageBannersSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<DataBannerResponse> data});
+abstract mixin class $UpdateBannersLoadingCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $UpdateBannersLoadingCopyWith(UpdateBannersLoading value, $Res Function(UpdateBannersLoading) _then) = _$UpdateBannersLoadingCopyWithImpl;
+@useResult
+$Res call({
+ String id
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateBannersLoadingCopyWithImpl<$Res>
+    implements $UpdateBannersLoadingCopyWith<$Res> {
+  _$UpdateBannersLoadingCopyWithImpl(this._self, this._then);
+
+  final UpdateBannersLoading _self;
+  final $Res Function(UpdateBannersLoading) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
+  return _then(UpdateBannersLoading(
+null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateImageBannersSuccessImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$UpdateImageBannersSuccessImpl>
-    implements _$$UpdateImageBannersSuccessImplCopyWith<$Res> {
-  __$$UpdateImageBannersSuccessImplCopyWithImpl(
-      _$UpdateImageBannersSuccessImpl _value,
-      $Res Function(_$UpdateImageBannersSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$UpdateImageBannersSuccessImpl(
-      null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<DataBannerResponse>,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateImageBannersSuccessImpl implements UpdateImageBannersSuccess {
-  const _$UpdateImageBannersSuccessImpl(final List<DataBannerResponse> data)
-      : _data = data;
 
-  final List<DataBannerResponse> _data;
-  @override
-  List<DataBannerResponse> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+class UpdateBannersError implements BannerState {
+  const UpdateBannersError(this.apiErrorModel);
+  
 
-  @override
-  String toString() {
-    return 'BannerState.updateImageBannersSuccess(data: $data)';
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateImageBannersSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateBannersErrorCopyWith<UpdateBannersError> get copyWith => _$UpdateBannersErrorCopyWithImpl<UpdateBannersError>(this, _$identity);
 
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateImageBannersSuccessImplCopyWith<_$UpdateImageBannersSuccessImpl>
-      get copyWith => __$$UpdateImageBannersSuccessImplCopyWithImpl<
-          _$UpdateImageBannersSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return updateImageBannersSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return updateImageBannersSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateImageBannersSuccess != null) {
-      return updateImageBannersSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return updateImageBannersSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return updateImageBannersSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateImageBannersSuccess != null) {
-      return updateImageBannersSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateBannersError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class UpdateImageBannersSuccess implements BannerState {
-  const factory UpdateImageBannersSuccess(final List<DataBannerResponse> data) =
-      _$UpdateImageBannersSuccessImpl;
 
-  List<DataBannerResponse> get data;
-  @JsonKey(ignore: true)
-  _$$UpdateImageBannersSuccessImplCopyWith<_$UpdateImageBannersSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'BannerState.updateBannersError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateBannersLoadingImplCopyWith<$Res> {
-  factory _$$UpdateBannersLoadingImplCopyWith(_$UpdateBannersLoadingImpl value,
-          $Res Function(_$UpdateBannersLoadingImpl) then) =
-      __$$UpdateBannersLoadingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String id});
+abstract mixin class $UpdateBannersErrorCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $UpdateBannersErrorCopyWith(UpdateBannersError value, $Res Function(UpdateBannersError) _then) = _$UpdateBannersErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$UpdateBannersErrorCopyWithImpl<$Res>
+    implements $UpdateBannersErrorCopyWith<$Res> {
+  _$UpdateBannersErrorCopyWithImpl(this._self, this._then);
+
+  final UpdateBannersError _self;
+  final $Res Function(UpdateBannersError) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(UpdateBannersError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$UpdateBannersLoadingImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$UpdateBannersLoadingImpl>
-    implements _$$UpdateBannersLoadingImplCopyWith<$Res> {
-  __$$UpdateBannersLoadingImplCopyWithImpl(_$UpdateBannersLoadingImpl _value,
-      $Res Function(_$UpdateBannersLoadingImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$UpdateBannersLoadingImpl(
-      null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateBannersLoadingImpl implements UpdateBannersLoading {
-  const _$UpdateBannersLoadingImpl(this.id);
 
-  @override
-  final String id;
+class UpdateBannersSuccess implements BannerState {
+  const UpdateBannersSuccess(final  List<DataBannerResponse> data): _data = data;
+  
 
-  @override
-  String toString() {
-    return 'BannerState.updateBannersLoading(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateBannersLoadingImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateBannersLoadingImplCopyWith<_$UpdateBannersLoadingImpl>
-      get copyWith =>
-          __$$UpdateBannersLoadingImplCopyWithImpl<_$UpdateBannersLoadingImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return updateBannersLoading(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return updateBannersLoading?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateBannersLoading != null) {
-      return updateBannersLoading(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return updateBannersLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return updateBannersLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateBannersLoading != null) {
-      return updateBannersLoading(this);
-    }
-    return orElse();
-  }
+ final  List<DataBannerResponse> _data;
+ List<DataBannerResponse> get data {
+  if (_data is EqualUnmodifiableListView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_data);
 }
 
-abstract class UpdateBannersLoading implements BannerState {
-  const factory UpdateBannersLoading(final String id) =
-      _$UpdateBannersLoadingImpl;
 
-  String get id;
-  @JsonKey(ignore: true)
-  _$$UpdateBannersLoadingImplCopyWith<_$UpdateBannersLoadingImpl>
-      get copyWith => throw _privateConstructorUsedError;
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateBannersSuccessCopyWith<UpdateBannersSuccess> get copyWith => _$UpdateBannersSuccessCopyWithImpl<UpdateBannersSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateBannersSuccess&&const DeepCollectionEquality().equals(other._data, _data));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
+
+@override
+String toString() {
+  return 'BannerState.updateBannersSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UpdateBannersErrorImplCopyWith<$Res> {
-  factory _$$UpdateBannersErrorImplCopyWith(_$UpdateBannersErrorImpl value,
-          $Res Function(_$UpdateBannersErrorImpl) then) =
-      __$$UpdateBannersErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
-}
+abstract mixin class $UpdateBannersSuccessCopyWith<$Res> implements $BannerStateCopyWith<$Res> {
+  factory $UpdateBannersSuccessCopyWith(UpdateBannersSuccess value, $Res Function(UpdateBannersSuccess) _then) = _$UpdateBannersSuccessCopyWithImpl;
+@useResult
+$Res call({
+ List<DataBannerResponse> data
+});
 
+
+
+
+}
 /// @nodoc
-class __$$UpdateBannersErrorImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$UpdateBannersErrorImpl>
-    implements _$$UpdateBannersErrorImplCopyWith<$Res> {
-  __$$UpdateBannersErrorImplCopyWithImpl(_$UpdateBannersErrorImpl _value,
-      $Res Function(_$UpdateBannersErrorImpl) _then)
-      : super(_value, _then);
+class _$UpdateBannersSuccessCopyWithImpl<$Res>
+    implements $UpdateBannersSuccessCopyWith<$Res> {
+  _$UpdateBannersSuccessCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$UpdateBannersErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
+  final UpdateBannersSuccess _self;
+  final $Res Function(UpdateBannersSuccess) _then;
+
+/// Create a copy of BannerState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(UpdateBannersSuccess(
+null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as List<DataBannerResponse>,
+  ));
 }
 
-/// @nodoc
 
-class _$UpdateBannersErrorImpl implements UpdateBannersError {
-  const _$UpdateBannersErrorImpl(this.apiErrorModel);
-
-  @override
-  final ApiErrorModel apiErrorModel;
-
-  @override
-  String toString() {
-    return 'BannerState.updateBannersError(apiErrorModel: $apiErrorModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateBannersErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateBannersErrorImplCopyWith<_$UpdateBannersErrorImpl> get copyWith =>
-      __$$UpdateBannersErrorImplCopyWithImpl<_$UpdateBannersErrorImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return updateBannersError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return updateBannersError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateBannersError != null) {
-      return updateBannersError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return updateBannersError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return updateBannersError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateBannersError != null) {
-      return updateBannersError(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class UpdateBannersError implements BannerState {
-  const factory UpdateBannersError(final ApiErrorModel apiErrorModel) =
-      _$UpdateBannersErrorImpl;
-
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$UpdateBannersErrorImplCopyWith<_$UpdateBannersErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateBannersSuccessImplCopyWith<$Res> {
-  factory _$$UpdateBannersSuccessImplCopyWith(_$UpdateBannersSuccessImpl value,
-          $Res Function(_$UpdateBannersSuccessImpl) then) =
-      __$$UpdateBannersSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<DataBannerResponse> data});
-}
-
-/// @nodoc
-class __$$UpdateBannersSuccessImplCopyWithImpl<$Res>
-    extends _$BannerStateCopyWithImpl<$Res, _$UpdateBannersSuccessImpl>
-    implements _$$UpdateBannersSuccessImplCopyWith<$Res> {
-  __$$UpdateBannersSuccessImplCopyWithImpl(_$UpdateBannersSuccessImpl _value,
-      $Res Function(_$UpdateBannersSuccessImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$UpdateBannersSuccessImpl(
-      null == data
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<DataBannerResponse>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateBannersSuccessImpl implements UpdateBannersSuccess {
-  const _$UpdateBannersSuccessImpl(final List<DataBannerResponse> data)
-      : _data = data;
-
-  final List<DataBannerResponse> _data;
-  @override
-  List<DataBannerResponse> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
-
-  @override
-  String toString() {
-    return 'BannerState.updateBannersSuccess(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateBannersSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateBannersSuccessImplCopyWith<_$UpdateBannersSuccessImpl>
-      get copyWith =>
-          __$$UpdateBannersSuccessImplCopyWithImpl<_$UpdateBannersSuccessImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBannersLoading,
-    required TResult Function(int index) changeCrouserIndex,
-    required TResult Function(ApiErrorModel apiErrorModel) getBannersError,
-    required TResult Function(List<DataBannerResponse> data) getBannersSuccess,
-    required TResult Function(String text) setStartOrEndTextDate,
-    required TResult Function() createBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) createBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        createBannersSuccess,
-    required TResult Function(String id) deleteBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        deleteBannersSuccess,
-    required TResult Function(String id) updateImageBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        updateImageBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateImageBannersSuccess,
-    required TResult Function(String id) updateBannersLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) updateBannersError,
-    required TResult Function(List<DataBannerResponse> data)
-        updateBannersSuccess,
-  }) {
-    return updateBannersSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBannersLoading,
-    TResult? Function(int index)? changeCrouserIndex,
-    TResult? Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult? Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult? Function(String text)? setStartOrEndTextDate,
-    TResult? Function()? createBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult? Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult? Function(String id)? deleteBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult? Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult? Function(String id)? updateImageBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult? Function(String id)? updateBannersLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult? Function(List<DataBannerResponse> data)? updateBannersSuccess,
-  }) {
-    return updateBannersSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBannersLoading,
-    TResult Function(int index)? changeCrouserIndex,
-    TResult Function(ApiErrorModel apiErrorModel)? getBannersError,
-    TResult Function(List<DataBannerResponse> data)? getBannersSuccess,
-    TResult Function(String text)? setStartOrEndTextDate,
-    TResult Function()? createBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? createBannersError,
-    TResult Function(List<DataBannerResponse> data)? createBannersSuccess,
-    TResult Function(String id)? deleteBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteBannersError,
-    TResult Function(List<DataBannerResponse> data)? deleteBannersSuccess,
-    TResult Function(String id)? updateImageBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateImageBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateImageBannersSuccess,
-    TResult Function(String id)? updateBannersLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? updateBannersError,
-    TResult Function(List<DataBannerResponse> data)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateBannersSuccess != null) {
-      return updateBannersSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetBannersLoading value) getBannersLoading,
-    required TResult Function(ChangeCrouserIndex value) changeCrouserIndex,
-    required TResult Function(GetBannersError value) getBannersError,
-    required TResult Function(GetBannersSuccess value) getBannersSuccess,
-    required TResult Function(SetStartOrEndTextDate value)
-        setStartOrEndTextDate,
-    required TResult Function(CreateBannersLoading value) createBannersLoading,
-    required TResult Function(CreateBannersError value) createBannersError,
-    required TResult Function(CreateBannersSuccess value) createBannersSuccess,
-    required TResult Function(DeleteBannersLoading value) deleteBannersLoading,
-    required TResult Function(DeleteBannersError value) deleteBannersError,
-    required TResult Function(DeleteBannersSuccess value) deleteBannersSuccess,
-    required TResult Function(UpdateImageBannersLoading value)
-        updateImageBannersLoading,
-    required TResult Function(UpdateImageBannersError value)
-        updateImageBannersError,
-    required TResult Function(UpdateImageBannersSuccess value)
-        updateImageBannersSuccess,
-    required TResult Function(UpdateBannersLoading value) updateBannersLoading,
-    required TResult Function(UpdateBannersError value) updateBannersError,
-    required TResult Function(UpdateBannersSuccess value) updateBannersSuccess,
-  }) {
-    return updateBannersSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetBannersLoading value)? getBannersLoading,
-    TResult? Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult? Function(GetBannersError value)? getBannersError,
-    TResult? Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult? Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult? Function(CreateBannersLoading value)? createBannersLoading,
-    TResult? Function(CreateBannersError value)? createBannersError,
-    TResult? Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult? Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult? Function(DeleteBannersError value)? deleteBannersError,
-    TResult? Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult? Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult? Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult? Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult? Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult? Function(UpdateBannersError value)? updateBannersError,
-    TResult? Function(UpdateBannersSuccess value)? updateBannersSuccess,
-  }) {
-    return updateBannersSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetBannersLoading value)? getBannersLoading,
-    TResult Function(ChangeCrouserIndex value)? changeCrouserIndex,
-    TResult Function(GetBannersError value)? getBannersError,
-    TResult Function(GetBannersSuccess value)? getBannersSuccess,
-    TResult Function(SetStartOrEndTextDate value)? setStartOrEndTextDate,
-    TResult Function(CreateBannersLoading value)? createBannersLoading,
-    TResult Function(CreateBannersError value)? createBannersError,
-    TResult Function(CreateBannersSuccess value)? createBannersSuccess,
-    TResult Function(DeleteBannersLoading value)? deleteBannersLoading,
-    TResult Function(DeleteBannersError value)? deleteBannersError,
-    TResult Function(DeleteBannersSuccess value)? deleteBannersSuccess,
-    TResult Function(UpdateImageBannersLoading value)?
-        updateImageBannersLoading,
-    TResult Function(UpdateImageBannersError value)? updateImageBannersError,
-    TResult Function(UpdateImageBannersSuccess value)?
-        updateImageBannersSuccess,
-    TResult Function(UpdateBannersLoading value)? updateBannersLoading,
-    TResult Function(UpdateBannersError value)? updateBannersError,
-    TResult Function(UpdateBannersSuccess value)? updateBannersSuccess,
-    required TResult orElse(),
-  }) {
-    if (updateBannersSuccess != null) {
-      return updateBannersSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdateBannersSuccess implements BannerState {
-  const factory UpdateBannersSuccess(final List<DataBannerResponse> data) =
-      _$UpdateBannersSuccessImpl;
-
-  List<DataBannerResponse> get data;
-  @JsonKey(ignore: true)
-  _$$UpdateBannersSuccessImplCopyWith<_$UpdateBannersSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

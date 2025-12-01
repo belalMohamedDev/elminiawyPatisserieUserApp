@@ -34,7 +34,7 @@ class DriverOrder extends StatelessWidget {
                 child: SalesContainerWidget(
                     image: ImageAsset.deliveryCancelled,
                     titleText: "Cancelled Orders",
-                    imageColor: const Color(0xffe68636).withOpacity(0.9),
+                    imageColor: const Color(0xffe68636).withValues(alpha: 0.9),
                     bodyText:
                         "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.cancelledOrders ?? 0}"),
               ),

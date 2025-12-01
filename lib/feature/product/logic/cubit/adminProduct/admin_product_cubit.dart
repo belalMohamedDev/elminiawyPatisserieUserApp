@@ -62,7 +62,7 @@ class AdminProductCubit extends Cubit<AdminProductState> {
     int page = 1;
   int theLastPage = 0;
 
-  Future<void> fetchGetAllProduct({fromPagination = false}) async {
+  Future<void> fetchGetAllProduct({bool fromPagination = false}) async {
     if (fromPagination) {
       emit(const AdminProductState.getAllProductSFromPaginationLoadingState());
     } else {

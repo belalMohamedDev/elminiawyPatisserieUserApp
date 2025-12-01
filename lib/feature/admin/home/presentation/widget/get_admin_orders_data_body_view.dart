@@ -204,7 +204,7 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                                       ElevatedButton.styleFrom(
                                                     backgroundColor: ColorManger
                                                         .brunLight
-                                                        .withOpacity(0.4),
+                                                        .withValues(alpha: 0.4),
                                                     foregroundColor:
                                                         Colors.white,
                                                     shape:
@@ -243,7 +243,7 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                         child: ElevatedButton(
                                             style: ElevatedButton.styleFrom(
                                               backgroundColor: ColorManger.brun
-                                                  .withOpacity(0.7),
+                                                  .withValues(alpha: 0.7),
                                               foregroundColor: Colors.white,
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:

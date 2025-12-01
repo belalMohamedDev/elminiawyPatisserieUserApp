@@ -76,7 +76,7 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   int theLastPage = 0;
 
   Future<void> fetchGetSubCategories(
-      {fromPagination = false, disablePagination = false}) async {
+      {bool fromPagination = false, disablePagination = false}) async {
     if (fromPagination) {
       emit(const SubCategoriesState
           .getSubCategoriesFromPaginationLoadingState());

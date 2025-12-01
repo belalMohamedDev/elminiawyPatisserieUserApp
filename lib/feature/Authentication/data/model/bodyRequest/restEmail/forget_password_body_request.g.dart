@@ -7,13 +7,9 @@ part of 'forget_password_body_request.dart';
 // **************************************************************************
 
 ForgetPasswordRequestBody _$ForgetPasswordRequestBodyFromJson(
-        Map<String, dynamic> json) =>
-    ForgetPasswordRequestBody(
-      email: json['email'] as String,
-    );
+  Map<String, dynamic> json,
+) => ForgetPasswordRequestBody(email: json['email'] as String);
 
 Map<String, dynamic> _$ForgetPasswordRequestBodyToJson(
-        ForgetPasswordRequestBody instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-    };
+  ForgetPasswordRequestBody instance,
+) => <String, dynamic>{'email': instance.email};

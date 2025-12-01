@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,2708 +9,926 @@ part of 'driver_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$DriverState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DriverState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $DriverStateCopyWith<$Res> {
-  factory $DriverStateCopyWith(
-          DriverState value, $Res Function(DriverState) then) =
-      _$DriverStateCopyWithImpl<$Res, DriverState>;
+class $DriverStateCopyWith<$Res>  {
+$DriverStateCopyWith(DriverState _, $Res Function(DriverState) __);
 }
 
-/// @nodoc
-class _$DriverStateCopyWithImpl<$Res, $Val extends DriverState>
-    implements $DriverStateCopyWith<$Res> {
-  _$DriverStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [DriverState].
+extension DriverStatePatterns on DriverState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetAllDriverLoading value)?  getAllDriverLoading,TResult Function( GetAllDriverError value)?  getAllDriverError,TResult Function( GetAllDriverSuccess value)?  getAllDriverSuccess,TResult Function( GetAllActiveDriverLoading value)?  getAllActiveDriverLoading,TResult Function( GetAllActiveDriverError value)?  getAllActiveDriverError,TResult Function( GetAllActiveDriverSuccess value)?  getAllActiveDriverSuccess,TResult Function( DriverActivedLoading value)?  driverActivedLoading,TResult Function( DriverActivedError value)?  driverActivedError,TResult Function( GDriverActivedSuccess value)?  driverActivedSuccess,TResult Function( DeleteDriverLoading value)?  deleteDriverLoading,TResult Function( DeleteDriverError value)?  deleteDriverError,TResult Function( DeleteDriverSuccess value)?  deleteDriverSuccess,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case GetAllDriverLoading() when getAllDriverLoading != null:
+return getAllDriverLoading(_that);case GetAllDriverError() when getAllDriverError != null:
+return getAllDriverError(_that);case GetAllDriverSuccess() when getAllDriverSuccess != null:
+return getAllDriverSuccess(_that);case GetAllActiveDriverLoading() when getAllActiveDriverLoading != null:
+return getAllActiveDriverLoading(_that);case GetAllActiveDriverError() when getAllActiveDriverError != null:
+return getAllActiveDriverError(_that);case GetAllActiveDriverSuccess() when getAllActiveDriverSuccess != null:
+return getAllActiveDriverSuccess(_that);case DriverActivedLoading() when driverActivedLoading != null:
+return driverActivedLoading(_that);case DriverActivedError() when driverActivedError != null:
+return driverActivedError(_that);case GDriverActivedSuccess() when driverActivedSuccess != null:
+return driverActivedSuccess(_that);case DeleteDriverLoading() when deleteDriverLoading != null:
+return deleteDriverLoading(_that);case DeleteDriverError() when deleteDriverError != null:
+return deleteDriverError(_that);case DeleteDriverSuccess() when deleteDriverSuccess != null:
+return deleteDriverSuccess(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetAllDriverLoading value)  getAllDriverLoading,required TResult Function( GetAllDriverError value)  getAllDriverError,required TResult Function( GetAllDriverSuccess value)  getAllDriverSuccess,required TResult Function( GetAllActiveDriverLoading value)  getAllActiveDriverLoading,required TResult Function( GetAllActiveDriverError value)  getAllActiveDriverError,required TResult Function( GetAllActiveDriverSuccess value)  getAllActiveDriverSuccess,required TResult Function( DriverActivedLoading value)  driverActivedLoading,required TResult Function( DriverActivedError value)  driverActivedError,required TResult Function( GDriverActivedSuccess value)  driverActivedSuccess,required TResult Function( DeleteDriverLoading value)  deleteDriverLoading,required TResult Function( DeleteDriverError value)  deleteDriverError,required TResult Function( DeleteDriverSuccess value)  deleteDriverSuccess,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case GetAllDriverLoading():
+return getAllDriverLoading(_that);case GetAllDriverError():
+return getAllDriverError(_that);case GetAllDriverSuccess():
+return getAllDriverSuccess(_that);case GetAllActiveDriverLoading():
+return getAllActiveDriverLoading(_that);case GetAllActiveDriverError():
+return getAllActiveDriverError(_that);case GetAllActiveDriverSuccess():
+return getAllActiveDriverSuccess(_that);case DriverActivedLoading():
+return driverActivedLoading(_that);case DriverActivedError():
+return driverActivedError(_that);case GDriverActivedSuccess():
+return driverActivedSuccess(_that);case DeleteDriverLoading():
+return deleteDriverLoading(_that);case DeleteDriverError():
+return deleteDriverError(_that);case DeleteDriverSuccess():
+return deleteDriverSuccess(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetAllDriverLoading value)?  getAllDriverLoading,TResult? Function( GetAllDriverError value)?  getAllDriverError,TResult? Function( GetAllDriverSuccess value)?  getAllDriverSuccess,TResult? Function( GetAllActiveDriverLoading value)?  getAllActiveDriverLoading,TResult? Function( GetAllActiveDriverError value)?  getAllActiveDriverError,TResult? Function( GetAllActiveDriverSuccess value)?  getAllActiveDriverSuccess,TResult? Function( DriverActivedLoading value)?  driverActivedLoading,TResult? Function( DriverActivedError value)?  driverActivedError,TResult? Function( GDriverActivedSuccess value)?  driverActivedSuccess,TResult? Function( DeleteDriverLoading value)?  deleteDriverLoading,TResult? Function( DeleteDriverError value)?  deleteDriverError,TResult? Function( DeleteDriverSuccess value)?  deleteDriverSuccess,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case GetAllDriverLoading() when getAllDriverLoading != null:
+return getAllDriverLoading(_that);case GetAllDriverError() when getAllDriverError != null:
+return getAllDriverError(_that);case GetAllDriverSuccess() when getAllDriverSuccess != null:
+return getAllDriverSuccess(_that);case GetAllActiveDriverLoading() when getAllActiveDriverLoading != null:
+return getAllActiveDriverLoading(_that);case GetAllActiveDriverError() when getAllActiveDriverError != null:
+return getAllActiveDriverError(_that);case GetAllActiveDriverSuccess() when getAllActiveDriverSuccess != null:
+return getAllActiveDriverSuccess(_that);case DriverActivedLoading() when driverActivedLoading != null:
+return driverActivedLoading(_that);case DriverActivedError() when driverActivedError != null:
+return driverActivedError(_that);case GDriverActivedSuccess() when driverActivedSuccess != null:
+return driverActivedSuccess(_that);case DeleteDriverLoading() when deleteDriverLoading != null:
+return deleteDriverLoading(_that);case DeleteDriverError() when deleteDriverError != null:
+return deleteDriverError(_that);case DeleteDriverSuccess() when deleteDriverSuccess != null:
+return deleteDriverSuccess(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getAllDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllDriverError,TResult Function( AuthResponse data)?  getAllDriverSuccess,TResult Function()?  getAllActiveDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllActiveDriverError,TResult Function( AuthResponse data)?  getAllActiveDriverSuccess,TResult Function()?  driverActivedLoading,TResult Function( ApiErrorModel apiErrorModel)?  driverActivedError,TResult Function( AuthResponse data)?  driverActivedSuccess,TResult Function()?  deleteDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  deleteDriverError,TResult Function( ApiSuccessGeneralModel data)?  deleteDriverSuccess,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case GetAllDriverLoading() when getAllDriverLoading != null:
+return getAllDriverLoading();case GetAllDriverError() when getAllDriverError != null:
+return getAllDriverError(_that.apiErrorModel);case GetAllDriverSuccess() when getAllDriverSuccess != null:
+return getAllDriverSuccess(_that.data);case GetAllActiveDriverLoading() when getAllActiveDriverLoading != null:
+return getAllActiveDriverLoading();case GetAllActiveDriverError() when getAllActiveDriverError != null:
+return getAllActiveDriverError(_that.apiErrorModel);case GetAllActiveDriverSuccess() when getAllActiveDriverSuccess != null:
+return getAllActiveDriverSuccess(_that.data);case DriverActivedLoading() when driverActivedLoading != null:
+return driverActivedLoading();case DriverActivedError() when driverActivedError != null:
+return driverActivedError(_that.apiErrorModel);case GDriverActivedSuccess() when driverActivedSuccess != null:
+return driverActivedSuccess(_that.data);case DeleteDriverLoading() when deleteDriverLoading != null:
+return deleteDriverLoading();case DeleteDriverError() when deleteDriverError != null:
+return deleteDriverError(_that.apiErrorModel);case DeleteDriverSuccess() when deleteDriverSuccess != null:
+return deleteDriverSuccess(_that.data);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getAllDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllDriverError,required TResult Function( AuthResponse data)  getAllDriverSuccess,required TResult Function()  getAllActiveDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllActiveDriverError,required TResult Function( AuthResponse data)  getAllActiveDriverSuccess,required TResult Function()  driverActivedLoading,required TResult Function( ApiErrorModel apiErrorModel)  driverActivedError,required TResult Function( AuthResponse data)  driverActivedSuccess,required TResult Function()  deleteDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  deleteDriverError,required TResult Function( ApiSuccessGeneralModel data)  deleteDriverSuccess,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case GetAllDriverLoading():
+return getAllDriverLoading();case GetAllDriverError():
+return getAllDriverError(_that.apiErrorModel);case GetAllDriverSuccess():
+return getAllDriverSuccess(_that.data);case GetAllActiveDriverLoading():
+return getAllActiveDriverLoading();case GetAllActiveDriverError():
+return getAllActiveDriverError(_that.apiErrorModel);case GetAllActiveDriverSuccess():
+return getAllActiveDriverSuccess(_that.data);case DriverActivedLoading():
+return driverActivedLoading();case DriverActivedError():
+return driverActivedError(_that.apiErrorModel);case GDriverActivedSuccess():
+return driverActivedSuccess(_that.data);case DeleteDriverLoading():
+return deleteDriverLoading();case DeleteDriverError():
+return deleteDriverError(_that.apiErrorModel);case DeleteDriverSuccess():
+return deleteDriverSuccess(_that.data);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getAllDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllDriverError,TResult? Function( AuthResponse data)?  getAllDriverSuccess,TResult? Function()?  getAllActiveDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllActiveDriverError,TResult? Function( AuthResponse data)?  getAllActiveDriverSuccess,TResult? Function()?  driverActivedLoading,TResult? Function( ApiErrorModel apiErrorModel)?  driverActivedError,TResult? Function( AuthResponse data)?  driverActivedSuccess,TResult? Function()?  deleteDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  deleteDriverError,TResult? Function( ApiSuccessGeneralModel data)?  deleteDriverSuccess,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case GetAllDriverLoading() when getAllDriverLoading != null:
+return getAllDriverLoading();case GetAllDriverError() when getAllDriverError != null:
+return getAllDriverError(_that.apiErrorModel);case GetAllDriverSuccess() when getAllDriverSuccess != null:
+return getAllDriverSuccess(_that.data);case GetAllActiveDriverLoading() when getAllActiveDriverLoading != null:
+return getAllActiveDriverLoading();case GetAllActiveDriverError() when getAllActiveDriverError != null:
+return getAllActiveDriverError(_that.apiErrorModel);case GetAllActiveDriverSuccess() when getAllActiveDriverSuccess != null:
+return getAllActiveDriverSuccess(_that.data);case DriverActivedLoading() when driverActivedLoading != null:
+return driverActivedLoading();case DriverActivedError() when driverActivedError != null:
+return driverActivedError(_that.apiErrorModel);case GDriverActivedSuccess() when driverActivedSuccess != null:
+return driverActivedSuccess(_that.data);case DeleteDriverLoading() when deleteDriverLoading != null:
+return deleteDriverLoading();case DeleteDriverError() when deleteDriverError != null:
+return deleteDriverError(_that.apiErrorModel);case DeleteDriverSuccess() when deleteDriverSuccess != null:
+return deleteDriverSuccess(_that.data);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'DriverState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements DriverState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$GetAllDriverLoadingImplCopyWith<$Res> {
-  factory _$$GetAllDriverLoadingImplCopyWith(_$GetAllDriverLoadingImpl value,
-          $Res Function(_$GetAllDriverLoadingImpl) then) =
-      __$$GetAllDriverLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetAllDriverLoadingImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$GetAllDriverLoadingImpl>
-    implements _$$GetAllDriverLoadingImplCopyWith<$Res> {
-  __$$GetAllDriverLoadingImplCopyWithImpl(_$GetAllDriverLoadingImpl _value,
-      $Res Function(_$GetAllDriverLoadingImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAllDriverLoadingImpl implements GetAllDriverLoading {
-  const _$GetAllDriverLoadingImpl();
 
-  @override
-  String toString() {
-    return 'DriverState.getAllDriverLoading()';
-  }
+class _Initial implements DriverState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllDriverLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return getAllDriverLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return getAllDriverLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllDriverLoading != null) {
-      return getAllDriverLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return getAllDriverLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return getAllDriverLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllDriverLoading != null) {
-      return getAllDriverLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class GetAllDriverLoading implements DriverState {
-  const factory GetAllDriverLoading() = _$GetAllDriverLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class GetAllDriverLoading implements DriverState {
+  const GetAllDriverLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllDriverLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState.getAllDriverLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class GetAllDriverError implements DriverState {
+  const GetAllDriverError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetAllDriverErrorCopyWith<GetAllDriverError> get copyWith => _$GetAllDriverErrorCopyWithImpl<GetAllDriverError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllDriverError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'DriverState.getAllDriverError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetAllDriverErrorImplCopyWith<$Res> {
-  factory _$$GetAllDriverErrorImplCopyWith(_$GetAllDriverErrorImpl value,
-          $Res Function(_$GetAllDriverErrorImpl) then) =
-      __$$GetAllDriverErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $GetAllDriverErrorCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $GetAllDriverErrorCopyWith(GetAllDriverError value, $Res Function(GetAllDriverError) _then) = _$GetAllDriverErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetAllDriverErrorCopyWithImpl<$Res>
+    implements $GetAllDriverErrorCopyWith<$Res> {
+  _$GetAllDriverErrorCopyWithImpl(this._self, this._then);
+
+  final GetAllDriverError _self;
+  final $Res Function(GetAllDriverError) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(GetAllDriverError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$GetAllDriverErrorImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$GetAllDriverErrorImpl>
-    implements _$$GetAllDriverErrorImplCopyWith<$Res> {
-  __$$GetAllDriverErrorImplCopyWithImpl(_$GetAllDriverErrorImpl _value,
-      $Res Function(_$GetAllDriverErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$GetAllDriverErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetAllDriverErrorImpl implements GetAllDriverError {
-  const _$GetAllDriverErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class GetAllDriverSuccess implements DriverState {
+  const GetAllDriverSuccess(this.data);
+  
 
-  @override
-  String toString() {
-    return 'DriverState.getAllDriverError(apiErrorModel: $apiErrorModel)';
-  }
+ final  AuthResponse data;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllDriverErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetAllDriverSuccessCopyWith<GetAllDriverSuccess> get copyWith => _$GetAllDriverSuccessCopyWithImpl<GetAllDriverSuccess>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllDriverErrorImplCopyWith<_$GetAllDriverErrorImpl> get copyWith =>
-      __$$GetAllDriverErrorImplCopyWithImpl<_$GetAllDriverErrorImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return getAllDriverError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return getAllDriverError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllDriverError != null) {
-      return getAllDriverError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return getAllDriverError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return getAllDriverError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllDriverError != null) {
-      return getAllDriverError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllDriverSuccess&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class GetAllDriverError implements DriverState {
-  const factory GetAllDriverError(final ApiErrorModel apiErrorModel) =
-      _$GetAllDriverErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$GetAllDriverErrorImplCopyWith<_$GetAllDriverErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'DriverState.getAllDriverSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetAllDriverSuccessImplCopyWith<$Res> {
-  factory _$$GetAllDriverSuccessImplCopyWith(_$GetAllDriverSuccessImpl value,
-          $Res Function(_$GetAllDriverSuccessImpl) then) =
-      __$$GetAllDriverSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AuthResponse data});
+abstract mixin class $GetAllDriverSuccessCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $GetAllDriverSuccessCopyWith(GetAllDriverSuccess value, $Res Function(GetAllDriverSuccess) _then) = _$GetAllDriverSuccessCopyWithImpl;
+@useResult
+$Res call({
+ AuthResponse data
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetAllDriverSuccessCopyWithImpl<$Res>
+    implements $GetAllDriverSuccessCopyWith<$Res> {
+  _$GetAllDriverSuccessCopyWithImpl(this._self, this._then);
+
+  final GetAllDriverSuccess _self;
+  final $Res Function(GetAllDriverSuccess) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(GetAllDriverSuccess(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as AuthResponse,
+  ));
 }
 
-/// @nodoc
-class __$$GetAllDriverSuccessImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$GetAllDriverSuccessImpl>
-    implements _$$GetAllDriverSuccessImplCopyWith<$Res> {
-  __$$GetAllDriverSuccessImplCopyWithImpl(_$GetAllDriverSuccessImpl _value,
-      $Res Function(_$GetAllDriverSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$GetAllDriverSuccessImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as AuthResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetAllDriverSuccessImpl implements GetAllDriverSuccess {
-  const _$GetAllDriverSuccessImpl(this.data);
 
-  @override
-  final AuthResponse data;
+class GetAllActiveDriverLoading implements DriverState {
+  const GetAllActiveDriverLoading();
+  
 
-  @override
-  String toString() {
-    return 'DriverState.getAllDriverSuccess(data: $data)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllDriverSuccessImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllDriverSuccessImplCopyWith<_$GetAllDriverSuccessImpl> get copyWith =>
-      __$$GetAllDriverSuccessImplCopyWithImpl<_$GetAllDriverSuccessImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return getAllDriverSuccess(data);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return getAllDriverSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllDriverSuccess != null) {
-      return getAllDriverSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return getAllDriverSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return getAllDriverSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllDriverSuccess != null) {
-      return getAllDriverSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllActiveDriverLoading);
 }
 
-abstract class GetAllDriverSuccess implements DriverState {
-  const factory GetAllDriverSuccess(final AuthResponse data) =
-      _$GetAllDriverSuccessImpl;
 
-  AuthResponse get data;
-  @JsonKey(ignore: true)
-  _$$GetAllDriverSuccessImplCopyWith<_$GetAllDriverSuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState.getAllActiveDriverLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class GetAllActiveDriverError implements DriverState {
+  const GetAllActiveDriverError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetAllActiveDriverErrorCopyWith<GetAllActiveDriverError> get copyWith => _$GetAllActiveDriverErrorCopyWithImpl<GetAllActiveDriverError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllActiveDriverError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'DriverState.getAllActiveDriverError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetAllActiveDriverLoadingImplCopyWith<$Res> {
-  factory _$$GetAllActiveDriverLoadingImplCopyWith(
-          _$GetAllActiveDriverLoadingImpl value,
-          $Res Function(_$GetAllActiveDriverLoadingImpl) then) =
-      __$$GetAllActiveDriverLoadingImplCopyWithImpl<$Res>;
+abstract mixin class $GetAllActiveDriverErrorCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $GetAllActiveDriverErrorCopyWith(GetAllActiveDriverError value, $Res Function(GetAllActiveDriverError) _then) = _$GetAllActiveDriverErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetAllActiveDriverErrorCopyWithImpl<$Res>
+    implements $GetAllActiveDriverErrorCopyWith<$Res> {
+  _$GetAllActiveDriverErrorCopyWithImpl(this._self, this._then);
+
+  final GetAllActiveDriverError _self;
+  final $Res Function(GetAllActiveDriverError) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(GetAllActiveDriverError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$GetAllActiveDriverLoadingImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$GetAllActiveDriverLoadingImpl>
-    implements _$$GetAllActiveDriverLoadingImplCopyWith<$Res> {
-  __$$GetAllActiveDriverLoadingImplCopyWithImpl(
-      _$GetAllActiveDriverLoadingImpl _value,
-      $Res Function(_$GetAllActiveDriverLoadingImpl) _then)
-      : super(_value, _then);
+
 }
 
 /// @nodoc
 
-class _$GetAllActiveDriverLoadingImpl implements GetAllActiveDriverLoading {
-  const _$GetAllActiveDriverLoadingImpl();
 
-  @override
-  String toString() {
-    return 'DriverState.getAllActiveDriverLoading()';
-  }
+class GetAllActiveDriverSuccess implements DriverState {
+  const GetAllActiveDriverSuccess(this.data);
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllActiveDriverLoadingImpl);
-  }
+ final  AuthResponse data;
 
-  @override
-  int get hashCode => runtimeType.hashCode;
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetAllActiveDriverSuccessCopyWith<GetAllActiveDriverSuccess> get copyWith => _$GetAllActiveDriverSuccessCopyWithImpl<GetAllActiveDriverSuccess>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllActiveDriverLoading != null) {
-      return getAllActiveDriverLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllActiveDriverLoading != null) {
-      return getAllActiveDriverLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllActiveDriverSuccess&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class GetAllActiveDriverLoading implements DriverState {
-  const factory GetAllActiveDriverLoading() = _$GetAllActiveDriverLoadingImpl;
+
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'DriverState.getAllActiveDriverSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetAllActiveDriverErrorImplCopyWith<$Res> {
-  factory _$$GetAllActiveDriverErrorImplCopyWith(
-          _$GetAllActiveDriverErrorImpl value,
-          $Res Function(_$GetAllActiveDriverErrorImpl) then) =
-      __$$GetAllActiveDriverErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $GetAllActiveDriverSuccessCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $GetAllActiveDriverSuccessCopyWith(GetAllActiveDriverSuccess value, $Res Function(GetAllActiveDriverSuccess) _then) = _$GetAllActiveDriverSuccessCopyWithImpl;
+@useResult
+$Res call({
+ AuthResponse data
+});
+
+
+
+
+}
+/// @nodoc
+class _$GetAllActiveDriverSuccessCopyWithImpl<$Res>
+    implements $GetAllActiveDriverSuccessCopyWith<$Res> {
+  _$GetAllActiveDriverSuccessCopyWithImpl(this._self, this._then);
+
+  final GetAllActiveDriverSuccess _self;
+  final $Res Function(GetAllActiveDriverSuccess) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(GetAllActiveDriverSuccess(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as AuthResponse,
+  ));
 }
 
-/// @nodoc
-class __$$GetAllActiveDriverErrorImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$GetAllActiveDriverErrorImpl>
-    implements _$$GetAllActiveDriverErrorImplCopyWith<$Res> {
-  __$$GetAllActiveDriverErrorImplCopyWithImpl(
-      _$GetAllActiveDriverErrorImpl _value,
-      $Res Function(_$GetAllActiveDriverErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$GetAllActiveDriverErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetAllActiveDriverErrorImpl implements GetAllActiveDriverError {
-  const _$GetAllActiveDriverErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class DriverActivedLoading implements DriverState {
+  const DriverActivedLoading();
+  
 
-  @override
-  String toString() {
-    return 'DriverState.getAllActiveDriverError(apiErrorModel: $apiErrorModel)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllActiveDriverErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllActiveDriverErrorImplCopyWith<_$GetAllActiveDriverErrorImpl>
-      get copyWith => __$$GetAllActiveDriverErrorImplCopyWithImpl<
-          _$GetAllActiveDriverErrorImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverError(apiErrorModel);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllActiveDriverError != null) {
-      return getAllActiveDriverError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllActiveDriverError != null) {
-      return getAllActiveDriverError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DriverActivedLoading);
 }
 
-abstract class GetAllActiveDriverError implements DriverState {
-  const factory GetAllActiveDriverError(final ApiErrorModel apiErrorModel) =
-      _$GetAllActiveDriverErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$GetAllActiveDriverErrorImplCopyWith<_$GetAllActiveDriverErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState.driverActivedLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class DriverActivedError implements DriverState {
+  const DriverActivedError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DriverActivedErrorCopyWith<DriverActivedError> get copyWith => _$DriverActivedErrorCopyWithImpl<DriverActivedError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DriverActivedError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'DriverState.driverActivedError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetAllActiveDriverSuccessImplCopyWith<$Res> {
-  factory _$$GetAllActiveDriverSuccessImplCopyWith(
-          _$GetAllActiveDriverSuccessImpl value,
-          $Res Function(_$GetAllActiveDriverSuccessImpl) then) =
-      __$$GetAllActiveDriverSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AuthResponse data});
+abstract mixin class $DriverActivedErrorCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $DriverActivedErrorCopyWith(DriverActivedError value, $Res Function(DriverActivedError) _then) = _$DriverActivedErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$DriverActivedErrorCopyWithImpl<$Res>
+    implements $DriverActivedErrorCopyWith<$Res> {
+  _$DriverActivedErrorCopyWithImpl(this._self, this._then);
+
+  final DriverActivedError _self;
+  final $Res Function(DriverActivedError) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(DriverActivedError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$GetAllActiveDriverSuccessImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$GetAllActiveDriverSuccessImpl>
-    implements _$$GetAllActiveDriverSuccessImplCopyWith<$Res> {
-  __$$GetAllActiveDriverSuccessImplCopyWithImpl(
-      _$GetAllActiveDriverSuccessImpl _value,
-      $Res Function(_$GetAllActiveDriverSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$GetAllActiveDriverSuccessImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as AuthResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetAllActiveDriverSuccessImpl implements GetAllActiveDriverSuccess {
-  const _$GetAllActiveDriverSuccessImpl(this.data);
 
-  @override
-  final AuthResponse data;
+class GDriverActivedSuccess implements DriverState {
+  const GDriverActivedSuccess(this.data);
+  
 
-  @override
-  String toString() {
-    return 'DriverState.getAllActiveDriverSuccess(data: $data)';
-  }
+ final  AuthResponse data;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllActiveDriverSuccessImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GDriverActivedSuccessCopyWith<GDriverActivedSuccess> get copyWith => _$GDriverActivedSuccessCopyWithImpl<GDriverActivedSuccess>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllActiveDriverSuccessImplCopyWith<_$GetAllActiveDriverSuccessImpl>
-      get copyWith => __$$GetAllActiveDriverSuccessImplCopyWithImpl<
-          _$GetAllActiveDriverSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllActiveDriverSuccess != null) {
-      return getAllActiveDriverSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return getAllActiveDriverSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (getAllActiveDriverSuccess != null) {
-      return getAllActiveDriverSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GDriverActivedSuccess&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class GetAllActiveDriverSuccess implements DriverState {
-  const factory GetAllActiveDriverSuccess(final AuthResponse data) =
-      _$GetAllActiveDriverSuccessImpl;
 
-  AuthResponse get data;
-  @JsonKey(ignore: true)
-  _$$GetAllActiveDriverSuccessImplCopyWith<_$GetAllActiveDriverSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'DriverState.driverActivedSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$DriverActivedLoadingImplCopyWith<$Res> {
-  factory _$$DriverActivedLoadingImplCopyWith(_$DriverActivedLoadingImpl value,
-          $Res Function(_$DriverActivedLoadingImpl) then) =
-      __$$DriverActivedLoadingImplCopyWithImpl<$Res>;
+abstract mixin class $GDriverActivedSuccessCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $GDriverActivedSuccessCopyWith(GDriverActivedSuccess value, $Res Function(GDriverActivedSuccess) _then) = _$GDriverActivedSuccessCopyWithImpl;
+@useResult
+$Res call({
+ AuthResponse data
+});
+
+
+
+
+}
+/// @nodoc
+class _$GDriverActivedSuccessCopyWithImpl<$Res>
+    implements $GDriverActivedSuccessCopyWith<$Res> {
+  _$GDriverActivedSuccessCopyWithImpl(this._self, this._then);
+
+  final GDriverActivedSuccess _self;
+  final $Res Function(GDriverActivedSuccess) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(GDriverActivedSuccess(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as AuthResponse,
+  ));
 }
 
-/// @nodoc
-class __$$DriverActivedLoadingImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$DriverActivedLoadingImpl>
-    implements _$$DriverActivedLoadingImplCopyWith<$Res> {
-  __$$DriverActivedLoadingImplCopyWithImpl(_$DriverActivedLoadingImpl _value,
-      $Res Function(_$DriverActivedLoadingImpl) _then)
-      : super(_value, _then);
+
 }
 
 /// @nodoc
 
-class _$DriverActivedLoadingImpl implements DriverActivedLoading {
-  const _$DriverActivedLoadingImpl();
 
-  @override
-  String toString() {
-    return 'DriverState.driverActivedLoading()';
-  }
+class DeleteDriverLoading implements DriverState {
+  const DeleteDriverLoading();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DriverActivedLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return driverActivedLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return driverActivedLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (driverActivedLoading != null) {
-      return driverActivedLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return driverActivedLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return driverActivedLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (driverActivedLoading != null) {
-      return driverActivedLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteDriverLoading);
 }
 
-abstract class DriverActivedLoading implements DriverState {
-  const factory DriverActivedLoading() = _$DriverActivedLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState.deleteDriverLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class DeleteDriverError implements DriverState {
+  const DeleteDriverError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DeleteDriverErrorCopyWith<DeleteDriverError> get copyWith => _$DeleteDriverErrorCopyWithImpl<DeleteDriverError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteDriverError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'DriverState.deleteDriverError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$DriverActivedErrorImplCopyWith<$Res> {
-  factory _$$DriverActivedErrorImplCopyWith(_$DriverActivedErrorImpl value,
-          $Res Function(_$DriverActivedErrorImpl) then) =
-      __$$DriverActivedErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $DeleteDriverErrorCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $DeleteDriverErrorCopyWith(DeleteDriverError value, $Res Function(DeleteDriverError) _then) = _$DeleteDriverErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$DeleteDriverErrorCopyWithImpl<$Res>
+    implements $DeleteDriverErrorCopyWith<$Res> {
+  _$DeleteDriverErrorCopyWithImpl(this._self, this._then);
+
+  final DeleteDriverError _self;
+  final $Res Function(DeleteDriverError) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(DeleteDriverError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$DriverActivedErrorImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$DriverActivedErrorImpl>
-    implements _$$DriverActivedErrorImplCopyWith<$Res> {
-  __$$DriverActivedErrorImplCopyWithImpl(_$DriverActivedErrorImpl _value,
-      $Res Function(_$DriverActivedErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$DriverActivedErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$DriverActivedErrorImpl implements DriverActivedError {
-  const _$DriverActivedErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class DeleteDriverSuccess implements DriverState {
+  const DeleteDriverSuccess(this.data);
+  
 
-  @override
-  String toString() {
-    return 'DriverState.driverActivedError(apiErrorModel: $apiErrorModel)';
-  }
+ final  ApiSuccessGeneralModel data;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DriverActivedErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DeleteDriverSuccessCopyWith<DeleteDriverSuccess> get copyWith => _$DeleteDriverSuccessCopyWithImpl<DeleteDriverSuccess>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DriverActivedErrorImplCopyWith<_$DriverActivedErrorImpl> get copyWith =>
-      __$$DriverActivedErrorImplCopyWithImpl<_$DriverActivedErrorImpl>(
-          this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return driverActivedError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return driverActivedError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (driverActivedError != null) {
-      return driverActivedError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return driverActivedError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return driverActivedError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (driverActivedError != null) {
-      return driverActivedError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteDriverSuccess&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class DriverActivedError implements DriverState {
-  const factory DriverActivedError(final ApiErrorModel apiErrorModel) =
-      _$DriverActivedErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$DriverActivedErrorImplCopyWith<_$DriverActivedErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'DriverState.deleteDriverSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GDriverActivedSuccessImplCopyWith<$Res> {
-  factory _$$GDriverActivedSuccessImplCopyWith(
-          _$GDriverActivedSuccessImpl value,
-          $Res Function(_$GDriverActivedSuccessImpl) then) =
-      __$$GDriverActivedSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AuthResponse data});
-}
+abstract mixin class $DeleteDriverSuccessCopyWith<$Res> implements $DriverStateCopyWith<$Res> {
+  factory $DeleteDriverSuccessCopyWith(DeleteDriverSuccess value, $Res Function(DeleteDriverSuccess) _then) = _$DeleteDriverSuccessCopyWithImpl;
+@useResult
+$Res call({
+ ApiSuccessGeneralModel data
+});
 
+
+
+
+}
 /// @nodoc
-class __$$GDriverActivedSuccessImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$GDriverActivedSuccessImpl>
-    implements _$$GDriverActivedSuccessImplCopyWith<$Res> {
-  __$$GDriverActivedSuccessImplCopyWithImpl(_$GDriverActivedSuccessImpl _value,
-      $Res Function(_$GDriverActivedSuccessImpl) _then)
-      : super(_value, _then);
+class _$DeleteDriverSuccessCopyWithImpl<$Res>
+    implements $DeleteDriverSuccessCopyWith<$Res> {
+  _$DeleteDriverSuccessCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$GDriverActivedSuccessImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as AuthResponse,
-    ));
-  }
+  final DeleteDriverSuccess _self;
+  final $Res Function(DeleteDriverSuccess) _then;
+
+/// Create a copy of DriverState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(DeleteDriverSuccess(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as ApiSuccessGeneralModel,
+  ));
 }
 
-/// @nodoc
 
-class _$GDriverActivedSuccessImpl implements GDriverActivedSuccess {
-  const _$GDriverActivedSuccessImpl(this.data);
-
-  @override
-  final AuthResponse data;
-
-  @override
-  String toString() {
-    return 'DriverState.driverActivedSuccess(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GDriverActivedSuccessImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GDriverActivedSuccessImplCopyWith<_$GDriverActivedSuccessImpl>
-      get copyWith => __$$GDriverActivedSuccessImplCopyWithImpl<
-          _$GDriverActivedSuccessImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return driverActivedSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return driverActivedSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (driverActivedSuccess != null) {
-      return driverActivedSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return driverActivedSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return driverActivedSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (driverActivedSuccess != null) {
-      return driverActivedSuccess(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class GDriverActivedSuccess implements DriverState {
-  const factory GDriverActivedSuccess(final AuthResponse data) =
-      _$GDriverActivedSuccessImpl;
-
-  AuthResponse get data;
-  @JsonKey(ignore: true)
-  _$$GDriverActivedSuccessImplCopyWith<_$GDriverActivedSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$DeleteDriverLoadingImplCopyWith<$Res> {
-  factory _$$DeleteDriverLoadingImplCopyWith(_$DeleteDriverLoadingImpl value,
-          $Res Function(_$DeleteDriverLoadingImpl) then) =
-      __$$DeleteDriverLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$DeleteDriverLoadingImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$DeleteDriverLoadingImpl>
-    implements _$$DeleteDriverLoadingImplCopyWith<$Res> {
-  __$$DeleteDriverLoadingImplCopyWithImpl(_$DeleteDriverLoadingImpl _value,
-      $Res Function(_$DeleteDriverLoadingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$DeleteDriverLoadingImpl implements DeleteDriverLoading {
-  const _$DeleteDriverLoadingImpl();
-
-  @override
-  String toString() {
-    return 'DriverState.deleteDriverLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteDriverLoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return deleteDriverLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return deleteDriverLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteDriverLoading != null) {
-      return deleteDriverLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return deleteDriverLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return deleteDriverLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteDriverLoading != null) {
-      return deleteDriverLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteDriverLoading implements DriverState {
-  const factory DeleteDriverLoading() = _$DeleteDriverLoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$DeleteDriverErrorImplCopyWith<$Res> {
-  factory _$$DeleteDriverErrorImplCopyWith(_$DeleteDriverErrorImpl value,
-          $Res Function(_$DeleteDriverErrorImpl) then) =
-      __$$DeleteDriverErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
-}
-
-/// @nodoc
-class __$$DeleteDriverErrorImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$DeleteDriverErrorImpl>
-    implements _$$DeleteDriverErrorImplCopyWith<$Res> {
-  __$$DeleteDriverErrorImplCopyWithImpl(_$DeleteDriverErrorImpl _value,
-      $Res Function(_$DeleteDriverErrorImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$DeleteDriverErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$DeleteDriverErrorImpl implements DeleteDriverError {
-  const _$DeleteDriverErrorImpl(this.apiErrorModel);
-
-  @override
-  final ApiErrorModel apiErrorModel;
-
-  @override
-  String toString() {
-    return 'DriverState.deleteDriverError(apiErrorModel: $apiErrorModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteDriverErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteDriverErrorImplCopyWith<_$DeleteDriverErrorImpl> get copyWith =>
-      __$$DeleteDriverErrorImplCopyWithImpl<_$DeleteDriverErrorImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return deleteDriverError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return deleteDriverError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteDriverError != null) {
-      return deleteDriverError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return deleteDriverError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return deleteDriverError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteDriverError != null) {
-      return deleteDriverError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteDriverError implements DriverState {
-  const factory DeleteDriverError(final ApiErrorModel apiErrorModel) =
-      _$DeleteDriverErrorImpl;
-
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$DeleteDriverErrorImplCopyWith<_$DeleteDriverErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$DeleteDriverSuccessImplCopyWith<$Res> {
-  factory _$$DeleteDriverSuccessImplCopyWith(_$DeleteDriverSuccessImpl value,
-          $Res Function(_$DeleteDriverSuccessImpl) then) =
-      __$$DeleteDriverSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiSuccessGeneralModel data});
-}
-
-/// @nodoc
-class __$$DeleteDriverSuccessImplCopyWithImpl<$Res>
-    extends _$DriverStateCopyWithImpl<$Res, _$DeleteDriverSuccessImpl>
-    implements _$$DeleteDriverSuccessImplCopyWith<$Res> {
-  __$$DeleteDriverSuccessImplCopyWithImpl(_$DeleteDriverSuccessImpl _value,
-      $Res Function(_$DeleteDriverSuccessImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$DeleteDriverSuccessImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as ApiSuccessGeneralModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$DeleteDriverSuccessImpl implements DeleteDriverSuccess {
-  const _$DeleteDriverSuccessImpl(this.data);
-
-  @override
-  final ApiSuccessGeneralModel data;
-
-  @override
-  String toString() {
-    return 'DriverState.deleteDriverSuccess(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteDriverSuccessImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteDriverSuccessImplCopyWith<_$DeleteDriverSuccessImpl> get copyWith =>
-      __$$DeleteDriverSuccessImplCopyWithImpl<_$DeleteDriverSuccessImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getAllDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) getAllDriverError,
-    required TResult Function(AuthResponse data) getAllDriverSuccess,
-    required TResult Function() getAllActiveDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        getAllActiveDriverError,
-    required TResult Function(AuthResponse data) getAllActiveDriverSuccess,
-    required TResult Function() driverActivedLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) driverActivedError,
-    required TResult Function(AuthResponse data) driverActivedSuccess,
-    required TResult Function() deleteDriverLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) deleteDriverError,
-    required TResult Function(ApiSuccessGeneralModel data) deleteDriverSuccess,
-  }) {
-    return deleteDriverSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getAllDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult? Function(AuthResponse data)? getAllDriverSuccess,
-    TResult? Function()? getAllActiveDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult? Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult? Function()? driverActivedLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult? Function(AuthResponse data)? driverActivedSuccess,
-    TResult? Function()? deleteDriverLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult? Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-  }) {
-    return deleteDriverSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getAllDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllDriverError,
-    TResult Function(AuthResponse data)? getAllDriverSuccess,
-    TResult Function()? getAllActiveDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? getAllActiveDriverError,
-    TResult Function(AuthResponse data)? getAllActiveDriverSuccess,
-    TResult Function()? driverActivedLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? driverActivedError,
-    TResult Function(AuthResponse data)? driverActivedSuccess,
-    TResult Function()? deleteDriverLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteDriverError,
-    TResult Function(ApiSuccessGeneralModel data)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteDriverSuccess != null) {
-      return deleteDriverSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(GetAllDriverLoading value) getAllDriverLoading,
-    required TResult Function(GetAllDriverError value) getAllDriverError,
-    required TResult Function(GetAllDriverSuccess value) getAllDriverSuccess,
-    required TResult Function(GetAllActiveDriverLoading value)
-        getAllActiveDriverLoading,
-    required TResult Function(GetAllActiveDriverError value)
-        getAllActiveDriverError,
-    required TResult Function(GetAllActiveDriverSuccess value)
-        getAllActiveDriverSuccess,
-    required TResult Function(DriverActivedLoading value) driverActivedLoading,
-    required TResult Function(DriverActivedError value) driverActivedError,
-    required TResult Function(GDriverActivedSuccess value) driverActivedSuccess,
-    required TResult Function(DeleteDriverLoading value) deleteDriverLoading,
-    required TResult Function(DeleteDriverError value) deleteDriverError,
-    required TResult Function(DeleteDriverSuccess value) deleteDriverSuccess,
-  }) {
-    return deleteDriverSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult? Function(GetAllDriverError value)? getAllDriverError,
-    TResult? Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult? Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult? Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult? Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult? Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult? Function(DriverActivedError value)? driverActivedError,
-    TResult? Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult? Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult? Function(DeleteDriverError value)? deleteDriverError,
-    TResult? Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-  }) {
-    return deleteDriverSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(GetAllDriverLoading value)? getAllDriverLoading,
-    TResult Function(GetAllDriverError value)? getAllDriverError,
-    TResult Function(GetAllDriverSuccess value)? getAllDriverSuccess,
-    TResult Function(GetAllActiveDriverLoading value)?
-        getAllActiveDriverLoading,
-    TResult Function(GetAllActiveDriverError value)? getAllActiveDriverError,
-    TResult Function(GetAllActiveDriverSuccess value)?
-        getAllActiveDriverSuccess,
-    TResult Function(DriverActivedLoading value)? driverActivedLoading,
-    TResult Function(DriverActivedError value)? driverActivedError,
-    TResult Function(GDriverActivedSuccess value)? driverActivedSuccess,
-    TResult Function(DeleteDriverLoading value)? deleteDriverLoading,
-    TResult Function(DeleteDriverError value)? deleteDriverError,
-    TResult Function(DeleteDriverSuccess value)? deleteDriverSuccess,
-    required TResult orElse(),
-  }) {
-    if (deleteDriverSuccess != null) {
-      return deleteDriverSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DeleteDriverSuccess implements DriverState {
-  const factory DeleteDriverSuccess(final ApiSuccessGeneralModel data) =
-      _$DeleteDriverSuccessImpl;
-
-  ApiSuccessGeneralModel get data;
-  @JsonKey(ignore: true)
-  _$$DeleteDriverSuccessImplCopyWith<_$DeleteDriverSuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

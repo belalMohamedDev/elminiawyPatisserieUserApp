@@ -54,29 +54,27 @@ class _BottomNavBarState extends State<BottomNavBar> {
           stateManagement: false,
           controller: context.read<AppLogicCubit>().bottomNavBarController,
 
-          margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 12.h),
-
-          backgroundColor: ColorManger.brun,
+          margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 16.h),
 
           tabs: _navBarsItems(responsive),
 
           navBarBuilder: (navBarConfig) => Style8BottomNavBar(
+            height: 45.h,
             navBarConfig: navBarConfig,
             itemAnimationProperties: const ItemAnimation(
-              //   // Screen transition animation on change of selected tab.
-
               curve: Curves.ease,
               duration: Duration(milliseconds: 200),
             ),
             navBarDecoration: NavBarDecoration(
               color: ColorManger.backgroundItem,
-              borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10)),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20.r),
+                bottomRight: Radius.circular(20.r),
+                topLeft: Radius.circular(10.r),
+                topRight: Radius.circular(10.r),
+              ),
             ),
-          ), // Choose the nav bar style with this property.
+          ),
         );
       },
     );
@@ -90,10 +88,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: Icon(IconlyBold.home, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.home, size: 20.sp),
           title: (context.translate(AppStrings.home)),
-          textStyle: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(3.5)),
+          textStyle: Theme.of(context).textTheme.titleLarge!.copyWith(
+            fontSize: responsive.setTextSize(3.5),
+          ),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -104,10 +101,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: Icon(IconlyBold.category, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.category, size: 20.sp),
           title: (context.translate(AppStrings.categories)),
-          textStyle: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(3.5)),
+          textStyle: Theme.of(context).textTheme.titleLarge!.copyWith(
+            fontSize: responsive.setTextSize(3.5),
+          ),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -121,10 +117,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           inactiveIcon: Icon(IconlyBroken.heart, size: 20.sp),
           title: (context.translate(AppStrings.wishList)),
-          textStyle: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(3.5)),
+          textStyle: Theme.of(context).textTheme.titleLarge!.copyWith(
+            fontSize: responsive.setTextSize(3.5),
+          ),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),
@@ -132,12 +127,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
       PersistentTabConfig(
         screen: MultiBlocProvider(
           providers: [
-            BlocProvider(
-              create: (context) => instance<LogOutCubit>(),
-            ),
-            BlocProvider.value(
-              value: instance<PaymentCubit>(),
-            ),
+            BlocProvider(create: (context) => instance<LogOutCubit>()),
+            BlocProvider.value(value: instance<PaymentCubit>()),
             BlocProvider(
               create: (context) =>
                   instance<AuthenticationWithGoogleAndAppleCubit>(),
@@ -149,10 +140,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: Icon(IconlyBold.setting, size: 20.sp),
           inactiveIcon: Icon(IconlyBroken.setting, size: 20.sp),
           title: (context.translate(AppStrings.profile)),
-          textStyle: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(3.5)),
+          textStyle: Theme.of(context).textTheme.titleLarge!.copyWith(
+            fontSize: responsive.setTextSize(3.5),
+          ),
           activeForegroundColor: ColorManger.brun,
           inactiveForegroundColor: ColorManger.brun,
         ),

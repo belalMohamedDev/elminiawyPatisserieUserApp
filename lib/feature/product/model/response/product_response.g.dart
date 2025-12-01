@@ -36,17 +36,17 @@ DataProductResponse _$DataProductResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DataProductResponseToJson(
-        DataProductResponse instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'description': instance.description,
-      'ratingsAverage': instance.ratingsAverage,
-      'active': instance.active,
-      '_id': instance.sId,
-      'price': instance.price,
-      'image': instance.image,
-      'publicId': instance.publicId,
-      'ratingsQuantity': instance.ratingsQuantity,
-      'in_cart': instance.inCart,
-      'in_wishlist': instance.inWishlist,
-    };
+  DataProductResponse instance,
+) => <String, dynamic>{
+  'title': instance.title,
+  'description': instance.description,
+  'ratingsAverage': instance.ratingsAverage,
+  'active': instance.active,
+  '_id': instance.sId,
+  'price': instance.price,
+  'image': instance.image,
+  'publicId': instance.publicId,
+  'ratingsQuantity': instance.ratingsQuantity,
+  'in_cart': instance.inCart,
+  'in_wishlist': instance.inWishlist,
+};

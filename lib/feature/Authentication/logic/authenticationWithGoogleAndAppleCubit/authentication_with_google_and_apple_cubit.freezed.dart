@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,691 +9,380 @@ part of 'authentication_with_google_and_apple_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$AuthenticationWithGoogleAndAppleState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticationWithGoogleLoading,
-    required TResult Function(AuthResponse auth)
-        authenticationWithGoogleSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        authenticationWithGoogleError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticationWithGoogleLoading,
-    TResult? Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticationWithGoogleLoading,
-    TResult Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(AuthenticationWithGoogleLoading value)
-        authenticationWithGoogleLoading,
-    required TResult Function(AuthenticationWithGoogleSuccess value)
-        authenticationWithGoogleSuccess,
-    required TResult Function(AuthenticationWithGoogleError value)
-        authenticationWithGoogleError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult? Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult? Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthenticationWithGoogleAndAppleState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'AuthenticationWithGoogleAndAppleState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AuthenticationWithGoogleAndAppleStateCopyWith<$Res> {
-  factory $AuthenticationWithGoogleAndAppleStateCopyWith(
-          AuthenticationWithGoogleAndAppleState value,
-          $Res Function(AuthenticationWithGoogleAndAppleState) then) =
-      _$AuthenticationWithGoogleAndAppleStateCopyWithImpl<$Res,
-          AuthenticationWithGoogleAndAppleState>;
+class $AuthenticationWithGoogleAndAppleStateCopyWith<$Res>  {
+$AuthenticationWithGoogleAndAppleStateCopyWith(AuthenticationWithGoogleAndAppleState _, $Res Function(AuthenticationWithGoogleAndAppleState) __);
 }
 
-/// @nodoc
-class _$AuthenticationWithGoogleAndAppleStateCopyWithImpl<$Res,
-        $Val extends AuthenticationWithGoogleAndAppleState>
-    implements $AuthenticationWithGoogleAndAppleStateCopyWith<$Res> {
-  _$AuthenticationWithGoogleAndAppleStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [AuthenticationWithGoogleAndAppleState].
+extension AuthenticationWithGoogleAndAppleStatePatterns on AuthenticationWithGoogleAndAppleState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( AuthenticationWithGoogleLoading value)?  authenticationWithGoogleLoading,TResult Function( AuthenticationWithGoogleSuccess value)?  authenticationWithGoogleSuccess,TResult Function( AuthenticationWithGoogleError value)?  authenticationWithGoogleError,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case AuthenticationWithGoogleLoading() when authenticationWithGoogleLoading != null:
+return authenticationWithGoogleLoading(_that);case AuthenticationWithGoogleSuccess() when authenticationWithGoogleSuccess != null:
+return authenticationWithGoogleSuccess(_that);case AuthenticationWithGoogleError() when authenticationWithGoogleError != null:
+return authenticationWithGoogleError(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( AuthenticationWithGoogleLoading value)  authenticationWithGoogleLoading,required TResult Function( AuthenticationWithGoogleSuccess value)  authenticationWithGoogleSuccess,required TResult Function( AuthenticationWithGoogleError value)  authenticationWithGoogleError,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case AuthenticationWithGoogleLoading():
+return authenticationWithGoogleLoading(_that);case AuthenticationWithGoogleSuccess():
+return authenticationWithGoogleSuccess(_that);case AuthenticationWithGoogleError():
+return authenticationWithGoogleError(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( AuthenticationWithGoogleLoading value)?  authenticationWithGoogleLoading,TResult? Function( AuthenticationWithGoogleSuccess value)?  authenticationWithGoogleSuccess,TResult? Function( AuthenticationWithGoogleError value)?  authenticationWithGoogleError,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case AuthenticationWithGoogleLoading() when authenticationWithGoogleLoading != null:
+return authenticationWithGoogleLoading(_that);case AuthenticationWithGoogleSuccess() when authenticationWithGoogleSuccess != null:
+return authenticationWithGoogleSuccess(_that);case AuthenticationWithGoogleError() when authenticationWithGoogleError != null:
+return authenticationWithGoogleError(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  authenticationWithGoogleLoading,TResult Function( AuthResponse auth)?  authenticationWithGoogleSuccess,TResult Function( ApiErrorModel apiErrorModel)?  authenticationWithGoogleError,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case AuthenticationWithGoogleLoading() when authenticationWithGoogleLoading != null:
+return authenticationWithGoogleLoading();case AuthenticationWithGoogleSuccess() when authenticationWithGoogleSuccess != null:
+return authenticationWithGoogleSuccess(_that.auth);case AuthenticationWithGoogleError() when authenticationWithGoogleError != null:
+return authenticationWithGoogleError(_that.apiErrorModel);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  authenticationWithGoogleLoading,required TResult Function( AuthResponse auth)  authenticationWithGoogleSuccess,required TResult Function( ApiErrorModel apiErrorModel)  authenticationWithGoogleError,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case AuthenticationWithGoogleLoading():
+return authenticationWithGoogleLoading();case AuthenticationWithGoogleSuccess():
+return authenticationWithGoogleSuccess(_that.auth);case AuthenticationWithGoogleError():
+return authenticationWithGoogleError(_that.apiErrorModel);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  authenticationWithGoogleLoading,TResult? Function( AuthResponse auth)?  authenticationWithGoogleSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  authenticationWithGoogleError,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case AuthenticationWithGoogleLoading() when authenticationWithGoogleLoading != null:
+return authenticationWithGoogleLoading();case AuthenticationWithGoogleSuccess() when authenticationWithGoogleSuccess != null:
+return authenticationWithGoogleSuccess(_that.auth);case AuthenticationWithGoogleError() when authenticationWithGoogleError != null:
+return authenticationWithGoogleError(_that.apiErrorModel);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$AuthenticationWithGoogleAndAppleStateCopyWithImpl<$Res,
-        _$InitialImpl> implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'AuthenticationWithGoogleAndAppleState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticationWithGoogleLoading,
-    required TResult Function(AuthResponse auth)
-        authenticationWithGoogleSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        authenticationWithGoogleError,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticationWithGoogleLoading,
-    TResult? Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticationWithGoogleLoading,
-    TResult Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(AuthenticationWithGoogleLoading value)
-        authenticationWithGoogleLoading,
-    required TResult Function(AuthenticationWithGoogleSuccess value)
-        authenticationWithGoogleSuccess,
-    required TResult Function(AuthenticationWithGoogleError value)
-        authenticationWithGoogleError,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult? Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult? Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements AuthenticationWithGoogleAndAppleState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$AuthenticationWithGoogleLoadingImplCopyWith<$Res> {
-  factory _$$AuthenticationWithGoogleLoadingImplCopyWith(
-          _$AuthenticationWithGoogleLoadingImpl value,
-          $Res Function(_$AuthenticationWithGoogleLoadingImpl) then) =
-      __$$AuthenticationWithGoogleLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AuthenticationWithGoogleLoadingImplCopyWithImpl<$Res>
-    extends _$AuthenticationWithGoogleAndAppleStateCopyWithImpl<$Res,
-        _$AuthenticationWithGoogleLoadingImpl>
-    implements _$$AuthenticationWithGoogleLoadingImplCopyWith<$Res> {
-  __$$AuthenticationWithGoogleLoadingImplCopyWithImpl(
-      _$AuthenticationWithGoogleLoadingImpl _value,
-      $Res Function(_$AuthenticationWithGoogleLoadingImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AuthenticationWithGoogleLoadingImpl
-    implements AuthenticationWithGoogleLoading {
-  const _$AuthenticationWithGoogleLoadingImpl();
 
-  @override
-  String toString() {
-    return 'AuthenticationWithGoogleAndAppleState.authenticationWithGoogleLoading()';
-  }
+class _Initial implements AuthenticationWithGoogleAndAppleState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthenticationWithGoogleLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticationWithGoogleLoading,
-    required TResult Function(AuthResponse auth)
-        authenticationWithGoogleSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticationWithGoogleLoading,
-    TResult? Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticationWithGoogleLoading,
-    TResult Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (authenticationWithGoogleLoading != null) {
-      return authenticationWithGoogleLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(AuthenticationWithGoogleLoading value)
-        authenticationWithGoogleLoading,
-    required TResult Function(AuthenticationWithGoogleSuccess value)
-        authenticationWithGoogleSuccess,
-    required TResult Function(AuthenticationWithGoogleError value)
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult? Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult? Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (authenticationWithGoogleLoading != null) {
-      return authenticationWithGoogleLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class AuthenticationWithGoogleLoading
-    implements AuthenticationWithGoogleAndAppleState {
-  const factory AuthenticationWithGoogleLoading() =
-      _$AuthenticationWithGoogleLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'AuthenticationWithGoogleAndAppleState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class AuthenticationWithGoogleLoading implements AuthenticationWithGoogleAndAppleState {
+  const AuthenticationWithGoogleLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthenticationWithGoogleLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'AuthenticationWithGoogleAndAppleState.authenticationWithGoogleLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class AuthenticationWithGoogleSuccess implements AuthenticationWithGoogleAndAppleState {
+  const AuthenticationWithGoogleSuccess(this.auth);
+  
+
+ final  AuthResponse auth;
+
+/// Create a copy of AuthenticationWithGoogleAndAppleState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AuthenticationWithGoogleSuccessCopyWith<AuthenticationWithGoogleSuccess> get copyWith => _$AuthenticationWithGoogleSuccessCopyWithImpl<AuthenticationWithGoogleSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthenticationWithGoogleSuccess&&(identical(other.auth, auth) || other.auth == auth));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,auth);
+
+@override
+String toString() {
+  return 'AuthenticationWithGoogleAndAppleState.authenticationWithGoogleSuccess(auth: $auth)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$AuthenticationWithGoogleSuccessImplCopyWith<$Res> {
-  factory _$$AuthenticationWithGoogleSuccessImplCopyWith(
-          _$AuthenticationWithGoogleSuccessImpl value,
-          $Res Function(_$AuthenticationWithGoogleSuccessImpl) then) =
-      __$$AuthenticationWithGoogleSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({AuthResponse auth});
+abstract mixin class $AuthenticationWithGoogleSuccessCopyWith<$Res> implements $AuthenticationWithGoogleAndAppleStateCopyWith<$Res> {
+  factory $AuthenticationWithGoogleSuccessCopyWith(AuthenticationWithGoogleSuccess value, $Res Function(AuthenticationWithGoogleSuccess) _then) = _$AuthenticationWithGoogleSuccessCopyWithImpl;
+@useResult
+$Res call({
+ AuthResponse auth
+});
+
+
+
+
+}
+/// @nodoc
+class _$AuthenticationWithGoogleSuccessCopyWithImpl<$Res>
+    implements $AuthenticationWithGoogleSuccessCopyWith<$Res> {
+  _$AuthenticationWithGoogleSuccessCopyWithImpl(this._self, this._then);
+
+  final AuthenticationWithGoogleSuccess _self;
+  final $Res Function(AuthenticationWithGoogleSuccess) _then;
+
+/// Create a copy of AuthenticationWithGoogleAndAppleState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? auth = null,}) {
+  return _then(AuthenticationWithGoogleSuccess(
+null == auth ? _self.auth : auth // ignore: cast_nullable_to_non_nullable
+as AuthResponse,
+  ));
 }
 
-/// @nodoc
-class __$$AuthenticationWithGoogleSuccessImplCopyWithImpl<$Res>
-    extends _$AuthenticationWithGoogleAndAppleStateCopyWithImpl<$Res,
-        _$AuthenticationWithGoogleSuccessImpl>
-    implements _$$AuthenticationWithGoogleSuccessImplCopyWith<$Res> {
-  __$$AuthenticationWithGoogleSuccessImplCopyWithImpl(
-      _$AuthenticationWithGoogleSuccessImpl _value,
-      $Res Function(_$AuthenticationWithGoogleSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? auth = null,
-  }) {
-    return _then(_$AuthenticationWithGoogleSuccessImpl(
-      null == auth
-          ? _value.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as AuthResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$AuthenticationWithGoogleSuccessImpl
-    implements AuthenticationWithGoogleSuccess {
-  const _$AuthenticationWithGoogleSuccessImpl(this.auth);
 
-  @override
-  final AuthResponse auth;
+class AuthenticationWithGoogleError implements AuthenticationWithGoogleAndAppleState {
+  const AuthenticationWithGoogleError(this.apiErrorModel);
+  
 
-  @override
-  String toString() {
-    return 'AuthenticationWithGoogleAndAppleState.authenticationWithGoogleSuccess(auth: $auth)';
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthenticationWithGoogleSuccessImpl &&
-            (identical(other.auth, auth) || other.auth == auth));
-  }
+/// Create a copy of AuthenticationWithGoogleAndAppleState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AuthenticationWithGoogleErrorCopyWith<AuthenticationWithGoogleError> get copyWith => _$AuthenticationWithGoogleErrorCopyWithImpl<AuthenticationWithGoogleError>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, auth);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AuthenticationWithGoogleSuccessImplCopyWith<
-          _$AuthenticationWithGoogleSuccessImpl>
-      get copyWith => __$$AuthenticationWithGoogleSuccessImplCopyWithImpl<
-          _$AuthenticationWithGoogleSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticationWithGoogleLoading,
-    required TResult Function(AuthResponse auth)
-        authenticationWithGoogleSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleSuccess(auth);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticationWithGoogleLoading,
-    TResult? Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleSuccess?.call(auth);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticationWithGoogleLoading,
-    TResult Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (authenticationWithGoogleSuccess != null) {
-      return authenticationWithGoogleSuccess(auth);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(AuthenticationWithGoogleLoading value)
-        authenticationWithGoogleLoading,
-    required TResult Function(AuthenticationWithGoogleSuccess value)
-        authenticationWithGoogleSuccess,
-    required TResult Function(AuthenticationWithGoogleError value)
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult? Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult? Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (authenticationWithGoogleSuccess != null) {
-      return authenticationWithGoogleSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthenticationWithGoogleError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class AuthenticationWithGoogleSuccess
-    implements AuthenticationWithGoogleAndAppleState {
-  const factory AuthenticationWithGoogleSuccess(final AuthResponse auth) =
-      _$AuthenticationWithGoogleSuccessImpl;
 
-  AuthResponse get auth;
-  @JsonKey(ignore: true)
-  _$$AuthenticationWithGoogleSuccessImplCopyWith<
-          _$AuthenticationWithGoogleSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'AuthenticationWithGoogleAndAppleState.authenticationWithGoogleError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$AuthenticationWithGoogleErrorImplCopyWith<$Res> {
-  factory _$$AuthenticationWithGoogleErrorImplCopyWith(
-          _$AuthenticationWithGoogleErrorImpl value,
-          $Res Function(_$AuthenticationWithGoogleErrorImpl) then) =
-      __$$AuthenticationWithGoogleErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
-}
+abstract mixin class $AuthenticationWithGoogleErrorCopyWith<$Res> implements $AuthenticationWithGoogleAndAppleStateCopyWith<$Res> {
+  factory $AuthenticationWithGoogleErrorCopyWith(AuthenticationWithGoogleError value, $Res Function(AuthenticationWithGoogleError) _then) = _$AuthenticationWithGoogleErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
 
+
+
+
+}
 /// @nodoc
-class __$$AuthenticationWithGoogleErrorImplCopyWithImpl<$Res>
-    extends _$AuthenticationWithGoogleAndAppleStateCopyWithImpl<$Res,
-        _$AuthenticationWithGoogleErrorImpl>
-    implements _$$AuthenticationWithGoogleErrorImplCopyWith<$Res> {
-  __$$AuthenticationWithGoogleErrorImplCopyWithImpl(
-      _$AuthenticationWithGoogleErrorImpl _value,
-      $Res Function(_$AuthenticationWithGoogleErrorImpl) _then)
-      : super(_value, _then);
+class _$AuthenticationWithGoogleErrorCopyWithImpl<$Res>
+    implements $AuthenticationWithGoogleErrorCopyWith<$Res> {
+  _$AuthenticationWithGoogleErrorCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$AuthenticationWithGoogleErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
+  final AuthenticationWithGoogleError _self;
+  final $Res Function(AuthenticationWithGoogleError) _then;
+
+/// Create a copy of AuthenticationWithGoogleAndAppleState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(AuthenticationWithGoogleError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
 
-class _$AuthenticationWithGoogleErrorImpl
-    implements AuthenticationWithGoogleError {
-  const _$AuthenticationWithGoogleErrorImpl(this.apiErrorModel);
-
-  @override
-  final ApiErrorModel apiErrorModel;
-
-  @override
-  String toString() {
-    return 'AuthenticationWithGoogleAndAppleState.authenticationWithGoogleError(apiErrorModel: $apiErrorModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthenticationWithGoogleErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AuthenticationWithGoogleErrorImplCopyWith<
-          _$AuthenticationWithGoogleErrorImpl>
-      get copyWith => __$$AuthenticationWithGoogleErrorImplCopyWithImpl<
-          _$AuthenticationWithGoogleErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticationWithGoogleLoading,
-    required TResult Function(AuthResponse auth)
-        authenticationWithGoogleSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticationWithGoogleLoading,
-    TResult? Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticationWithGoogleLoading,
-    TResult Function(AuthResponse auth)? authenticationWithGoogleSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (authenticationWithGoogleError != null) {
-      return authenticationWithGoogleError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(AuthenticationWithGoogleLoading value)
-        authenticationWithGoogleLoading,
-    required TResult Function(AuthenticationWithGoogleSuccess value)
-        authenticationWithGoogleSuccess,
-    required TResult Function(AuthenticationWithGoogleError value)
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult? Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult? Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-  }) {
-    return authenticationWithGoogleError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(AuthenticationWithGoogleLoading value)?
-        authenticationWithGoogleLoading,
-    TResult Function(AuthenticationWithGoogleSuccess value)?
-        authenticationWithGoogleSuccess,
-    TResult Function(AuthenticationWithGoogleError value)?
-        authenticationWithGoogleError,
-    required TResult orElse(),
-  }) {
-    if (authenticationWithGoogleError != null) {
-      return authenticationWithGoogleError(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class AuthenticationWithGoogleError
-    implements AuthenticationWithGoogleAndAppleState {
-  const factory AuthenticationWithGoogleError(
-      final ApiErrorModel apiErrorModel) = _$AuthenticationWithGoogleErrorImpl;
-
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$AuthenticationWithGoogleErrorImplCopyWith<
-          _$AuthenticationWithGoogleErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

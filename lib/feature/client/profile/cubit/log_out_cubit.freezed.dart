@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,787 +9,452 @@ part of 'log_out_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$LogOutState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() logOutLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
-    required TResult Function(String successMessage) logOutSuccess,
-    required TResult Function(String userName) getStorageData,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? logOutLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult? Function(String successMessage)? logOutSuccess,
-    TResult? Function(String userName)? getStorageData,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logOutLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult Function(String successMessage)? logOutSuccess,
-    TResult Function(String userName)? getStorageData,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LogOutLoading value) logOutLoading,
-    required TResult Function(LogOutError value) logOutError,
-    required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetUserNameStorageData value) getStorageData,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LogOutLoading value)? logOutLoading,
-    TResult? Function(LogOutError value)? logOutError,
-    TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetUserNameStorageData value)? getStorageData,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LogOutLoading value)? logOutLoading,
-    TResult Function(LogOutError value)? logOutError,
-    TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetUserNameStorageData value)? getStorageData,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LogOutState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LogOutState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $LogOutStateCopyWith<$Res> {
-  factory $LogOutStateCopyWith(
-          LogOutState value, $Res Function(LogOutState) then) =
-      _$LogOutStateCopyWithImpl<$Res, LogOutState>;
+class $LogOutStateCopyWith<$Res>  {
+$LogOutStateCopyWith(LogOutState _, $Res Function(LogOutState) __);
 }
 
-/// @nodoc
-class _$LogOutStateCopyWithImpl<$Res, $Val extends LogOutState>
-    implements $LogOutStateCopyWith<$Res> {
-  _$LogOutStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [LogOutState].
+extension LogOutStatePatterns on LogOutState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( LogOutLoading value)?  logOutLoading,TResult Function( LogOutError value)?  logOutError,TResult Function( LogOutSuccess value)?  logOutSuccess,TResult Function( GetUserNameStorageData value)?  getStorageData,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case LogOutLoading() when logOutLoading != null:
+return logOutLoading(_that);case LogOutError() when logOutError != null:
+return logOutError(_that);case LogOutSuccess() when logOutSuccess != null:
+return logOutSuccess(_that);case GetUserNameStorageData() when getStorageData != null:
+return getStorageData(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( LogOutLoading value)  logOutLoading,required TResult Function( LogOutError value)  logOutError,required TResult Function( LogOutSuccess value)  logOutSuccess,required TResult Function( GetUserNameStorageData value)  getStorageData,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case LogOutLoading():
+return logOutLoading(_that);case LogOutError():
+return logOutError(_that);case LogOutSuccess():
+return logOutSuccess(_that);case GetUserNameStorageData():
+return getStorageData(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( LogOutLoading value)?  logOutLoading,TResult? Function( LogOutError value)?  logOutError,TResult? Function( LogOutSuccess value)?  logOutSuccess,TResult? Function( GetUserNameStorageData value)?  getStorageData,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case LogOutLoading() when logOutLoading != null:
+return logOutLoading(_that);case LogOutError() when logOutError != null:
+return logOutError(_that);case LogOutSuccess() when logOutSuccess != null:
+return logOutSuccess(_that);case GetUserNameStorageData() when getStorageData != null:
+return getStorageData(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  logOutLoading,TResult Function( ApiErrorModel apiErrorModel)?  logOutError,TResult Function( String successMessage)?  logOutSuccess,TResult Function( String userName)?  getStorageData,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case LogOutLoading() when logOutLoading != null:
+return logOutLoading();case LogOutError() when logOutError != null:
+return logOutError(_that.apiErrorModel);case LogOutSuccess() when logOutSuccess != null:
+return logOutSuccess(_that.successMessage);case GetUserNameStorageData() when getStorageData != null:
+return getStorageData(_that.userName);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  logOutLoading,required TResult Function( ApiErrorModel apiErrorModel)  logOutError,required TResult Function( String successMessage)  logOutSuccess,required TResult Function( String userName)  getStorageData,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case LogOutLoading():
+return logOutLoading();case LogOutError():
+return logOutError(_that.apiErrorModel);case LogOutSuccess():
+return logOutSuccess(_that.successMessage);case GetUserNameStorageData():
+return getStorageData(_that.userName);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  logOutLoading,TResult? Function( ApiErrorModel apiErrorModel)?  logOutError,TResult? Function( String successMessage)?  logOutSuccess,TResult? Function( String userName)?  getStorageData,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case LogOutLoading() when logOutLoading != null:
+return logOutLoading();case LogOutError() when logOutError != null:
+return logOutError(_that.apiErrorModel);case LogOutSuccess() when logOutSuccess != null:
+return logOutSuccess(_that.successMessage);case GetUserNameStorageData() when getStorageData != null:
+return getStorageData(_that.userName);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$LogOutStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'LogOutState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() logOutLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
-    required TResult Function(String successMessage) logOutSuccess,
-    required TResult Function(String userName) getStorageData,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? logOutLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult? Function(String successMessage)? logOutSuccess,
-    TResult? Function(String userName)? getStorageData,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logOutLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult Function(String successMessage)? logOutSuccess,
-    TResult Function(String userName)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LogOutLoading value) logOutLoading,
-    required TResult Function(LogOutError value) logOutError,
-    required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetUserNameStorageData value) getStorageData,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LogOutLoading value)? logOutLoading,
-    TResult? Function(LogOutError value)? logOutError,
-    TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetUserNameStorageData value)? getStorageData,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LogOutLoading value)? logOutLoading,
-    TResult Function(LogOutError value)? logOutError,
-    TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetUserNameStorageData value)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements LogOutState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$LogOutLoadingImplCopyWith<$Res> {
-  factory _$$LogOutLoadingImplCopyWith(
-          _$LogOutLoadingImpl value, $Res Function(_$LogOutLoadingImpl) then) =
-      __$$LogOutLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LogOutLoadingImplCopyWithImpl<$Res>
-    extends _$LogOutStateCopyWithImpl<$Res, _$LogOutLoadingImpl>
-    implements _$$LogOutLoadingImplCopyWith<$Res> {
-  __$$LogOutLoadingImplCopyWithImpl(
-      _$LogOutLoadingImpl _value, $Res Function(_$LogOutLoadingImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LogOutLoadingImpl implements LogOutLoading {
-  const _$LogOutLoadingImpl();
 
-  @override
-  String toString() {
-    return 'LogOutState.logOutLoading()';
-  }
+class _Initial implements LogOutState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogOutLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() logOutLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
-    required TResult Function(String successMessage) logOutSuccess,
-    required TResult Function(String userName) getStorageData,
-  }) {
-    return logOutLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? logOutLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult? Function(String successMessage)? logOutSuccess,
-    TResult? Function(String userName)? getStorageData,
-  }) {
-    return logOutLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logOutLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult Function(String successMessage)? logOutSuccess,
-    TResult Function(String userName)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (logOutLoading != null) {
-      return logOutLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LogOutLoading value) logOutLoading,
-    required TResult Function(LogOutError value) logOutError,
-    required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetUserNameStorageData value) getStorageData,
-  }) {
-    return logOutLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LogOutLoading value)? logOutLoading,
-    TResult? Function(LogOutError value)? logOutError,
-    TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetUserNameStorageData value)? getStorageData,
-  }) {
-    return logOutLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LogOutLoading value)? logOutLoading,
-    TResult Function(LogOutError value)? logOutError,
-    TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetUserNameStorageData value)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (logOutLoading != null) {
-      return logOutLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class LogOutLoading implements LogOutState {
-  const factory LogOutLoading() = _$LogOutLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LogOutState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class LogOutLoading implements LogOutState {
+  const LogOutLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LogOutLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'LogOutState.logOutLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class LogOutError implements LogOutState {
+  const LogOutError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of LogOutState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LogOutErrorCopyWith<LogOutError> get copyWith => _$LogOutErrorCopyWithImpl<LogOutError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LogOutError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'LogOutState.logOutError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$LogOutErrorImplCopyWith<$Res> {
-  factory _$$LogOutErrorImplCopyWith(
-          _$LogOutErrorImpl value, $Res Function(_$LogOutErrorImpl) then) =
-      __$$LogOutErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $LogOutErrorCopyWith<$Res> implements $LogOutStateCopyWith<$Res> {
+  factory $LogOutErrorCopyWith(LogOutError value, $Res Function(LogOutError) _then) = _$LogOutErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$LogOutErrorCopyWithImpl<$Res>
+    implements $LogOutErrorCopyWith<$Res> {
+  _$LogOutErrorCopyWithImpl(this._self, this._then);
+
+  final LogOutError _self;
+  final $Res Function(LogOutError) _then;
+
+/// Create a copy of LogOutState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(LogOutError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$LogOutErrorImplCopyWithImpl<$Res>
-    extends _$LogOutStateCopyWithImpl<$Res, _$LogOutErrorImpl>
-    implements _$$LogOutErrorImplCopyWith<$Res> {
-  __$$LogOutErrorImplCopyWithImpl(
-      _$LogOutErrorImpl _value, $Res Function(_$LogOutErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$LogOutErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$LogOutErrorImpl implements LogOutError {
-  const _$LogOutErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class LogOutSuccess implements LogOutState {
+  const LogOutSuccess({required this.successMessage});
+  
 
-  @override
-  String toString() {
-    return 'LogOutState.logOutError(apiErrorModel: $apiErrorModel)';
-  }
+ final  String successMessage;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LogOutErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of LogOutState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LogOutSuccessCopyWith<LogOutSuccess> get copyWith => _$LogOutSuccessCopyWithImpl<LogOutSuccess>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LogOutErrorImplCopyWith<_$LogOutErrorImpl> get copyWith =>
-      __$$LogOutErrorImplCopyWithImpl<_$LogOutErrorImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() logOutLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
-    required TResult Function(String successMessage) logOutSuccess,
-    required TResult Function(String userName) getStorageData,
-  }) {
-    return logOutError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? logOutLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult? Function(String successMessage)? logOutSuccess,
-    TResult? Function(String userName)? getStorageData,
-  }) {
-    return logOutError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logOutLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult Function(String successMessage)? logOutSuccess,
-    TResult Function(String userName)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (logOutError != null) {
-      return logOutError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LogOutLoading value) logOutLoading,
-    required TResult Function(LogOutError value) logOutError,
-    required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetUserNameStorageData value) getStorageData,
-  }) {
-    return logOutError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LogOutLoading value)? logOutLoading,
-    TResult? Function(LogOutError value)? logOutError,
-    TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetUserNameStorageData value)? getStorageData,
-  }) {
-    return logOutError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LogOutLoading value)? logOutLoading,
-    TResult Function(LogOutError value)? logOutError,
-    TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetUserNameStorageData value)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (logOutError != null) {
-      return logOutError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LogOutSuccess&&(identical(other.successMessage, successMessage) || other.successMessage == successMessage));
 }
 
-abstract class LogOutError implements LogOutState {
-  const factory LogOutError(final ApiErrorModel apiErrorModel) =
-      _$LogOutErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$LogOutErrorImplCopyWith<_$LogOutErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,successMessage);
+
+@override
+String toString() {
+  return 'LogOutState.logOutSuccess(successMessage: $successMessage)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$LogOutSuccessImplCopyWith<$Res> {
-  factory _$$LogOutSuccessImplCopyWith(
-          _$LogOutSuccessImpl value, $Res Function(_$LogOutSuccessImpl) then) =
-      __$$LogOutSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String successMessage});
+abstract mixin class $LogOutSuccessCopyWith<$Res> implements $LogOutStateCopyWith<$Res> {
+  factory $LogOutSuccessCopyWith(LogOutSuccess value, $Res Function(LogOutSuccess) _then) = _$LogOutSuccessCopyWithImpl;
+@useResult
+$Res call({
+ String successMessage
+});
+
+
+
+
+}
+/// @nodoc
+class _$LogOutSuccessCopyWithImpl<$Res>
+    implements $LogOutSuccessCopyWith<$Res> {
+  _$LogOutSuccessCopyWithImpl(this._self, this._then);
+
+  final LogOutSuccess _self;
+  final $Res Function(LogOutSuccess) _then;
+
+/// Create a copy of LogOutState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? successMessage = null,}) {
+  return _then(LogOutSuccess(
+successMessage: null == successMessage ? _self.successMessage : successMessage // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$LogOutSuccessImplCopyWithImpl<$Res>
-    extends _$LogOutStateCopyWithImpl<$Res, _$LogOutSuccessImpl>
-    implements _$$LogOutSuccessImplCopyWith<$Res> {
-  __$$LogOutSuccessImplCopyWithImpl(
-      _$LogOutSuccessImpl _value, $Res Function(_$LogOutSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? successMessage = null,
-  }) {
-    return _then(_$LogOutSuccessImpl(
-      successMessage: null == successMessage
-          ? _value.successMessage
-          : successMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$LogOutSuccessImpl implements LogOutSuccess {
-  const _$LogOutSuccessImpl({required this.successMessage});
 
-  @override
-  final String successMessage;
+class GetUserNameStorageData implements LogOutState {
+  const GetUserNameStorageData(this.userName);
+  
 
-  @override
-  String toString() {
-    return 'LogOutState.logOutSuccess(successMessage: $successMessage)';
-  }
+ final  String userName;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LogOutSuccessImpl &&
-            (identical(other.successMessage, successMessage) ||
-                other.successMessage == successMessage));
-  }
+/// Create a copy of LogOutState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetUserNameStorageDataCopyWith<GetUserNameStorageData> get copyWith => _$GetUserNameStorageDataCopyWithImpl<GetUserNameStorageData>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, successMessage);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LogOutSuccessImplCopyWith<_$LogOutSuccessImpl> get copyWith =>
-      __$$LogOutSuccessImplCopyWithImpl<_$LogOutSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() logOutLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
-    required TResult Function(String successMessage) logOutSuccess,
-    required TResult Function(String userName) getStorageData,
-  }) {
-    return logOutSuccess(successMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? logOutLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult? Function(String successMessage)? logOutSuccess,
-    TResult? Function(String userName)? getStorageData,
-  }) {
-    return logOutSuccess?.call(successMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logOutLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult Function(String successMessage)? logOutSuccess,
-    TResult Function(String userName)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (logOutSuccess != null) {
-      return logOutSuccess(successMessage);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LogOutLoading value) logOutLoading,
-    required TResult Function(LogOutError value) logOutError,
-    required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetUserNameStorageData value) getStorageData,
-  }) {
-    return logOutSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LogOutLoading value)? logOutLoading,
-    TResult? Function(LogOutError value)? logOutError,
-    TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetUserNameStorageData value)? getStorageData,
-  }) {
-    return logOutSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LogOutLoading value)? logOutLoading,
-    TResult Function(LogOutError value)? logOutError,
-    TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetUserNameStorageData value)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (logOutSuccess != null) {
-      return logOutSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetUserNameStorageData&&(identical(other.userName, userName) || other.userName == userName));
 }
 
-abstract class LogOutSuccess implements LogOutState {
-  const factory LogOutSuccess({required final String successMessage}) =
-      _$LogOutSuccessImpl;
 
-  String get successMessage;
-  @JsonKey(ignore: true)
-  _$$LogOutSuccessImplCopyWith<_$LogOutSuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,userName);
+
+@override
+String toString() {
+  return 'LogOutState.getStorageData(userName: $userName)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$GetUserNameStorageDataImplCopyWith<$Res> {
-  factory _$$GetUserNameStorageDataImplCopyWith(
-          _$GetUserNameStorageDataImpl value,
-          $Res Function(_$GetUserNameStorageDataImpl) then) =
-      __$$GetUserNameStorageDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String userName});
-}
+abstract mixin class $GetUserNameStorageDataCopyWith<$Res> implements $LogOutStateCopyWith<$Res> {
+  factory $GetUserNameStorageDataCopyWith(GetUserNameStorageData value, $Res Function(GetUserNameStorageData) _then) = _$GetUserNameStorageDataCopyWithImpl;
+@useResult
+$Res call({
+ String userName
+});
 
+
+
+
+}
 /// @nodoc
-class __$$GetUserNameStorageDataImplCopyWithImpl<$Res>
-    extends _$LogOutStateCopyWithImpl<$Res, _$GetUserNameStorageDataImpl>
-    implements _$$GetUserNameStorageDataImplCopyWith<$Res> {
-  __$$GetUserNameStorageDataImplCopyWithImpl(
-      _$GetUserNameStorageDataImpl _value,
-      $Res Function(_$GetUserNameStorageDataImpl) _then)
-      : super(_value, _then);
+class _$GetUserNameStorageDataCopyWithImpl<$Res>
+    implements $GetUserNameStorageDataCopyWith<$Res> {
+  _$GetUserNameStorageDataCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userName = null,
-  }) {
-    return _then(_$GetUserNameStorageDataImpl(
-      null == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  final GetUserNameStorageData _self;
+  final $Res Function(GetUserNameStorageData) _then;
+
+/// Create a copy of LogOutState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? userName = null,}) {
+  return _then(GetUserNameStorageData(
+null == userName ? _self.userName : userName // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
 
-class _$GetUserNameStorageDataImpl implements GetUserNameStorageData {
-  const _$GetUserNameStorageDataImpl(this.userName);
-
-  @override
-  final String userName;
-
-  @override
-  String toString() {
-    return 'LogOutState.getStorageData(userName: $userName)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetUserNameStorageDataImpl &&
-            (identical(other.userName, userName) ||
-                other.userName == userName));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, userName);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetUserNameStorageDataImplCopyWith<_$GetUserNameStorageDataImpl>
-      get copyWith => __$$GetUserNameStorageDataImplCopyWithImpl<
-          _$GetUserNameStorageDataImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() logOutLoading,
-    required TResult Function(ApiErrorModel apiErrorModel) logOutError,
-    required TResult Function(String successMessage) logOutSuccess,
-    required TResult Function(String userName) getStorageData,
-  }) {
-    return getStorageData(userName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? logOutLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult? Function(String successMessage)? logOutSuccess,
-    TResult? Function(String userName)? getStorageData,
-  }) {
-    return getStorageData?.call(userName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? logOutLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? logOutError,
-    TResult Function(String successMessage)? logOutSuccess,
-    TResult Function(String userName)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (getStorageData != null) {
-      return getStorageData(userName);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(LogOutLoading value) logOutLoading,
-    required TResult Function(LogOutError value) logOutError,
-    required TResult Function(LogOutSuccess value) logOutSuccess,
-    required TResult Function(GetUserNameStorageData value) getStorageData,
-  }) {
-    return getStorageData(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(LogOutLoading value)? logOutLoading,
-    TResult? Function(LogOutError value)? logOutError,
-    TResult? Function(LogOutSuccess value)? logOutSuccess,
-    TResult? Function(GetUserNameStorageData value)? getStorageData,
-  }) {
-    return getStorageData?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(LogOutLoading value)? logOutLoading,
-    TResult Function(LogOutError value)? logOutError,
-    TResult Function(LogOutSuccess value)? logOutSuccess,
-    TResult Function(GetUserNameStorageData value)? getStorageData,
-    required TResult orElse(),
-  }) {
-    if (getStorageData != null) {
-      return getStorageData(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class GetUserNameStorageData implements LogOutState {
-  const factory GetUserNameStorageData(final String userName) =
-      _$GetUserNameStorageDataImpl;
-
-  String get userName;
-  @JsonKey(ignore: true)
-  _$$GetUserNameStorageDataImplCopyWith<_$GetUserNameStorageDataImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

@@ -13,7 +13,4 @@ LoginRequestBody _$LoginRequestBodyFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$LoginRequestBodyToJson(LoginRequestBody instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'password': instance.password,
-    };
+    <String, dynamic>{'email': instance.email, 'password': instance.password};

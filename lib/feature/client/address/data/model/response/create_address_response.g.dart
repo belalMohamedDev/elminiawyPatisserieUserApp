@@ -7,22 +7,22 @@ part of 'create_address_response.dart';
 // **************************************************************************
 
 CreateAddressResponse _$CreateAddressResponseFromJson(
-        Map<String, dynamic> json) =>
-    CreateAddressResponse(
-      status: json['status'] as bool?,
-      message: json['message'] as String?,
-      data: json['data'] == null
-          ? null
-          : CreateAddressData.fromJson(json['data'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => CreateAddressResponse(
+  status: json['status'] as bool?,
+  message: json['message'] as String?,
+  data: json['data'] == null
+      ? null
+      : CreateAddressData.fromJson(json['data'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$CreateAddressResponseToJson(
-        CreateAddressResponse instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'message': instance.message,
-      'data': instance.data,
-    };
+  CreateAddressResponse instance,
+) => <String, dynamic>{
+  'status': instance.status,
+  'message': instance.message,
+  'data': instance.data,
+};
 
 CreateAddressData _$CreateAddressDataFromJson(Map<String, dynamic> json) =>
     CreateAddressData(
@@ -61,11 +61,11 @@ Map<String, dynamic> _$CreateAddressDataToJson(CreateAddressData instance) =>
     };
 
 LocationData _$LocationDataFromJson(Map<String, dynamic> json) => LocationData(
-      type: json['type'] as String?,
-      coordinates: (json['coordinates'] as List<dynamic>?)
-          ?.map((e) => (e as num).toDouble())
-          .toList(),
-    );
+  type: json['type'] as String?,
+  coordinates: (json['coordinates'] as List<dynamic>?)
+      ?.map((e) => (e as num).toDouble())
+      .toList(),
+);
 
 Map<String, dynamic> _$LocationDataToJson(LocationData instance) =>
     <String, dynamic>{

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,894 +9,452 @@ part of 'change_email_address_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$ChangeEmailAddressState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() changeEmailAddressLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        changeEmailAddressError,
-    required TResult Function(UpdateEmailAddressResponse data)
-        changeEmailAddressSuccess,
-    required TResult Function(bool isPasswordVisible)
-        changePasswordVisibilityState,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? changeEmailAddressLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult? Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? changeEmailAddressLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ChangeEmailAddressLoading value)
-        changeEmailAddressLoading,
-    required TResult Function(ChangeEmailAddressError value)
-        changeEmailAddressError,
-    required TResult Function(ChangeEmailAddressSuccess value)
-        changeEmailAddressSuccess,
-    required TResult Function(ChangePasswordVisibilityState value)
-        changePasswordVisibilityState,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult? Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult? Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangeEmailAddressState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ChangeEmailAddressState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChangeEmailAddressStateCopyWith<$Res> {
-  factory $ChangeEmailAddressStateCopyWith(ChangeEmailAddressState value,
-          $Res Function(ChangeEmailAddressState) then) =
-      _$ChangeEmailAddressStateCopyWithImpl<$Res, ChangeEmailAddressState>;
+class $ChangeEmailAddressStateCopyWith<$Res>  {
+$ChangeEmailAddressStateCopyWith(ChangeEmailAddressState _, $Res Function(ChangeEmailAddressState) __);
 }
 
-/// @nodoc
-class _$ChangeEmailAddressStateCopyWithImpl<$Res,
-        $Val extends ChangeEmailAddressState>
-    implements $ChangeEmailAddressStateCopyWith<$Res> {
-  _$ChangeEmailAddressStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [ChangeEmailAddressState].
+extension ChangeEmailAddressStatePatterns on ChangeEmailAddressState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( ChangeEmailAddressLoading value)?  changeEmailAddressLoading,TResult Function( ChangeEmailAddressError value)?  changeEmailAddressError,TResult Function( ChangeEmailAddressSuccess value)?  changeEmailAddressSuccess,TResult Function( ChangePasswordVisibilityState value)?  changePasswordVisibilityState,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case ChangeEmailAddressLoading() when changeEmailAddressLoading != null:
+return changeEmailAddressLoading(_that);case ChangeEmailAddressError() when changeEmailAddressError != null:
+return changeEmailAddressError(_that);case ChangeEmailAddressSuccess() when changeEmailAddressSuccess != null:
+return changeEmailAddressSuccess(_that);case ChangePasswordVisibilityState() when changePasswordVisibilityState != null:
+return changePasswordVisibilityState(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( ChangeEmailAddressLoading value)  changeEmailAddressLoading,required TResult Function( ChangeEmailAddressError value)  changeEmailAddressError,required TResult Function( ChangeEmailAddressSuccess value)  changeEmailAddressSuccess,required TResult Function( ChangePasswordVisibilityState value)  changePasswordVisibilityState,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case ChangeEmailAddressLoading():
+return changeEmailAddressLoading(_that);case ChangeEmailAddressError():
+return changeEmailAddressError(_that);case ChangeEmailAddressSuccess():
+return changeEmailAddressSuccess(_that);case ChangePasswordVisibilityState():
+return changePasswordVisibilityState(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( ChangeEmailAddressLoading value)?  changeEmailAddressLoading,TResult? Function( ChangeEmailAddressError value)?  changeEmailAddressError,TResult? Function( ChangeEmailAddressSuccess value)?  changeEmailAddressSuccess,TResult? Function( ChangePasswordVisibilityState value)?  changePasswordVisibilityState,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case ChangeEmailAddressLoading() when changeEmailAddressLoading != null:
+return changeEmailAddressLoading(_that);case ChangeEmailAddressError() when changeEmailAddressError != null:
+return changeEmailAddressError(_that);case ChangeEmailAddressSuccess() when changeEmailAddressSuccess != null:
+return changeEmailAddressSuccess(_that);case ChangePasswordVisibilityState() when changePasswordVisibilityState != null:
+return changePasswordVisibilityState(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  changeEmailAddressLoading,TResult Function( ApiErrorModel apiErrorModel)?  changeEmailAddressError,TResult Function( UpdateEmailAddressResponse data)?  changeEmailAddressSuccess,TResult Function( bool isPasswordVisible)?  changePasswordVisibilityState,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case ChangeEmailAddressLoading() when changeEmailAddressLoading != null:
+return changeEmailAddressLoading();case ChangeEmailAddressError() when changeEmailAddressError != null:
+return changeEmailAddressError(_that.apiErrorModel);case ChangeEmailAddressSuccess() when changeEmailAddressSuccess != null:
+return changeEmailAddressSuccess(_that.data);case ChangePasswordVisibilityState() when changePasswordVisibilityState != null:
+return changePasswordVisibilityState(_that.isPasswordVisible);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  changeEmailAddressLoading,required TResult Function( ApiErrorModel apiErrorModel)  changeEmailAddressError,required TResult Function( UpdateEmailAddressResponse data)  changeEmailAddressSuccess,required TResult Function( bool isPasswordVisible)  changePasswordVisibilityState,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case ChangeEmailAddressLoading():
+return changeEmailAddressLoading();case ChangeEmailAddressError():
+return changeEmailAddressError(_that.apiErrorModel);case ChangeEmailAddressSuccess():
+return changeEmailAddressSuccess(_that.data);case ChangePasswordVisibilityState():
+return changePasswordVisibilityState(_that.isPasswordVisible);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  changeEmailAddressLoading,TResult? Function( ApiErrorModel apiErrorModel)?  changeEmailAddressError,TResult? Function( UpdateEmailAddressResponse data)?  changeEmailAddressSuccess,TResult? Function( bool isPasswordVisible)?  changePasswordVisibilityState,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case ChangeEmailAddressLoading() when changeEmailAddressLoading != null:
+return changeEmailAddressLoading();case ChangeEmailAddressError() when changeEmailAddressError != null:
+return changeEmailAddressError(_that.apiErrorModel);case ChangeEmailAddressSuccess() when changeEmailAddressSuccess != null:
+return changeEmailAddressSuccess(_that.data);case ChangePasswordVisibilityState() when changePasswordVisibilityState != null:
+return changePasswordVisibilityState(_that.isPasswordVisible);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ChangeEmailAddressStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'ChangeEmailAddressState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() changeEmailAddressLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        changeEmailAddressError,
-    required TResult Function(UpdateEmailAddressResponse data)
-        changeEmailAddressSuccess,
-    required TResult Function(bool isPasswordVisible)
-        changePasswordVisibilityState,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? changeEmailAddressLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult? Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? changeEmailAddressLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ChangeEmailAddressLoading value)
-        changeEmailAddressLoading,
-    required TResult Function(ChangeEmailAddressError value)
-        changeEmailAddressError,
-    required TResult Function(ChangeEmailAddressSuccess value)
-        changeEmailAddressSuccess,
-    required TResult Function(ChangePasswordVisibilityState value)
-        changePasswordVisibilityState,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult? Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult? Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements ChangeEmailAddressState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$ChangeEmailAddressLoadingImplCopyWith<$Res> {
-  factory _$$ChangeEmailAddressLoadingImplCopyWith(
-          _$ChangeEmailAddressLoadingImpl value,
-          $Res Function(_$ChangeEmailAddressLoadingImpl) then) =
-      __$$ChangeEmailAddressLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ChangeEmailAddressLoadingImplCopyWithImpl<$Res>
-    extends _$ChangeEmailAddressStateCopyWithImpl<$Res,
-        _$ChangeEmailAddressLoadingImpl>
-    implements _$$ChangeEmailAddressLoadingImplCopyWith<$Res> {
-  __$$ChangeEmailAddressLoadingImplCopyWithImpl(
-      _$ChangeEmailAddressLoadingImpl _value,
-      $Res Function(_$ChangeEmailAddressLoadingImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ChangeEmailAddressLoadingImpl implements ChangeEmailAddressLoading {
-  const _$ChangeEmailAddressLoadingImpl();
 
-  @override
-  String toString() {
-    return 'ChangeEmailAddressState.changeEmailAddressLoading()';
-  }
+class _Initial implements ChangeEmailAddressState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangeEmailAddressLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() changeEmailAddressLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        changeEmailAddressError,
-    required TResult Function(UpdateEmailAddressResponse data)
-        changeEmailAddressSuccess,
-    required TResult Function(bool isPasswordVisible)
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? changeEmailAddressLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult? Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? changeEmailAddressLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changeEmailAddressLoading != null) {
-      return changeEmailAddressLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ChangeEmailAddressLoading value)
-        changeEmailAddressLoading,
-    required TResult Function(ChangeEmailAddressError value)
-        changeEmailAddressError,
-    required TResult Function(ChangeEmailAddressSuccess value)
-        changeEmailAddressSuccess,
-    required TResult Function(ChangePasswordVisibilityState value)
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult? Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult? Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changeEmailAddressLoading != null) {
-      return changeEmailAddressLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class ChangeEmailAddressLoading implements ChangeEmailAddressState {
-  const factory ChangeEmailAddressLoading() = _$ChangeEmailAddressLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ChangeEmailAddressState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ChangeEmailAddressLoading implements ChangeEmailAddressState {
+  const ChangeEmailAddressLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangeEmailAddressLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ChangeEmailAddressState.changeEmailAddressLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ChangeEmailAddressError implements ChangeEmailAddressState {
+  const ChangeEmailAddressError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of ChangeEmailAddressState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangeEmailAddressErrorCopyWith<ChangeEmailAddressError> get copyWith => _$ChangeEmailAddressErrorCopyWithImpl<ChangeEmailAddressError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangeEmailAddressError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'ChangeEmailAddressState.changeEmailAddressError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ChangeEmailAddressErrorImplCopyWith<$Res> {
-  factory _$$ChangeEmailAddressErrorImplCopyWith(
-          _$ChangeEmailAddressErrorImpl value,
-          $Res Function(_$ChangeEmailAddressErrorImpl) then) =
-      __$$ChangeEmailAddressErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $ChangeEmailAddressErrorCopyWith<$Res> implements $ChangeEmailAddressStateCopyWith<$Res> {
+  factory $ChangeEmailAddressErrorCopyWith(ChangeEmailAddressError value, $Res Function(ChangeEmailAddressError) _then) = _$ChangeEmailAddressErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChangeEmailAddressErrorCopyWithImpl<$Res>
+    implements $ChangeEmailAddressErrorCopyWith<$Res> {
+  _$ChangeEmailAddressErrorCopyWithImpl(this._self, this._then);
+
+  final ChangeEmailAddressError _self;
+  final $Res Function(ChangeEmailAddressError) _then;
+
+/// Create a copy of ChangeEmailAddressState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(ChangeEmailAddressError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$ChangeEmailAddressErrorImplCopyWithImpl<$Res>
-    extends _$ChangeEmailAddressStateCopyWithImpl<$Res,
-        _$ChangeEmailAddressErrorImpl>
-    implements _$$ChangeEmailAddressErrorImplCopyWith<$Res> {
-  __$$ChangeEmailAddressErrorImplCopyWithImpl(
-      _$ChangeEmailAddressErrorImpl _value,
-      $Res Function(_$ChangeEmailAddressErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$ChangeEmailAddressErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ChangeEmailAddressErrorImpl implements ChangeEmailAddressError {
-  const _$ChangeEmailAddressErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class ChangeEmailAddressSuccess implements ChangeEmailAddressState {
+  const ChangeEmailAddressSuccess(this.data);
+  
 
-  @override
-  String toString() {
-    return 'ChangeEmailAddressState.changeEmailAddressError(apiErrorModel: $apiErrorModel)';
-  }
+ final  UpdateEmailAddressResponse data;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangeEmailAddressErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of ChangeEmailAddressState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangeEmailAddressSuccessCopyWith<ChangeEmailAddressSuccess> get copyWith => _$ChangeEmailAddressSuccessCopyWithImpl<ChangeEmailAddressSuccess>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangeEmailAddressErrorImplCopyWith<_$ChangeEmailAddressErrorImpl>
-      get copyWith => __$$ChangeEmailAddressErrorImplCopyWithImpl<
-          _$ChangeEmailAddressErrorImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() changeEmailAddressLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        changeEmailAddressError,
-    required TResult Function(UpdateEmailAddressResponse data)
-        changeEmailAddressSuccess,
-    required TResult Function(bool isPasswordVisible)
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? changeEmailAddressLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult? Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? changeEmailAddressLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changeEmailAddressError != null) {
-      return changeEmailAddressError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ChangeEmailAddressLoading value)
-        changeEmailAddressLoading,
-    required TResult Function(ChangeEmailAddressError value)
-        changeEmailAddressError,
-    required TResult Function(ChangeEmailAddressSuccess value)
-        changeEmailAddressSuccess,
-    required TResult Function(ChangePasswordVisibilityState value)
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult? Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult? Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changeEmailAddressError != null) {
-      return changeEmailAddressError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangeEmailAddressSuccess&&(identical(other.data, data) || other.data == data));
 }
 
-abstract class ChangeEmailAddressError implements ChangeEmailAddressState {
-  const factory ChangeEmailAddressError(final ApiErrorModel apiErrorModel) =
-      _$ChangeEmailAddressErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$ChangeEmailAddressErrorImplCopyWith<_$ChangeEmailAddressErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,data);
+
+@override
+String toString() {
+  return 'ChangeEmailAddressState.changeEmailAddressSuccess(data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ChangeEmailAddressSuccessImplCopyWith<$Res> {
-  factory _$$ChangeEmailAddressSuccessImplCopyWith(
-          _$ChangeEmailAddressSuccessImpl value,
-          $Res Function(_$ChangeEmailAddressSuccessImpl) then) =
-      __$$ChangeEmailAddressSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({UpdateEmailAddressResponse data});
+abstract mixin class $ChangeEmailAddressSuccessCopyWith<$Res> implements $ChangeEmailAddressStateCopyWith<$Res> {
+  factory $ChangeEmailAddressSuccessCopyWith(ChangeEmailAddressSuccess value, $Res Function(ChangeEmailAddressSuccess) _then) = _$ChangeEmailAddressSuccessCopyWithImpl;
+@useResult
+$Res call({
+ UpdateEmailAddressResponse data
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChangeEmailAddressSuccessCopyWithImpl<$Res>
+    implements $ChangeEmailAddressSuccessCopyWith<$Res> {
+  _$ChangeEmailAddressSuccessCopyWithImpl(this._self, this._then);
+
+  final ChangeEmailAddressSuccess _self;
+  final $Res Function(ChangeEmailAddressSuccess) _then;
+
+/// Create a copy of ChangeEmailAddressState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
+  return _then(ChangeEmailAddressSuccess(
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as UpdateEmailAddressResponse,
+  ));
 }
 
-/// @nodoc
-class __$$ChangeEmailAddressSuccessImplCopyWithImpl<$Res>
-    extends _$ChangeEmailAddressStateCopyWithImpl<$Res,
-        _$ChangeEmailAddressSuccessImpl>
-    implements _$$ChangeEmailAddressSuccessImplCopyWith<$Res> {
-  __$$ChangeEmailAddressSuccessImplCopyWithImpl(
-      _$ChangeEmailAddressSuccessImpl _value,
-      $Res Function(_$ChangeEmailAddressSuccessImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$ChangeEmailAddressSuccessImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as UpdateEmailAddressResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ChangeEmailAddressSuccessImpl implements ChangeEmailAddressSuccess {
-  const _$ChangeEmailAddressSuccessImpl(this.data);
 
-  @override
-  final UpdateEmailAddressResponse data;
+class ChangePasswordVisibilityState implements ChangeEmailAddressState {
+  const ChangePasswordVisibilityState(this.isPasswordVisible);
+  
 
-  @override
-  String toString() {
-    return 'ChangeEmailAddressState.changeEmailAddressSuccess(data: $data)';
-  }
+ final  bool isPasswordVisible;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangeEmailAddressSuccessImpl &&
-            (identical(other.data, data) || other.data == data));
-  }
+/// Create a copy of ChangeEmailAddressState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangePasswordVisibilityStateCopyWith<ChangePasswordVisibilityState> get copyWith => _$ChangePasswordVisibilityStateCopyWithImpl<ChangePasswordVisibilityState>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangeEmailAddressSuccessImplCopyWith<_$ChangeEmailAddressSuccessImpl>
-      get copyWith => __$$ChangeEmailAddressSuccessImplCopyWithImpl<
-          _$ChangeEmailAddressSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() changeEmailAddressLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        changeEmailAddressError,
-    required TResult Function(UpdateEmailAddressResponse data)
-        changeEmailAddressSuccess,
-    required TResult Function(bool isPasswordVisible)
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? changeEmailAddressLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult? Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? changeEmailAddressLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changeEmailAddressSuccess != null) {
-      return changeEmailAddressSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ChangeEmailAddressLoading value)
-        changeEmailAddressLoading,
-    required TResult Function(ChangeEmailAddressError value)
-        changeEmailAddressError,
-    required TResult Function(ChangeEmailAddressSuccess value)
-        changeEmailAddressSuccess,
-    required TResult Function(ChangePasswordVisibilityState value)
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult? Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult? Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-  }) {
-    return changeEmailAddressSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changeEmailAddressSuccess != null) {
-      return changeEmailAddressSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangePasswordVisibilityState&&(identical(other.isPasswordVisible, isPasswordVisible) || other.isPasswordVisible == isPasswordVisible));
 }
 
-abstract class ChangeEmailAddressSuccess implements ChangeEmailAddressState {
-  const factory ChangeEmailAddressSuccess(
-      final UpdateEmailAddressResponse data) = _$ChangeEmailAddressSuccessImpl;
 
-  UpdateEmailAddressResponse get data;
-  @JsonKey(ignore: true)
-  _$$ChangeEmailAddressSuccessImplCopyWith<_$ChangeEmailAddressSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,isPasswordVisible);
+
+@override
+String toString() {
+  return 'ChangeEmailAddressState.changePasswordVisibilityState(isPasswordVisible: $isPasswordVisible)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ChangePasswordVisibilityStateImplCopyWith<$Res> {
-  factory _$$ChangePasswordVisibilityStateImplCopyWith(
-          _$ChangePasswordVisibilityStateImpl value,
-          $Res Function(_$ChangePasswordVisibilityStateImpl) then) =
-      __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool isPasswordVisible});
-}
+abstract mixin class $ChangePasswordVisibilityStateCopyWith<$Res> implements $ChangeEmailAddressStateCopyWith<$Res> {
+  factory $ChangePasswordVisibilityStateCopyWith(ChangePasswordVisibilityState value, $Res Function(ChangePasswordVisibilityState) _then) = _$ChangePasswordVisibilityStateCopyWithImpl;
+@useResult
+$Res call({
+ bool isPasswordVisible
+});
 
+
+
+
+}
 /// @nodoc
-class __$$ChangePasswordVisibilityStateImplCopyWithImpl<$Res>
-    extends _$ChangeEmailAddressStateCopyWithImpl<$Res,
-        _$ChangePasswordVisibilityStateImpl>
-    implements _$$ChangePasswordVisibilityStateImplCopyWith<$Res> {
-  __$$ChangePasswordVisibilityStateImplCopyWithImpl(
-      _$ChangePasswordVisibilityStateImpl _value,
-      $Res Function(_$ChangePasswordVisibilityStateImpl) _then)
-      : super(_value, _then);
+class _$ChangePasswordVisibilityStateCopyWithImpl<$Res>
+    implements $ChangePasswordVisibilityStateCopyWith<$Res> {
+  _$ChangePasswordVisibilityStateCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isPasswordVisible = null,
-  }) {
-    return _then(_$ChangePasswordVisibilityStateImpl(
-      null == isPasswordVisible
-          ? _value.isPasswordVisible
-          : isPasswordVisible // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
+  final ChangePasswordVisibilityState _self;
+  final $Res Function(ChangePasswordVisibilityState) _then;
+
+/// Create a copy of ChangeEmailAddressState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? isPasswordVisible = null,}) {
+  return _then(ChangePasswordVisibilityState(
+null == isPasswordVisible ? _self.isPasswordVisible : isPasswordVisible // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
 
-class _$ChangePasswordVisibilityStateImpl
-    implements ChangePasswordVisibilityState {
-  const _$ChangePasswordVisibilityStateImpl(this.isPasswordVisible);
-
-  @override
-  final bool isPasswordVisible;
-
-  @override
-  String toString() {
-    return 'ChangeEmailAddressState.changePasswordVisibilityState(isPasswordVisible: $isPasswordVisible)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChangePasswordVisibilityStateImpl &&
-            (identical(other.isPasswordVisible, isPasswordVisible) ||
-                other.isPasswordVisible == isPasswordVisible));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, isPasswordVisible);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChangePasswordVisibilityStateImplCopyWith<
-          _$ChangePasswordVisibilityStateImpl>
-      get copyWith => __$$ChangePasswordVisibilityStateImplCopyWithImpl<
-          _$ChangePasswordVisibilityStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() changeEmailAddressLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        changeEmailAddressError,
-    required TResult Function(UpdateEmailAddressResponse data)
-        changeEmailAddressSuccess,
-    required TResult Function(bool isPasswordVisible)
-        changePasswordVisibilityState,
-  }) {
-    return changePasswordVisibilityState(isPasswordVisible);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? changeEmailAddressLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult? Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult? Function(bool isPasswordVisible)? changePasswordVisibilityState,
-  }) {
-    return changePasswordVisibilityState?.call(isPasswordVisible);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? changeEmailAddressLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? changeEmailAddressError,
-    TResult Function(UpdateEmailAddressResponse data)?
-        changeEmailAddressSuccess,
-    TResult Function(bool isPasswordVisible)? changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changePasswordVisibilityState != null) {
-      return changePasswordVisibilityState(isPasswordVisible);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(ChangeEmailAddressLoading value)
-        changeEmailAddressLoading,
-    required TResult Function(ChangeEmailAddressError value)
-        changeEmailAddressError,
-    required TResult Function(ChangeEmailAddressSuccess value)
-        changeEmailAddressSuccess,
-    required TResult Function(ChangePasswordVisibilityState value)
-        changePasswordVisibilityState,
-  }) {
-    return changePasswordVisibilityState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult? Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult? Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult? Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-  }) {
-    return changePasswordVisibilityState?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(ChangeEmailAddressLoading value)?
-        changeEmailAddressLoading,
-    TResult Function(ChangeEmailAddressError value)? changeEmailAddressError,
-    TResult Function(ChangeEmailAddressSuccess value)?
-        changeEmailAddressSuccess,
-    TResult Function(ChangePasswordVisibilityState value)?
-        changePasswordVisibilityState,
-    required TResult orElse(),
-  }) {
-    if (changePasswordVisibilityState != null) {
-      return changePasswordVisibilityState(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class ChangePasswordVisibilityState
-    implements ChangeEmailAddressState {
-  const factory ChangePasswordVisibilityState(final bool isPasswordVisible) =
-      _$ChangePasswordVisibilityStateImpl;
-
-  bool get isPasswordVisible;
-  @JsonKey(ignore: true)
-  _$$ChangePasswordVisibilityStateImplCopyWith<
-          _$ChangePasswordVisibilityStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

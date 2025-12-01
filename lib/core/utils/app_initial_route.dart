@@ -17,7 +17,7 @@ class AppInitialRoute {
   static String storeAddressId = "";
   static String storeRegion = "";
 
-  getStoreDataAndCheckInitialRoute() async {
+  Future<void> getStoreDataAndCheckInitialRoute() async {
     var results = await Future.wait([
       SharedPrefHelper.getSecuredString(PrefKeys.refreshToken),
       SharedPrefHelper.getSecuredString(PrefKeys.enLocationArea),

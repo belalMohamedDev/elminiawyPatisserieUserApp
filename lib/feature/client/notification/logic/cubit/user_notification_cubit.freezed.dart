@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,1346 +9,562 @@ part of 'user_notification_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$UserNotificationState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserNotificationState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'UserNotificationState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $UserNotificationStateCopyWith<$Res> {
-  factory $UserNotificationStateCopyWith(UserNotificationState value,
-          $Res Function(UserNotificationState) then) =
-      _$UserNotificationStateCopyWithImpl<$Res, UserNotificationState>;
+class $UserNotificationStateCopyWith<$Res>  {
+$UserNotificationStateCopyWith(UserNotificationState _, $Res Function(UserNotificationState) __);
 }
 
-/// @nodoc
-class _$UserNotificationStateCopyWithImpl<$Res,
-        $Val extends UserNotificationState>
-    implements $UserNotificationStateCopyWith<$Res> {
-  _$UserNotificationStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [UserNotificationState].
+extension UserNotificationStatePatterns on UserNotificationState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( UserNotificationLoading value)?  userNotificationLoading,TResult Function( UserNotificationLoaded value)?  userNotificationLoaded,TResult Function( UserNotificationError value)?  userNotificationError,TResult Function( DeleteUserNotificationLoaded value)?  deleteUserNotificationLoaded,TResult Function( DeleteUserNotificationLoading value)?  deleteUserNotificationLoading,TResult Function( DeleteUserNotificationError value)?  deleteUserNotificationError,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case UserNotificationLoading() when userNotificationLoading != null:
+return userNotificationLoading(_that);case UserNotificationLoaded() when userNotificationLoaded != null:
+return userNotificationLoaded(_that);case UserNotificationError() when userNotificationError != null:
+return userNotificationError(_that);case DeleteUserNotificationLoaded() when deleteUserNotificationLoaded != null:
+return deleteUserNotificationLoaded(_that);case DeleteUserNotificationLoading() when deleteUserNotificationLoading != null:
+return deleteUserNotificationLoading(_that);case DeleteUserNotificationError() when deleteUserNotificationError != null:
+return deleteUserNotificationError(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( UserNotificationLoading value)  userNotificationLoading,required TResult Function( UserNotificationLoaded value)  userNotificationLoaded,required TResult Function( UserNotificationError value)  userNotificationError,required TResult Function( DeleteUserNotificationLoaded value)  deleteUserNotificationLoaded,required TResult Function( DeleteUserNotificationLoading value)  deleteUserNotificationLoading,required TResult Function( DeleteUserNotificationError value)  deleteUserNotificationError,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case UserNotificationLoading():
+return userNotificationLoading(_that);case UserNotificationLoaded():
+return userNotificationLoaded(_that);case UserNotificationError():
+return userNotificationError(_that);case DeleteUserNotificationLoaded():
+return deleteUserNotificationLoaded(_that);case DeleteUserNotificationLoading():
+return deleteUserNotificationLoading(_that);case DeleteUserNotificationError():
+return deleteUserNotificationError(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( UserNotificationLoading value)?  userNotificationLoading,TResult? Function( UserNotificationLoaded value)?  userNotificationLoaded,TResult? Function( UserNotificationError value)?  userNotificationError,TResult? Function( DeleteUserNotificationLoaded value)?  deleteUserNotificationLoaded,TResult? Function( DeleteUserNotificationLoading value)?  deleteUserNotificationLoading,TResult? Function( DeleteUserNotificationError value)?  deleteUserNotificationError,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case UserNotificationLoading() when userNotificationLoading != null:
+return userNotificationLoading(_that);case UserNotificationLoaded() when userNotificationLoaded != null:
+return userNotificationLoaded(_that);case UserNotificationError() when userNotificationError != null:
+return userNotificationError(_that);case DeleteUserNotificationLoaded() when deleteUserNotificationLoaded != null:
+return deleteUserNotificationLoaded(_that);case DeleteUserNotificationLoading() when deleteUserNotificationLoading != null:
+return deleteUserNotificationLoading(_that);case DeleteUserNotificationError() when deleteUserNotificationError != null:
+return deleteUserNotificationError(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  userNotificationLoading,TResult Function( UserNotificationResponse userNotificationResponse)?  userNotificationLoaded,TResult Function( ApiErrorModel apiErrorModel)?  userNotificationError,TResult Function( UserNotificationResponse userNotificationResponse)?  deleteUserNotificationLoaded,TResult Function()?  deleteUserNotificationLoading,TResult Function( ApiErrorModel apiErrorModel)?  deleteUserNotificationError,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case UserNotificationLoading() when userNotificationLoading != null:
+return userNotificationLoading();case UserNotificationLoaded() when userNotificationLoaded != null:
+return userNotificationLoaded(_that.userNotificationResponse);case UserNotificationError() when userNotificationError != null:
+return userNotificationError(_that.apiErrorModel);case DeleteUserNotificationLoaded() when deleteUserNotificationLoaded != null:
+return deleteUserNotificationLoaded(_that.userNotificationResponse);case DeleteUserNotificationLoading() when deleteUserNotificationLoading != null:
+return deleteUserNotificationLoading();case DeleteUserNotificationError() when deleteUserNotificationError != null:
+return deleteUserNotificationError(_that.apiErrorModel);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  userNotificationLoading,required TResult Function( UserNotificationResponse userNotificationResponse)  userNotificationLoaded,required TResult Function( ApiErrorModel apiErrorModel)  userNotificationError,required TResult Function( UserNotificationResponse userNotificationResponse)  deleteUserNotificationLoaded,required TResult Function()  deleteUserNotificationLoading,required TResult Function( ApiErrorModel apiErrorModel)  deleteUserNotificationError,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case UserNotificationLoading():
+return userNotificationLoading();case UserNotificationLoaded():
+return userNotificationLoaded(_that.userNotificationResponse);case UserNotificationError():
+return userNotificationError(_that.apiErrorModel);case DeleteUserNotificationLoaded():
+return deleteUserNotificationLoaded(_that.userNotificationResponse);case DeleteUserNotificationLoading():
+return deleteUserNotificationLoading();case DeleteUserNotificationError():
+return deleteUserNotificationError(_that.apiErrorModel);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  userNotificationLoading,TResult? Function( UserNotificationResponse userNotificationResponse)?  userNotificationLoaded,TResult? Function( ApiErrorModel apiErrorModel)?  userNotificationError,TResult? Function( UserNotificationResponse userNotificationResponse)?  deleteUserNotificationLoaded,TResult? Function()?  deleteUserNotificationLoading,TResult? Function( ApiErrorModel apiErrorModel)?  deleteUserNotificationError,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case UserNotificationLoading() when userNotificationLoading != null:
+return userNotificationLoading();case UserNotificationLoaded() when userNotificationLoaded != null:
+return userNotificationLoaded(_that.userNotificationResponse);case UserNotificationError() when userNotificationError != null:
+return userNotificationError(_that.apiErrorModel);case DeleteUserNotificationLoaded() when deleteUserNotificationLoaded != null:
+return deleteUserNotificationLoaded(_that.userNotificationResponse);case DeleteUserNotificationLoading() when deleteUserNotificationLoading != null:
+return deleteUserNotificationLoading();case DeleteUserNotificationError() when deleteUserNotificationError != null:
+return deleteUserNotificationError(_that.apiErrorModel);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$UserNotificationStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'UserNotificationState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements UserNotificationState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$UserNotificationLoadingImplCopyWith<$Res> {
-  factory _$$UserNotificationLoadingImplCopyWith(
-          _$UserNotificationLoadingImpl value,
-          $Res Function(_$UserNotificationLoadingImpl) then) =
-      __$$UserNotificationLoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UserNotificationLoadingImplCopyWithImpl<$Res>
-    extends _$UserNotificationStateCopyWithImpl<$Res,
-        _$UserNotificationLoadingImpl>
-    implements _$$UserNotificationLoadingImplCopyWith<$Res> {
-  __$$UserNotificationLoadingImplCopyWithImpl(
-      _$UserNotificationLoadingImpl _value,
-      $Res Function(_$UserNotificationLoadingImpl) _then)
-      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UserNotificationLoadingImpl implements UserNotificationLoading {
-  const _$UserNotificationLoadingImpl();
 
-  @override
-  String toString() {
-    return 'UserNotificationState.userNotificationLoading()';
-  }
+class _Initial implements UserNotificationState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserNotificationLoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) {
-    return userNotificationLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) {
-    return userNotificationLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (userNotificationLoading != null) {
-      return userNotificationLoading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) {
-    return userNotificationLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) {
-    return userNotificationLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (userNotificationLoading != null) {
-      return userNotificationLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class UserNotificationLoading implements UserNotificationState {
-  const factory UserNotificationLoading() = _$UserNotificationLoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'UserNotificationState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class UserNotificationLoading implements UserNotificationState {
+  const UserNotificationLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserNotificationLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'UserNotificationState.userNotificationLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class UserNotificationLoaded implements UserNotificationState {
+  const UserNotificationLoaded(this.userNotificationResponse);
+  
+
+ final  UserNotificationResponse userNotificationResponse;
+
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserNotificationLoadedCopyWith<UserNotificationLoaded> get copyWith => _$UserNotificationLoadedCopyWithImpl<UserNotificationLoaded>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserNotificationLoaded&&(identical(other.userNotificationResponse, userNotificationResponse) || other.userNotificationResponse == userNotificationResponse));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,userNotificationResponse);
+
+@override
+String toString() {
+  return 'UserNotificationState.userNotificationLoaded(userNotificationResponse: $userNotificationResponse)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserNotificationLoadedImplCopyWith<$Res> {
-  factory _$$UserNotificationLoadedImplCopyWith(
-          _$UserNotificationLoadedImpl value,
-          $Res Function(_$UserNotificationLoadedImpl) then) =
-      __$$UserNotificationLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({UserNotificationResponse userNotificationResponse});
+abstract mixin class $UserNotificationLoadedCopyWith<$Res> implements $UserNotificationStateCopyWith<$Res> {
+  factory $UserNotificationLoadedCopyWith(UserNotificationLoaded value, $Res Function(UserNotificationLoaded) _then) = _$UserNotificationLoadedCopyWithImpl;
+@useResult
+$Res call({
+ UserNotificationResponse userNotificationResponse
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserNotificationLoadedCopyWithImpl<$Res>
+    implements $UserNotificationLoadedCopyWith<$Res> {
+  _$UserNotificationLoadedCopyWithImpl(this._self, this._then);
+
+  final UserNotificationLoaded _self;
+  final $Res Function(UserNotificationLoaded) _then;
+
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? userNotificationResponse = null,}) {
+  return _then(UserNotificationLoaded(
+null == userNotificationResponse ? _self.userNotificationResponse : userNotificationResponse // ignore: cast_nullable_to_non_nullable
+as UserNotificationResponse,
+  ));
 }
 
-/// @nodoc
-class __$$UserNotificationLoadedImplCopyWithImpl<$Res>
-    extends _$UserNotificationStateCopyWithImpl<$Res,
-        _$UserNotificationLoadedImpl>
-    implements _$$UserNotificationLoadedImplCopyWith<$Res> {
-  __$$UserNotificationLoadedImplCopyWithImpl(
-      _$UserNotificationLoadedImpl _value,
-      $Res Function(_$UserNotificationLoadedImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userNotificationResponse = null,
-  }) {
-    return _then(_$UserNotificationLoadedImpl(
-      null == userNotificationResponse
-          ? _value.userNotificationResponse
-          : userNotificationResponse // ignore: cast_nullable_to_non_nullable
-              as UserNotificationResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserNotificationLoadedImpl implements UserNotificationLoaded {
-  const _$UserNotificationLoadedImpl(this.userNotificationResponse);
 
-  @override
-  final UserNotificationResponse userNotificationResponse;
+class UserNotificationError implements UserNotificationState {
+  const UserNotificationError(this.apiErrorModel);
+  
 
-  @override
-  String toString() {
-    return 'UserNotificationState.userNotificationLoaded(userNotificationResponse: $userNotificationResponse)';
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserNotificationLoadedImpl &&
-            (identical(
-                    other.userNotificationResponse, userNotificationResponse) ||
-                other.userNotificationResponse == userNotificationResponse));
-  }
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserNotificationErrorCopyWith<UserNotificationError> get copyWith => _$UserNotificationErrorCopyWithImpl<UserNotificationError>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, userNotificationResponse);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserNotificationLoadedImplCopyWith<_$UserNotificationLoadedImpl>
-      get copyWith => __$$UserNotificationLoadedImplCopyWithImpl<
-          _$UserNotificationLoadedImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) {
-    return userNotificationLoaded(userNotificationResponse);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) {
-    return userNotificationLoaded?.call(userNotificationResponse);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (userNotificationLoaded != null) {
-      return userNotificationLoaded(userNotificationResponse);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) {
-    return userNotificationLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) {
-    return userNotificationLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (userNotificationLoaded != null) {
-      return userNotificationLoaded(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserNotificationError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class UserNotificationLoaded implements UserNotificationState {
-  const factory UserNotificationLoaded(
-          final UserNotificationResponse userNotificationResponse) =
-      _$UserNotificationLoadedImpl;
 
-  UserNotificationResponse get userNotificationResponse;
-  @JsonKey(ignore: true)
-  _$$UserNotificationLoadedImplCopyWith<_$UserNotificationLoadedImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'UserNotificationState.userNotificationError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$UserNotificationErrorImplCopyWith<$Res> {
-  factory _$$UserNotificationErrorImplCopyWith(
-          _$UserNotificationErrorImpl value,
-          $Res Function(_$UserNotificationErrorImpl) then) =
-      __$$UserNotificationErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
+abstract mixin class $UserNotificationErrorCopyWith<$Res> implements $UserNotificationStateCopyWith<$Res> {
+  factory $UserNotificationErrorCopyWith(UserNotificationError value, $Res Function(UserNotificationError) _then) = _$UserNotificationErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$UserNotificationErrorCopyWithImpl<$Res>
+    implements $UserNotificationErrorCopyWith<$Res> {
+  _$UserNotificationErrorCopyWithImpl(this._self, this._then);
+
+  final UserNotificationError _self;
+  final $Res Function(UserNotificationError) _then;
+
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(UserNotificationError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
-class __$$UserNotificationErrorImplCopyWithImpl<$Res>
-    extends _$UserNotificationStateCopyWithImpl<$Res,
-        _$UserNotificationErrorImpl>
-    implements _$$UserNotificationErrorImplCopyWith<$Res> {
-  __$$UserNotificationErrorImplCopyWithImpl(_$UserNotificationErrorImpl _value,
-      $Res Function(_$UserNotificationErrorImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$UserNotificationErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UserNotificationErrorImpl implements UserNotificationError {
-  const _$UserNotificationErrorImpl(this.apiErrorModel);
 
-  @override
-  final ApiErrorModel apiErrorModel;
+class DeleteUserNotificationLoaded implements UserNotificationState {
+  const DeleteUserNotificationLoaded(this.userNotificationResponse);
+  
 
-  @override
-  String toString() {
-    return 'UserNotificationState.userNotificationError(apiErrorModel: $apiErrorModel)';
-  }
+ final  UserNotificationResponse userNotificationResponse;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserNotificationErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DeleteUserNotificationLoadedCopyWith<DeleteUserNotificationLoaded> get copyWith => _$DeleteUserNotificationLoadedCopyWithImpl<DeleteUserNotificationLoaded>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserNotificationErrorImplCopyWith<_$UserNotificationErrorImpl>
-      get copyWith => __$$UserNotificationErrorImplCopyWithImpl<
-          _$UserNotificationErrorImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) {
-    return userNotificationError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) {
-    return userNotificationError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (userNotificationError != null) {
-      return userNotificationError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) {
-    return userNotificationError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) {
-    return userNotificationError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (userNotificationError != null) {
-      return userNotificationError(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteUserNotificationLoaded&&(identical(other.userNotificationResponse, userNotificationResponse) || other.userNotificationResponse == userNotificationResponse));
 }
 
-abstract class UserNotificationError implements UserNotificationState {
-  const factory UserNotificationError(final ApiErrorModel apiErrorModel) =
-      _$UserNotificationErrorImpl;
 
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$UserNotificationErrorImplCopyWith<_$UserNotificationErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,userNotificationResponse);
+
+@override
+String toString() {
+  return 'UserNotificationState.deleteUserNotificationLoaded(userNotificationResponse: $userNotificationResponse)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$DeleteUserNotificationLoadedImplCopyWith<$Res> {
-  factory _$$DeleteUserNotificationLoadedImplCopyWith(
-          _$DeleteUserNotificationLoadedImpl value,
-          $Res Function(_$DeleteUserNotificationLoadedImpl) then) =
-      __$$DeleteUserNotificationLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({UserNotificationResponse userNotificationResponse});
+abstract mixin class $DeleteUserNotificationLoadedCopyWith<$Res> implements $UserNotificationStateCopyWith<$Res> {
+  factory $DeleteUserNotificationLoadedCopyWith(DeleteUserNotificationLoaded value, $Res Function(DeleteUserNotificationLoaded) _then) = _$DeleteUserNotificationLoadedCopyWithImpl;
+@useResult
+$Res call({
+ UserNotificationResponse userNotificationResponse
+});
+
+
+
+
+}
+/// @nodoc
+class _$DeleteUserNotificationLoadedCopyWithImpl<$Res>
+    implements $DeleteUserNotificationLoadedCopyWith<$Res> {
+  _$DeleteUserNotificationLoadedCopyWithImpl(this._self, this._then);
+
+  final DeleteUserNotificationLoaded _self;
+  final $Res Function(DeleteUserNotificationLoaded) _then;
+
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? userNotificationResponse = null,}) {
+  return _then(DeleteUserNotificationLoaded(
+null == userNotificationResponse ? _self.userNotificationResponse : userNotificationResponse // ignore: cast_nullable_to_non_nullable
+as UserNotificationResponse,
+  ));
 }
 
-/// @nodoc
-class __$$DeleteUserNotificationLoadedImplCopyWithImpl<$Res>
-    extends _$UserNotificationStateCopyWithImpl<$Res,
-        _$DeleteUserNotificationLoadedImpl>
-    implements _$$DeleteUserNotificationLoadedImplCopyWith<$Res> {
-  __$$DeleteUserNotificationLoadedImplCopyWithImpl(
-      _$DeleteUserNotificationLoadedImpl _value,
-      $Res Function(_$DeleteUserNotificationLoadedImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userNotificationResponse = null,
-  }) {
-    return _then(_$DeleteUserNotificationLoadedImpl(
-      null == userNotificationResponse
-          ? _value.userNotificationResponse
-          : userNotificationResponse // ignore: cast_nullable_to_non_nullable
-              as UserNotificationResponse,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$DeleteUserNotificationLoadedImpl
-    implements DeleteUserNotificationLoaded {
-  const _$DeleteUserNotificationLoadedImpl(this.userNotificationResponse);
 
-  @override
-  final UserNotificationResponse userNotificationResponse;
+class DeleteUserNotificationLoading implements UserNotificationState {
+  const DeleteUserNotificationLoading();
+  
 
-  @override
-  String toString() {
-    return 'UserNotificationState.deleteUserNotificationLoaded(userNotificationResponse: $userNotificationResponse)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteUserNotificationLoadedImpl &&
-            (identical(
-                    other.userNotificationResponse, userNotificationResponse) ||
-                other.userNotificationResponse == userNotificationResponse));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, userNotificationResponse);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteUserNotificationLoadedImplCopyWith<
-          _$DeleteUserNotificationLoadedImpl>
-      get copyWith => __$$DeleteUserNotificationLoadedImplCopyWithImpl<
-          _$DeleteUserNotificationLoadedImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoaded(userNotificationResponse);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoaded?.call(userNotificationResponse);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (deleteUserNotificationLoaded != null) {
-      return deleteUserNotificationLoaded(userNotificationResponse);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (deleteUserNotificationLoaded != null) {
-      return deleteUserNotificationLoaded(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteUserNotificationLoading);
 }
 
-abstract class DeleteUserNotificationLoaded implements UserNotificationState {
-  const factory DeleteUserNotificationLoaded(
-          final UserNotificationResponse userNotificationResponse) =
-      _$DeleteUserNotificationLoadedImpl;
 
-  UserNotificationResponse get userNotificationResponse;
-  @JsonKey(ignore: true)
-  _$$DeleteUserNotificationLoadedImplCopyWith<
-          _$DeleteUserNotificationLoadedImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'UserNotificationState.deleteUserNotificationLoading()';
 }
 
-/// @nodoc
-abstract class _$$DeleteUserNotificationLoadingImplCopyWith<$Res> {
-  factory _$$DeleteUserNotificationLoadingImplCopyWith(
-          _$DeleteUserNotificationLoadingImpl value,
-          $Res Function(_$DeleteUserNotificationLoadingImpl) then) =
-      __$$DeleteUserNotificationLoadingImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$DeleteUserNotificationLoadingImplCopyWithImpl<$Res>
-    extends _$UserNotificationStateCopyWithImpl<$Res,
-        _$DeleteUserNotificationLoadingImpl>
-    implements _$$DeleteUserNotificationLoadingImplCopyWith<$Res> {
-  __$$DeleteUserNotificationLoadingImplCopyWithImpl(
-      _$DeleteUserNotificationLoadingImpl _value,
-      $Res Function(_$DeleteUserNotificationLoadingImpl) _then)
-      : super(_value, _then);
-}
+
+
 
 /// @nodoc
 
-class _$DeleteUserNotificationLoadingImpl
-    implements DeleteUserNotificationLoading {
-  const _$DeleteUserNotificationLoadingImpl();
 
-  @override
-  String toString() {
-    return 'UserNotificationState.deleteUserNotificationLoading()';
-  }
+class DeleteUserNotificationError implements UserNotificationState {
+  const DeleteUserNotificationError(this.apiErrorModel);
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteUserNotificationLoadingImpl);
-  }
+ final  ApiErrorModel apiErrorModel;
 
-  @override
-  int get hashCode => runtimeType.hashCode;
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DeleteUserNotificationErrorCopyWith<DeleteUserNotificationError> get copyWith => _$DeleteUserNotificationErrorCopyWithImpl<DeleteUserNotificationError>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (deleteUserNotificationLoading != null) {
-      return deleteUserNotificationLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (deleteUserNotificationLoading != null) {
-      return deleteUserNotificationLoading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteUserNotificationError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
-abstract class DeleteUserNotificationLoading implements UserNotificationState {
-  const factory DeleteUserNotificationLoading() =
-      _$DeleteUserNotificationLoadingImpl;
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'UserNotificationState.deleteUserNotificationError(apiErrorModel: $apiErrorModel)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$DeleteUserNotificationErrorImplCopyWith<$Res> {
-  factory _$$DeleteUserNotificationErrorImplCopyWith(
-          _$DeleteUserNotificationErrorImpl value,
-          $Res Function(_$DeleteUserNotificationErrorImpl) then) =
-      __$$DeleteUserNotificationErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiErrorModel apiErrorModel});
-}
+abstract mixin class $DeleteUserNotificationErrorCopyWith<$Res> implements $UserNotificationStateCopyWith<$Res> {
+  factory $DeleteUserNotificationErrorCopyWith(DeleteUserNotificationError value, $Res Function(DeleteUserNotificationError) _then) = _$DeleteUserNotificationErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
 
+
+
+
+}
 /// @nodoc
-class __$$DeleteUserNotificationErrorImplCopyWithImpl<$Res>
-    extends _$UserNotificationStateCopyWithImpl<$Res,
-        _$DeleteUserNotificationErrorImpl>
-    implements _$$DeleteUserNotificationErrorImplCopyWith<$Res> {
-  __$$DeleteUserNotificationErrorImplCopyWithImpl(
-      _$DeleteUserNotificationErrorImpl _value,
-      $Res Function(_$DeleteUserNotificationErrorImpl) _then)
-      : super(_value, _then);
+class _$DeleteUserNotificationErrorCopyWithImpl<$Res>
+    implements $DeleteUserNotificationErrorCopyWith<$Res> {
+  _$DeleteUserNotificationErrorCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiErrorModel = null,
-  }) {
-    return _then(_$DeleteUserNotificationErrorImpl(
-      null == apiErrorModel
-          ? _value.apiErrorModel
-          : apiErrorModel // ignore: cast_nullable_to_non_nullable
-              as ApiErrorModel,
-    ));
-  }
+  final DeleteUserNotificationError _self;
+  final $Res Function(DeleteUserNotificationError) _then;
+
+/// Create a copy of UserNotificationState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(DeleteUserNotificationError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
 }
 
-/// @nodoc
 
-class _$DeleteUserNotificationErrorImpl implements DeleteUserNotificationError {
-  const _$DeleteUserNotificationErrorImpl(this.apiErrorModel);
-
-  @override
-  final ApiErrorModel apiErrorModel;
-
-  @override
-  String toString() {
-    return 'UserNotificationState.deleteUserNotificationError(apiErrorModel: $apiErrorModel)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteUserNotificationErrorImpl &&
-            (identical(other.apiErrorModel, apiErrorModel) ||
-                other.apiErrorModel == apiErrorModel));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiErrorModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteUserNotificationErrorImplCopyWith<_$DeleteUserNotificationErrorImpl>
-      get copyWith => __$$DeleteUserNotificationErrorImplCopyWithImpl<
-          _$DeleteUserNotificationErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() userNotificationLoading,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        userNotificationLoaded,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        userNotificationError,
-    required TResult Function(UserNotificationResponse userNotificationResponse)
-        deleteUserNotificationLoaded,
-    required TResult Function() deleteUserNotificationLoading,
-    required TResult Function(ApiErrorModel apiErrorModel)
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationError(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? userNotificationLoading,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult? Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult? Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult? Function()? deleteUserNotificationLoading,
-    TResult? Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationError?.call(apiErrorModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? userNotificationLoading,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        userNotificationLoaded,
-    TResult Function(ApiErrorModel apiErrorModel)? userNotificationError,
-    TResult Function(UserNotificationResponse userNotificationResponse)?
-        deleteUserNotificationLoaded,
-    TResult Function()? deleteUserNotificationLoading,
-    TResult Function(ApiErrorModel apiErrorModel)? deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (deleteUserNotificationError != null) {
-      return deleteUserNotificationError(apiErrorModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(UserNotificationLoading value)
-        userNotificationLoading,
-    required TResult Function(UserNotificationLoaded value)
-        userNotificationLoaded,
-    required TResult Function(UserNotificationError value)
-        userNotificationError,
-    required TResult Function(DeleteUserNotificationLoaded value)
-        deleteUserNotificationLoaded,
-    required TResult Function(DeleteUserNotificationLoading value)
-        deleteUserNotificationLoading,
-    required TResult Function(DeleteUserNotificationError value)
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult? Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult? Function(UserNotificationError value)? userNotificationError,
-    TResult? Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult? Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult? Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-  }) {
-    return deleteUserNotificationError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(UserNotificationLoading value)? userNotificationLoading,
-    TResult Function(UserNotificationLoaded value)? userNotificationLoaded,
-    TResult Function(UserNotificationError value)? userNotificationError,
-    TResult Function(DeleteUserNotificationLoaded value)?
-        deleteUserNotificationLoaded,
-    TResult Function(DeleteUserNotificationLoading value)?
-        deleteUserNotificationLoading,
-    TResult Function(DeleteUserNotificationError value)?
-        deleteUserNotificationError,
-    required TResult orElse(),
-  }) {
-    if (deleteUserNotificationError != null) {
-      return deleteUserNotificationError(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class DeleteUserNotificationError implements UserNotificationState {
-  const factory DeleteUserNotificationError(final ApiErrorModel apiErrorModel) =
-      _$DeleteUserNotificationErrorImpl;
-
-  ApiErrorModel get apiErrorModel;
-  @JsonKey(ignore: true)
-  _$$DeleteUserNotificationErrorImplCopyWith<_$DeleteUserNotificationErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

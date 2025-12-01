@@ -17,7 +17,7 @@ class GetAddressStoreLoadingWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(responsive.setBorderRadius(3)),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
+                color: Colors.grey.withValues(alpha: 0.1),
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: const Offset(0, 3),
@@ -41,7 +41,7 @@ class GetAddressStoreLoadingWidget extends StatelessWidget {
                 Switch.adaptive(
                   value: false,
                   onChanged: (val) {},
-                  activeColor: Colors.white,
+                  activeThumbColor: Colors.white,
                   activeTrackColor: Colors.green.shade400,
                   inactiveThumbColor: Colors.white,
                   inactiveTrackColor: Colors.grey.shade300,
