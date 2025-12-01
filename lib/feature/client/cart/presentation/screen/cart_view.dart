@@ -21,9 +21,10 @@ class CartView extends StatelessWidget {
               bottomNavigationBar: _orderSummary(context, state),
             ),
             LoadingOverlay(
-              isLoading: (state is DeleteCartItemLoading ||
+              isLoading:
+                  (state is DeleteCartItemLoading ||
                   state is DeleteCartLoading),
-            )
+            ),
           ],
         );
       },
@@ -38,7 +39,8 @@ class CartView extends StatelessWidget {
       title: Text(
         context.translate(AppStrings.myCart),
         style: Theme.of(context).textTheme.titleLarge!.copyWith(
-            fontSize: responsive.setTextSize(4)), // Responsive font size
+          fontSize: responsive.setTextSize(4),
+        ), // Responsive font size
       ),
       actions: [
         state is GetCartItemError ||
@@ -50,10 +52,7 @@ class CartView extends StatelessWidget {
                 onTap: () {
                   context.read<CartCubit>().removeCartLogic();
                 },
-                child: Icon(
-                  IconlyBold.delete,
-                  color: ColorManger.brunLight,
-                ),
+                child: Icon(IconlyBold.delete, color: ColorManger.brunLight),
               ),
         responsive.setSizeBox(width: 9),
       ],
@@ -95,9 +94,7 @@ class CartView extends StatelessWidget {
               orderprice: cart.cartData!.data!.shippingPrice!,
               orderText: context.translate(AppStrings.shippingPrice),
             ),
-            Divider(
-              color: ColorManger.brownLight,
-            ),
+            Divider(color: ColorManger.brownLight),
             responsive.setSizeBox(height: 1),
             RowTextOrderSummary(
               orderprice: cart.cartData!.data!.totalOrderPrice!,
@@ -112,34 +109,51 @@ class CartView extends StatelessWidget {
               },
               builder: (context, state) {
                 return CustomButton(
+                  // onPressed: () {
+                  //   if (AppInitialRoute.role == "admin") {
+                  //     context.pushNamed(Routes.shippingReviewScreen);
+                  //   } else {
+                  //     if (state is CreateNewAddressSuccess ||
+                  //         state is GetAllAddressSuccess ||
+                  //         state is RemoveAddressSuccess ||
+                  //         state is UpdateAddressSuccess) {
+                  //       if (context
+                  //           .read<UserAddressCubit>()
+                  //           .addressDataList
+                  //           .isNotEmpty) {
+                  //         context.pushNamed(Routes.shippingAddress);
+                  //       } else {
+                  //         context.pushNamed(Routes.map);
+
+                  //         context.read<UserAddressCubit>().isPaymentAddress =
+                  //             true;
+                  //       }
+                  //     }
+                  //   }
+                  // },
                   onPressed: () {
+                    final cubit = context.read<UserAddressCubit>();
+
                     if (AppInitialRoute.role == "admin") {
                       context.pushNamed(Routes.shippingReviewScreen);
-                    } else {
-                      if (state is CreateNewAddressSuccess ||
-                          state is GetAllAddressSuccess ||
-                          state is RemoveAddressSuccess ||
-                          state is UpdateAddressSuccess) {
-                        if (context
-                            .read<UserAddressCubit>()
-                            .addressDataList
-                            .isNotEmpty) {
-                          context.pushNamed(Routes.shippingAddress);
-                        } else {
-                          context.pushNamed(Routes.map);
+                      return;
+                    }
 
-                          context.read<UserAddressCubit>().isPaymentAddress =
-                              true;
-                        }
-                      }
+                    if (cubit.addressDataList.isNotEmpty) {
+                      context.pushNamed(Routes.shippingAddress);
+                    } else {
+                      cubit.isPaymentAddress = true;
+                      context.pushNamed(Routes.map);
                     }
                   },
+
                   widget: Text(
                     context.translate(AppStrings.checkOutOrder),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontSize: responsive.setTextSize(
-                              3.8), // Adjusted font size for responsiveness
-                        ),
+                      fontSize: responsive.setTextSize(
+                        3.8,
+                      ), // Adjusted font size for responsiveness
+                    ),
                   ),
                 );
               },
@@ -148,17 +162,13 @@ class CartView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.car_rental_outlined,
-                  color: ColorManger.brun,
-                ),
+                Icon(Icons.car_rental_outlined, color: ColorManger.brun),
                 responsive.setSizeBox(width: 2),
                 Text(
                   context.translate(AppStrings.orderWillBeDelivered),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
                 ),
               ],
             ),

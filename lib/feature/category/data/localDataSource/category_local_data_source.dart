@@ -5,8 +5,7 @@ import 'package:hive/hive.dart';
 class CategoryLocalDataSource {
   static const String _boxName = 'categoryBox';
 
-  static Future<void> saveCategoryData(
-     Map<String, dynamic> data) async {
+  static Future<void> saveCategoryData(Map<String, dynamic> data) async {
     final box = await Hive.openBox(_boxName);
 
     final encoded = jsonEncode({
@@ -14,11 +13,10 @@ class CategoryLocalDataSource {
       'timestamp': DateTime.now().millisecondsSinceEpoch,
     });
 
-    await box.put( 'category_cache',encoded);
+    await box.put('category_cache', encoded);
   }
 
-  static Future<Map<String, dynamic>?> getCachedCategoryData(
-      {int maxAgeMinutes = 10}) async {
+  static Future<Map<String, dynamic>?> getCachedCategoryData() async {
     final box = await Hive.openBox(_boxName);
     final cachedString = box.get('category_cache');
 
@@ -26,19 +24,43 @@ class CategoryLocalDataSource {
 
     final cached = jsonDecode(cachedString);
 
-    final timestamp = cached['timestamp'] as int;
-    final ageMinutes =
-        (DateTime.now().millisecondsSinceEpoch - timestamp) ~/ 60000;
-
-    if (ageMinutes > maxAgeMinutes) {
-      return null;
-    }
-
     return Map<String, dynamic>.from(cached['data']);
   }
 
   static Future<void> clearCategoryDataCache() async {
     final box = await Hive.openBox(_boxName);
     await box.clear();
+  }
+
+  static Future<bool> refreshAndCompare(Map<String, dynamic> newData) async {
+    final box = await Hive.openBox(_boxName);
+    final cachedString = box.get('category_cache');
+
+    if (cachedString == null) {
+      await box.put(
+        'category_cache',
+        jsonEncode({
+          'data': newData,
+          'timestamp': DateTime.now().millisecondsSinceEpoch,
+        }),
+      );
+      return true;
+    }
+
+    final cached = jsonDecode(cachedString);
+    final oldData = Map<String, dynamic>.from(cached['data']);
+
+    if (jsonEncode(oldData) != jsonEncode(newData)) {
+      await box.put(
+        'category_cache',
+        jsonEncode({
+          'data': newData,
+          'timestamp': DateTime.now().millisecondsSinceEpoch,
+        }),
+      );
+      return true;
+    }
+
+    return false;
   }
 }

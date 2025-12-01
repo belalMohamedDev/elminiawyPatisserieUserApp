@@ -1,14 +1,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- 🔔 Permissions المطلوبة -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+   
+
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:label="elminiawy"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        
+        <service
+            android:name="com.baseflow.geolocator.GeolocatorForegroundService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:foregroundServiceType="location" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="high_importance_channel" />
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAg-iUFQwnFK1VAvwo9VaOd18MW-xqLtoc"/>
 
         <activity
             android:name=".MainActivity"
@@ -31,13 +50,13 @@
             </intent-filter>
         </activity>
 
-        <!-- Flutter Plugin Required -->
+  
         <meta-data
             android:name="flutterEmbedding"
             android:value="2"
         />
 
-        <!-- 📅 REQUIRED لإعادة جدولة الإشعارات بعد الـ Restart -->
+       
         <receiver
             android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
             android:exported="false" />
@@ -55,7 +74,7 @@
 
     </application>
 
-    <!-- Needed by some Flutter plugins -->
+
     <queries>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT" />
