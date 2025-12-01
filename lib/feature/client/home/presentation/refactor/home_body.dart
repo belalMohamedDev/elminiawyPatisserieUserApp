@@ -1,18 +1,12 @@
-import '../../../../../core/common/shared/shared_imports.dart'; // Shared imports for project utilities
+import '../../../../../core/common/shared/shared_imports.dart';
 import 'package:badges/badges.dart' as badges;
 
-/// `HomeBody` is a `StatelessWidget` that provides the main content of the home screen.
-/// It includes location details, a notification icon with a badge for unread notifications,
-/// a search bar, and product display sections.
-
 class HomeBody extends StatelessWidget {
-  // The notification service to handle receiving and displaying notifications
   final NotificationService notificationService;
   const HomeBody({super.key, required this.notificationService});
 
   @override
   Widget build(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
     return Padding(
@@ -22,16 +16,15 @@ class HomeBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Display the location and notification row at the top
               _welcomAndNotificationRow(context),
 
-              responsive.setSizeBox(height: 2), // Adds vertical space
-              const SearchRow(), // Search bar row
-              responsive.setSizeBox(height: 3), // Adds vertical space
-              const BannerCarouselSlider(), // Image carousel for banners
-              responsive.setSizeBox(height: 3), // Adds vertical space
-              const CategoryListViewBuilder(), // Horizontal list view for categories
-              const NewProductGrideView(), // Grid view for displaying new products
+              responsive.setSizeBox(height: 2),
+              const SearchRow(),
+              responsive.setSizeBox(height: 3),
+              const BannerCarouselSlider(),
+              responsive.setSizeBox(height: 3),
+              const CategoryListViewBuilder(),
+              const NewProductGrideView(),
             ],
           ),
         ),
@@ -39,10 +32,7 @@ class HomeBody extends StatelessWidget {
     );
   }
 
-  /// Widget that displays the location label and the notification icon.
-  /// The notification icon shows a badge if there are unread notifications.
   Row _welcomAndNotificationRow(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments
     final responsive = ResponsiveUtils(context);
 
     return Row(
@@ -79,8 +69,8 @@ class HomeBody extends StatelessWidget {
             ),
           ],
         ),
-        const Spacer(), 
-    
+        const Spacer(),
+
         GestureDetector(
           onTap: () {
             if (AppInitialRoute.isAnonymousUser) {
@@ -121,10 +111,9 @@ class HomeBody extends StatelessWidget {
         ),
         responsive.setSizeBox(width: 1),
         StreamBuilder<UserNotificationResponse>(
-          stream: notificationService.notificationStream, // Notification stream
+          stream: notificationService.notificationStream,
           builder: (context, snapshot) {
             if (!snapshot.hasData || snapshot.data == null) {
-              // If no notifications, show a plain notification icon
               return IconButton(
                 onPressed: () {
                   if (AppInitialRoute.isAnonymousUser) {
@@ -153,16 +142,12 @@ class HomeBody extends StatelessWidget {
               );
             }
 
-            // Calculate the number of unread notifications
             final numberOfNotification = snapshot.data!.data!
                 .where((element) => element.isSeen == false)
                 .length;
 
-            // Display a badge with the count of unread notifications
             return badges.Badge(
-              showBadge:
-                  numberOfNotification !=
-                  0, // Show badge if there are unread notifications
+              showBadge: numberOfNotification != 0,
               badgeAnimation: const badges.BadgeAnimation.scale(),
               position: badges.BadgePosition.topEnd(
                 end: numberOfNotification >= 9 ? 8.w : 10.w,
@@ -173,7 +158,6 @@ class HomeBody extends StatelessWidget {
                   numberOfNotification >= 9 ? 4.h : 5.5.h,
                 ),
               ),
-              // Show "+9" if more than 9 unread notifications, else show the count
               badgeContent: Text(
                 numberOfNotification >= 9 ? '+9' : '$numberOfNotification',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -182,12 +166,9 @@ class HomeBody extends StatelessWidget {
                   fontSize: numberOfNotification >= 9 ? 8.sp : 10.sp,
                 ),
               ),
-              // Notification icon button
               child: IconButton(
                 onPressed: () {
-                  context.pushNamed(
-                    Routes.notification,
-                  ); // Navigate to notification screen
+                  context.pushNamed(Routes.notification);
                 },
                 icon: Container(
                   height: responsive.setHeight(4.5),

@@ -1,9 +1,4 @@
-import '../../../../../core/common/shared/shared_imports.dart'; // Shared imports for project utilities
-
-/// `HomeScreen` is a `StatefulWidget` that manages the display of the home screen
-/// and handles notification services. It integrates Firebase Cloud Messaging
-/// for receiving notifications and interacts with the `MapCubit` for setting
-/// the user's location to "Home".
+import '../../../../../core/common/shared/shared_imports.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,51 +7,37 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-/// The state class `_HomeScreenState` manages the notification service,
-/// initializes it during the lifecycle, and handles the screen's main UI.
 class _HomeScreenState extends State<HomeScreen> {
-  // NotificationService instance to handle notifications throughout the app
   late final NotificationService _notificationService;
 
   @override
   void initState() {
     super.initState();
 
-    // Initialize the NotificationService with a repository and notification callback
     _notificationService = NotificationService(
-      instance<
-          UserNotificationRepositoryImplement>(), // Inject the user notification repository
+      instance<UserNotificationRepositoryImplement>(),
     );
 
-    // Delay the execution until after the first frame is rendered
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       context.read<LogOutCubit>().getUserName();
 
-      // If the username is present, start listening and fetching notifications
       if (!AppInitialRoute.isAnonymousUser) {
-        _notificationService
-            .fetchNotificationsContinuously(); // Continuously fetch notifications
+        _notificationService.fetchNotificationsContinuously();
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // The Scaffold represents the main structure of the home screen
     return Scaffold(
-      // Pass the notification service to the body of the home screen
       body: SafeArea(
-        child: HomeBody(
-          notificationService:
-              _notificationService, // Inject the notification service into the body
-        ),
+        child: HomeBody(notificationService: _notificationService),
       ),
     );
   }
 
   @override
   void dispose() {
-    // Stop fetching notifications when the widget is disposed (e.g., user navigates away)
     _notificationService.stopFetchingNotifications();
     super.dispose();
   }

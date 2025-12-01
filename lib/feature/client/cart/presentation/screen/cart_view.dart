@@ -5,7 +5,6 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         if (state is GetCartItemError) {
@@ -32,7 +31,6 @@ class CartView extends StatelessWidget {
   }
 
   AppBar _cartViewAppBar(BuildContext context, CartState state) {
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
     return AppBar(
       centerTitle: true,
@@ -62,7 +60,6 @@ class CartView extends StatelessWidget {
   Widget _orderSummary(BuildContext context, CartState state) {
     final cart = context.read<CartCubit>();
 
-    // Initialize the ResponsiveUtils to handle responsive layout adjustments.
     final responsive = ResponsiveUtils(context);
 
     if (state is GetCartItemError ||
@@ -152,7 +149,7 @@ class CartView extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontSize: responsive.setTextSize(
                         3.8,
-                      ), // Adjusted font size for responsiveness
+                      ), 
                     ),
                   ),
                 );

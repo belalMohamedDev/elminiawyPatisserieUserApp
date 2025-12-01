@@ -16,17 +16,17 @@ class BannerCarouselSlider extends StatelessWidget {
           context.read<BannerCubit>().getBanners(endDate: "true");
         }
       },
-      // Define when the widget should rebuild (only for loading, success, and error states)
+      
       buildWhen: (previous, current) =>
           current is GetBannersLoading ||
           current is GetBannersSuccess ||
           current is GetBannersError,
       builder: (context, state) {
         if (state is GetBannersSuccess) {
-          // If the banners are successfully fetched, display the carousel slider
+     
           return _bannersSuccessState(state, context, responsive);
         }
-        // If the state is loading or error, display a loading shimmer effect
+    
         return Center(
           child: LoadingShimmer(
             height: responsive.setHeight(15),
@@ -38,46 +38,45 @@ class BannerCarouselSlider extends StatelessWidget {
     );
   }
 
-  /// Builds the carousel slider using the banner data.
-  /// The banners are displayed with infinite scrolling and auto-play features.
+
   CarouselSlider _bannersSuccessState(GetBannersSuccess state,
       BuildContext context, ResponsiveUtils responsive) {
     return CarouselSlider(
       options: CarouselOptions(
  
-        height: responsive.setHeight(15), // Set the height for each banner
-        enableInfiniteScroll: true, // Enable infinite scrolling of banners
-        autoPlay: true, // Automatically play banners
-        viewportFraction: 1.1, // Set the viewport fraction for visible slides
-        autoPlayInterval: const Duration(seconds: 3), // Time between auto-plays
+        height: responsive.setHeight(15), 
+        enableInfiniteScroll: true, 
+        autoPlay: true,
+        viewportFraction: 1.1, 
+        autoPlayInterval: const Duration(seconds: 3), 
         autoPlayAnimationDuration:
-            const Duration(seconds: 1), // Auto-play animation duration
-        autoPlayCurve: Curves.easeInOutCubic, // Animation curve for auto-play
-        scrollDirection: Axis.horizontal, // Horizontal scrolling for banners
+            const Duration(seconds: 1), 
+        autoPlayCurve: Curves.easeInOutCubic,
+        scrollDirection: Axis.horizontal, 
       ),
       items: state.data
           .map((banner) => ClipRRect(
                 borderRadius: BorderRadius.circular(responsive
-                    .setBorderRadius(2)), // Set rounded corners for the banners
+                    .setBorderRadius(2)), 
                 child: CachedNetworkImage(
                   
                   imageUrl:
-                      banner.image!, // Load the banner image from the network
-                  width: responsive.setWidth(89), // Set banner width
-                  fit: BoxFit.fill, // Fit the image to fill the container
+                      banner.image!, 
+                  width: responsive.setWidth(89),
+                  fit: BoxFit.fill, 
                   placeholder: (context, url) => LoadingShimmer(
                     height: responsive
-                        .setHeight(15), // Placeholder height while loading
+                        .setHeight(15),
                     width: responsive
-                        .setWidth(89), // Placeholder width while loading
+                        .setWidth(89), 
                     borderRadius: responsive
-                        .setBorderRadius(2), // Placeholder border radius
+                        .setBorderRadius(2),
                   ),
                   errorWidget: (context, url, error) => const Icon(Icons
-                      .error), // Display an error icon if image fails to load
+                      .error), 
                 ),
               ))
-          .toList(), // Convert the banner data to a list of widgets
+          .toList(), 
     );
   }
 }
