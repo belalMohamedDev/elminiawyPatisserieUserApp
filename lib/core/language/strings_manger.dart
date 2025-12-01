@@ -347,4 +347,6 @@ class AppStrings {
   static const String shipping = "Shipping";
   static const String payment = "Payment";
   static const String review = "Review";
+  static const String hello = "Hello";
+  static const String welcometoPatisserieApp = "WelcometoPatisserieApp";
 }

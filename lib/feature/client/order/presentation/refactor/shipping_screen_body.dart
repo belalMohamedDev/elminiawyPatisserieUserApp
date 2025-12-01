@@ -176,7 +176,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
               );
             },
           ),
-          //    const Spacer(),
+
           CustomButton(
             onPressed: () {
               context.pushNamed(Routes.shippingPayment);

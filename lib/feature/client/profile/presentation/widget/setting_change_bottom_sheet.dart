@@ -1,4 +1,3 @@
-
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -6,73 +5,76 @@ Future<dynamic> settingChangeBottomSheet(BuildContext context) {
   final cubit = context.read<AppLogicCubit>();
 
   return showCupertinoModalBottomSheet(
-      useRootNavigator: true,
-      barrierColor: Colors.black54,
-      elevation: 20.r,
-      context: context,
-      builder: (context) => SizedBox(
-            height: 320.h,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 35.h),
-              child: Material(
-                color: ColorManger.white,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ValueListenableBuilder(
-                          valueListenable:
-                              FirebaseCloudMessaging().isNotificationSubscribe,
-                          builder: (_, value, _) {
-                            return CustomProfileCard(
-                              title: context.translate(AppStrings.notification),
-                              actionWidget: Transform.scale(
-                                scale: 0.75,
-                                child: CupertinoSwitch(
-                                  value: value,
-                                  activeTrackColor: ColorManger.brun,
-                                  inactiveTrackColor: ColorManger.brunLight,
-                                  onChanged: (value) async {
-                                    await FirebaseCloudMessaging()
-                                        .toggleNotificationSubscription();
-                                  },
-                                ),
-                              ),
-                              leadingIcon: IconlyBold.notification,
-                              tap: () async {
-                                await FirebaseCloudMessaging()
-                                    .toggleNotificationSubscription();
-                              },
-                            );
-                          }),
-                      CustomProfileCard(
-                        title: context.translate(AppStrings.language),
-                        subTitle: context.translate(AppStrings.english),
-                        leadingIcon: Icons.language,
-                        tap: () {
-                          if (AppLocalizations.of(context)!.isEnLocale) {
-                            cubit.toArabic();
-                          } else {
-                            cubit.toEnglish();
-                          }
-                        },
-                      ),
-                      CustomProfileCard(
-                        title: context.translate(AppStrings.darkMode),
-                        leadingIcon: Icons.light_mode,
-                        tap: () {},
-                        actionWidget: Transform.scale(
-                          scale: 0.75,
-                          child: CupertinoSwitch(
-                            value: false,
-                            activeTrackColor: ColorManger.brun,
-                            onChanged: (value) {},
-                          ),
+    useRootNavigator: true,
+    barrierColor: Colors.black54,
+    backgroundColor: Colors.white,
+    elevation: 20.r,
+    context: context,
+    builder: (context) => SizedBox(
+      height: 320.h,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 35.h),
+        child: Material(
+          color: ColorManger.white,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                ValueListenableBuilder(
+                  valueListenable:
+                      FirebaseCloudMessaging().isNotificationSubscribe,
+                  builder: (_, value, _) {
+                    return CustomProfileCard(
+                      title: context.translate(AppStrings.notification),
+                      actionWidget: Transform.scale(
+                        scale: 0.75,
+                        child: CupertinoSwitch(
+                          value: value,
+                          activeTrackColor: ColorManger.brun,
+                          inactiveTrackColor: ColorManger.brunLight,
+                          onChanged: (value) async {
+                            await FirebaseCloudMessaging()
+                                .toggleNotificationSubscription();
+                          },
                         ),
                       ),
-                    ],
+                      leadingIcon: IconlyBold.notification,
+                      tap: () async {
+                        await FirebaseCloudMessaging()
+                            .toggleNotificationSubscription();
+                      },
+                    );
+                  },
+                ),
+                CustomProfileCard(
+                  title: context.translate(AppStrings.language),
+                  subTitle: context.translate(AppStrings.english),
+                  leadingIcon: Icons.language,
+                  tap: () {
+                    if (AppLocalizations.of(context)!.isEnLocale) {
+                      cubit.toArabic();
+                    } else {
+                      cubit.toEnglish();
+                    }
+                  },
+                ),
+                CustomProfileCard(
+                  title: context.translate(AppStrings.darkMode),
+                  leadingIcon: Icons.light_mode,
+                  tap: () {},
+                  actionWidget: Transform.scale(
+                    scale: 0.75,
+                    child: CupertinoSwitch(
+                      value: false,
+                      activeTrackColor: ColorManger.brun,
+                      onChanged: (value) {},
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ));
+          ),
+        ),
+      ),
+    ),
+  );
 }

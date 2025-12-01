@@ -319,6 +319,7 @@ class ProductGridViewSuccessState extends StatelessWidget {
     ResponsiveUtils responsive,
   ) {
     showCupertinoModalBottomSheet(
+      backgroundColor: ColorManger.white,
       useRootNavigator: true,
       barrierColor: Colors.black54,
       elevation: responsive.setBorderRadius(2),

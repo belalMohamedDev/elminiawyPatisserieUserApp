@@ -8,10 +8,7 @@ import 'package:badges/badges.dart' as badges;
 class HomeBody extends StatelessWidget {
   // The notification service to handle receiving and displaying notifications
   final NotificationService notificationService;
-  const HomeBody({
-    super.key,
-    required this.notificationService,
-  });
+  const HomeBody({super.key, required this.notificationService});
 
   @override
   Widget build(BuildContext context) {
@@ -58,32 +55,32 @@ class HomeBody extends StatelessWidget {
               builder: (context, state) {
                 final userName = context.read<LogOutCubit>().initialUserName;
                 final firstWord = userName.split(' ').first;
-                final formattedName = firstWord[0].toUpperCase() +
+                final formattedName =
+                    firstWord[0].toUpperCase() +
                     firstWord.substring(1).toLowerCase();
 
                 return Text(
-                  context.translate("Hello, $formattedName 👋"),
+                  "${context.translate(AppStrings.hello)},  $formattedName 👋",
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        fontSize: responsive.setTextSize(4),
-                      ),
+                    fontSize: responsive.setTextSize(4),
+                  ),
                 );
               },
             ),
-            responsive.setSizeBox(height: 0.5),
+            responsive.setSizeBox(height: 0.9),
             Text(
-              "Welcome to Patisserie App 🍰", // Display address
+              "${context.translate(AppStrings.welcometoPatisserieApp)} 🍰",
               maxLines: 1,
               textAlign: TextAlign.start,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    fontSize: responsive.setTextSize(3.5),
-                  ),
-            )
+                fontSize: responsive.setTextSize(3.5),
+              ),
+            ),
           ],
         ),
-        const Spacer(), // Spacer to push the notification icon to the right
-        // ValueListenableBuilder to listen for notification updates
-
+        const Spacer(), 
+    
         GestureDetector(
           onTap: () {
             if (AppInitialRoute.isAnonymousUser) {
@@ -95,37 +92,30 @@ class HomeBody extends StatelessWidget {
           child: badges.Badge(
             showBadge: false,
             badgeAnimation: const badges.BadgeAnimation.scale(
-                loopAnimation: true,
-                curve: Curves.slowMiddle,
-                animationDuration: Duration(milliseconds: 2000)),
-            position: badges.BadgePosition.topEnd(
-              end: 26.w,
-              top: -2.h,
+              loopAnimation: true,
+              curve: Curves.slowMiddle,
+              animationDuration: Duration(milliseconds: 2000),
             ),
-            badgeStyle: badges.BadgeStyle(
-              padding: EdgeInsets.all(
-                3.h,
-              ),
-            ),
+            position: badges.BadgePosition.topEnd(end: 26.w, top: -2.h),
+            badgeStyle: badges.BadgeStyle(padding: EdgeInsets.all(3.h)),
             badgeContent: Text(
               '+9',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: FontConsistent.fontFamilyAcme,
-                    color: ColorManger.white,
-                    fontSize: 10.sp,
-                  ),
+                fontFamily: FontConsistent.fontFamilyAcme,
+                color: ColorManger.white,
+                fontSize: 10.sp,
+              ),
             ),
             child: Container(
               height: responsive.setHeight(4.5),
               width: responsive.setWidth(9.8),
               decoration: BoxDecoration(
-                  color: ColorManger.brownLight,
-                  borderRadius:
-                      BorderRadius.circular(responsive.setBorderRadius(5))),
-              child: Icon(
-                IconlyBold.bag,
-                color: ColorManger.brun,
+                color: ColorManger.brownLight,
+                borderRadius: BorderRadius.circular(
+                  responsive.setBorderRadius(5),
+                ),
               ),
+              child: Icon(IconlyBold.bag, color: ColorManger.brun),
             ),
           ),
         ),
@@ -138,24 +128,27 @@ class HomeBody extends StatelessWidget {
               return IconButton(
                 onPressed: () {
                   if (AppInitialRoute.isAnonymousUser) {
-                    Navigator.of(context, rootNavigator: !false)
-                        .pushNamed(Routes.noRoute);
+                    Navigator.of(
+                      context,
+                      rootNavigator: !false,
+                    ).pushNamed(Routes.noRoute);
                   } else {
-                    Navigator.of(context, rootNavigator: !false)
-                        .pushNamed(Routes.notification);
+                    Navigator.of(
+                      context,
+                      rootNavigator: !false,
+                    ).pushNamed(Routes.notification);
                   }
                 },
                 icon: Container(
                   height: responsive.setHeight(4.5),
                   width: responsive.setWidth(9.8),
                   decoration: BoxDecoration(
-                      color: ColorManger.brownLight,
-                      borderRadius:
-                          BorderRadius.circular(responsive.setBorderRadius(5))),
-                  child: Icon(
-                    IconlyBold.notification,
-                    color: ColorManger.brun,
+                    color: ColorManger.brownLight,
+                    borderRadius: BorderRadius.circular(
+                      responsive.setBorderRadius(5),
+                    ),
                   ),
+                  child: Icon(IconlyBold.notification, color: ColorManger.brun),
                 ),
               );
             }
@@ -167,7 +160,8 @@ class HomeBody extends StatelessWidget {
 
             // Display a badge with the count of unread notifications
             return badges.Badge(
-              showBadge: numberOfNotification !=
+              showBadge:
+                  numberOfNotification !=
                   0, // Show badge if there are unread notifications
               badgeAnimation: const badges.BadgeAnimation.scale(),
               position: badges.BadgePosition.topEnd(
@@ -183,28 +177,28 @@ class HomeBody extends StatelessWidget {
               badgeContent: Text(
                 numberOfNotification >= 9 ? '+9' : '$numberOfNotification',
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontFamily: FontConsistent.fontFamilyAcme,
-                      color: ColorManger.white,
-                      fontSize: numberOfNotification >= 9 ? 8.sp : 10.sp,
-                    ),
+                  fontFamily: FontConsistent.fontFamilyAcme,
+                  color: ColorManger.white,
+                  fontSize: numberOfNotification >= 9 ? 8.sp : 10.sp,
+                ),
               ),
               // Notification icon button
               child: IconButton(
                 onPressed: () {
                   context.pushNamed(
-                      Routes.notification); // Navigate to notification screen
+                    Routes.notification,
+                  ); // Navigate to notification screen
                 },
                 icon: Container(
                   height: responsive.setHeight(4.5),
                   width: responsive.setWidth(9.8),
                   decoration: BoxDecoration(
-                      color: ColorManger.brownLight,
-                      borderRadius:
-                          BorderRadius.circular(responsive.setBorderRadius(5))),
-                  child: Icon(
-                    IconlyBold.notification,
-                    color: ColorManger.brun,
+                    color: ColorManger.brownLight,
+                    borderRadius: BorderRadius.circular(
+                      responsive.setBorderRadius(5),
+                    ),
                   ),
+                  child: Icon(IconlyBold.notification, color: ColorManger.brun),
                 ),
               ),
             );

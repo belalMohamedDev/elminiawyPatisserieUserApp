@@ -281,5 +281,7 @@
   "Shipping": "Shipping",
   "Payment": "Payment",
   "Review": "Review",
-  "continueWithoutSigningUp": "Continue without signing up"
+  "continueWithoutSigningUp": "Continue without signing up",
+  "Hello": "Hello",
+  "WelcometoPatisserieApp": "Welcome to Patisserie App"
 }
