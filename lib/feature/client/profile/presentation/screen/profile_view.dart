@@ -8,9 +8,12 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
+  StreamSubscription? _localeListener;
+
   @override
   void initState() {
     super.initState();
+
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: ColorManger.brun,
@@ -21,26 +24,32 @@ class _ProfileViewState extends State<ProfileView> {
     if (context.read<LogOutCubit>().initialUserName != 'Guest User' &&
         AppInitialRoute.role != "admin") {
       WidgetsBinding.instance.addPostFrameCallback((_) async {
-        await Future.wait([
-          context.read<PaymentCubit>().getCompleteOrdersSummit(),
-          context.read<PaymentCubit>().getOrdersPendingSummit(),
-        ]);
+        if (!mounted) return;
 
-        context.read<AppLogicCubit>().stream.listen((locale) async {
-          await Future.wait([
-            context.read<PaymentCubit>().getCompleteOrdersSummit(),
-            context.read<PaymentCubit>().getOrdersPendingSummit(),
-          ]);
+        await _loadOrders();
+
+        _localeListener = context.read<AppLogicCubit>().stream.listen((
+          locale,
+        ) async {
+          if (!mounted) return;
+          await _loadOrders();
         });
       });
     }
   }
 
+  Future<void> _loadOrders() async {
+    await Future.wait([
+      context.read<PaymentCubit>().getCompleteOrdersSummit(),
+      context.read<PaymentCubit>().getOrdersPendingSummit(),
+    ]);
+
+    if (!mounted) return;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: ProfileBody(),
-    );
+    return const Scaffold(body: ProfileBody());
   }
 
   @override
@@ -51,6 +60,8 @@ class _ProfileViewState extends State<ProfileView> {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
+
+    _localeListener?.cancel();
 
     super.dispose();
   }
