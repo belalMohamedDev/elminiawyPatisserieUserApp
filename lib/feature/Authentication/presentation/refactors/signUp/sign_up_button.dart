@@ -13,14 +13,18 @@ class SignUpButton extends StatelessWidget {
         state.whenOrNull(
           // Show error message when state contains an error
           error: (apiErrorModel) => ShowToast.showToastErrorTop(
-              errorMessage: apiErrorModel.message!, context: context),
+            errorMessage: apiErrorModel.message!,
+            context: context,
+          ),
           // On successful registration, show success message and navigate to home
-          suceess: (authResponse) {
+          suceess: (authResponse) async {
             // Show a success toast when login is successful
             ShowToast.showToastSuccessTop(
-                message: authResponse.message!, context: context);
+              message: authResponse.message!,
+              context: context,
+            );
             // Navigate to the map screen after a successful login
-            AppLogin().storeAuthData(authResponse);
+            await AppLogin().storeAuthData(authResponse);
 
             if (authResponse.data!.role == "user") {
               // Ensure the context is still mounted before navigating
@@ -34,9 +38,11 @@ class SignUpButton extends StatelessWidget {
               }
             } else {
               ShowToast.showToastErrorTop(
-                  errorMessage: context
-                      .translate(AppStrings.thisAccountNotAccessInThisApp),
-                  context: context);
+                errorMessage: context.translate(
+                  AppStrings.thisAccountNotAccessInThisApp,
+                ),
+                context: context,
+              );
             }
           },
         );
@@ -47,12 +53,11 @@ class SignUpButton extends StatelessWidget {
           onPressed: context.read<SignUpBloc>().isButtonInVaildator
               ? () {
                   // Trigger user registration event when the button is pressed
-                  context
-                      .read<SignUpBloc>()
-                      .add(const UserRegisterButtonEvent());
+                  context.read<SignUpBloc>().add(
+                    const UserRegisterButtonEvent(),
+                  );
                 }
               : null, // Disable button if form is invalid
-
           // Change button appearance based on loading state
           widget: LoadingButtonContent(
             defaultText: AppStrings.signUp,

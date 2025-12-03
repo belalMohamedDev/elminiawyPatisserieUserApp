@@ -27,12 +27,12 @@ class SignInWithAppleFaceBookAndGoogleButton extends StatelessWidget {
                 ShowToast.showToastErrorTop(
                     errorMessage: apiErrorModel.message!, context: context);
               },
-              authenticationWithGoogleSuccess: (authResponse) {
+              authenticationWithGoogleSuccess: (authResponse)async {
                 // Show a success toast when login is successful
                 ShowToast.showToastSuccessTop(
                     message: authResponse.message!, context: context);
                 // Navigate to the map screen after a successful login
-                AppLogin().storeAuthData(authResponse);
+                await AppLogin().storeAuthData(authResponse);
 
                 if (authResponse.data!.role == "user") {
                   // Ensure the context is still mounted before navigating
