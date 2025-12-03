@@ -1,5 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/product/logic/cubit/adminProduct/admin_product_cubit.dart';
+import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
 import 'package:flutter/cupertino.dart';
 
 void showEditProductActionDialog(

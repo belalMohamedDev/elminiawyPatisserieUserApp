@@ -295,7 +295,7 @@ export 'package:elminiawy/feature/onBoarding/presentation/screen/on_boarding_vie
 export 'package:elminiawy/feature/onBoarding/presentation/widget/continue_without_signing_up.dart';
 export 'package:elminiawy/feature/onBoarding/presentation/widget/get_started_button.dart';
 export 'package:elminiawy/feature/onBoarding/presentation/widget/title_and_head_line_text.dart';
-export 'package:elminiawy/feature/product/logic/cubit/userProduct/product_cubit.dart';
+export 'package:elminiawy/feature/product/logic/userProduct/product_cubit.dart';
 export 'package:elminiawy/feature/product/model/repository/repositry.dart';
 export 'package:elminiawy/feature/product/model/response/product_response.dart';
 export 'package:elminiawy/feature/product/presenatation/screen/admin_product_screen.dart';

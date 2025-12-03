@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:elminiawy/feature/product/model/localDataSource/new_product_local_data_source.dart';
+
 import '../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class ProductRepository {
@@ -22,14 +24,15 @@ abstract class ProductRepository {
     String? subCategory,
   });
 
-  Future<ApiResult<ProductResponse>> createProductRepo(
-      {required String arTitle,
-      required String enTitle,
-      required String price,
-      required String arDescription,
-      required String enDescription,
-      required String subCategory,
-      required File image});
+  Future<ApiResult<ProductResponse>> createProductRepo({
+    required String arTitle,
+    required String enTitle,
+    required String price,
+    required String arDescription,
+    required String enDescription,
+    required String subCategory,
+    required File image,
+  });
 
   Future<ApiResult<ProductResponse>> updateProductImageRepo({
     required String id,
@@ -46,6 +49,8 @@ class ProductRepositoryImplement implements ProductRepository {
   ProductRepositoryImplement(this._apiService);
 
   final AppServiceClient _apiService;
+
+  void Function(ProductResponse)? onNewProductDataUpdated;
 
   @override
   Future<ApiResult<ProductResponse>> getNewProductRepo({
@@ -64,16 +69,46 @@ class ProductRepositoryImplement implements ProductRepository {
     };
 
     try {
+      final cachedData =
+          await NewProductLocalDataSource.getCachedNewProductData();
+
+      if (cachedData != null) {
+        final model = ProductResponse.fromJson(cachedData);
+
+        _refreshAndNotify(queryRequest);
+
+        return ApiResult.success(model);
+      }
+
       final response = await _apiService.getUserProductService(queryRequest);
+
+      await NewProductLocalDataSource.saveNewProductData(response.toJson());
+
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 
+  Future<void> _refreshAndNotify(Map<String, dynamic> queryRequest) async {
+    try {
+      final response = await _apiService.getUserProductService(queryRequest);
+
+      final isUpdated = await NewProductLocalDataSource.refreshAndCompare(
+        response.toJson(),
+      );
+
+      if (isUpdated) {
+        onNewProductDataUpdated?.call(response);
+      }
+    } catch (_) {}
+  }
+
   @override
   Future<ApiResult<ProductResponse>> getAllProductRepo(
-      int? limit, int? page) async {
+    int? limit,
+    int? page,
+  ) async {
     try {
       final response = await _apiService.getAllProductService(limit, page);
       return ApiResult.success(response);
@@ -83,17 +118,25 @@ class ProductRepositoryImplement implements ProductRepository {
   }
 
   @override
-  Future<ApiResult<ProductResponse>> createProductRepo(
-      {required String arTitle,
-      required String enTitle,
-      required String price,
-      required String arDescription,
-      required String enDescription,
-      required String subCategory,
-      required File image}) async {
+  Future<ApiResult<ProductResponse>> createProductRepo({
+    required String arTitle,
+    required String enTitle,
+    required String price,
+    required String arDescription,
+    required String enDescription,
+    required String subCategory,
+    required File image,
+  }) async {
     try {
-      final response = await _apiService.createProductService(arTitle, enTitle,
-          subCategory, enDescription, arDescription, price, image);
+      final response = await _apiService.createProductService(
+        arTitle,
+        enTitle,
+        subCategory,
+        enDescription,
+        arDescription,
+        price,
+        image,
+      );
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -101,15 +144,16 @@ class ProductRepositoryImplement implements ProductRepository {
   }
 
   @override
-  Future<ApiResult<ProductResponse>> updateProductRepo(
-      {bool? active,
-      required String id,
-      String? arTitle,
-      String? enTitle,
-      String? price,
-      String? arDescription,
-      String? enDescription,
-      String? subCategory}) async {
+  Future<ApiResult<ProductResponse>> updateProductRepo({
+    bool? active,
+    required String id,
+    String? arTitle,
+    String? enTitle,
+    String? price,
+    String? arDescription,
+    String? enDescription,
+    String? subCategory,
+  }) async {
     final Map<String, dynamic> requestBody = {
       if (price!.isNotEmpty) 'price': price,
       if (arDescription!.isNotEmpty && enDescription!.isNotEmpty)
@@ -129,8 +173,10 @@ class ProductRepositoryImplement implements ProductRepository {
   }
 
   @override
-  Future<ApiResult<ProductResponse>> updateProductImageRepo(
-      {required String id, required File image}) async {
+  Future<ApiResult<ProductResponse>> updateProductImageRepo({
+    required String id,
+    required File image,
+  }) async {
     try {
       final response = await _apiService.updateProductImageService(id, image);
       return ApiResult.success(response);
@@ -140,8 +186,9 @@ class ProductRepositoryImplement implements ProductRepository {
   }
 
   @override
-  Future<ApiResult<ApiSuccessGeneralModel>> deleteProductRepo(
-      {required String id}) async {
+  Future<ApiResult<ApiSuccessGeneralModel>> deleteProductRepo({
+    required String id,
+  }) async {
     try {
       final response = await _apiService.deleteProductService(id);
       return ApiResult.success(response);
