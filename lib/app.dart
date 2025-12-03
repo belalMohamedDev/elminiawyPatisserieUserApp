@@ -91,12 +91,11 @@ class _MyAppState extends State<MyApp> {
   Future<void> _initializeDependencies() async {
     if (_isDependenciesLoaded) return;
 
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
+    // await Firebase.initializeApp(
+    //   options: DefaultFirebaseOptions.currentPlatform,
+    // );
 
-    await FirebaseCloudMessaging().init();
-    await LocalNotificationService.init();
+   
 
     setState(() {
       _isDependenciesLoaded = true;

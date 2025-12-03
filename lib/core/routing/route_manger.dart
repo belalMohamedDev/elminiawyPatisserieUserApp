@@ -14,95 +14,100 @@ import '../../feature/admin/home/presentation/screen/pending_orders.dart';
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
+
+      // ---------------------- AUTH -----------------------
       case Routes.loginRoute:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(
-                create: (context) => instance<LoginBloc>(),
-              ),
-              BlocProvider(
-                  create: (context) =>
-                      instance<AuthenticationWithGoogleAndAppleCubit>()),
+              BlocProvider(create: (context) => instance<LoginBloc>()),
+              BlocProvider(create: (context) => instance<AuthenticationWithGoogleAndAppleCubit>()),
             ],
             child: const LoginView(),
           ),
         );
-      case Routes.onBoardingRoute:
-        return MaterialPageRoute(
-          builder: (_) => const OnBoardingView(),
-        );
 
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(builder: (_) => const OnBoardingView());
+
+
+      // ---------------------- ADMIN CATEGORY -----------------------
       case Routes.adminCategory:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<CategoryCubit>(),
+          builder: (_) => BlocProvider.value(
+            value: instance<CategoryCubit>(),
             child: const CategoryView(),
           ),
         );
 
+
+      // ---------------------- ADMINS -----------------------
       case Routes.admin:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<AdminsCubit>(),
+            create: (_) => instance<AdminsCubit>(),
             child: const AdminsScreen(),
           ),
         );
 
+
+      // ---------------------- PROFILE -----------------------
       case Routes.profileScreen:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(
-                create: (context) => instance<LogOutCubit>(),
-              ),
-              BlocProvider(
-                create: (context) =>
-                    instance<AuthenticationWithGoogleAndAppleCubit>(),
-              ),
+              BlocProvider(create: (_) => instance<LogOutCubit>()),
+              BlocProvider(create: (_) => instance<AuthenticationWithGoogleAndAppleCubit>()),
             ],
             child: const ProfileView(),
           ),
         );
 
+
+      // ---------------------- DRIVERS -----------------------
       case Routes.adminDrivers:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<DriverCubit>(),
+            create: (_) => instance<DriverCubit>(),
             child: const AdminDriversScreen(),
           ),
         );
+
+
+      // ---------------------- ADMIN PRODUCT -----------------------
       case Routes.adminProduct:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(
-                create: (context) => instance<AdminProductCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<SubCategoriesCubit>(),
-              ),
+              BlocProvider(create: (_) => instance<AdminProductCubit>()),
+              BlocProvider(create: (_) => instance<SubCategoriesCubit>()),
             ],
             child: const AdminProductScreen(),
           ),
         );
 
+
+      // ---------------------- STORE ADDRESS -----------------------
       case Routes.storeAddress:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<StoreAddressCubit>(),
+            create: (_) => instance<StoreAddressCubit>(),
             child: const StoreAddressScreen(),
           ),
         );
 
+
+      // ---------------------- REGISTER -----------------------
       case Routes.registerRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<SignUpBloc>(),
+            create: (_) => instance<SignUpBloc>(),
             child: const SignUpView(),
           ),
         );
 
+
+      // ---------------------- FORGET PASSWORD -----------------------
       case Routes.forgetPasswordRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -127,6 +132,8 @@ class RouteGenerator {
           ),
         );
 
+
+      // ---------------------- ADDRESS -----------------------
       case Routes.address:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -139,15 +146,9 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider.value(
-                value: instance<UserAddressCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<PaymentCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<MapCubit>(),
-              ),
+              BlocProvider.value(value: instance<UserAddressCubit>()),
+              BlocProvider.value(value: instance<PaymentCubit>()),
+              BlocProvider.value(value: instance<MapCubit>()),
             ],
             child: const AddNewAddressScreen(),
           ),
@@ -161,61 +162,52 @@ class RouteGenerator {
           ),
         );
 
+
+      // ---------------------- ADMIN MENU -----------------------
       case Routes.adminMenue:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(
-                create: (context) => instance<AdminHomeCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<CartCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<CategoryCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<LogOutCubit>(),
-              ),
+              BlocProvider(create: (_) => instance<AdminHomeCubit>()),
+              BlocProvider.value(value: instance<CartCubit>()),
+              BlocProvider.value(value: instance<CategoryCubit>()),   // FIXED
+              BlocProvider(create: (_) => instance<LogOutCubit>()),
             ],
             child: const DrawerStackView(),
           ),
         );
 
+
+      // ---------------------- ADMIN BANNER -----------------------
       case Routes.adminBanner:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<BannerCubit>(),
+            create: (_) => instance<BannerCubit>(),
             child: const BannerScreen(),
           ),
         );
 
+
+      // ---------------------- ADMIN SUBCATEGORY -----------------------
       case Routes.adminSubCategory:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(
-                create: (context) => instance<SubCategoriesCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<CategoryCubit>(),
-              ),
+              BlocProvider(create: (_) => instance<SubCategoriesCubit>()),
+              BlocProvider.value(value: instance<CategoryCubit>()),   // FIXED
             ],
             child: const AdminSubCategoryScreen(),
           ),
         );
 
+
+      // ---------------------- ACCOUNT INFO -----------------------
       case Routes.accountInfomation:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(
-                create: (context) => instance<AccountInformationCubit>(),
-              ),
-              BlocProvider(
-                create: (context) =>
-                    instance<AuthenticationWithGoogleAndAppleCubit>(),
-              ),
+              BlocProvider(create: (_) => instance<AccountInformationCubit>()),
+              BlocProvider(create: (_) => instance<AuthenticationWithGoogleAndAppleCubit>()),
             ],
             child: const AccountInfomation(),
           ),
@@ -224,124 +216,96 @@ class RouteGenerator {
       case Routes.changeMyEmail:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<ChangeEmailAddressCubit>(),
+            create: (_) => instance<ChangeEmailAddressCubit>(),
             child: const ChangeEmailScreen(),
           ),
         );
+
       case Routes.changeMyPassword:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<ChangeMyPasswordCubit>(),
+            create: (_) => instance<ChangeMyPasswordCubit>(),
             child: const ChangePasswordScreen(),
           ),
         );
 
+
+      // ---------------------- USER BOTTOM NAV -----------------------
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider.value(
-                value: instance<UserAddressCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<LogOutCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<BannerCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => instance<CategoryCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<MapCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<CartCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<ProductCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<WishListCubit>(),
-              ),
+              BlocProvider.value(value: instance<UserAddressCubit>()),
+              BlocProvider.value(value: instance<LogOutCubit>()),
+              BlocProvider(create: (_) => instance<BannerCubit>()),
+              BlocProvider.value(value: instance<CategoryCubit>()),     // FIXED
+              BlocProvider.value(value: instance<MapCubit>()),
+              BlocProvider.value(value: instance<CartCubit>()),
+              BlocProvider.value(value: instance<ProductCubit>()),
+              BlocProvider.value(value: instance<WishListCubit>()),
             ],
             child: const BottomNavBar(),
           ),
         );
 
+
+      // ---------------------- NEW PRODUCT -----------------------
       case Routes.newProduct:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider.value(
-                value: instance<CartCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<ProductCubit>(),
-              ),
-              BlocProvider.value(
-                value: instance<WishListCubit>(),
-              ),
+              BlocProvider.value(value: instance<CartCubit>()),
+              BlocProvider.value(value: instance<ProductCubit>()),
+              BlocProvider.value(value: instance<WishListCubit>()),
             ],
             child: const NewProductView(),
           ),
         );
 
+
+      // ---------------------- NOTIFICATION -----------------------
       case Routes.notification:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<UserNotificationCubit>(),
+            create: (_) => instance<UserNotificationCubit>(),
             child: const UserNotificationScreen(),
           ),
         );
 
+
+      // ---------------------- ORDERS -----------------------
       case Routes.newOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AdminHomeCubit>(),
-            child: const NewOrders(),
-          ),
+          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const NewOrders()),
         );
 
       case Routes.completeOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AdminHomeCubit>(),
-            child: const CompleteOrdersView(),
-          ),
+          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const CompleteOrdersView()),
         );
 
       case Routes.cancelledOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AdminHomeCubit>(),
-            child: const CancelledOrders(),
-          ),
+          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const CancelledOrders()),
         );
 
       case Routes.deliveredOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AdminHomeCubit>(),
-            child: const DeliverdOrders(),
-          ),
+          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const DeliverdOrders()),
         );
 
       case Routes.pendingDrivers:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AdminHomeCubit>(),
-            child: const PendingDriver(),
-          ),
-        );
-      case Routes.pendingOrders:
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => instance<AdminHomeCubit>(),
-            child: const PendingOrders(),
-          ),
+          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const PendingDriver()),
         );
 
+      case Routes.pendingOrders:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const PendingOrders()),
+        );
+
+
+      // ---------------------- ORDER PLACED / DETAILS -----------------------
       case Routes.orderPlaced:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -349,6 +313,7 @@ class RouteGenerator {
             child: const OrderPlaced(),
           ),
         );
+
       case Routes.orderDetails:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -359,104 +324,92 @@ class RouteGenerator {
 
       case Routes.myOrder:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider.value(
-                  value: instance<PaymentCubit>(),
-                  child: const MyOrdersScreen(),
-                ));
+          builder: (_) => BlocProvider.value(
+            value: instance<PaymentCubit>(),
+            child: const MyOrdersScreen(),
+          ),
+        );
 
       case Routes.wishList:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(
-                  providers: [
-                    BlocProvider.value(
-                      value: instance<CartCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<ProductCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<WishListCubit>(),
-                    ),
-                  ],
-                  child: const WishListView(),
-                ));
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<CartCubit>()),
+              BlocProvider.value(value: instance<ProductCubit>()),
+              BlocProvider.value(value: instance<WishListCubit>()),
+            ],
+            child: const WishListView(),
+          ),
+        );
 
       case Routes.cart:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(
-                  providers: [
-                    BlocProvider.value(
-                      value: instance<UserAddressCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<CartCubit>(),
-                    ),
-                  ],
-                  child: const CartView(),
-                ));
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<UserAddressCubit>()),
+              BlocProvider.value(value: instance<CartCubit>()),
+            ],
+            child: const CartView(),
+          ),
+        );
 
+
+      // ---------------------- SEARCH -----------------------
       case Routes.search:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider.value(
-                  value: instance<SearchBloc>(),
-                  child: const SearchView(),
-                ));
+          builder: (_) => BlocProvider.value(
+            value: instance<SearchBloc>(),
+            child: const SearchView(),
+          ),
+        );
 
-      case Routes.noRoute:
-        return MaterialPageRoute(builder: (_) => const RouteStatesScreen());
 
+      // ---------------------- SHIPPING -----------------------
       case Routes.shippingAddress:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(
-                  providers: [
-                    BlocProvider.value(
-                      value: instance<MapCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<PaymentCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<UserAddressCubit>(),
-                    ),
-                  ],
-                  child: const ShippingAddress(),
-                ));
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<MapCubit>()),
+              BlocProvider.value(value: instance<PaymentCubit>()),
+              BlocProvider.value(value: instance<UserAddressCubit>()),
+            ],
+            child: const ShippingAddress(),
+          ),
+        );
 
       case Routes.shippingPayment:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(
-                  providers: [
-                    BlocProvider.value(
-                      value: instance<PaymentCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<CartCubit>(),
-                    ),
-                  ],
-                  child: const PaymentScreen(),
-                ));
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<PaymentCubit>()),
+              BlocProvider.value(value: instance<CartCubit>()),
+            ],
+            child: const PaymentScreen(),
+          ),
+        );
 
       case Routes.shippingReviewScreen:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(
-                  providers: [
-                    BlocProvider.value(
-                      value: instance<PaymentCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<CartCubit>(),
-                    ),
-                    BlocProvider.value(
-                      value: instance<UserAddressCubit>(),
-                    ),
-                  ],
-                  child: const ReviewPaymentScreen(),
-                ));
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<PaymentCubit>()),
+              BlocProvider.value(value: instance<CartCubit>()),
+              BlocProvider.value(value: instance<UserAddressCubit>()),
+            ],
+            child: const ReviewPaymentScreen(),
+          ),
+        );
+
+
+      // ---------------------- DEFAULT -----------------------
+      case Routes.noRoute:
+        return MaterialPageRoute(builder: (_) => const RouteStatesScreen());
 
       default:
         return unDefinedRoute();
     }
   }
+
 
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
@@ -464,12 +417,8 @@ class RouteGenerator {
         appBar: AppBar(
           title: Text(context.translate(AppStrings.noRouteFound)),
         ),
-        body: SizedBox(
-          height: double.infinity,
-          width: double.infinity,
-          child: Center(
-            child: Text(context.translate(AppStrings.noRouteFound)),
-          ),
+        body: Center(
+          child: Text(context.translate(AppStrings.noRouteFound)),
         ),
       ),
     );

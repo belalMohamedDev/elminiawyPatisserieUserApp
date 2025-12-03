@@ -8,15 +8,29 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  @override
+    StreamSubscription? _localeSubscription;
+
+   @override
   void initState() {
     super.initState();
 
-    _loadInitialData();
-
-    context.read<AppLogicCubit>().stream.listen((locale) {
-      _reloadLocalizedData();
+   
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _loadInitialData();
     });
+
+
+    _localeSubscription = context.read<AppLogicCubit>().stream.listen((locale) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _reloadLocalizedData();
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _localeSubscription?.cancel();
+    super.dispose();
   }
 
   Future<void> _loadInitialData() async {

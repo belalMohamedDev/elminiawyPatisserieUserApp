@@ -10,57 +10,67 @@ class AppLogin {
 
   static final AppLogin _instance = AppLogin._();
 
-  Future<void> storeAuthData(AuthResponse authResponse,
-      {bool isChangeUserPassword = false}) async {
-    // Ensure necessary fields are not null before storing them
-    if (authResponse.data!.phone != null) {
-      await SharedPrefHelper.setSecuredString(
-          PrefKeys.userPhone, authResponse.data!.phone!);
+  Future<void> storeAuthData(
+    AuthResponse authResponse, {
+    bool isChangeUserPassword = false,
+  }) async {
+    final data = authResponse.data;
+
+    if (data == null) return;
+
+    if (data.phone != null) {
+      await SharedPrefHelper.setSecuredString(PrefKeys.userPhone, data.phone!);
     }
-    if (authResponse.data!.name != null) {
-      await SharedPrefHelper.setSecuredString(
-          PrefKeys.userName, authResponse.data!.name!);
+
+    if (data.name != null) {
+      await SharedPrefHelper.setSecuredString(PrefKeys.userName, data.name!);
     }
-    if (authResponse.data!.email != null) {
-      await SharedPrefHelper.setSecuredString(
-          PrefKeys.userEmail, authResponse.data!.email!);
+
+    if (data.email != null) {
+      await SharedPrefHelper.setSecuredString(PrefKeys.userEmail, data.email!);
     }
-    if (authResponse.data!.sId != null) {
-      await SharedPrefHelper.setSecuredString(
-          PrefKeys.userId, authResponse.data!.sId!);
+
+    if (data.sId != null) {
+      await SharedPrefHelper.setSecuredString(PrefKeys.userId, data.sId!);
     }
+
     if (authResponse.accessToken != null) {
       await SharedPrefHelper.setSecuredString(
-          PrefKeys.accessToken, authResponse.accessToken!);
-    }
-    if (authResponse.data!.refreshToken != null) {
-      await SharedPrefHelper.setSecuredString(
-          PrefKeys.refreshToken, authResponse.data!.refreshToken!);
+        PrefKeys.accessToken,
+        authResponse.accessToken!,
+      );
     }
 
-    if (authResponse.data!.role != null) {
+    if (data.refreshToken != null) {
       await SharedPrefHelper.setSecuredString(
-          PrefKeys.role, authResponse.data!.role!);
-
-      AppInitialRoute.role = authResponse.data!.role!;
+        PrefKeys.refreshToken,
+        data.refreshToken!,
+      );
     }
 
-    if (authResponse.data!.storeAddress.sId != null) {
-      await SharedPrefHelper.setSecuredString(
-          PrefKeys.storeAddressId, authResponse.data!.storeAddress.sId!);
-
-      AppInitialRoute.storeAddressId = authResponse.data!.storeAddress.sId!;
+    if (data.role != null) {
+      await SharedPrefHelper.setSecuredString(PrefKeys.role, data.role!);
+      AppInitialRoute.role = data.role!;
     }
 
-    if (authResponse.data!.storeAddress.region.en != null) {
+    if (data.storeAddress?.sId != null) {
       await SharedPrefHelper.setSecuredString(
-          PrefKeys.storeRegion, authResponse.data!.storeAddress.region.en!);
+        PrefKeys.storeAddressId,
+        data.storeAddress!.sId!,
+      );
+      AppInitialRoute.storeAddressId = data.storeAddress!.sId!;
+    }
 
-      AppInitialRoute.storeRegion = authResponse.data!.storeAddress.region.en!;
+ 
+    if (data.storeAddress?.region?.en != null) {
+      await SharedPrefHelper.setSecuredString(
+        PrefKeys.storeRegion,
+        data.storeAddress!.region!.en!,
+      );
+      AppInitialRoute.storeRegion = data.storeAddress!.region!.en!;
     }
 
     if (!isChangeUserPassword) {
-      // Set login status to true and navigate to the map screen
       SharedPrefHelper.setData(PrefKeys.prefsSetLoginMap, true);
     }
   }

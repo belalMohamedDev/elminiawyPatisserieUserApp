@@ -9,12 +9,11 @@ class CategoryCubit extends Cubit<CategoryState> {
   CategoryCubit(this._categoryRepositoryImplement, this._imagePicker)
     : super(const CategoryState.initial()) {
     _categoryRepositoryImplement.onCategoryDataUpdated = (updatedModel) {
-       _categories = updatedModel.data!;
-      emit(
-        CategoryState.getCategoriesSuccess(_categories),
-      );
+      _categories = updatedModel.data!;
+      emit(CategoryState.getCategoriesSuccess(_categories));
     };
   }
+
   final CategoryRepositoryImplement _categoryRepositoryImplement;
 
   final TextEditingController arTitleController = TextEditingController();
