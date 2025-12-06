@@ -283,5 +283,11 @@
   "Review": "Review",
   "continueWithoutSigningUp": "Continue without signing up",
   "Hello": "Hello",
-  "WelcometoPatisserieApp": "Welcome to Patisserie App"
+  "WelcometoPatisserieApp": "Welcome to Patisserie App",
+  "Required": "Required",
+  "createProduct": "Create Product",
+  "AddNewProduct":"Add New Product",
+  "tapToUploadImage":"Tap to upload image"
+
+
 }

@@ -33,6 +33,7 @@ class _CustomDropdownButtonFormFieldState
     _selectedValue = widget.value;
   }
 
+
   OverlayEntry _createOverlayEntry() {
     RenderBox renderBox = context.findRenderObject() as RenderBox;
     Size size = renderBox.size;
@@ -68,8 +69,9 @@ class _CustomDropdownButtonFormFieldState
                       padding: responsive.setPadding(left: 3, right: 5, top: 3),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
-                          maxHeight: responsive
-                              .setHeight(25), // Adjust the height as needed
+                          maxHeight: responsive.setHeight(
+                            25,
+                          ), // Adjust the height as needed
                         ),
                         child: Scrollbar(
                           controller: scrollController,
@@ -101,8 +103,9 @@ class _CustomDropdownButtonFormFieldState
                                           .titleLarge!
                                           .copyWith(
                                             color: Colors.black38,
-                                            fontSize:
-                                                responsive.setTextSize(3.8),
+                                            fontSize: responsive.setTextSize(
+                                              3.8,
+                                            ),
                                           ),
                                     ),
                                   ),
@@ -149,7 +152,8 @@ class _CustomDropdownButtonFormFieldState
       child: CompositedTransformTarget(
         link: _layerLink,
         child: InputDecorator(
-          decoration: widget.decoration ??
+          decoration:
+              widget.decoration ??
               const InputDecoration(
                 fillColor: Colors.transparent,
                 border: OutlineInputBorder(),
@@ -160,10 +164,9 @@ class _CustomDropdownButtonFormFieldState
               Text(
                 _selectedValue ?? 'Select an option',
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    fontSize: responsive.setTextSize(
-                      3.5,
-                    ),
-                    color: Colors.black38),
+                  fontSize: responsive.setTextSize(3.5),
+                  color: Colors.black38,
+                ),
               ),
               Icon(
                 _isOpen

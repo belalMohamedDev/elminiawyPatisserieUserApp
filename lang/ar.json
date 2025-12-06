@@ -283,5 +283,9 @@
   "Payment": "الدفع",
   "Review": "المراجعة",
   "Hello": "مرحبا",
-  "WelcometoPatisserieApp": "مرحبًا بك في تطبيق الحلويات"
+  "WelcometoPatisserieApp": "مرحبًا بك في تطبيق الحلويات",
+  "Required": "هذا الحقل مطلوب",
+  "createProduct": "إنشاء منتج",
+  "AddNewProduct": "إضافة منتج جديد",
+  "tapToUploadImage": "اضغط لرفع الصورة"
 }

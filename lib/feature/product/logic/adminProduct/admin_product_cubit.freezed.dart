@@ -55,7 +55,7 @@ extension AdminProductStatePatterns on AdminProductState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( SelectedRangeState value)?  selectedRangeState,TResult Function( SelectedOptionState value)?  selectedOptionState,TResult Function( GetAllProductLoading value)?  getAllProductLoading,TResult Function( GetAllProductError value)?  getAllProductError,TResult Function( GetAllProductSuccess value)?  getAllProductSuccess,TResult Function( AllProductSLoadingFromPagination value)?  getAllProductSFromPaginationLoadingState,TResult Function( UpdateProductLoading value)?  updateProductLoading,TResult Function( UpdateProductError value)?  updateProductError,TResult Function( UpdateProductSuccess value)?  updateProductSuccess,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( SelectedRangeState value)?  selectedRangeState,TResult Function( SelectedOptionState value)?  selectedOptionState,TResult Function( GetAllProductLoading value)?  getAllProductLoading,TResult Function( GetAllProductError value)?  getAllProductError,TResult Function( GetAllProductSuccess value)?  getAllProductSuccess,TResult Function( AllProductSLoadingFromPagination value)?  getAllProductSFromPaginationLoadingState,TResult Function( ImagePicked value)?  imagePicked,TResult Function( UpdateProductLoading value)?  updateProductLoading,TResult Function( UpdateProductError value)?  updateProductError,TResult Function( UpdateProductSuccess value)?  updateProductSuccess,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -65,7 +65,8 @@ return selectedOptionState(_that);case GetAllProductLoading() when getAllProduct
 return getAllProductLoading(_that);case GetAllProductError() when getAllProductError != null:
 return getAllProductError(_that);case GetAllProductSuccess() when getAllProductSuccess != null:
 return getAllProductSuccess(_that);case AllProductSLoadingFromPagination() when getAllProductSFromPaginationLoadingState != null:
-return getAllProductSFromPaginationLoadingState(_that);case UpdateProductLoading() when updateProductLoading != null:
+return getAllProductSFromPaginationLoadingState(_that);case ImagePicked() when imagePicked != null:
+return imagePicked(_that);case UpdateProductLoading() when updateProductLoading != null:
 return updateProductLoading(_that);case UpdateProductError() when updateProductError != null:
 return updateProductError(_that);case UpdateProductSuccess() when updateProductSuccess != null:
 return updateProductSuccess(_that);case _:
@@ -86,7 +87,7 @@ return updateProductSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( SelectedRangeState value)  selectedRangeState,required TResult Function( SelectedOptionState value)  selectedOptionState,required TResult Function( GetAllProductLoading value)  getAllProductLoading,required TResult Function( GetAllProductError value)  getAllProductError,required TResult Function( GetAllProductSuccess value)  getAllProductSuccess,required TResult Function( AllProductSLoadingFromPagination value)  getAllProductSFromPaginationLoadingState,required TResult Function( UpdateProductLoading value)  updateProductLoading,required TResult Function( UpdateProductError value)  updateProductError,required TResult Function( UpdateProductSuccess value)  updateProductSuccess,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( SelectedRangeState value)  selectedRangeState,required TResult Function( SelectedOptionState value)  selectedOptionState,required TResult Function( GetAllProductLoading value)  getAllProductLoading,required TResult Function( GetAllProductError value)  getAllProductError,required TResult Function( GetAllProductSuccess value)  getAllProductSuccess,required TResult Function( AllProductSLoadingFromPagination value)  getAllProductSFromPaginationLoadingState,required TResult Function( ImagePicked value)  imagePicked,required TResult Function( UpdateProductLoading value)  updateProductLoading,required TResult Function( UpdateProductError value)  updateProductError,required TResult Function( UpdateProductSuccess value)  updateProductSuccess,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -96,7 +97,8 @@ return selectedOptionState(_that);case GetAllProductLoading():
 return getAllProductLoading(_that);case GetAllProductError():
 return getAllProductError(_that);case GetAllProductSuccess():
 return getAllProductSuccess(_that);case AllProductSLoadingFromPagination():
-return getAllProductSFromPaginationLoadingState(_that);case UpdateProductLoading():
+return getAllProductSFromPaginationLoadingState(_that);case ImagePicked():
+return imagePicked(_that);case UpdateProductLoading():
 return updateProductLoading(_that);case UpdateProductError():
 return updateProductError(_that);case UpdateProductSuccess():
 return updateProductSuccess(_that);case _:
@@ -116,7 +118,7 @@ return updateProductSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( SelectedRangeState value)?  selectedRangeState,TResult? Function( SelectedOptionState value)?  selectedOptionState,TResult? Function( GetAllProductLoading value)?  getAllProductLoading,TResult? Function( GetAllProductError value)?  getAllProductError,TResult? Function( GetAllProductSuccess value)?  getAllProductSuccess,TResult? Function( AllProductSLoadingFromPagination value)?  getAllProductSFromPaginationLoadingState,TResult? Function( UpdateProductLoading value)?  updateProductLoading,TResult? Function( UpdateProductError value)?  updateProductError,TResult? Function( UpdateProductSuccess value)?  updateProductSuccess,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( SelectedRangeState value)?  selectedRangeState,TResult? Function( SelectedOptionState value)?  selectedOptionState,TResult? Function( GetAllProductLoading value)?  getAllProductLoading,TResult? Function( GetAllProductError value)?  getAllProductError,TResult? Function( GetAllProductSuccess value)?  getAllProductSuccess,TResult? Function( AllProductSLoadingFromPagination value)?  getAllProductSFromPaginationLoadingState,TResult? Function( ImagePicked value)?  imagePicked,TResult? Function( UpdateProductLoading value)?  updateProductLoading,TResult? Function( UpdateProductError value)?  updateProductError,TResult? Function( UpdateProductSuccess value)?  updateProductSuccess,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -126,7 +128,8 @@ return selectedOptionState(_that);case GetAllProductLoading() when getAllProduct
 return getAllProductLoading(_that);case GetAllProductError() when getAllProductError != null:
 return getAllProductError(_that);case GetAllProductSuccess() when getAllProductSuccess != null:
 return getAllProductSuccess(_that);case AllProductSLoadingFromPagination() when getAllProductSFromPaginationLoadingState != null:
-return getAllProductSFromPaginationLoadingState(_that);case UpdateProductLoading() when updateProductLoading != null:
+return getAllProductSFromPaginationLoadingState(_that);case ImagePicked() when imagePicked != null:
+return imagePicked(_that);case UpdateProductLoading() when updateProductLoading != null:
 return updateProductLoading(_that);case UpdateProductError() when updateProductError != null:
 return updateProductError(_that);case UpdateProductSuccess() when updateProductSuccess != null:
 return updateProductSuccess(_that);case _:
@@ -146,7 +149,7 @@ return updateProductSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( RangeValues selectedRange)?  selectedRangeState,TResult Function( int selectedOption)?  selectedOptionState,TResult Function()?  getAllProductLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllProductError,TResult Function( ProductResponse data)?  getAllProductSuccess,TResult Function()?  getAllProductSFromPaginationLoadingState,TResult Function()?  updateProductLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateProductError,TResult Function( List<DataProductResponse> data)?  updateProductSuccess,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( RangeValues selectedRange)?  selectedRangeState,TResult Function( int selectedOption)?  selectedOptionState,TResult Function()?  getAllProductLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllProductError,TResult Function( ProductResponse data)?  getAllProductSuccess,TResult Function()?  getAllProductSFromPaginationLoadingState,TResult Function()?  imagePicked,TResult Function()?  updateProductLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateProductError,TResult Function( List<DataProductResponse> data)?  updateProductSuccess,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case SelectedRangeState() when selectedRangeState != null:
@@ -155,7 +158,8 @@ return selectedOptionState(_that.selectedOption);case GetAllProductLoading() whe
 return getAllProductLoading();case GetAllProductError() when getAllProductError != null:
 return getAllProductError(_that.apiErrorModel);case GetAllProductSuccess() when getAllProductSuccess != null:
 return getAllProductSuccess(_that.data);case AllProductSLoadingFromPagination() when getAllProductSFromPaginationLoadingState != null:
-return getAllProductSFromPaginationLoadingState();case UpdateProductLoading() when updateProductLoading != null:
+return getAllProductSFromPaginationLoadingState();case ImagePicked() when imagePicked != null:
+return imagePicked();case UpdateProductLoading() when updateProductLoading != null:
 return updateProductLoading();case UpdateProductError() when updateProductError != null:
 return updateProductError(_that.apiErrorModel);case UpdateProductSuccess() when updateProductSuccess != null:
 return updateProductSuccess(_that.data);case _:
@@ -176,7 +180,7 @@ return updateProductSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( RangeValues selectedRange)  selectedRangeState,required TResult Function( int selectedOption)  selectedOptionState,required TResult Function()  getAllProductLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllProductError,required TResult Function( ProductResponse data)  getAllProductSuccess,required TResult Function()  getAllProductSFromPaginationLoadingState,required TResult Function()  updateProductLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateProductError,required TResult Function( List<DataProductResponse> data)  updateProductSuccess,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( RangeValues selectedRange)  selectedRangeState,required TResult Function( int selectedOption)  selectedOptionState,required TResult Function()  getAllProductLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllProductError,required TResult Function( ProductResponse data)  getAllProductSuccess,required TResult Function()  getAllProductSFromPaginationLoadingState,required TResult Function()  imagePicked,required TResult Function()  updateProductLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateProductError,required TResult Function( List<DataProductResponse> data)  updateProductSuccess,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case SelectedRangeState():
@@ -185,7 +189,8 @@ return selectedOptionState(_that.selectedOption);case GetAllProductLoading():
 return getAllProductLoading();case GetAllProductError():
 return getAllProductError(_that.apiErrorModel);case GetAllProductSuccess():
 return getAllProductSuccess(_that.data);case AllProductSLoadingFromPagination():
-return getAllProductSFromPaginationLoadingState();case UpdateProductLoading():
+return getAllProductSFromPaginationLoadingState();case ImagePicked():
+return imagePicked();case UpdateProductLoading():
 return updateProductLoading();case UpdateProductError():
 return updateProductError(_that.apiErrorModel);case UpdateProductSuccess():
 return updateProductSuccess(_that.data);case _:
@@ -205,7 +210,7 @@ return updateProductSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( RangeValues selectedRange)?  selectedRangeState,TResult? Function( int selectedOption)?  selectedOptionState,TResult? Function()?  getAllProductLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllProductError,TResult? Function( ProductResponse data)?  getAllProductSuccess,TResult? Function()?  getAllProductSFromPaginationLoadingState,TResult? Function()?  updateProductLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateProductError,TResult? Function( List<DataProductResponse> data)?  updateProductSuccess,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( RangeValues selectedRange)?  selectedRangeState,TResult? Function( int selectedOption)?  selectedOptionState,TResult? Function()?  getAllProductLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllProductError,TResult? Function( ProductResponse data)?  getAllProductSuccess,TResult? Function()?  getAllProductSFromPaginationLoadingState,TResult? Function()?  imagePicked,TResult? Function()?  updateProductLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateProductError,TResult? Function( List<DataProductResponse> data)?  updateProductSuccess,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case SelectedRangeState() when selectedRangeState != null:
@@ -214,7 +219,8 @@ return selectedOptionState(_that.selectedOption);case GetAllProductLoading() whe
 return getAllProductLoading();case GetAllProductError() when getAllProductError != null:
 return getAllProductError(_that.apiErrorModel);case GetAllProductSuccess() when getAllProductSuccess != null:
 return getAllProductSuccess(_that.data);case AllProductSLoadingFromPagination() when getAllProductSFromPaginationLoadingState != null:
-return getAllProductSFromPaginationLoadingState();case UpdateProductLoading() when updateProductLoading != null:
+return getAllProductSFromPaginationLoadingState();case ImagePicked() when imagePicked != null:
+return imagePicked();case UpdateProductLoading() when updateProductLoading != null:
 return updateProductLoading();case UpdateProductError() when updateProductError != null:
 return updateProductError(_that.apiErrorModel);case UpdateProductSuccess() when updateProductSuccess != null:
 return updateProductSuccess(_that.data);case _:
@@ -577,6 +583,38 @@ int get hashCode => runtimeType.hashCode;
 @override
 String toString() {
   return 'AdminProductState.getAllProductSFromPaginationLoadingState()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ImagePicked implements AdminProductState {
+  const ImagePicked();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ImagePicked);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'AdminProductState.imagePicked()';
 }
 
 

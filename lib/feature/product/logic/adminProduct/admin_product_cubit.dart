@@ -6,8 +6,8 @@ part 'admin_product_state.dart';
 part 'admin_product_cubit.freezed.dart';
 
 class AdminProductCubit extends Cubit<AdminProductState> {
-  AdminProductCubit(this._imagePicker, this._productRepository) : super(const AdminProductState.initial());
-
+  AdminProductCubit(this._imagePicker, this._productRepository)
+    : super(const AdminProductState.initial());
 
   final List<DataProductResponse> _allProduct = [];
 
@@ -18,31 +18,26 @@ class AdminProductCubit extends Cubit<AdminProductState> {
   final TextEditingController search = TextEditingController();
   final ImagePicker _imagePicker;
 
-
   final TextEditingController arTitleController = TextEditingController();
   final TextEditingController enTitleController = TextEditingController();
   final TextEditingController arDescriptionController = TextEditingController();
   final TextEditingController enDescriptionController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
 
-
-
   String? subCategoryValueId;
   void setSubCategoryId(String value) {
     subCategoryValueId = value;
   }
 
-
-  Future<void> fetchDeleteProduct(
-    String? id,
-  ) async {
+  Future<void> fetchDeleteProduct(String? id) async {
     emit(const AdminProductState.updateProductLoading());
     final response = await _productRepository.deleteProductRepo(id: id!);
 
     response.when(
       success: (dataResponse) {
-        final updatedIndex =
-            _allProduct.indexWhere((product) => product.sId == id);
+        final updatedIndex = _allProduct.indexWhere(
+          (product) => product.sId == id,
+        );
 
         if (updatedIndex != -1) {
           _allProduct.removeAt(updatedIndex);
@@ -56,10 +51,7 @@ class AdminProductCubit extends Cubit<AdminProductState> {
     );
   }
 
-
-
-
-    int page = 1;
+  int page = 1;
   int theLastPage = 0;
 
   Future<void> fetchGetAllProduct({bool fromPagination = false}) async {
@@ -82,33 +74,30 @@ class AdminProductCubit extends Cubit<AdminProductState> {
         emit(AdminProductState.getAllProductSuccess(dataResponse));
       },
       failure: (error) {
-        
-         emit(AdminProductState.getAllProductError(error));
+        emit(AdminProductState.getAllProductError(error));
       },
     );
   }
 
-
-    Future<void> fetchUpdateProduct({
-    bool? active,
-    required String id,
-  }) async {
+  Future<void> fetchUpdateProduct({bool? active, required String id}) async {
     emit(const AdminProductState.updateProductLoading());
 
     final response = await _productRepository.updateProductRepo(
-        id: id,
-        active: active,
-        arDescription: arDescriptionController.text.trim(),
-        enDescription: enDescriptionController.text.trim(),
-        arTitle: arTitleController.text.trim(),
-        enTitle: enTitleController.text.trim(),
-        price: priceController.text.trim(),
-        subCategory: subCategoryValueId);
+      id: id,
+      active: active,
+      arDescription: arDescriptionController.text.trim(),
+      enDescription: enDescriptionController.text.trim(),
+      arTitle: arTitleController.text.trim(),
+      enTitle: enTitleController.text.trim(),
+      price: priceController.text.trim(),
+      subCategory: subCategoryValueId,
+    );
 
     response.when(
       success: (dataResponse) {
-        final updatedIndex =
-            _allProduct.indexWhere((product) => product.sId == id);
+        final updatedIndex = _allProduct.indexWhere(
+          (product) => product.sId == id,
+        );
 
         if (updatedIndex != -1) {
           _allProduct[updatedIndex] = dataResponse.data;
@@ -123,26 +112,23 @@ class AdminProductCubit extends Cubit<AdminProductState> {
         emit(AdminProductState.updateProductSuccess([..._allProduct]));
       },
       failure: (error) {
-        
-         emit(AdminProductState.updateProductError(error));
+        emit(AdminProductState.updateProductError(error));
       },
     );
   }
 
-
-  Future<void> fetchCreateProduct({
-    required File image,
-  }) async {
+  Future<void> fetchCreateProduct({required File image}) async {
     emit(const AdminProductState.updateProductLoading());
 
     final response = await _productRepository.createProductRepo(
-        image: image,
-        arDescription: arDescriptionController.text.trim(),
-        enDescription: enDescriptionController.text.trim(),
-        arTitle: arTitleController.text.trim(),
-        enTitle: enTitleController.text.trim(),
-        price: priceController.text.trim(),
-        subCategory: subCategoryValueId!);
+      image: image,
+      arDescription: arDescriptionController.text.trim(),
+      enDescription: enDescriptionController.text.trim(),
+      arTitle: arTitleController.text.trim(),
+      enTitle: enTitleController.text.trim(),
+      price: priceController.text.trim(),
+      subCategory: subCategoryValueId!,
+    );
 
     response.when(
       success: (dataResponse) {
@@ -162,10 +148,7 @@ class AdminProductCubit extends Cubit<AdminProductState> {
     );
   }
 
-  Future<void> pickImage(
-    ImageSource source,
-    String? id,
-  ) async {
+  Future<void> pickImage(ImageSource source, String? id) async {
     final pickedImage = await _imagePicker.pickImage(source: source);
     if (pickedImage != null) {
       final imageFile = File(pickedImage.path);
@@ -175,19 +158,29 @@ class AdminProductCubit extends Cubit<AdminProductState> {
     }
   }
 
+  File? pickedImage;
+
+  void setPickedImage(File? img) {
+    pickedImage = img;
+    emit(const AdminProductState.imagePicked());
+  }
+
   Future<void> fetchUpdateProductImage({
     required String id,
     required File image,
   }) async {
     emit(const AdminProductState.updateProductLoading());
 
-    final response =
-        await _productRepository.updateProductImageRepo(id: id, image: image);
+    final response = await _productRepository.updateProductImageRepo(
+      id: id,
+      image: image,
+    );
 
     response.when(
       success: (dataResponse) {
-        final updatedIndex =
-            _allProduct.indexWhere((product) => product.sId == id);
+        final updatedIndex = _allProduct.indexWhere(
+          (product) => product.sId == id,
+        );
 
         if (updatedIndex != -1) {
           _allProduct[updatedIndex] = dataResponse.data;
@@ -200,17 +193,4 @@ class AdminProductCubit extends Cubit<AdminProductState> {
       },
     );
   }
-
-
-
-
-
-
-
 }
-
-
-
-
-
-

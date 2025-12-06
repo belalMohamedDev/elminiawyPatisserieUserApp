@@ -15,6 +15,12 @@ class AppStrings {
   static const String discount = "discount";
   static const String driverName = "driverName";
 
+  static const String required = "Required";
+  static const String createProduct = "createProduct";
+  static const String addNewProduct = "AddNewProduct";
+  static const String tapToUploadImage = "tapToUploadImage";
+
+
   static const String adminName = "adminName";
 
   static const String startDate = "startDate";
