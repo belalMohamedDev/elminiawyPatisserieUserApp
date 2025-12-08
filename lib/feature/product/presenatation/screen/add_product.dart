@@ -59,6 +59,12 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   return CustomButton(
                     onPressed: () {
                       // productCubit.fetchCreateProduct(image: image)
+                      //          product == null
+                      // ?
+                      context.read<AdminProductCubit>().fetchCreateProduct();
+                      // : context
+                      //     .read<AdminProductCubit>()
+                      //     .fetchUpdateProduct(id: product.sId!);
                     },
                     widget: LoadingButtonContent(
                       defaultText: AppStrings.createProduct,
@@ -190,7 +196,6 @@ class AdvancedImagePicker extends StatefulWidget {
 
 class _AdvancedImagePickerState extends State<AdvancedImagePicker>
     with SingleTickerProviderStateMixin {
-  File? image;
   late AnimationController _controller;
 
   @override
@@ -209,20 +214,12 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
     super.dispose();
   }
 
-  Future<void> _pickImage() async {
-    final picked = await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    if (picked != null) {
-      setState(() => image = File(picked.path));
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
-          onTap: _pickImage,
+          onTap: () => context.read<AdminProductCubit>().pickImage(),
           child: DottedBorder(
             animation: _controller,
             options: const RoundedRectDottedBorderOptions(
@@ -238,7 +235,7 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
                 height: 180,
                 width: double.infinity,
                 decoration: BoxDecoration(color: Colors.grey.shade100),
-                child: image == null
+                child: context.read<AdminProductCubit>().imageFile == null
                     ? _buildPlaceholder()
                     : _buildImagePreview(),
               ),
@@ -271,7 +268,10 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.file(image!, fit: BoxFit.cover),
+        Image.file(
+          context.read<AdminProductCubit>().imageFile!,
+          fit: BoxFit.cover,
+        ),
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(

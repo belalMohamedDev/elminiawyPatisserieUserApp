@@ -32,8 +32,8 @@ void showEditProductActionDialog(
           onPressed: () {
             Navigator.pop(context);
             context.read<AdminProductCubit>().pickImage(
-                  ImageSource.gallery,
-                  product.sId,
+                 
+                
                 );
           },
           child: Text(

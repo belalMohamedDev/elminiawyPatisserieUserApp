@@ -117,11 +117,11 @@ class AdminProductCubit extends Cubit<AdminProductState> {
     );
   }
 
-  Future<void> fetchCreateProduct({required File image}) async {
+  Future<void> fetchCreateProduct() async {
     emit(const AdminProductState.updateProductLoading());
 
     final response = await _productRepository.createProductRepo(
-      image: image,
+      image: imageFile!,
       arDescription: arDescriptionController.text.trim(),
       enDescription: enDescriptionController.text.trim(),
       arTitle: arTitleController.text.trim(),
@@ -148,21 +148,16 @@ class AdminProductCubit extends Cubit<AdminProductState> {
     );
   }
 
-  Future<void> pickImage(ImageSource source, String? id) async {
-    final pickedImage = await _imagePicker.pickImage(source: source);
+  File? imageFile;
+
+  void pickImage() async {
+    final pickedImage = await _imagePicker.pickImage(
+      source: ImageSource.gallery,
+    );
     if (pickedImage != null) {
-      final imageFile = File(pickedImage.path);
-      id == null
-          ? await fetchCreateProduct(image: imageFile)
-          : await fetchUpdateProductImage(id: id, image: imageFile);
+      imageFile = File(pickedImage.path);
+      emit(const AdminProductState.imagePicked());
     }
-  }
-
-  File? pickedImage;
-
-  void setPickedImage(File? img) {
-    pickedImage = img;
-    emit(const AdminProductState.imagePicked());
   }
 
   Future<void> fetchUpdateProductImage({

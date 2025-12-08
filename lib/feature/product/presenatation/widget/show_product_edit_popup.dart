@@ -123,7 +123,7 @@ void showProductEditPopup(DataProductResponse? product, BuildContext context) {
             product == null
                 ? context
                     .read<AdminProductCubit>()
-                    .pickImage(ImageSource.gallery, null)
+                    .pickImage()
                 : context
                     .read<AdminProductCubit>()
                     .fetchUpdateProduct(id: product.sId!);
