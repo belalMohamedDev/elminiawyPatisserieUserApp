@@ -176,7 +176,6 @@ export 'package:elminiawy/feature/category/presentation/screen/category_view.dar
 export 'package:elminiawy/feature/category/presentation/widget/build_category_card.dart';
 export 'package:elminiawy/feature/category/presentation/widget/category_loading_screen_widget.dart';
 export 'package:elminiawy/feature/category/presentation/widget/category_success_widget.dart';
-export 'package:elminiawy/feature/category/presentation/widget/show_add_category_dialog.dart';
 export 'package:elminiawy/feature/category/presentation/widget/show_edit_action_dialog.dart';
 export 'package:elminiawy/feature/category/presentation/widget/show_edit_popup.dart';
 export 'package:elminiawy/feature/client/accountInfo/cubit/account_information_cubit.dart';

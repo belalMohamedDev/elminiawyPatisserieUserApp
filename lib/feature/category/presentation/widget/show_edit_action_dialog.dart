@@ -16,29 +16,35 @@ void showEditCategoryActionDialog(
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
-            showEditPopup(
-              category,
-              context,
-            );
+            showEditPopup(category, context);
           },
           child: Text(
             context.translate(AppStrings.edit),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            style: TextStyle(
+              fontFamily: FontConsistent.geLocalozedFontFamily(),
+            ),
           ),
         ),
         CupertinoActionSheetAction(
-          onPressed: () {
+          onPressed: () async {
             Navigator.pop(context);
-            //TODO
-            context.read<CategoryCubit>().pickImage(
-             
-                );
+
+            await context.read<CategoryCubit>().pickImage();
+
+            final image = context.read<CategoryCubit>().imageFile;
+
+            if (image != null) {
+              context.read<CategoryCubit>().fetchUpdateImageCategories(
+                category.sId!,
+                image,
+              );
+            }
           },
           child: Text(
             context.translate(AppStrings.editImage),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            style: TextStyle(
+              fontFamily: FontConsistent.geLocalozedFontFamily(),
+            ),
           ),
           // const Text('Edit Image'),
         ),
@@ -46,32 +52,30 @@ void showEditCategoryActionDialog(
           onPressed: () {
             Navigator.pop(context);
             context.read<CategoryCubit>().fetchUpdateActiveOrNotCategories(
-                  category.sId,
-                  !category.active!,
-                );
+              category.sId,
+              !category.active!,
+            );
           },
           child: Text(
             category.active == true
                 ? context.translate(AppStrings.deActive)
                 : context.translate(AppStrings.active),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            style: TextStyle(
+              fontFamily: FontConsistent.geLocalozedFontFamily(),
+            ),
           ),
         ),
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
-            context.read<CategoryCubit>().fetchDeleteCategories(
-                  category.sId,
-                );
+            context.read<CategoryCubit>().fetchDeleteCategories(category.sId);
           },
           isDestructiveAction: true,
-          child:
-            
-              Text(
+          child: Text(
             context.translate(AppStrings.delete),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            style: TextStyle(
+              fontFamily: FontConsistent.geLocalozedFontFamily(),
+            ),
           ),
         ),
       ],
