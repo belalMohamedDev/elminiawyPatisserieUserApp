@@ -43,32 +43,8 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
                   ? const SizedBox()
                   : FloatingActionButton(
                       backgroundColor: ColorManger.brun,
-                      onPressed: () {
-                        // showCreateAndEditImageBannerDialog(
-                        //     context, null, context.read<BannerCubit>());
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MultiBlocProvider(
-                              providers: [
-                                BlocProvider(
-                                  create: (context) =>
-                                      instance<AdminProductCubit>(),
-                                ),
-                                BlocProvider(
-                                  create: (context) =>
-                                      instance<SubCategoriesCubit>(),
-                                ),
-                              ],
-                              child: AddProductScreen(),
-                            ),
-                          ),
-                        );
-
-                        // showProductEditPopup(
-                        //   null,
-                        //   context,
-                        // );
+                      onPressed: () async {
+                        context.pushNamed(Routes.addProduct);
                       },
                       child: Icon(Icons.add, color: ColorManger.white),
                     ),

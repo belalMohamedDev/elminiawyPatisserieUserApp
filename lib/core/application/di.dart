@@ -194,7 +194,7 @@ Future<void> _initProduct() async {
         instance(),
       ));
 
-  instance.registerFactory<AdminProductCubit>(() => AdminProductCubit(
+  instance.registerLazySingleton<AdminProductCubit>(() => AdminProductCubit(
         instance(),
         instance(),
       ));

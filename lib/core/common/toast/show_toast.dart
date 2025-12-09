@@ -3,46 +3,51 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 class ShowToast {
   const ShowToast._();
 
-  static void showToastErrorTop(
-          {required String errorMessage, required BuildContext context}) =>
-      toastification.show(
-        context: context, // optional if you use ToastificationWrapper
-        title: Text(errorMessage),
-        alignment: Alignment.topCenter,
-        animationDuration: const Duration(milliseconds: 200),
+  static void showToastErrorTop({
+    required String errorMessage,
+    required BuildContext context,
+  }) => toastification.show(
+    context: context, // optional if you use ToastificationWrapper
+    title: Text(errorMessage),
+    alignment: Alignment.topCenter,
+    animationDuration: const Duration(milliseconds: 200),
 
-        margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-        closeOnClick: true,
-        applyBlurEffect: true,
+    margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+    closeOnClick: true,
+    applyBlurEffect: true,
 
-        autoCloseDuration: const Duration(seconds: 3),
-        backgroundColor: const Color(0xFFED201B),
-        progressBarTheme: ProgressIndicatorThemeData(
-            color: Colors.white, linearMinHeight: 2.h),
-        primaryColor: Colors.white,
-        foregroundColor: Colors.white,
+    autoCloseDuration: const Duration(seconds: 3),
 
-        style: ToastificationStyle.flatColored,
+    // backgroundColor: const Color(0xFFED201B),
+    progressBarTheme: ProgressIndicatorThemeData(
+      color: Colors.red,
+      linearMinHeight: 2.h,
+    ),
+    primaryColor: Colors.red,
+    foregroundColor: Colors.black,
 
-        type: ToastificationType.error,
-      );
+    style: ToastificationStyle.flatColored,
 
-  static void showToastSuccessTop(
-          {required String message, required BuildContext context}) =>
-      toastification.show(
-        context: context, // optional if you use ToastificationWrapper
-        title: Text(message),
-        alignment: Alignment.topCenter,
-        animationDuration: const Duration(milliseconds: 200),
+    type: ToastificationType.error,
+  );
 
-        margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-        showProgressBar: false,
-        closeOnClick: true,
+  static void showToastSuccessTop({
+    required String message,
+    required BuildContext context,
+  }) => toastification.show(
+    context: context, // optional if you use ToastificationWrapper
+    title: Text(message),
+    alignment: Alignment.topCenter,
+    animationDuration: const Duration(milliseconds: 200),
 
-        autoCloseDuration: const Duration(seconds: 2),
+    margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+    showProgressBar: false,
+    closeOnClick: true,
 
-        style: ToastificationStyle.fillColored,
+    autoCloseDuration: const Duration(seconds: 2),
 
-        type: ToastificationType.success,
-      );
+    style: ToastificationStyle.fillColored,
+
+    type: ToastificationType.success,
+  );
 }

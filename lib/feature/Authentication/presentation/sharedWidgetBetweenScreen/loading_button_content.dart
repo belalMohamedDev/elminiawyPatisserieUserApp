@@ -1,3 +1,5 @@
+import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
+
 import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
 
 class LoadingButtonContent extends StatelessWidget {
@@ -25,8 +27,9 @@ class LoadingButtonContent extends StatelessWidget {
             height: responsive.setHeight(2),
             width: responsive.setWidth(4),
             child: CircularProgressIndicator(
-              color:
-                  signWithGoogleOrApple ? ColorManger.brun : ColorManger.white,
+              color: signWithGoogleOrApple
+                  ? ColorManger.brun
+                  : ColorManger.white,
               strokeWidth: 2.0,
               strokeAlign: 0.01,
             ),
@@ -36,11 +39,11 @@ class LoadingButtonContent extends StatelessWidget {
             context.translate(AppStrings.loading),
             style: signWithGoogleOrApple
                 ? Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: responsive.setTextSize(3.8),
-                    )
+                    fontSize: responsive.setTextSize(3.8),
+                  )
                 : Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontSize: responsive.setTextSize(3.8),
-                    ),
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
           ),
         ],
       );
@@ -50,6 +53,7 @@ class LoadingButtonContent extends StatelessWidget {
         state is SignUpButtonLoadingData ||
         state is ForgetPasswordLoadingData ||
         state is VerifyCodeLoadingData ||
+        state is UpdateProductLoading ||
         state is NewPasswordLoadingData) {
       return loadingWidget();
     } else if (state is AuthenticationWithGoogleLoading) {
@@ -59,8 +63,8 @@ class LoadingButtonContent extends StatelessWidget {
           Text(
             context.translate(defaultText!),
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontSize: responsive.setTextSize(3.8),
-                ),
+              fontSize: responsive.setTextSize(3.8),
+            ),
           );
     }
   }

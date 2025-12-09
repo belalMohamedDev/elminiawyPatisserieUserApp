@@ -4,6 +4,7 @@ import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
 import 'package:elminiawy/feature/admin/storeAddress/presentation/screens/store_address_screen.dart';
 import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
+import 'package:elminiawy/feature/product/presenatation/screen/add_product.dart';
 
 import '../../../../core/common/shared/shared_imports.dart';
 import '../../feature/admin/home/presentation/screen/canelled_orders.dart';
@@ -14,14 +15,16 @@ import '../../feature/admin/home/presentation/screen/pending_orders.dart';
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
-
       // ---------------------- AUTH -----------------------
       case Routes.loginRoute:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(create: (context) => instance<LoginBloc>()),
-              BlocProvider(create: (context) => instance<AuthenticationWithGoogleAndAppleCubit>()),
+              BlocProvider(
+                create: (context) =>
+                    instance<AuthenticationWithGoogleAndAppleCubit>(),
+              ),
             ],
             child: const LoginView(),
           ),
@@ -29,7 +32,6 @@ class RouteGenerator {
 
       case Routes.onBoardingRoute:
         return MaterialPageRoute(builder: (_) => const OnBoardingView());
-
 
       // ---------------------- ADMIN CATEGORY -----------------------
       case Routes.adminCategory:
@@ -40,7 +42,6 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- ADMINS -----------------------
       case Routes.admin:
         return MaterialPageRoute(
@@ -50,19 +51,20 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- PROFILE -----------------------
       case Routes.profileScreen:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(create: (_) => instance<LogOutCubit>()),
-              BlocProvider(create: (_) => instance<AuthenticationWithGoogleAndAppleCubit>()),
+              BlocProvider(
+                create: (_) =>
+                    instance<AuthenticationWithGoogleAndAppleCubit>(),
+              ),
             ],
             child: const ProfileView(),
           ),
         );
-
 
       // ---------------------- DRIVERS -----------------------
       case Routes.adminDrivers:
@@ -73,8 +75,8 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- ADMIN PRODUCT -----------------------
+
       case Routes.adminProduct:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
@@ -86,6 +88,16 @@ class RouteGenerator {
           ),
         );
 
+      case Routes.addProduct:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<AdminProductCubit>()),
+              BlocProvider(create: (context) => instance<SubCategoriesCubit>()),
+            ],
+            child: const AddProductScreen(),
+          ),
+        );
 
       // ---------------------- STORE ADDRESS -----------------------
       case Routes.storeAddress:
@@ -96,7 +108,6 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- REGISTER -----------------------
       case Routes.registerRoute:
         return MaterialPageRoute(
@@ -105,7 +116,6 @@ class RouteGenerator {
             child: const SignUpView(),
           ),
         );
-
 
       // ---------------------- FORGET PASSWORD -----------------------
       case Routes.forgetPasswordRoute:
@@ -131,7 +141,6 @@ class RouteGenerator {
             child: const NewPasswordView(),
           ),
         );
-
 
       // ---------------------- ADDRESS -----------------------
       case Routes.address:
@@ -162,7 +171,6 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- ADMIN MENU -----------------------
       case Routes.adminMenue:
         return MaterialPageRoute(
@@ -170,13 +178,12 @@ class RouteGenerator {
             providers: [
               BlocProvider(create: (_) => instance<AdminHomeCubit>()),
               BlocProvider.value(value: instance<CartCubit>()),
-              BlocProvider.value(value: instance<CategoryCubit>()),   // FIXED
+              BlocProvider.value(value: instance<CategoryCubit>()), // FIXED
               BlocProvider(create: (_) => instance<LogOutCubit>()),
             ],
             child: const DrawerStackView(),
           ),
         );
-
 
       // ---------------------- ADMIN BANNER -----------------------
       case Routes.adminBanner:
@@ -187,19 +194,17 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- ADMIN SUBCATEGORY -----------------------
       case Routes.adminSubCategory:
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(create: (_) => instance<SubCategoriesCubit>()),
-              BlocProvider.value(value: instance<CategoryCubit>()),   // FIXED
+              BlocProvider.value(value: instance<CategoryCubit>()), // FIXED
             ],
             child: const AdminSubCategoryScreen(),
           ),
         );
-
 
       // ---------------------- ACCOUNT INFO -----------------------
       case Routes.accountInfomation:
@@ -207,7 +212,10 @@ class RouteGenerator {
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(create: (_) => instance<AccountInformationCubit>()),
-              BlocProvider(create: (_) => instance<AuthenticationWithGoogleAndAppleCubit>()),
+              BlocProvider(
+                create: (_) =>
+                    instance<AuthenticationWithGoogleAndAppleCubit>(),
+              ),
             ],
             child: const AccountInfomation(),
           ),
@@ -229,7 +237,6 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- USER BOTTOM NAV -----------------------
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(
@@ -238,7 +245,7 @@ class RouteGenerator {
               BlocProvider.value(value: instance<UserAddressCubit>()),
               BlocProvider.value(value: instance<LogOutCubit>()),
               BlocProvider(create: (_) => instance<BannerCubit>()),
-              BlocProvider.value(value: instance<CategoryCubit>()),     // FIXED
+              BlocProvider.value(value: instance<CategoryCubit>()), // FIXED
               BlocProvider.value(value: instance<MapCubit>()),
               BlocProvider.value(value: instance<CartCubit>()),
               BlocProvider.value(value: instance<ProductCubit>()),
@@ -247,7 +254,6 @@ class RouteGenerator {
             child: const BottomNavBar(),
           ),
         );
-
 
       // ---------------------- NEW PRODUCT -----------------------
       case Routes.newProduct:
@@ -262,7 +268,6 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- NOTIFICATION -----------------------
       case Routes.notification:
         return MaterialPageRoute(
@@ -272,38 +277,54 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- ORDERS -----------------------
       case Routes.newOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const NewOrders()),
+          builder: (_) => BlocProvider(
+            create: (_) => instance<AdminHomeCubit>(),
+            child: const NewOrders(),
+          ),
         );
 
       case Routes.completeOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const CompleteOrdersView()),
+          builder: (_) => BlocProvider(
+            create: (_) => instance<AdminHomeCubit>(),
+            child: const CompleteOrdersView(),
+          ),
         );
 
       case Routes.cancelledOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const CancelledOrders()),
+          builder: (_) => BlocProvider(
+            create: (_) => instance<AdminHomeCubit>(),
+            child: const CancelledOrders(),
+          ),
         );
 
       case Routes.deliveredOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const DeliverdOrders()),
+          builder: (_) => BlocProvider(
+            create: (_) => instance<AdminHomeCubit>(),
+            child: const DeliverdOrders(),
+          ),
         );
 
       case Routes.pendingDrivers:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const PendingDriver()),
+          builder: (_) => BlocProvider(
+            create: (_) => instance<AdminHomeCubit>(),
+            child: const PendingDriver(),
+          ),
         );
 
       case Routes.pendingOrders:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(create: (_) => instance<AdminHomeCubit>(), child: const PendingOrders()),
+          builder: (_) => BlocProvider(
+            create: (_) => instance<AdminHomeCubit>(),
+            child: const PendingOrders(),
+          ),
         );
-
 
       // ---------------------- ORDER PLACED / DETAILS -----------------------
       case Routes.orderPlaced:
@@ -353,7 +374,6 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- SEARCH -----------------------
       case Routes.search:
         return MaterialPageRoute(
@@ -362,7 +382,6 @@ class RouteGenerator {
             child: const SearchView(),
           ),
         );
-
 
       // ---------------------- SHIPPING -----------------------
       case Routes.shippingAddress:
@@ -400,7 +419,6 @@ class RouteGenerator {
           ),
         );
 
-
       // ---------------------- DEFAULT -----------------------
       case Routes.noRoute:
         return MaterialPageRoute(builder: (_) => const RouteStatesScreen());
@@ -410,16 +428,11 @@ class RouteGenerator {
     }
   }
 
-
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
       builder: (context) => Scaffold(
-        appBar: AppBar(
-          title: Text(context.translate(AppStrings.noRouteFound)),
-        ),
-        body: Center(
-          child: Text(context.translate(AppStrings.noRouteFound)),
-        ),
+        appBar: AppBar(title: Text(context.translate(AppStrings.noRouteFound))),
+        body: Center(child: Text(context.translate(AppStrings.noRouteFound))),
       ),
     );
   }

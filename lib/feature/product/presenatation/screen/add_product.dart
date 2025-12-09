@@ -54,29 +54,64 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
               SizedBox(height: responsive.setHeight(3)),
 
-              BlocBuilder<AdminProductCubit, AdminProductState>(
-                builder: (context, state) {
-                  return CustomButton(
-                    onPressed: () {
-                      // productCubit.fetchCreateProduct(image: image)
-                      //          product == null
-                      // ?
-                      context.read<AdminProductCubit>().fetchCreateProduct();
-                      // : context
-                      //     .read<AdminProductCubit>()
-                      //     .fetchUpdateProduct(id: product.sId!);
-                    },
-                    widget: LoadingButtonContent(
-                      defaultText: AppStrings.createProduct,
-                      state: state,
-                    ),
-                  );
-                },
-              ),
+              _createProductButton(),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  BlocConsumer<AdminProductCubit, AdminProductState> _createProductButton() {
+    return BlocConsumer<AdminProductCubit, AdminProductState>(
+      listener: (context, state) {
+        if (state is UpdateProductSuccess) {
+          context.pop();
+        } else if (state is UpdateProductError) {
+          ShowToast.showToastErrorTop(
+            errorMessage: state.apiErrorModel.message!,
+            context: context,
+          );
+        }
+      },
+      builder: (context, state) {
+        return CustomButton(
+          onPressed: () {
+            final cubit = context.read<AdminProductCubit>();
+
+            // Validate form
+            if (!formKey.currentState!.validate()) {
+              return;
+            }
+
+            // Validate image
+            if (cubit.imageFile == null) {
+              ShowToast.showToastErrorTop(
+                errorMessage: "من فضلك اختر صورة للمنتج",
+                context: context,
+              );
+
+              return;
+            }
+
+            // Validate image
+            if (cubit.subCategoryValueId == null) {
+              ShowToast.showToastErrorTop(
+                errorMessage: "من فضلك اختر فئة",
+                context: context,
+              );
+
+              return;
+            }
+
+            cubit.fetchCreateProduct();
+          },
+          widget: LoadingButtonContent(
+            defaultText: AppStrings.createProduct,
+            state: state,
+          ),
+        );
+      },
     );
   }
 
