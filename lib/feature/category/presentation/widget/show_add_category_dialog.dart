@@ -64,7 +64,8 @@ void showAddCategoryDialog(BuildContext context) {
         ),
         CupertinoDialogAction(
           onPressed: () {
-            context.read<CategoryCubit>().pickImage(ImageSource.gallery, null);
+            //TODO
+            context.read<CategoryCubit>().pickImage();
             Navigator.pop(context);
           },
           child: Text(

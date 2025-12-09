@@ -16,15 +16,16 @@ class CategorySuccessWidget extends StatelessWidget {
     final allCategories = context.read<CategoryCubit>().categories;
     final category =
         AppInitialRoute.role == "admin" && isCategoryCartToAdmin == false
-            ? allCategories
-            : allCategories.where((cat) => cat.active == true).toList();
+        ? allCategories
+        : allCategories.where((cat) => cat.active == true).toList();
     return Padding(
       padding: responsive.setPadding(
-          left: 5,
-          right: 5,
-          top: AppInitialRoute.role == "admin" && isCategoryCartToAdmin == false
-              ? 2
-              : 5),
+        left: 5,
+        right: 5,
+        top: AppInitialRoute.role == "admin" && isCategoryCartToAdmin == false
+            ? 2
+            : 5,
+      ),
       child: GridView.count(
         addAutomaticKeepAlives: true,
         crossAxisCount: 3,
@@ -39,7 +40,9 @@ class CategorySuccessWidget extends StatelessWidget {
                 index == 0) {
               return GestureDetector(
                 onTap: () {
-                  showAddCategoryDialog(context);
+              
+
+                  context.pushNamed(Routes.addCategoryScreen);
                 },
                 child: BuildCategoryCard(
                   category: null,
@@ -47,7 +50,8 @@ class CategorySuccessWidget extends StatelessWidget {
                 ),
               );
             } else {
-              final actualIndex = AppInitialRoute.role == "admin" &&
+              final actualIndex =
+                  AppInitialRoute.role == "admin" &&
                       isCategoryCartToAdmin == false
                   ? index - 1
                   : index;
@@ -57,7 +61,9 @@ class CategorySuccessWidget extends StatelessWidget {
                   if (AppInitialRoute.role == "admin" &&
                       isCategoryCartToAdmin == false) {
                     showEditCategoryActionDialog(
-                        context, category[actualIndex]);
+                      context,
+                      category[actualIndex],
+                    );
                   } else {
                     Navigator.of(context, rootNavigator: !false).push(
                       MaterialPageRoute(
@@ -67,9 +73,7 @@ class CategorySuccessWidget extends StatelessWidget {
                               create: (context) =>
                                   instance<ProductBasedOnCategoryCubit>(),
                             ),
-                            BlocProvider.value(
-                              value: instance<CartCubit>(),
-                            ),
+                            BlocProvider.value(value: instance<CartCubit>()),
                             BlocProvider.value(
                               value: instance<WishListCubit>(),
                             ),
@@ -96,9 +100,10 @@ class CategorySuccessWidget extends StatelessWidget {
                         top: 25,
                         left: 30,
                         child: CircularProgressIndicator(
-                            color: category[actualIndex].active == true
-                                ? Colors.red.shade200
-                                : Colors.green.shade200),
+                          color: category[actualIndex].active == true
+                              ? Colors.red.shade200
+                              : Colors.green.shade200,
+                        ),
                       ),
                   ],
                 ),

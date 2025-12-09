@@ -55,7 +55,7 @@ extension CategoryStatePatterns on CategoryState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetCategoriesLoading value)?  getCategoriesLoading,TResult Function( GetCategoriesError value)?  getCategoriesError,TResult Function( GetCategoriesSuccess value)?  getCategoriesSuccess,TResult Function( UpdateCategoriesLoading value)?  updateCategoriesLoading,TResult Function( UpdateCategoriesError value)?  updateCategoriesError,TResult Function( UpdateCategoriesSuccess value)?  updateCategoriesSuccess,TResult Function( CreateCategoriesLoading value)?  createCategoriesLoading,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetCategoriesLoading value)?  getCategoriesLoading,TResult Function( GetCategoriesError value)?  getCategoriesError,TResult Function( GetCategoriesSuccess value)?  getCategoriesSuccess,TResult Function( UpdateCategoriesLoading value)?  updateCategoriesLoading,TResult Function( UpdateCategoriesError value)?  updateCategoriesError,TResult Function( UpdateCategoriesSuccess value)?  updateCategoriesSuccess,TResult Function( CreateCategoriesLoading value)?  createCategoriesLoading,TResult Function( CategoryImagePicked value)?  imagePicked,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -66,7 +66,8 @@ return getCategoriesSuccess(_that);case UpdateCategoriesLoading() when updateCat
 return updateCategoriesLoading(_that);case UpdateCategoriesError() when updateCategoriesError != null:
 return updateCategoriesError(_that);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
 return updateCategoriesSuccess(_that);case CreateCategoriesLoading() when createCategoriesLoading != null:
-return createCategoriesLoading(_that);case _:
+return createCategoriesLoading(_that);case CategoryImagePicked() when imagePicked != null:
+return imagePicked(_that);case _:
   return orElse();
 
 }
@@ -84,7 +85,7 @@ return createCategoriesLoading(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetCategoriesLoading value)  getCategoriesLoading,required TResult Function( GetCategoriesError value)  getCategoriesError,required TResult Function( GetCategoriesSuccess value)  getCategoriesSuccess,required TResult Function( UpdateCategoriesLoading value)  updateCategoriesLoading,required TResult Function( UpdateCategoriesError value)  updateCategoriesError,required TResult Function( UpdateCategoriesSuccess value)  updateCategoriesSuccess,required TResult Function( CreateCategoriesLoading value)  createCategoriesLoading,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetCategoriesLoading value)  getCategoriesLoading,required TResult Function( GetCategoriesError value)  getCategoriesError,required TResult Function( GetCategoriesSuccess value)  getCategoriesSuccess,required TResult Function( UpdateCategoriesLoading value)  updateCategoriesLoading,required TResult Function( UpdateCategoriesError value)  updateCategoriesError,required TResult Function( UpdateCategoriesSuccess value)  updateCategoriesSuccess,required TResult Function( CreateCategoriesLoading value)  createCategoriesLoading,required TResult Function( CategoryImagePicked value)  imagePicked,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -95,7 +96,8 @@ return getCategoriesSuccess(_that);case UpdateCategoriesLoading():
 return updateCategoriesLoading(_that);case UpdateCategoriesError():
 return updateCategoriesError(_that);case UpdateCategoriesSuccess():
 return updateCategoriesSuccess(_that);case CreateCategoriesLoading():
-return createCategoriesLoading(_that);case _:
+return createCategoriesLoading(_that);case CategoryImagePicked():
+return imagePicked(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -112,7 +114,7 @@ return createCategoriesLoading(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetCategoriesLoading value)?  getCategoriesLoading,TResult? Function( GetCategoriesError value)?  getCategoriesError,TResult? Function( GetCategoriesSuccess value)?  getCategoriesSuccess,TResult? Function( UpdateCategoriesLoading value)?  updateCategoriesLoading,TResult? Function( UpdateCategoriesError value)?  updateCategoriesError,TResult? Function( UpdateCategoriesSuccess value)?  updateCategoriesSuccess,TResult? Function( CreateCategoriesLoading value)?  createCategoriesLoading,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetCategoriesLoading value)?  getCategoriesLoading,TResult? Function( GetCategoriesError value)?  getCategoriesError,TResult? Function( GetCategoriesSuccess value)?  getCategoriesSuccess,TResult? Function( UpdateCategoriesLoading value)?  updateCategoriesLoading,TResult? Function( UpdateCategoriesError value)?  updateCategoriesError,TResult? Function( UpdateCategoriesSuccess value)?  updateCategoriesSuccess,TResult? Function( CreateCategoriesLoading value)?  createCategoriesLoading,TResult? Function( CategoryImagePicked value)?  imagePicked,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -123,7 +125,8 @@ return getCategoriesSuccess(_that);case UpdateCategoriesLoading() when updateCat
 return updateCategoriesLoading(_that);case UpdateCategoriesError() when updateCategoriesError != null:
 return updateCategoriesError(_that);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
 return updateCategoriesSuccess(_that);case CreateCategoriesLoading() when createCategoriesLoading != null:
-return createCategoriesLoading(_that);case _:
+return createCategoriesLoading(_that);case CategoryImagePicked() when imagePicked != null:
+return imagePicked(_that);case _:
   return null;
 
 }
@@ -140,7 +143,7 @@ return createCategoriesLoading(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  getCategoriesError,TResult Function( List<CategoryResponseData> data)?  getCategoriesSuccess,TResult Function( String id)?  updateCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateCategoriesError,TResult Function( List<CategoryResponseData> data)?  updateCategoriesSuccess,TResult Function()?  createCategoriesLoading,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  getCategoriesError,TResult Function( List<CategoryResponseData> data)?  getCategoriesSuccess,TResult Function( String id)?  updateCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateCategoriesError,TResult Function( List<CategoryResponseData> data)?  updateCategoriesSuccess,TResult Function()?  createCategoriesLoading,TResult Function()?  imagePicked,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetCategoriesLoading() when getCategoriesLoading != null:
@@ -150,7 +153,8 @@ return getCategoriesSuccess(_that.data);case UpdateCategoriesLoading() when upda
 return updateCategoriesLoading(_that.id);case UpdateCategoriesError() when updateCategoriesError != null:
 return updateCategoriesError(_that.apiErrorModel);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
 return updateCategoriesSuccess(_that.data);case CreateCategoriesLoading() when createCategoriesLoading != null:
-return createCategoriesLoading();case _:
+return createCategoriesLoading();case CategoryImagePicked() when imagePicked != null:
+return imagePicked();case _:
   return orElse();
 
 }
@@ -168,7 +172,7 @@ return createCategoriesLoading();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  getCategoriesError,required TResult Function( List<CategoryResponseData> data)  getCategoriesSuccess,required TResult Function( String id)  updateCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateCategoriesError,required TResult Function( List<CategoryResponseData> data)  updateCategoriesSuccess,required TResult Function()  createCategoriesLoading,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  getCategoriesError,required TResult Function( List<CategoryResponseData> data)  getCategoriesSuccess,required TResult Function( String id)  updateCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateCategoriesError,required TResult Function( List<CategoryResponseData> data)  updateCategoriesSuccess,required TResult Function()  createCategoriesLoading,required TResult Function()  imagePicked,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case GetCategoriesLoading():
@@ -178,7 +182,8 @@ return getCategoriesSuccess(_that.data);case UpdateCategoriesLoading():
 return updateCategoriesLoading(_that.id);case UpdateCategoriesError():
 return updateCategoriesError(_that.apiErrorModel);case UpdateCategoriesSuccess():
 return updateCategoriesSuccess(_that.data);case CreateCategoriesLoading():
-return createCategoriesLoading();case _:
+return createCategoriesLoading();case CategoryImagePicked():
+return imagePicked();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,7 +200,7 @@ return createCategoriesLoading();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getCategoriesError,TResult? Function( List<CategoryResponseData> data)?  getCategoriesSuccess,TResult? Function( String id)?  updateCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateCategoriesError,TResult? Function( List<CategoryResponseData> data)?  updateCategoriesSuccess,TResult? Function()?  createCategoriesLoading,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getCategoriesError,TResult? Function( List<CategoryResponseData> data)?  getCategoriesSuccess,TResult? Function( String id)?  updateCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateCategoriesError,TResult? Function( List<CategoryResponseData> data)?  updateCategoriesSuccess,TResult? Function()?  createCategoriesLoading,TResult? Function()?  imagePicked,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetCategoriesLoading() when getCategoriesLoading != null:
@@ -205,7 +210,8 @@ return getCategoriesSuccess(_that.data);case UpdateCategoriesLoading() when upda
 return updateCategoriesLoading(_that.id);case UpdateCategoriesError() when updateCategoriesError != null:
 return updateCategoriesError(_that.apiErrorModel);case UpdateCategoriesSuccess() when updateCategoriesSuccess != null:
 return updateCategoriesSuccess(_that.data);case CreateCategoriesLoading() when createCategoriesLoading != null:
-return createCategoriesLoading();case _:
+return createCategoriesLoading();case CategoryImagePicked() when imagePicked != null:
+return imagePicked();case _:
   return null;
 
 }
@@ -643,6 +649,38 @@ int get hashCode => runtimeType.hashCode;
 @override
 String toString() {
   return 'CategoryState.createCategoriesLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class CategoryImagePicked implements CategoryState {
+  const CategoryImagePicked();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CategoryImagePicked);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CategoryState.imagePicked()';
 }
 
 

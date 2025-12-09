@@ -3,6 +3,7 @@ import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_order
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
 import 'package:elminiawy/feature/admin/storeAddress/presentation/screens/store_address_screen.dart';
+import 'package:elminiawy/feature/category/presentation/screen/add_new_category.dart';
 import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
 import 'package:elminiawy/feature/product/presenatation/screen/add_product.dart';
 
@@ -39,6 +40,14 @@ class RouteGenerator {
           builder: (_) => BlocProvider.value(
             value: instance<CategoryCubit>(),
             child: const CategoryView(),
+          ),
+        );
+
+      case Routes.addCategoryScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: instance<CategoryCubit>(),
+            child: AddNewCategory(),
           ),
         );
 

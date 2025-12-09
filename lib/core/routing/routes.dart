@@ -43,5 +43,6 @@ class Routes {
   static const String pendingOrders = "PendingOrders";
   static const String pendingDrivers = "PendingDrivers";
   static const String storeAddress = "StoreAddress";
-static const String profileScreen = "profileScreen";
+  static const String profileScreen = "profileScreen";
+  static const String addCategoryScreen = "AddCategoryScreen";
 }

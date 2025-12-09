@@ -30,9 +30,9 @@ void showEditCategoryActionDialog(
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
+            //TODO
             context.read<CategoryCubit>().pickImage(
-                  ImageSource.gallery,
-                  category.sId,
+             
                 );
           },
           child: Text(

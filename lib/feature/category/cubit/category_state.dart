@@ -10,17 +10,21 @@ class CategoryState with _$CategoryState {
       GetCategoriesError;
 
   const factory CategoryState.getCategoriesSuccess(
-      List<CategoryResponseData> data) = GetCategoriesSuccess;
+    List<CategoryResponseData> data,
+  ) = GetCategoriesSuccess;
 
   const factory CategoryState.updateCategoriesLoading(String id) =
       UpdateCategoriesLoading;
   const factory CategoryState.updateCategoriesError(
-      ApiErrorModel apiErrorModel) = UpdateCategoriesError;
+    ApiErrorModel apiErrorModel,
+  ) = UpdateCategoriesError;
 
   const factory CategoryState.updateCategoriesSuccess(
-      List<CategoryResponseData> data) = UpdateCategoriesSuccess;
-
+    List<CategoryResponseData> data,
+  ) = UpdateCategoriesSuccess;
 
   const factory CategoryState.createCategoriesLoading() =
       CreateCategoriesLoading;
+
+  const factory CategoryState.imagePicked() = CategoryImagePicked;
 }

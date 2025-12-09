@@ -1,38 +1,20 @@
 import 'package:dotted_border/dotted_border.dart';
-
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
-import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
 
-class AddProductScreen extends StatefulWidget {
-  const AddProductScreen({super.key});
+class AddNewCategory extends StatelessWidget {
+  AddNewCategory({super.key});
 
-  @override
-  State<AddProductScreen> createState() => _AddProductScreenState();
-}
-
-class _AddProductScreenState extends State<AddProductScreen> {
   final formKey = GlobalKey<FormState>();
-
-
-
-  @override
-  void initState() {
-    context.read<SubCategoriesCubit>().fetchGetSubCategories(
-      disablePagination: true,
-    );
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
-    final productCubit = context.watch<AdminProductCubit>();
     final responsive = ResponsiveUtils(context);
-
+    final categoryCubit = context.watch<CategoryCubit>();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          context.translate(AppStrings.addNewProduct),
+          context.translate(AppStrings.addNewCategory),
           style: Theme.of(
             context,
           ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
@@ -49,7 +31,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
               AdvancedImagePicker(),
               SizedBox(height: responsive.setHeight(2)),
 
-              _textFormData(productCubit, context, responsive),
+              _textFormData(categoryCubit, context, responsive),
 
               SizedBox(height: responsive.setHeight(3)),
 
@@ -61,12 +43,12 @@ class _AddProductScreenState extends State<AddProductScreen> {
     );
   }
 
-  BlocConsumer<AdminProductCubit, AdminProductState> _createProductButton() {
-    return BlocConsumer<AdminProductCubit, AdminProductState>(
+  BlocConsumer<CategoryCubit, CategoryState> _createProductButton() {
+    return BlocConsumer<CategoryCubit, CategoryState>(
       listener: (context, state) {
-        if (state is UpdateProductSuccess) {
+        if (state is UpdateCategoriesSuccess) {
           context.pop();
-        } else if (state is UpdateProductError) {
+        } else if (state is UpdateCategoriesError) {
           ShowToast.showToastErrorTop(
             errorMessage: state.apiErrorModel.message!,
             context: context,
@@ -76,7 +58,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
       builder: (context, state) {
         return CustomButton(
           onPressed: () {
-            final cubit = context.read<AdminProductCubit>();
+            final cubit = context.read<CategoryCubit>();
 
             // Validate form
             if (!formKey.currentState!.validate()) {
@@ -93,20 +75,10 @@ class _AddProductScreenState extends State<AddProductScreen> {
               return;
             }
 
-            // Validate image
-            if (cubit.subCategoryValueId == null) {
-              ShowToast.showToastErrorTop(
-                errorMessage: "من فضلك اختر فئة",
-                context: context,
-              );
-
-              return;
-            }
-
-            cubit.fetchCreateProduct();
+            cubit.fetchCreationCategory();
           },
           widget: LoadingButtonContent(
-            defaultText: AppStrings.createProduct,
+            defaultText: AppStrings.addNewCategory,
             state: state,
           ),
         );
@@ -115,16 +87,14 @@ class _AddProductScreenState extends State<AddProductScreen> {
   }
 
   Column _textFormData(
-    AdminProductCubit productCubit,
+    CategoryCubit categoryCubit,
     BuildContext context,
     ResponsiveUtils responsive,
   ) {
-    final subCategoryCubit = context.watch<SubCategoriesCubit>();
-
     return Column(
       children: [
         TextFormField(
-          controller: productCubit.arTitleController,
+          controller: categoryCubit.arTitleController,
 
           decoration: InputDecoration(
             hintText: context.translate(AppStrings.enterArabicTitle),
@@ -136,7 +106,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
         SizedBox(height: responsive.setHeight(1.5)),
         TextFormField(
-          controller: productCubit.enTitleController,
+          controller: categoryCubit.enTitleController,
 
           decoration: InputDecoration(
             hintText: context.translate(AppStrings.enterEnglishTitle),
@@ -144,61 +114,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
           validator: (v) =>
               v!.isEmpty ? context.translate(AppStrings.required) : null,
-        ),
-
-        SizedBox(height: responsive.setHeight(1.5)),
-        TextFormField(
-          controller: productCubit.arDescriptionController,
-
-          decoration: InputDecoration(
-            hintText: context.translate(AppStrings.enterArabicDescription),
-          ),
-
-          maxLines: 3,
-          minLines: 1,
-          validator: (v) =>
-              v!.isEmpty ? context.translate(AppStrings.required) : null,
-        ),
-
-        SizedBox(height: responsive.setHeight(1.5)),
-        TextFormField(
-          controller: productCubit.enDescriptionController,
-
-          decoration: InputDecoration(
-            hintText: context.translate(AppStrings.enterEnglishDescription),
-          ),
-          minLines: 1,
-
-          maxLines: 3,
-          validator: (v) =>
-              v!.isEmpty ? context.translate(AppStrings.required) : null,
-        ),
-        SizedBox(height: responsive.setHeight(1.5)),
-        TextFormField(
-          controller: productCubit.priceController,
-
-          decoration: InputDecoration(
-            hintText: context.translate(AppStrings.enterPrice),
-          ),
-
-          keyboardType: TextInputType.number,
-
-          validator: (v) =>
-              v!.isEmpty ? context.translate(AppStrings.required) : null,
-        ),
-
-        SizedBox(height: responsive.setHeight(1.5)),
-
-        CustomDropdownButtonFormField(
-          value: context.translate(AppStrings.addNewSubCategory),
-          items: subCategoryCubit.subCategoriesTitle,
-          onChanged: (value) {
-            String? subCategoryId = context
-                .read<SubCategoriesCubit>()
-                .returnSubCategoryIdType(value!);
-
-            context.read<AdminProductCubit>().setSubCategoryId(subCategoryId!);
-          },
         ),
       ],
     );
@@ -237,7 +152,7 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
     return Column(
       children: [
         GestureDetector(
-          onTap: () => context.read<AdminProductCubit>().pickImage(),
+          onTap: () => context.read<CategoryCubit>().pickImage(),
           child: DottedBorder(
             animation: _controller,
             options: const RoundedRectDottedBorderOptions(
@@ -253,7 +168,7 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
                 height: 180,
                 width: double.infinity,
                 decoration: BoxDecoration(color: Colors.grey.shade100),
-                child: context.read<AdminProductCubit>().imageFile == null
+                child: context.read<CategoryCubit>().imageFile == null
                     ? _buildPlaceholder()
                     : _buildImagePreview(),
               ),
@@ -286,10 +201,7 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.file(
-          context.read<AdminProductCubit>().imageFile!,
-          fit: BoxFit.cover,
-        ),
+        Image.file(context.read<CategoryCubit>().imageFile!, fit: BoxFit.cover),
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(

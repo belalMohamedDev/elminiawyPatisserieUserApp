@@ -66,13 +66,13 @@ class CategoryCubit extends Cubit<CategoryState> {
     );
   }
 
-  Future<void> fetchCreationCategory(File image) async {
+  Future<void> fetchCreationCategory() async {
     emit(const CategoryState.createCategoriesLoading());
 
     final response = await _categoryRepositoryImplement.createCategoriesrepo(
       arTitleController.text.trim(),
       enTitleController.text.trim(),
-      image,
+      imageFile!,
     );
 
     response.when(
@@ -81,6 +81,7 @@ class CategoryCubit extends Cubit<CategoryState> {
 
         arTitleController.clear();
         enTitleController.clear();
+        imageFile = null;
 
         emit(CategoryState.updateCategoriesSuccess([..._categories]));
       },
@@ -197,14 +198,15 @@ class CategoryCubit extends Cubit<CategoryState> {
     );
   }
 
-  Future<void> pickImage(ImageSource source, String? id) async {
-    final pickedImage = await _imagePicker.pickImage(source: source);
-    if (pickedImage != null) {
-      final imageFile = File(pickedImage.path);
+  File? imageFile;
 
-      id == null
-          ? await fetchCreationCategory(imageFile)
-          : await fetchUpdateImageCategories(id, imageFile);
+  Future<void> pickImage() async {
+    final pickedImage = await _imagePicker.pickImage(
+      source: ImageSource.gallery,
+    );
+    if (pickedImage != null) {
+      imageFile = File(pickedImage.path);
+      emit(const CategoryState.imagePicked());
     }
   }
 }
