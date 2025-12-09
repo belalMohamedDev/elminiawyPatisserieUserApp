@@ -161,7 +161,6 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   }
 
   Future<void> fetchDeleteSubCategories(String? id) async {
-    print(id);
     emit(SubCategoriesState.deleteSubCategoriesLoading(id!));
 
     final response = await _subCategoryRepositoryImplement
@@ -209,14 +208,11 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
     }
   }
 
-  Future<void> fetchUpdateSubCategoriesImage({
-    required String id,
-    required File image,
-  }) async {
+  Future<void> fetchUpdateSubCategoriesImage({required String id}) async {
     emit(SubCategoriesState.updateSubCategoriesImageLoading(id));
 
     final response = await _subCategoryRepositoryImplement
-        .updateSubCategoriesImageRepo(id, image);
+        .updateSubCategoriesImageRepo(id, imageFile!);
 
     response.when(
       success: (dataResponse) {
@@ -227,6 +223,8 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
         if (updatedIndex != -1) {
           _subCategories[updatedIndex] = dataResponse.data;
         }
+
+        imageFile = null;
 
         emit(
           SubCategoriesState.updateSubCategoriesImageSuccess([
