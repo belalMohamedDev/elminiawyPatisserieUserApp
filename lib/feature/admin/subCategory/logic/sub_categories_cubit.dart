@@ -53,12 +53,13 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
             arTitleController.text.trim(),
             enTitleController.text.trim(),
             categoryValueId!,
+            imageFile!,
           );
 
       response.when(
         success: (dataResponse) {
-          _subCategories.add(dataResponse.data);
-
+          _subCategories.insert(0, dataResponse.data);
+          imageFile = null;
           arTitleController.clear();
           enTitleController.clear();
 
@@ -160,6 +161,7 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
   }
 
   Future<void> fetchDeleteSubCategories(String? id) async {
+    print(id);
     emit(SubCategoriesState.deleteSubCategoriesLoading(id!));
 
     final response = await _subCategoryRepositoryImplement
@@ -185,13 +187,25 @@ class SubCategoriesCubit extends Cubit<SubCategoriesState> {
     );
   }
 
-  Future<void> pickImage(ImageSource source, String? id) async {
-    final pickedImage = await _imagePicker.pickImage(source: source);
+  // Future<void> pickImage(ImageSource source, String? id) async {
+  //   final pickedImage = await _imagePicker.pickImage(source: source);
+  //   if (pickedImage != null) {
+  //     final imageFile = File(pickedImage.path);
+  //     id == null
+  //         ? await fetchCreationNewSubCategory()
+  //         : await fetchUpdateSubCategoriesImage(id: id, image: imageFile);
+  //   }
+  // }
+
+  File? imageFile;
+
+  Future<void> pickImage() async {
+    final pickedImage = await _imagePicker.pickImage(
+      source: ImageSource.gallery,
+    );
     if (pickedImage != null) {
-      final imageFile = File(pickedImage.path);
-      id == null
-          ? await fetchCreationNewSubCategory()
-          : await fetchUpdateSubCategoriesImage(id: id, image: imageFile);
+      imageFile = File(pickedImage.path);
+      emit(const SubCategoriesState.imagePicked());
     }
   }
 

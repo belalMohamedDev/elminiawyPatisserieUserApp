@@ -52,4 +52,8 @@ class SubCategoriesState with _$SubCategoriesState {
   const factory SubCategoriesState.createSubCategoriesSuccess(
       List<SubCategoryResponseData> data) = CreateSubCategoriesSuccess;
 
+
+       const factory SubCategoriesState.imagePicked() = SubCategoryImagePicked;
+ 
+
 }

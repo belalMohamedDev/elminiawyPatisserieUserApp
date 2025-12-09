@@ -46,7 +46,6 @@ void showEditCategoryActionDialog(
               fontFamily: FontConsistent.geLocalozedFontFamily(),
             ),
           ),
-          // const Text('Edit Image'),
         ),
         CupertinoActionSheetAction(
           onPressed: () {

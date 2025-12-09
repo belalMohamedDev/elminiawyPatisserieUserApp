@@ -31,12 +31,12 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
         centerTitle: true,
         title: Text(
           context.translate(AppStrings.subCategory),
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(4)),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: BlocBuilder<SubCategoriesCubit, SubCategoriesState>(
         builder: (context, state) {
           return state is GetSubCategoriesLoading ||
@@ -45,23 +45,17 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
               : FloatingActionButton(
                   backgroundColor: ColorManger.brown,
                   onPressed: () {
-                    showEditAndCreateSubCategoryDialog(
-                        context,
-                        null,
-                        context.read<SubCategoriesCubit>(),
-                        context.read<CategoryCubit>());
+                    context.pushNamed(Routes.addSubCategoryScreen);
                   },
-                  child: Icon(
-                    Icons.add,
-                    color: ColorManger.white,
-                  ),
+                  child: Icon(Icons.add, color: ColorManger.white),
                 );
         },
       ),
       body: BlocBuilder<SubCategoriesCubit, SubCategoriesState>(
         builder: (context, state) {
-          final subCategories =
-              context.read<SubCategoriesCubit>().subCategories;
+          final subCategories = context
+              .read<SubCategoriesCubit>()
+              .subCategories;
           return RefreshIndicator(
             backgroundColor: ColorManger.white,
             color: ColorManger.brun,
@@ -94,15 +88,20 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
                     return false;
                   },
                   child: GetSubCategoryDataSuccess(
-                      subCategories: subCategories, state: state),
+                    subCategories: subCategories,
+                    state: state,
+                  ),
                 ),
                 if (state is GetSubCategoriesLoading ||
                     state is GetSubCategoriesError)
                   const GetSubCategoryDataLoading(),
                 LoadingOverlay(
-                    isLoading: state is CreateSubCategoriesLoading ||
-                        state is UpdateSubCategoriesLoading ||   state is UpdateSubCategoriesImageLoading ||
-                        state is DeleteSubCategoriesLoading),
+                  isLoading:
+                      state is CreateSubCategoriesLoading ||
+                      state is UpdateSubCategoriesLoading ||
+                      state is UpdateSubCategoriesImageLoading ||
+                      state is DeleteSubCategoriesLoading,
+                ),
               ],
             ),
           );

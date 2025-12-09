@@ -1,20 +1,31 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-class AddNewCategory extends StatelessWidget {
-  AddNewCategory({super.key});
+class AddNewSubCategory extends StatefulWidget {
+  const AddNewSubCategory({super.key});
 
+  @override
+  State<AddNewSubCategory> createState() => _AddNewSubCategoryState();
+}
+
+class _AddNewSubCategoryState extends State<AddNewSubCategory> {
   final formKey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+    super.initState();
+    Future.wait([context.read<CategoryCubit>().getCategories()]);
+  }
 
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
-    final categoryCubit = context.watch<CategoryCubit>();
+    final subCategoryCubit = context.watch<SubCategoriesCubit>();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          context.translate(AppStrings.addNewCategory),
+          context.translate(AppStrings.addNewSubCategory),
           style: Theme.of(
             context,
           ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
@@ -31,11 +42,11 @@ class AddNewCategory extends StatelessWidget {
               AdvancedImagePicker(),
               SizedBox(height: responsive.setHeight(2)),
 
-              _textFormData(categoryCubit, context, responsive),
+              _textFormData(subCategoryCubit, context, responsive),
 
               SizedBox(height: responsive.setHeight(3)),
 
-              _createNewCategoryButton(),
+              _createNewSubCategoryButton(),
             ],
           ),
         ),
@@ -43,12 +54,13 @@ class AddNewCategory extends StatelessWidget {
     );
   }
 
-  BlocConsumer<CategoryCubit, CategoryState> _createNewCategoryButton() {
-    return BlocConsumer<CategoryCubit, CategoryState>(
+  BlocConsumer<SubCategoriesCubit, SubCategoriesState>
+  _createNewSubCategoryButton() {
+    return BlocConsumer<SubCategoriesCubit, SubCategoriesState>(
       listener: (context, state) {
-        if (state is UpdateCategoriesSuccess) {
+        if (state is CreateSubCategoriesSuccess) {
           context.pop();
-        } else if (state is UpdateCategoriesError) {
+        } else if (state is CreateSubCategoriesError) {
           ShowToast.showToastErrorTop(
             errorMessage: state.apiErrorModel.message!,
             context: context,
@@ -58,10 +70,19 @@ class AddNewCategory extends StatelessWidget {
       builder: (context, state) {
         return CustomButton(
           onPressed: () {
-            final cubit = context.read<CategoryCubit>();
+            final cubit = context.read<SubCategoriesCubit>();
 
             // Validate form
             if (!formKey.currentState!.validate()) {
+              return;
+            }
+
+            if (cubit.categoryValueId == null) {
+              ShowToast.showToastErrorTop(
+                errorMessage: "من فضلك اختر فئة",
+                context: context,
+              );
+
               return;
             }
 
@@ -75,10 +96,10 @@ class AddNewCategory extends StatelessWidget {
               return;
             }
 
-            cubit.fetchCreationCategory();
+            cubit.fetchCreationNewSubCategory();
           },
           widget: LoadingButtonContent(
-            defaultText: AppStrings.addNewCategory,
+            defaultText: AppStrings.addNewSubCategory,
             state: state,
           ),
         );
@@ -87,14 +108,14 @@ class AddNewCategory extends StatelessWidget {
   }
 
   Column _textFormData(
-    CategoryCubit categoryCubit,
+    SubCategoriesCubit subCategoriesCubit,
     BuildContext context,
     ResponsiveUtils responsive,
   ) {
     return Column(
       children: [
         TextFormField(
-          controller: categoryCubit.arTitleController,
+          controller: subCategoriesCubit.arTitleController,
 
           decoration: InputDecoration(
             hintText: context.translate(AppStrings.enterArabicTitle),
@@ -106,7 +127,7 @@ class AddNewCategory extends StatelessWidget {
 
         SizedBox(height: responsive.setHeight(1.5)),
         TextFormField(
-          controller: categoryCubit.enTitleController,
+          controller: subCategoriesCubit.enTitleController,
 
           decoration: InputDecoration(
             hintText: context.translate(AppStrings.enterEnglishTitle),
@@ -114,6 +135,18 @@ class AddNewCategory extends StatelessWidget {
 
           validator: (v) =>
               v!.isEmpty ? context.translate(AppStrings.required) : null,
+        ),
+        SizedBox(height: responsive.setHeight(1.5)),
+
+        CustomDropdownButtonFormField(
+          value: context.translate(AppStrings.category),
+          items: context.read<CategoryCubit>().categoriesTitle,
+          onChanged: (value) {
+            String? categoryId = context
+                .read<CategoryCubit>()
+                .returnCategoryIdType(value!);
+            context.read<SubCategoriesCubit>().setCategoryId(categoryId!);
+          },
         ),
       ],
     );
@@ -152,7 +185,7 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
     return Column(
       children: [
         GestureDetector(
-          onTap: () => context.read<CategoryCubit>().pickImage(),
+          onTap: () => context.read<SubCategoriesCubit>().pickImage(),
           child: DottedBorder(
             animation: _controller,
             options: const RoundedRectDottedBorderOptions(
@@ -168,7 +201,7 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
                 height: 180,
                 width: double.infinity,
                 decoration: BoxDecoration(color: Colors.grey.shade100),
-                child: context.read<CategoryCubit>().imageFile == null
+                child: context.read<SubCategoriesCubit>().imageFile == null
                     ? _buildPlaceholder()
                     : _buildImagePreview(),
               ),
@@ -201,7 +234,10 @@ class _AdvancedImagePickerState extends State<AdvancedImagePicker>
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.file(context.read<CategoryCubit>().imageFile!, fit: BoxFit.cover),
+        Image.file(
+          context.read<SubCategoriesCubit>().imageFile!,
+          fit: BoxFit.cover,
+        ),
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(

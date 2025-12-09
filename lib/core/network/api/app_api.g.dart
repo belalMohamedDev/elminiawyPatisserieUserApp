@@ -699,15 +699,34 @@ class _AppServiceClient implements AppServiceClient {
 
   @override
   Future<SubCategoryResponse> createNewSubCategoriesService(
-    Map<String, dynamic> requestBody,
+    String arTitle,
+    String enTitle,
+    String category,
+    File image,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(requestBody);
+    final _data = FormData();
+    _data.fields.add(MapEntry('title.ar', arTitle));
+    _data.fields.add(MapEntry('title.en', enTitle));
+    _data.fields.add(MapEntry('category', category));
+    _data.files.add(
+      MapEntry(
+        'image',
+        MultipartFile.fromFileSync(
+          image.path,
+          filename: image.path.split(Platform.pathSeparator).last,
+        ),
+      ),
+    );
     final _options = _setStreamType<SubCategoryResponse>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: 'multipart/form-data',
+          )
           .compose(
             _dio.options,
             '/v1/api/subCategories',

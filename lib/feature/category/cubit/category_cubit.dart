@@ -165,6 +165,8 @@ class CategoryCubit extends Cubit<CategoryState> {
           _categories[updatedIndex] = dataResponse.data;
         }
 
+        imageFile = null;
+
         emit(CategoryState.updateCategoriesSuccess([..._categories]));
       },
       failure: (error) {

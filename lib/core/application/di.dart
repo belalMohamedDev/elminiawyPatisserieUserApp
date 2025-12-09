@@ -35,7 +35,7 @@ Future<void> initAppModule() async {
     _initSubCategory(),
     _initDriver(),
     _initAdmins(),
-    _initStoreAddress()
+    _initStoreAddress(),
   ]);
 }
 
@@ -64,84 +64,64 @@ Future<void> _initBanner() async {
   // //home repository
   instance
     ..registerLazySingleton<BannerRepositoryImplement>(
-        () => BannerRepositoryImplement(
-              instance(),
-            ))
-    ..registerFactory<BannerCubit>(() => BannerCubit(
-          instance(),
-          instance(),
-        ));
+      () => BannerRepositoryImplement(instance()),
+    )
+    ..registerFactory<BannerCubit>(() => BannerCubit(instance(), instance()));
 }
 
 Future<void> _initDriver() async {
   instance
     ..registerLazySingleton<DriverRepositoryImplement>(
-        () => DriverRepositoryImplement(
-              instance(),
-            ))
-    ..registerFactory<DriverCubit>(() => DriverCubit(
-          instance(),
-        ));
+      () => DriverRepositoryImplement(instance()),
+    )
+    ..registerFactory<DriverCubit>(() => DriverCubit(instance()));
 }
 
 Future<void> _initAdmins() async {
   instance
     ..registerLazySingleton<AdminsRepositoryImplement>(
-        () => AdminsRepositoryImplement(
-              instance(),
-            ))
-    ..registerFactory<AdminsCubit>(() => AdminsCubit(
-          instance(),
-        ));
+      () => AdminsRepositoryImplement(instance()),
+    )
+    ..registerFactory<AdminsCubit>(() => AdminsCubit(instance()));
 }
 
 Future<void> _initAdminHome() async {
   instance
     ..registerLazySingleton<OrderAdminRepositoryImplement>(
-        () => OrderAdminRepositoryImplement(
-              instance(),
-            ))
+      () => OrderAdminRepositoryImplement(instance()),
+    )
     // //home repository
-    ..registerFactory<AdminHomeCubit>(() => AdminHomeCubit(
-          instance(),
-        ));
+    ..registerFactory<AdminHomeCubit>(() => AdminHomeCubit(instance()));
 }
 
 Future<void> _initCategory() async {
   // //home repository
   instance
     ..registerLazySingleton<CategoryRepositoryImplement>(
-        () => CategoryRepositoryImplement(
-              instance(),
-            ))
-    ..registerLazySingleton<CategoryCubit>(() => CategoryCubit(
-          instance(),
-          instance(),
-        ));
+      () => CategoryRepositoryImplement(instance()),
+    )
+    ..registerLazySingleton<CategoryCubit>(
+      () => CategoryCubit(instance(), instance()),
+    );
 }
 
 Future<void> _initStoreAddress() async {
   instance
     ..registerLazySingleton<BranchStoreAddressRepositoryImplement>(
-        () => BranchStoreAddressRepositoryImplement(
-              instance(),
-            ))
-    ..registerFactory<StoreAddressCubit>(() => StoreAddressCubit(
-          instance(),
-        ));
+      () => BranchStoreAddressRepositoryImplement(instance()),
+    )
+    ..registerFactory<StoreAddressCubit>(() => StoreAddressCubit(instance()));
 }
 
 Future<void> _initSubCategory() async {
   // //home repository
   instance
     ..registerLazySingleton<SubCategoryRepositoryImplement>(
-        () => SubCategoryRepositoryImplement(
-              instance(),
-            ))
-    ..registerFactory<SubCategoriesCubit>(() => SubCategoriesCubit(
-          instance(),
-          instance(),
-        ));
+      () => SubCategoryRepositoryImplement(instance()),
+    )
+    ..registerLazySingleton<SubCategoriesCubit>(
+      () => SubCategoriesCubit(instance(), instance()),
+    );
 }
 
 Future<void> _initPlaces() async {
@@ -158,25 +138,21 @@ Future<void> _initPlaces() async {
 }
 
 Future<void> _initLogin() async {
-  instance.registerFactory<LoginBloc>(() => LoginBloc(
-        instance(),
-      ));
+  instance.registerFactory<LoginBloc>(() => LoginBloc(instance()));
 }
 
 Future<void> _initSignInWithGoogleAndApple() async {
   instance
     ..registerLazySingleton<AuthenticationRepositoryImplement>(
-        () => AuthenticationRepositoryImplement(instance()))
+      () => AuthenticationRepositoryImplement(instance()),
+    )
     ..registerFactory<AuthenticationWithGoogleAndAppleCubit>(
-        () => AuthenticationWithGoogleAndAppleCubit(
-              instance(),
-            ));
+      () => AuthenticationWithGoogleAndAppleCubit(instance()),
+    );
 }
 
 Future<void> _initSignUp() async {
-  instance.registerFactory<SignUpBloc>(() => SignUpBloc(
-        instance(),
-      ));
+  instance.registerFactory<SignUpBloc>(() => SignUpBloc(instance()));
 }
 
 // forget password
@@ -184,118 +160,117 @@ Future<void> _initSignUp() async {
 // New Password Repository
 Future<void> _initForgetPassword() async {
   instance.registerLazySingleton<ForgetPasswordBloc>(
-      () => ForgetPasswordBloc(instance(), instance(), instance()));
+    () => ForgetPasswordBloc(instance(), instance(), instance()),
+  );
 }
 
 Future<void> _initProduct() async {
   instance.registerLazySingleton<ProductRepositoryImplement>(
-      () => ProductRepositoryImplement(instance()));
-  instance.registerLazySingleton<ProductCubit>(() => ProductCubit(
-        instance(),
-      ));
+    () => ProductRepositoryImplement(instance()),
+  );
+  instance.registerLazySingleton<ProductCubit>(() => ProductCubit(instance()));
 
-  instance.registerLazySingleton<AdminProductCubit>(() => AdminProductCubit(
-        instance(),
-        instance(),
-      ));
+  instance.registerLazySingleton<AdminProductCubit>(
+    () => AdminProductCubit(instance(), instance()),
+  );
 }
 
 Future<void> _initWishList() async {
   instance
     ..registerLazySingleton<WishListRepositoryImplement>(
-        () => WishListRepositoryImplement(instance()))
-    ..registerLazySingleton<WishListCubit>(() => WishListCubit(
-          instance(),
-        ));
+      () => WishListRepositoryImplement(instance()),
+    )
+    ..registerLazySingleton<WishListCubit>(() => WishListCubit(instance()));
 }
 
 Future<void> _initLogOut() async {
   instance
-    ..registerLazySingleton<LogOutRepository>(() => LogOutRepository(
-          instance(),
-        ))
-    ..registerLazySingleton<LogOutCubit>(() => LogOutCubit(
-          instance(),
-        ));
+    ..registerLazySingleton<LogOutRepository>(
+      () => LogOutRepository(instance()),
+    )
+    ..registerLazySingleton<LogOutCubit>(() => LogOutCubit(instance()));
 }
 
 Future<void> _initAddress() async {
   instance
     ..registerLazySingleton<UserAddressRepositoryImplement>(
-        () => UserAddressRepositoryImplement(instance()))
-    ..registerLazySingleton<MapCubit>(() => MapCubit(
-          instance(),
-          instance(),
-        ))
-    ..registerLazySingleton<UserAddressCubit>(() => UserAddressCubit(
-          instance(),
-        ));
+      () => UserAddressRepositoryImplement(instance()),
+    )
+    ..registerLazySingleton<MapCubit>(() => MapCubit(instance(), instance()))
+    ..registerLazySingleton<UserAddressCubit>(
+      () => UserAddressCubit(instance()),
+    );
 }
 
 Future<void> _initProductBasedOnCategory() async {
   instance
     ..registerLazySingleton<GetProductBasedOnCategoryRepository>(
-        () => GetProductBasedOnCategoryRepository(instance()))
+      () => GetProductBasedOnCategoryRepository(instance()),
+    )
     ..registerFactory<ProductBasedOnCategoryCubit>(
-        () => ProductBasedOnCategoryCubit(
-              instance(),
-            ));
+      () => ProductBasedOnCategoryCubit(instance()),
+    );
 }
 
 Future<void> _initCart() async {
   instance
     ..registerLazySingleton<CartRepositoryImplement>(
-        () => CartRepositoryImplement(instance()))
-    ..registerLazySingleton<CartCubit>(() => CartCubit(
-          instance(),
-        ));
+      () => CartRepositoryImplement(instance()),
+    )
+    ..registerLazySingleton<CartCubit>(() => CartCubit(instance()));
 }
 
 Future<void> _initAccoutInformation() async {
   instance
     ..registerLazySingleton<AccountInformationRepositoryImplement>(
-        () => AccountInformationRepositoryImplement(instance()))
-    ..registerFactory<AccountInformationCubit>(() => AccountInformationCubit(
-          instance(),
-        ));
+      () => AccountInformationRepositoryImplement(instance()),
+    )
+    ..registerFactory<AccountInformationCubit>(
+      () => AccountInformationCubit(instance()),
+    );
 }
 
 Future<void> _initChangeEmailAddress() async {
   instance
     ..registerLazySingleton<ChangeEmailAddressRepository>(
-        () => ChangeEmailAddressRepository(instance()))
-    ..registerFactory<ChangeEmailAddressCubit>(() => ChangeEmailAddressCubit(
-          instance(),
-        ));
+      () => ChangeEmailAddressRepository(instance()),
+    )
+    ..registerFactory<ChangeEmailAddressCubit>(
+      () => ChangeEmailAddressCubit(instance()),
+    );
 }
 
 Future<void> _initChangeMyPassword() async {
   instance
     ..registerLazySingleton<ChangeMyPasswordRepository>(
-        () => ChangeMyPasswordRepository(instance()))
-    ..registerFactory<ChangeMyPasswordCubit>(() => ChangeMyPasswordCubit(
-          instance(),
-        ));
+      () => ChangeMyPasswordRepository(instance()),
+    )
+    ..registerFactory<ChangeMyPasswordCubit>(
+      () => ChangeMyPasswordCubit(instance()),
+    );
 }
 
 Future<void> _initPayment() async {
   instance
     ..registerLazySingleton<OrderRepositoryImplement>(
-        () => OrderRepositoryImplement(instance()))
+      () => OrderRepositoryImplement(instance()),
+    )
     ..registerLazySingleton<PaymentCubit>(() => PaymentCubit(instance()));
 }
 
 Future<void> _initNotification() async {
   instance
     ..registerLazySingleton<UserNotificationRepositoryImplement>(
-        () => UserNotificationRepositoryImplement(instance()))
+      () => UserNotificationRepositoryImplement(instance()),
+    )
     ..registerFactory<UserNotificationCubit>(
-        () => UserNotificationCubit(instance()));
+      () => UserNotificationCubit(instance()),
+    );
 }
 
 Future<void> _initSearch() async {
   instance
-      // ..registerLazySingleton<SearchInProductRepository>(
-      //     () => SearchInProductRepository(instance()))
-      .registerLazySingleton<SearchBloc>(() => SearchBloc(instance()));
+  // ..registerLazySingleton<SearchInProductRepository>(
+  //     () => SearchInProductRepository(instance()))
+  .registerLazySingleton<SearchBloc>(() => SearchBloc(instance()));
 }

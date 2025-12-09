@@ -3,6 +3,7 @@ import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_order
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
 import 'package:elminiawy/feature/admin/storeAddress/presentation/screens/store_address_screen.dart';
+import 'package:elminiawy/feature/admin/subCategory/presentation/screens/add_new_sub_category.dart';
 import 'package:elminiawy/feature/category/presentation/screen/add_new_category.dart';
 import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
 import 'package:elminiawy/feature/product/presenatation/screen/add_product.dart';
@@ -212,6 +213,17 @@ class RouteGenerator {
               BlocProvider.value(value: instance<CategoryCubit>()), // FIXED
             ],
             child: const AdminSubCategoryScreen(),
+          ),
+        );
+
+      case Routes.addSubCategoryScreen:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<SubCategoriesCubit>()),
+              BlocProvider.value(value: instance<CategoryCubit>()), // FIXED
+            ],
+            child: AddNewSubCategory(),
           ),
         );
 

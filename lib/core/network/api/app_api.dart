@@ -13,9 +13,7 @@ abstract class AppServiceClient {
   factory AppServiceClient(Dio dio, {String baseUrl}) = _AppServiceClient;
 
   @POST(ApiConstants.login)
-  Future<AuthResponse> login(
-    @Body() LoginRequestBody loginRequestBody,
-  );
+  Future<AuthResponse> login(@Body() LoginRequestBody loginRequestBody);
 
   @POST(ApiConstants.google)
   Future<AuthResponse> googleService(
@@ -70,9 +68,7 @@ abstract class AppServiceClient {
   );
 
   @DELETE("${ApiConstants.banner}/{id}")
-  Future<ApiSuccessGeneralModel> deleteBannerService(
-    @Path("id") String id,
-  );
+  Future<ApiSuccessGeneralModel> deleteBannerService(@Path("id") String id);
 
   @GET(ApiConstants.category)
   Future<CategoryResponse> getCategoriesService(
@@ -101,13 +97,13 @@ abstract class AppServiceClient {
   );
 
   @DELETE("${ApiConstants.category}/{id}")
-  Future<ApiSuccessGeneralModel> deleteCategoriesService(
-    @Path("id") String id,
-  );
+  Future<ApiSuccessGeneralModel> deleteCategoriesService(@Path("id") String id);
 
   @GET(ApiConstants.subCategories)
   Future<SubCategoryResponse> getSubCategoriesService(
-      @Query("limit") int? limit, @Query("page") int? page);
+    @Query("limit") int? limit,
+    @Query("page") int? page,
+  );
 
   @DELETE("${ApiConstants.subCategories}/{id}")
   Future<ApiSuccessGeneralModel> deleteSubCategoriesService(
@@ -128,8 +124,12 @@ abstract class AppServiceClient {
   );
 
   @POST(ApiConstants.subCategories)
+  @MultiPart()
   Future<SubCategoryResponse> createNewSubCategoriesService(
-    @Body() Map<String, dynamic> requestBody,
+    @Part(name: "title.ar") String arTitle,
+    @Part(name: "title.en") String enTitle,
+    @Part(name: "category") String category,
+    @Part() File image,
   );
 
   @GET(ApiConstants.newProduct)
@@ -144,7 +144,9 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.product)
   Future<ProductResponse> getAllProductService(
-      @Query("limit") int? limit, @Query("page") int? page);
+    @Query("limit") int? limit,
+    @Query("page") int? page,
+  );
 
   @PUT("${ApiConstants.product}/{id}")
   Future<ProductResponse> updateProductService(
@@ -172,9 +174,7 @@ abstract class AppServiceClient {
   );
 
   @DELETE("${ApiConstants.product}/{id}")
-  Future<ApiSuccessGeneralModel> deleteProductService(
-    @Path("id") String id,
-  );
+  Future<ApiSuccessGeneralModel> deleteProductService(@Path("id") String id);
 
   @GET(ApiConstants.newProduct)
   Future<ProductResponse> searchInProductService(
@@ -183,37 +183,31 @@ abstract class AppServiceClient {
     @Query("price") String? price,
   );
 
-  
   @GET(ApiConstants.storeAddress)
   Future<BranchStoreAddressResponse> getAllBranchStoreAddressService();
-
 
   @GET("${ApiConstants.driver}/allDriver")
   Future<AuthResponse> getAllDriverService();
 
   @PUT("${ApiConstants.driver}/{id}/active")
-  Future<AuthResponse> activeDriverService(
-    @Path("id") String id,
-  );
+  Future<AuthResponse> activeDriverService(@Path("id") String id);
 
   @GET("${ApiConstants.driver}/allDriverActive")
   Future<AuthResponse> getAllDriverActiveService();
 
   @DELETE("${ApiConstants.user}/{id}")
-  Future<ApiSuccessGeneralModel> deleteUserService(
-    @Path("id") String id,
-  );
+  Future<ApiSuccessGeneralModel> deleteUserService(@Path("id") String id);
 
   @GET(ApiConstants.admin)
   Future<AuthResponse> getAllAdminsService();
-
 
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();
 
   @POST(ApiConstants.wishList)
   Future<ProductResponse> addOrRemoveProductFromWishListService(
-      @Field("product") String product);
+    @Field("product") String product,
+  );
 
   @POST(ApiConstants.logOut)
   Future<ApiSuccessGeneralModel> logOutService(
@@ -240,9 +234,7 @@ abstract class AppServiceClient {
   );
 
   @DELETE('${ApiConstants.address}/{id}')
-  Future<ApiSuccessGeneralModel> deleteAddressService(
-    @Path("id") String id,
-  );
+  Future<ApiSuccessGeneralModel> deleteAddressService(@Path("id") String id);
 
   @GET('${ApiConstants.product}/{id}/category')
   Future<GetProductsBasedOnCategory> getProductsBasedOnCategory(
@@ -258,9 +250,7 @@ abstract class AppServiceClient {
   Future<CartResponse> getCartItem();
 
   @DELETE('${ApiConstants.cart}/{id}')
-  Future<CartResponse> removeItemFromCart(
-    @Path("id") String id,
-  );
+  Future<CartResponse> removeItemFromCart(@Path("id") String id);
 
   @DELETE('${ApiConstants.cart}/clearAllItems')
   Future<CartResponse> deleteCartService();
@@ -272,9 +262,7 @@ abstract class AppServiceClient {
   );
 
   @PUT('${ApiConstants.cart}/applyCoupon')
-  Future<CartResponse> applyCouponToCart(
-    @Field("coupon") String coupon,
-  );
+  Future<CartResponse> applyCouponToCart(@Field("coupon") String coupon);
 
   @PUT(ApiConstants.updateMyData)
   Future<UpdateAccountInformationResponse> updateMyData(
@@ -301,9 +289,7 @@ abstract class AppServiceClient {
   );
 
   @PUT('${ApiConstants.order}/{id}/cancelled')
-  Future<OrderResponse> orderCancelService(
-    @Path("id") String id,
-  );
+  Future<OrderResponse> orderCancelService(@Path("id") String id);
 
   @GET('${ApiConstants.order}/user')
   Future<GetOrdersResponse> getAllOrderCompleteService();
@@ -329,7 +315,7 @@ abstract class AppServiceClient {
 
   @GET('${ApiConstants.order}/admin/status')
   Future<GetOrderStatusCountResponse>
-      getOrdersStatusAndSalesTodayCountService();
+  getOrdersStatusAndSalesTodayCountService();
 
   @PUT('${ApiConstants.order}/admin/{id}')
   Future<OrderResponse> updateAdminStatusOrdersService(

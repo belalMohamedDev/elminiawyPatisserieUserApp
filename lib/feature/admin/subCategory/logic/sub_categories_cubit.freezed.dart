@@ -55,7 +55,7 @@ extension SubCategoriesStatePatterns on SubCategoriesState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetSubCategoriesLoading value)?  getSubCategoriesLoading,TResult Function( SubCategoriesLoadingFromPagination value)?  getSubCategoriesFromPaginationLoadingState,TResult Function( GetSubCategoriesError value)?  getSubCategoriesError,TResult Function( GetSubCategoriesSuccess value)?  getSubCategoriesSuccess,TResult Function( DeleteSubCategoriesLoading value)?  deleteSubCategoriesLoading,TResult Function( DeleteSubCategoriesError value)?  deleteSubCategoriesError,TResult Function( DeleteSubCategoriesSuccess value)?  deleteSubCategoriesSuccess,TResult Function( UpdateSubCategoriesLoading value)?  updateSubCategoriesLoading,TResult Function( UpdateSubCategoriesError value)?  updateSubCategoriesError,TResult Function( UpdateSubCategoriesSuccess value)?  updateSubCategoriesSuccess,TResult Function( UpdateSubCategoriesImageLoading value)?  updateSubCategoriesImageLoading,TResult Function( UpdateSubCategoriesImageError value)?  updateSubCategoriesImageError,TResult Function( UpdateSubCategoriesImageSuccess value)?  updateSubCategoriesImageSuccess,TResult Function( UpdateActiveStatus value)?  updateActiveStatus,TResult Function( CreateSubCategoriesLoading value)?  createSubCategoriesLoading,TResult Function( CreateSubCategoriesError value)?  createSubCategoriesError,TResult Function( CreateSubCategoriesSuccess value)?  createSubCategoriesSuccess,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetSubCategoriesLoading value)?  getSubCategoriesLoading,TResult Function( SubCategoriesLoadingFromPagination value)?  getSubCategoriesFromPaginationLoadingState,TResult Function( GetSubCategoriesError value)?  getSubCategoriesError,TResult Function( GetSubCategoriesSuccess value)?  getSubCategoriesSuccess,TResult Function( DeleteSubCategoriesLoading value)?  deleteSubCategoriesLoading,TResult Function( DeleteSubCategoriesError value)?  deleteSubCategoriesError,TResult Function( DeleteSubCategoriesSuccess value)?  deleteSubCategoriesSuccess,TResult Function( UpdateSubCategoriesLoading value)?  updateSubCategoriesLoading,TResult Function( UpdateSubCategoriesError value)?  updateSubCategoriesError,TResult Function( UpdateSubCategoriesSuccess value)?  updateSubCategoriesSuccess,TResult Function( UpdateSubCategoriesImageLoading value)?  updateSubCategoriesImageLoading,TResult Function( UpdateSubCategoriesImageError value)?  updateSubCategoriesImageError,TResult Function( UpdateSubCategoriesImageSuccess value)?  updateSubCategoriesImageSuccess,TResult Function( UpdateActiveStatus value)?  updateActiveStatus,TResult Function( CreateSubCategoriesLoading value)?  createSubCategoriesLoading,TResult Function( CreateSubCategoriesError value)?  createSubCategoriesError,TResult Function( CreateSubCategoriesSuccess value)?  createSubCategoriesSuccess,TResult Function( SubCategoryImagePicked value)?  imagePicked,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -76,7 +76,8 @@ return updateSubCategoriesImageSuccess(_that);case UpdateActiveStatus() when upd
 return updateActiveStatus(_that);case CreateSubCategoriesLoading() when createSubCategoriesLoading != null:
 return createSubCategoriesLoading(_that);case CreateSubCategoriesError() when createSubCategoriesError != null:
 return createSubCategoriesError(_that);case CreateSubCategoriesSuccess() when createSubCategoriesSuccess != null:
-return createSubCategoriesSuccess(_that);case _:
+return createSubCategoriesSuccess(_that);case SubCategoryImagePicked() when imagePicked != null:
+return imagePicked(_that);case _:
   return orElse();
 
 }
@@ -94,7 +95,7 @@ return createSubCategoriesSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetSubCategoriesLoading value)  getSubCategoriesLoading,required TResult Function( SubCategoriesLoadingFromPagination value)  getSubCategoriesFromPaginationLoadingState,required TResult Function( GetSubCategoriesError value)  getSubCategoriesError,required TResult Function( GetSubCategoriesSuccess value)  getSubCategoriesSuccess,required TResult Function( DeleteSubCategoriesLoading value)  deleteSubCategoriesLoading,required TResult Function( DeleteSubCategoriesError value)  deleteSubCategoriesError,required TResult Function( DeleteSubCategoriesSuccess value)  deleteSubCategoriesSuccess,required TResult Function( UpdateSubCategoriesLoading value)  updateSubCategoriesLoading,required TResult Function( UpdateSubCategoriesError value)  updateSubCategoriesError,required TResult Function( UpdateSubCategoriesSuccess value)  updateSubCategoriesSuccess,required TResult Function( UpdateSubCategoriesImageLoading value)  updateSubCategoriesImageLoading,required TResult Function( UpdateSubCategoriesImageError value)  updateSubCategoriesImageError,required TResult Function( UpdateSubCategoriesImageSuccess value)  updateSubCategoriesImageSuccess,required TResult Function( UpdateActiveStatus value)  updateActiveStatus,required TResult Function( CreateSubCategoriesLoading value)  createSubCategoriesLoading,required TResult Function( CreateSubCategoriesError value)  createSubCategoriesError,required TResult Function( CreateSubCategoriesSuccess value)  createSubCategoriesSuccess,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetSubCategoriesLoading value)  getSubCategoriesLoading,required TResult Function( SubCategoriesLoadingFromPagination value)  getSubCategoriesFromPaginationLoadingState,required TResult Function( GetSubCategoriesError value)  getSubCategoriesError,required TResult Function( GetSubCategoriesSuccess value)  getSubCategoriesSuccess,required TResult Function( DeleteSubCategoriesLoading value)  deleteSubCategoriesLoading,required TResult Function( DeleteSubCategoriesError value)  deleteSubCategoriesError,required TResult Function( DeleteSubCategoriesSuccess value)  deleteSubCategoriesSuccess,required TResult Function( UpdateSubCategoriesLoading value)  updateSubCategoriesLoading,required TResult Function( UpdateSubCategoriesError value)  updateSubCategoriesError,required TResult Function( UpdateSubCategoriesSuccess value)  updateSubCategoriesSuccess,required TResult Function( UpdateSubCategoriesImageLoading value)  updateSubCategoriesImageLoading,required TResult Function( UpdateSubCategoriesImageError value)  updateSubCategoriesImageError,required TResult Function( UpdateSubCategoriesImageSuccess value)  updateSubCategoriesImageSuccess,required TResult Function( UpdateActiveStatus value)  updateActiveStatus,required TResult Function( CreateSubCategoriesLoading value)  createSubCategoriesLoading,required TResult Function( CreateSubCategoriesError value)  createSubCategoriesError,required TResult Function( CreateSubCategoriesSuccess value)  createSubCategoriesSuccess,required TResult Function( SubCategoryImagePicked value)  imagePicked,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -115,7 +116,8 @@ return updateSubCategoriesImageSuccess(_that);case UpdateActiveStatus():
 return updateActiveStatus(_that);case CreateSubCategoriesLoading():
 return createSubCategoriesLoading(_that);case CreateSubCategoriesError():
 return createSubCategoriesError(_that);case CreateSubCategoriesSuccess():
-return createSubCategoriesSuccess(_that);case _:
+return createSubCategoriesSuccess(_that);case SubCategoryImagePicked():
+return imagePicked(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -132,7 +134,7 @@ return createSubCategoriesSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetSubCategoriesLoading value)?  getSubCategoriesLoading,TResult? Function( SubCategoriesLoadingFromPagination value)?  getSubCategoriesFromPaginationLoadingState,TResult? Function( GetSubCategoriesError value)?  getSubCategoriesError,TResult? Function( GetSubCategoriesSuccess value)?  getSubCategoriesSuccess,TResult? Function( DeleteSubCategoriesLoading value)?  deleteSubCategoriesLoading,TResult? Function( DeleteSubCategoriesError value)?  deleteSubCategoriesError,TResult? Function( DeleteSubCategoriesSuccess value)?  deleteSubCategoriesSuccess,TResult? Function( UpdateSubCategoriesLoading value)?  updateSubCategoriesLoading,TResult? Function( UpdateSubCategoriesError value)?  updateSubCategoriesError,TResult? Function( UpdateSubCategoriesSuccess value)?  updateSubCategoriesSuccess,TResult? Function( UpdateSubCategoriesImageLoading value)?  updateSubCategoriesImageLoading,TResult? Function( UpdateSubCategoriesImageError value)?  updateSubCategoriesImageError,TResult? Function( UpdateSubCategoriesImageSuccess value)?  updateSubCategoriesImageSuccess,TResult? Function( UpdateActiveStatus value)?  updateActiveStatus,TResult? Function( CreateSubCategoriesLoading value)?  createSubCategoriesLoading,TResult? Function( CreateSubCategoriesError value)?  createSubCategoriesError,TResult? Function( CreateSubCategoriesSuccess value)?  createSubCategoriesSuccess,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetSubCategoriesLoading value)?  getSubCategoriesLoading,TResult? Function( SubCategoriesLoadingFromPagination value)?  getSubCategoriesFromPaginationLoadingState,TResult? Function( GetSubCategoriesError value)?  getSubCategoriesError,TResult? Function( GetSubCategoriesSuccess value)?  getSubCategoriesSuccess,TResult? Function( DeleteSubCategoriesLoading value)?  deleteSubCategoriesLoading,TResult? Function( DeleteSubCategoriesError value)?  deleteSubCategoriesError,TResult? Function( DeleteSubCategoriesSuccess value)?  deleteSubCategoriesSuccess,TResult? Function( UpdateSubCategoriesLoading value)?  updateSubCategoriesLoading,TResult? Function( UpdateSubCategoriesError value)?  updateSubCategoriesError,TResult? Function( UpdateSubCategoriesSuccess value)?  updateSubCategoriesSuccess,TResult? Function( UpdateSubCategoriesImageLoading value)?  updateSubCategoriesImageLoading,TResult? Function( UpdateSubCategoriesImageError value)?  updateSubCategoriesImageError,TResult? Function( UpdateSubCategoriesImageSuccess value)?  updateSubCategoriesImageSuccess,TResult? Function( UpdateActiveStatus value)?  updateActiveStatus,TResult? Function( CreateSubCategoriesLoading value)?  createSubCategoriesLoading,TResult? Function( CreateSubCategoriesError value)?  createSubCategoriesError,TResult? Function( CreateSubCategoriesSuccess value)?  createSubCategoriesSuccess,TResult? Function( SubCategoryImagePicked value)?  imagePicked,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -153,7 +155,8 @@ return updateSubCategoriesImageSuccess(_that);case UpdateActiveStatus() when upd
 return updateActiveStatus(_that);case CreateSubCategoriesLoading() when createSubCategoriesLoading != null:
 return createSubCategoriesLoading(_that);case CreateSubCategoriesError() when createSubCategoriesError != null:
 return createSubCategoriesError(_that);case CreateSubCategoriesSuccess() when createSubCategoriesSuccess != null:
-return createSubCategoriesSuccess(_that);case _:
+return createSubCategoriesSuccess(_that);case SubCategoryImagePicked() when imagePicked != null:
+return imagePicked(_that);case _:
   return null;
 
 }
@@ -170,7 +173,7 @@ return createSubCategoriesSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getSubCategoriesLoading,TResult Function()?  getSubCategoriesFromPaginationLoadingState,TResult Function( ApiErrorModel apiErrorModel)?  getSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  getSubCategoriesSuccess,TResult Function( String id)?  deleteSubCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  deleteSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  deleteSubCategoriesSuccess,TResult Function( String id)?  updateSubCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  updateSubCategoriesSuccess,TResult Function( String id)?  updateSubCategoriesImageLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesImageError,TResult Function( List<SubCategoryResponseData> data)?  updateSubCategoriesImageSuccess,TResult Function( bool? value)?  updateActiveStatus,TResult Function()?  createSubCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  createSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  createSubCategoriesSuccess,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getSubCategoriesLoading,TResult Function()?  getSubCategoriesFromPaginationLoadingState,TResult Function( ApiErrorModel apiErrorModel)?  getSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  getSubCategoriesSuccess,TResult Function( String id)?  deleteSubCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  deleteSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  deleteSubCategoriesSuccess,TResult Function( String id)?  updateSubCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  updateSubCategoriesSuccess,TResult Function( String id)?  updateSubCategoriesImageLoading,TResult Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesImageError,TResult Function( List<SubCategoryResponseData> data)?  updateSubCategoriesImageSuccess,TResult Function( bool? value)?  updateActiveStatus,TResult Function()?  createSubCategoriesLoading,TResult Function( ApiErrorModel apiErrorModel)?  createSubCategoriesError,TResult Function( List<SubCategoryResponseData> data)?  createSubCategoriesSuccess,TResult Function()?  imagePicked,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetSubCategoriesLoading() when getSubCategoriesLoading != null:
@@ -190,7 +193,8 @@ return updateSubCategoriesImageSuccess(_that.data);case UpdateActiveStatus() whe
 return updateActiveStatus(_that.value);case CreateSubCategoriesLoading() when createSubCategoriesLoading != null:
 return createSubCategoriesLoading();case CreateSubCategoriesError() when createSubCategoriesError != null:
 return createSubCategoriesError(_that.apiErrorModel);case CreateSubCategoriesSuccess() when createSubCategoriesSuccess != null:
-return createSubCategoriesSuccess(_that.data);case _:
+return createSubCategoriesSuccess(_that.data);case SubCategoryImagePicked() when imagePicked != null:
+return imagePicked();case _:
   return orElse();
 
 }
@@ -208,7 +212,7 @@ return createSubCategoriesSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getSubCategoriesLoading,required TResult Function()  getSubCategoriesFromPaginationLoadingState,required TResult Function( ApiErrorModel apiErrorModel)  getSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  getSubCategoriesSuccess,required TResult Function( String id)  deleteSubCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  deleteSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  deleteSubCategoriesSuccess,required TResult Function( String id)  updateSubCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  updateSubCategoriesSuccess,required TResult Function( String id)  updateSubCategoriesImageLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateSubCategoriesImageError,required TResult Function( List<SubCategoryResponseData> data)  updateSubCategoriesImageSuccess,required TResult Function( bool? value)  updateActiveStatus,required TResult Function()  createSubCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  createSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  createSubCategoriesSuccess,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getSubCategoriesLoading,required TResult Function()  getSubCategoriesFromPaginationLoadingState,required TResult Function( ApiErrorModel apiErrorModel)  getSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  getSubCategoriesSuccess,required TResult Function( String id)  deleteSubCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  deleteSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  deleteSubCategoriesSuccess,required TResult Function( String id)  updateSubCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  updateSubCategoriesSuccess,required TResult Function( String id)  updateSubCategoriesImageLoading,required TResult Function( ApiErrorModel apiErrorModel)  updateSubCategoriesImageError,required TResult Function( List<SubCategoryResponseData> data)  updateSubCategoriesImageSuccess,required TResult Function( bool? value)  updateActiveStatus,required TResult Function()  createSubCategoriesLoading,required TResult Function( ApiErrorModel apiErrorModel)  createSubCategoriesError,required TResult Function( List<SubCategoryResponseData> data)  createSubCategoriesSuccess,required TResult Function()  imagePicked,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case GetSubCategoriesLoading():
@@ -228,7 +232,8 @@ return updateSubCategoriesImageSuccess(_that.data);case UpdateActiveStatus():
 return updateActiveStatus(_that.value);case CreateSubCategoriesLoading():
 return createSubCategoriesLoading();case CreateSubCategoriesError():
 return createSubCategoriesError(_that.apiErrorModel);case CreateSubCategoriesSuccess():
-return createSubCategoriesSuccess(_that.data);case _:
+return createSubCategoriesSuccess(_that.data);case SubCategoryImagePicked():
+return imagePicked();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -245,7 +250,7 @@ return createSubCategoriesSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getSubCategoriesLoading,TResult? Function()?  getSubCategoriesFromPaginationLoadingState,TResult? Function( ApiErrorModel apiErrorModel)?  getSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  getSubCategoriesSuccess,TResult? Function( String id)?  deleteSubCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  deleteSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  deleteSubCategoriesSuccess,TResult? Function( String id)?  updateSubCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  updateSubCategoriesSuccess,TResult? Function( String id)?  updateSubCategoriesImageLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesImageError,TResult? Function( List<SubCategoryResponseData> data)?  updateSubCategoriesImageSuccess,TResult? Function( bool? value)?  updateActiveStatus,TResult? Function()?  createSubCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  createSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  createSubCategoriesSuccess,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getSubCategoriesLoading,TResult? Function()?  getSubCategoriesFromPaginationLoadingState,TResult? Function( ApiErrorModel apiErrorModel)?  getSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  getSubCategoriesSuccess,TResult? Function( String id)?  deleteSubCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  deleteSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  deleteSubCategoriesSuccess,TResult? Function( String id)?  updateSubCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  updateSubCategoriesSuccess,TResult? Function( String id)?  updateSubCategoriesImageLoading,TResult? Function( ApiErrorModel apiErrorModel)?  updateSubCategoriesImageError,TResult? Function( List<SubCategoryResponseData> data)?  updateSubCategoriesImageSuccess,TResult? Function( bool? value)?  updateActiveStatus,TResult? Function()?  createSubCategoriesLoading,TResult? Function( ApiErrorModel apiErrorModel)?  createSubCategoriesError,TResult? Function( List<SubCategoryResponseData> data)?  createSubCategoriesSuccess,TResult? Function()?  imagePicked,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetSubCategoriesLoading() when getSubCategoriesLoading != null:
@@ -265,7 +270,8 @@ return updateSubCategoriesImageSuccess(_that.data);case UpdateActiveStatus() whe
 return updateActiveStatus(_that.value);case CreateSubCategoriesLoading() when createSubCategoriesLoading != null:
 return createSubCategoriesLoading();case CreateSubCategoriesError() when createSubCategoriesError != null:
 return createSubCategoriesError(_that.apiErrorModel);case CreateSubCategoriesSuccess() when createSubCategoriesSuccess != null:
-return createSubCategoriesSuccess(_that.data);case _:
+return createSubCategoriesSuccess(_that.data);case SubCategoryImagePicked() when imagePicked != null:
+return imagePicked();case _:
   return null;
 
 }
@@ -1354,5 +1360,37 @@ as List<SubCategoryResponseData>,
 
 
 }
+
+/// @nodoc
+
+
+class SubCategoryImagePicked implements SubCategoriesState {
+  const SubCategoryImagePicked();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubCategoryImagePicked);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'SubCategoriesState.imagePicked()';
+}
+
+
+}
+
+
+
 
 // dart format on
