@@ -124,46 +124,64 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
     return Column(
       children: [
-        AppInputField(
+        TextFormField(
           controller: productCubit.arTitleController,
-          hint: context.translate(AppStrings.enterArabicTitle),
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.enterArabicTitle),
+          ),
 
           validator: (v) =>
               v!.isEmpty ? context.translate(AppStrings.required) : null,
         ),
 
         SizedBox(height: responsive.setHeight(1.5)),
-        AppInputField(
+        TextFormField(
           controller: productCubit.enTitleController,
-          hint: context.translate(AppStrings.enterEnglishTitle),
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.enterEnglishTitle),
+          ),
 
           validator: (v) =>
               v!.isEmpty ? context.translate(AppStrings.required) : null,
         ),
 
         SizedBox(height: responsive.setHeight(1.5)),
-        AppInputField(
+        TextFormField(
           controller: productCubit.arDescriptionController,
-          hint: context.translate(AppStrings.enterArabicDescription),
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.enterArabicDescription),
+          ),
 
           maxLines: 3,
+          minLines: 1,
           validator: (v) =>
               v!.isEmpty ? context.translate(AppStrings.required) : null,
         ),
 
         SizedBox(height: responsive.setHeight(1.5)),
-        AppInputField(
+        TextFormField(
           controller: productCubit.enDescriptionController,
-          hint: context.translate(AppStrings.enterEnglishDescription),
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.enterEnglishDescription),
+          ),
+          minLines: 1,
 
           maxLines: 3,
           validator: (v) =>
               v!.isEmpty ? context.translate(AppStrings.required) : null,
         ),
         SizedBox(height: responsive.setHeight(1.5)),
-        AppInputField(
+        TextFormField(
           controller: productCubit.priceController,
-          hint: context.translate(AppStrings.enterPrice),
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.enterPrice),
+          ),
+
           keyboardType: TextInputType.number,
 
           validator: (v) =>
@@ -184,40 +202,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
           },
         ),
       ],
-    );
-  }
-}
-
-class AppInputField extends StatelessWidget {
-  final TextEditingController controller;
-  final String hint;
-  final IconData? icon;
-  final int maxLines;
-  final TextInputType keyboardType;
-  final String? Function(String?)? validator;
-
-  const AppInputField({
-    super.key,
-    required this.controller,
-    required this.hint,
-    this.icon,
-    this.maxLines = 5,
-    this.keyboardType = TextInputType.text,
-    this.validator,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      keyboardType: keyboardType,
-      validator: validator,
-      minLines: 1,
-      maxLines: maxLines,
-      decoration: InputDecoration(
-        prefixIcon: icon != null ? Icon(icon, size: 22) : null,
-        hintText: hint,
-      ),
     );
   }
 }

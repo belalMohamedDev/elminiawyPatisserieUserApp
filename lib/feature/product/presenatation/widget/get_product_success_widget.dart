@@ -94,33 +94,37 @@ class GetProductSuccessWidget extends StatelessWidget {
                         ))),
                   ),
                   responsive.setSizeBox(width: 3),
-                  InkWell(
-                    onTap: () {
-                      context.read<AdminProductCubit>().fetchDeleteProduct(
-                            products[index].sId!,
-                          );
-                    },
-                    child: Container(
-                      height: responsive.setHeight(6),
-                      width: responsive.setWidth(12),
-                      decoration: BoxDecoration(
-                        color: products[index].active == true
-                            ? Colors.green
-                            : ColorManger.redError,
-                        borderRadius: BorderRadius.circular(
-                            responsive.setBorderRadius(3)),
-                      ),
-                      child: Center(
-                          child: Icon(
-                        Icons.delete_outline_rounded,
-                        color: ColorManger.white,
-                      )),
-                    ),
-                  ),
+                  _deleteProductButton(context, products, index, responsive),
                 ],
               ),
             ));
       },
     );
+  }
+
+  InkWell _deleteProductButton(BuildContext context, List<DataProductResponse> products, int index, ResponsiveUtils responsive) {
+    return InkWell(
+                  onTap: () {
+                    context.read<AdminProductCubit>().fetchDeleteProduct(
+                          products[index].sId!,
+                        );
+                  },
+                  child: Container(
+                    height: responsive.setHeight(6),
+                    width: responsive.setWidth(12),
+                    decoration: BoxDecoration(
+                      color: products[index].active == true
+                          ? Colors.green
+                          : ColorManger.redError,
+                      borderRadius: BorderRadius.circular(
+                          responsive.setBorderRadius(3)),
+                    ),
+                    child: Center(
+                        child: Icon(
+                      Icons.delete_outline_rounded,
+                      color: ColorManger.white,
+                    )),
+                  ),
+                );
   }
 }

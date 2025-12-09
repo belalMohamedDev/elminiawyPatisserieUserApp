@@ -17,29 +17,35 @@ void showEditProductActionDialog(
         CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
-            showProductEditPopup(
-              product,
-              context,
-            );
+            showProductEditPopup(product, context);
           },
           child: Text(
             context.translate(AppStrings.edit),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            style: TextStyle(
+              fontFamily: FontConsistent.geLocalozedFontFamily(),
+            ),
           ),
         ),
         CupertinoActionSheetAction(
-          onPressed: () {
+          onPressed: () async {
             Navigator.pop(context);
-            context.read<AdminProductCubit>().pickImage(
-                 
-                
-                );
+
+            await context.read<AdminProductCubit>().pickImage();
+
+            final image = context.read<AdminProductCubit>().imageFile;
+
+            if (image != null) {
+              context.read<AdminProductCubit>().fetchUpdateProductImage(
+                id: product.sId!,
+              );
+            }
           },
+
           child: Text(
             context.translate(AppStrings.editImage),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            style: TextStyle(
+              fontFamily: FontConsistent.geLocalozedFontFamily(),
+            ),
           ),
           // const Text('Edit Image'),
         ),
@@ -47,16 +53,17 @@ void showEditProductActionDialog(
           onPressed: () {
             Navigator.pop(context);
             context.read<AdminProductCubit>().fetchUpdateProduct(
-                  id: product.sId!,
-                  active: !product.active!,
-                );
+              id: product.sId!,
+              active: !product.active!,
+            );
           },
           child: Text(
             product.active == true
                 ? context.translate(AppStrings.deActive)
                 : context.translate(AppStrings.active),
-            style:
-                TextStyle(fontFamily: FontConsistent.geLocalozedFontFamily()),
+            style: TextStyle(
+              fontFamily: FontConsistent.geLocalozedFontFamily(),
+            ),
           ),
         ),
       ],

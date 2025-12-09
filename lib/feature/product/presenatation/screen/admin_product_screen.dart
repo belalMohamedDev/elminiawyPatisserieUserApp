@@ -1,6 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
-import 'package:elminiawy/feature/product/presenatation/screen/add_product.dart';
 
 class AdminProductScreen extends StatefulWidget {
   const AdminProductScreen({super.key});
@@ -15,6 +14,9 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<AdminProductCubit>().fetchGetAllProduct();
+      context.read<SubCategoriesCubit>().fetchGetSubCategories(
+        disablePagination: true,
+      );
     });
 
     super.initState();
@@ -30,24 +32,8 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
           children: [
             Scaffold(
               resizeToAvoidBottomInset: true,
-              appBar: AppBar(
-                centerTitle: true,
-                title: Text(
-                  context.translate(AppStrings.products),
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontSize: responsive.setTextSize(4),
-                  ),
-                ),
-              ),
-              floatingActionButton: (state is GetAllProductLoading)
-                  ? const SizedBox()
-                  : FloatingActionButton(
-                      backgroundColor: ColorManger.brun,
-                      onPressed: () async {
-                        context.pushNamed(Routes.addProduct);
-                      },
-                      child: Icon(Icons.add, color: ColorManger.white),
-                    ),
+              appBar: _adminProductAppBar(context, responsive, state),
+
               body: state is GetAllProductLoading
                   ? const GetProductLoadingWidget()
                   : NotificationListener<ScrollNotification>(
@@ -81,6 +67,44 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
           ],
         );
       },
+    );
+  }
+
+  AppBar _adminProductAppBar(
+    BuildContext context,
+    ResponsiveUtils responsive,
+    AdminProductState state,
+  ) {
+    return AppBar(
+      centerTitle: true,
+      title: Text(
+        context.translate(AppStrings.products),
+        style: Theme.of(
+          context,
+        ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
+      ),
+
+      actions: [
+        (state is GetAllProductLoading)
+            ? const SizedBox()
+            : GestureDetector(
+                onTap: () {
+                  context.pushNamed(Routes.addProduct);
+                },
+                child: Container(
+                  height: responsive.setHeight(4.5),
+                  width: responsive.setWidth(9.5),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(
+                      responsive.setBorderRadius(5),
+                    ),
+                  ),
+                  child: Icon(Icons.add, color: ColorManger.white),
+                ),
+              ),
+        SizedBox(width: responsive.setWidth(5)),
+      ],
     );
   }
 }

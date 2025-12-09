@@ -139,6 +139,7 @@ class AdminProductCubit extends Cubit<AdminProductState> {
         arDescriptionController.clear();
         enDescriptionController.clear();
         priceController.clear();
+        imageFile = null;
 
         emit(AdminProductState.updateProductSuccess([..._allProduct]));
       },
@@ -150,7 +151,7 @@ class AdminProductCubit extends Cubit<AdminProductState> {
 
   File? imageFile;
 
-  void pickImage() async {
+  Future<void> pickImage() async {
     final pickedImage = await _imagePicker.pickImage(
       source: ImageSource.gallery,
     );
@@ -160,15 +161,12 @@ class AdminProductCubit extends Cubit<AdminProductState> {
     }
   }
 
-  Future<void> fetchUpdateProductImage({
-    required String id,
-    required File image,
-  }) async {
+  Future<void> fetchUpdateProductImage({required String id}) async {
     emit(const AdminProductState.updateProductLoading());
 
     final response = await _productRepository.updateProductImageRepo(
       id: id,
-      image: image,
+      image: imageFile!,
     );
 
     response.when(
@@ -180,6 +178,7 @@ class AdminProductCubit extends Cubit<AdminProductState> {
         if (updatedIndex != -1) {
           _allProduct[updatedIndex] = dataResponse.data;
         }
+        imageFile = null;
 
         emit(AdminProductState.updateProductSuccess([..._allProduct]));
       },
