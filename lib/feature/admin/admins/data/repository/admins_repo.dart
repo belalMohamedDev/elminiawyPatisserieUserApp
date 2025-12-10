@@ -7,6 +7,7 @@ abstract class AdminsRepository {
   Future<ApiResult<AuthResponse>> createNewAdminRepo({
     required String email,
     required String storeAddress,
+
     required File image,
   });
 
@@ -38,6 +39,7 @@ class AdminsRepositoryImplement implements AdminsRepository {
       final response = await _apiService.createNewAdminService(
         email,
         storeAddress,
+        "admin",
         image,
       );
       return ApiResult.success(response);

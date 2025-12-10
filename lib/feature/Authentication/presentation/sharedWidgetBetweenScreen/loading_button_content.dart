@@ -57,6 +57,7 @@ class LoadingButtonContent extends StatelessWidget {
         state is CreateCategoriesLoading ||
         state is CreateSubCategoriesLoading ||
         state is CreateNewAdminLoading ||
+        state is CreateNewDriverLoading ||
         state is NewPasswordLoadingData) {
       return loadingWidget();
     } else if (state is AuthenticationWithGoogleLoading) {

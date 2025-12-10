@@ -1,5 +1,6 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/admins/presentation/screen/add_new_admin.dart';
+import 'package:elminiawy/feature/admin/driver/presentation/screen/add_new_driver.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
@@ -91,9 +92,20 @@ class RouteGenerator {
       // ---------------------- DRIVERS -----------------------
       case Routes.adminDrivers:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (_) => instance<DriverCubit>(),
+          builder: (_) => BlocProvider.value(
+            value: instance<DriverCubit>(),
             child: const AdminDriversScreen(),
+          ),
+        );
+
+      case Routes.addNewDriver:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<DriverCubit>()),
+              BlocProvider(create: (context) => instance<StoreAddressCubit>()),
+            ],
+            child: AddNewDriver(),
           ),
         );
 

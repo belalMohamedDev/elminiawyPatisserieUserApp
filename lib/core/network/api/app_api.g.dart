@@ -1080,33 +1080,6 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
-  Future<AuthResponse> activeDriverService(String id) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AuthResponse>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/v1/api/driver/${id}/active',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AuthResponse _value;
-    try {
-      _value = AuthResponse.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options, _result);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
   Future<AuthResponse> getAllDriverActiveService() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -1126,33 +1099,6 @@ class _AppServiceClient implements AppServiceClient {
     late AuthResponse _value;
     try {
       _value = AuthResponse.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options, _result);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<ApiSuccessGeneralModel> deleteUserService(String id) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ApiSuccessGeneralModel>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/v1/api/user/${id}',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ApiSuccessGeneralModel _value;
-    try {
-      _value = ApiSuccessGeneralModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options, _result);
       rethrow;
@@ -1191,6 +1137,7 @@ class _AppServiceClient implements AppServiceClient {
   Future<AuthResponse> createNewAdminService(
     String email,
     String storeAddress,
+    String role,
     File image,
   ) async {
     final _extra = <String, dynamic>{};
@@ -1199,6 +1146,7 @@ class _AppServiceClient implements AppServiceClient {
     final _data = FormData();
     _data.fields.add(MapEntry('email', email));
     _data.fields.add(MapEntry('storeAddress', storeAddress));
+    _data.fields.add(MapEntry('role', role));
     _data.files.add(
       MapEntry(
         'image',

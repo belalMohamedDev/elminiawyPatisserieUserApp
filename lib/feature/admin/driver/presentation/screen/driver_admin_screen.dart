@@ -12,9 +12,7 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await Future.wait([
-        context.read<DriverCubit>().fetchGetAllDriver(),
-      ]);
+      await Future.wait([context.read<DriverCubit>().fetchGetAllDriver()]);
     });
 
     super.initState();
@@ -26,34 +24,22 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
 
     return BlocBuilder<DriverCubit, DriverState>(
       builder: (context, state) {
-        final driver = context.read<DriverCubit>().allDriver;
+        final driver = context.read<DriverCubit>();
         return Stack(
           children: [
             Scaffold(
-              appBar: AppBar(
-                centerTitle: true,
-                title: Text(
-                  context.translate(AppStrings.driver),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
-                ),
-              ),
-              floatingActionButton: FloatingActionButton(
-                backgroundColor: ColorManger.brun,
-                onPressed: () {},
-                child: Icon(
-                  Icons.add,
-                  color: ColorManger.white,
-                ),
-              ),
+              appBar: _driverAppBar(context, responsive, state),
+
               body: Column(
                 children: [
                   Container(
                     padding: responsive.setPadding(top: 2, bottom: 2),
                     margin: responsive.setMargin(
-                        left: 5, right: 5, top: 1, bottom: 2),
+                      left: 5,
+                      right: 5,
+                      top: 1,
+                      bottom: 2,
+                    ),
                     height: responsive.setHeight(15),
                     width: responsive.screenWidth,
                     decoration: BoxDecoration(
@@ -65,34 +51,37 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                           offset: const Offset(0, 3),
                         ),
                       ],
-                      borderRadius:
-                          BorderRadius.circular(responsive.setBorderRadius(3)),
+                      borderRadius: BorderRadius.circular(
+                        responsive.setBorderRadius(3),
+                      ),
                       color: ColorManger.backgroundItem,
                     ),
                     child: Column(
                       children: [
-                        Text("Total Drivers",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    fontSize: responsive.setTextSize(4),
-                                    color: ColorManger.brun)),
                         Text(
-                            "${state is GetAllDriverSuccess ? state.data.total! : "0"}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    fontSize: responsive.setTextSize(8),
-                                    color: ColorManger.brun)),
-                        Text("Sotive Drivers",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    fontSize: responsive.setTextSize(3.5),
-                                    color: ColorManger.brunLight)),
+                          "Total Drivers",
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: responsive.setTextSize(4),
+                                color: ColorManger.brun,
+                              ),
+                        ),
+                        Text(
+                          "${driver.totalDriver}",
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: responsive.setTextSize(8),
+                                color: ColorManger.brun,
+                              ),
+                        ),
+                        Text(
+                          "Sotive Drivers",
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: responsive.setTextSize(3.5),
+                                color: ColorManger.brunLight,
+                              ),
+                        ),
                       ],
                     ),
                   ),
@@ -106,12 +95,15 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                           color: Colors.grey.withValues(alpha: 0.1),
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset:
-                              const Offset(0, 3), // changes position of shadow
+                          offset: const Offset(
+                            0,
+                            3,
+                          ), // changes position of shadow
                         ),
                       ],
-                      borderRadius:
-                          BorderRadius.circular(responsive.setBorderRadius(3)),
+                      borderRadius: BorderRadius.circular(
+                        responsive.setBorderRadius(3),
+                      ),
                       color: ColorManger.backgroundItem,
                     ),
                     child: Row(
@@ -120,21 +112,22 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Active Drivers",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium!
-                                    .copyWith(
-                                        fontSize: responsive.setTextSize(4),
-                                        color: ColorManger.brun)),
                             Text(
-                                "${state is GetAllDriverSuccess ? state.data.active! : "0"}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium!
-                                    .copyWith(
-                                        fontSize: responsive.setTextSize(6),
-                                        color: ColorManger.brun)),
+                              "Active Drivers",
+                              style: Theme.of(context).textTheme.titleMedium!
+                                  .copyWith(
+                                    fontSize: responsive.setTextSize(4),
+                                    color: ColorManger.brun,
+                                  ),
+                            ),
+                            Text(
+                              "${driver.totalActiveDriver}",
+                              style: Theme.of(context).textTheme.titleMedium!
+                                  .copyWith(
+                                    fontSize: responsive.setTextSize(6),
+                                    color: ColorManger.brun,
+                                  ),
+                            ),
                           ],
                         ),
                         Container(
@@ -145,47 +138,84 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Inactive Drivers",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium!
-                                    .copyWith(
-                                        fontSize: responsive.setTextSize(4),
-                                        color: ColorManger.brun)),
                             Text(
-                                "${state is GetAllDriverSuccess ? state.data.inactive! : "0"}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium!
-                                    .copyWith(
-                                        fontSize: responsive.setTextSize(6),
-                                        color: ColorManger.brun)),
+                              "Inactive Drivers",
+                              style: Theme.of(context).textTheme.titleMedium!
+                                  .copyWith(
+                                    fontSize: responsive.setTextSize(4),
+                                    color: ColorManger.brun,
+                                  ),
+                            ),
+                            Text(
+                              "${driver.totalInactiveDriver}",
+                              style: Theme.of(context).textTheme.titleMedium!
+                                  .copyWith(
+                                    fontSize: responsive.setTextSize(6),
+                                    color: ColorManger.brun,
+                                  ),
+                            ),
                           ],
                         ),
                       ],
                     ),
                   ),
                   SizedBox(height: responsive.setHeight(1)),
-                  if (state is GetAllDriverSuccess)
-                    _getAllDriverDataSuccess(driver, responsive),
-                  if (state is GetAllDriverLoading)
-                    _getAllDriverDataLoading(responsive),
+
+                  driver.allDriver.isEmpty || state is GetAllDriverLoading
+                      ? _getAllDriverDataLoading(responsive)
+                      : _getAllDriverDataSuccess(driver.allDriver, responsive),
                 ],
               ),
-
-              //_tabDriverBodyBar(context, state)
             ),
-            LoadingOverlay(
-                isLoading: state is DriverActivedLoading ||
-                    state is DeleteDriverLoading)
+            LoadingOverlay(isLoading: state is CreateNewDriverLoading),
           ],
         );
       },
     );
   }
 
+  AppBar _driverAppBar(
+    BuildContext context,
+    ResponsiveUtils responsive,
+    DriverState state,
+  ) {
+    return AppBar(
+      centerTitle: true,
+      title: Text(
+        context.translate(AppStrings.driver),
+        style: Theme.of(
+          context,
+        ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
+      ),
+
+      actions: [
+        (state is GetActiveAdminsLoading)
+            ? const SizedBox()
+            : GestureDetector(
+                onTap: () {
+                  context.pushNamed(Routes.addNewDriver);
+                },
+                child: Container(
+                  height: responsive.setHeight(4),
+                  width: responsive.setWidth(8.5),
+                  decoration: BoxDecoration(
+                    color: ColorManger.brun,
+                    borderRadius: BorderRadius.circular(
+                      responsive.setBorderRadius(5),
+                    ),
+                  ),
+                  child: Icon(Icons.add, color: ColorManger.white),
+                ),
+              ),
+        SizedBox(width: responsive.setWidth(6)),
+      ],
+    );
+  }
+
   Expanded _getAllDriverDataSuccess(
-      List<DataAuthResponse> driver, ResponsiveUtils responsive) {
+    List<DataAuthResponse> driver,
+    ResponsiveUtils responsive,
+  ) {
     return Expanded(
       child: ListView.builder(
         itemCount: driver.length,
@@ -201,14 +231,16 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                   offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
-              borderRadius:
-                  BorderRadius.circular(responsive.setBorderRadius(3)),
+              borderRadius: BorderRadius.circular(
+                responsive.setBorderRadius(3),
+              ),
               color: ColorManger.backgroundItem,
             ),
             child: ListTile(
               leading: ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(responsive.setBorderRadius(3)),
+                borderRadius: BorderRadius.circular(
+                  responsive.setBorderRadius(3),
+                ),
                 child: CachedNetworkImage(
                   imageUrl: driver[index].image ?? "",
                   // height: responsive.setHeight(10),
@@ -226,9 +258,10 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
               title: Text(
                 driver[index].name ?? "",
                 style: TextStyle(
-                    fontSize: responsive.setTextSize(3.5),
-                    fontWeight: FontWeight.bold,
-                    color: ColorManger.brun),
+                  fontSize: responsive.setTextSize(3.5),
+                  fontWeight: FontWeight.bold,
+                  color: ColorManger.brun,
+                ),
               ),
               subtitle: Column(
                 children: [
@@ -243,8 +276,9 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                       Text(
                         driver[index].phone ?? "",
                         style: TextStyle(
-                            fontSize: responsive.setTextSize(3.2),
-                            color: ColorManger.brunLight),
+                          fontSize: responsive.setTextSize(3.2),
+                          color: ColorManger.brunLight,
+                        ),
                       ),
                     ],
                   ),
@@ -259,22 +293,31 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                       Text(
                         driver[index].email ?? "",
                         style: TextStyle(
-                            fontSize: responsive.setTextSize(3.2),
-                            color: ColorManger.brunLight),
+                          fontSize: responsive.setTextSize(3.2),
+                          color: ColorManger.brunLight,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
               trailing: GestureDetector(
-                child: Icon(IconlyBold.moreCircle,
-                    color: driver[index].driverActive == false &&
-                            driver[index].completeData == true
-                        ? Colors.red
-                        : driver[index].completeData == false
-                            ? Colors.yellow.shade800
-                            : Colors.green.shade800,
-                    size: responsive.setIconSize(6)),
+                onTap: () {
+                  context.read<DriverCubit>().fetchDeleteDriver(
+                    id: driver[index].sId!,
+                  );
+                },
+                child: Icon(
+                  IconlyBold.delete,
+                  color:
+                      driver[index].driverActive == false &&
+                          driver[index].completeData == true
+                      ? Colors.red
+                      : driver[index].completeData == false
+                      ? Colors.yellow.shade800
+                      : Colors.green.shade800,
+                  size: responsive.setIconSize(6),
+                ),
               ),
             ),
           );
@@ -299,8 +342,9 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                   offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
-              borderRadius:
-                  BorderRadius.circular(responsive.setBorderRadius(3)),
+              borderRadius: BorderRadius.circular(
+                responsive.setBorderRadius(3),
+              ),
               color: ColorManger.backgroundItem,
             ),
             child: ListTile(

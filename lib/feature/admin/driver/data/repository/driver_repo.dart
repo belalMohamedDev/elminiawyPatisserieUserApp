@@ -1,14 +1,17 @@
+import 'dart:io';
+
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 abstract class DriverRepository {
   Future<ApiResult<AuthResponse>> getAllDriverRepo();
   Future<ApiResult<AuthResponse>> getAllActiveDriverRepo();
-  Future<ApiResult<AuthResponse>> driverActivedRepo(
-    String id,
-  );
-  Future<ApiResult<ApiSuccessGeneralModel>> deleteDriverRepo(
-    String id,
-  );
+  Future<ApiResult<AuthResponse>> createNewDriverRepo({
+    required String email,
+    required String storeAddress,
+    required File image,
+  });
+
+  Future<ApiResult<AuthResponse>> deleteDriverRepo({required String id});
 }
 
 class DriverRepositoryImplement implements DriverRepository {
@@ -37,9 +40,18 @@ class DriverRepositoryImplement implements DriverRepository {
   }
 
   @override
-  Future<ApiResult<AuthResponse>> driverActivedRepo(String id) async {
+  Future<ApiResult<AuthResponse>> createNewDriverRepo({
+    required String email,
+    required String storeAddress,
+    required File image,
+  }) async {
     try {
-      final response = await _apiService.activeDriverService(id);
+      final response = await _apiService.createNewAdminService(
+        email,
+        storeAddress,
+        "delivery",
+        image,
+      );
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
@@ -47,9 +59,9 @@ class DriverRepositoryImplement implements DriverRepository {
   }
 
   @override
-  Future<ApiResult<ApiSuccessGeneralModel>> deleteDriverRepo(String id) async {
+  Future<ApiResult<AuthResponse>> deleteDriverRepo({required String id}) async {
     try {
-      final response = await _apiService.deleteUserService(id);
+      final response = await _apiService.deleteAdminService(id);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));

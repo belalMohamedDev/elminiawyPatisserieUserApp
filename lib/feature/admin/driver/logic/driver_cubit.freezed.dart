@@ -55,7 +55,7 @@ extension DriverStatePatterns on DriverState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetAllDriverLoading value)?  getAllDriverLoading,TResult Function( GetAllDriverError value)?  getAllDriverError,TResult Function( GetAllDriverSuccess value)?  getAllDriverSuccess,TResult Function( GetAllActiveDriverLoading value)?  getAllActiveDriverLoading,TResult Function( GetAllActiveDriverError value)?  getAllActiveDriverError,TResult Function( GetAllActiveDriverSuccess value)?  getAllActiveDriverSuccess,TResult Function( DriverActivedLoading value)?  driverActivedLoading,TResult Function( DriverActivedError value)?  driverActivedError,TResult Function( GDriverActivedSuccess value)?  driverActivedSuccess,TResult Function( DeleteDriverLoading value)?  deleteDriverLoading,TResult Function( DeleteDriverError value)?  deleteDriverError,TResult Function( DeleteDriverSuccess value)?  deleteDriverSuccess,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetAllDriverLoading value)?  getAllDriverLoading,TResult Function( GetAllDriverError value)?  getAllDriverError,TResult Function( GetAllDriverSuccess value)?  getAllDriverSuccess,TResult Function( GetAllActiveDriverLoading value)?  getAllActiveDriverLoading,TResult Function( GetAllActiveDriverError value)?  getAllActiveDriverError,TResult Function( GetAllActiveDriverSuccess value)?  getAllActiveDriverSuccess,TResult Function( DriverActivedLoading value)?  driverActivedLoading,TResult Function( DriverActivedError value)?  driverActivedError,TResult Function( GDriverActivedSuccess value)?  driverActivedSuccess,TResult Function( DeleteDriverLoading value)?  deleteDriverLoading,TResult Function( DeleteDriverError value)?  deleteDriverError,TResult Function( DeleteDriverSuccess value)?  deleteDriverSuccess,TResult Function( DriverImagePicked value)?  imagePicked,TResult Function( CreateNewDriverLoading value)?  createNewDriverLoading,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -71,7 +71,9 @@ return driverActivedError(_that);case GDriverActivedSuccess() when driverActived
 return driverActivedSuccess(_that);case DeleteDriverLoading() when deleteDriverLoading != null:
 return deleteDriverLoading(_that);case DeleteDriverError() when deleteDriverError != null:
 return deleteDriverError(_that);case DeleteDriverSuccess() when deleteDriverSuccess != null:
-return deleteDriverSuccess(_that);case _:
+return deleteDriverSuccess(_that);case DriverImagePicked() when imagePicked != null:
+return imagePicked(_that);case CreateNewDriverLoading() when createNewDriverLoading != null:
+return createNewDriverLoading(_that);case _:
   return orElse();
 
 }
@@ -89,7 +91,7 @@ return deleteDriverSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetAllDriverLoading value)  getAllDriverLoading,required TResult Function( GetAllDriverError value)  getAllDriverError,required TResult Function( GetAllDriverSuccess value)  getAllDriverSuccess,required TResult Function( GetAllActiveDriverLoading value)  getAllActiveDriverLoading,required TResult Function( GetAllActiveDriverError value)  getAllActiveDriverError,required TResult Function( GetAllActiveDriverSuccess value)  getAllActiveDriverSuccess,required TResult Function( DriverActivedLoading value)  driverActivedLoading,required TResult Function( DriverActivedError value)  driverActivedError,required TResult Function( GDriverActivedSuccess value)  driverActivedSuccess,required TResult Function( DeleteDriverLoading value)  deleteDriverLoading,required TResult Function( DeleteDriverError value)  deleteDriverError,required TResult Function( DeleteDriverSuccess value)  deleteDriverSuccess,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetAllDriverLoading value)  getAllDriverLoading,required TResult Function( GetAllDriverError value)  getAllDriverError,required TResult Function( GetAllDriverSuccess value)  getAllDriverSuccess,required TResult Function( GetAllActiveDriverLoading value)  getAllActiveDriverLoading,required TResult Function( GetAllActiveDriverError value)  getAllActiveDriverError,required TResult Function( GetAllActiveDriverSuccess value)  getAllActiveDriverSuccess,required TResult Function( DriverActivedLoading value)  driverActivedLoading,required TResult Function( DriverActivedError value)  driverActivedError,required TResult Function( GDriverActivedSuccess value)  driverActivedSuccess,required TResult Function( DeleteDriverLoading value)  deleteDriverLoading,required TResult Function( DeleteDriverError value)  deleteDriverError,required TResult Function( DeleteDriverSuccess value)  deleteDriverSuccess,required TResult Function( DriverImagePicked value)  imagePicked,required TResult Function( CreateNewDriverLoading value)  createNewDriverLoading,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -105,7 +107,9 @@ return driverActivedError(_that);case GDriverActivedSuccess():
 return driverActivedSuccess(_that);case DeleteDriverLoading():
 return deleteDriverLoading(_that);case DeleteDriverError():
 return deleteDriverError(_that);case DeleteDriverSuccess():
-return deleteDriverSuccess(_that);case _:
+return deleteDriverSuccess(_that);case DriverImagePicked():
+return imagePicked(_that);case CreateNewDriverLoading():
+return createNewDriverLoading(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -122,7 +126,7 @@ return deleteDriverSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetAllDriverLoading value)?  getAllDriverLoading,TResult? Function( GetAllDriverError value)?  getAllDriverError,TResult? Function( GetAllDriverSuccess value)?  getAllDriverSuccess,TResult? Function( GetAllActiveDriverLoading value)?  getAllActiveDriverLoading,TResult? Function( GetAllActiveDriverError value)?  getAllActiveDriverError,TResult? Function( GetAllActiveDriverSuccess value)?  getAllActiveDriverSuccess,TResult? Function( DriverActivedLoading value)?  driverActivedLoading,TResult? Function( DriverActivedError value)?  driverActivedError,TResult? Function( GDriverActivedSuccess value)?  driverActivedSuccess,TResult? Function( DeleteDriverLoading value)?  deleteDriverLoading,TResult? Function( DeleteDriverError value)?  deleteDriverError,TResult? Function( DeleteDriverSuccess value)?  deleteDriverSuccess,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetAllDriverLoading value)?  getAllDriverLoading,TResult? Function( GetAllDriverError value)?  getAllDriverError,TResult? Function( GetAllDriverSuccess value)?  getAllDriverSuccess,TResult? Function( GetAllActiveDriverLoading value)?  getAllActiveDriverLoading,TResult? Function( GetAllActiveDriverError value)?  getAllActiveDriverError,TResult? Function( GetAllActiveDriverSuccess value)?  getAllActiveDriverSuccess,TResult? Function( DriverActivedLoading value)?  driverActivedLoading,TResult? Function( DriverActivedError value)?  driverActivedError,TResult? Function( GDriverActivedSuccess value)?  driverActivedSuccess,TResult? Function( DeleteDriverLoading value)?  deleteDriverLoading,TResult? Function( DeleteDriverError value)?  deleteDriverError,TResult? Function( DeleteDriverSuccess value)?  deleteDriverSuccess,TResult? Function( DriverImagePicked value)?  imagePicked,TResult? Function( CreateNewDriverLoading value)?  createNewDriverLoading,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -138,7 +142,9 @@ return driverActivedError(_that);case GDriverActivedSuccess() when driverActived
 return driverActivedSuccess(_that);case DeleteDriverLoading() when deleteDriverLoading != null:
 return deleteDriverLoading(_that);case DeleteDriverError() when deleteDriverError != null:
 return deleteDriverError(_that);case DeleteDriverSuccess() when deleteDriverSuccess != null:
-return deleteDriverSuccess(_that);case _:
+return deleteDriverSuccess(_that);case DriverImagePicked() when imagePicked != null:
+return imagePicked(_that);case CreateNewDriverLoading() when createNewDriverLoading != null:
+return createNewDriverLoading(_that);case _:
   return null;
 
 }
@@ -155,7 +161,7 @@ return deleteDriverSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getAllDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllDriverError,TResult Function( AuthResponse data)?  getAllDriverSuccess,TResult Function()?  getAllActiveDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllActiveDriverError,TResult Function( AuthResponse data)?  getAllActiveDriverSuccess,TResult Function()?  driverActivedLoading,TResult Function( ApiErrorModel apiErrorModel)?  driverActivedError,TResult Function( AuthResponse data)?  driverActivedSuccess,TResult Function()?  deleteDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  deleteDriverError,TResult Function( ApiSuccessGeneralModel data)?  deleteDriverSuccess,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getAllDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllDriverError,TResult Function( AuthResponse data)?  getAllDriverSuccess,TResult Function()?  getAllActiveDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllActiveDriverError,TResult Function( AuthResponse data)?  getAllActiveDriverSuccess,TResult Function()?  driverActivedLoading,TResult Function( ApiErrorModel apiErrorModel)?  driverActivedError,TResult Function( AuthResponse data)?  driverActivedSuccess,TResult Function()?  deleteDriverLoading,TResult Function( ApiErrorModel apiErrorModel)?  deleteDriverError,TResult Function( ApiSuccessGeneralModel data)?  deleteDriverSuccess,TResult Function()?  imagePicked,TResult Function()?  createNewDriverLoading,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetAllDriverLoading() when getAllDriverLoading != null:
@@ -170,7 +176,9 @@ return driverActivedError(_that.apiErrorModel);case GDriverActivedSuccess() when
 return driverActivedSuccess(_that.data);case DeleteDriverLoading() when deleteDriverLoading != null:
 return deleteDriverLoading();case DeleteDriverError() when deleteDriverError != null:
 return deleteDriverError(_that.apiErrorModel);case DeleteDriverSuccess() when deleteDriverSuccess != null:
-return deleteDriverSuccess(_that.data);case _:
+return deleteDriverSuccess(_that.data);case DriverImagePicked() when imagePicked != null:
+return imagePicked();case CreateNewDriverLoading() when createNewDriverLoading != null:
+return createNewDriverLoading();case _:
   return orElse();
 
 }
@@ -188,7 +196,7 @@ return deleteDriverSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getAllDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllDriverError,required TResult Function( AuthResponse data)  getAllDriverSuccess,required TResult Function()  getAllActiveDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllActiveDriverError,required TResult Function( AuthResponse data)  getAllActiveDriverSuccess,required TResult Function()  driverActivedLoading,required TResult Function( ApiErrorModel apiErrorModel)  driverActivedError,required TResult Function( AuthResponse data)  driverActivedSuccess,required TResult Function()  deleteDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  deleteDriverError,required TResult Function( ApiSuccessGeneralModel data)  deleteDriverSuccess,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getAllDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllDriverError,required TResult Function( AuthResponse data)  getAllDriverSuccess,required TResult Function()  getAllActiveDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllActiveDriverError,required TResult Function( AuthResponse data)  getAllActiveDriverSuccess,required TResult Function()  driverActivedLoading,required TResult Function( ApiErrorModel apiErrorModel)  driverActivedError,required TResult Function( AuthResponse data)  driverActivedSuccess,required TResult Function()  deleteDriverLoading,required TResult Function( ApiErrorModel apiErrorModel)  deleteDriverError,required TResult Function( ApiSuccessGeneralModel data)  deleteDriverSuccess,required TResult Function()  imagePicked,required TResult Function()  createNewDriverLoading,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case GetAllDriverLoading():
@@ -203,7 +211,9 @@ return driverActivedError(_that.apiErrorModel);case GDriverActivedSuccess():
 return driverActivedSuccess(_that.data);case DeleteDriverLoading():
 return deleteDriverLoading();case DeleteDriverError():
 return deleteDriverError(_that.apiErrorModel);case DeleteDriverSuccess():
-return deleteDriverSuccess(_that.data);case _:
+return deleteDriverSuccess(_that.data);case DriverImagePicked():
+return imagePicked();case CreateNewDriverLoading():
+return createNewDriverLoading();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -220,7 +230,7 @@ return deleteDriverSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getAllDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllDriverError,TResult? Function( AuthResponse data)?  getAllDriverSuccess,TResult? Function()?  getAllActiveDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllActiveDriverError,TResult? Function( AuthResponse data)?  getAllActiveDriverSuccess,TResult? Function()?  driverActivedLoading,TResult? Function( ApiErrorModel apiErrorModel)?  driverActivedError,TResult? Function( AuthResponse data)?  driverActivedSuccess,TResult? Function()?  deleteDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  deleteDriverError,TResult? Function( ApiSuccessGeneralModel data)?  deleteDriverSuccess,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getAllDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllDriverError,TResult? Function( AuthResponse data)?  getAllDriverSuccess,TResult? Function()?  getAllActiveDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllActiveDriverError,TResult? Function( AuthResponse data)?  getAllActiveDriverSuccess,TResult? Function()?  driverActivedLoading,TResult? Function( ApiErrorModel apiErrorModel)?  driverActivedError,TResult? Function( AuthResponse data)?  driverActivedSuccess,TResult? Function()?  deleteDriverLoading,TResult? Function( ApiErrorModel apiErrorModel)?  deleteDriverError,TResult? Function( ApiSuccessGeneralModel data)?  deleteDriverSuccess,TResult? Function()?  imagePicked,TResult? Function()?  createNewDriverLoading,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetAllDriverLoading() when getAllDriverLoading != null:
@@ -235,7 +245,9 @@ return driverActivedError(_that.apiErrorModel);case GDriverActivedSuccess() when
 return driverActivedSuccess(_that.data);case DeleteDriverLoading() when deleteDriverLoading != null:
 return deleteDriverLoading();case DeleteDriverError() when deleteDriverError != null:
 return deleteDriverError(_that.apiErrorModel);case DeleteDriverSuccess() when deleteDriverSuccess != null:
-return deleteDriverSuccess(_that.data);case _:
+return deleteDriverSuccess(_that.data);case DriverImagePicked() when imagePicked != null:
+return imagePicked();case CreateNewDriverLoading() when createNewDriverLoading != null:
+return createNewDriverLoading();case _:
   return null;
 
 }
@@ -930,5 +942,69 @@ as ApiSuccessGeneralModel,
 
 
 }
+
+/// @nodoc
+
+
+class DriverImagePicked implements DriverState {
+  const DriverImagePicked();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DriverImagePicked);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState.imagePicked()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class CreateNewDriverLoading implements DriverState {
+  const CreateNewDriverLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateNewDriverLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DriverState.createNewDriverLoading()';
+}
+
+
+}
+
+
+
 
 // dart format on

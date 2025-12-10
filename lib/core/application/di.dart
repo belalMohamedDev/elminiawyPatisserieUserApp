@@ -74,7 +74,7 @@ Future<void> _initDriver() async {
     ..registerLazySingleton<DriverRepositoryImplement>(
       () => DriverRepositoryImplement(instance()),
     )
-    ..registerFactory<DriverCubit>(() => DriverCubit(instance()));
+    ..registerLazySingleton<DriverCubit>(() => DriverCubit(instance(),instance()));
 }
 
 Future<void> _initAdmins() async {

@@ -1,13 +1,16 @@
+import 'dart:io';
+
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 part 'driver_state.dart';
 part 'driver_cubit.freezed.dart';
 
 class DriverCubit extends Cubit<DriverState> {
-  DriverCubit(this._driverRepository) : super(const DriverState.initial());
+  DriverCubit(this._driverRepository, this._imagePicker)
+    : super(const DriverState.initial());
 
   final DriverRepositoryImplement _driverRepository;
-
+  final ImagePicker _imagePicker;
   List<DataAuthResponse> _allDriver = [];
 
   List<DataAuthResponse> get allDriver => _allDriver;
@@ -15,6 +18,10 @@ class DriverCubit extends Cubit<DriverState> {
   List<DataAuthResponse> _allActiveDriver = [];
 
   List<DataAuthResponse> get allActiveDriver => _allActiveDriver;
+
+  int totalDriver = 0;
+  int totalActiveDriver = 0;
+  int totalInactiveDriver = 0;
 
   Future<void> fetchGetAllDriver() async {
     emit(const DriverState.getAllDriverLoading());
@@ -25,12 +32,14 @@ class DriverCubit extends Cubit<DriverState> {
       success: (dataResponse) {
         _allDriver = [];
         _allDriver.addAll(dataResponse.data!);
+        totalDriver = dataResponse.total!;
+        totalActiveDriver = dataResponse.active!;
+        totalInactiveDriver = dataResponse.inactive!;
 
         emit(DriverState.getAllDriverSuccess(dataResponse));
       },
       failure: (error) {
         emit(DriverState.getAllDriverError(error));
-   
       },
     );
   }
@@ -48,63 +57,86 @@ class DriverCubit extends Cubit<DriverState> {
         emit(DriverState.getAllActiveDriverSuccess(dataResponse));
       },
       failure: (error) {
-        emit(DriverState.getAllActiveDriverError(error)) ;
+        emit(DriverState.getAllActiveDriverError(error));
       },
     );
   }
 
-  Future<void> fetchDriverActive(String id) async {
-    emit(const DriverState.driverActivedLoading());
+  File? imageFile;
 
-    final response = await _driverRepository.driverActivedRepo(id);
+  Future<void> pickImage() async {
+    final pickedImage = await _imagePicker.pickImage(
+      source: ImageSource.gallery,
+    );
+    if (pickedImage != null) {
+      imageFile = File(pickedImage.path);
+      emit(const DriverState.imagePicked());
+    }
+  }
+
+  final TextEditingController email = TextEditingController();
+
+  String? branchAreaValueId;
+  void setBranchAreaId(String value) {
+    branchAreaValueId = value;
+  }
+
+  Future<void> fetchCreateNewDriver() async {
+    emit(const DriverState.createNewDriverLoading());
+
+    final response = await _driverRepository.createNewDriverRepo(
+      image: imageFile!,
+      email: email.text.trim(),
+      storeAddress: branchAreaValueId!,
+    );
 
     response.when(
       success: (dataResponse) {
-        final updatedIndex =
-            _allDriver.indexWhere((deiver) => deiver.sId == id);
+        _allDriver.insert(0, dataResponse.data);
 
-        if (updatedIndex != -1) {
-          _allDriver.removeAt(updatedIndex);
-        }
+        email.clear();
 
-        _allDriver.add(dataResponse.data!);
+        imageFile = null;
 
-        emit(DriverState.driverActivedSuccess(dataResponse));
+        totalDriver = totalDriver + 1;
+        totalActiveDriver = totalActiveDriver + 1;
+
+        emit(DriverState.getAllDriverSuccess(dataResponse));
       },
       failure: (error) {
-        DriverState.driverActivedError(error);
+        emit(DriverState.getAllDriverError(error));
       },
     );
   }
 
-  Future<void> fetchDeleteDriver(
-      {required String id, required bool isActive}) async {
-    emit(const DriverState.deleteDriverLoading());
+  Future<void> fetchDeleteDriver({String? id}) async {
+    emit(const DriverState.createNewDriverLoading());
 
-    final response = await _driverRepository.deleteDriverRepo(id);
+    final response = await _driverRepository.deleteDriverRepo(id: id!);
 
     response.when(
       success: (dataResponse) {
-        if (isActive) {
-          final updatedIndex =
-              _allDriver.indexWhere((deiver) => deiver.sId == id);
+        final deletedAdmin = dataResponse.data;
 
-          if (updatedIndex != -1) {
-            _allDriver.removeAt(updatedIndex);
-          }
+        // 1) Remove user from the active admins list if exists
+        final index = _allDriver.indexWhere((driver) => driver.sId == id);
+
+        if (index != -1) {
+          _allDriver.removeAt(index);
+        }
+
+        // 2) Update counters
+        totalDriver = totalDriver - 1;
+        if (deletedAdmin.active == true) {
+          totalActiveDriver = totalActiveDriver - 1;
         } else {
-          final updatedIndex =
-              _allDriver.indexWhere((deiver) => deiver.sId == id);
-
-          if (updatedIndex != -1) {
-            _allDriver.removeAt(updatedIndex);
-          }
+          totalInactiveDriver = totalInactiveDriver - 1;
         }
 
-        emit(DriverState.deleteDriverSuccess(dataResponse));
+        emit(DriverState.getAllDriverSuccess(dataResponse));
       },
       failure: (error) {
-        DriverState.deleteDriverError(error);
+        emit(DriverState.getAllDriverError(error));
       },
     );
   }

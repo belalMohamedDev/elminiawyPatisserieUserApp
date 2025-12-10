@@ -189,14 +189,8 @@ abstract class AppServiceClient {
   @GET("${ApiConstants.driver}/allDriver")
   Future<AuthResponse> getAllDriverService();
 
-  @PUT("${ApiConstants.driver}/{id}/active")
-  Future<AuthResponse> activeDriverService(@Path("id") String id);
-
   @GET("${ApiConstants.driver}/allDriverActive")
   Future<AuthResponse> getAllDriverActiveService();
-
-  @DELETE("${ApiConstants.user}/{id}")
-  Future<ApiSuccessGeneralModel> deleteUserService(@Path("id") String id);
 
   @GET(ApiConstants.admin)
   Future<AuthResponse> getAllAdminsService();
@@ -206,6 +200,7 @@ abstract class AppServiceClient {
   Future<AuthResponse> createNewAdminService(
     @Part(name: "email") String email,
     @Part(name: "storeAddress") String storeAddress,
+    @Part(name: "role") String role,
     @Part() File image,
   );
 
