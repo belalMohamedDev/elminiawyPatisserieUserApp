@@ -55,7 +55,7 @@ extension AdminsStatePatterns on AdminsState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetActiveAdminsLoading value)?  getActiveAdminsLoading,TResult Function( GetActiveAdminsError value)?  getActiveAdminsError,TResult Function( GetActiveAdminsSuccess value)?  getActiveAdminsSuccess,TResult Function( GetInActiveAdminsLoading value)?  getInActiveAdminsLoading,TResult Function( GetInActiveAdminsError value)?  getInActiveAdminsError,TResult Function( GetInActiveAdminsSuccess value)?  getInActiveAdminsSuccess,TResult Function( AdminsImagePicked value)?  imagePicked,TResult Function( CreateNewAdminLoading value)?  createNewAdminLoading,TResult Function( CreateNewAdminError value)?  createNewAdminError,TResult Function( CreateNewAdminSuccess value)?  createNewAdminSuccess,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetActiveAdminsLoading value)?  getActiveAdminsLoading,TResult Function( GetActiveAdminsError value)?  getActiveAdminsError,TResult Function( GetActiveAdminsSuccess value)?  getActiveAdminsSuccess,TResult Function( GetInActiveAdminsLoading value)?  getInActiveAdminsLoading,TResult Function( GetInActiveAdminsError value)?  getInActiveAdminsError,TResult Function( GetInActiveAdminsSuccess value)?  getInActiveAdminsSuccess,TResult Function( AdminsImagePicked value)?  imagePicked,TResult Function( CreateNewAdminLoading value)?  createNewAdminLoading,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -67,9 +67,7 @@ return getInActiveAdminsLoading(_that);case GetInActiveAdminsError() when getInA
 return getInActiveAdminsError(_that);case GetInActiveAdminsSuccess() when getInActiveAdminsSuccess != null:
 return getInActiveAdminsSuccess(_that);case AdminsImagePicked() when imagePicked != null:
 return imagePicked(_that);case CreateNewAdminLoading() when createNewAdminLoading != null:
-return createNewAdminLoading(_that);case CreateNewAdminError() when createNewAdminError != null:
-return createNewAdminError(_that);case CreateNewAdminSuccess() when createNewAdminSuccess != null:
-return createNewAdminSuccess(_that);case _:
+return createNewAdminLoading(_that);case _:
   return orElse();
 
 }
@@ -87,7 +85,7 @@ return createNewAdminSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetActiveAdminsLoading value)  getActiveAdminsLoading,required TResult Function( GetActiveAdminsError value)  getActiveAdminsError,required TResult Function( GetActiveAdminsSuccess value)  getActiveAdminsSuccess,required TResult Function( GetInActiveAdminsLoading value)  getInActiveAdminsLoading,required TResult Function( GetInActiveAdminsError value)  getInActiveAdminsError,required TResult Function( GetInActiveAdminsSuccess value)  getInActiveAdminsSuccess,required TResult Function( AdminsImagePicked value)  imagePicked,required TResult Function( CreateNewAdminLoading value)  createNewAdminLoading,required TResult Function( CreateNewAdminError value)  createNewAdminError,required TResult Function( CreateNewAdminSuccess value)  createNewAdminSuccess,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetActiveAdminsLoading value)  getActiveAdminsLoading,required TResult Function( GetActiveAdminsError value)  getActiveAdminsError,required TResult Function( GetActiveAdminsSuccess value)  getActiveAdminsSuccess,required TResult Function( GetInActiveAdminsLoading value)  getInActiveAdminsLoading,required TResult Function( GetInActiveAdminsError value)  getInActiveAdminsError,required TResult Function( GetInActiveAdminsSuccess value)  getInActiveAdminsSuccess,required TResult Function( AdminsImagePicked value)  imagePicked,required TResult Function( CreateNewAdminLoading value)  createNewAdminLoading,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -99,9 +97,7 @@ return getInActiveAdminsLoading(_that);case GetInActiveAdminsError():
 return getInActiveAdminsError(_that);case GetInActiveAdminsSuccess():
 return getInActiveAdminsSuccess(_that);case AdminsImagePicked():
 return imagePicked(_that);case CreateNewAdminLoading():
-return createNewAdminLoading(_that);case CreateNewAdminError():
-return createNewAdminError(_that);case CreateNewAdminSuccess():
-return createNewAdminSuccess(_that);case _:
+return createNewAdminLoading(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -118,7 +114,7 @@ return createNewAdminSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetActiveAdminsLoading value)?  getActiveAdminsLoading,TResult? Function( GetActiveAdminsError value)?  getActiveAdminsError,TResult? Function( GetActiveAdminsSuccess value)?  getActiveAdminsSuccess,TResult? Function( GetInActiveAdminsLoading value)?  getInActiveAdminsLoading,TResult? Function( GetInActiveAdminsError value)?  getInActiveAdminsError,TResult? Function( GetInActiveAdminsSuccess value)?  getInActiveAdminsSuccess,TResult? Function( AdminsImagePicked value)?  imagePicked,TResult? Function( CreateNewAdminLoading value)?  createNewAdminLoading,TResult? Function( CreateNewAdminError value)?  createNewAdminError,TResult? Function( CreateNewAdminSuccess value)?  createNewAdminSuccess,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetActiveAdminsLoading value)?  getActiveAdminsLoading,TResult? Function( GetActiveAdminsError value)?  getActiveAdminsError,TResult? Function( GetActiveAdminsSuccess value)?  getActiveAdminsSuccess,TResult? Function( GetInActiveAdminsLoading value)?  getInActiveAdminsLoading,TResult? Function( GetInActiveAdminsError value)?  getInActiveAdminsError,TResult? Function( GetInActiveAdminsSuccess value)?  getInActiveAdminsSuccess,TResult? Function( AdminsImagePicked value)?  imagePicked,TResult? Function( CreateNewAdminLoading value)?  createNewAdminLoading,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -130,9 +126,7 @@ return getInActiveAdminsLoading(_that);case GetInActiveAdminsError() when getInA
 return getInActiveAdminsError(_that);case GetInActiveAdminsSuccess() when getInActiveAdminsSuccess != null:
 return getInActiveAdminsSuccess(_that);case AdminsImagePicked() when imagePicked != null:
 return imagePicked(_that);case CreateNewAdminLoading() when createNewAdminLoading != null:
-return createNewAdminLoading(_that);case CreateNewAdminError() when createNewAdminError != null:
-return createNewAdminError(_that);case CreateNewAdminSuccess() when createNewAdminSuccess != null:
-return createNewAdminSuccess(_that);case _:
+return createNewAdminLoading(_that);case _:
   return null;
 
 }
@@ -149,7 +143,7 @@ return createNewAdminSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getActiveAdminsLoading,TResult Function( ApiErrorModel apiErrorModel)?  getActiveAdminsError,TResult Function( AuthResponse data)?  getActiveAdminsSuccess,TResult Function()?  getInActiveAdminsLoading,TResult Function( ApiErrorModel apiErrorModel)?  getInActiveAdminsError,TResult Function( AuthResponse data)?  getInActiveAdminsSuccess,TResult Function()?  imagePicked,TResult Function()?  createNewAdminLoading,TResult Function( ApiErrorModel apiErrorModel)?  createNewAdminError,TResult Function( List<DataAuthResponse> data)?  createNewAdminSuccess,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getActiveAdminsLoading,TResult Function( ApiErrorModel apiErrorModel)?  getActiveAdminsError,TResult Function( AuthResponse data)?  getActiveAdminsSuccess,TResult Function()?  getInActiveAdminsLoading,TResult Function( ApiErrorModel apiErrorModel)?  getInActiveAdminsError,TResult Function( AuthResponse data)?  getInActiveAdminsSuccess,TResult Function()?  imagePicked,TResult Function()?  createNewAdminLoading,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetActiveAdminsLoading() when getActiveAdminsLoading != null:
@@ -160,9 +154,7 @@ return getInActiveAdminsLoading();case GetInActiveAdminsError() when getInActive
 return getInActiveAdminsError(_that.apiErrorModel);case GetInActiveAdminsSuccess() when getInActiveAdminsSuccess != null:
 return getInActiveAdminsSuccess(_that.data);case AdminsImagePicked() when imagePicked != null:
 return imagePicked();case CreateNewAdminLoading() when createNewAdminLoading != null:
-return createNewAdminLoading();case CreateNewAdminError() when createNewAdminError != null:
-return createNewAdminError(_that.apiErrorModel);case CreateNewAdminSuccess() when createNewAdminSuccess != null:
-return createNewAdminSuccess(_that.data);case _:
+return createNewAdminLoading();case _:
   return orElse();
 
 }
@@ -180,7 +172,7 @@ return createNewAdminSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getActiveAdminsLoading,required TResult Function( ApiErrorModel apiErrorModel)  getActiveAdminsError,required TResult Function( AuthResponse data)  getActiveAdminsSuccess,required TResult Function()  getInActiveAdminsLoading,required TResult Function( ApiErrorModel apiErrorModel)  getInActiveAdminsError,required TResult Function( AuthResponse data)  getInActiveAdminsSuccess,required TResult Function()  imagePicked,required TResult Function()  createNewAdminLoading,required TResult Function( ApiErrorModel apiErrorModel)  createNewAdminError,required TResult Function( List<DataAuthResponse> data)  createNewAdminSuccess,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getActiveAdminsLoading,required TResult Function( ApiErrorModel apiErrorModel)  getActiveAdminsError,required TResult Function( AuthResponse data)  getActiveAdminsSuccess,required TResult Function()  getInActiveAdminsLoading,required TResult Function( ApiErrorModel apiErrorModel)  getInActiveAdminsError,required TResult Function( AuthResponse data)  getInActiveAdminsSuccess,required TResult Function()  imagePicked,required TResult Function()  createNewAdminLoading,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case GetActiveAdminsLoading():
@@ -191,9 +183,7 @@ return getInActiveAdminsLoading();case GetInActiveAdminsError():
 return getInActiveAdminsError(_that.apiErrorModel);case GetInActiveAdminsSuccess():
 return getInActiveAdminsSuccess(_that.data);case AdminsImagePicked():
 return imagePicked();case CreateNewAdminLoading():
-return createNewAdminLoading();case CreateNewAdminError():
-return createNewAdminError(_that.apiErrorModel);case CreateNewAdminSuccess():
-return createNewAdminSuccess(_that.data);case _:
+return createNewAdminLoading();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -210,7 +200,7 @@ return createNewAdminSuccess(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getActiveAdminsLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getActiveAdminsError,TResult? Function( AuthResponse data)?  getActiveAdminsSuccess,TResult? Function()?  getInActiveAdminsLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getInActiveAdminsError,TResult? Function( AuthResponse data)?  getInActiveAdminsSuccess,TResult? Function()?  imagePicked,TResult? Function()?  createNewAdminLoading,TResult? Function( ApiErrorModel apiErrorModel)?  createNewAdminError,TResult? Function( List<DataAuthResponse> data)?  createNewAdminSuccess,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getActiveAdminsLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getActiveAdminsError,TResult? Function( AuthResponse data)?  getActiveAdminsSuccess,TResult? Function()?  getInActiveAdminsLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getInActiveAdminsError,TResult? Function( AuthResponse data)?  getInActiveAdminsSuccess,TResult? Function()?  imagePicked,TResult? Function()?  createNewAdminLoading,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetActiveAdminsLoading() when getActiveAdminsLoading != null:
@@ -221,9 +211,7 @@ return getInActiveAdminsLoading();case GetInActiveAdminsError() when getInActive
 return getInActiveAdminsError(_that.apiErrorModel);case GetInActiveAdminsSuccess() when getInActiveAdminsSuccess != null:
 return getInActiveAdminsSuccess(_that.data);case AdminsImagePicked() when imagePicked != null:
 return imagePicked();case CreateNewAdminLoading() when createNewAdminLoading != null:
-return createNewAdminLoading();case CreateNewAdminError() when createNewAdminError != null:
-return createNewAdminError(_that.apiErrorModel);case CreateNewAdminSuccess() when createNewAdminSuccess != null:
-return createNewAdminSuccess(_that.data);case _:
+return createNewAdminLoading();case _:
   return null;
 
 }
@@ -654,143 +642,5 @@ String toString() {
 
 
 
-
-/// @nodoc
-
-
-class CreateNewAdminError implements AdminsState {
-  const CreateNewAdminError(this.apiErrorModel);
-  
-
- final  ApiErrorModel apiErrorModel;
-
-/// Create a copy of AdminsState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$CreateNewAdminErrorCopyWith<CreateNewAdminError> get copyWith => _$CreateNewAdminErrorCopyWithImpl<CreateNewAdminError>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateNewAdminError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,apiErrorModel);
-
-@override
-String toString() {
-  return 'AdminsState.createNewAdminError(apiErrorModel: $apiErrorModel)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $CreateNewAdminErrorCopyWith<$Res> implements $AdminsStateCopyWith<$Res> {
-  factory $CreateNewAdminErrorCopyWith(CreateNewAdminError value, $Res Function(CreateNewAdminError) _then) = _$CreateNewAdminErrorCopyWithImpl;
-@useResult
-$Res call({
- ApiErrorModel apiErrorModel
-});
-
-
-
-
-}
-/// @nodoc
-class _$CreateNewAdminErrorCopyWithImpl<$Res>
-    implements $CreateNewAdminErrorCopyWith<$Res> {
-  _$CreateNewAdminErrorCopyWithImpl(this._self, this._then);
-
-  final CreateNewAdminError _self;
-  final $Res Function(CreateNewAdminError) _then;
-
-/// Create a copy of AdminsState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
-  return _then(CreateNewAdminError(
-null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
-as ApiErrorModel,
-  ));
-}
-
-
-}
-
-/// @nodoc
-
-
-class CreateNewAdminSuccess implements AdminsState {
-  const CreateNewAdminSuccess(final  List<DataAuthResponse> data): _data = data;
-  
-
- final  List<DataAuthResponse> _data;
- List<DataAuthResponse> get data {
-  if (_data is EqualUnmodifiableListView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_data);
-}
-
-
-/// Create a copy of AdminsState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$CreateNewAdminSuccessCopyWith<CreateNewAdminSuccess> get copyWith => _$CreateNewAdminSuccessCopyWithImpl<CreateNewAdminSuccess>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateNewAdminSuccess&&const DeepCollectionEquality().equals(other._data, _data));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_data));
-
-@override
-String toString() {
-  return 'AdminsState.createNewAdminSuccess(data: $data)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $CreateNewAdminSuccessCopyWith<$Res> implements $AdminsStateCopyWith<$Res> {
-  factory $CreateNewAdminSuccessCopyWith(CreateNewAdminSuccess value, $Res Function(CreateNewAdminSuccess) _then) = _$CreateNewAdminSuccessCopyWithImpl;
-@useResult
-$Res call({
- List<DataAuthResponse> data
-});
-
-
-
-
-}
-/// @nodoc
-class _$CreateNewAdminSuccessCopyWithImpl<$Res>
-    implements $CreateNewAdminSuccessCopyWith<$Res> {
-  _$CreateNewAdminSuccessCopyWithImpl(this._self, this._then);
-
-  final CreateNewAdminSuccess _self;
-  final $Res Function(CreateNewAdminSuccess) _then;
-
-/// Create a copy of AdminsState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(CreateNewAdminSuccess(
-null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as List<DataAuthResponse>,
-  ));
-}
-
-
-}
 
 // dart format on

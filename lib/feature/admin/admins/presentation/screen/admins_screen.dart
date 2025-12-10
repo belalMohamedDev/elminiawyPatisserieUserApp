@@ -24,7 +24,7 @@ class _AdminsScreenState extends State<AdminsScreen>
 
     return BlocBuilder<AdminsCubit, AdminsState>(
       builder: (context, state) {
-        final admins = context.read<AdminsCubit>().allActiveAdmins;
+        final admins = context.read<AdminsCubit>();
         return Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -93,7 +93,7 @@ class _AdminsScreenState extends State<AdminsScreen>
                       ),
                     ),
                     Text(
-                      "${state is GetActiveAdminsSuccess ? state.data.total! : "0"}",
+                      "${admins.totalAdmins}",
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         fontSize: responsive.setTextSize(8),
                         color: ColorManger.brun,
@@ -142,7 +142,7 @@ class _AdminsScreenState extends State<AdminsScreen>
                               ),
                         ),
                         Text(
-                          "${state is GetActiveAdminsSuccess ? state.data.active! : "0"}",
+                          "${admins.totalActiveAdmins}",
                           style: Theme.of(context).textTheme.titleMedium!
                               .copyWith(
                                 fontSize: responsive.setTextSize(6),
@@ -168,7 +168,7 @@ class _AdminsScreenState extends State<AdminsScreen>
                               ),
                         ),
                         Text(
-                          "${state is GetActiveAdminsSuccess ? state.data.inactive! : "0"}",
+                          "${admins.totalInactiveAdmins}",
                           style: Theme.of(context).textTheme.titleMedium!
                               .copyWith(
                                 fontSize: responsive.setTextSize(6),
@@ -182,7 +182,7 @@ class _AdminsScreenState extends State<AdminsScreen>
               ),
               SizedBox(height: responsive.setHeight(1)),
               if (state is GetActiveAdminsSuccess)
-                _getAllAdminDataSuccess(admins, responsive),
+                _getAllAdminDataSuccess(admins.allActiveAdmins, responsive),
               if (state is GetActiveAdminsLoading)
                 _getAllAdminDataLoading(responsive),
             ],

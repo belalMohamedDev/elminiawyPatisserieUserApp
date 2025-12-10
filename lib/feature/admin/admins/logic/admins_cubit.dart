@@ -15,6 +15,10 @@ class AdminsCubit extends Cubit<AdminsState> {
 
   List<DataAuthResponse> get allActiveAdmins => _allActiveAdmins;
 
+  int totalAdmins = 0;
+  int totalActiveAdmins = 0;
+  int totalInactiveAdmins = 0;
+
   Future<void> fetchGetAllAdmins() async {
     emit(const AdminsState.getActiveAdminsLoading());
 
@@ -24,6 +28,9 @@ class AdminsCubit extends Cubit<AdminsState> {
       success: (dataResponse) {
         _allActiveAdmins = [];
         _allActiveAdmins.addAll(dataResponse.data!);
+        totalAdmins = dataResponse.total!;
+        totalActiveAdmins = dataResponse.active!;
+        totalInactiveAdmins = dataResponse.inactive!;
 
         emit(AdminsState.getActiveAdminsSuccess(dataResponse));
       },
@@ -47,13 +54,18 @@ class AdminsCubit extends Cubit<AdminsState> {
 
   final TextEditingController email = TextEditingController();
 
-  Future<void> fetchCreateNewAdmin(String branchAreaId) async {
+  String? branchAreaValueId;
+  void setBranchAreaId(String value) {
+    branchAreaValueId = value;
+  }
+
+  Future<void> fetchCreateNewAdmin() async {
     emit(const AdminsState.createNewAdminLoading());
 
     final response = await _adminsRepositoryImplement.createNewAdminRepo(
       image: imageFile!,
       email: email.text.trim(),
-      storeAddress: branchAreaId,
+      storeAddress: branchAreaValueId!,
     );
 
     response.when(
@@ -64,10 +76,13 @@ class AdminsCubit extends Cubit<AdminsState> {
 
         imageFile = null;
 
-        emit(AdminsState.createNewAdminSuccess([..._allActiveAdmins]));
+        totalAdmins = totalAdmins + 1;
+        totalActiveAdmins = totalActiveAdmins + 1;
+
+        emit(AdminsState.getActiveAdminsSuccess(dataResponse));
       },
       failure: (error) {
-        emit(AdminsState.createNewAdminError(error));
+        emit(AdminsState.getActiveAdminsError(error));
       },
     );
   }

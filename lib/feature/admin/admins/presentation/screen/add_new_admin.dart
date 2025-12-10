@@ -59,46 +59,46 @@ class _AddNewAdminState extends State<AddNewAdmin> {
   BlocConsumer<AdminsCubit, AdminsState> _createProductButton() {
     return BlocConsumer<AdminsCubit, AdminsState>(
       listener: (context, state) {
-        // if (state is UpdateProductSuccess) {
-        //   context.pop();
-        // } else if (state is UpdateProductError) {
-        //   ShowToast.showToastErrorTop(
-        //     errorMessage: state.apiErrorModel.message!,
-        //     context: context,
-        //   );
-        // }
+        if (state is GetActiveAdminsSuccess) {
+          context.pop();
+        } else if (state is GetActiveAdminsError) {
+          ShowToast.showToastErrorTop(
+            errorMessage: state.apiErrorModel.message!,
+            context: context,
+          );
+        }
       },
       builder: (context, state) {
         return CustomButton(
           onPressed: () {
-            // final cubit = context.read<AdminsCubit>();
+            final cubit = context.read<AdminsCubit>();
 
-            // // Validate form
-            // if (!formKey.currentState!.validate()) {
-            //   return;
-            // }
+            // Validate form
+            if (!formKey.currentState!.validate()) {
+              return;
+            }
 
-            // // Validate image
-            // if (cubit.imageFile == null) {
-            //   ShowToast.showToastErrorTop(
-            //     errorMessage: "من فضلك اختر صورة للمنتج",
-            //     context: context,
-            //   );
+            // Validate image
+            if (cubit.imageFile == null) {
+              ShowToast.showToastErrorTop(
+                errorMessage: "من فضلك اختر صورة للمنتج",
+                context: context,
+              );
 
-            //   return;
-            // }
+              return;
+            }
 
-            // // Validate image
-            // if (cubit.subCategoryValueId == null) {
-            //   ShowToast.showToastErrorTop(
-            //     errorMessage: "من فضلك اختر فئة",
-            //     context: context,
-            //   );
+            // Validate image
+            if (cubit.branchAreaValueId == null) {
+              ShowToast.showToastErrorTop(
+                errorMessage: "من فضلك اختر مكان الاستور",
+                context: context,
+              );
 
-            //   return;
-            // }
+              return;
+            }
 
-            // cubit.fetchCreateProduct();
+            cubit.fetchCreateNewAdmin();
           },
           widget: LoadingButtonContent(
             defaultText: AppStrings.addNew,
@@ -132,14 +132,14 @@ class _AddNewAdminState extends State<AddNewAdmin> {
         SizedBox(height: responsive.setHeight(1.5)),
 
         CustomDropdownButtonFormField(
-          value: context.translate(AppStrings.addNewSubCategory),
+          value: context.translate(AppStrings.location),
           items: storeAddressCubit.storeBranchArea,
           onChanged: (value) {
             String? storeAreaId = context
                 .read<StoreAddressCubit>()
                 .returnStoreAreaId(value!);
 
-            // context.read<AdminsCubit>().setSubCategoryId(subCategoryId!);
+            context.read<AdminsCubit>().setBranchAreaId(storeAreaId!);
           },
         ),
       ],

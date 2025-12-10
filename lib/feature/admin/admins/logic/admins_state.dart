@@ -23,9 +23,5 @@ class AdminsState with _$AdminsState {
   const factory AdminsState.imagePicked() = AdminsImagePicked;
 
   const factory AdminsState.createNewAdminLoading() = CreateNewAdminLoading;
-  const factory AdminsState.createNewAdminError(ApiErrorModel apiErrorModel) =
-      CreateNewAdminError;
 
-  const factory AdminsState.createNewAdminSuccess(List<DataAuthResponse> data) =
-      CreateNewAdminSuccess;
 }
