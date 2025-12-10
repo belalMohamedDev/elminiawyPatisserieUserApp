@@ -82,7 +82,9 @@ Future<void> _initAdmins() async {
     ..registerLazySingleton<AdminsRepositoryImplement>(
       () => AdminsRepositoryImplement(instance()),
     )
-    ..registerFactory<AdminsCubit>(() => AdminsCubit(instance()));
+    ..registerLazySingleton<AdminsCubit>(
+      () => AdminsCubit(instance(), instance()),
+    );
 }
 
 Future<void> _initAdminHome() async {

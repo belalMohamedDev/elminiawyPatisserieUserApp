@@ -26,145 +26,176 @@ class _AdminsScreenState extends State<AdminsScreen>
       builder: (context, state) {
         final admins = context.read<AdminsCubit>().allActiveAdmins;
         return Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Text(
-                context.translate(AppStrings.admins),
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(fontSize: responsive.setTextSize(4)),
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              context.translate(AppStrings.admins),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                fontSize: responsive.setTextSize(4),
               ),
             ),
-            body: Column(
-              children: [
-                Container(
-                  padding: responsive.setPadding(top: 2, bottom: 2),
-                  margin: responsive.setMargin(
-                      left: 5, right: 5, top: 1, bottom: 2),
-                  height: responsive.setHeight(15),
-                  width: responsive.screenWidth,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withValues(alpha: 0.1),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
+
+            actions: [
+              (state is GetActiveAdminsLoading)
+                  ? const SizedBox()
+                  : GestureDetector(
+                      onTap: () {
+                        context.pushNamed(Routes.addNewAdmin);
+                      },
+                      child: Container(
+                        height: responsive.setHeight(4),
+                        width: responsive.setWidth(8.5),
+                        decoration: BoxDecoration(
+                          color: ColorManger.brun,
+                          borderRadius: BorderRadius.circular(
+                            responsive.setBorderRadius(5),
+                          ),
+                        ),
+                        child: Icon(Icons.add, color: ColorManger.white),
                       ),
-                    ],
-                    borderRadius:
-                        BorderRadius.circular(responsive.setBorderRadius(3)),
-                    color: ColorManger.backgroundItem,
-                  ),
-                  child: Column(
-                    children: [
-                      Text("Total Admins",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(
-                                  fontSize: responsive.setTextSize(4),
-                                  color: ColorManger.brun)),
-                      Text(
-                          "${state is GetActiveAdminsSuccess ? state.data.total! : "0"}",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(
-                                  fontSize: responsive.setTextSize(8),
-                                  color: ColorManger.brun)),
-                      Text("Sotive Admins",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(
-                                  fontSize: responsive.setTextSize(3.5),
-                                  color: ColorManger.brunLight)),
-                    ],
-                  ),
+                    ),
+              SizedBox(width: responsive.setWidth(6)),
+            ],
+          ),
+          body: Column(
+            children: [
+              Container(
+                padding: responsive.setPadding(top: 2, bottom: 2),
+                margin: responsive.setMargin(
+                  left: 5,
+                  right: 5,
+                  top: 1,
+                  bottom: 2,
                 ),
-                Container(
-                  margin: responsive.setMargin(left: 5, right: 5, bottom: 1),
-                  height: responsive.setHeight(10),
-                  width: responsive.screenWidth,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withValues(alpha: 0.1),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                    borderRadius:
-                        BorderRadius.circular(responsive.setBorderRadius(3)),
-                    color: ColorManger.backgroundItem,
+                height: responsive.setHeight(15),
+                width: responsive.screenWidth,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withValues(alpha: 0.1),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(
+                    responsive.setBorderRadius(3),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Active Admins",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      fontSize: responsive.setTextSize(4),
-                                      color: ColorManger.brun)),
-                          Text(
-                              "${state is GetActiveAdminsSuccess ? state.data.active! : "0"}",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      fontSize: responsive.setTextSize(6),
-                                      color: ColorManger.brun)),
-                        ],
-                      ),
-                      Container(
-                        width: 1,
-                        height: responsive.setHeight(6),
-                        color: ColorManger.brownLight,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Inactive Admins",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      fontSize: responsive.setTextSize(4),
-                                      color: ColorManger.brun)),
-                          Text(
-                              "${state is GetActiveAdminsSuccess ? state.data.inactive! : "0"}",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium!
-                                  .copyWith(
-                                      fontSize: responsive.setTextSize(6),
-                                      color: ColorManger.brun)),
-                        ],
-                      ),
-                    ],
-                  ),
+                  color: ColorManger.backgroundItem,
                 ),
-                SizedBox(height: responsive.setHeight(1)),
-                if (state is GetActiveAdminsSuccess)
-                  _getAllAdminDataSuccess(admins, responsive),
-                if (state is GetActiveAdminsLoading)
-                  _getAllAdminDataLoading(responsive),
-              ],
-            ));
+                child: Column(
+                  children: [
+                    Text(
+                      "Total Admins",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        fontSize: responsive.setTextSize(4),
+                        color: ColorManger.brun,
+                      ),
+                    ),
+                    Text(
+                      "${state is GetActiveAdminsSuccess ? state.data.total! : "0"}",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        fontSize: responsive.setTextSize(8),
+                        color: ColorManger.brun,
+                      ),
+                    ),
+                    Text(
+                      "Sotive Admins",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        fontSize: responsive.setTextSize(3.5),
+                        color: ColorManger.brunLight,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: responsive.setMargin(left: 5, right: 5, bottom: 1),
+                height: responsive.setHeight(10),
+                width: responsive.screenWidth,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withValues(alpha: 0.1),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(
+                    responsive.setBorderRadius(3),
+                  ),
+                  color: ColorManger.backgroundItem,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Active Admins",
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: responsive.setTextSize(4),
+                                color: ColorManger.brun,
+                              ),
+                        ),
+                        Text(
+                          "${state is GetActiveAdminsSuccess ? state.data.active! : "0"}",
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: responsive.setTextSize(6),
+                                color: ColorManger.brun,
+                              ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: 1,
+                      height: responsive.setHeight(6),
+                      color: ColorManger.brownLight,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Inactive Admins",
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: responsive.setTextSize(4),
+                                color: ColorManger.brun,
+                              ),
+                        ),
+                        Text(
+                          "${state is GetActiveAdminsSuccess ? state.data.inactive! : "0"}",
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: responsive.setTextSize(6),
+                                color: ColorManger.brun,
+                              ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: responsive.setHeight(1)),
+              if (state is GetActiveAdminsSuccess)
+                _getAllAdminDataSuccess(admins, responsive),
+              if (state is GetActiveAdminsLoading)
+                _getAllAdminDataLoading(responsive),
+            ],
+          ),
+        );
       },
     );
   }
 
   Expanded _getAllAdminDataSuccess(
-      List<DataAuthResponse> admins, ResponsiveUtils responsive) {
+    List<DataAuthResponse> admins,
+    ResponsiveUtils responsive,
+  ) {
     return Expanded(
       child: ListView.builder(
         itemCount: admins.length,
@@ -180,14 +211,16 @@ class _AdminsScreenState extends State<AdminsScreen>
                   offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
-              borderRadius:
-                  BorderRadius.circular(responsive.setBorderRadius(3)),
+              borderRadius: BorderRadius.circular(
+                responsive.setBorderRadius(3),
+              ),
               color: ColorManger.backgroundItem,
             ),
             child: ListTile(
               leading: ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(responsive.setBorderRadius(3)),
+                borderRadius: BorderRadius.circular(
+                  responsive.setBorderRadius(3),
+                ),
                 child: CachedNetworkImage(
                   imageUrl: admins[index].image ?? "",
                   width: responsive.setWidth(15),
@@ -204,9 +237,10 @@ class _AdminsScreenState extends State<AdminsScreen>
               title: Text(
                 admins[index].name ?? "",
                 style: TextStyle(
-                    fontSize: responsive.setTextSize(3.5),
-                    fontWeight: FontWeight.bold,
-                    color: ColorManger.brun),
+                  fontSize: responsive.setTextSize(3.5),
+                  fontWeight: FontWeight.bold,
+                  color: ColorManger.brun,
+                ),
               ),
               subtitle: Column(
                 children: [
@@ -221,8 +255,9 @@ class _AdminsScreenState extends State<AdminsScreen>
                       Text(
                         admins[index].phone ?? "",
                         style: TextStyle(
-                            fontSize: responsive.setTextSize(3.2),
-                            color: ColorManger.brunLight),
+                          fontSize: responsive.setTextSize(3.2),
+                          color: ColorManger.brunLight,
+                        ),
                       ),
                     ],
                   ),
@@ -237,23 +272,27 @@ class _AdminsScreenState extends State<AdminsScreen>
                       Text(
                         admins[index].email ?? "",
                         style: TextStyle(
-                            fontSize: responsive.setTextSize(3.2),
-                            color: ColorManger.brunLight),
+                          fontSize: responsive.setTextSize(3.2),
+                          color: ColorManger.brunLight,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
               trailing: GestureDetector(
-                child: Icon(IconlyBold.moreCircle,
-                    color: admins[index].active == false &&
-                            admins[index].completeData == true
-                        ? Colors.red
-                        : admins[index].completeData == false ||
-                                admins[index].completeData == null
-                            ? Colors.yellow.shade800
-                            : Colors.green.shade800,
-                    size: responsive.setIconSize(6)),
+                child: Icon(
+                  IconlyBold.moreCircle,
+                  color:
+                      admins[index].active == false &&
+                          admins[index].completeData == true
+                      ? Colors.red
+                      : admins[index].completeData == false ||
+                            admins[index].completeData == null
+                      ? Colors.yellow.shade800
+                      : Colors.green.shade800,
+                  size: responsive.setIconSize(6),
+                ),
               ),
             ),
           );
@@ -278,8 +317,9 @@ class _AdminsScreenState extends State<AdminsScreen>
                   offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
-              borderRadius:
-                  BorderRadius.circular(responsive.setBorderRadius(3)),
+              borderRadius: BorderRadius.circular(
+                responsive.setBorderRadius(3),
+              ),
               color: ColorManger.backgroundItem,
             ),
             child: ListTile(

@@ -1,9 +1,14 @@
+import 'dart:io';
+
 import '../../../../../core/common/shared/shared_imports.dart';
 
 abstract class AdminsRepository {
   Future<ApiResult<AuthResponse>> getAllAdminsRepo();
-
- 
+  Future<ApiResult<AuthResponse>> createNewAdminRepo({
+    required String email,
+    required String storeAddress,
+    required File image,
+  });
 }
 
 class AdminsRepositoryImplement implements AdminsRepository {
@@ -21,7 +26,21 @@ class AdminsRepositoryImplement implements AdminsRepository {
     }
   }
 
- 
-
-  
+  @override
+  Future<ApiResult<AuthResponse>> createNewAdminRepo({
+    required String email,
+    required String storeAddress,
+    required File image,
+  }) async {
+    try {
+      final response = await _apiService.createNewAdminService(
+        email,
+        storeAddress,
+        image,
+      );
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
 }

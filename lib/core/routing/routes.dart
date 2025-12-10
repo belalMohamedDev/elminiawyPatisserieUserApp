@@ -46,4 +46,5 @@ class Routes {
   static const String profileScreen = "profileScreen";
   static const String addCategoryScreen = "AddCategoryScreen";
   static const String addSubCategoryScreen = "AddSubCategoryScreen";
+  static const String addNewAdmin = "AddNewAdmin";
 }

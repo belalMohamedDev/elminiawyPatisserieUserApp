@@ -7,10 +7,10 @@ part 'store_address_cubit.freezed.dart';
 
 class StoreAddressCubit extends Cubit<StoreAddressState> {
   StoreAddressCubit(this._branchStoreAddressRepositoryImplement)
-      : super(const StoreAddressState.initial());
+    : super(const StoreAddressState.initial());
 
   final BranchStoreAddressRepositoryImplement
-      _branchStoreAddressRepositoryImplement;
+  _branchStoreAddressRepositoryImplement;
   List<Data> _allStoreAddress = [];
 
   List<Data> get allStoreAddress => _allStoreAddress;
@@ -29,10 +29,12 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
         _allStoreAddress = [];
         _allStoreAddress.addAll(dataResponse.data!);
 
-        activeStores =
-            _allStoreAddress.where((store) => store.active == true).length;
-        deActiveStores =
-            _allStoreAddress.where((store) => store.active == false).length;
+        activeStores = _allStoreAddress
+            .where((store) => store.active == true)
+            .length;
+        deActiveStores = _allStoreAddress
+            .where((store) => store.active == false)
+            .length;
 
         emit(StoreAddressState.getStoreAddressSuccess(dataResponse));
       },
@@ -40,5 +42,18 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
         emit(StoreAddressState.getStoreAddressError(error));
       },
     );
+  }
+
+  List<String?> get storeBranchArea =>
+      _allStoreAddress.map((e) => e.branchArea).toList();
+
+  String? returnStoreAreaId(String value) {
+    try {
+      return _allStoreAddress
+          .firstWhere((item) => item.branchArea == value)
+          .sId;
+    } catch (e) {
+      return null;
+    }
   }
 }

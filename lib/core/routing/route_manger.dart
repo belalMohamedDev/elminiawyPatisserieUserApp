@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
+import 'package:elminiawy/feature/admin/admins/presentation/screen/add_new_admin.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
@@ -58,6 +59,17 @@ class RouteGenerator {
           builder: (_) => BlocProvider(
             create: (_) => instance<AdminsCubit>(),
             child: const AdminsScreen(),
+          ),
+        );
+
+      case Routes.addNewAdmin:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: instance<AdminsCubit>()),
+              BlocProvider(create: (context) => instance<StoreAddressCubit>()),
+            ],
+            child: AddNewAdmin(),
           ),
         );
 

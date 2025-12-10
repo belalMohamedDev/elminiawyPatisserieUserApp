@@ -201,6 +201,14 @@ abstract class AppServiceClient {
   @GET(ApiConstants.admin)
   Future<AuthResponse> getAllAdminsService();
 
+  @POST(ApiConstants.admin)
+  @MultiPart()
+  Future<AuthResponse> createNewAdminService(
+    @Part(name: "email") String email,
+    @Part(name: "storeAddress") String storeAddress,
+    @Part() File image,
+  );
+
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();
 

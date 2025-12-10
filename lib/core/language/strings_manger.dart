@@ -37,6 +37,9 @@ class AppStrings {
   static const String driver = "driver";
   static const String users = "users";
   static const String admins = "admins";
+
+
+
   static const String title = "title";
   static const String notAssigned = "notAssigned";
   static const String areYouSureYouWantToDelete = "areYouSureYouWantToDelete";
