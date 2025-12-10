@@ -10,15 +10,6 @@ class AdminsScreen extends StatefulWidget {
 class _AdminsScreenState extends State<AdminsScreen>
     with SingleTickerProviderStateMixin {
   @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      context.read<AdminsCubit>().fetchGetAllAdmins();
-    });
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
 
@@ -38,10 +29,13 @@ class _AdminsScreenState extends State<AdminsScreen>
                   ),
 
                   SizedBox(height: responsive.setHeight(1)),
-                  if (admins.allActiveAdmins.isNotEmpty)
-                    _getAllAdminDataSuccess(admins.allActiveAdmins, responsive),
-                  if (state is GetActiveAdminsLoading)
-                    _getAllAdminDataLoading(responsive),
+                  admins.allActiveAdmins.isEmpty ||
+                          state is GetActiveAdminsLoading
+                      ? _getAllAdminDataLoading(responsive)
+                      : _getAllAdminDataSuccess(
+                          admins.allActiveAdmins,
+                          responsive,
+                        ),
                 ],
               ),
             ),

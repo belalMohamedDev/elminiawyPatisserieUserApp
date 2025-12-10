@@ -57,7 +57,7 @@ class RouteGenerator {
       case Routes.admin:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
-            value:  instance<AdminsCubit>(),
+            value: instance<AdminsCubit>()..fetchGetAllAdmins(),
             child: const AdminsScreen(),
           ),
         );
