@@ -86,4 +86,36 @@ class AdminsCubit extends Cubit<AdminsState> {
       },
     );
   }
+
+  Future<void> fetchDeleteAdmin({String? id}) async {
+    emit(const AdminsState.createNewAdminLoading());
+
+    final response = await _adminsRepositoryImplement.deleteAdminRepo(id: id!);
+
+    response.when(
+      success: (dataResponse) {
+        final deletedAdmin = dataResponse.data;
+
+        // 1) Remove user from the active admins list if exists
+        final index = _allActiveAdmins.indexWhere((admin) => admin.sId == id);
+
+        if (index != -1) {
+          _allActiveAdmins.removeAt(index);
+        }
+
+        // 2) Update counters
+        totalAdmins = totalAdmins - 1;
+        if (deletedAdmin.active == true) {
+          totalActiveAdmins = totalActiveAdmins - 1;
+        } else {
+          totalInactiveAdmins = totalInactiveAdmins - 1;
+        }
+
+        emit(AdminsState.getActiveAdminsSuccess(dataResponse));
+      },
+      failure: (error) {
+        emit(AdminsState.getActiveAdminsError(error));
+      },
+    );
+  }
 }

@@ -209,6 +209,9 @@ abstract class AppServiceClient {
     @Part() File image,
   );
 
+  @DELETE("${ApiConstants.admin}/{id}")
+  Future<AuthResponse> deleteAdminService(@Path("id") String id);
+
   @GET(ApiConstants.wishList)
   Future<ProductResponse> getWishListService();
 

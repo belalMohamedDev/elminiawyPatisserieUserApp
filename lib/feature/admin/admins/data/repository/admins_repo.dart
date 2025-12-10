@@ -9,6 +9,8 @@ abstract class AdminsRepository {
     required String storeAddress,
     required File image,
   });
+
+  Future<ApiResult<AuthResponse>> deleteAdminRepo({required String id});
 }
 
 class AdminsRepositoryImplement implements AdminsRepository {
@@ -38,6 +40,16 @@ class AdminsRepositoryImplement implements AdminsRepository {
         storeAddress,
         image,
       );
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
+  }
+
+  @override
+  Future<ApiResult<AuthResponse>> deleteAdminRepo({required String id}) async {
+    try {
+      final response = await _apiService.deleteAdminService(id);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error));
