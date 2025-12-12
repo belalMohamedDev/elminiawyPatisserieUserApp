@@ -8,7 +8,7 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
-
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
     return Padding(
       padding: responsive.setPadding(left: 4.5, right: 2),
       child: Row(
@@ -23,7 +23,14 @@ class HomeAppBar extends StatelessWidget {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      adminHomeCubit.drawerOpenOrClose(0, 0, 1, 0, false);
+                      adminHomeCubit.drawerOpenOrClose(
+                        0,
+                        0,
+                        1,
+                        0,
+                        false,
+                        !isEnLocale,
+                      );
                     },
                     icon: Icon(IconlyBold.arrowRight, color: ColorManger.white),
                   ),
@@ -43,6 +50,7 @@ class HomeAppBar extends StatelessWidget {
                         0.85,
                         270.05,
                         true,
+                        !isEnLocale,
                       );
                     },
                     icon: Image.asset(

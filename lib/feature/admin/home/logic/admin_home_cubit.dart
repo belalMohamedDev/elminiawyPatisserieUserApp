@@ -9,7 +9,7 @@ part 'admin_home_cubit.freezed.dart';
 
 class AdminHomeCubit extends Cubit<AdminHomeState> {
   AdminHomeCubit(this._adminOrderRepositoryImplement)
-      : super(const AdminHomeState.initial());
+    : super(const AdminHomeState.initial());
 
   final OrderAdminRepositoryImplement _adminOrderRepositoryImplement;
 
@@ -19,21 +19,29 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
   double scaleFactor = 1;
   bool drawerIsOpen = false;
 
-  void drawerOpenOrClose(double xOffset, double yOffset, double scaleFactor,
-      double rotate, bool drawerIsOpen) {
-    this.xOffset = xOffset;
+  void drawerOpenOrClose(
+    double xOffset,
+    double yOffset,
+    double scaleFactor,
+    double rotate,
+    bool drawerIsOpen,
+    bool isRtl,
+  ) {
     this.yOffset = yOffset;
     this.scaleFactor = scaleFactor;
     this.rotate = rotate;
     this.drawerIsOpen = drawerIsOpen;
+    this.xOffset = isRtl ? -xOffset : xOffset;
 
-    emit(AdminHomeState.drawerState(
-      xOffset: this.xOffset,
-      yOffset: this.yOffset,
-      scaleFactor: this.scaleFactor,
-      rotate: this.rotate,
-      drawerIsOpen: this.drawerIsOpen,
-    ));
+    emit(
+      AdminHomeState.drawerState(
+        xOffset: this.xOffset,
+        yOffset: this.yOffset,
+        scaleFactor: this.scaleFactor,
+        rotate: this.rotate,
+        drawerIsOpen: this.drawerIsOpen,
+      ),
+    );
   }
 
   List<GetOrdersResponseData> getAdminOrders = [];
@@ -42,8 +50,8 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     if (isClosed) return;
     emit(const AdminHomeState.getAdminOrdersLoading());
 
-    final response =
-        await _adminOrderRepositoryImplement.getAllAdminOrderRepository(status);
+    final response = await _adminOrderRepositoryImplement
+        .getAllAdminOrderRepository(status);
 
     if (isClosed) return;
 
@@ -58,9 +66,7 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
       },
       failure: (error) {
         if (!isClosed) {
-          emit(
-            AdminHomeState.getAdminOrdersError(error),
-          );
+          emit(AdminHomeState.getAdminOrdersError(error));
         }
       },
     );
@@ -71,35 +77,38 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
     emit(AdminHomeState.updateAdminOrderStatusSuccess(getAdminOrders));
   }
 
-  Future<void> updateAdminOrderStatusSummit(
-      {required String id,
-      String? adminAcceptedAt,
-      String? adminCompletedAt,
-      String? driverDeliveredAt,
-      String? driverId,
-      String? driverAcceptedAt,
-      String? canceledAt,
-      required int status}) async {
+  Future<void> updateAdminOrderStatusSummit({
+    required String id,
+    String? adminAcceptedAt,
+    String? adminCompletedAt,
+    String? driverDeliveredAt,
+    String? driverId,
+    String? driverAcceptedAt,
+    String? canceledAt,
+    required int status,
+  }) async {
     if (isClosed) return;
     emit(const AdminHomeState.updateAdminOrderStatusLoading());
 
-    final response =
-        await _adminOrderRepositoryImplement.updateAdminOrderStatusRepository(
-            id: id,
-            adminAcceptedAt: adminAcceptedAt,
-            adminCompletedAt: adminCompletedAt,
-            canceledAt: canceledAt,
-            driverDeliveredAt: driverDeliveredAt,
-            driverId: driverId,
-            driverAcceptedAt: driverAcceptedAt,
-            status: status);
+    final response = await _adminOrderRepositoryImplement
+        .updateAdminOrderStatusRepository(
+          id: id,
+          adminAcceptedAt: adminAcceptedAt,
+          adminCompletedAt: adminCompletedAt,
+          canceledAt: canceledAt,
+          driverDeliveredAt: driverDeliveredAt,
+          driverId: driverId,
+          driverAcceptedAt: driverAcceptedAt,
+          status: status,
+        );
 
     if (isClosed) return;
 
     response.when(
       success: (response) {
-        final updatedIndex =
-            getAdminOrders.indexWhere((order) => order.sId == id);
+        final updatedIndex = getAdminOrders.indexWhere(
+          (order) => order.sId == id,
+        );
 
         if (updatedIndex != -1) {
           getAdminOrders.removeAt(updatedIndex);
@@ -111,9 +120,7 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
       },
       failure: (error) {
         if (!isClosed) {
-          emit(
-            AdminHomeState.updateAdminOrderStatusError(error),
-          );
+          emit(AdminHomeState.updateAdminOrderStatusError(error));
         }
       },
     );
@@ -135,15 +142,14 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
         getOrdersStatusAndSalesTodayCount = response;
 
         if (!isClosed) {
-          emit(AdminHomeState.getOrdersStatusAndSalesTodayCountSuccess(
-              response));
+          emit(
+            AdminHomeState.getOrdersStatusAndSalesTodayCountSuccess(response),
+          );
         }
       },
       failure: (error) {
         if (!isClosed) {
-          emit(
-            AdminHomeState.getOrdersStatusAndSalesTodayCountError(error),
-          );
+          emit(AdminHomeState.getOrdersStatusAndSalesTodayCountError(error));
         }
       },
     );

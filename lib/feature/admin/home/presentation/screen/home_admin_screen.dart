@@ -22,7 +22,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
     Future.wait([
       context.read<AdminHomeCubit>().getOrdersStatusAndSalesTodayCountSummit(),
       context.read<CartCubit>().getCartItem(),
-      context.read<CategoryCubit>().getCategories()
+      context.read<CategoryCubit>().getCategories(),
     ]);
 
     _timer = Timer.periodic(const Duration(minutes: 1), (timer) {
@@ -38,14 +38,17 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
+
     return BlocBuilder<AdminHomeCubit, AdminHomeState>(
       builder: (context, state) {
         final adminHomeCubit = context.watch<AdminHomeCubit>();
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle.light.copyWith(
-              statusBarColor: adminHomeCubit.drawerIsOpen
-                  ? ColorManger.brun
-                  : ColorManger.white),
+            statusBarColor: adminHomeCubit.drawerIsOpen
+                ? ColorManger.brun
+                : ColorManger.white,
+          ),
           child: GestureDetector(
             onTap: () {
               if (adminHomeCubit.drawerIsOpen) {
@@ -55,19 +58,25 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   1,
                   0,
                   false,
+                  !isEnLocale,
                 );
               }
             },
             child: AnimatedContainer(
               decoration: BoxDecoration(
-                borderRadius:
-                    BorderRadius.circular(adminHomeCubit.drawerIsOpen ? 50 : 0),
+                borderRadius: BorderRadius.circular(
+                  adminHomeCubit.drawerIsOpen ? 50 : 0,
+                ),
                 color: ColorManger.white,
               ),
-              transform: Matrix4.translationValues(
-                  adminHomeCubit.xOffset, adminHomeCubit.yOffset, 0)
-                ..rotateZ(adminHomeCubit.rotate)
-                ..scale(adminHomeCubit.scaleFactor),
+              transform:
+                  Matrix4.translationValues(
+                      adminHomeCubit.xOffset,
+                      adminHomeCubit.yOffset,
+                      0,
+                    )
+                    ..rotateZ(adminHomeCubit.rotate)
+                    ..scale(adminHomeCubit.scaleFactor),
               duration: const Duration(milliseconds: 250),
               child: Stack(
                 children: [
@@ -95,15 +104,16 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     child: FloatingActionButton(
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BlocProvider.value(
-                                value: instance<CategoryCubit>(),
-                                child: const CategoryView(
-                                  isCategoryCartToAdmin: true,
-                                ),
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BlocProvider.value(
+                              value: instance<CategoryCubit>(),
+                              child: const CategoryView(
+                                isCategoryCartToAdmin: true,
                               ),
-                            ));
+                            ),
+                          ),
+                        );
                       },
                       backgroundColor: ColorManger.brun,
                       child: Icon(Icons.add, color: ColorManger.backgroundItem),

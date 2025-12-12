@@ -299,5 +299,6 @@
   "salesToday": "Sales Today",
   "salesWeek": "Sales Week",
   "productsSold": "Products Sold",
-  "view": "View"
+  "view": "View",
+  "storeAddress": "Store Address"
 }

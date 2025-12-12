@@ -366,4 +366,5 @@ class AppStrings {
   static const String productsSold = "productsSold";
   static const String salesToday = "salesToday";
   static const String view = "view";
+  static const String storeAddress = "storeAddress";
 }

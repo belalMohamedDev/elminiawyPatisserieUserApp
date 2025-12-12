@@ -2,7 +2,6 @@ import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class AddNewStoreScreen extends StatelessWidget {
   const AddNewStoreScreen({super.key});
 
@@ -19,7 +18,6 @@ class AddNewStoreScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 _sectionTitle("Branch Details"),
                 _card(
                   child: Column(
@@ -54,12 +52,12 @@ class AddNewStoreScreen extends StatelessWidget {
                         ),
                         child: Center(
                           child:
-                          // cubit.location == null
-                             // ?
-                               const Text("No location selected")
-                              // : Text(
-                              //     "${cubit.location!.latitude}, ${cubit.location!.longitude}",
-                               // ),
+                              // cubit.location == null
+                              // ?
+                              const Text("No location selected"),
+                          // : Text(
+                          //     "${cubit.location!.latitude}, ${cubit.location!.longitude}",
+                          // ),
                         ),
                       ),
                       const SizedBox(height: 12),
@@ -106,7 +104,7 @@ class AddNewStoreScreen extends StatelessWidget {
                 ),
 
                 // if (state is StoreAddressLoading)
-                  const LinearProgressIndicator(),
+                const LinearProgressIndicator(),
               ],
             ),
           );
@@ -116,8 +114,10 @@ class AddNewStoreScreen extends StatelessWidget {
   }
 
   Widget _sectionTitle(String title) {
-    return Text(title,
-        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold));
+    return Text(
+      title,
+      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+    );
   }
 
   Widget _card({required Widget child}) {
@@ -129,7 +129,7 @@ class AddNewStoreScreen extends StatelessWidget {
   }
 
   Widget _inputField({
-     TextEditingController? controller,
+    TextEditingController? controller,
     required String label,
   }) {
     return Padding(
@@ -138,9 +138,7 @@ class AddNewStoreScreen extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           labelText: label,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         ),
       ),
     );

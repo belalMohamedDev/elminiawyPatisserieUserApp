@@ -11,12 +11,19 @@ class _DrawerScreenState extends State<DrawerScreen> {
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     return Container(
       color: ColorManger.brun,
       child: Padding(
-        padding:
-            responsive.setPadding(top: 20, left: 1.5, right: 45, bottom: 8),
+        padding: responsive.setPadding(
+          top: isEnLocale ? 20 : 19,
+          // left: 1.5,
+          // right: 45,
+          left: isEnLocale ? 1.5 : 45, 
+          right: isEnLocale ? 45 : 2,
+          bottom: 8,
+        ),
         child: Column(
           children: [
             Material(
@@ -25,24 +32,21 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 splashColor: ColorManger.white,
                 onTap: () {
                   context.read<AdminHomeCubit>().drawerOpenOrClose(
-                        0,
-                        0,
-                        1,
-                        0,
-                        false,
-                      );
+                    0,
+                    0,
+                    1,
+                    0,
+                    false,
+                    !isEnLocale,
+                  );
                 },
                 horizontalTitleGap: 25.0,
-                leading: Icon(
-                  IconlyBold.home,
-                  color: ColorManger.white,
-                ),
+                leading: Icon(IconlyBold.home, color: ColorManger.white),
                 title: Text(
                   context.translate(AppStrings.home),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -53,16 +57,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   context.pushNamed(Routes.adminCategory);
                 },
                 horizontalTitleGap: 25.0,
-                leading: Icon(
-                  IconlyBold.category,
-                  color: ColorManger.white,
-                ),
+                leading: Icon(IconlyBold.category, color: ColorManger.white),
                 title: Text(
                   context.translate(AppStrings.categories),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -73,16 +73,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   context.pushNamed(Routes.adminSubCategory);
                 },
                 horizontalTitleGap: 25.0,
-                leading: Icon(
-                  Icons.category,
-                  color: ColorManger.white,
-                ),
+                leading: Icon(Icons.category, color: ColorManger.white),
                 title: Text(
                   context.translate(AppStrings.subCategory),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -93,16 +89,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   context.pushNamed(Routes.adminBanner);
                 },
                 horizontalTitleGap: 25.0,
-                leading: Icon(
-                  IconlyBold.image,
-                  color: ColorManger.white,
-                ),
+                leading: Icon(IconlyBold.image, color: ColorManger.white),
                 title: Text(
                   context.translate(AppStrings.banners),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -120,10 +112,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 ),
                 title: Text(
                   context.translate(AppStrings.products),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -141,10 +132,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 ),
                 title: Text(
                   context.translate(AppStrings.driver),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -155,16 +145,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   context.pushNamed(Routes.storeAddress);
                 },
                 horizontalTitleGap: 25.0,
-                leading: Icon(
-                  IconlyBold.location,
-                  color: ColorManger.white,
-                ),
+                leading: Icon(IconlyBold.location, color: ColorManger.white),
                 title: Text(
-                  "Store Address",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                    context.translate(AppStrings.storeAddress),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -181,10 +167,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 ),
                 title: Text(
                   context.translate(AppStrings.admins),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -195,16 +180,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   context.pushNamed(Routes.profileScreen);
                 },
                 horizontalTitleGap: 25.0,
-                leading: Icon(
-                  IconlyBold.setting,
-                  color: ColorManger.white,
-                ),
+                leading: Icon(IconlyBold.setting, color: ColorManger.white),
                 title: Text(
                   context.translate(AppStrings.settings),
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontSize: responsive.setTextSize(3.8)),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
                 ),
               ),
             ),
@@ -213,12 +194,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
               listener: (context, state) async {
                 if (state is LogOutSuccess) {
                   ShowToast.showToastSuccessTop(
-                      message: state.successMessage, context: context);
+                    message: state.successMessage,
+                    context: context,
+                  );
                   await AppLogout().logOutThenNavigateToLogin();
                 } else if (state is LogOutError) {
                   ShowToast.showToastErrorTop(
-                      errorMessage: state.apiErrorModel.message!,
-                      context: context);
+                    errorMessage: state.apiErrorModel.message!,
+                    context: context,
+                  );
                   if (state.apiErrorModel.statusCode == 400) {
                     await AppLogout().logOutThenNavigateToLogin();
                   }
@@ -229,15 +213,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   color: Colors.transparent,
                   child: ListTile(
                     onTap: () async {
-                      context
-                          .read<LogOutCubit>()
-                          .checkTokenThenDoLogOut(context);
+                      context.read<LogOutCubit>().checkTokenThenDoLogOut(
+                        context,
+                      );
                     },
                     horizontalTitleGap: 25.0,
-                    leading: Icon(
-                      IconlyBold.logout,
-                      color: ColorManger.white,
-                    ),
+                    leading: Icon(IconlyBold.logout, color: ColorManger.white),
                     title: state is LogOutLoading
                         ? SizedBox(
                             height: responsive.setHeight(3.8),
