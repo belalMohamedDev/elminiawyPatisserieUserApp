@@ -36,6 +36,10 @@ class _ProfileViewState extends State<ProfileView> {
         });
       });
     }
+
+    if (AppInitialRoute.role == "admin") {
+      context.read<LogOutCubit>().getUserName();
+    }
   }
 
   Future<void> _loadOrders() async {

@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
+import 'package:elminiawy/feature/admin/storeAddress/presentation/screens/add_new_store_screen.dart';
 import 'package:elminiawy/feature/admin/storeAddress/presentation/widgets/get_address_store_loading_widget.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -24,55 +25,87 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
 
     return BlocBuilder<StoreAddressCubit, StoreAddressState>(
       builder: (context, state) {
-        final allStoreAddress =
-            context.read<StoreAddressCubit>().allStoreAddress;
+        final allStoreAddress = context
+            .read<StoreAddressCubit>()
+            .allStoreAddress;
         return Scaffold(
           appBar: AppBar(
             title: Text(
               "Store Address",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(fontSize: responsive.setTextSize(4)),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                fontSize: responsive.setTextSize(4),
+              ),
             ),
+            actions: [
+              (state is GetActiveAdminsLoading)
+                  ? const SizedBox()
+                  : GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BlocProvider(
+                              create: (context) =>
+                                  instance<StoreAddressCubit>(),
+                              child: AddNewStoreScreen(),
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: responsive.setHeight(4),
+                        width: responsive.setWidth(8.5),
+                        decoration: BoxDecoration(
+                          color: ColorManger.brun,
+                          borderRadius: BorderRadius.circular(
+                            responsive.setBorderRadius(5),
+                          ),
+                        ),
+                        child: Icon(Icons.add, color: ColorManger.white),
+                      ),
+                    ),
+              SizedBox(width: responsive.setWidth(6)),
+            ],
           ),
           body: Column(
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: responsive.setWidth(4),
-                    vertical: responsive.setHeight(1.2)),
+                  horizontal: responsive.setWidth(4),
+                  vertical: responsive.setHeight(1.2),
+                ),
                 child: SizedBox(
                   height: responsive.setHeight(12),
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
                       _buildSummaryCard(
-                          responsive,
-                          'Total Stores',
-                          '${allStoreAddress.length}',
-                          ColorManger.backgroundItem),
+                        responsive,
+                        'Total Stores',
+                        '${allStoreAddress.length}',
+                        ColorManger.backgroundItem,
+                      ),
                       SizedBox(width: responsive.setWidth(3.5)),
                       _buildSummaryCard(
-                          responsive,
-                          'Active Stores',
-                          '${context.read<StoreAddressCubit>().activeStores}',
-                          ColorManger.backgroundItem),
+                        responsive,
+                        'Active Stores',
+                        '${context.read<StoreAddressCubit>().activeStores}',
+                        ColorManger.backgroundItem,
+                      ),
                       SizedBox(width: responsive.setWidth(3.5)),
                       _buildSummaryCard(
-                          responsive,
-                          'DeActive Stores',
-                          '${context.read<StoreAddressCubit>().deActiveStores}',
-                          ColorManger.backgroundItem),
+                        responsive,
+                        'DeActive Stores',
+                        '${context.read<StoreAddressCubit>().deActiveStores}',
+                        ColorManger.backgroundItem,
+                      ),
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: ListView.builder(
-                  padding: responsive.setPadding(
-                    top: 1,
-                  ),
+                  padding: responsive.setPadding(top: 1),
                   itemCount: state is GetStoreAddressLoading
                       ? 5
                       : allStoreAddress.length,
@@ -81,8 +114,11 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
                       return const GetAddressStoreLoadingWidget();
                     }
                     return Container(
-                      margin:
-                          responsive.setMargin(left: 5, right: 5, bottom: 1.5),
+                      margin: responsive.setMargin(
+                        left: 5,
+                        right: 5,
+                        bottom: 1.5,
+                      ),
                       decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -90,58 +126,61 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
                             spreadRadius: 2,
                             blurRadius: 5,
                             offset: const Offset(
-                                0, 3), // changes position of shadow
+                              0,
+                              3,
+                            ), // changes position of shadow
                           ),
                         ],
                         borderRadius: BorderRadius.circular(
-                            responsive.setBorderRadius(3)),
+                          responsive.setBorderRadius(3),
+                        ),
                         color: ColorManger.backgroundItem,
                       ),
                       child: ListTile(
-                          dense: true,
-                          contentPadding: EdgeInsets.symmetric(
-                            horizontal: responsive.setWidth(3),
+                        dense: true,
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: responsive.setWidth(3),
+                        ),
+                        title: Text(
+                          "${allStoreAddress[index].branchArea} Branch",
+                          style: TextStyle(
+                            fontSize: responsive.setTextSize(3.5),
+                            fontWeight: FontWeight.bold,
+                            color: ColorManger.brun,
                           ),
-                          title: Text(
-                            "${allStoreAddress[index].branchArea} Branch",
-                            style: TextStyle(
+                        ),
+                        subtitle: Text(
+                          overflow: TextOverflow.ellipsis,
+                          "${allStoreAddress[index].region}",
+                          style: TextStyle(
+                            fontSize: responsive.setTextSize(3.2),
+                            color: ColorManger.brunLight,
+                          ),
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              IconlyBold.location,
+                              color: Colors.green.shade500,
+                            ),
+                            SizedBox(width: responsive.setWidth(2)),
+                            Text(
+                              "Available",
+                              style: TextStyle(
                                 fontSize: responsive.setTextSize(3.5),
-                                fontWeight: FontWeight.bold,
-                                color: ColorManger.brun),
-                          ),
-                          subtitle: Text(
-                            overflow: TextOverflow.ellipsis,
-                            "${allStoreAddress[index].region}",
-                            style: TextStyle(
-                                fontSize: responsive.setTextSize(3.2),
-                                color: ColorManger.brunLight),
-                          ),
-                          trailing: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                IconlyBold.location,
-                                color: Colors.green.shade500,
+                                color: ColorManger.brunLight,
                               ),
-                              SizedBox(
-                                width: responsive.setWidth(2),
-                              ),
-                              Text(
-                                "Available",
-                                style: TextStyle(
-                                    fontSize: responsive.setTextSize(3.5),
-                                    color: ColorManger.brunLight),
-                              ),
-                              SizedBox(
-                                width: responsive.setWidth(2),
-                              ),
-                              CupertinoSwitch(
-                                value: allStoreAddress[index].active!,
-                                activeTrackColor: Colors.green.shade500,
-                                onChanged: (value) {},
-                              ),
-                            ],
-                          )),
+                            ),
+                            SizedBox(width: responsive.setWidth(2)),
+                            CupertinoSwitch(
+                              value: allStoreAddress[index].active!,
+                              activeTrackColor: Colors.green.shade500,
+                              onChanged: (value) {},
+                            ),
+                          ],
+                        ),
+                      ),
                     );
                   },
                 ),
@@ -154,7 +193,11 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
   }
 
   Widget _buildSummaryCard(
-      ResponsiveUtils responsive, String title, String value, Color bg) {
+    ResponsiveUtils responsive,
+    String title,
+    String value,
+    Color bg,
+  ) {
     return Container(
       width: responsive.setWidth(28),
       decoration: BoxDecoration(
@@ -194,4 +237,3 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
     );
   }
 }
-
