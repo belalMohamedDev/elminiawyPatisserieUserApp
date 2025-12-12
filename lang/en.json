@@ -286,8 +286,18 @@
   "WelcometoPatisserieApp": "Welcome to Patisserie App",
   "Required": "Required",
   "createProduct": "Create Product",
-  "AddNewProduct":"Add New Product",
-  "tapToUploadImage":"Tap to upload image"
-
-
+  "AddNewProduct": "Add New Product",
+  "tapToUploadImage": "Tap to upload image",
+  "sweetShopAdmin": "Sweet Shop Admin",
+  "newOrders": "New Orders",
+  "completedOrders": "Completed Orders",
+  "deliveredOrders": "Delivered Orders",
+  "pendingDriver": "Pending Driver",
+  "pendingOrders": "Pending Orders",
+  "cancelledOrders": "Cancelled Orders",
+  "topProducts": "Top Products",
+  "salesToday": "Sales Today",
+  "salesWeek": "Sales Week",
+  "productsSold": "Products Sold",
+  "view": "View"
 }

@@ -1,9 +1,7 @@
 import '../../../../../core/common/shared/shared_imports.dart';
 
 class HomeSales extends StatelessWidget {
-  const HomeSales({
-    super.key,
-  });
+  const HomeSales({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +14,25 @@ class HomeSales extends StatelessWidget {
           child: Row(
             children: [
               SalesContainerWidget(
-                  image: ImageAsset.money,
-                  titleText: "Sales Today",
-                  bodyText:
-                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP"),
+                image: ImageAsset.money,
+                titleText: context.translate(AppStrings.salesToday),
+                bodyText:
+                    "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalSalesToday ?? 0} EGP",
+              ),
               const Spacer(),
               SalesContainerWidget(
-                  image: ImageAsset.increase,
-                  titleText: "Sales Week",
-                  bodyText:
-                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP"),
+                image: ImageAsset.increase,
+                titleText: context.translate(AppStrings.salesWeek),
+                bodyText:
+                    "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalSalesLastWeek ?? 0} EGP",
+              ),
               const Spacer(),
               SalesContainerWidget(
-                  image: ImageAsset.groceries,
-                  titleText: "Products sold",
-                  bodyText:
-                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}"),
+                image: ImageAsset.groceries,
+                titleText: context.translate(AppStrings.productsSold),
+                bodyText:
+                    "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.totalItemsSoldLastWeek ?? 0}",
+              ),
             ],
           ),
         );
@@ -58,17 +59,14 @@ class SalesContainerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
     return Container(
-      height: responsive.setHeight(12),
+      height: responsive.setHeight(14),
       width: responsive.setWidth(29),
       decoration: BoxDecoration(
         color: ColorManger.brownLight.withValues(alpha: 0.09),
         borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
       ),
       child: Padding(
-        padding: responsive.setPadding(
-          left: 2,
-          top: 0.9,
-        ),
+        padding: responsive.setPadding(left: 2, top: 0.9, right: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -85,7 +83,7 @@ class SalesContainerWidget extends StatelessWidget {
                 fontSize: responsive.setTextSize(3.5),
               ),
             ),
-            responsive.setSizeBox(height: 0.5),
+            responsive.setSizeBox(height: 0.8),
             Text(
               bodyText,
               style: getSemiBoldStyle(

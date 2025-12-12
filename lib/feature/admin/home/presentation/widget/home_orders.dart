@@ -2,9 +2,7 @@ import '../../../../../core/common/shared/shared_imports.dart';
 import 'home_order_card_widget.dart';
 
 class HomeOrders extends StatelessWidget {
-  const HomeOrders({
-    super.key,
-  });
+  const HomeOrders({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class HomeOrders extends StatelessWidget {
                         context.pushNamed(Routes.newOrders);
                       },
                       child: HomeOrderCardWidget(
-                        title: "New Orders",
+                        title: context.translate(AppStrings.newOrders),
                         number:
                             '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.newOrders ?? 0}',
                         image: ImageAsset.order,
@@ -37,7 +35,7 @@ class HomeOrders extends StatelessWidget {
                         context.pushNamed(Routes.completeOrders);
                       },
                       child: HomeOrderCardWidget(
-                        title: "Completed Orders",
+                        title: context.translate(AppStrings.completedOrders),
                         number:
                             '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.completeOrders ?? 0}',
                         image: ImageAsset.orderDelivered,
@@ -56,7 +54,7 @@ class HomeOrders extends StatelessWidget {
                   children: [
                     GestureDetector(
                       child: HomeOrderCardWidget(
-                        title: "Delivered Orders",
+                        title: context.translate(AppStrings.deliveredOrders),
                         number:
                             '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.deliveredOrders ?? 0}',
                         image: ImageAsset.deliveryBike,
@@ -73,12 +71,14 @@ class HomeOrders extends StatelessWidget {
                         context.pushNamed(Routes.pendingOrders);
                       },
                       child: HomeOrderCardWidget(
-                        title: "Pending Orders",
+                        title: context.translate(AppStrings.pendingOrders),
                         number:
                             '${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.pendingOrders ?? 0} ',
                         image: ImageAsset.orderWaiting,
                         cardContentColor: ColorManger.white,
-                        cardColor: const Color(0xffe68636).withValues(alpha: 0.8),
+                        cardColor: const Color(
+                          0xffe68636,
+                        ).withValues(alpha: 0.8),
                         // isSalesToday: true,
                       ),
                     ),

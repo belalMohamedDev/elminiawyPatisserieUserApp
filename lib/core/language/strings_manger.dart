@@ -20,7 +20,6 @@ class AppStrings {
   static const String addNewProduct = "AddNewProduct";
   static const String tapToUploadImage = "tapToUploadImage";
 
-
   static const String adminName = "adminName";
 
   static const String startDate = "startDate";
@@ -37,8 +36,6 @@ class AppStrings {
   static const String driver = "driver";
   static const String users = "users";
   static const String admins = "admins";
-
-
 
   static const String title = "title";
   static const String notAssigned = "notAssigned";
@@ -114,8 +111,8 @@ class AppStrings {
   static const String emptyWishList = "emptyWishList";
 
   static const String emptyCategory = "emptyCategory";
-  static const String noProductsFoundInThisCategory = "noProductsFoundInThisCategory";
-
+  static const String noProductsFoundInThisCategory =
+      "noProductsFoundInThisCategory";
 
   static const String itSeemsLikeYouHavenAddedAnythingToYourWishlistYet =
       "itSeemsLikeYouHavenAddedAnythingToYourWishlistYet";
@@ -337,13 +334,8 @@ class AppStrings {
   static const String allActiveDriver = "allActiveDriver";
   static const String allNotActiveDriver = "allNotActiveDriver";
 
-
- static const String activeAdmins = "activeAdmins";
+  static const String activeAdmins = "activeAdmins";
   static const String notActiveAdmins = "notActiveAdmins";
- 
-
-
-
 
   static const String previousOrders = "previousOrders";
   static const String accountInformation = "accountInformation";
@@ -358,4 +350,20 @@ class AppStrings {
   static const String review = "Review";
   static const String hello = "Hello";
   static const String welcometoPatisserieApp = "WelcometoPatisserieApp";
+
+  static const String sweetShopAdmin = "sweetShopAdmin";
+  static const String newOrders = "newOrders";
+
+  static const String completedOrders = "completedOrders";
+  static const String deliveredOrders = "deliveredOrders";
+  static const String pendingOrders = "pendingOrders";
+
+  static const String pendingDriver = "pendingDriver";
+  static const String cancelledOrders = "cancelledOrders";
+  static const String topProducts = "topProducts";
+
+  static const String salesWeek = "salesWeek";
+  static const String productsSold = "productsSold";
+  static const String salesToday = "salesToday";
+  static const String view = "view";
 }

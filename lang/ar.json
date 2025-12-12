@@ -287,5 +287,18 @@
   "Required": "هذا الحقل مطلوب",
   "createProduct": "إنشاء منتج",
   "AddNewProduct": "إضافة منتج جديد",
-  "tapToUploadImage": "اضغط لرفع الصورة"
+  "tapToUploadImage": "اضغط لرفع الصورة",
+  "sweetShopAdmin": "إدارة محل الحلويات",
+  "newOrders": "الطلبات الجديدة",
+  "deliveredOrders": "الطلبات المُسلَّمة",
+  "pendingOrders": "الطلبات المعلقة",
+  "completedOrders": "الطلبات المكتملة",
+  "topProducts": "أفضل المنتجات",
+  "cancelledOrders": "الطلبات الملغاة",
+  "pendingDriver": "سائقون قيد الانتظار",
+  "salesToday": "مبيعات اليوم",
+  "salesWeek": "مبيعات الأسبوع",
+  "productsSold": "المنتجات المباعة",
+  "view": "عرض"
+
 }
