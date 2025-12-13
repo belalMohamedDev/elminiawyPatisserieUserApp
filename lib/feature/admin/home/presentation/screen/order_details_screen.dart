@@ -115,7 +115,7 @@ class OrderDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Order Notes",
+            Text(  context.translate(AppStrings.orderNotes),
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!

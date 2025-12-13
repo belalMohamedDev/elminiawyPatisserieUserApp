@@ -24,20 +24,15 @@ class _DeliverdOrdersState extends State<DeliverdOrders> {
         return Stack(
           children: [
             Scaffold(
-                appBar: AppBar(
-                    title: const Text(
-                  "Deliverd Orders",
-                  style: TextStyle(
-                    fontSize: 17,
-                  ),
-                )),
-                body: GetAdminOrdersDataBodyView(
-                  state,
-                  isDeliveredOrder: true,
-                )),
-            LoadingOverlay(
-              isLoading: state is UpdateAdminOrderStatusLoading,
+              appBar: AppBar(
+                title: Text(
+                  context.translate(AppStrings.deliveredOrders),
+                  style: TextStyle(fontSize: 17),
+                ),
+              ),
+              body: GetAdminOrdersDataBodyView(state, isDeliveredOrder: true),
             ),
+            LoadingOverlay(isLoading: state is UpdateAdminOrderStatusLoading),
           ],
         );
       },

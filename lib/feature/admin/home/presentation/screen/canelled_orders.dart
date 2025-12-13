@@ -21,8 +21,8 @@ class _CancelledOrdersState extends State<CancelledOrders> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text(
-          "Cancelled Orders",
+            title:  Text(
+          context.translate(AppStrings.cancelledOrders),
           style: TextStyle(
             fontSize: 17,
           ),

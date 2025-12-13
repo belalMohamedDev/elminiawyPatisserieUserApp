@@ -300,5 +300,14 @@
   "salesWeek": "مبيعات الأسبوع",
   "productsSold": "المنتجات المباعة",
   "view": "عرض",
-  "storeAddress": "عنوان الفرع"
+  "storeAddress": "عنوان الفرع",
+  "newOrdersToday": "الطلبات الجديدة اليوم",
+  
+  "orderDone": "تم إنهاء الطلب",
+  "orderDelivered": "تم تسليم الطلب",
+  "assignDriver": "تعيين مندوب",
+  "accept":  "قبول",
+  "orderNotes": "ملاحظات الطلب"
+
+
 }

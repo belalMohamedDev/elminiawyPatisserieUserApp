@@ -22,20 +22,15 @@ class _PendingOrdersState extends State<PendingOrders> {
         return Stack(
           children: [
             Scaffold(
-                appBar: AppBar(
-                    title: const Text(
-                  "Pending Orders",
-                  style: TextStyle(
-                    fontSize: 17,
-                  ),
-                )),
-                body: GetAdminOrdersDataBodyView(
-                  state,
-                  isPendingOrder: true,
-                )),
-            LoadingOverlay(
-              isLoading: state is UpdateAdminOrderStatusLoading,
+              appBar: AppBar(
+                title: Text(
+                  context.translate(AppStrings.pendingOrders),
+                  style: TextStyle(fontSize: 17),
+                ),
+              ),
+              body: GetAdminOrdersDataBodyView(state, isPendingOrder: true),
             ),
+            LoadingOverlay(isLoading: state is UpdateAdminOrderStatusLoading),
           ],
         );
       },

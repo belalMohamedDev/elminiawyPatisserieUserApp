@@ -25,8 +25,8 @@ class _PendingDriverState extends State<PendingDriver> {
           children: [
             Scaffold(
                 appBar: AppBar(
-                    title: const Text(
-                  "Pending Driver",
+                    title:  Text(
+                    context.translate(AppStrings.pendingDriver) ,
                   style: TextStyle(
                     fontSize: 17,
                   ),

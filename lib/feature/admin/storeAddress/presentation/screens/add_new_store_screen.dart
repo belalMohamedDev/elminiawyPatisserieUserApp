@@ -11,7 +11,7 @@ class AddNewStoreScreen extends StatelessWidget {
       appBar: AppBar(title: const Text("Add New Store")),
       body: BlocBuilder<StoreAddressCubit, StoreAddressState>(
         builder: (context, state) {
-          final cubit = context.read<StoreAddressCubit>();
+          // final cubit = context.read<StoreAddressCubit>();
 
           return SingleChildScrollView(
             padding: const EdgeInsets.all(16),

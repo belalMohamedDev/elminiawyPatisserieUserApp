@@ -300,5 +300,16 @@
   "salesWeek": "Sales Week",
   "productsSold": "Products Sold",
   "view": "View",
-  "storeAddress": "Store Address"
+  "storeAddress": "Store Address",
+  "newOrdersToday": "New Orders Today",
+
+
+
+  "orderDone": "Order Done",
+  "orderDelivered": "Order Delivered",
+  "assignDriver": "Assign Driver",
+  "accept": "Accept",
+  "orderNotes": "Order Notes"
+
+ 
 }

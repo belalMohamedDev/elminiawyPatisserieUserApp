@@ -21,8 +21,8 @@ class _CompleteOrdersViewState extends State<CompleteOrdersView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text(
-          "Complete  Orders",
+            title:  Text(
+        context.translate(AppStrings.completedOrders),
           style: TextStyle(
             fontSize: 17,
           ),

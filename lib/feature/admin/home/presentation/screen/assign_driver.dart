@@ -34,8 +34,8 @@ class _AssignDriverState extends State<AssignDriver> {
           children: [
             Scaffold(
                 appBar: AppBar(
-                    title: const Text(
-                  "Assign Driver",
+                    title:  Text(
+                   context.translate(AppStrings.assignDriver),
                   style: TextStyle(
                     fontSize: 17,
                   ),

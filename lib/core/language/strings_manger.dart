@@ -367,4 +367,17 @@ class AppStrings {
   static const String salesToday = "salesToday";
   static const String view = "view";
   static const String storeAddress = "storeAddress";
+  static const String newOrdersToday = "newOrdersToday";
+
+
+  static const String orderDone = "orderDone";
+  static const String orderDelivered = "orderDelivered";
+  static const String assignDriver = "assignDriver";
+  static const String accept = "accept";
+
+  static const String orderNotes = "orderNotes";
+
+
+
+
 }

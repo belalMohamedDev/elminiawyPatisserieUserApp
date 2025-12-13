@@ -17,4 +17,10 @@ extension StringDate on String {
     DateTime parsedDate = DateTime.parse(this);
     return DateFormat('yyyy/MM/dd').format(parsedDate);
   }
+
+
+    String getFormattedDateDeleteYear() {
+    DateTime parsedDate = DateTime.parse(this);
+    return DateFormat('MM/dd').format(parsedDate);
+  }
 }

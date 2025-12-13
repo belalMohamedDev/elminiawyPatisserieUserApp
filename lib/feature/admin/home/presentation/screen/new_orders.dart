@@ -22,21 +22,19 @@ class _NewOrdersState extends State<NewOrders> {
         return Stack(
           children: [
             Scaffold(
-                appBar: AppBar(
-                    title: const Text(
-                  "New Orders Today",
-                  style: TextStyle(
-                    fontSize: 17,
-                  ),
-                )),
-                body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
-                  builder: (context, state) {
-                    return GetAdminOrdersDataBodyView(state);
-                  },
-                )),
-            LoadingOverlay(
-              isLoading: state is UpdateAdminOrderStatusLoading,
+              appBar: AppBar(
+                title: Text(
+                  context.translate(AppStrings.newOrdersToday),
+                  style: TextStyle(fontSize: 17),
+                ),
+              ),
+              body: BlocBuilder<AdminHomeCubit, AdminHomeState>(
+                builder: (context, state) {
+                  return GetAdminOrdersDataBodyView(state);
+                },
+              ),
             ),
+            LoadingOverlay(isLoading: state is UpdateAdminOrderStatusLoading),
           ],
         );
       },
