@@ -307,7 +307,14 @@
   "orderDelivered": "تم تسليم الطلب",
   "assignDriver": "تعيين مندوب",
   "accept":  "قبول",
-  "orderNotes": "ملاحظات الطلب"
+  "orderNotes": "ملاحظات الطلب",
+
+  "totalAdmins": "إجمالي المسؤولين",
+  "totalDrivers": "إجمالي السائقين",
+  "storeAdmins": "مسؤولون المتجر",
+  "storeDrivers": "سائقون المتجر"
+
+  
 
 
 }

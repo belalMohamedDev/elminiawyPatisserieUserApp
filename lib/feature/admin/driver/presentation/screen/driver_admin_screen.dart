@@ -59,7 +59,7 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                     child: Column(
                       children: [
                         Text(
-                          "Total Drivers",
+                          context.translate(AppStrings.totalDrivers),
                           style: Theme.of(context).textTheme.titleMedium!
                               .copyWith(
                                 fontSize: responsive.setTextSize(4),
@@ -75,7 +75,7 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                               ),
                         ),
                         Text(
-                          "Sotive Drivers",
+                          context.translate(AppStrings.storeDrivers),
                           style: Theme.of(context).textTheme.titleMedium!
                               .copyWith(
                                 fontSize: responsive.setTextSize(3.5),
@@ -113,7 +113,7 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Active Drivers",
+                              context.translate(AppStrings.allActiveDriver),
                               style: Theme.of(context).textTheme.titleMedium!
                                   .copyWith(
                                     fontSize: responsive.setTextSize(4),
@@ -139,7 +139,7 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Inactive Drivers",
+                              context.translate(AppStrings.allNotActiveDriver),
                               style: Theme.of(context).textTheme.titleMedium!
                                   .copyWith(
                                     fontSize: responsive.setTextSize(4),

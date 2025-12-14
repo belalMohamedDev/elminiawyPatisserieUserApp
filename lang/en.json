@@ -309,7 +309,11 @@
   "orderDelivered": "Order Delivered",
   "assignDriver": "Assign Driver",
   "accept": "Accept",
-  "orderNotes": "Order Notes"
+  "orderNotes": "Order Notes",
 
- 
+  "totalAdmins": "Total Admins",
+  "totalDrivers": "Total Drivers",
+  "storeAdmins": "Store Admins",
+  "storeDrivers": "Store Drivers"
+
 }

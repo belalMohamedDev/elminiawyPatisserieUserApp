@@ -369,15 +369,14 @@ class AppStrings {
   static const String storeAddress = "storeAddress";
   static const String newOrdersToday = "newOrdersToday";
 
-
   static const String orderDone = "orderDone";
   static const String orderDelivered = "orderDelivered";
   static const String assignDriver = "assignDriver";
   static const String accept = "accept";
 
   static const String orderNotes = "orderNotes";
-
-
-
-
+  static const String totalAdmins = "totalAdmins";
+  static const String totalDrivers = "totalDrivers";
+  static const String storeAdmins = "storeAdmins";
+  static const String storeDrivers = "storeDrivers";
 }

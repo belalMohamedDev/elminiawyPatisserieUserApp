@@ -73,7 +73,7 @@ class _AdminsScreenState extends State<AdminsScreen>
           child: Column(
             children: [
               Text(
-                "Total Admins",
+                context.translate(AppStrings.totalAdmins),
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   fontSize: responsive.setTextSize(4),
                   color: ColorManger.brun,
@@ -87,7 +87,7 @@ class _AdminsScreenState extends State<AdminsScreen>
                 ),
               ),
               Text(
-                "Sotive Admins",
+                context.translate(AppStrings.storeAdmins),
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   fontSize: responsive.setTextSize(3.5),
                   color: ColorManger.brunLight,
@@ -119,7 +119,7 @@ class _AdminsScreenState extends State<AdminsScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Active Admins",
+                    context.translate(AppStrings.activeAdmins),
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       fontSize: responsive.setTextSize(4),
                       color: ColorManger.brun,
@@ -143,7 +143,7 @@ class _AdminsScreenState extends State<AdminsScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Inactive Admins",
+                    context.translate(AppStrings.notActiveAdmins),
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       fontSize: responsive.setTextSize(4),
                       color: ColorManger.brun,
