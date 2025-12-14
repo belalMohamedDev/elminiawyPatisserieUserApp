@@ -13,8 +13,6 @@ class AddProductScreen extends StatefulWidget {
 class _AddProductScreenState extends State<AddProductScreen> {
   final formKey = GlobalKey<FormState>();
 
-
-
   @override
   void initState() {
     context.read<SubCategoriesCubit>().fetchGetSubCategories(
@@ -123,6 +121,19 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
     return Column(
       children: [
+        CustomDropdownButtonFormField(
+          value: context.translate(AppStrings.addNewSubCategory),
+          items: subCategoryCubit.subCategoriesTitle,
+          onChanged: (value) {
+            String? subCategoryId = context
+                .read<SubCategoriesCubit>()
+                .returnSubCategoryIdType(value!);
+
+            context.read<AdminProductCubit>().setSubCategoryId(subCategoryId!);
+          },
+        ),
+        SizedBox(height: responsive.setHeight(1.5)),
+
         TextFormField(
           controller: productCubit.arTitleController,
 
@@ -185,20 +196,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
           validator: (v) =>
               v!.isEmpty ? context.translate(AppStrings.required) : null,
-        ),
-
-        SizedBox(height: responsive.setHeight(1.5)),
-
-        CustomDropdownButtonFormField(
-          value: context.translate(AppStrings.addNewSubCategory),
-          items: subCategoryCubit.subCategoriesTitle,
-          onChanged: (value) {
-            String? subCategoryId = context
-                .read<SubCategoriesCubit>()
-                .returnSubCategoryIdType(value!);
-
-            context.read<AdminProductCubit>().setSubCategoryId(subCategoryId!);
-          },
         ),
       ],
     );
