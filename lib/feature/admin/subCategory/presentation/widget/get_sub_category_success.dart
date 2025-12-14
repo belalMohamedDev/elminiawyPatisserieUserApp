@@ -87,8 +87,10 @@ class GetSubCategoryDataSuccess extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: responsive.setHeight(1.5)),
+                 
                     Text(
-                      "Parent: ${item.category?.title ?? context.translate(AppStrings.notAssigned)}",
+                      "${context.translate(AppStrings.belongsTo)}: "
+                      "${item.category?.title ?? context.translate(AppStrings.notAssigned)}",
                       style: TextStyle(
                         color: hasCategory
                             ? ColorManger.brunLight
@@ -97,6 +99,7 @@ class GetSubCategoryDataSuccess extends StatelessWidget {
                         fontFamily: FontConsistent.geLocalozedFontFamily(),
                       ),
                     ),
+
                     SizedBox(height: responsive.setHeight(3)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

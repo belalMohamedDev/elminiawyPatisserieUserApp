@@ -314,6 +314,7 @@
   "totalAdmins": "Total Admins",
   "totalDrivers": "Total Drivers",
   "storeAdmins": "Store Admins",
-  "storeDrivers": "Store Drivers"
-
+  "storeDrivers": "Store Drivers",
+  "belongsTo": "Belongs To"
+          
 }

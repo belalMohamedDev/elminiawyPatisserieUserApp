@@ -26,31 +26,46 @@ class _AdminSubCategoryScreenState extends State<AdminSubCategoryScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xFFfcf8f5),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFfcf8f5),
-        centerTitle: true,
-        title: Text(
-          context.translate(AppStrings.subCategory),
-          style: Theme.of(
-            context,
-          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: BlocBuilder<SubCategoriesCubit, SubCategoriesState>(
+          builder: (context, state) {
+            return AppBar(
+              actions: [
+                (state is GetSubCategoriesLoading ||
+                        state is GetSubCategoriesError)
+                    ? const SizedBox()
+                    : GestureDetector(
+                        onTap: () {
+                          context.pushNamed(Routes.addSubCategoryScreen);
+                        },
+                        child: Container(
+                          height: responsive.setHeight(4),
+                          width: responsive.setWidth(8.5),
+                          decoration: BoxDecoration(
+                            color: ColorManger.brown,
+                            borderRadius: BorderRadius.circular(
+                              responsive.setBorderRadius(5),
+                            ),
+                          ),
+                          child: Icon(Icons.add, color: ColorManger.white),
+                        ),
+                      ),
+                SizedBox(width: responsive.setWidth(6)),
+              ],
+              backgroundColor: const Color(0xFFfcf8f5),
+              centerTitle: true,
+              title: Text(
+                context.translate(AppStrings.subCategory),
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: responsive.setTextSize(4),
+                ),
+              ),
+            );
+          },
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: BlocBuilder<SubCategoriesCubit, SubCategoriesState>(
-        builder: (context, state) {
-          return state is GetSubCategoriesLoading ||
-                  state is GetSubCategoriesError
-              ? const SizedBox()
-              : FloatingActionButton(
-                  backgroundColor: ColorManger.brown,
-                  onPressed: () {
-                    context.pushNamed(Routes.addSubCategoryScreen);
-                  },
-                  child: Icon(Icons.add, color: ColorManger.white),
-                );
-        },
-      ),
+
       body: BlocBuilder<SubCategoriesCubit, SubCategoriesState>(
         builder: (context, state) {
           final subCategories = context

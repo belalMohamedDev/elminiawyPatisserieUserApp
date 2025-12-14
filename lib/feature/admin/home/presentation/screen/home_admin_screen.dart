@@ -40,6 +40,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
   Widget build(BuildContext context) {
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
+    final responsive = ResponsiveUtils(context);
+
     return BlocBuilder<AdminHomeCubit, AdminHomeState>(
       builder: (context, state) {
         final adminHomeCubit = context.watch<AdminHomeCubit>();
@@ -99,8 +101,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                     ),
                   ),
                   Positioned(
-                    right: 30,
-                    bottom: 60,
+                    right: responsive.screenWidth / 2.4,
+                    bottom: responsive.setHeight(3.5),
                     child: FloatingActionButton(
                       onPressed: () {
                         Navigator.push(

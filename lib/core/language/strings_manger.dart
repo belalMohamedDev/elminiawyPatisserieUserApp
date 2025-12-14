@@ -379,4 +379,5 @@ class AppStrings {
   static const String totalDrivers = "totalDrivers";
   static const String storeAdmins = "storeAdmins";
   static const String storeDrivers = "storeDrivers";
+  static const String belongsTo = "belongsTo";
 }

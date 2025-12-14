@@ -10,7 +10,10 @@ class HomeAppBar extends StatelessWidget {
     final responsive = ResponsiveUtils(context);
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
     return Padding(
-      padding: responsive.setPadding(left: 4.5, right: 2),
+      padding: responsive.setPadding(
+        left: isEnLocale ? 4.5 : 2,
+        right: isEnLocale ? 2 : 4.5,
+      ),
       child: Row(
         children: [
           adminHomeCubit.drawerIsOpen

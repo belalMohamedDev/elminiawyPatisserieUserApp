@@ -312,7 +312,8 @@
   "totalAdmins": "إجمالي المسؤولين",
   "totalDrivers": "إجمالي السائقين",
   "storeAdmins": "مسؤولون المتجر",
-  "storeDrivers": "سائقون المتجر"
+  "storeDrivers": "سائقون المتجر",
+  "belongsTo": "تابع لقسم"
 
   
 
