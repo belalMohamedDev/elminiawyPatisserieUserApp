@@ -23,8 +23,12 @@ class AppStrings {
 
   static const String adminName = "adminName";
 
+  static const searchLocation = "searchLocation";
+  static const mapHint = "mapHint";
+
   static const String startDate = "startDate";
   static const String endDate = "endDate";
+  static const String pickStoreLocation = "pickStoreLocation";
 
   static const String enterArabicDescription = "enterArabicDescription";
   static const String enterEnglishDescription = "enterEnglishDescription";

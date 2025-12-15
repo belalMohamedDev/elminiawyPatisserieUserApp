@@ -302,15 +302,13 @@
   "view": "View",
   "storeAddress": "Store Address",
   "newOrdersToday": "New Orders Today",
-
-
-
+  "searchLocation": "Search location",
+  "mapHint": "Tap once to set store location, then tap multiple times to draw delivery zone",
   "orderDone": "Order Done",
   "orderDelivered": "Order Delivered",
   "assignDriver": "Assign Driver",
   "accept": "Accept",
   "orderNotes": "Order Notes",
-
   "totalAdmins": "Total Admins",
   "totalDrivers": "Total Drivers",
   "storeAdmins": "Store Admins",
@@ -320,19 +318,19 @@
   "storePickup": "Store Pickup",
   "byPhone": "By Phone",
   "customerName": "Customer Name",
-  "customerPhone":"Customer Phone",
-  "customerAddress":"Customer Address",
-   "totalStores": "Total Stores",
-   "activeStores": "Active Stores",
-   "deActiveStores": "DeActive Stores",
-   "branch":"Branch",
-   "available":"Available",
-   "addNewStoreAddress":"Add New Store Address",
-   "branchArea":"Branch Area",
-   "region":"Region",
-   "briefness":"Briefness",
-   "saveStore":"Save Store",
-   "noLocationSelected":"No location selected",
-   "pickStoreLocationHint": "Select store location and delivery zone from the map"
-          
+  "customerPhone": "Customer Phone",
+  "customerAddress": "Customer Address",
+  "totalStores": "Total Stores",
+  "activeStores": "Active Stores",
+  "deActiveStores": "DeActive Stores",
+  "branch": "Branch",
+  "available": "Available",
+  "addNewStoreAddress": "Add New Store Address",
+  "branchArea": "Branch Area",
+  "region": "Region",
+  "briefness": "Briefness",
+  "saveStore": "Save Store",
+  "noLocationSelected": "No location selected",
+  "pickStoreLocation": "Pick Store Location",
+  "pickStoreLocationHint": "Select store location and delivery zone from the map"
 }

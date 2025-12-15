@@ -329,5 +329,8 @@
   "briefness": "النطاق",
   "saveStore": "حفظ المتجر",
   "noLocationSelected": "لم يتم تحديد موقع",
-  "pickStoreLocationHint": "حدد موقع المتجر ومنطقة التوصيل من الخريطة"
+  "pickStoreLocation": "حدد موقع المتجر",
+  "pickStoreLocationHint": "حدد موقع المتجر ومنطقة التوصيل من الخريطة",
+  "searchLocation": "ابحث عن موقع",
+  "mapHint": "اضغط مرة لتحديد المتجر، ثم اضغط عدة مرات لرسم منطقة التوصيل"
 }

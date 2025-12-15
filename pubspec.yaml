@@ -118,6 +118,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   dotted_border: ^3.1.0
+  google_places_flutter: ^2.1.1
 
 
 
