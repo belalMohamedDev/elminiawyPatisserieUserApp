@@ -17,9 +17,9 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
     final addressData = AppInitialRoute.role == "admin"
         ? null
-        : context
-            .read<UserAddressCubit>()
-            .addressDataList[context.read<PaymentCubit>().selectedIndex];
+        : context.read<UserAddressCubit>().addressDataList[context
+              .read<PaymentCubit>()
+              .selectedIndex];
 
     return Padding(
       padding: responsive.setPadding(top: 3, right: 6, left: 6, bottom: 5),
@@ -35,14 +35,13 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
             ),
             Text(
               context.translate(AppStrings.shippingAddress),
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(fontSize: responsive.setTextSize(4)),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                fontSize: responsive.setTextSize(4),
+              ),
             ),
 
             Padding(
-              padding: responsive.setPadding(bottom: 1, top: 0.8),
+              padding: responsive.setPadding(bottom: 1, top: 2),
               child: InkWell(
                 onTap: () async {
                   if (AppInitialRoute.role == "admin") {
@@ -50,18 +49,21 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                       color: ColorManger.backgroundItem,
                       context: context,
                       position: RelativeRect.fromLTRB(
-                          100,
-                          responsive.setHeight(25.5),
-                          responsive.setWidth(6.5),
-                          100),
+                        100,
+                        responsive.setHeight(25.5),
+                        responsive.setWidth(6.5),
+                        100,
+                      ),
                       items: [
-                        const PopupMenuItem(
+                        PopupMenuItem(
                           value: "Store Pickup",
-                          child: Text("Store Pickup"),
+                          child: Text(
+                            context.translate(AppStrings.storePickup),
+                          ),
                         ),
-                        const PopupMenuItem(
+                        PopupMenuItem(
                           value: "By Phone",
-                          child: Text("By Phone"),
+                          child: Text(context.translate(AppStrings.byPhone)),
                         ),
                       ],
                     );
@@ -73,8 +75,10 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                   } else {
                     context.read<UserAddressCubit>().isPaymentAddress = true;
 
-                    Navigator.of(context, rootNavigator: !false)
-                        .popAndPushNamed(Routes.map);
+                    Navigator.of(
+                      context,
+                      rootNavigator: !false,
+                    ).popAndPushNamed(Routes.map);
                   }
                 },
                 child: Container(
@@ -82,37 +86,47 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                   height: responsive.setHeight(6),
                   decoration: BoxDecoration(
                     color: ColorManger.backgroundItem,
-                    borderRadius:
-                        BorderRadius.circular(responsive.setBorderRadius(2)),
+                    borderRadius: BorderRadius.circular(
+                      responsive.setBorderRadius(2),
+                    ),
                     border: Border.all(
-                        color: ColorManger.brownLight,
-                        width: responsive.setWidth(0.1)),
+                      color: ColorManger.brownLight,
+                      width: responsive.setWidth(0.1),
+                    ),
                   ),
                   child: Padding(
                     padding: responsive.setPadding(
-                        left: isEnLocale ? 2 : 0, right: isEnLocale ? 0 : 2),
+                      left: isEnLocale ? 2 : 0,
+                      right: isEnLocale ? 0 : 2,
+                    ),
                     child: Row(
                       children: [
-                        Icon(
-                          IconlyBold.location,
-                          color: ColorManger.brun,
-                        ),
+                        Icon(IconlyBold.location, color: ColorManger.brun),
                         responsive.setSizeBox(width: 1.5),
-                        ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 275.w),
-                          child: Text(
-                            AppInitialRoute.role == "admin"
-                                ? paymentCuibt.selectedOption
-                                : addressData!.region ?? "",
-                            maxLines: 1,
-                            textAlign: TextAlign.start,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(
-                                    fontSize: responsive.setTextSize(3.5)),
-                          ),
+                        BlocBuilder<PaymentCubit, PaymentState>(
+                          builder: (context, state) {
+                            return ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: 275.w),
+                              child: Text(
+                                AppInitialRoute.role == "admin"
+                                    ? paymentCuibt.selectedOption == "By Phone"
+                                          ? context.translate(
+                                              AppStrings.byPhone,
+                                            )
+                                          : context.translate(
+                                              AppStrings.storePickup,
+                                            )
+                                    : addressData!.region ?? "",
+                                maxLines: 1,
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context).textTheme.titleLarge!
+                                    .copyWith(
+                                      fontSize: responsive.setTextSize(3.5),
+                                    ),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -134,22 +148,27 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                           decoration: BoxDecoration(
                             color: ColorManger.backgroundItem,
                             borderRadius: BorderRadius.circular(12),
-                            border:
-                                Border.all(color: ColorManger.backgroundItem),
+                            border: Border.all(
+                              color: ColorManger.backgroundItem,
+                            ),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               _buildTextField(
                                 controller: paymentCuibt.customerNameController,
-                                label: "Customer Name",
+                                label: context.translate(
+                                  AppStrings.customerName,
+                                ),
                                 icon: Icons.person,
                               ),
                               SizedBox(height: 10.h),
                               _buildTextField(
                                 controller:
                                     paymentCuibt.customerPhoneController,
-                                label: "Customer Phone",
+                                label: context.translate(
+                                  AppStrings.customerPhone,
+                                ),
                                 icon: Icons.phone,
                                 keyboardType: TextInputType.phone,
                               ),
@@ -157,7 +176,9 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                               _buildTextField(
                                 controller:
                                     paymentCuibt.customerAddressTextController,
-                                label: "Customer Address",
+                                label: context.translate(
+                                  AppStrings.customerAddress,
+                                ),
                                 icon: Icons.location_on,
                               ),
                             ],
@@ -168,18 +189,15 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
               },
             ),
 
-            responsive.setSizeBox(
-              height: 1,
-            ),
+            responsive.setSizeBox(height: 1),
 
             AppInitialRoute.role == "admin"
                 ? const SizedBox()
                 : Text(
                     context.translate(AppStrings.payment),
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: responsive.setTextSize(4)),
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontSize: responsive.setTextSize(4),
+                    ),
                   ),
             AppInitialRoute.role == "admin"
                 ? const SizedBox()
@@ -190,8 +208,10 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                         context.read<UserAddressCubit>().isPaymentAddress =
                             true;
 
-                        Navigator.of(context, rootNavigator: !false)
-                            .popAndPushNamed(Routes.map);
+                        Navigator.of(
+                          context,
+                          rootNavigator: !false,
+                        ).popAndPushNamed(Routes.map);
                       },
                       child: Container(
                         width: double.infinity,
@@ -199,21 +219,21 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                         decoration: BoxDecoration(
                           color: ColorManger.backgroundItem,
                           borderRadius: BorderRadius.circular(
-                              responsive.setBorderRadius(2)),
+                            responsive.setBorderRadius(2),
+                          ),
                           border: Border.all(
-                              color: ColorManger.brownLight,
-                              width: responsive.setWidth(0.1)),
+                            color: ColorManger.brownLight,
+                            width: responsive.setWidth(0.1),
+                          ),
                         ),
                         child: Padding(
                           padding: responsive.setPadding(
-                              left: isEnLocale ? 2 : 0,
-                              right: isEnLocale ? 0 : 2),
+                            left: isEnLocale ? 2 : 0,
+                            right: isEnLocale ? 0 : 2,
+                          ),
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.credit_card,
-                                color: ColorManger.brun,
-                              ),
+                              Icon(Icons.credit_card, color: ColorManger.brun),
                               responsive.setSizeBox(width: 1.5),
                               ConstrainedBox(
                                 constraints: BoxConstraints(maxWidth: 275.w),
@@ -222,19 +242,19 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                                               .read<PaymentCubit>()
                                               .choosePaymentMethod ==
                                           'Cash'
-                                      ? context
-                                          .translate(AppStrings.cashOnDelivery)
+                                      ? context.translate(
+                                          AppStrings.cashOnDelivery,
+                                        )
                                       : context.translate(
-                                          AppStrings.creditOrDebitCard),
+                                          AppStrings.creditOrDebitCard,
+                                        ),
                                   maxLines: 1,
                                   textAlign: TextAlign.start,
                                   overflow: TextOverflow.ellipsis,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge!
+                                  style: Theme.of(context).textTheme.titleLarge!
                                       .copyWith(
-                                          fontSize:
-                                              responsive.setTextSize(3.5)),
+                                        fontSize: responsive.setTextSize(3.5),
+                                      ),
                                 ),
                               ),
                             ],
@@ -244,10 +264,8 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                     ),
                   ),
             // _paymentMethodContainer(context, responsive),
-            responsive.setSizeBox(
-              height: 0.5,
-            ),
-            _addNotes(context, responsive)
+            responsive.setSizeBox(height: 0.5),
+            _addNotes(context, responsive),
           ],
         ),
       ),
@@ -287,40 +305,43 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
       children: [
         Text(
           context.translate(AppStrings.addNotes),
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(4)),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
         ),
-        responsive.setSizeBox(height: 1),
+        responsive.setSizeBox(height: 2),
         TextFormField(
           controller: context.read<PaymentCubit>().notesController,
           keyboardType: TextInputType.text,
           minLines: 1,
           maxLines: 10,
           decoration: InputDecoration(
-              hintText:
-                  context.translate(AppStrings.typeAnyNoteRelatedToThisOrder),
-              hintStyle: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(fontSize: responsive.setTextSize(3.5)),
-              fillColor: ColorManger.backgroundItem,
-              enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: ColorManger.brownLight, width: 0.5),
-                borderRadius: BorderRadius.all(Radius.elliptical(
-                    responsive.setBorderRadius(2),
-                    responsive.setBorderRadius(2))),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: ColorManger.backgroundItem,
+            hintText: context.translate(
+              AppStrings.typeAnyNoteRelatedToThisOrder,
+            ),
+            hintStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
+              fontSize: responsive.setTextSize(3.5),
+            ),
+            fillColor: ColorManger.backgroundItem,
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: ColorManger.brownLight, width: 0.5),
+              borderRadius: BorderRadius.all(
+                Radius.elliptical(
+                  responsive.setBorderRadius(2),
+                  responsive.setBorderRadius(2),
                 ),
-                borderRadius: BorderRadius.all(Radius.elliptical(
-                    responsive.setBorderRadius(2),
-                    responsive.setBorderRadius(2))),
-              )),
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: ColorManger.backgroundItem),
+              borderRadius: BorderRadius.all(
+                Radius.elliptical(
+                  responsive.setBorderRadius(2),
+                  responsive.setBorderRadius(2),
+                ),
+              ),
+            ),
+          ),
         ),
       ],
     );

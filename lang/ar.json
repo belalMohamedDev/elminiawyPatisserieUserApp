@@ -302,20 +302,32 @@
   "view": "عرض",
   "storeAddress": "عنوان الفرع",
   "newOrdersToday": "الطلبات الجديدة اليوم",
-  
   "orderDone": "تم إنهاء الطلب",
   "orderDelivered": "تم تسليم الطلب",
   "assignDriver": "تعيين مندوب",
-  "accept":  "قبول",
+  "accept": "قبول",
   "orderNotes": "ملاحظات الطلب",
-
   "totalAdmins": "إجمالي المسؤولين",
   "totalDrivers": "إجمالي السائقين",
   "storeAdmins": "مسؤولون المتجر",
   "storeDrivers": "سائقون المتجر",
-  "belongsTo": "تابع لقسم"
-
-  
-
-
+  "belongsTo": "تابع لقسم",
+  "viewBasket": "عرض السلة",
+  "storePickup": "استلام من المتجر",
+  "byPhone": "عن طريق الهاتف",
+  "customerName": "اسم العميل",
+  "customerPhone": "رقم هاتف العميل",
+  "customerAddress": "عنوان العميل",
+  "totalStores": "إجمالي المتاجر",
+  "activeStores": "المتاجر النشطة",
+  "deActiveStores": "المتاجر الغير نشطة",
+  "branch": "فرع",
+  "available": "متاح",
+  "addNewStoreAddress": "اضافة عنوان فرع جديد",
+  "branchArea": "منطقة الفرع",
+  "region": "المنطقة",
+  "briefness": "النطاق",
+  "saveStore": "حفظ المتجر",
+  "noLocationSelected": "لم يتم تحديد موقع",
+  "pickStoreLocationHint": "حدد موقع المتجر ومنطقة التوصيل من الخريطة"
 }

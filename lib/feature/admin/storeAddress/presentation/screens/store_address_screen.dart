@@ -3,7 +3,6 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
 import 'package:elminiawy/feature/admin/storeAddress/presentation/screens/add_new_store_screen.dart';
 import 'package:elminiawy/feature/admin/storeAddress/presentation/widgets/get_address_store_loading_widget.dart';
-import 'package:flutter/cupertino.dart';
 
 class StoreAddressScreen extends StatefulWidget {
   const StoreAddressScreen({super.key});
@@ -22,6 +21,7 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
   @override
   Widget build(BuildContext context) {
     final responsive = ResponsiveUtils(context);
+    bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     return BlocBuilder<StoreAddressCubit, StoreAddressState>(
       builder: (context, state) {
@@ -29,44 +29,7 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
             .read<StoreAddressCubit>()
             .allStoreAddress;
         return Scaffold(
-          appBar: AppBar(
-            title: Text(
-              "Store Address",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                fontSize: responsive.setTextSize(4),
-              ),
-            ),
-            actions: [
-              (state is GetActiveAdminsLoading)
-                  ? const SizedBox()
-                  : GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BlocProvider(
-                              create: (context) =>
-                                  instance<StoreAddressCubit>(),
-                              child: AddNewStoreScreen(),
-                            ),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        height: responsive.setHeight(4),
-                        width: responsive.setWidth(8.5),
-                        decoration: BoxDecoration(
-                          color: ColorManger.brun,
-                          borderRadius: BorderRadius.circular(
-                            responsive.setBorderRadius(5),
-                          ),
-                        ),
-                        child: Icon(Icons.add, color: ColorManger.white),
-                      ),
-                    ),
-              SizedBox(width: responsive.setWidth(6)),
-            ],
-          ),
+          appBar: _storeAddressScreenAppBar(context, responsive, state),
           body: Column(
             children: [
               Padding(
@@ -81,21 +44,21 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
                     children: [
                       _buildSummaryCard(
                         responsive,
-                        'Total Stores',
+                        context.translate(AppStrings.totalStores),
                         '${allStoreAddress.length}',
                         ColorManger.backgroundItem,
                       ),
                       SizedBox(width: responsive.setWidth(3.5)),
                       _buildSummaryCard(
                         responsive,
-                        'Active Stores',
+                        context.translate(AppStrings.activeStores),
                         '${context.read<StoreAddressCubit>().activeStores}',
                         ColorManger.backgroundItem,
                       ),
                       SizedBox(width: responsive.setWidth(3.5)),
                       _buildSummaryCard(
                         responsive,
-                        'DeActive Stores',
+                        context.translate(AppStrings.deActiveStores),
                         '${context.read<StoreAddressCubit>().deActiveStores}',
                         ColorManger.backgroundItem,
                       ),
@@ -141,8 +104,14 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: responsive.setWidth(3),
                         ),
+                        leading: Icon(
+                          IconlyBold.location,
+                          color: Colors.green.shade500,
+                        ),
                         title: Text(
-                          "${allStoreAddress[index].branchArea} Branch",
+                          isEnLocale
+                              ? "${allStoreAddress[index].branchArea} ${context.translate(AppStrings.branch)}"
+                              : "${context.translate(AppStrings.branch)} ${allStoreAddress[index].branchArea}",
                           style: TextStyle(
                             fontSize: responsive.setTextSize(3.5),
                             fontWeight: FontWeight.bold,
@@ -157,29 +126,6 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
                             color: ColorManger.brunLight,
                           ),
                         ),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              IconlyBold.location,
-                              color: Colors.green.shade500,
-                            ),
-                            SizedBox(width: responsive.setWidth(2)),
-                            Text(
-                              "Available",
-                              style: TextStyle(
-                                fontSize: responsive.setTextSize(3.5),
-                                color: ColorManger.brunLight,
-                              ),
-                            ),
-                            SizedBox(width: responsive.setWidth(2)),
-                            CupertinoSwitch(
-                              value: allStoreAddress[index].active!,
-                              activeTrackColor: Colors.green.shade500,
-                              onChanged: (value) {},
-                            ),
-                          ],
-                        ),
                       ),
                     );
                   },
@@ -189,6 +135,50 @@ class _StoreAddressScreenState extends State<StoreAddressScreen> {
           ),
         );
       },
+    );
+  }
+
+  AppBar _storeAddressScreenAppBar(
+    BuildContext context,
+    ResponsiveUtils responsive,
+    StoreAddressState state,
+  ) {
+    return AppBar(
+      title: Text(
+        context.translate(AppStrings.storeAddress),
+        style: Theme.of(
+          context,
+        ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
+      ),
+      actions: [
+        (state is GetActiveAdminsLoading)
+            ? const SizedBox()
+            : GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BlocProvider(
+                        create: (context) => instance<StoreAddressCubit>(),
+                        child: AddNewStoreScreen(),
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: responsive.setHeight(4),
+                  width: responsive.setWidth(8.5),
+                  decoration: BoxDecoration(
+                    color: ColorManger.brun,
+                    borderRadius: BorderRadius.circular(
+                      responsive.setBorderRadius(5),
+                    ),
+                  ),
+                  child: Icon(Icons.add, color: ColorManger.white),
+                ),
+              ),
+        SizedBox(width: responsive.setWidth(6)),
+      ],
     );
   }
 

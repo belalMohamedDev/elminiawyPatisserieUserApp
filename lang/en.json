@@ -315,6 +315,24 @@
   "totalDrivers": "Total Drivers",
   "storeAdmins": "Store Admins",
   "storeDrivers": "Store Drivers",
-  "belongsTo": "Belongs To"
+  "belongsTo": "Belongs To",
+  "viewBasket": "View Basket",
+  "storePickup": "Store Pickup",
+  "byPhone": "By Phone",
+  "customerName": "Customer Name",
+  "customerPhone":"Customer Phone",
+  "customerAddress":"Customer Address",
+   "totalStores": "Total Stores",
+   "activeStores": "Active Stores",
+   "deActiveStores": "DeActive Stores",
+   "branch":"Branch",
+   "available":"Available",
+   "addNewStoreAddress":"Add New Store Address",
+   "branchArea":"Branch Area",
+   "region":"Region",
+   "briefness":"Briefness",
+   "saveStore":"Save Store",
+   "noLocationSelected":"No location selected",
+   "pickStoreLocationHint": "Select store location and delivery zone from the map"
           
 }

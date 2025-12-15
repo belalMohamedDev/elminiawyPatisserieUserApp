@@ -1,10 +1,7 @@
 import '../../../../../../core/common/shared/shared_imports.dart'; //
 
 class AnimatedCartItems extends StatefulWidget {
-  const AnimatedCartItems({
-    super.key,
-    required this.cartState,
-  });
+  const AnimatedCartItems({super.key, required this.cartState});
 
   final CartState cartState;
 
@@ -28,8 +25,9 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
   void didUpdateWidget(covariant AnimatedCartItems oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    final newItems =
-        List.from(context.read<CartCubit>().cartData?.data?.cartItems ?? []);
+    final newItems = List.from(
+      context.read<CartCubit>().cartData?.data?.cartItems ?? [],
+    );
 
     if (newItems.length > _oldItems.length) {
       for (int i = 0; i < newItems.length; i++) {
@@ -43,7 +41,9 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
     } else if (newItems.length < _oldItems.length) {
       for (int i = 0; i < _oldItems.length; i++) {
         if (!_containsItem(
-            newItems.cast<GetCartItems>(), _oldItems[i].sId ?? "")) {
+          newItems.cast<GetCartItems>(),
+          _oldItems[i].sId ?? "",
+        )) {
           final removedItem = _oldItems[i];
           _listKey.currentState?.removeItem(
             i,
@@ -82,48 +82,49 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
         borderRadius: BorderRadius.circular(responsive.setBorderRadius(1.5)),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            width: responsive.setWidth(52),
-            height: responsive.setHeight(5),
-            child: AnimatedList(
-              key: _listKey,
-              scrollDirection: Axis.horizontal,
-              reverse: true,
-              initialItemCount: cartItems.length,
-              itemBuilder: (context, index, animation) {
-                final item = cartItems[index];
-                return _buildItem(context, item, animation, removed: false);
-              },
-            ),
-          ),
-          SizedBox(width: responsive.setWidth(1)),
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(_createCartRoute());
             },
             child: Row(
               children: [
+                Image.asset(
+                  ImageAsset.basket,
+                  height: responsive.setIconSize(12),
+                ),
+
+                Text(
+                  context.translate(AppStrings.viewBasket),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: 12.sp,
+                    color: ColorManger.white,
+                  ),
+                ),
+                SizedBox(width: responsive.setWidth(3)),
                 Container(
                   margin: responsive.setMargin(top: 2, bottom: 2),
                   height: responsive.setHeight(8),
                   width: responsive.setWidth(0.5),
                   color: ColorManger.backgroundItem.withValues(alpha: 0.7),
                 ),
-                SizedBox(width: responsive.setWidth(3)),
-                Text(
-                  "View Basket",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: 12.sp, color: ColorManger.white),
-                ),
-                Image.asset(
-                  ImageAsset.basket,
-                  height: responsive.setIconSize(12),
-                ),
               ],
+            ),
+          ),
+          SizedBox(width: responsive.setWidth(2)),
+          SizedBox(
+            width: responsive.setWidth(52),
+            height: responsive.setHeight(5),
+            child: AnimatedList(
+              key: _listKey,
+              scrollDirection: Axis.horizontal,
+              reverse: false,
+              initialItemCount: cartItems.length,
+              itemBuilder: (context, index, animation) {
+                final item = cartItems[index];
+                return _buildItem(context, item, animation, removed: false);
+              },
             ),
           ),
         ],
@@ -136,23 +137,18 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
       transitionDuration: const Duration(milliseconds: 500),
       pageBuilder: (context, animation, secondaryAnimation) =>
           MultiBlocProvider(
-        providers: [
-          BlocProvider.value(
-            value: instance<UserAddressCubit>(),
+            providers: [
+              BlocProvider.value(value: instance<UserAddressCubit>()),
+              BlocProvider.value(value: instance<CartCubit>()),
+            ],
+            child: const CartView(),
           ),
-          BlocProvider.value(
-            value: instance<CartCubit>(),
-          ),
-        ],
-        child: const CartView(),
-      ),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        final tween = Tween(begin: const Offset(0, 1), end: Offset.zero)
-            .chain(CurveTween(curve: Curves.easeOutBack));
-        return SlideTransition(
-          position: animation.drive(tween),
-          child: child,
-        );
+        final tween = Tween(
+          begin: const Offset(0, 1),
+          end: Offset.zero,
+        ).chain(CurveTween(curve: Curves.easeOutBack));
+        return SlideTransition(position: animation.drive(tween), child: child);
       },
     );
   }
@@ -164,7 +160,8 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
     required bool removed,
   }) {
     final responsive = ResponsiveUtils(context);
-    final isDeleting = widget.cartState is DeleteCartItemLoading &&
+    final isDeleting =
+        widget.cartState is DeleteCartItemLoading &&
         (widget.cartState as DeleteCartItemLoading).id == item.sId;
 
     final offsetTween = Tween<Offset>(
@@ -213,7 +210,7 @@ class _AnimatedCartItemsState extends State<AnimatedCartItems> {
                           ),
                         ),
                       )
-                    : const SizedBox()
+                    : const SizedBox(),
               ],
             ),
           ),

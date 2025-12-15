@@ -14,6 +14,7 @@ class AppStrings {
   static const String active = "active";
   static const String discount = "discount";
   static const String driverName = "driverName";
+  static const String pickStoreLocationHint = "pickStoreLocationHint";
 
   static const String required = "Required";
   static const String createProduct = "createProduct";
@@ -36,6 +37,7 @@ class AppStrings {
   static const String driver = "driver";
   static const String users = "users";
   static const String admins = "admins";
+  static const String viewBasket = "viewBasket";
 
   static const String title = "title";
   static const String notAssigned = "notAssigned";
@@ -380,4 +382,21 @@ class AppStrings {
   static const String storeAdmins = "storeAdmins";
   static const String storeDrivers = "storeDrivers";
   static const String belongsTo = "belongsTo";
+  static const String storePickup = "storePickup";
+  static const String byPhone = "byPhone";
+  static const String customerName = "customerName";
+  static const String customerPhone = "customerPhone";
+  static const String customerAddress = "customerAddress";
+  static const String activeStores = "activeStores";
+  static const String deActiveStores = "deActiveStores";
+  static const String totalStores = "totalStores";
+  static const String branch = "branch";
+  static const String available = "available";
+
+  static const String addNewStoreAddress = "addNewStoreAddress";
+  static const String branchArea = "branchArea";
+  static const String region = "region";
+  static const String briefness = "briefness";
+  static const String saveStore = "saveStore";
+  static const String noLocationSelected = "noLocationSelected";
 }
