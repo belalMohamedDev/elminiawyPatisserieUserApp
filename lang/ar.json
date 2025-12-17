@@ -335,5 +335,11 @@
   "pickStoreLocation": "حدد موقع المتجر",
   "pickStoreLocationHint": "حدد موقع المتجر ومنطقة التوصيل من الخريطة",
   "searchLocation": "ابحث عن موقع",
-  "mapHint": "اضغط مرة لتحديد المتجر، ثم اضغط عدة مرات لرسم منطقة التوصيل"
+  "mapHint": "اضغط مرة لتحديد المتجر، ثم اضغط عدة مرات لرسم منطقة التوصيل",
+  "paymentType": "طريقة الدفع",
+  "fullPayment": "دفع كامل",
+  "deferredPayment": "دفع آجل",
+  "paidAmount": "المبلغ المدفوع",
+  "enterPaidAmount": "أدخل المبلغ المدفوع",
+  "remainingAmount": "المبلغ المتبقي"
 }

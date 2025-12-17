@@ -5,13 +5,14 @@ part 'payment_cubit.freezed.dart';
 
 class PaymentCubit extends Cubit<PaymentState> {
   PaymentCubit(this._orderRepositoryImplement)
-      : super(const PaymentState.initial());
+    : super(const PaymentState.initial());
   int selectedIndex = 0;
   String choosePaymentMethod = 'Cash';
   final OrderRepositoryImplement _orderRepositoryImplement;
   TextEditingController notesController = TextEditingController();
 
   TextEditingController customerNameController = TextEditingController();
+  TextEditingController paidAmountController = TextEditingController();
   TextEditingController customerPhoneController = TextEditingController();
   TextEditingController customerAddressTextController = TextEditingController();
 
@@ -20,6 +21,20 @@ class PaymentCubit extends Cubit<PaymentState> {
   List<GetOrdersResponseData> getPerviousOrders = [];
 
   String _selectedOption = "Store Pickup";
+
+  String _selectedPaymentOption = "full Payment";
+
+  String get selectedPaymentOption => _selectedPaymentOption;
+  bool get isDeferredPayment => _selectedPaymentOption == "deferred Payment";
+
+  void changePaymetType(String value) {
+    _selectedPaymentOption = value;
+
+    emit(PaymentState.orderTypeChanged(value));
+  }
+
+  //   "fullPayment": "دفع كامل",
+  // "deferredPayment": "دفع آجل",
 
   String get selectedOption => _selectedOption;
   bool get isPhoneOrder => _selectedOption == "By Phone";
@@ -47,29 +62,32 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(PaymentState.choosePayment(choosePaymentMethod));
   }
 
-  Future<void> createCashOrderSummit(
-      {String? shippingAddressId,
-      String? nearbyStoreAddress,
-      String? orderSource}) async {
+  Future<void> createCashOrderSummit({
+    String? shippingAddressId,
+    String? nearbyStoreAddress,
+    String? orderSource,
+  }) async {
     emit(const PaymentState.createCashOrderLoading());
 
-    final response =
-        await _orderRepositoryImplement.createCashOrder(CreateOrderRequestBody(
-      shippingAddress: shippingAddressId,
-      nearbyStoreAddress: nearbyStoreAddress,
-      notes:
-          notesController.text.isNotEmpty ? notesController.text.trim() : null,
-      customerName: customerNameController.text.isNotEmpty
-          ? customerNameController.text.trim()
-          : null,
-      customerPhone: customerPhoneController.text.isNotEmpty
-          ? customerPhoneController.text.trim()
-          : null,
-      customerAddressText: customerAddressTextController.text.isNotEmpty
-          ? customerAddressTextController.text.trim()
-          : null,
-      orderSource: orderSource,
-    ));
+    final response = await _orderRepositoryImplement.createCashOrder(
+      CreateOrderRequestBody(
+        shippingAddress: shippingAddressId,
+        nearbyStoreAddress: nearbyStoreAddress,
+        notes: notesController.text.isNotEmpty
+            ? notesController.text.trim()
+            : null,
+        customerName: customerNameController.text.isNotEmpty
+            ? customerNameController.text.trim()
+            : null,
+        customerPhone: customerPhoneController.text.isNotEmpty
+            ? customerPhoneController.text.trim()
+            : null,
+        customerAddressText: customerAddressTextController.text.isNotEmpty
+            ? customerAddressTextController.text.trim()
+            : null,
+        orderSource: orderSource,
+      ),
+    );
 
     response.when(
       success: (response) {
@@ -77,9 +95,7 @@ class PaymentCubit extends Cubit<PaymentState> {
         emit(PaymentState.createCashOrderSuccess(response));
       },
       failure: (error) {
-        emit(
-          PaymentState.createCashOrderError(error),
-        );
+        emit(PaymentState.createCashOrderError(error));
       },
     );
   }
@@ -87,8 +103,9 @@ class PaymentCubit extends Cubit<PaymentState> {
   Future<void> orderCancelSummit(String id) async {
     emit(const PaymentState.createCashOrderLoading());
 
-    final response =
-        await _orderRepositoryImplement.orderCancelledRepository(id);
+    final response = await _orderRepositoryImplement.orderCancelledRepository(
+      id,
+    );
 
     response.when(
       success: (response) {
@@ -96,9 +113,7 @@ class PaymentCubit extends Cubit<PaymentState> {
         emit(PaymentState.createCashOrderSuccess(response));
       },
       failure: (error) {
-        emit(
-          PaymentState.createCashOrderError(error),
-        );
+        emit(PaymentState.createCashOrderError(error));
       },
     );
   }
@@ -109,26 +124,26 @@ class PaymentCubit extends Cubit<PaymentState> {
   Future<void> getCompleteOrdersSummit() async {
     emit(const PaymentState.getCompleteOrdersLoading());
 
-    final response =
-        await _orderRepositoryImplement.getAllOrderCompleteRepository();
+    final response = await _orderRepositoryImplement
+        .getAllOrderCompleteRepository();
 
     response.when(
       success: (response) {
         getPerviousOrders = [];
         getPerviousOrders = response.data ?? [];
 
-        cancelledOrder =
-            getPerviousOrders.where((element) => element.status == 5).length;
+        cancelledOrder = getPerviousOrders
+            .where((element) => element.status == 5)
+            .length;
 
-        deliveredOrder =
-            getPerviousOrders.where((element) => element.status == 4).length;
+        deliveredOrder = getPerviousOrders
+            .where((element) => element.status == 4)
+            .length;
 
         emit(PaymentState.getCompleteOrdersSuccess(response));
       },
       failure: (error) {
-        emit(
-          PaymentState.getCompleteOrdersError(error),
-        );
+        emit(PaymentState.getCompleteOrdersError(error));
       },
     );
   }
@@ -136,8 +151,8 @@ class PaymentCubit extends Cubit<PaymentState> {
   Future<void> getOrdersPendingSummit() async {
     emit(const PaymentState.getCompleteOrdersLoading());
 
-    final response =
-        await _orderRepositoryImplement.getAllOrderPendingRepository();
+    final response = await _orderRepositoryImplement
+        .getAllOrderPendingRepository();
 
     response.when(
       success: (response) {
@@ -147,9 +162,7 @@ class PaymentCubit extends Cubit<PaymentState> {
         emit(PaymentState.getCompleteOrdersSuccess(response));
       },
       failure: (error) {
-        emit(
-          PaymentState.getCompleteOrdersError(error),
-        );
+        emit(PaymentState.getCompleteOrdersError(error));
       },
     );
   }

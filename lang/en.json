@@ -335,5 +335,11 @@
   "noLocationSelected": "No location selected",
   "pickStoreLocation": "Pick Store Location",
   "pickStoreLocationHint": "Select store location and delivery zone from the map",
-  "driverData": "Driver Data"
+  "driverData": "Driver Data",
+  "paymentType": "Payment Type",
+  "fullPayment": "Full Payment",
+  "deferredPayment": "Deferred Payment",
+  "paidAmount": "Paid Amount",
+  "enterPaidAmount": "Enter Paid Amount",
+  "remainingAmount": "Remaining Amount"
 }

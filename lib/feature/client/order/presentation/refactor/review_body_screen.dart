@@ -33,220 +33,356 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
             responsive.setSizeBox(
               height: AppInitialRoute.role == "admin" ? 0 : 3,
             ),
-            Text(
-              context.translate(AppStrings.shippingAddress),
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                fontSize: responsive.setTextSize(4),
-              ),
+            _shippingAddressCart(
+              context,
+              responsive,
+              paymentCuibt,
+              isEnLocale,
+              addressData,
             ),
 
-            Padding(
-              padding: responsive.setPadding(bottom: 1, top: 2),
-              child: InkWell(
-                onTap: () async {
-                  if (AppInitialRoute.role == "admin") {
-                    final selected = await showMenu<String>(
-                      color: ColorManger.backgroundItem,
-                      context: context,
-                      position: RelativeRect.fromLTRB(
-                        100,
-                        responsive.setHeight(25.5),
-                        responsive.setWidth(6.5),
-                        100,
-                      ),
-                      items: [
-                        PopupMenuItem(
-                          value: "Store Pickup",
-                          child: Text(
-                            context.translate(AppStrings.storePickup),
-                          ),
-                        ),
-                        PopupMenuItem(
-                          value: "By Phone",
-                          child: Text(context.translate(AppStrings.byPhone)),
-                        ),
-                      ],
-                    );
+            responsive.setSizeBox(height: 1),
 
-                    if (selected != null &&
-                        selected != paymentCuibt.selectedOption) {
-                      paymentCuibt.changeOrderType(selected);
-                    }
-                  } else {
+            _deferredPaymentToAdmin(
+              context,
+              responsive,
+              paymentCuibt,
+              isEnLocale,
+            ),
+
+            _paymentCard(context, responsive, isEnLocale),
+
+            responsive.setSizeBox(height: 0.5),
+            _addNotes(context, responsive),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Column _shippingAddressCart(
+    BuildContext context,
+    ResponsiveUtils responsive,
+    PaymentCubit paymentCuibt,
+    bool isEnLocale,
+    GetAddressResponseData? addressData,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          context.translate(AppStrings.shippingAddress),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
+        ),
+
+        Padding(
+          padding: responsive.setPadding(bottom: 1, top: 2),
+          child: InkWell(
+            onTap: () async {
+              if (AppInitialRoute.role == "admin") {
+                final selected = await showMenu<String>(
+                  color: ColorManger.backgroundItem,
+                  context: context,
+                  position: RelativeRect.fromLTRB(
+                    100,
+                    responsive.setHeight(26.3),
+                    responsive.setWidth(6.5),
+                    100,
+                  ),
+                  items: [
+                    PopupMenuItem(
+                      value: "Store Pickup",
+                      child: Text(context.translate(AppStrings.storePickup)),
+                    ),
+                    PopupMenuItem(
+                      value: "By Phone",
+                      child: Text(context.translate(AppStrings.byPhone)),
+                    ),
+                  ],
+                );
+
+                if (selected != null &&
+                    selected != paymentCuibt.selectedOption) {
+                  paymentCuibt.changeOrderType(selected);
+                }
+              } else {
+                context.read<UserAddressCubit>().isPaymentAddress = true;
+
+                Navigator.of(
+                  context,
+                  rootNavigator: !false,
+                ).popAndPushNamed(Routes.map);
+              }
+            },
+            child: Container(
+              width: double.infinity,
+              height: responsive.setHeight(6),
+              decoration: BoxDecoration(
+                color: ColorManger.backgroundItem,
+                borderRadius: BorderRadius.circular(
+                  responsive.setBorderRadius(2),
+                ),
+                border: Border.all(
+                  color: ColorManger.brownLight,
+                  width: responsive.setWidth(0.1),
+                ),
+              ),
+              child: Padding(
+                padding: responsive.setPadding(
+                  left: isEnLocale ? 2 : 0,
+                  right: isEnLocale ? 0 : 2,
+                ),
+                child: Row(
+                  children: [
+                    Icon(IconlyBold.location, color: ColorManger.brun),
+                    responsive.setSizeBox(width: 1.5),
+                    BlocBuilder<PaymentCubit, PaymentState>(
+                      builder: (context, state) {
+                        return ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 275.w),
+                          child: Text(
+                            AppInitialRoute.role == "admin"
+                                ? paymentCuibt.selectedOption == "By Phone"
+                                      ? context.translate(AppStrings.byPhone)
+                                      : context.translate(
+                                          AppStrings.storePickup,
+                                        )
+                                : addressData!.region ?? "",
+                            maxLines: 1,
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.titleLarge!
+                                .copyWith(
+                                  fontSize: responsive.setTextSize(3.5),
+                                ),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+
+        /// Animated Container for "By Phone"
+        BlocBuilder<PaymentCubit, PaymentState>(
+          builder: (context, state) {
+            return AnimatedSize(
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeInOut,
+              child: paymentCuibt.isPhoneOrder
+                  ? Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(12.w),
+                      decoration: BoxDecoration(
+                        color: ColorManger.backgroundItem,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: ColorManger.backgroundItem),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildTextField(
+                            controller: paymentCuibt.customerNameController,
+                            label: context.translate(AppStrings.customerName),
+                            icon: Icons.person,
+                          ),
+                          SizedBox(height: 10.h),
+                          _buildTextField(
+                            controller: paymentCuibt.customerPhoneController,
+                            label: context.translate(AppStrings.customerPhone),
+                            icon: Icons.phone,
+                            keyboardType: TextInputType.phone,
+                          ),
+                          SizedBox(height: 10.h),
+                          _buildTextField(
+                            controller:
+                                paymentCuibt.customerAddressTextController,
+                            label: context.translate(
+                              AppStrings.customerAddress,
+                            ),
+                            icon: Icons.location_on,
+                          ),
+                        ],
+                      ),
+                    )
+                  : const SizedBox(),
+            );
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _paymentCard(
+    BuildContext context,
+    ResponsiveUtils responsive,
+    bool isEnLocale,
+  ) {
+    return AppInitialRoute.role != "admin"
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                context.translate(AppStrings.payment),
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: responsive.setTextSize(4),
+                ),
+              ),
+
+              Padding(
+                padding: responsive.setPadding(bottom: 1, top: 0.8),
+                child: InkWell(
+                  onTap: () {
                     context.read<UserAddressCubit>().isPaymentAddress = true;
 
                     Navigator.of(
                       context,
                       rootNavigator: !false,
                     ).popAndPushNamed(Routes.map);
-                  }
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: responsive.setHeight(6),
-                  decoration: BoxDecoration(
-                    color: ColorManger.backgroundItem,
-                    borderRadius: BorderRadius.circular(
-                      responsive.setBorderRadius(2),
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: responsive.setHeight(6),
+                    decoration: BoxDecoration(
+                      color: ColorManger.backgroundItem,
+                      borderRadius: BorderRadius.circular(
+                        responsive.setBorderRadius(2),
+                      ),
+                      border: Border.all(
+                        color: ColorManger.brownLight,
+                        width: responsive.setWidth(0.1),
+                      ),
                     ),
-                    border: Border.all(
-                      color: ColorManger.brownLight,
-                      width: responsive.setWidth(0.1),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: responsive.setPadding(
-                      left: isEnLocale ? 2 : 0,
-                      right: isEnLocale ? 0 : 2,
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(IconlyBold.location, color: ColorManger.brun),
-                        responsive.setSizeBox(width: 1.5),
-                        BlocBuilder<PaymentCubit, PaymentState>(
-                          builder: (context, state) {
-                            return ConstrainedBox(
-                              constraints: BoxConstraints(maxWidth: 275.w),
-                              child: Text(
-                                AppInitialRoute.role == "admin"
-                                    ? paymentCuibt.selectedOption == "By Phone"
-                                          ? context.translate(
-                                              AppStrings.byPhone,
-                                            )
-                                          : context.translate(
-                                              AppStrings.storePickup,
-                                            )
-                                    : addressData!.region ?? "",
-                                maxLines: 1,
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context).textTheme.titleLarge!
-                                    .copyWith(
-                                      fontSize: responsive.setTextSize(3.5),
+                    child: Padding(
+                      padding: responsive.setPadding(
+                        left: isEnLocale ? 2 : 0,
+                        right: isEnLocale ? 0 : 2,
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.credit_card, color: ColorManger.brun),
+                          responsive.setSizeBox(width: 1.5),
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: 275.w),
+                            child: Text(
+                              context
+                                          .read<PaymentCubit>()
+                                          .choosePaymentMethod ==
+                                      'Cash'
+                                  ? context.translate(AppStrings.cashOnDelivery)
+                                  : context.translate(
+                                      AppStrings.creditOrDebitCard,
                                     ),
-                              ),
-                            );
-                          },
-                        ),
-                      ],
+                              maxLines: 1,
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.titleLarge!
+                                  .copyWith(
+                                    fontSize: responsive.setTextSize(3.5),
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
+            ],
+          )
+        : SizedBox();
+  }
 
-            /// Animated Container for "By Phone"
-            BlocBuilder<PaymentCubit, PaymentState>(
-              builder: (context, state) {
-                return AnimatedSize(
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeInOut,
-                  child: paymentCuibt.isPhoneOrder
-                      ? Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.all(12.w),
-                          decoration: BoxDecoration(
-                            color: ColorManger.backgroundItem,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: ColorManger.backgroundItem,
-                            ),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              _buildTextField(
-                                controller: paymentCuibt.customerNameController,
-                                label: context.translate(
-                                  AppStrings.customerName,
-                                ),
-                                icon: Icons.person,
-                              ),
-                              SizedBox(height: 10.h),
-                              _buildTextField(
-                                controller:
-                                    paymentCuibt.customerPhoneController,
-                                label: context.translate(
-                                  AppStrings.customerPhone,
-                                ),
-                                icon: Icons.phone,
-                                keyboardType: TextInputType.phone,
-                              ),
-                              SizedBox(height: 10.h),
-                              _buildTextField(
-                                controller:
-                                    paymentCuibt.customerAddressTextController,
-                                label: context.translate(
-                                  AppStrings.customerAddress,
-                                ),
-                                icon: Icons.location_on,
-                              ),
-                            ],
-                          ),
-                        )
-                      : const SizedBox(),
-                );
-              },
-            ),
+  Widget _deferredPaymentToAdmin(
+    BuildContext context,
+    ResponsiveUtils responsive,
+    PaymentCubit paymentCuibt,
+    bool isEnLocale,
+  ) {
+    return AppInitialRoute.role == "admin"
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                context.translate(AppStrings.paymentType),
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: responsive.setTextSize(4),
+                ),
+              ),
 
-            responsive.setSizeBox(height: 1),
-
-            AppInitialRoute.role == "admin"
-                ? const SizedBox()
-                : Text(
-                    context.translate(AppStrings.payment),
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      fontSize: responsive.setTextSize(4),
-                    ),
-                  ),
-            AppInitialRoute.role == "admin"
-                ? const SizedBox()
-                : Padding(
-                    padding: responsive.setPadding(bottom: 1, top: 0.8),
-                    child: InkWell(
-                      onTap: () {
-                        context.read<UserAddressCubit>().isPaymentAddress =
-                            true;
-
-                        Navigator.of(
-                          context,
-                          rootNavigator: !false,
-                        ).popAndPushNamed(Routes.map);
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: responsive.setHeight(6),
-                        decoration: BoxDecoration(
-                          color: ColorManger.backgroundItem,
-                          borderRadius: BorderRadius.circular(
-                            responsive.setBorderRadius(2),
-                          ),
-                          border: Border.all(
-                            color: ColorManger.brownLight,
-                            width: responsive.setWidth(0.1),
+              Padding(
+                padding: responsive.setPadding(bottom: 1, top: 2),
+                child: InkWell(
+                  onTap: () async {
+                    final selected = await showMenu<String>(
+                      color: ColorManger.backgroundItem,
+                      context: context,
+                      position: RelativeRect.fromLTRB(
+                        100,
+                        responsive.setHeight(38.5),
+                        responsive.setWidth(6.5),
+                        100,
+                      ),
+                      items: [
+                        PopupMenuItem(
+                          value: "full Payment",
+                          child: Text(
+                            context.translate(AppStrings.fullPayment),
                           ),
                         ),
-                        child: Padding(
-                          padding: responsive.setPadding(
-                            left: isEnLocale ? 2 : 0,
-                            right: isEnLocale ? 0 : 2,
+                        PopupMenuItem(
+                          value: "deferred Payment",
+                          child: Text(
+                            context.translate(AppStrings.deferredPayment),
                           ),
-                          child: Row(
-                            children: [
-                              Icon(Icons.credit_card, color: ColorManger.brun),
-                              responsive.setSizeBox(width: 1.5),
-                              ConstrainedBox(
+                        ),
+                      ],
+                    );
+
+                    if (selected != null &&
+                        selected != paymentCuibt.selectedPaymentOption) {
+                      paymentCuibt.changePaymetType(selected);
+                    }
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: responsive.setHeight(6),
+                    decoration: BoxDecoration(
+                      color: ColorManger.backgroundItem,
+                      borderRadius: BorderRadius.circular(
+                        responsive.setBorderRadius(2),
+                      ),
+                      border: Border.all(
+                        color: ColorManger.brownLight,
+                        width: responsive.setWidth(0.1),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: responsive.setPadding(
+                        left: isEnLocale ? 2 : 0,
+                        right: isEnLocale ? 0 : 2,
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(IconlyBold.location, color: ColorManger.brun),
+                          responsive.setSizeBox(width: 1.5),
+                          BlocBuilder<PaymentCubit, PaymentState>(
+                            builder: (context, state) {
+                              return ConstrainedBox(
                                 constraints: BoxConstraints(maxWidth: 275.w),
                                 child: Text(
-                                  context
-                                              .read<PaymentCubit>()
-                                              .choosePaymentMethod ==
-                                          'Cash'
+                                  paymentCuibt.selectedPaymentOption ==
+                                          "full Payment"
                                       ? context.translate(
-                                          AppStrings.cashOnDelivery,
+                                          AppStrings.fullPayment,
                                         )
                                       : context.translate(
-                                          AppStrings.creditOrDebitCard,
+                                          AppStrings.deferredPayment,
                                         ),
                                   maxLines: 1,
                                   textAlign: TextAlign.start,
@@ -256,20 +392,54 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                                         fontSize: responsive.setTextSize(3.5),
                                       ),
                                 ),
-                              ),
-                            ],
+                              );
+                            },
                           ),
-                        ),
+                        ],
                       ),
                     ),
                   ),
-            // _paymentMethodContainer(context, responsive),
-            responsive.setSizeBox(height: 0.5),
-            _addNotes(context, responsive),
-          ],
-        ),
-      ),
-    );
+                ),
+              ),
+
+              BlocBuilder<PaymentCubit, PaymentState>(
+                builder: (context, state) {
+                  return AnimatedSize(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeInOut,
+                    child: paymentCuibt.isDeferredPayment
+                        ? Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.all(12.w),
+                            decoration: BoxDecoration(
+                              color: ColorManger.backgroundItem,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: ColorManger.backgroundItem,
+                              ),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                _buildTextField(
+                                  controller:
+                                      paymentCuibt.customerNameController,
+                                  label: context.translate(
+                                    AppStrings.enterPaidAmount,
+                                  ),
+                                  icon: IconlyBold.wallet,
+                                ),
+                              ],
+                            ),
+                          )
+                        : const SizedBox(),
+                  );
+                },
+              ),
+              responsive.setSizeBox(height: 1),
+            ],
+          )
+        : const SizedBox();
   }
 
   Widget _buildTextField({

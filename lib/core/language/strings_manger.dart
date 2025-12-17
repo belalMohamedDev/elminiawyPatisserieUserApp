@@ -19,6 +19,15 @@ class AppStrings {
   static const String driverData = "driverData";
   static const String userData = "userData";
 
+
+  static const String paymentType = "paymentType";
+  static const String fullPayment = "fullPayment";
+  static const String deferredPayment = "deferredPayment";
+  static const String paidAmount = "paidAmount";
+  static const String enterPaidAmount = "enterPaidAmount";
+  static const String remainingAmount = "remainingAmount";
+
+
   static const String required = "Required";
   static const String createProduct = "createProduct";
   static const String addNewProduct = "AddNewProduct";
