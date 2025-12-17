@@ -19,8 +19,7 @@ class OrderResponse {
 
 @JsonSerializable()
 class OrderResponseData {
-
- @JsonKey(name: "_id")
+  @JsonKey(name: "_id")
   String? sId;
   UserOrderData? user;
   String? notes;
@@ -49,43 +48,30 @@ class OrderResponseData {
   String? driverAcceptedAt;
   String? canceledAt;
 
-  OrderResponseData(
-      {this.sId,
-      this.user,
-      this.notes,
-      this.status,
-      this.cartItems,
-      this.taxPrice,
-      this.shippingPrice,
-      this.shippingAddress,
-      this.totalOrderPrice,
-      this.paymentMethodType,
-      this.driverDeliveredAt,
-      this.orderNumber,
-      this.adminAcceptedAt,
-      this.driverAcceptedAt,
-      this.adminCompletedAt,
-      this.createdAt,
-      this.canceledAt,
-      this.customerName,
-      this.customerPhone,
-      this.customerAddressText,
-      this.orderSource,
-      this.updatedAt});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  OrderResponseData({
+    this.sId,
+    this.user,
+    this.notes,
+    this.status,
+    this.cartItems,
+    this.taxPrice,
+    this.shippingPrice,
+    this.shippingAddress,
+    this.totalOrderPrice,
+    this.paymentMethodType,
+    this.driverDeliveredAt,
+    this.orderNumber,
+    this.adminAcceptedAt,
+    this.driverAcceptedAt,
+    this.adminCompletedAt,
+    this.createdAt,
+    this.canceledAt,
+    this.customerName,
+    this.customerPhone,
+    this.customerAddressText,
+    this.orderSource,
+    this.updatedAt,
+  });
 
   //from json
   factory OrderResponseData.fromJson(Map<String, dynamic> json) =>
@@ -120,8 +106,13 @@ class CartOrderItems {
   int? totalItemPrice;
   String? sId;
 
-  CartOrderItems(
-      {this.product, this.quantity, this.price, this.totalItemPrice, this.sId});
+  CartOrderItems({
+    this.product,
+    this.quantity,
+    this.price,
+    this.totalItemPrice,
+    this.sId,
+  });
 
   //from json
   factory CartOrderItems.fromJson(Map<String, dynamic> json) =>
