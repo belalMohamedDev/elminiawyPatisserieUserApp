@@ -12,10 +12,9 @@ class ReviewPaymentScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           context.translate(AppStrings.checkOut),
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(4)),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
         ),
       ),
       body: const ReviewPaymentBody(),
@@ -40,10 +39,9 @@ class ReviewPaymentScreen extends StatelessWidget {
           children: [
             Text(
               context.translate(AppStrings.orderSummary),
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(fontSize: responsive.setTextSize(4)),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                fontSize: responsive.setTextSize(4),
+              ),
             ),
             responsive.setSizeBox(height: 1),
             RowTextOrderSummary(
@@ -55,134 +53,131 @@ class ReviewPaymentScreen extends StatelessWidget {
               orderprice: cart.cartData!.data!.totalPriceAfterDiscount!,
               orderText: context.translate(AppStrings.priceAfterDiscount),
             ),
-            Divider(
-              color: ColorManger.brownLight,
-            ),
+            Divider(color: ColorManger.brownLight),
             responsive.setSizeBox(height: 1),
             Row(
               children: [
                 Text(
                   context.translate(AppStrings.total),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
                 ),
                 const Spacer(),
                 Text(
                   '${cart.cartData!.data!.totalOrderPrice!}   ${context.translate(AppStrings.egy)}',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20.h,
-            ),
+            SizedBox(height: 20.h),
             BlocConsumer<PaymentCubit, PaymentState>(
               listener: (context, state) {
                 state.whenOrNull(
-                    createCashOrderError: (apiErrorModel) =>
-                        ShowToast.showToastErrorTop(
-                            errorMessage: apiErrorModel.message!,
-                            context: context),
-                    createCashOrderSuccess: (data) {
-                      paymentCuibt.customerNameController.clear();
-                      paymentCuibt.customerPhoneController.clear();
-                      paymentCuibt.customerAddressTextController.clear();
-                      paymentCuibt.changeOrderType("Store Pickup");
-                      AppInitialRoute.role == "admin"
-                          ? Navigator.pushNamedAndRemoveUntil(
-                              context,
-                              Routes.adminMenue,
-                              (route) => false,
-                            )
-                          : Navigator.pushNamedAndRemoveUntil(
-                              context,
-                              Routes.orderPlaced,
-                              (route) => false,
-                            );
-                    });
+                  createCashOrderError: (apiErrorModel) =>
+                      ShowToast.showToastErrorTop(
+                        errorMessage: apiErrorModel.message!,
+                        context: context,
+                      ),
+                  createCashOrderSuccess: (data) {
+                    paymentCuibt.customerNameController.clear();
+                    paymentCuibt.customerPhoneController.clear();
+                    paymentCuibt.paidAmountController.clear();
+                    paymentCuibt.customerAddressTextController.clear();
+                    paymentCuibt.changeOrderType("Store Pickup");
+                    paymentCuibt.changePaymetType("full Payment");
+                    AppInitialRoute.role == "admin"
+                        ? Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            Routes.adminMenue,
+                            (route) => false,
+                          )
+                        : Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            Routes.orderPlaced,
+                            (route) => false,
+                          );
+                  },
+                );
               },
               builder: (context, state) {
                 return CustomButton(
-                    onPressed: () {
-                      if (paymentCuibt.choosePaymentMethod.startsWith('Cash')) {
-                        paymentCuibt.createCashOrderSummit(
-                            orderSource: AppInitialRoute.role == "admin"
-                                ? paymentCuibt.orderSourceForApi
-                                : "app",
-                            shippingAddressId: AppInitialRoute.role == "admin"
-                                ? null
-                                : userAddressCubit
-                                    .addressDataList[paymentCuibt.selectedIndex]
-                                    .sId!,
-                            nearbyStoreAddress: userAddressCubit
-                                    .addressDataList.isEmpty
-                                ? null
-                                : userAddressCubit
-                                    .addressDataList[paymentCuibt.selectedIndex]
-                                    .nearbyStoreAddress);
-                      }
-                    },
-                    widget: state.maybeWhen(
-                      createCashOrderLoading: () => Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: responsive.setHeight(2),
-                            width: responsive.setWidth(4),
-                            child: CircularProgressIndicator(
-                              color: ColorManger.white,
-                              strokeWidth: 2.0,
-                              strokeAlign: 0.01,
-                            ),
+                  onPressed: () {
+                    if (paymentCuibt.choosePaymentMethod.startsWith('Cash')) {
+                      paymentCuibt.createCashOrderSummit(
+                        orderSource: AppInitialRoute.role == "admin"
+                            ? paymentCuibt.orderSourceForApi
+                            : "app",
+                        shippingAddressId: AppInitialRoute.role == "admin"
+                            ? null
+                            : userAddressCubit
+                                  .addressDataList[paymentCuibt.selectedIndex]
+                                  .sId!,
+                        nearbyStoreAddress:
+                            userAddressCubit.addressDataList.isEmpty
+                            ? null
+                            : userAddressCubit
+                                  .addressDataList[paymentCuibt.selectedIndex]
+                                  .nearbyStoreAddress,
+                      );
+                    }
+                  },
+                  widget: state.maybeWhen(
+                    createCashOrderLoading: () => Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: responsive.setHeight(2),
+                          width: responsive.setWidth(4),
+                          child: CircularProgressIndicator(
+                            color: ColorManger.white,
+                            strokeWidth: 2.0,
+                            strokeAlign: 0.01,
                           ),
-                          SizedBox(
-                            width: responsive.setHeight(
-                                2), // Spacing between the indicator and text
+                        ),
+                        SizedBox(
+                          width: responsive.setHeight(
+                            2,
+                          ), // Spacing between the indicator and text
+                        ),
+                        Text(
+                          context.translate(AppStrings.loading),
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(
+                                fontSize: responsive.setTextSize(
+                                  3.8,
+                                ), // Dynamic text size
+                              ),
+                        ),
+                      ],
+                    ),
+                    orElse: () => Text(
+                      context.translate(AppStrings.summitOrder),
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(
+                            fontSize: responsive.setTextSize(
+                              3.8,
+                            ), // Adjusted font size for responsiveness
                           ),
-                          Text(
-                            context.translate(AppStrings.loading),
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall
-                                ?.copyWith(
-                                  fontSize: responsive
-                                      .setTextSize(3.8), // Dynamic text size
-                                ),
-                          ),
-                        ],
-                      ),
-                      orElse: () => Text(
-                        context.translate(AppStrings.summitOrder),
-                        style:
-                            Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                  fontSize: responsive.setTextSize(
-                                      3.8), // Adjusted font size for responsiveness
-                                ),
-                      ),
-                    ));
+                    ),
+                  ),
+                );
               },
             ),
             responsive.setSizeBox(height: 2),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.car_rental_outlined,
-                  color: ColorManger.brun,
-                ),
+                Icon(Icons.car_rental_outlined, color: ColorManger.brun),
                 responsive.setSizeBox(width: 2),
                 Text(
                   context.translate(AppStrings.orderWillBeDelivered),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(4)),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
                 ),
               ],
             ),

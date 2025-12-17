@@ -16,6 +16,8 @@ CreateOrderRequestBody _$CreateOrderRequestBodyFromJson(
   customerPhone: json['customerPhone'] as String?,
   customerAddressText: json['customerAddressText'] as String?,
   orderSource: json['orderSource'] as String?,
+  paidAmount: (json['paidAmount'] as num?)?.toDouble(),
+  isDeferred: json['isDeferred'] as bool?,
 );
 
 Map<String, dynamic> _$CreateOrderRequestBodyToJson(
@@ -28,4 +30,6 @@ Map<String, dynamic> _$CreateOrderRequestBodyToJson(
   'customerPhone': ?instance.customerPhone,
   'customerAddressText': ?instance.customerAddressText,
   'orderSource': ?instance.orderSource,
+  'paidAmount': ?instance.paidAmount,
+  'isDeferred': ?instance.isDeferred,
 };

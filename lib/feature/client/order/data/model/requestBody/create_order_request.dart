@@ -10,7 +10,9 @@ class CreateOrderRequestBody {
     this.customerName,
     this.customerPhone,
     this.customerAddressText ,
-    this.orderSource
+    this.orderSource,
+    this.paidAmount,
+    this.isDeferred,
   });
 
   final String? shippingAddress;
@@ -23,6 +25,8 @@ class CreateOrderRequestBody {
   final String? customerPhone;
   final String? customerAddressText;
   final String? orderSource;
+  final double? paidAmount;
+  final bool? isDeferred;
 
   //from json
   factory CreateOrderRequestBody.fromJson(Map<String, dynamic> json) =>

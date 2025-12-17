@@ -422,8 +422,7 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 _buildTextField(
-                                  controller:
-                                      paymentCuibt.customerNameController,
+                                  controller: paymentCuibt.paidAmountController,
                                   label: context.translate(
                                     AppStrings.enterPaidAmount,
                                   ),

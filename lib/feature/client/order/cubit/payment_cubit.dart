@@ -33,8 +33,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(PaymentState.orderTypeChanged(value));
   }
 
-  //   "fullPayment": "دفع كامل",
-  // "deferredPayment": "دفع آجل",
+
 
   String get selectedOption => _selectedOption;
   bool get isPhoneOrder => _selectedOption == "By Phone";
@@ -86,6 +85,10 @@ class PaymentCubit extends Cubit<PaymentState> {
             ? customerAddressTextController.text.trim()
             : null,
         orderSource: orderSource,
+        paidAmount: isDeferredPayment
+            ? double.tryParse(paidAmountController.text.trim()) ?? 0.0
+            : null,
+        isDeferred: isDeferredPayment,
       ),
     );
 
