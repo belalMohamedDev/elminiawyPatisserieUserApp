@@ -3,10 +3,7 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
-  const OrderDetailsScreen({
-    super.key,
-    required this.orderModel,
-  });
+  const OrderDetailsScreen({super.key, required this.orderModel});
 
   final GetOrdersResponseData orderModel;
 
@@ -18,14 +15,16 @@ class OrderDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(context.translate(AppStrings.orderDetails),
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(fontSize: responsive.setTextSize(4))),
+        title: Text(
+          context.translate(AppStrings.orderDetails),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
+        ),
         leading: IconButton(
           icon: Icon(
-              isEnLocale ? IconlyBroken.arrowLeft : IconlyBroken.arrowRight),
+            isEnLocale ? IconlyBroken.arrowLeft : IconlyBroken.arrowRight,
+          ),
           onPressed: () {
             context.pop();
           },
@@ -38,31 +37,36 @@ class OrderDetailsScreen extends StatelessWidget {
             SliverToBoxAdapter(
               child: _orderIdContainer(context, orderModel, responsive),
             ),
-            SliverToBoxAdapter(
-              child: responsive.setSizeBox(height: 1),
-            ),
+            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
             _productItemSliverList(orderModel, responsive),
             SliverToBoxAdapter(
               child: orderModel.notes.isNullOrEmpty()
                   ? const SizedBox()
                   : _noteContainer(responsive, context),
             ),
-            SliverToBoxAdapter(
-              child: responsive.setSizeBox(height: 1),
-            ),
+            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
             SliverToBoxAdapter(
               child: _orderShippingInformation(
-                  context, orderModel, isEnLocale, responsive),
+                context,
+                orderModel,
+                isEnLocale,
+                responsive,
+              ),
             ),
+            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
             SliverToBoxAdapter(
-              child: responsive.setSizeBox(height: 1),
-            ),
-            SliverToBoxAdapter(
-              child: orderModel.shippingAddress != null ||
+              child:
+                  orderModel.shippingAddress != null ||
                       orderModel.orderSource == "phone"
                   ? _userInformationContainer(responsive, context)
                   : const SizedBox(),
-            )
+            ),
+            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
+            SliverToBoxAdapter(
+              child: orderModel.driverId != null
+                  ? _driverInformationContainer(responsive, context)
+                  : const SizedBox(),
+            ),
           ],
         ),
       ),
@@ -70,34 +74,141 @@ class OrderDetailsScreen extends StatelessWidget {
   }
 
   Container _userInformationContainer(
-      ResponsiveUtils responsive, BuildContext context) {
+    ResponsiveUtils responsive,
+    BuildContext context,
+  ) {
     return Container(
       width: double.infinity,
-      height: responsive.setHeight(6),
+      height: responsive.setHeight(10),
       decoration: BoxDecoration(
-          color: ColorManger.backgroundItem,
-          borderRadius: BorderRadius.circular(responsive.setBorderRadius(2.5))),
+        color: ColorManger.backgroundItem,
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(2.5)),
+      ),
       child: Padding(
-        padding: responsive.setPadding(left: 3, right: 3),
-        child: Row(
+        padding: responsive.setPadding(left: 3, right: 3, top: 2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+
           children: [
-            Icon(IconlyBold.profile,
-                color: ColorManger.brun, size: responsive.setHeight(2)),
-            responsive.setSizeBox(width: 2),
-            Text(
-                "${orderModel.shippingAddress != null ? orderModel.user?.name ?? '' : orderModel.customerName}",
-                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+            Row(
+              children: [
+                Image.asset(
+                  ImageAsset.user,
+                  color: ColorManger.brun,
+                  height: responsive.setHeight(2.4),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  context.translate(AppStrings.userData),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: responsive.setHeight(1.5)),
+            Row(
+              children: [
+                Icon(
+                  IconlyBold.profile,
+                  color: ColorManger.brun,
+                  size: responsive.setHeight(2),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  "${orderModel.shippingAddress != null ? orderModel.user?.name ?? '' : orderModel.customerName}",
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: ColorManger.brun,
-                    fontSize: responsive.setTextSize(3.5))),
-            responsive.setSizeBox(width: 10),
-            Icon(IconlyBold.call,
-                color: ColorManger.brun, size: responsive.setHeight(2)),
-            responsive.setSizeBox(width: 2),
-            Text(
-                "${orderModel.shippingAddress != null ? orderModel.shippingAddress?.phone ?? '' : orderModel.customerPhone}",
-                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+                responsive.setSizeBox(width: 10),
+                Icon(
+                  IconlyBold.call,
+                  color: ColorManger.brun,
+                  size: responsive.setHeight(2),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  "${orderModel.shippingAddress != null ? orderModel.shippingAddress?.phone ?? '' : orderModel.customerPhone}",
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: ColorManger.brun,
-                    fontSize: responsive.setTextSize(3.5))),
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _driverInformationContainer(
+    ResponsiveUtils responsive,
+    BuildContext context,
+  ) {
+    return Container(
+      width: double.infinity,
+      height: responsive.setHeight(10),
+      decoration: BoxDecoration(
+        color: ColorManger.backgroundItem,
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(2.5)),
+      ),
+      child: Padding(
+        padding: responsive.setPadding(left: 3, right: 3, top: 2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+
+          children: [
+            Row(
+              children: [
+                Image.asset(
+                  ImageAsset.deliveryBike,
+                  color: ColorManger.brun,
+                  height: responsive.setHeight(2.4),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  context.translate(AppStrings.driverData),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: responsive.setHeight(1.5)),
+            Row(
+              children: [
+                Icon(
+                  IconlyBold.profile,
+                  color: ColorManger.brun,
+                  size: responsive.setHeight(2),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  "${orderModel.driverId!.name}",
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: ColorManger.brun,
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+                responsive.setSizeBox(width: 10),
+                Icon(
+                  IconlyBold.call,
+                  color: ColorManger.brun,
+                  size: responsive.setHeight(2),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  "${orderModel.driverId!.phone}",
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: ColorManger.brun,
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -108,24 +219,27 @@ class OrderDetailsScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          color: ColorManger.backgroundItem,
-          borderRadius: BorderRadius.circular(responsive.setBorderRadius(3))),
+        color: ColorManger.backgroundItem,
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(3)),
+      ),
       child: Padding(
         padding: responsive.setPadding(left: 3, right: 3, top: 2, bottom: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(  context.translate(AppStrings.orderNotes),
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(fontSize: responsive.setTextSize(3.5))),
+            Text(
+              context.translate(AppStrings.orderNotes),
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                fontSize: responsive.setTextSize(3.5),
+              ),
+            ),
             responsive.setSizeBox(height: 1),
-            Text(orderModel.notes ?? '',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontSize: responsive.setTextSize(3.5))),
+            Text(
+              orderModel.notes ?? '',
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontSize: responsive.setTextSize(3.5),
+              ),
+            ),
           ],
         ),
       ),
@@ -133,18 +247,24 @@ class OrderDetailsScreen extends StatelessWidget {
   }
 
   Container _orderShippingInformation(
-      BuildContext context,
-      GetOrdersResponseData? order,
-      bool isEnLocale,
-      ResponsiveUtils responsive) {
+    BuildContext context,
+    GetOrdersResponseData? order,
+    bool isEnLocale,
+    ResponsiveUtils responsive,
+  ) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          color: ColorManger.backgroundItem,
-          borderRadius: BorderRadius.circular(12.r)),
+        color: ColorManger.backgroundItem,
+        borderRadius: BorderRadius.circular(12.r),
+      ),
       child: Padding(
-        padding:
-            EdgeInsets.only(left: 12.w, right: 18.w, top: 12.h, bottom: 15.h),
+        padding: EdgeInsets.only(
+          left: 12.w,
+          right: 18.w,
+          top: 12.h,
+          bottom: 15.h,
+        ),
         child: Column(
           children: [
             Row(
@@ -153,18 +273,14 @@ class OrderDetailsScreen extends StatelessWidget {
                   ImageAsset.labelPrice,
                   height: responsive.setHeight(3.5),
                 ),
-                SizedBox(
-                  width: 10.w,
-                ),
+                SizedBox(width: 10.w),
                 Text(
-                    "${order!.totalOrderPrice ?? ''}  ${context.translate(AppStrings.egy)}",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 12.sp)),
-                SizedBox(
-                  width: 30.w,
+                  "${order!.totalOrderPrice ?? ''}  ${context.translate(AppStrings.egy)}",
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
                 ),
+                SizedBox(width: 30.w),
                 const Spacer(),
                 Container(
                   height: 40.h,
@@ -172,73 +288,55 @@ class OrderDetailsScreen extends StatelessWidget {
                   decoration: BoxDecoration(color: ColorManger.brownLight),
                 ),
                 const Spacer(),
-                Icon(
-                  Icons.credit_card,
-                  color: ColorManger.brun,
-                ),
-                SizedBox(
-                  width: 20.w,
-                ),
+                Icon(Icons.credit_card, color: ColorManger.brun),
+                SizedBox(width: 20.w),
                 Text(
-                    order.paymentMethodType == 'cash'
-                        ? isEnLocale
+                  order.paymentMethodType == 'cash'
+                      ? isEnLocale
                             ? order.paymentMethodType ?? ""
                             : "كاش عند الاستلام"
-                        : isEnLocale
-                            ? order.paymentMethodType ?? ""
-                            : "بطاقة ائتمانية",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 12.sp)),
+                      : isEnLocale
+                      ? order.paymentMethodType ?? ""
+                      : "بطاقة ائتمانية",
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
+                ),
                 const Spacer(),
               ],
             ),
-            Divider(
-              color: ColorManger.brownLight,
-            ),
+            Divider(color: ColorManger.brownLight),
             SizedBox(
               height:
                   order.shippingAddress != null || order.orderSource == "phone"
-                      ? 10.h
-                      : 0,
+                  ? 10.h
+                  : 0,
             ),
             order.shippingAddress != null || order.orderSource == "phone"
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(
-                        IconlyBold.location,
-                        color: ColorManger.brun,
-                      ),
-                      SizedBox(
-                        width: 10.w,
-                      ),
+                      Icon(IconlyBold.location, color: ColorManger.brun),
+                      SizedBox(width: 10.w),
                       Expanded(
                         child: Text(
-                            "${order.shippingAddress != null ? order.shippingAddress?.phone ?? '' : order.customerPhone},   ${order.shippingAddress != null ? order.shippingAddress?.region ?? '' : order.customerAddressText}",
-                            softWrap: true,
-                            maxLines: null,
-                            overflow: TextOverflow.visible,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(fontSize: 12.sp)),
+                          "${order.shippingAddress != null ? order.shippingAddress?.phone ?? '' : order.customerPhone},   ${order.shippingAddress != null ? order.shippingAddress?.region ?? '' : order.customerAddressText}",
+                          softWrap: true,
+                          maxLines: null,
+                          overflow: TextOverflow.visible,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
+                        ),
                       ),
                     ],
                   )
                 : const SizedBox(),
-            SizedBox(
-              height: 5.h,
-            ),
+            SizedBox(height: 5.h),
             order.shippingAddress != null || order.orderSource == "phone"
-                ? Divider(
-                    color: ColorManger.brownLight,
-                  )
+                ? Divider(color: ColorManger.brownLight)
                 : const SizedBox(),
-            SizedBox(
-              height: 5.h,
-            ),
+            SizedBox(height: 5.h),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -246,26 +344,23 @@ class OrderDetailsScreen extends StatelessWidget {
                   ImageAsset.shipingPrice,
                   height: responsive.setHeight(2.6),
                 ),
-                SizedBox(
-                  width: 10.w,
+                SizedBox(width: 10.w),
+                Text(
+                  context.translate(AppStrings.shippingPrice),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
                 ),
-                Text(context.translate(AppStrings.shippingPrice),
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 12.sp)),
                 const Spacer(),
                 Text(
-                    "${order.shippingPrice ?? ''}  ${context.translate(AppStrings.egy)}",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 12.sp)),
+                  "${order.shippingPrice ?? ''}  ${context.translate(AppStrings.egy)}",
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
+                ),
               ],
             ),
-            SizedBox(
-              height: 8.h,
-            ),
+            SizedBox(height: 8.h),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -273,21 +368,20 @@ class OrderDetailsScreen extends StatelessWidget {
                   ImageAsset.taxPrice,
                   height: responsive.setHeight(2.6),
                 ),
-                SizedBox(
-                  width: 10.w,
+                SizedBox(width: 10.w),
+                Text(
+                  context.translate(AppStrings.taxPrice),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
                 ),
-                Text(context.translate(AppStrings.taxPrice),
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 12.sp)),
                 const Spacer(),
                 Text(
-                    "${order.taxPrice ?? ""}  ${context.translate(AppStrings.egy)}",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 12.sp)),
+                  "${order.taxPrice ?? ""}  ${context.translate(AppStrings.egy)}",
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge!.copyWith(fontSize: 12.sp),
+                ),
               ],
             ),
           ],
@@ -297,13 +391,17 @@ class OrderDetailsScreen extends StatelessWidget {
   }
 
   SliverList _productItemSliverList(
-      GetOrdersResponseData? order, ResponsiveUtils responsive) {
+    GetOrdersResponseData? order,
+    ResponsiveUtils responsive,
+  ) {
     final cartItems = order?.cartItems;
 
     return SliverList(
-        delegate: SliverChildBuilderDelegate(childCount: cartItems!.length,
-            (context, index) {
-      return Padding(
+      delegate: SliverChildBuilderDelegate(childCount: cartItems!.length, (
+        context,
+        index,
+      ) {
+        return Padding(
           padding: responsive.setPadding(bottom: 1),
           child: Slidable(
             child: Container(
@@ -311,8 +409,9 @@ class OrderDetailsScreen extends StatelessWidget {
               height: responsive.setHeight(8),
               decoration: BoxDecoration(
                 color: ColorManger.backgroundItem,
-                borderRadius:
-                    BorderRadius.circular(responsive.setBorderRadius(3)),
+                borderRadius: BorderRadius.circular(
+                  responsive.setBorderRadius(3),
+                ),
               ),
               child: Row(
                 children: [
@@ -322,8 +421,9 @@ class OrderDetailsScreen extends StatelessWidget {
                     height: responsive.setHeight(6.5),
                     decoration: BoxDecoration(
                       color: ColorManger.brownLight,
-                      borderRadius:
-                          BorderRadius.circular(responsive.setBorderRadius(3)),
+                      borderRadius: BorderRadius.circular(
+                        responsive.setBorderRadius(3),
+                      ),
                     ),
                     child: CachedNetworkImage(
                       imageUrl: order?.cartItems?[index].product?.image ?? '',
@@ -344,22 +444,20 @@ class OrderDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           cartItems[index].product!.title!,
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
+                          style: Theme.of(context).textTheme.titleMedium!
                               .copyWith(
-                                  fontSize: responsive.setTextSize(4),
-                                  color: ColorManger.brun),
+                                fontSize: responsive.setTextSize(4),
+                                color: ColorManger.brun,
+                              ),
                         ),
                         SizedBox(height: 5.h),
                         Text(
                           '${cartItems[index].quantity} x ${cartItems[index].price} EGP',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
+                          style: Theme.of(context).textTheme.bodyMedium!
                               .copyWith(
-                                  fontSize: responsive.setTextSize(3.5),
-                                  color: ColorManger.brunLight),
+                                fontSize: responsive.setTextSize(3.5),
+                                color: ColorManger.brunLight,
+                              ),
                         ),
                       ],
                     ),
@@ -367,18 +465,24 @@ class OrderDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ));
-    }));
+          ),
+        );
+      }),
+    );
   }
 
-  Container _orderIdContainer(BuildContext context,
-      GetOrdersResponseData? order, ResponsiveUtils responsive) {
+  Container _orderIdContainer(
+    BuildContext context,
+    GetOrdersResponseData? order,
+    ResponsiveUtils responsive,
+  ) {
     int orderStatus = order!.status!;
     return Container(
       height: responsive.setHeight(8),
       decoration: BoxDecoration(
-          color: ColorManger.brownLight,
-          borderRadius: BorderRadius.circular(responsive.setBorderRadius(3))),
+        color: ColorManger.brownLight,
+        borderRadius: BorderRadius.circular(responsive.setBorderRadius(3)),
+      ),
       child: Row(
         children: [
           responsive.setSizeBox(width: 4),
@@ -386,8 +490,8 @@ class OrderDetailsScreen extends StatelessWidget {
             orderStatus == 5
                 ? ImageAsset.orderCancel
                 : orderStatus == 4
-                    ? ImageAsset.orderDelivered
-                    : ImageAsset.shoppingBag,
+                ? ImageAsset.orderDelivered
+                : ImageAsset.shoppingBag,
             height: responsive.setHeight(5),
           ),
           responsive.setSizeBox(width: 4),
@@ -395,17 +499,19 @@ class OrderDetailsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(context.translate(AppStrings.orderID),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: responsive.setTextSize(3.5))),
+              Text(
+                context.translate(AppStrings.orderID),
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: responsive.setTextSize(3.5),
+                ),
+              ),
               responsive.setSizeBox(height: 0.5),
-              Text("# ${order.sId ?? ''}",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontSize: responsive.setTextSize(3.5))),
+              Text(
+                "# ${order.sId ?? ''}",
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: responsive.setTextSize(3.5),
+                ),
+              ),
             ],
           ),
         ],

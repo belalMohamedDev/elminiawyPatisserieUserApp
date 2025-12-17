@@ -17,6 +17,7 @@ class AppStrings {
   static const String pickStoreLocationHint = "pickStoreLocationHint";
   static const String processing = "processing";
   static const String driverData = "driverData";
+  static const String userData = "userData";
 
   static const String required = "Required";
   static const String createProduct = "createProduct";
