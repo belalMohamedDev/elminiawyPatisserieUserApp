@@ -72,13 +72,14 @@ class OrderDetailsBody extends StatelessWidget {
                           isEnLocale,
                         ),
                         responsive.setSizeBox(height: 1),
-                        _driverInformationContainer(
-                          responsive,
-                          context,
-                          createOrderResponse,
-                          order,
-                        ),
-                        responsive.setSizeBox(height: 1),
+                        if (order!.driverId != null) ...[
+                          _driverInformationContainer(
+                            responsive,
+                            context,
+                            order,
+                          ),
+                          responsive.setSizeBox(height: 1),
+                        ],
                       ],
                     ),
                   ),
@@ -115,51 +116,72 @@ class OrderDetailsBody extends StatelessWidget {
     );
   }
 
-  Container _driverInformationContainer(
+  Widget _driverInformationContainer(
     ResponsiveUtils responsive,
     BuildContext context,
-    OrderResponseData? orderResponse,
+
     GetOrdersResponseData? order,
   ) {
-    dynamic response = order ?? orderResponse;
-
     return Container(
       width: double.infinity,
-      height: responsive.setHeight(6),
+      height: responsive.setHeight(10),
       decoration: BoxDecoration(
         color: ColorManger.backgroundItem,
         borderRadius: BorderRadius.circular(responsive.setBorderRadius(2.5)),
       ),
       child: Padding(
-        padding: responsive.setPadding(left: 3, right: 3),
-        child: Row(
+        padding: responsive.setPadding(left: 3, right: 3, top: 2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+
           children: [
-            Icon(
-              IconlyBold.profile,
-              color: ColorManger.brun,
-              size: responsive.setHeight(2),
+            Row(
+              children: [
+                Image.asset(
+                  ImageAsset.deliveryBike,
+
+                  height: responsive.setHeight(2.4),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  context.translate(AppStrings.driverData),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
+                ),
+              ],
             ),
-            responsive.setSizeBox(width: 2),
-            Text(
-              "${response.shippingAddress != null ? response.user?.name ?? '' : response.customerName}",
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                color: ColorManger.brun,
-                fontSize: responsive.setTextSize(3.5),
-              ),
-            ),
-            responsive.setSizeBox(width: 10),
-            Icon(
-              IconlyBold.call,
-              color: ColorManger.brun,
-              size: responsive.setHeight(2),
-            ),
-            responsive.setSizeBox(width: 2),
-            Text(
-              "${response.shippingAddress != null ? response.shippingAddress?.phone ?? '' : response.customerPhone}",
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                color: ColorManger.brun,
-                fontSize: responsive.setTextSize(3.5),
-              ),
+            SizedBox(height: responsive.setHeight(1.5)),
+            Row(
+              children: [
+                Icon(
+                  IconlyBold.profile,
+                  color: ColorManger.brun,
+                  size: responsive.setHeight(2),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  "${order!.driverId?.name}",
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: ColorManger.brun,
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+                responsive.setSizeBox(width: 10),
+                Icon(
+                  IconlyBold.call,
+                  color: ColorManger.brun,
+                  size: responsive.setHeight(2),
+                ),
+                responsive.setSizeBox(width: 2),
+                Text(
+                  "${order.driverId!.phone}",
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: ColorManger.brun,
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

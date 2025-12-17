@@ -44,6 +44,7 @@ class GetOrdersResponseData {
   @JsonKey(name: "_id")
   String? sId;
   GetOrdersUser? user;
+  GetOrdersUser? driverId;
   String? notes;
   int? status;
   List<OrdersCartItems>? cartItems;

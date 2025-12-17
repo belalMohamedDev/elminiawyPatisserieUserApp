@@ -333,5 +333,6 @@
   "saveStore": "Save Store",
   "noLocationSelected": "No location selected",
   "pickStoreLocation": "Pick Store Location",
-  "pickStoreLocationHint": "Select store location and delivery zone from the map"
+  "pickStoreLocationHint": "Select store location and delivery zone from the map",
+  "driverData": "Driver Data"
 }

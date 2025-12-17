@@ -52,44 +52,49 @@ Map<String, dynamic> _$PaginationGetOrdersRusltToJson(
 
 GetOrdersResponseData _$GetOrdersResponseDataFromJson(
   Map<String, dynamic> json,
-) => GetOrdersResponseData(
-  sId: json['_id'] as String?,
-  user: json['user'] == null
-      ? null
-      : GetOrdersUser.fromJson(json['user'] as Map<String, dynamic>),
-  notes: json['notes'] as String?,
-  status: (json['status'] as num?)?.toInt(),
-  cartItems: (json['cartItems'] as List<dynamic>?)
-      ?.map((e) => OrdersCartItems.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  taxPrice: (json['taxPrice'] as num?)?.toDouble(),
-  shippingPrice: (json['shippingPrice'] as num?)?.toDouble(),
-  shippingAddress: json['shippingAddress'] == null
-      ? null
-      : OrdersShippingAddress.fromJson(
-          json['shippingAddress'] as Map<String, dynamic>,
-        ),
-  totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
-  paymentMethodType: json['paymentMethodType'] as String?,
-  driverDeliveredAt: json['driverDeliveredAt'] as String?,
-  orderNumber: (json['orderNumber'] as num?)?.toInt(),
-  adminAcceptedAt: json['adminAcceptedAt'] as String?,
-  driverAcceptedAt: json['driverAcceptedAt'] as String?,
-  adminCompletedAt: json['adminCompletedAt'] as String?,
-  createdAt: json['createdAt'] as String?,
-  canceledAt: json['canceledAt'] as String?,
-  customerName: json['customerName'] as String?,
-  customerPhone: json['customerPhone'] as String?,
-  customerAddressText: json['customerAddressText'] as String?,
-  orderSource: json['orderSource'] as String?,
-  updatedAt: json['updatedAt'] as String?,
-);
+) =>
+    GetOrdersResponseData(
+        sId: json['_id'] as String?,
+        user: json['user'] == null
+            ? null
+            : GetOrdersUser.fromJson(json['user'] as Map<String, dynamic>),
+        notes: json['notes'] as String?,
+        status: (json['status'] as num?)?.toInt(),
+        cartItems: (json['cartItems'] as List<dynamic>?)
+            ?.map((e) => OrdersCartItems.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        taxPrice: (json['taxPrice'] as num?)?.toDouble(),
+        shippingPrice: (json['shippingPrice'] as num?)?.toDouble(),
+        shippingAddress: json['shippingAddress'] == null
+            ? null
+            : OrdersShippingAddress.fromJson(
+                json['shippingAddress'] as Map<String, dynamic>,
+              ),
+        totalOrderPrice: (json['totalOrderPrice'] as num?)?.toDouble(),
+        paymentMethodType: json['paymentMethodType'] as String?,
+        driverDeliveredAt: json['driverDeliveredAt'] as String?,
+        orderNumber: (json['orderNumber'] as num?)?.toInt(),
+        adminAcceptedAt: json['adminAcceptedAt'] as String?,
+        driverAcceptedAt: json['driverAcceptedAt'] as String?,
+        adminCompletedAt: json['adminCompletedAt'] as String?,
+        createdAt: json['createdAt'] as String?,
+        canceledAt: json['canceledAt'] as String?,
+        customerName: json['customerName'] as String?,
+        customerPhone: json['customerPhone'] as String?,
+        customerAddressText: json['customerAddressText'] as String?,
+        orderSource: json['orderSource'] as String?,
+        updatedAt: json['updatedAt'] as String?,
+      )
+      ..driverId = json['driverId'] == null
+          ? null
+          : GetOrdersUser.fromJson(json['driverId'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$GetOrdersResponseDataToJson(
   GetOrdersResponseData instance,
 ) => <String, dynamic>{
   '_id': instance.sId,
   'user': instance.user,
+  'driverId': instance.driverId,
   'notes': instance.notes,
   'status': instance.status,
   'cartItems': instance.cartItems,
