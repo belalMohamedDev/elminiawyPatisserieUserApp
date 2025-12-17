@@ -1,6 +1,6 @@
 {
   "noRouteFound": "لم يتم العثور على طريق",
-  "welcomeToElminiawyPatisserie": "مرحبًا بك في حلوانى المنياوى، تذوق السعادة مع كل قضمة!",
+  "welcomeToElminiawyPatisserie": "مرحبًا بك في حلوانى كيتو، تذوق السعادة مع كل قضمة!",
   "discoverOurWonderfulSelection": "اكتشف تشكيلتنا الرائعة من المعجنات الطازجة والمخبوزات، المعدة بحب وشغف.",
   "letsGetStarted": "هيا بنا لنبدأ !",
   "alreadyHaveAnAccount": "هل لديك حساب بالفعل؟",
@@ -10,6 +10,7 @@
   "welcomeBack": "مرحبًا بعودتك!",
   "toGetStartedSignInToYourAccount": "للبدء، سجل الدخول إلى حسابك.",
   "searchProducts": "ابحث عن المنتجات",
+  "processing": "قيد التنفيذ",
   "sortBy": "ترتيب حسب",
   "nameAToZ": "الاسم: من A إلى Z",
   "nameZToA": "الاسم: من Z إلى A",

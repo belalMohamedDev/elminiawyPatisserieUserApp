@@ -15,8 +15,9 @@ class OrdersTab extends StatelessWidget {
         final order = getOrdersResponseData[index];
         return Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: responsive.setWidth(4),
-              vertical: responsive.setHeight(0.5)),
+            horizontal: responsive.setWidth(4),
+            vertical: responsive.setHeight(0.5),
+          ),
           child: InkWell(
             onTap: () {
               Navigator.push(
@@ -38,78 +39,94 @@ class OrdersTab extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  SizedBox(
-                    width: 10.w,
-                  ),
+                  SizedBox(width: 10.w),
+
                   Container(
                     width: responsive.setWidth(20),
+                    height: 60.h,
                     decoration: BoxDecoration(
                       color: ColorManger.brownLight,
                       borderRadius: BorderRadius.circular(14.r),
                     ),
-                    child: CachedNetworkImage(
-                      imageUrl: order.cartItems!.first.product!.image ?? '',
-                      height: 60.h,
-                      placeholder: (context, url) => Image.asset(
-                        ImageAsset.picture,
-                        height: 60.h,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(14.r),
+                      child: CachedNetworkImage(
+                        imageUrl: order.cartItems!.first.product!.image ?? '',
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) =>
+                            Image.asset(ImageAsset.picture, fit: BoxFit.cover),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
                       ),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
                     ),
                   ),
-                  SizedBox(
-                    width: 15.w,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '${context.translate(AppStrings.orderNum)} ${order.sId}',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge!
-                            .copyWith(fontSize: 12.sp),
-                      ),
-                      SizedBox(
-                        height: 2.h,
-                      ),
-                      Text(
-                        '${context.translate(AppStrings.totalPrice)}  ${order.totalOrderPrice}  ${context.translate(AppStrings.egy)}',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(fontSize: 12.sp),
-                      ),
-                      SizedBox(
-                        height: 2.h,
-                      ),
-                      Text(
-                        order.status == 4
-                            ? context.translate(AppStrings.delivered)
-                            : order.status == 5
-                                ? context.translate(AppStrings.cancelled)
-                                : 'Processing',
-                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            color: order.status == 5
-                                ? ColorManger.redError
-                                : order.status == 4
+
+                  SizedBox(width: 12.w),
+
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '${context.translate(AppStrings.orderNum)} #${order.sId}',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.titleMedium!
+                              .copyWith(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                              ),
+                        ),
+
+                        SizedBox(height: 5.h),
+
+                        Text(
+                          '${context.translate(AppStrings.totalPrice)} '
+                          '${order.totalOrderPrice} '
+                          '${context.translate(AppStrings.egy)}',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodyMedium!
+                              .copyWith(
+                                fontSize: 11.5.sp,
+                                color: Colors.grey.shade700,
+                              ),
+                        ),
+
+                        SizedBox(height: 6.h),
+
+                        Text(
+                          order.status == 4
+                              ? context.translate(AppStrings.delivered)
+                              : order.status == 5
+                              ? context.translate(AppStrings.cancelled)
+                              : context.translate(AppStrings.processing),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodyMedium!
+                              .copyWith(
+                                fontSize: 11.5.sp,
+                                fontWeight: FontWeight.w500,
+                                color: order.status == 5
+                                    ? ColorManger.redError
+                                    : order.status == 4
                                     ? Colors.green
-                                    : const Color.fromARGB(255, 194, 155, 38),
-                            fontSize: 12.sp),
-                      ),
-                    ],
+                                    : const Color(0xFFC29B26),
+                              ),
+                        ),
+                      ],
+                    ),
                   ),
-                  const Spacer(),
+
+                  /// Arrow
                   Icon(
-                    IconlyBold.arrowRightCircle,
+                    IconlyBold.arrowLeftCircle,
                     color: ColorManger.brun,
-                    size: 25.h,
+                    size: 24.sp,
                   ),
-                  SizedBox(
-                    width: 10.w,
-                  )
+
+                  SizedBox(width: 10.w),
                 ],
               ),
             ),
