@@ -87,7 +87,10 @@ GetOrdersResponseData _$GetOrdersResponseDataFromJson(
       )
       ..driverId = json['driverId'] == null
           ? null
-          : GetOrdersUser.fromJson(json['driverId'] as Map<String, dynamic>);
+          : GetOrdersUser.fromJson(json['driverId'] as Map<String, dynamic>)
+      ..payments = (json['payments'] as List<dynamic>?)
+          ?.map((e) => PaymentsData.fromJson(e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$GetOrdersResponseDataToJson(
   GetOrdersResponseData instance,
@@ -103,6 +106,7 @@ Map<String, dynamic> _$GetOrdersResponseDataToJson(
   'shippingAddress': instance.shippingAddress,
   'totalOrderPrice': instance.totalOrderPrice,
   'paymentMethodType': instance.paymentMethodType,
+  'payments': instance.payments,
   'orderNumber': instance.orderNumber,
   'createdAt': instance.createdAt,
   'updatedAt': instance.updatedAt,
@@ -151,6 +155,23 @@ Map<String, dynamic> _$OrdersCartItemsToJson(OrdersCartItems instance) =>
       'price': instance.price,
       'totalItemPrice': instance.totalItemPrice,
       'sId': instance.sId,
+    };
+
+PaymentsData _$PaymentsDataFromJson(Map<String, dynamic> json) => PaymentsData(
+  amount: (json['amount'] as num?)?.toDouble(),
+  paidAt: json['paidAt'] as String?,
+  paidBy: json['paidBy'] == null
+      ? null
+      : GetOrdersUser.fromJson(json['paidBy'] as Map<String, dynamic>),
+  method: json['method'] as String?,
+);
+
+Map<String, dynamic> _$PaymentsDataToJson(PaymentsData instance) =>
+    <String, dynamic>{
+      'amount': instance.amount,
+      'paidAt': instance.paidAt,
+      'method': instance.method,
+      'paidBy': instance.paidBy,
     };
 
 OrdersProduct _$OrdersProductFromJson(Map<String, dynamic> json) =>

@@ -53,6 +53,8 @@ class GetOrdersResponseData {
   OrdersShippingAddress? shippingAddress;
   double? totalOrderPrice;
   String? paymentMethodType;
+  List<PaymentsData>? payments;
+
 
   int? orderNumber;
 
@@ -137,6 +139,26 @@ class OrdersCartItems {
   //to json
   Map<String, dynamic> toJson() => _$OrdersCartItemsToJson(this);
 }
+
+
+
+@JsonSerializable()
+class PaymentsData {
+  double? amount;
+  String? paidAt;
+  String? method;
+  GetOrdersUser? paidBy;
+
+  PaymentsData(
+      {this.amount, this.paidAt, this.paidBy, this.method});
+  //from json
+  factory PaymentsData.fromJson(Map<String, dynamic> json) =>
+      _$PaymentsDataFromJson(json);
+
+  //to json
+  Map<String, dynamic> toJson() => _$PaymentsDataToJson(this);
+}
+
 
 @JsonSerializable()
 class OrdersProduct {

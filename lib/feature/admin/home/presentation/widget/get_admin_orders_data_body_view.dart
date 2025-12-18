@@ -312,13 +312,7 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                         }
                                       },
                                       child: Text(
-                                        // isPendingOrder
-                                        //     ? "Order Done"
-                                        //     : isDeliveredOrder
-                                        //     ? "Order Delivered"
-                                        //     : isPendingDriver
-                                        //     ? "Assign Driver"
-                                        //     : "Accept",
+                                 
                                         isPendingOrder
                                             ? context.translate(
                                                 AppStrings.orderDone,

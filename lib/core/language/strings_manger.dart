@@ -19,14 +19,14 @@ class AppStrings {
   static const String driverData = "driverData";
   static const String userData = "userData";
 
-
+  static const String paidBy = "paidBy";
+  static const String date = "date";
   static const String paymentType = "paymentType";
   static const String fullPayment = "fullPayment";
   static const String deferredPayment = "deferredPayment";
   static const String paidAmount = "paidAmount";
   static const String enterPaidAmount = "enterPaidAmount";
   static const String remainingAmount = "remainingAmount";
-
 
   static const String required = "Required";
   static const String createProduct = "createProduct";
@@ -415,4 +415,18 @@ class AppStrings {
   static const String briefness = "briefness";
   static const String saveStore = "saveStore";
   static const String noLocationSelected = "noLocationSelected";
+
+
+  static const String addDeposit = "addDeposit";
+  static const String completePayment = "completePayment";
+  static const String amount = "amount";
+  static const String max = "max";
+  static const String confirm = "confirm";
+  static const String payRemaining = "payRemaining";
+  static const String paid = "paid";
+  static const String fullyPaid = "fullyPaid";
+
+
+
+
 }

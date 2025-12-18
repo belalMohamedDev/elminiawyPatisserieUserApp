@@ -341,5 +341,16 @@
   "deferredPayment": "دفع آجل",
   "paidAmount": "المبلغ المدفوع",
   "enterPaidAmount": "أدخل المبلغ المدفوع",
-  "remainingAmount": "المبلغ المتبقي"
+  "remainingAmount": "المبلغ المتبقي",
+  "paidBy": "مدفوع بواسطة",
+  "date": "التاريخ",
+  "addDeposit": "إضافة عربون",
+  "completePayment": "إتمام القسط",
+  "amount": "المبلغ",
+  "max": "الحد الأقصى",
+  "confirm": "تأكيد",
+  "payRemaining": "دفع المبلغ المتبقي",
+  "paid": "المدفوع",
+  "remaining": "المتبقي",
+  "fullyPaid": "مدفوع بالكامل"
 }

@@ -12,6 +12,21 @@ class OrderDetailsScreen extends StatelessWidget {
     bool isEnLocale = AppLocalizations.of(context)?.isEnLocale ?? true;
 
     final responsive = ResponsiveUtils(context);
+
+    /// ====== Payment Logic ======
+    final payments = orderModel.payments ?? [];
+
+    final totalPaid = payments.fold<double>(
+      0,
+      (sum, p) => sum + (p.amount ?? 0),
+    );
+
+    final totalOrder = orderModel.totalOrderPrice ?? 0;
+    final remaining = totalOrder - totalPaid;
+
+    final isFullyPaid = remaining <= 0;
+
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -67,9 +82,310 @@ class OrderDetailsScreen extends StatelessWidget {
                   ? _driverInformationContainer(responsive, context)
                   : const SizedBox(),
             ),
+            SliverToBoxAdapter(
+              child: orderModel.payments!.isNotEmpty
+                  ? _addDpositeAndDoneAmountRow(
+                      isFullyPaid,
+                      context,
+                      responsive,
+                      remaining,
+                    )
+                  : SizedBox(),
+            ),
+
+            SliverToBoxAdapter(
+              child: orderModel.payments!.isNotEmpty
+                  ? _paymentsCard(responsive)
+                  : const SizedBox(),
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _addDpositeAndDoneAmountRow(
+    bool isFullyPaid,
+    BuildContext context,
+    ResponsiveUtils responsive,
+    double remaining,
+  ) {
+    return isFullyPaid
+        ? SizedBox()
+        : Column(
+            children: [
+              SizedBox(height: responsive.setHeight(2)),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      icon: const Icon(Icons.add),
+                      label: Text(
+                        context.translate(AppStrings.addDeposit),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontSize: responsive.setTextSize(3.8),
+                        ),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: ColorManger.brun,
+                        side: BorderSide(color: ColorManger.brun, width: 1.2),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      onPressed: () {
+                        _showAddPaymentBottomSheet(
+                          context,
+                          orderId: orderModel.sId!,
+                          maxAmount: remaining,
+                        );
+                      },
+                    ),
+                  ),
+
+                  responsive.setSizeBox(width: 3),
+
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      icon: Icon(Icons.check_circle, color: ColorManger.white),
+                      label: Text(
+                        context.translate(AppStrings.completePayment),
+
+                        style: Theme.of(context).textTheme.headlineSmall
+                            ?.copyWith(fontSize: responsive.setTextSize(3.8)),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ColorManger.brun,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      onPressed: () {
+                        _confirmCompletePayment(
+                          context,
+                          orderId: orderModel.sId!,
+                          remaining: remaining,
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+
+              responsive.setSizeBox(height: 2),
+            ],
+          );
+  }
+
+  void _confirmCompletePayment(
+    BuildContext context, {
+    required String orderId,
+    required double remaining,
+  }) {
+    final responsive = ResponsiveUtils(context);
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: ColorManger.brun,
+        title: Text(
+          context.translate(AppStrings.completePayment),
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            fontSize: responsive.setTextSize(3.8),
+          ),
+        ),
+        content: Text(
+          "${context.translate(AppStrings.payRemaining)} $remaining",
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            fontSize: responsive.setTextSize(3.8),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              context.translate(AppStrings.cancel),
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                fontSize: responsive.setTextSize(3.8),
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              // context.read<AdminHomeCubit>().addPayment(
+              //   orderId: orderId,
+              //   amount: remaining,
+              // );
+              Navigator.pop(context);
+            },
+            child: Text(
+              context.translate(AppStrings.confirm),
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                fontSize: responsive.setTextSize(3.8),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showAddPaymentBottomSheet(
+    BuildContext context, {
+    required String orderId,
+    required double maxAmount,
+  }) {
+    final controller = TextEditingController();
+    final responsive = ResponsiveUtils(context);
+    showModalBottomSheet(
+      backgroundColor: ColorManger.brun,
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) {
+        return Padding(
+          padding: responsive.setPadding(bottom: 3, left: 4, right: 4, top: 3),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                context.translate(AppStrings.addDeposit),
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  fontSize: responsive.setTextSize(4),
+                ),
+              ),
+              SizedBox(height: responsive.setHeight(2)),
+
+              TextField(
+                controller: controller,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: context.translate(AppStrings.amount),
+                  helperText: "${context.translate(AppStrings.max)} $maxAmount",
+                  helperStyle: Theme.of(context).textTheme.headlineSmall
+                      ?.copyWith(fontSize: responsive.setTextSize(4)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: responsive.setHeight(2)),
+
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all<Color>(
+                      ColorManger.backgroundItem,
+                    ),
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    final amount = double.tryParse(controller.text);
+                    if (amount == null || amount <= 0 || amount > maxAmount) {
+                      return;
+                    }
+
+                    // context.read<AdminHomeCubit>().addPayment(
+                    //   orderId: orderId,
+                    //   amount: amount,
+                    // );
+
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    context.translate(AppStrings.confirm),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontSize: responsive.setTextSize(4),
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 16),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _paymentsCard(ResponsiveUtils responsive) {
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: orderModel.payments!.length,
+      separatorBuilder: (_, __) => const SizedBox(height: 8),
+      itemBuilder: (context, index) {
+        final payment = orderModel.payments![index];
+
+        return Container(
+          width: double.infinity,
+          height: responsive.setHeight(10.5),
+          decoration: BoxDecoration(
+            color: ColorManger.backgroundItem,
+            borderRadius: BorderRadius.circular(responsive.setBorderRadius(3)),
+          ),
+          child: ListTile(
+            title: Row(
+              children: [
+                Image.asset(
+                  ImageAsset.labelPrice,
+                  height: responsive.setHeight(3.5),
+                ),
+                responsive.setSizeBox(width: 1),
+                Text(
+                  "${payment.amount} ${context.translate(AppStrings.egy)}",
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+                responsive.setSizeBox(width: 10),
+                Image.asset(
+                  ImageAsset.calendar,
+                  height: responsive.setHeight(2.4),
+                ),
+                responsive.setSizeBox(width: 1),
+                Text(
+                  "${payment.paidAt?.getFormattedDateAndHourse()}",
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(3.5),
+                  ),
+                ),
+              ],
+            ),
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                responsive.setSizeBox(height: 1.5),
+                Row(
+                  children: [
+                    Image.asset(
+                      ImageAsset.user,
+                      color: ColorManger.brun,
+                      height: responsive.setHeight(2.4),
+                    ),
+                    responsive.setSizeBox(width: 1),
+                    Text(
+                      payment.paidBy?.name ?? "-",
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        fontSize: responsive.setTextSize(3.5),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 

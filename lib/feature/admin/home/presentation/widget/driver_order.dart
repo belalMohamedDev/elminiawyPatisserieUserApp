@@ -47,7 +47,7 @@ class DriverOrder extends StatelessWidget {
                   image: ImageAsset.deferredPayment,
                   titleText: context.translate(AppStrings.deferredPayment),
                   bodyText:
-                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.topProducts ?? 0}",
+                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.deferredOrders ?? 0}",
                 ),
               ),
             ],

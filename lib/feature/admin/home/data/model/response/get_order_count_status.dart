@@ -34,7 +34,7 @@ class GetOrderStatusCountDataResponse {
   double? totalSalesToday;
   double? totalSalesLastWeek;
   int? totalItemsSoldLastWeek;
-  int? topProducts;
+  int? deferredOrders;
 
   GetOrderStatusCountDataResponse({
     this.newOrders,
@@ -46,7 +46,7 @@ class GetOrderStatusCountDataResponse {
     this.totalSalesToday,
     this.totalSalesLastWeek,
     this.totalItemsSoldLastWeek,
-    this.topProducts,
+    this.deferredOrders,
   });
 
   GetOrderStatusCountDataResponse.fromJson(Map<String, dynamic> json) {
@@ -59,7 +59,7 @@ class GetOrderStatusCountDataResponse {
     totalSalesToday = (json['totalSalesToday'] ?? 0).toDouble();
     totalSalesLastWeek = (json['totalSalesLastWeek'] ?? 0).toDouble();
     totalItemsSoldLastWeek = json['totalItemsSoldLastWeek'];
-    topProducts = json['topProducts'];
+    deferredOrders = json['deferredOrders'];
   }
 
   Map<String, dynamic> toJson() {
@@ -73,7 +73,7 @@ class GetOrderStatusCountDataResponse {
     data['totalSalesToday'] = totalSalesToday;
     data['totalSalesLastWeek'] = totalSalesLastWeek;
     data['totalItemsSoldLastWeek'] = totalItemsSoldLastWeek;
-    data['topProducts'] = topProducts;
+    data['deferredOrders'] = deferredOrders;
     return data;
   }
 }

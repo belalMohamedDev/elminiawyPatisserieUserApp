@@ -341,5 +341,16 @@
   "deferredPayment": "Deferred Payment",
   "paidAmount": "Paid Amount",
   "enterPaidAmount": "Enter Paid Amount",
-  "remainingAmount": "Remaining Amount"
+  "remainingAmount": "Remaining Amount",
+  "paidBy": "Paid By",
+  "date": "Date",
+  "addDeposit": "Add Deposit",
+  "completePayment": "Complete Payment",
+  "amount": "Amount",
+  "max": "Max",
+  "confirm": "Confirm",
+  "payRemaining": "Pay remaining amount",
+  "paid": "Paid",
+  "remaining": "Remaining",
+  "fullyPaid": "Fully Paid"
 }
