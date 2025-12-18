@@ -3,18 +3,22 @@ import 'package:elminiawy/feature/admin/home/data/model/response/get_order_count
 import '../../../../../core/common/shared/shared_imports.dart'; //
 
 abstract class AdminOrderRepository {
-  Future<ApiResult<GetOrdersResponse>> getAllAdminOrderRepository(int status);
-  Future<ApiResult<OrderResponse>> updateAdminOrderStatusRepository(
-      {required String id,
-      String? adminAcceptedAt,
-      String? adminCompletedAt,
-      String? canceledAt,
-      String? driverDeliveredAt,
-      String? driverId,
-      String? driverAcceptedAt,
-      required int status});
+  Future<ApiResult<GetOrdersResponse>> getAllAdminOrderRepository({
+    int? status,
+    String? paymentStatus,
+  });
+  Future<ApiResult<OrderResponse>> updateAdminOrderStatusRepository({
+    required String id,
+    String? adminAcceptedAt,
+    String? adminCompletedAt,
+    String? canceledAt,
+    String? driverDeliveredAt,
+    String? driverId,
+    String? driverAcceptedAt,
+    required int status,
+  });
   Future<ApiResult<GetOrderStatusCountResponse>>
-      getOrdersStatusAndSalesTodayCountRepository();
+  getOrdersStatusAndSalesTodayCountRepository();
 }
 
 class OrderAdminRepositoryImplement implements AdminOrderRepository {
@@ -22,10 +26,17 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
   final AppServiceClient _apiService;
 
   @override
-  Future<ApiResult<GetOrdersResponse>> getAllAdminOrderRepository(
-      int status) async {
+  Future<ApiResult<GetOrdersResponse>> getAllAdminOrderRepository({
+    int? status,
+    String? paymentStatus,
+  }) async {
     try {
-      final response = await _apiService.getAllAdminOrdersService(status);
+      final response = await _apiService.getAllAdminOrdersService(
+        status!,
+       paymentStatus,
+      );
+   
+   
 
       return ApiResult.success(response);
     } catch (error) {
@@ -35,10 +46,10 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
 
   @override
   Future<ApiResult<GetOrderStatusCountResponse>>
-      getOrdersStatusAndSalesTodayCountRepository() async {
+  getOrdersStatusAndSalesTodayCountRepository() async {
     try {
-      final response =
-          await _apiService.getOrdersStatusAndSalesTodayCountService();
+      final response = await _apiService
+          .getOrdersStatusAndSalesTodayCountService();
 
       return ApiResult.success(response);
     } catch (error) {
@@ -47,24 +58,27 @@ class OrderAdminRepositoryImplement implements AdminOrderRepository {
   }
 
   @override
-  Future<ApiResult<OrderResponse>> updateAdminOrderStatusRepository(
-      {required String id,
-      String? adminAcceptedAt,
-      String? adminCompletedAt,
-      String? canceledAt,  String? driverId,
-      String? driverAcceptedAt,
-      String? driverDeliveredAt,
-      required int status}) async {
+  Future<ApiResult<OrderResponse>> updateAdminOrderStatusRepository({
+    required String id,
+    String? adminAcceptedAt,
+    String? adminCompletedAt,
+    String? canceledAt,
+    String? driverId,
+    String? driverAcceptedAt,
+    String? driverDeliveredAt,
+    required int status,
+  }) async {
     try {
       final response = await _apiService.updateAdminStatusOrdersService(
-          id,
-          adminAcceptedAt,
-          adminCompletedAt,
-          driverDeliveredAt,
-          canceledAt,
-          driverId,
-          driverAcceptedAt,
-          status);
+        id,
+        adminAcceptedAt,
+        adminCompletedAt,
+        driverDeliveredAt,
+        canceledAt,
+        driverId,
+        driverAcceptedAt,
+        status,
+      );
 
       return ApiResult.success(response);
     } catch (error) {

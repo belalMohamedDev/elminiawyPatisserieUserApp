@@ -317,6 +317,7 @@ abstract class AppServiceClient {
   @GET('${ApiConstants.order}/admin')
   Future<GetOrdersResponse> getAllAdminOrdersService(
     @Query("status") int status,
+    @Query("paymentStatus") String? paymentStatus,
   );
 
   @GET('${ApiConstants.order}/admin/status')

@@ -46,12 +46,18 @@ class AdminHomeCubit extends Cubit<AdminHomeState> {
 
   List<GetOrdersResponseData> getAdminOrders = [];
 
-  Future<void> getAdminOrdersSummit(int status) async {
+  Future<void> getAdminOrdersSummit({
+    int? status,
+    String? paymentStatus,
+  }) async {
     if (isClosed) return;
     emit(const AdminHomeState.getAdminOrdersLoading());
 
     final response = await _adminOrderRepositoryImplement
-        .getAllAdminOrderRepository(status);
+        .getAllAdminOrderRepository(
+          status: status,
+          paymentStatus: paymentStatus,
+        );
 
     if (isClosed) return;
 

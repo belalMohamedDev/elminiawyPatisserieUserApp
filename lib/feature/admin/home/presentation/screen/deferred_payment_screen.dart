@@ -1,20 +1,20 @@
-import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/admin/home/presentation/widget/get_admin_orders_data_body_view.dart';
 
-import '../widget/get_admin_orders_data_body_view.dart';
+import '../../../../../core/common/shared/shared_imports.dart';
 
-class CompleteOrdersView extends StatefulWidget {
-  const CompleteOrdersView({super.key});
+class DeferredPaymentScreen extends StatefulWidget {
+  const DeferredPaymentScreen({super.key});
 
   @override
-  State<CompleteOrdersView> createState() => _CompleteOrdersViewState();
+  State<DeferredPaymentScreen> createState() => _DeferredPaymentScreenState();
 }
 
-class _CompleteOrdersViewState extends State<CompleteOrdersView> {
+class _DeferredPaymentScreenState extends State<DeferredPaymentScreen> {
   @override
   void initState() {
     context.read<AdminHomeCubit>().getAdminOrdersSummit(
       status: 4,
-      paymentStatus: "paid",
+      paymentStatus: "partially_paid",
     );
 
     super.initState();
@@ -25,7 +25,7 @@ class _CompleteOrdersViewState extends State<CompleteOrdersView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          context.translate(AppStrings.completedOrders),
+          context.translate(AppStrings.deferredPayment),
           style: TextStyle(fontSize: 17),
         ),
       ),

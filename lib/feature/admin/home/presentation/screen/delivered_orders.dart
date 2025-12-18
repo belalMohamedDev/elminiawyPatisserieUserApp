@@ -12,7 +12,7 @@ class DeliverdOrders extends StatefulWidget {
 class _DeliverdOrdersState extends State<DeliverdOrders> {
   @override
   void initState() {
-    context.read<AdminHomeCubit>().getAdminOrdersSummit(3);
+    context.read<AdminHomeCubit>().getAdminOrdersSummit(status: 3);
 
     super.initState();
   }

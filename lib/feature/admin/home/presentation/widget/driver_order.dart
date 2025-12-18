@@ -39,11 +39,16 @@ class DriverOrder extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              SalesContainerWidget(
-                image: ImageAsset.cakeBox,
-                titleText: context.translate(AppStrings.topProducts),
-                bodyText:
-                    "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.topProducts ?? 0}",
+              GestureDetector(
+                onTap: () {
+                  context.pushNamed(Routes.deferredPaymentScreen);
+                },
+                child: SalesContainerWidget(
+                  image: ImageAsset.deferredPayment,
+                  titleText: context.translate(AppStrings.deferredPayment),
+                  bodyText:
+                      "${adminHomeCubit.getOrdersStatusAndSalesTodayCount?.data!.topProducts ?? 0}",
+                ),
               ),
             ],
           ),

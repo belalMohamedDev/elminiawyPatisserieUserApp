@@ -12,7 +12,7 @@ class PendingDriver extends StatefulWidget {
 class _PendingDriverState extends State<PendingDriver> {
   @override
   void initState() {
-    context.read<AdminHomeCubit>().getAdminOrdersSummit(2);
+    context.read<AdminHomeCubit>().getAdminOrdersSummit(status: 2);
 
     super.initState();
   }

@@ -12,7 +12,7 @@ class CancelledOrders extends StatefulWidget {
 class _CancelledOrdersState extends State<CancelledOrders> {
   @override
   void initState() {
-    context.read<AdminHomeCubit>().getAdminOrdersSummit(5);
+    context.read<AdminHomeCubit>().getAdminOrdersSummit(status: 5);
 
     super.initState();
   }

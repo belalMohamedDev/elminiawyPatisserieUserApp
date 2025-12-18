@@ -66,6 +66,7 @@ class ImageAsset {
   static const String noInternetConnection =
       "$imagePath/noInternetConnection.svg";
   static const String searchLoading = "$imagePath/searchLoading.svg";
+  static const String deferredPayment = "$imagePath/deferredPayment.png";
 }
 
 class JsonAsset {

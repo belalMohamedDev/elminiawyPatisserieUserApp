@@ -48,4 +48,5 @@ class Routes {
   static const String addSubCategoryScreen = "AddSubCategoryScreen";
   static const String addNewAdmin = "AddNewAdmin";
   static const String addNewDriver = "AddNewDriver";
+  static const String deferredPaymentScreen = "DeferredPaymentScreen";
 }

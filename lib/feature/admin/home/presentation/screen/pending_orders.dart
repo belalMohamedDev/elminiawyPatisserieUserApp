@@ -11,7 +11,7 @@ class PendingOrders extends StatefulWidget {
 class _PendingOrdersState extends State<PendingOrders> {
   @override
   void initState() {
-    context.read<AdminHomeCubit>().getAdminOrdersSummit(1);
+    context.read<AdminHomeCubit>().getAdminOrdersSummit(status: 1);
     super.initState();
   }
 

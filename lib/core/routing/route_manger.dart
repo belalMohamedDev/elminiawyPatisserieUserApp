@@ -1,6 +1,7 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/admins/presentation/screen/add_new_admin.dart';
 import 'package:elminiawy/feature/admin/driver/presentation/screen/add_new_driver.dart';
+import 'package:elminiawy/feature/admin/home/presentation/screen/deferred_payment_screen.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/panding_driver.dart';
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
@@ -336,6 +337,14 @@ class RouteGenerator {
           builder: (_) => BlocProvider(
             create: (_) => instance<AdminHomeCubit>(),
             child: const CompleteOrdersView(),
+          ),
+        );
+
+      case Routes.deferredPaymentScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => instance<AdminHomeCubit>(),
+            child: const DeferredPaymentScreen(),
           ),
         );
 
