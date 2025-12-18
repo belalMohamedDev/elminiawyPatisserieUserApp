@@ -1980,6 +1980,36 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
+  Future<ApiSuccessGeneralModel> addPaymentToOrderService(
+    String orderId,
+    double amount,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {'amount': amount};
+    final _options = _setStreamType<ApiSuccessGeneralModel>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/v1/api/order/admin/${orderId}/payments',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ApiSuccessGeneralModel _value;
+    try {
+      _value = ApiSuccessGeneralModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options, _result);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<GetOrderStatusCountResponse>
   getOrdersStatusAndSalesTodayCountService() async {
     final _extra = <String, dynamic>{};

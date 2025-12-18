@@ -26,81 +26,112 @@ class OrderDetailsScreen extends StatelessWidget {
 
     final isFullyPaid = remaining <= 0;
 
+    return BlocConsumer<PaymentCubit, PaymentState>(
+      listener: (context, state) {
+        if (state is AddPaymentOrdersError) {
+          ShowToast.showToastErrorTop(
+            context: context,
+            errorMessage: state.apiErrorModel.message!,
+          );
+        } else if (state is AddPaymentOrdersSuccess) {
+          ShowToast.showToastSuccessTop(
+            context: context,
+            message: context.translate(AppStrings.addPaymentSuccess),
+          );
+          Navigator.pop(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          context.translate(AppStrings.orderDetails),
-          style: Theme.of(
-            context,
-          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
-        ),
-        leading: IconButton(
-          icon: Icon(
-            isEnLocale ? IconlyBroken.arrowLeft : IconlyBroken.arrowRight,
-          ),
-          onPressed: () {
-            context.pop();
-          },
-        ),
-      ),
-      body: Padding(
-        padding: responsive.setPadding(right: 4, left: 4, top: 1),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: _orderIdContainer(context, orderModel, responsive),
-            ),
-            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
-            _productItemSliverList(orderModel, responsive),
-            SliverToBoxAdapter(
-              child: orderModel.notes.isNullOrEmpty()
-                  ? const SizedBox()
-                  : _noteContainer(responsive, context),
-            ),
-            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
-            SliverToBoxAdapter(
-              child: _orderShippingInformation(
-                context,
-                orderModel,
-                isEnLocale,
-                responsive,
+          Navigator.pop(context);
+        }
+      },
+      builder: (context, state) {
+        return Stack(
+          children: [
+            Scaffold(
+              appBar: AppBar(
+                centerTitle: true,
+                title: Text(
+                  context.translate(AppStrings.orderDetails),
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    fontSize: responsive.setTextSize(4),
+                  ),
+                ),
+                leading: IconButton(
+                  icon: Icon(
+                    isEnLocale
+                        ? IconlyBroken.arrowLeft
+                        : IconlyBroken.arrowRight,
+                  ),
+                  onPressed: () {
+                    context.pop();
+                  },
+                ),
+              ),
+              body: Padding(
+                padding: responsive.setPadding(right: 4, left: 4, top: 1),
+                child: CustomScrollView(
+                  slivers: [
+                    SliverToBoxAdapter(
+                      child: _orderIdContainer(context, orderModel, responsive),
+                    ),
+                    SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
+                    _productItemSliverList(orderModel, responsive),
+                    SliverToBoxAdapter(
+                      child: orderModel.notes.isNullOrEmpty()
+                          ? const SizedBox()
+                          : _noteContainer(responsive, context),
+                    ),
+                    SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
+                    SliverToBoxAdapter(
+                      child: _orderShippingInformation(
+                        context,
+                        orderModel,
+                        isEnLocale,
+                        responsive,
+                      ),
+                    ),
+                    SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
+                    SliverToBoxAdapter(
+                      child:
+                          orderModel.shippingAddress != null ||
+                              orderModel.orderSource == "phone"
+                          ? _userInformationContainer(responsive, context)
+                          : const SizedBox(),
+                    ),
+                    SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
+                    SliverToBoxAdapter(
+                      child: orderModel.driverId != null
+                          ? _driverInformationContainer(responsive, context)
+                          : const SizedBox(),
+                    ),
+                    SliverToBoxAdapter(
+                      child: orderModel.payments!.isNotEmpty
+                          ? _addDpositeAndDoneAmountRow(
+                              isFullyPaid,
+                              context,
+                              responsive,
+                              remaining,
+                            )
+                          : SizedBox(),
+                    ),
+                    SliverToBoxAdapter(
+                      child: responsive.setSizeBox(
+                        height: orderModel.driverId != null ? 1 : 0,
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: orderModel.payments!.isNotEmpty
+                          ? _paymentsCard(responsive)
+                          : const SizedBox(),
+                    ),
+                  ],
+                ),
               ),
             ),
-            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
-            SliverToBoxAdapter(
-              child:
-                  orderModel.shippingAddress != null ||
-                      orderModel.orderSource == "phone"
-                  ? _userInformationContainer(responsive, context)
-                  : const SizedBox(),
-            ),
-            SliverToBoxAdapter(child: responsive.setSizeBox(height: 1)),
-            SliverToBoxAdapter(
-              child: orderModel.driverId != null
-                  ? _driverInformationContainer(responsive, context)
-                  : const SizedBox(),
-            ),
-            SliverToBoxAdapter(
-              child: orderModel.payments!.isNotEmpty
-                  ? _addDpositeAndDoneAmountRow(
-                      isFullyPaid,
-                      context,
-                      responsive,
-                      remaining,
-                    )
-                  : SizedBox(),
-            ),
 
-            SliverToBoxAdapter(
-              child: orderModel.payments!.isNotEmpty
-                  ? _paymentsCard(responsive)
-                  : const SizedBox(),
-            ),
+            LoadingOverlay(isLoading: state is AddPaymentOrdersLoading),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
 
@@ -114,7 +145,11 @@ class OrderDetailsScreen extends StatelessWidget {
         ? SizedBox()
         : Column(
             children: [
-              SizedBox(height: responsive.setHeight(2)),
+              SizedBox(
+                height: orderModel.driverId != null
+                    ? responsive.setHeight(2)
+                    : 0,
+              ),
               Row(
                 children: [
                   Expanded(
@@ -211,10 +246,10 @@ class OrderDetailsScreen extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              // context.read<AdminHomeCubit>().addPayment(
-              //   orderId: orderId,
-              //   amount: remaining,
-              // );
+              context.read<PaymentCubit>().addPaymentSummit(
+                id: orderId,
+                amount: remaining,
+              );
               Navigator.pop(context);
             },
             child: Text(
@@ -244,6 +279,8 @@ class OrderDetailsScreen extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (_) {
+        String? errorText;
+
         return Padding(
           padding: responsive.setPadding(bottom: 3, left: 4, right: 4, top: 3),
           child: Column(
@@ -259,9 +296,26 @@ class OrderDetailsScreen extends StatelessWidget {
               SizedBox(height: responsive.setHeight(2)),
 
               TextField(
+                onChanged: (value) {
+                  final amount = double.tryParse(value);
+
+                  if (amount == null) {
+                    errorText = context.translate("AppStrings.invalidAmount");
+                  } else if (amount > maxAmount) {
+                    errorText =
+                        "${context.translate(AppStrings.max)} $maxAmount";
+                  } else {
+                    errorText = null;
+                  }
+
+                  // علشان يعيد بناء الـ BottomSheet
+                  (context as Element).markNeedsBuild();
+                },
                 controller: controller,
                 keyboardType: TextInputType.number,
+
                 decoration: InputDecoration(
+                  errorText: errorText,
                   labelText: context.translate(AppStrings.amount),
                   helperText: "${context.translate(AppStrings.max)} $maxAmount",
                   helperStyle: Theme.of(context).textTheme.headlineSmall
@@ -293,10 +347,10 @@ class OrderDetailsScreen extends StatelessWidget {
                       return;
                     }
 
-                    // context.read<AdminHomeCubit>().addPayment(
-                    //   orderId: orderId,
-                    //   amount: amount,
-                    // );
+                    context.read<PaymentCubit>().addPaymentSummit(
+                      id: orderId,
+                      amount: amount,
+                    );
 
                     Navigator.pop(context);
                   },
@@ -767,12 +821,17 @@ class OrderDetailsScreen extends StatelessWidget {
                               ),
                         ),
                         SizedBox(height: 5.h),
+                     
                         Text(
-                          '${cartItems[index].quantity} x ${cartItems[index].price} EGP',
+                          '${cartItems[index].quantity} × '
+                          '${cartItems[index].price} '
+                          ' ${context.translate(AppStrings.egy)}',
+                          textDirection: TextDirection.ltr, // مهم مع الأرقام
                           style: Theme.of(context).textTheme.bodyMedium!
                               .copyWith(
                                 fontSize: responsive.setTextSize(3.5),
                                 color: ColorManger.brunLight,
+                                fontWeight: FontWeight.w600,
                               ),
                         ),
                       ],

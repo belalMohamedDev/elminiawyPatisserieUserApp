@@ -8,7 +8,7 @@ abstract class OrderRepository {
       CreateOrderRequestBody createOrderRequestBody);
 
   Future<ApiResult<OrderResponse>> orderCancelledRepository(String id);
-
+  Future<ApiResult<ApiSuccessGeneralModel>> addPaymentRepository(String id, double amount);
 
   Future<ApiResult<GetOrdersResponse>> getAllOrderCompleteRepository();
   Future<ApiResult<GetOrdersResponse>> getAllOrderPendingRepository();
@@ -68,5 +68,15 @@ class OrderRepositoryImplement implements OrderRepository {
         return ApiResult.failure(ApiErrorHandler.handle(error));
       }
  
+  }
+  
+  @override
+  Future<ApiResult<ApiSuccessGeneralModel>> addPaymentRepository(String id, double amount)async {
+    try {
+      final response = await _apiService.addPaymentToOrderService(id, amount);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
   }
 }

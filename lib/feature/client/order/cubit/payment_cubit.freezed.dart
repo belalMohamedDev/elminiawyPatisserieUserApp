@@ -55,7 +55,7 @@ extension PaymentStatePatterns on PaymentState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( ChangeShippingIndex value)?  changeShippingIndex,TResult Function( ChoosePayment value)?  choosePayment,TResult Function( CreateCashOrderLoading value)?  createCashOrderLoading,TResult Function( CreateCashOrderError value)?  createCashOrderError,TResult Function( CreateCashOrderSuccess value)?  createCashOrderSuccess,TResult Function( GetCompleteOrdersLoading value)?  getCompleteOrdersLoading,TResult Function( GetCompleteOrdersError value)?  getCompleteOrdersError,TResult Function( GetCompleteOrdersSuccess value)?  getCompleteOrdersSuccess,TResult Function( OrderTypeChanged value)?  orderTypeChanged,TResult Function( GetPendingOrdersLoading value)?  getPendingOrdersLoading,TResult Function( GetPendingOrdersError value)?  getPendingOrdersError,TResult Function( GetPendingOrdersSuccess value)?  getPendingOrdersSuccess,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( ChangeShippingIndex value)?  changeShippingIndex,TResult Function( ChoosePayment value)?  choosePayment,TResult Function( CreateCashOrderLoading value)?  createCashOrderLoading,TResult Function( CreateCashOrderError value)?  createCashOrderError,TResult Function( CreateCashOrderSuccess value)?  createCashOrderSuccess,TResult Function( GetCompleteOrdersLoading value)?  getCompleteOrdersLoading,TResult Function( GetCompleteOrdersError value)?  getCompleteOrdersError,TResult Function( GetCompleteOrdersSuccess value)?  getCompleteOrdersSuccess,TResult Function( OrderTypeChanged value)?  orderTypeChanged,TResult Function( GetPendingOrdersLoading value)?  getPendingOrdersLoading,TResult Function( GetPendingOrdersError value)?  getPendingOrdersError,TResult Function( GetPendingOrdersSuccess value)?  getPendingOrdersSuccess,TResult Function( AddPaymentOrdersLoading value)?  addPaymentOrdersLoading,TResult Function( AddPaymentOrdersError value)?  addPaymentOrdersError,TResult Function( AddPaymentOrdersSuccess value)?  addPaymentOrdersSuccess,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -71,7 +71,10 @@ return getCompleteOrdersSuccess(_that);case OrderTypeChanged() when orderTypeCha
 return orderTypeChanged(_that);case GetPendingOrdersLoading() when getPendingOrdersLoading != null:
 return getPendingOrdersLoading(_that);case GetPendingOrdersError() when getPendingOrdersError != null:
 return getPendingOrdersError(_that);case GetPendingOrdersSuccess() when getPendingOrdersSuccess != null:
-return getPendingOrdersSuccess(_that);case _:
+return getPendingOrdersSuccess(_that);case AddPaymentOrdersLoading() when addPaymentOrdersLoading != null:
+return addPaymentOrdersLoading(_that);case AddPaymentOrdersError() when addPaymentOrdersError != null:
+return addPaymentOrdersError(_that);case AddPaymentOrdersSuccess() when addPaymentOrdersSuccess != null:
+return addPaymentOrdersSuccess(_that);case _:
   return orElse();
 
 }
@@ -89,7 +92,7 @@ return getPendingOrdersSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( ChangeShippingIndex value)  changeShippingIndex,required TResult Function( ChoosePayment value)  choosePayment,required TResult Function( CreateCashOrderLoading value)  createCashOrderLoading,required TResult Function( CreateCashOrderError value)  createCashOrderError,required TResult Function( CreateCashOrderSuccess value)  createCashOrderSuccess,required TResult Function( GetCompleteOrdersLoading value)  getCompleteOrdersLoading,required TResult Function( GetCompleteOrdersError value)  getCompleteOrdersError,required TResult Function( GetCompleteOrdersSuccess value)  getCompleteOrdersSuccess,required TResult Function( OrderTypeChanged value)  orderTypeChanged,required TResult Function( GetPendingOrdersLoading value)  getPendingOrdersLoading,required TResult Function( GetPendingOrdersError value)  getPendingOrdersError,required TResult Function( GetPendingOrdersSuccess value)  getPendingOrdersSuccess,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( ChangeShippingIndex value)  changeShippingIndex,required TResult Function( ChoosePayment value)  choosePayment,required TResult Function( CreateCashOrderLoading value)  createCashOrderLoading,required TResult Function( CreateCashOrderError value)  createCashOrderError,required TResult Function( CreateCashOrderSuccess value)  createCashOrderSuccess,required TResult Function( GetCompleteOrdersLoading value)  getCompleteOrdersLoading,required TResult Function( GetCompleteOrdersError value)  getCompleteOrdersError,required TResult Function( GetCompleteOrdersSuccess value)  getCompleteOrdersSuccess,required TResult Function( OrderTypeChanged value)  orderTypeChanged,required TResult Function( GetPendingOrdersLoading value)  getPendingOrdersLoading,required TResult Function( GetPendingOrdersError value)  getPendingOrdersError,required TResult Function( GetPendingOrdersSuccess value)  getPendingOrdersSuccess,required TResult Function( AddPaymentOrdersLoading value)  addPaymentOrdersLoading,required TResult Function( AddPaymentOrdersError value)  addPaymentOrdersError,required TResult Function( AddPaymentOrdersSuccess value)  addPaymentOrdersSuccess,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -105,7 +108,10 @@ return getCompleteOrdersSuccess(_that);case OrderTypeChanged():
 return orderTypeChanged(_that);case GetPendingOrdersLoading():
 return getPendingOrdersLoading(_that);case GetPendingOrdersError():
 return getPendingOrdersError(_that);case GetPendingOrdersSuccess():
-return getPendingOrdersSuccess(_that);case _:
+return getPendingOrdersSuccess(_that);case AddPaymentOrdersLoading():
+return addPaymentOrdersLoading(_that);case AddPaymentOrdersError():
+return addPaymentOrdersError(_that);case AddPaymentOrdersSuccess():
+return addPaymentOrdersSuccess(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -122,7 +128,7 @@ return getPendingOrdersSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( ChangeShippingIndex value)?  changeShippingIndex,TResult? Function( ChoosePayment value)?  choosePayment,TResult? Function( CreateCashOrderLoading value)?  createCashOrderLoading,TResult? Function( CreateCashOrderError value)?  createCashOrderError,TResult? Function( CreateCashOrderSuccess value)?  createCashOrderSuccess,TResult? Function( GetCompleteOrdersLoading value)?  getCompleteOrdersLoading,TResult? Function( GetCompleteOrdersError value)?  getCompleteOrdersError,TResult? Function( GetCompleteOrdersSuccess value)?  getCompleteOrdersSuccess,TResult? Function( OrderTypeChanged value)?  orderTypeChanged,TResult? Function( GetPendingOrdersLoading value)?  getPendingOrdersLoading,TResult? Function( GetPendingOrdersError value)?  getPendingOrdersError,TResult? Function( GetPendingOrdersSuccess value)?  getPendingOrdersSuccess,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( ChangeShippingIndex value)?  changeShippingIndex,TResult? Function( ChoosePayment value)?  choosePayment,TResult? Function( CreateCashOrderLoading value)?  createCashOrderLoading,TResult? Function( CreateCashOrderError value)?  createCashOrderError,TResult? Function( CreateCashOrderSuccess value)?  createCashOrderSuccess,TResult? Function( GetCompleteOrdersLoading value)?  getCompleteOrdersLoading,TResult? Function( GetCompleteOrdersError value)?  getCompleteOrdersError,TResult? Function( GetCompleteOrdersSuccess value)?  getCompleteOrdersSuccess,TResult? Function( OrderTypeChanged value)?  orderTypeChanged,TResult? Function( GetPendingOrdersLoading value)?  getPendingOrdersLoading,TResult? Function( GetPendingOrdersError value)?  getPendingOrdersError,TResult? Function( GetPendingOrdersSuccess value)?  getPendingOrdersSuccess,TResult? Function( AddPaymentOrdersLoading value)?  addPaymentOrdersLoading,TResult? Function( AddPaymentOrdersError value)?  addPaymentOrdersError,TResult? Function( AddPaymentOrdersSuccess value)?  addPaymentOrdersSuccess,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -138,7 +144,10 @@ return getCompleteOrdersSuccess(_that);case OrderTypeChanged() when orderTypeCha
 return orderTypeChanged(_that);case GetPendingOrdersLoading() when getPendingOrdersLoading != null:
 return getPendingOrdersLoading(_that);case GetPendingOrdersError() when getPendingOrdersError != null:
 return getPendingOrdersError(_that);case GetPendingOrdersSuccess() when getPendingOrdersSuccess != null:
-return getPendingOrdersSuccess(_that);case _:
+return getPendingOrdersSuccess(_that);case AddPaymentOrdersLoading() when addPaymentOrdersLoading != null:
+return addPaymentOrdersLoading(_that);case AddPaymentOrdersError() when addPaymentOrdersError != null:
+return addPaymentOrdersError(_that);case AddPaymentOrdersSuccess() when addPaymentOrdersSuccess != null:
+return addPaymentOrdersSuccess(_that);case _:
   return null;
 
 }
@@ -155,7 +164,7 @@ return getPendingOrdersSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( int index)?  changeShippingIndex,TResult Function( String choosePayment)?  choosePayment,TResult Function()?  createCashOrderLoading,TResult Function( ApiErrorModel apiErrorModel)?  createCashOrderError,TResult Function( OrderResponse createOrderResponse)?  createCashOrderSuccess,TResult Function()?  getCompleteOrdersLoading,TResult Function( ApiErrorModel apiErrorModel)?  getCompleteOrdersError,TResult Function( GetOrdersResponse getOrdersResponse)?  getCompleteOrdersSuccess,TResult Function( String selectedType)?  orderTypeChanged,TResult Function()?  getPendingOrdersLoading,TResult Function( ApiErrorModel apiErrorModel)?  getPendingOrdersError,TResult Function( GetOrdersResponse getOrdersResponse)?  getPendingOrdersSuccess,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( int index)?  changeShippingIndex,TResult Function( String choosePayment)?  choosePayment,TResult Function()?  createCashOrderLoading,TResult Function( ApiErrorModel apiErrorModel)?  createCashOrderError,TResult Function( OrderResponse createOrderResponse)?  createCashOrderSuccess,TResult Function()?  getCompleteOrdersLoading,TResult Function( ApiErrorModel apiErrorModel)?  getCompleteOrdersError,TResult Function( GetOrdersResponse getOrdersResponse)?  getCompleteOrdersSuccess,TResult Function( String selectedType)?  orderTypeChanged,TResult Function()?  getPendingOrdersLoading,TResult Function( ApiErrorModel apiErrorModel)?  getPendingOrdersError,TResult Function( GetOrdersResponse getOrdersResponse)?  getPendingOrdersSuccess,TResult Function()?  addPaymentOrdersLoading,TResult Function( ApiErrorModel apiErrorModel)?  addPaymentOrdersError,TResult Function( ApiSuccessGeneralModel getOrdersResponse)?  addPaymentOrdersSuccess,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case ChangeShippingIndex() when changeShippingIndex != null:
@@ -170,7 +179,10 @@ return getCompleteOrdersSuccess(_that.getOrdersResponse);case OrderTypeChanged()
 return orderTypeChanged(_that.selectedType);case GetPendingOrdersLoading() when getPendingOrdersLoading != null:
 return getPendingOrdersLoading();case GetPendingOrdersError() when getPendingOrdersError != null:
 return getPendingOrdersError(_that.apiErrorModel);case GetPendingOrdersSuccess() when getPendingOrdersSuccess != null:
-return getPendingOrdersSuccess(_that.getOrdersResponse);case _:
+return getPendingOrdersSuccess(_that.getOrdersResponse);case AddPaymentOrdersLoading() when addPaymentOrdersLoading != null:
+return addPaymentOrdersLoading();case AddPaymentOrdersError() when addPaymentOrdersError != null:
+return addPaymentOrdersError(_that.apiErrorModel);case AddPaymentOrdersSuccess() when addPaymentOrdersSuccess != null:
+return addPaymentOrdersSuccess(_that.getOrdersResponse);case _:
   return orElse();
 
 }
@@ -188,7 +200,7 @@ return getPendingOrdersSuccess(_that.getOrdersResponse);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( int index)  changeShippingIndex,required TResult Function( String choosePayment)  choosePayment,required TResult Function()  createCashOrderLoading,required TResult Function( ApiErrorModel apiErrorModel)  createCashOrderError,required TResult Function( OrderResponse createOrderResponse)  createCashOrderSuccess,required TResult Function()  getCompleteOrdersLoading,required TResult Function( ApiErrorModel apiErrorModel)  getCompleteOrdersError,required TResult Function( GetOrdersResponse getOrdersResponse)  getCompleteOrdersSuccess,required TResult Function( String selectedType)  orderTypeChanged,required TResult Function()  getPendingOrdersLoading,required TResult Function( ApiErrorModel apiErrorModel)  getPendingOrdersError,required TResult Function( GetOrdersResponse getOrdersResponse)  getPendingOrdersSuccess,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( int index)  changeShippingIndex,required TResult Function( String choosePayment)  choosePayment,required TResult Function()  createCashOrderLoading,required TResult Function( ApiErrorModel apiErrorModel)  createCashOrderError,required TResult Function( OrderResponse createOrderResponse)  createCashOrderSuccess,required TResult Function()  getCompleteOrdersLoading,required TResult Function( ApiErrorModel apiErrorModel)  getCompleteOrdersError,required TResult Function( GetOrdersResponse getOrdersResponse)  getCompleteOrdersSuccess,required TResult Function( String selectedType)  orderTypeChanged,required TResult Function()  getPendingOrdersLoading,required TResult Function( ApiErrorModel apiErrorModel)  getPendingOrdersError,required TResult Function( GetOrdersResponse getOrdersResponse)  getPendingOrdersSuccess,required TResult Function()  addPaymentOrdersLoading,required TResult Function( ApiErrorModel apiErrorModel)  addPaymentOrdersError,required TResult Function( ApiSuccessGeneralModel getOrdersResponse)  addPaymentOrdersSuccess,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case ChangeShippingIndex():
@@ -203,7 +215,10 @@ return getCompleteOrdersSuccess(_that.getOrdersResponse);case OrderTypeChanged()
 return orderTypeChanged(_that.selectedType);case GetPendingOrdersLoading():
 return getPendingOrdersLoading();case GetPendingOrdersError():
 return getPendingOrdersError(_that.apiErrorModel);case GetPendingOrdersSuccess():
-return getPendingOrdersSuccess(_that.getOrdersResponse);case _:
+return getPendingOrdersSuccess(_that.getOrdersResponse);case AddPaymentOrdersLoading():
+return addPaymentOrdersLoading();case AddPaymentOrdersError():
+return addPaymentOrdersError(_that.apiErrorModel);case AddPaymentOrdersSuccess():
+return addPaymentOrdersSuccess(_that.getOrdersResponse);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -220,7 +235,7 @@ return getPendingOrdersSuccess(_that.getOrdersResponse);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( int index)?  changeShippingIndex,TResult? Function( String choosePayment)?  choosePayment,TResult? Function()?  createCashOrderLoading,TResult? Function( ApiErrorModel apiErrorModel)?  createCashOrderError,TResult? Function( OrderResponse createOrderResponse)?  createCashOrderSuccess,TResult? Function()?  getCompleteOrdersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getCompleteOrdersError,TResult? Function( GetOrdersResponse getOrdersResponse)?  getCompleteOrdersSuccess,TResult? Function( String selectedType)?  orderTypeChanged,TResult? Function()?  getPendingOrdersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getPendingOrdersError,TResult? Function( GetOrdersResponse getOrdersResponse)?  getPendingOrdersSuccess,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( int index)?  changeShippingIndex,TResult? Function( String choosePayment)?  choosePayment,TResult? Function()?  createCashOrderLoading,TResult? Function( ApiErrorModel apiErrorModel)?  createCashOrderError,TResult? Function( OrderResponse createOrderResponse)?  createCashOrderSuccess,TResult? Function()?  getCompleteOrdersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getCompleteOrdersError,TResult? Function( GetOrdersResponse getOrdersResponse)?  getCompleteOrdersSuccess,TResult? Function( String selectedType)?  orderTypeChanged,TResult? Function()?  getPendingOrdersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getPendingOrdersError,TResult? Function( GetOrdersResponse getOrdersResponse)?  getPendingOrdersSuccess,TResult? Function()?  addPaymentOrdersLoading,TResult? Function( ApiErrorModel apiErrorModel)?  addPaymentOrdersError,TResult? Function( ApiSuccessGeneralModel getOrdersResponse)?  addPaymentOrdersSuccess,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case ChangeShippingIndex() when changeShippingIndex != null:
@@ -235,7 +250,10 @@ return getCompleteOrdersSuccess(_that.getOrdersResponse);case OrderTypeChanged()
 return orderTypeChanged(_that.selectedType);case GetPendingOrdersLoading() when getPendingOrdersLoading != null:
 return getPendingOrdersLoading();case GetPendingOrdersError() when getPendingOrdersError != null:
 return getPendingOrdersError(_that.apiErrorModel);case GetPendingOrdersSuccess() when getPendingOrdersSuccess != null:
-return getPendingOrdersSuccess(_that.getOrdersResponse);case _:
+return getPendingOrdersSuccess(_that.getOrdersResponse);case AddPaymentOrdersLoading() when addPaymentOrdersLoading != null:
+return addPaymentOrdersLoading();case AddPaymentOrdersError() when addPaymentOrdersError != null:
+return addPaymentOrdersError(_that.apiErrorModel);case AddPaymentOrdersSuccess() when addPaymentOrdersSuccess != null:
+return addPaymentOrdersSuccess(_that.getOrdersResponse);case _:
   return null;
 
 }
@@ -959,6 +977,170 @@ class _$GetPendingOrdersSuccessCopyWithImpl<$Res>
   return _then(GetPendingOrdersSuccess(
 null == getOrdersResponse ? _self.getOrdersResponse : getOrdersResponse // ignore: cast_nullable_to_non_nullable
 as GetOrdersResponse,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class AddPaymentOrdersLoading implements PaymentState {
+  const AddPaymentOrdersLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddPaymentOrdersLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PaymentState.addPaymentOrdersLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class AddPaymentOrdersError implements PaymentState {
+  const AddPaymentOrdersError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of PaymentState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AddPaymentOrdersErrorCopyWith<AddPaymentOrdersError> get copyWith => _$AddPaymentOrdersErrorCopyWithImpl<AddPaymentOrdersError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddPaymentOrdersError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'PaymentState.addPaymentOrdersError(apiErrorModel: $apiErrorModel)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AddPaymentOrdersErrorCopyWith<$Res> implements $PaymentStateCopyWith<$Res> {
+  factory $AddPaymentOrdersErrorCopyWith(AddPaymentOrdersError value, $Res Function(AddPaymentOrdersError) _then) = _$AddPaymentOrdersErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$AddPaymentOrdersErrorCopyWithImpl<$Res>
+    implements $AddPaymentOrdersErrorCopyWith<$Res> {
+  _$AddPaymentOrdersErrorCopyWithImpl(this._self, this._then);
+
+  final AddPaymentOrdersError _self;
+  final $Res Function(AddPaymentOrdersError) _then;
+
+/// Create a copy of PaymentState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(AddPaymentOrdersError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class AddPaymentOrdersSuccess implements PaymentState {
+  const AddPaymentOrdersSuccess(this.getOrdersResponse);
+  
+
+ final  ApiSuccessGeneralModel getOrdersResponse;
+
+/// Create a copy of PaymentState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AddPaymentOrdersSuccessCopyWith<AddPaymentOrdersSuccess> get copyWith => _$AddPaymentOrdersSuccessCopyWithImpl<AddPaymentOrdersSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddPaymentOrdersSuccess&&(identical(other.getOrdersResponse, getOrdersResponse) || other.getOrdersResponse == getOrdersResponse));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,getOrdersResponse);
+
+@override
+String toString() {
+  return 'PaymentState.addPaymentOrdersSuccess(getOrdersResponse: $getOrdersResponse)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AddPaymentOrdersSuccessCopyWith<$Res> implements $PaymentStateCopyWith<$Res> {
+  factory $AddPaymentOrdersSuccessCopyWith(AddPaymentOrdersSuccess value, $Res Function(AddPaymentOrdersSuccess) _then) = _$AddPaymentOrdersSuccessCopyWithImpl;
+@useResult
+$Res call({
+ ApiSuccessGeneralModel getOrdersResponse
+});
+
+
+
+
+}
+/// @nodoc
+class _$AddPaymentOrdersSuccessCopyWithImpl<$Res>
+    implements $AddPaymentOrdersSuccessCopyWith<$Res> {
+  _$AddPaymentOrdersSuccessCopyWithImpl(this._self, this._then);
+
+  final AddPaymentOrdersSuccess _self;
+  final $Res Function(AddPaymentOrdersSuccess) _then;
+
+/// Create a copy of PaymentState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? getOrdersResponse = null,}) {
+  return _then(AddPaymentOrdersSuccess(
+null == getOrdersResponse ? _self.getOrdersResponse : getOrdersResponse // ignore: cast_nullable_to_non_nullable
+as ApiSuccessGeneralModel,
   ));
 }
 

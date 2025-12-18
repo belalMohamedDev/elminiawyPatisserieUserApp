@@ -14,15 +14,18 @@ class PaymentState with _$PaymentState {
       CreateCashOrderError;
 
   const factory PaymentState.createCashOrderSuccess(
-      OrderResponse createOrderResponse) = CreateCashOrderSuccess;
+    OrderResponse createOrderResponse,
+  ) = CreateCashOrderSuccess;
 
   const factory PaymentState.getCompleteOrdersLoading() =
       GetCompleteOrdersLoading;
   const factory PaymentState.getCompleteOrdersError(
-      ApiErrorModel apiErrorModel) = GetCompleteOrdersError;
+    ApiErrorModel apiErrorModel,
+  ) = GetCompleteOrdersError;
 
   const factory PaymentState.getCompleteOrdersSuccess(
-      GetOrdersResponse getOrdersResponse) = GetCompleteOrdersSuccess;
+    GetOrdersResponse getOrdersResponse,
+  ) = GetCompleteOrdersSuccess;
 
   const factory PaymentState.orderTypeChanged(String selectedType) =
       OrderTypeChanged;
@@ -30,8 +33,20 @@ class PaymentState with _$PaymentState {
   const factory PaymentState.getPendingOrdersLoading() =
       GetPendingOrdersLoading;
   const factory PaymentState.getPendingOrdersError(
-      ApiErrorModel apiErrorModel) = GetPendingOrdersError;
+    ApiErrorModel apiErrorModel,
+  ) = GetPendingOrdersError;
 
   const factory PaymentState.getPendingOrdersSuccess(
-      GetOrdersResponse getOrdersResponse) = GetPendingOrdersSuccess;
+    GetOrdersResponse getOrdersResponse,
+  ) = GetPendingOrdersSuccess;
+
+  const factory PaymentState.addPaymentOrdersLoading() =
+      AddPaymentOrdersLoading;
+  const factory PaymentState.addPaymentOrdersError(
+    ApiErrorModel apiErrorModel,
+  ) = AddPaymentOrdersError;
+
+  const factory PaymentState.addPaymentOrdersSuccess(
+    ApiSuccessGeneralModel getOrdersResponse,
+  ) = AddPaymentOrdersSuccess;
 }

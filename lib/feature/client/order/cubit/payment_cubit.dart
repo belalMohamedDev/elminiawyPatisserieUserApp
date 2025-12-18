@@ -169,4 +169,34 @@ class PaymentCubit extends Cubit<PaymentState> {
       },
     );
   }
+
+
+   Future<void> addPaymentSummit( {
+    required String id,
+    required double amount,
+  }) async {
+    if (isClosed) return;
+    emit(const PaymentState.addPaymentOrdersLoading());
+
+    final response = await _orderRepositoryImplement.addPaymentRepository(
+       id,
+      amount,
+    );
+
+    if (isClosed) return;
+
+    response.when(
+      success: (response) {
+       
+        if (!isClosed) {
+          emit(PaymentState.addPaymentOrdersSuccess(response));
+        }
+      },
+      failure: (error) {
+        if (!isClosed) {
+          emit(PaymentState.addPaymentOrdersError(error));
+        }
+      },
+    );
+  }
 }

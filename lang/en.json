@@ -352,5 +352,6 @@
   "payRemaining": "Pay remaining amount",
   "paid": "Paid",
   "remaining": "Remaining",
-  "fullyPaid": "Fully Paid"
+  "fullyPaid": "Fully Paid",
+  "addPaymentSuccess": "Payment added successfully"
 }

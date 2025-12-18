@@ -320,6 +320,12 @@ abstract class AppServiceClient {
     @Query("paymentStatus") String? paymentStatus,
   );
 
+  @POST('${ApiConstants.order}/admin/{orderId}/payments')
+  Future<ApiSuccessGeneralModel> addPaymentToOrderService(
+    @Path("orderId") String orderId,
+    @Field("amount") double amount,
+  );
+
   @GET('${ApiConstants.order}/admin/status')
   Future<GetOrderStatusCountResponse>
   getOrdersStatusAndSalesTodayCountService();

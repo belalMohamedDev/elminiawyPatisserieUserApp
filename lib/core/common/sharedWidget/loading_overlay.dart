@@ -3,10 +3,7 @@ import 'package:elminiawy/core/common/shared/shared_imports.dart';
 class LoadingOverlay extends StatelessWidget {
   final bool isLoading;
 
-  const LoadingOverlay({
-    super.key,
-    required this.isLoading,
-  });
+  const LoadingOverlay({super.key, required this.isLoading});
 
   @override
   Widget build(BuildContext context) {

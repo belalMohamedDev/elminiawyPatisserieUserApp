@@ -7,7 +7,7 @@ class AppStrings {
   static const String discoverOurWonderfulSelection =
       "discoverOurWonderfulSelection";
   static const String letsGetStarted = "letsGetStarted";
-
+  static const String addPaymentSuccess = "addPaymentSuccess";
   static const String editImage = "editImage";
   static const String actions = "actions";
   static const String deActive = "deActive";
@@ -416,7 +416,6 @@ class AppStrings {
   static const String saveStore = "saveStore";
   static const String noLocationSelected = "noLocationSelected";
 
-
   static const String addDeposit = "addDeposit";
   static const String completePayment = "completePayment";
   static const String amount = "amount";
@@ -425,8 +424,4 @@ class AppStrings {
   static const String payRemaining = "payRemaining";
   static const String paid = "paid";
   static const String fullyPaid = "fullyPaid";
-
-
-
-
 }

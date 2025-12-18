@@ -42,8 +42,11 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => OrderDetailsScreen(
-                        orderModel: getPendingOrders[index],
+                      builder: (context) => BlocProvider.value(
+                        value: instance<PaymentCubit>(),
+                        child: OrderDetailsScreen(
+                          orderModel: getPendingOrders[index],
+                        ),
                       ),
                     ),
                   );
@@ -312,7 +315,6 @@ class GetAdminOrdersDataBodyView extends StatelessWidget {
                                         }
                                       },
                                       child: Text(
-                                 
                                         isPendingOrder
                                             ? context.translate(
                                                 AppStrings.orderDone,

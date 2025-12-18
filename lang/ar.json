@@ -352,5 +352,6 @@
   "payRemaining": "دفع المبلغ المتبقي",
   "paid": "المدفوع",
   "remaining": "المتبقي",
-  "fullyPaid": "مدفوع بالكامل"
+  "fullyPaid": "مدفوع بالكامل",
+  "addPaymentSuccess": "تمت إضافة الدفع بنجاح"
 }
