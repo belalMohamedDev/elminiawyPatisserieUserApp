@@ -17,10 +17,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
       color: ColorManger.brun,
       child: Padding(
         padding: responsive.setPadding(
-          top: isEnLocale ? 20 : 19,
+          top: isEnLocale ? 15 : 14,
           // left: 1.5,
           // right: 45,
-          left: isEnLocale ? 1.5 : 45, 
+          left: isEnLocale ? 1.5 : 45,
           right: isEnLocale ? 45 : 2,
           bottom: 8,
         ),
@@ -98,6 +98,23 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 ),
               ),
             ),
+
+            Material(
+              color: Colors.transparent,
+              child: ListTile(
+                onTap: () {
+                  context.pushNamed(Routes.coupons);
+                },
+                horizontalTitleGap: 25.0,
+                leading: Icon(IconlyBold.discount, color: ColorManger.white),
+                title: Text(
+                  context.translate(AppStrings.coupons),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontSize: responsive.setTextSize(3.8),
+                  ),
+                ),
+              ),
+            ),
             Material(
               color: Colors.transparent,
               child: ListTile(
@@ -147,7 +164,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 horizontalTitleGap: 25.0,
                 leading: Icon(IconlyBold.location, color: ColorManger.white),
                 title: Text(
-                    context.translate(AppStrings.storeAddress),
+                  context.translate(AppStrings.storeAddress),
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     fontSize: responsive.setTextSize(3.8),
                   ),

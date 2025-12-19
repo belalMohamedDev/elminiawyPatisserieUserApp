@@ -1,5 +1,6 @@
 import 'package:elminiawy/core/common/statsScreen/route_state.dart';
 import 'package:elminiawy/feature/admin/admins/presentation/screen/add_new_admin.dart';
+import 'package:elminiawy/feature/admin/coupons/presentation/screens/coupons_screen.dart';
 import 'package:elminiawy/feature/admin/driver/presentation/screen/add_new_driver.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/deferred_payment_screen.dart';
 import 'package:elminiawy/feature/admin/home/presentation/screen/delivered_orders.dart';
@@ -251,6 +252,10 @@ class RouteGenerator {
             child: AddNewSubCategory(),
           ),
         );
+
+      // ---------------------- ADMIN COUPONS -----------------------
+      case Routes.coupons:
+        return MaterialPageRoute(builder: (_) => const CouponsScreen());
 
       // ---------------------- ACCOUNT INFO -----------------------
       case Routes.accountInfomation:

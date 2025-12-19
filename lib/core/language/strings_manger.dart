@@ -18,7 +18,8 @@ class AppStrings {
   static const String processing = "processing";
   static const String driverData = "driverData";
   static const String userData = "userData";
-
+ 
+  static const String coupons = "coupons";
   static const String paidBy = "paidBy";
   static const String date = "date";
   static const String paymentType = "paymentType";

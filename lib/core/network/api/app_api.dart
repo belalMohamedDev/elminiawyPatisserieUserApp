@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:elminiawy/feature/admin/coupons/data/model/coupons_response.dart';
 import 'package:elminiawy/feature/admin/storeAddress/data/model/store_address_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -341,4 +342,7 @@ abstract class AppServiceClient {
     @Field("driverAcceptedAt") String? driverAcceptedAt,
     @Field("status") int status,
   );
+
+  @GET(ApiConstants.coupon)
+  Future<CouponsResponse> getAllCouponsService();
 }

@@ -36,6 +36,5 @@ class ApiConstants {
   static const String storeAddress = '/v1/api/store/address';
 
   static const String order = '/v1/api/order';
-
-
+  static const String coupon = '/v1/api/coupon';
 }

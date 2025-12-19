@@ -353,5 +353,6 @@
   "paid": "المدفوع",
   "remaining": "المتبقي",
   "fullyPaid": "مدفوع بالكامل",
-  "addPaymentSuccess": "تمت إضافة الدفع بنجاح"
+  "addPaymentSuccess": "تمت إضافة الدفع بنجاح",
+  "coupons": "كوبونات"
 }

@@ -353,5 +353,6 @@
   "paid": "Paid",
   "remaining": "Remaining",
   "fullyPaid": "Fully Paid",
-  "addPaymentSuccess": "Payment added successfully"
+  "addPaymentSuccess": "Payment added successfully",
+  "coupons": "Coupons"
 }
