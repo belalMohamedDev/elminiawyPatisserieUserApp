@@ -5,6 +5,11 @@ extension DateEx on DateTime {
     final formatter = DateFormat('dd/MM/yyyy');
     return formatter.format(this);
   }
+
+  String toCouponDate() {
+    return "${month.toString().padLeft(2, '0')}/"
+        "${day.toString().padLeft(2, '0')}/$year";
+  }
 }
 
 extension StringDate on String {
@@ -18,8 +23,7 @@ extension StringDate on String {
     return DateFormat('yyyy/MM/dd').format(parsedDate);
   }
 
-
-    String getFormattedDateDeleteYear() {
+  String getFormattedDateDeleteYear() {
     DateTime parsedDate = DateTime.parse(this);
     return DateFormat('MM/dd').format(parsedDate);
   }

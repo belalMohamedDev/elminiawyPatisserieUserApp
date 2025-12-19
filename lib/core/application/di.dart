@@ -1,3 +1,5 @@
+import 'package:elminiawy/feature/admin/coupons/data/repository/coupons_repo.dart';
+import 'package:elminiawy/feature/admin/coupons/logic/coupons_cubit.dart';
 import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
 import 'package:elminiawy/feature/admin/storeAddress/data/repository/store_address_repo.dart';
 import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
@@ -36,6 +38,7 @@ Future<void> initAppModule() async {
     _initDriver(),
     _initAdmins(),
     _initStoreAddress(),
+    _initCoupons(),
   ]);
 }
 
@@ -61,7 +64,6 @@ Future<void> _initAppModule() async {
 }
 
 Future<void> _initBanner() async {
-  // //home repository
   instance
     ..registerLazySingleton<BannerRepositoryImplement>(
       () => BannerRepositoryImplement(instance()),
@@ -69,12 +71,22 @@ Future<void> _initBanner() async {
     ..registerFactory<BannerCubit>(() => BannerCubit(instance(), instance()));
 }
 
+Future<void> _initCoupons() async {
+  instance
+    ..registerLazySingleton<CouponsRepositoryImplement>(
+      () => CouponsRepositoryImplement(instance()),
+    )
+    ..registerFactory<CouponsCubit>(() => CouponsCubit(instance()));
+}
+
 Future<void> _initDriver() async {
   instance
     ..registerLazySingleton<DriverRepositoryImplement>(
       () => DriverRepositoryImplement(instance()),
     )
-    ..registerLazySingleton<DriverCubit>(() => DriverCubit(instance(),instance()));
+    ..registerLazySingleton<DriverCubit>(
+      () => DriverCubit(instance(), instance()),
+    );
 }
 
 Future<void> _initAdmins() async {

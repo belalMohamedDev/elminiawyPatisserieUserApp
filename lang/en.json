@@ -354,5 +354,15 @@
   "remaining": "Remaining",
   "fullyPaid": "Fully Paid",
   "addPaymentSuccess": "Payment added successfully",
-  "coupons": "Coupons"
+  "coupons": "Coupons",
+  "expired": "Expired",
+  "expireAt": "Expire At",
+  "noCouponsFound": "No Coupons Found",
+  "addCoupon": "Add Coupon",
+  "editCoupon": "Edit Coupon",
+ 
+  "selectExpireDate": "Select Expire Date",
+  "confirmDelete": "Confirm Delete",
+  "deleteCoupon": "Delete Coupon"
+
 }

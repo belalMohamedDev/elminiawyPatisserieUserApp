@@ -354,5 +354,13 @@
   "remaining": "المتبقي",
   "fullyPaid": "مدفوع بالكامل",
   "addPaymentSuccess": "تمت إضافة الدفع بنجاح",
-  "coupons": "كوبونات"
+  "coupons": "كوبونات",
+  "expired": "منتهي الصلاحية",
+  "expireAt": "منتهي الصلاحية في",
+  "noCouponsFound": "لا توجد كوبونات موجودة",
+  "addCoupon": "إضافة كوبون",
+  "editCoupon": "تعديل الكوبون",
+  "selectExpireDate": "حدد تاريخ انتهاء الصلاحية",
+  "confirmDelete": "تأكيد الحذف",
+  "deleteCoupon": "حذف الكوبون"
 }

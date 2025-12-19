@@ -55,14 +55,17 @@ extension CouponsStatePatterns on CouponsState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetAllCouponsSuccess value)?  getAllCouponsSuccess,TResult Function( GetAllCouponsLoading value)?  getAllCouponsLoading,TResult Function( GetAllCouponsError value)?  getAllCouponsError,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetAllCouponsSuccess value)?  getAllCouponsSuccess,TResult Function( GetAllCouponsLoading value)?  getAllCouponsLoading,TResult Function( GetAllCouponsError value)?  getAllCouponsError,TResult Function( ActionLoading value)?  actionLoading,TResult Function( ActionSuccess value)?  actionSuccess,TResult Function( ActionError value)?  actionError,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial(_that);case GetAllCouponsSuccess() when getAllCouponsSuccess != null:
 return getAllCouponsSuccess(_that);case GetAllCouponsLoading() when getAllCouponsLoading != null:
 return getAllCouponsLoading(_that);case GetAllCouponsError() when getAllCouponsError != null:
-return getAllCouponsError(_that);case _:
+return getAllCouponsError(_that);case ActionLoading() when actionLoading != null:
+return actionLoading(_that);case ActionSuccess() when actionSuccess != null:
+return actionSuccess(_that);case ActionError() when actionError != null:
+return actionError(_that);case _:
   return orElse();
 
 }
@@ -80,14 +83,17 @@ return getAllCouponsError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetAllCouponsSuccess value)  getAllCouponsSuccess,required TResult Function( GetAllCouponsLoading value)  getAllCouponsLoading,required TResult Function( GetAllCouponsError value)  getAllCouponsError,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetAllCouponsSuccess value)  getAllCouponsSuccess,required TResult Function( GetAllCouponsLoading value)  getAllCouponsLoading,required TResult Function( GetAllCouponsError value)  getAllCouponsError,required TResult Function( ActionLoading value)  actionLoading,required TResult Function( ActionSuccess value)  actionSuccess,required TResult Function( ActionError value)  actionError,}){
 final _that = this;
 switch (_that) {
 case _Initial():
 return initial(_that);case GetAllCouponsSuccess():
 return getAllCouponsSuccess(_that);case GetAllCouponsLoading():
 return getAllCouponsLoading(_that);case GetAllCouponsError():
-return getAllCouponsError(_that);case _:
+return getAllCouponsError(_that);case ActionLoading():
+return actionLoading(_that);case ActionSuccess():
+return actionSuccess(_that);case ActionError():
+return actionError(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -104,14 +110,17 @@ return getAllCouponsError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetAllCouponsSuccess value)?  getAllCouponsSuccess,TResult? Function( GetAllCouponsLoading value)?  getAllCouponsLoading,TResult? Function( GetAllCouponsError value)?  getAllCouponsError,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetAllCouponsSuccess value)?  getAllCouponsSuccess,TResult? Function( GetAllCouponsLoading value)?  getAllCouponsLoading,TResult? Function( GetAllCouponsError value)?  getAllCouponsError,TResult? Function( ActionLoading value)?  actionLoading,TResult? Function( ActionSuccess value)?  actionSuccess,TResult? Function( ActionError value)?  actionError,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial(_that);case GetAllCouponsSuccess() when getAllCouponsSuccess != null:
 return getAllCouponsSuccess(_that);case GetAllCouponsLoading() when getAllCouponsLoading != null:
 return getAllCouponsLoading(_that);case GetAllCouponsError() when getAllCouponsError != null:
-return getAllCouponsError(_that);case _:
+return getAllCouponsError(_that);case ActionLoading() when actionLoading != null:
+return actionLoading(_that);case ActionSuccess() when actionSuccess != null:
+return actionSuccess(_that);case ActionError() when actionError != null:
+return actionError(_that);case _:
   return null;
 
 }
@@ -128,13 +137,16 @@ return getAllCouponsError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( CouponsResponse data)?  getAllCouponsSuccess,TResult Function()?  getAllCouponsLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllCouponsError,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( CouponsResponse data)?  getAllCouponsSuccess,TResult Function()?  getAllCouponsLoading,TResult Function( ApiErrorModel apiErrorModel)?  getAllCouponsError,TResult Function()?  actionLoading,TResult Function()?  actionSuccess,TResult Function( ApiErrorModel apiErrorModel)?  actionError,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetAllCouponsSuccess() when getAllCouponsSuccess != null:
 return getAllCouponsSuccess(_that.data);case GetAllCouponsLoading() when getAllCouponsLoading != null:
 return getAllCouponsLoading();case GetAllCouponsError() when getAllCouponsError != null:
-return getAllCouponsError(_that.apiErrorModel);case _:
+return getAllCouponsError(_that.apiErrorModel);case ActionLoading() when actionLoading != null:
+return actionLoading();case ActionSuccess() when actionSuccess != null:
+return actionSuccess();case ActionError() when actionError != null:
+return actionError(_that.apiErrorModel);case _:
   return orElse();
 
 }
@@ -152,13 +164,16 @@ return getAllCouponsError(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( CouponsResponse data)  getAllCouponsSuccess,required TResult Function()  getAllCouponsLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllCouponsError,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( CouponsResponse data)  getAllCouponsSuccess,required TResult Function()  getAllCouponsLoading,required TResult Function( ApiErrorModel apiErrorModel)  getAllCouponsError,required TResult Function()  actionLoading,required TResult Function()  actionSuccess,required TResult Function( ApiErrorModel apiErrorModel)  actionError,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case GetAllCouponsSuccess():
 return getAllCouponsSuccess(_that.data);case GetAllCouponsLoading():
 return getAllCouponsLoading();case GetAllCouponsError():
-return getAllCouponsError(_that.apiErrorModel);case _:
+return getAllCouponsError(_that.apiErrorModel);case ActionLoading():
+return actionLoading();case ActionSuccess():
+return actionSuccess();case ActionError():
+return actionError(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -175,13 +190,16 @@ return getAllCouponsError(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( CouponsResponse data)?  getAllCouponsSuccess,TResult? Function()?  getAllCouponsLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllCouponsError,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( CouponsResponse data)?  getAllCouponsSuccess,TResult? Function()?  getAllCouponsLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getAllCouponsError,TResult? Function()?  actionLoading,TResult? Function()?  actionSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  actionError,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetAllCouponsSuccess() when getAllCouponsSuccess != null:
 return getAllCouponsSuccess(_that.data);case GetAllCouponsLoading() when getAllCouponsLoading != null:
 return getAllCouponsLoading();case GetAllCouponsError() when getAllCouponsError != null:
-return getAllCouponsError(_that.apiErrorModel);case _:
+return getAllCouponsError(_that.apiErrorModel);case ActionLoading() when actionLoading != null:
+return actionLoading();case ActionSuccess() when actionSuccess != null:
+return actionSuccess();case ActionError() when actionError != null:
+return actionError(_that.apiErrorModel);case _:
   return null;
 
 }
@@ -377,6 +395,136 @@ class _$GetAllCouponsErrorCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
   return _then(GetAllCouponsError(
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class ActionLoading implements CouponsState {
+  const ActionLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActionLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CouponsState.actionLoading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ActionSuccess implements CouponsState {
+  const ActionSuccess();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActionSuccess);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'CouponsState.actionSuccess()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ActionError implements CouponsState {
+  const ActionError(this.apiErrorModel);
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of CouponsState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ActionErrorCopyWith<ActionError> get copyWith => _$ActionErrorCopyWithImpl<ActionError>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ActionError&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'CouponsState.actionError(apiErrorModel: $apiErrorModel)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ActionErrorCopyWith<$Res> implements $CouponsStateCopyWith<$Res> {
+  factory $ActionErrorCopyWith(ActionError value, $Res Function(ActionError) _then) = _$ActionErrorCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$ActionErrorCopyWithImpl<$Res>
+    implements $ActionErrorCopyWith<$Res> {
+  _$ActionErrorCopyWithImpl(this._self, this._then);
+
+  final ActionError _self;
+  final $Res Function(ActionError) _then;
+
+/// Create a copy of CouponsState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(ActionError(
 null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));

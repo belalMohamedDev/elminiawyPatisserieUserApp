@@ -18,7 +18,7 @@ class AppStrings {
   static const String processing = "processing";
   static const String driverData = "driverData";
   static const String userData = "userData";
- 
+
   static const String coupons = "coupons";
   static const String paidBy = "paidBy";
   static const String date = "date";
@@ -425,4 +425,14 @@ class AppStrings {
   static const String payRemaining = "payRemaining";
   static const String paid = "paid";
   static const String fullyPaid = "fullyPaid";
+
+  static const String expired = "expired";
+  static const String expireAt = "expireAt";
+  static const String noCouponsFound = "noCouponsFound";
+
+  static const String addCoupon = "addCoupon";
+  static const String editCoupon = "editCoupon";
+  static const String confirmDelete = "confirmDelete";
+  static const String deleteCoupon = "deleteCoupon";
+  static const String selectExpireDate = "selectExpireDate";
 }

@@ -345,4 +345,22 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.coupon)
   Future<CouponsResponse> getAllCouponsService();
+
+  @PUT('${ApiConstants.coupon}/{id}')
+  Future<CouponsResponse> updateCouponService(
+    @Path("id") String id,
+    @Field("title") String? title,
+    @Field("discount") String? discount,
+    @Field("expire") String? expire,
+  );
+
+  @POST(ApiConstants.coupon)
+  Future<CouponsResponse> addCouponService(
+    @Field("title") String? title,
+    @Field("discount") String? discount,
+    @Field("expire") String? expire,
+  );
+
+  @DELETE('${ApiConstants.coupon}/{id}')
+  Future<ApiSuccessGeneralModel> deleteCouponService(@Path("id") String id);
 }

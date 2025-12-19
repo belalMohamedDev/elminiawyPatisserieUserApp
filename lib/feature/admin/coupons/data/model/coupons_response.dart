@@ -1,30 +1,27 @@
 class CouponsResponse {
   bool? status;
   String? message;
-  List<CouponsData>? data;
+  dynamic data; 
 
   CouponsResponse({this.status, this.message, this.data});
 
   CouponsResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    if (json['data'] != null) {
-      data = <CouponsData>[];
-      json['data'].forEach((v) {
-        data!.add(CouponsData.fromJson(v));
-      });
+
+    if (json['data'] is List) {
+      data = (json['data'] as List)
+          .map((e) => CouponsData.fromJson(e))
+          .toList();
+    } else if (json['data'] is Map) {
+      data = CouponsData.fromJson(json['data']);
     }
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['status'] = status;
-    data['message'] = message;
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  List<CouponsData> get list => data is List<CouponsData> ? data : [];
+
+
+  CouponsData? get item => data is CouponsData ? data : null;
 }
 
 class CouponsData {
@@ -35,13 +32,14 @@ class CouponsData {
   String? createdAt;
   String? updatedAt;
 
-  CouponsData(
-      {this.sId,
-      this.title,
-      this.expire,
-      this.discount,
-      this.createdAt,
-      this.updatedAt});
+  CouponsData({
+    this.sId,
+    this.title,
+    this.expire,
+    this.discount,
+    this.createdAt,
+    this.updatedAt,
+  });
 
   CouponsData.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
