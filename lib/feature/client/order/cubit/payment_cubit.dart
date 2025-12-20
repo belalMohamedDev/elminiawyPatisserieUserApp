@@ -33,8 +33,6 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(PaymentState.orderTypeChanged(value));
   }
 
-
-
   String get selectedOption => _selectedOption;
   bool get isPhoneOrder => _selectedOption == "By Phone";
 
@@ -44,6 +42,15 @@ class PaymentCubit extends Cubit<PaymentState> {
   };
 
   String get orderSourceForApi => orderSourceMap[_selectedOption] ?? "app";
+
+  void resetOrderData() {
+    customerNameController.clear();
+    customerPhoneController.clear();
+    paidAmountController.clear();
+    customerAddressTextController.clear();
+    changeOrderType("Store Pickup");
+    changePaymetType("full Payment");
+  }
 
   void changeOrderType(String value) {
     _selectedOption = value;
@@ -170,8 +177,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     );
   }
 
-
-   Future<void> addPaymentSummit( {
+  Future<void> addPaymentSummit({
     required String id,
     required double amount,
   }) async {
@@ -179,7 +185,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     emit(const PaymentState.addPaymentOrdersLoading());
 
     final response = await _orderRepositoryImplement.addPaymentRepository(
-       id,
+      id,
       amount,
     );
 
@@ -187,7 +193,6 @@ class PaymentCubit extends Cubit<PaymentState> {
 
     response.when(
       success: (response) {
-       
         if (!isClosed) {
           emit(PaymentState.addPaymentOrdersSuccess(response));
         }

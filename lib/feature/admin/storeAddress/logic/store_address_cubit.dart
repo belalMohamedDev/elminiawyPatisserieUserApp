@@ -76,7 +76,11 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
 
   void saveStore() {
     if (storeLocation == null || deliveryZonePoints.length < 3) {
-      emit(StoreAddressState.storeAddressError("Please select location and delivery zone"));
+      emit(
+        StoreAddressState.storeAddressError(
+          "Please select location and delivery zone",
+        ),
+      );
       return;
     }
 
@@ -96,7 +100,8 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
       },
     };
 
-    // TODO: call repository
+    print(payload);
+
     emit(StoreAddressState.storeAddressSuccess(payload));
   }
 

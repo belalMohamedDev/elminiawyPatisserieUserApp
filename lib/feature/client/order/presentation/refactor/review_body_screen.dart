@@ -52,8 +52,15 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
 
             _paymentCard(context, responsive, isEnLocale),
 
-            responsive.setSizeBox(height: 0.5),
             _addNotes(context, responsive),
+
+            responsive.setSizeBox(
+              height: AppInitialRoute.role == "admin" ? 3 : 0,
+            ),
+
+            AppInitialRoute.role == "admin"
+                ? const ApplyCouponCode()
+                : SizedBox(),
           ],
         ),
       ),
