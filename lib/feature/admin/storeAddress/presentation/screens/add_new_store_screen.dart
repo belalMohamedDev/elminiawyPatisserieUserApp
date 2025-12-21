@@ -19,7 +19,22 @@ class AddNewStoreScreen extends StatelessWidget {
           ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
         ),
       ),
-      body: BlocBuilder<StoreAddressCubit, StoreAddressState>(
+      body: BlocConsumer<StoreAddressCubit, StoreAddressState>(
+        listener: (context, state) {
+          if (state is StoreAddressSuccess) {
+            ShowToast.showToastSuccessTop(
+              message: context.translate(AppStrings.storeAddedSuccessfully),
+              context: context,
+            );
+            Navigator.pop(context);
+            Navigator.pop(context);
+          } else if (state is StoreAddressError) {
+            ShowToast.showToastErrorTop(
+              errorMessage: state.message,
+              context: context,
+            );
+          }
+        },
         builder: (context, state) {
           final cubit = context.read<StoreAddressCubit>();
 
@@ -100,10 +115,10 @@ class AddNewStoreScreen extends StatelessWidget {
     return Column(
       children: [
         TextFormField(
-          controller: cubit.branchAreaController,
+          controller: cubit.enBranchAreaController,
 
           decoration: InputDecoration(
-            hintText: context.translate(AppStrings.branchArea),
+            hintText: context.translate(AppStrings.enBranchArea),
           ),
 
           validator: (v) =>
@@ -112,10 +127,10 @@ class AddNewStoreScreen extends StatelessWidget {
         SizedBox(height: responsive.setHeight(1.5)),
 
         TextFormField(
-          controller: cubit.regionController,
+          controller: cubit.arBranchAreaController,
 
           decoration: InputDecoration(
-            hintText: context.translate(AppStrings.region),
+            hintText: context.translate(AppStrings.arBranchArea),
           ),
 
           validator: (v) =>
@@ -124,10 +139,47 @@ class AddNewStoreScreen extends StatelessWidget {
         SizedBox(height: responsive.setHeight(1.5)),
 
         TextFormField(
-          controller: cubit.briefnessController,
+          controller: cubit.enRegionController,
 
           decoration: InputDecoration(
-            hintText: context.translate(AppStrings.briefness),
+            hintText: context.translate(AppStrings.enRegion),
+          ),
+
+          validator: (v) =>
+              v!.isEmpty ? context.translate(AppStrings.required) : null,
+        ),
+        SizedBox(height: responsive.setHeight(1.5)),
+
+        TextFormField(
+          controller: cubit.arRegionController,
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.arRegion),
+          ),
+
+          validator: (v) =>
+              v!.isEmpty ? context.translate(AppStrings.required) : null,
+        ),
+        SizedBox(height: responsive.setHeight(1.5)),
+
+        TextFormField(
+          controller: cubit.enBriefnessController,
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.enBriefness),
+          ),
+
+          validator: (v) =>
+              v!.isEmpty ? context.translate(AppStrings.required) : null,
+        ),
+
+        SizedBox(height: responsive.setHeight(1.5)),
+
+        TextFormField(
+          controller: cubit.arBriefnessController,
+
+          decoration: InputDecoration(
+            hintText: context.translate(AppStrings.arBranchArea),
           ),
 
           validator: (v) =>

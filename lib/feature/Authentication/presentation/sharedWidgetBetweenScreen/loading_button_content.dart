@@ -1,3 +1,4 @@
+import 'package:elminiawy/feature/admin/storeAddress/logic/store_address_cubit.dart';
 import 'package:elminiawy/feature/product/logic/adminProduct/admin_product_cubit.dart';
 
 import '../../../../../core/common/shared/shared_imports.dart'; // Import shared utilities
@@ -58,6 +59,7 @@ class LoadingButtonContent extends StatelessWidget {
         state is CreateSubCategoriesLoading ||
         state is CreateNewAdminLoading ||
         state is CreateNewDriverLoading ||
+        state is StoreAddressLoading ||
         state is NewPasswordLoadingData) {
       return loadingWidget();
     } else if (state is AuthenticationWithGoogleLoading) {

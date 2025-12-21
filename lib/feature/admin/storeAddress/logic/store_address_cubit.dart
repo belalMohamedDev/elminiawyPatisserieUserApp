@@ -1,4 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
+import 'package:elminiawy/feature/admin/storeAddress/data/model/create_store_address_request.dart';
 import 'package:elminiawy/feature/admin/storeAddress/data/model/store_address_response.dart';
 import 'package:elminiawy/feature/admin/storeAddress/data/repository/store_address_repo.dart';
 
@@ -15,9 +16,12 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
 
   List<Data> get allStoreAddress => _allStoreAddress;
 
-  final branchAreaController = TextEditingController();
-  final regionController = TextEditingController();
-  final briefnessController = TextEditingController();
+  final enBranchAreaController = TextEditingController();
+  final arBranchAreaController = TextEditingController();
+  final enRegionController = TextEditingController();
+  final arRegionController = TextEditingController();
+  final enBriefnessController = TextEditingController();
+  final arBriefnessController = TextEditingController();
 
   int activeStores = 0;
   int deActiveStores = 0;
@@ -74,7 +78,7 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
     emit(StoreAddressState.storeAddressZoneUpdated());
   }
 
-  void saveStore() {
+  void saveStore() async {
     if (storeLocation == null || deliveryZonePoints.length < 3) {
       emit(
         StoreAddressState.storeAddressError(
@@ -84,32 +88,76 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
       return;
     }
 
-    final payload = {
-      "BranchArea": branchAreaController.text.trim(),
-      "region": regionController.text.trim(),
-      "briefness": briefnessController.text.trim(),
-      "location": {
-        "type": "Point",
-        "coordinates": [storeLocation!.longitude, storeLocation!.latitude],
-      },
-      "deliveryZone": {
-        "type": "Polygon",
-        "coordinates": [
-          deliveryZonePoints.map((e) => [e.longitude, e.latitude]).toList(),
-        ],
-      },
-    };
+    List<List<double>> buildClosedPolygon(List<LatLng> points) {
+      if (points.length < 3) {
+        throw Exception("Polygon must have at least 3 points");
+      }
 
-    print(payload);
+      final polygon = points.map((e) => [e.latitude, e.longitude]).toList();
 
-    emit(StoreAddressState.storeAddressSuccess(payload));
+      final first = polygon.first;
+      final last = polygon.last;
+
+      if (first[0] != last[0] || first[1] != last[1]) {
+        polygon.add(first);
+      }
+
+      return polygon;
+    }
+
+    emit(StoreAddressState.storeAddressLoading());
+
+    final response = await _branchStoreAddressRepositoryImplement
+        .createNewBranchStoreAddreesRepo(
+          CreateStoreNewAddress(
+            branchArea: BranchArea(
+              en: enBranchAreaController.text.trim(),
+              ar: arBranchAreaController.text.trim(),
+            ),
+            region: BranchArea(
+              en: enRegionController.text.trim(),
+              ar: arRegionController.text.trim(),
+            ),
+            briefness: BranchArea(
+              en: enBriefnessController.text.trim(),
+              ar: arBriefnessController.text.trim(),
+            ),
+
+            latitude: storeLocation!.latitude.toString(),
+            longitude: storeLocation!.longitude.toString(),
+            deliveryZoneCoordinates: buildClosedPolygon(deliveryZonePoints),
+          ),
+        );
+
+    response.when(
+      success: (dataResponse) {
+        _allStoreAddress = [];
+        _allStoreAddress.addAll(dataResponse.data!);
+
+        activeStores = _allStoreAddress
+            .where((store) => store.active == true)
+            .length;
+        deActiveStores = _allStoreAddress
+            .where((store) => store.active == false)
+            .length;
+
+        emit(StoreAddressState.storeAddressSuccess());
+      },
+      failure: (error) {
+        print(error.message);
+        emit(StoreAddressState.storeAddressError(error.message!));
+      },
+    );
   }
 
   @override
   Future<void> close() {
-    branchAreaController.dispose();
-    regionController.dispose();
-    briefnessController.dispose();
+    enBranchAreaController.dispose();
+    arBranchAreaController.dispose();
+    enRegionController.dispose();
+    arRegionController.dispose();
+    enBriefnessController.dispose();
+    arBriefnessController.dispose();
     return super.close();
   }
 }

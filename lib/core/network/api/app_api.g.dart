@@ -1053,6 +1053,36 @@ class _AppServiceClient implements AppServiceClient {
   }
 
   @override
+  Future<BranchStoreAddressResponse> createNewBrancheAddress(
+    CreateStoreNewAddress createStoreNewAddress,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(createStoreNewAddress.toJson());
+    final _options = _setStreamType<BranchStoreAddressResponse>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/v1/api/store/address',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late BranchStoreAddressResponse _value;
+    try {
+      _value = BranchStoreAddressResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options, _result);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<AuthResponse> getAllDriverService() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

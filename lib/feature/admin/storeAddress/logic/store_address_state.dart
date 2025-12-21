@@ -23,7 +23,7 @@ class StoreAddressState with _$StoreAddressState {
   const factory StoreAddressState.storeAddressError(String message) =
       StoreAddressError;
 
-  const factory StoreAddressState.storeAddressSuccess(
-    final Map<String, dynamic> payload,
-  ) = StoreAddressSuccess;
+  const factory StoreAddressState.storeAddressSuccess() = StoreAddressSuccess;
+
+  const factory StoreAddressState.storeAddressLoading() = StoreAddressLoading;
 }

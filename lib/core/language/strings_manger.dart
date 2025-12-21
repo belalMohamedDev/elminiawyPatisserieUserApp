@@ -18,7 +18,7 @@ class AppStrings {
   static const String processing = "processing";
   static const String driverData = "driverData";
   static const String userData = "userData";
-
+  static const String storeAddedSuccessfully = "storeAddedSuccessfully";
   static const String coupons = "coupons";
   static const String paidBy = "paidBy";
   static const String date = "date";
@@ -411,9 +411,14 @@ class AppStrings {
   static const String available = "available";
 
   static const String addNewStoreAddress = "addNewStoreAddress";
-  static const String branchArea = "branchArea";
-  static const String region = "region";
-  static const String briefness = "briefness";
+
+  static const String enBranchArea = "enBranchArea";
+  static const String arBranchArea = "arBranchArea";
+  static const String enRegion = "enRegion";
+  static const String arRegion = "arRegion";
+  static const String enBriefness = "enBriefness";
+  static const String arBriefness = "arBriefness";
+
   static const String saveStore = "saveStore";
   static const String noLocationSelected = "noLocationSelected";
 

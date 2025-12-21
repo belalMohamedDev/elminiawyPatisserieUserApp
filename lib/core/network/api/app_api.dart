@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:elminiawy/feature/admin/coupons/data/model/coupons_response.dart';
+import 'package:elminiawy/feature/admin/storeAddress/data/model/create_store_address_request.dart';
 import 'package:elminiawy/feature/admin/storeAddress/data/model/store_address_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -186,6 +187,13 @@ abstract class AppServiceClient {
 
   @GET(ApiConstants.storeAddress)
   Future<BranchStoreAddressResponse> getAllBranchStoreAddressService();
+
+  
+  @POST(ApiConstants.storeAddress)
+  Future<BranchStoreAddressResponse> createNewBrancheAddress(
+    @Body() CreateStoreNewAddress createStoreNewAddress,
+  );
+
 
   @GET("${ApiConstants.driver}/allDriver")
   Future<AuthResponse> getAllDriverService();

@@ -8,24 +8,30 @@ class BranchStoreAddressResponse {
   BranchStoreAddressResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    if (json['data'] != null) {
-      data = <Data>[];
-      json['data'].forEach((v) {
-        data!.add(Data.fromJson(v));
-      });
+
+    final rawData = json['data'];
+
+    if (rawData is List) {
+      // ✅ case: list
+      data = rawData.map((e) => Data.fromJson(e)).toList();
+    } else if (rawData is Map<String, dynamic>) {
+      // ✅ case: single object
+      data = [Data.fromJson(rawData)];
+    } else {
+      data = [];
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['status'] = status;
-    data['message'] = message;
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
-    }
-    return data;
+    return {
+      'status': status,
+      'message': message,
+      'data': data?.map((e) => e.toJson()).toList(),
+    };
   }
 }
+
+
 
 class Data {
   Location? location;

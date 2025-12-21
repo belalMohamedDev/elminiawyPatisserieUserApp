@@ -55,7 +55,7 @@ extension StoreAddressStatePatterns on StoreAddressState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetStoreAddressLoading value)?  getStoreAddressLoading,TResult Function( GetStoreAddressError value)?  getStoreAddressError,TResult Function( GetStoreAddressSuccess value)?  getStoreAddressSuccess,TResult Function( StoreAddressLocationUpdated value)?  storeAddressLocationUpdated,TResult Function( StoreAddressZoneUpdated value)?  storeAddressZoneUpdated,TResult Function( StoreAddressError value)?  storeAddressError,TResult Function( StoreAddressSuccess value)?  storeAddressSuccess,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetStoreAddressLoading value)?  getStoreAddressLoading,TResult Function( GetStoreAddressError value)?  getStoreAddressError,TResult Function( GetStoreAddressSuccess value)?  getStoreAddressSuccess,TResult Function( StoreAddressLocationUpdated value)?  storeAddressLocationUpdated,TResult Function( StoreAddressZoneUpdated value)?  storeAddressZoneUpdated,TResult Function( StoreAddressError value)?  storeAddressError,TResult Function( StoreAddressSuccess value)?  storeAddressSuccess,TResult Function( StoreAddressLoading value)?  storeAddressLoading,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -66,7 +66,8 @@ return getStoreAddressSuccess(_that);case StoreAddressLocationUpdated() when sto
 return storeAddressLocationUpdated(_that);case StoreAddressZoneUpdated() when storeAddressZoneUpdated != null:
 return storeAddressZoneUpdated(_that);case StoreAddressError() when storeAddressError != null:
 return storeAddressError(_that);case StoreAddressSuccess() when storeAddressSuccess != null:
-return storeAddressSuccess(_that);case _:
+return storeAddressSuccess(_that);case StoreAddressLoading() when storeAddressLoading != null:
+return storeAddressLoading(_that);case _:
   return orElse();
 
 }
@@ -84,7 +85,7 @@ return storeAddressSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetStoreAddressLoading value)  getStoreAddressLoading,required TResult Function( GetStoreAddressError value)  getStoreAddressError,required TResult Function( GetStoreAddressSuccess value)  getStoreAddressSuccess,required TResult Function( StoreAddressLocationUpdated value)  storeAddressLocationUpdated,required TResult Function( StoreAddressZoneUpdated value)  storeAddressZoneUpdated,required TResult Function( StoreAddressError value)  storeAddressError,required TResult Function( StoreAddressSuccess value)  storeAddressSuccess,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetStoreAddressLoading value)  getStoreAddressLoading,required TResult Function( GetStoreAddressError value)  getStoreAddressError,required TResult Function( GetStoreAddressSuccess value)  getStoreAddressSuccess,required TResult Function( StoreAddressLocationUpdated value)  storeAddressLocationUpdated,required TResult Function( StoreAddressZoneUpdated value)  storeAddressZoneUpdated,required TResult Function( StoreAddressError value)  storeAddressError,required TResult Function( StoreAddressSuccess value)  storeAddressSuccess,required TResult Function( StoreAddressLoading value)  storeAddressLoading,}){
 final _that = this;
 switch (_that) {
 case _Initial():
@@ -95,7 +96,8 @@ return getStoreAddressSuccess(_that);case StoreAddressLocationUpdated():
 return storeAddressLocationUpdated(_that);case StoreAddressZoneUpdated():
 return storeAddressZoneUpdated(_that);case StoreAddressError():
 return storeAddressError(_that);case StoreAddressSuccess():
-return storeAddressSuccess(_that);case _:
+return storeAddressSuccess(_that);case StoreAddressLoading():
+return storeAddressLoading(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -112,7 +114,7 @@ return storeAddressSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetStoreAddressLoading value)?  getStoreAddressLoading,TResult? Function( GetStoreAddressError value)?  getStoreAddressError,TResult? Function( GetStoreAddressSuccess value)?  getStoreAddressSuccess,TResult? Function( StoreAddressLocationUpdated value)?  storeAddressLocationUpdated,TResult? Function( StoreAddressZoneUpdated value)?  storeAddressZoneUpdated,TResult? Function( StoreAddressError value)?  storeAddressError,TResult? Function( StoreAddressSuccess value)?  storeAddressSuccess,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetStoreAddressLoading value)?  getStoreAddressLoading,TResult? Function( GetStoreAddressError value)?  getStoreAddressError,TResult? Function( GetStoreAddressSuccess value)?  getStoreAddressSuccess,TResult? Function( StoreAddressLocationUpdated value)?  storeAddressLocationUpdated,TResult? Function( StoreAddressZoneUpdated value)?  storeAddressZoneUpdated,TResult? Function( StoreAddressError value)?  storeAddressError,TResult? Function( StoreAddressSuccess value)?  storeAddressSuccess,TResult? Function( StoreAddressLoading value)?  storeAddressLoading,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
@@ -123,7 +125,8 @@ return getStoreAddressSuccess(_that);case StoreAddressLocationUpdated() when sto
 return storeAddressLocationUpdated(_that);case StoreAddressZoneUpdated() when storeAddressZoneUpdated != null:
 return storeAddressZoneUpdated(_that);case StoreAddressError() when storeAddressError != null:
 return storeAddressError(_that);case StoreAddressSuccess() when storeAddressSuccess != null:
-return storeAddressSuccess(_that);case _:
+return storeAddressSuccess(_that);case StoreAddressLoading() when storeAddressLoading != null:
+return storeAddressLoading(_that);case _:
   return null;
 
 }
@@ -140,7 +143,7 @@ return storeAddressSuccess(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getStoreAddressLoading,TResult Function( ApiErrorModel apiErrorModel)?  getStoreAddressError,TResult Function( BranchStoreAddressResponse data)?  getStoreAddressSuccess,TResult Function()?  storeAddressLocationUpdated,TResult Function()?  storeAddressZoneUpdated,TResult Function( String message)?  storeAddressError,TResult Function( Map<String, dynamic> payload)?  storeAddressSuccess,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getStoreAddressLoading,TResult Function( ApiErrorModel apiErrorModel)?  getStoreAddressError,TResult Function( BranchStoreAddressResponse data)?  getStoreAddressSuccess,TResult Function()?  storeAddressLocationUpdated,TResult Function()?  storeAddressZoneUpdated,TResult Function( String message)?  storeAddressError,TResult Function()?  storeAddressSuccess,TResult Function()?  storeAddressLoading,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetStoreAddressLoading() when getStoreAddressLoading != null:
@@ -150,7 +153,8 @@ return getStoreAddressSuccess(_that.data);case StoreAddressLocationUpdated() whe
 return storeAddressLocationUpdated();case StoreAddressZoneUpdated() when storeAddressZoneUpdated != null:
 return storeAddressZoneUpdated();case StoreAddressError() when storeAddressError != null:
 return storeAddressError(_that.message);case StoreAddressSuccess() when storeAddressSuccess != null:
-return storeAddressSuccess(_that.payload);case _:
+return storeAddressSuccess();case StoreAddressLoading() when storeAddressLoading != null:
+return storeAddressLoading();case _:
   return orElse();
 
 }
@@ -168,7 +172,7 @@ return storeAddressSuccess(_that.payload);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getStoreAddressLoading,required TResult Function( ApiErrorModel apiErrorModel)  getStoreAddressError,required TResult Function( BranchStoreAddressResponse data)  getStoreAddressSuccess,required TResult Function()  storeAddressLocationUpdated,required TResult Function()  storeAddressZoneUpdated,required TResult Function( String message)  storeAddressError,required TResult Function( Map<String, dynamic> payload)  storeAddressSuccess,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getStoreAddressLoading,required TResult Function( ApiErrorModel apiErrorModel)  getStoreAddressError,required TResult Function( BranchStoreAddressResponse data)  getStoreAddressSuccess,required TResult Function()  storeAddressLocationUpdated,required TResult Function()  storeAddressZoneUpdated,required TResult Function( String message)  storeAddressError,required TResult Function()  storeAddressSuccess,required TResult Function()  storeAddressLoading,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case GetStoreAddressLoading():
@@ -178,7 +182,8 @@ return getStoreAddressSuccess(_that.data);case StoreAddressLocationUpdated():
 return storeAddressLocationUpdated();case StoreAddressZoneUpdated():
 return storeAddressZoneUpdated();case StoreAddressError():
 return storeAddressError(_that.message);case StoreAddressSuccess():
-return storeAddressSuccess(_that.payload);case _:
+return storeAddressSuccess();case StoreAddressLoading():
+return storeAddressLoading();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,7 +200,7 @@ return storeAddressSuccess(_that.payload);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getStoreAddressLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getStoreAddressError,TResult? Function( BranchStoreAddressResponse data)?  getStoreAddressSuccess,TResult? Function()?  storeAddressLocationUpdated,TResult? Function()?  storeAddressZoneUpdated,TResult? Function( String message)?  storeAddressError,TResult? Function( Map<String, dynamic> payload)?  storeAddressSuccess,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getStoreAddressLoading,TResult? Function( ApiErrorModel apiErrorModel)?  getStoreAddressError,TResult? Function( BranchStoreAddressResponse data)?  getStoreAddressSuccess,TResult? Function()?  storeAddressLocationUpdated,TResult? Function()?  storeAddressZoneUpdated,TResult? Function( String message)?  storeAddressError,TResult? Function()?  storeAddressSuccess,TResult? Function()?  storeAddressLoading,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case GetStoreAddressLoading() when getStoreAddressLoading != null:
@@ -205,7 +210,8 @@ return getStoreAddressSuccess(_that.data);case StoreAddressLocationUpdated() whe
 return storeAddressLocationUpdated();case StoreAddressZoneUpdated() when storeAddressZoneUpdated != null:
 return storeAddressZoneUpdated();case StoreAddressError() when storeAddressError != null:
 return storeAddressError(_that.message);case StoreAddressSuccess() when storeAddressSuccess != null:
-return storeAddressSuccess(_that.payload);case _:
+return storeAddressSuccess();case StoreAddressLoading() when storeAddressLoading != null:
+return storeAddressLoading();case _:
   return null;
 
 }
@@ -543,72 +549,64 @@ as String,
 
 
 class StoreAddressSuccess implements StoreAddressState {
-  const StoreAddressSuccess(final  Map<String, dynamic> payload): _payload = payload;
+  const StoreAddressSuccess();
   
 
- final  Map<String, dynamic> _payload;
- Map<String, dynamic> get payload {
-  if (_payload is EqualUnmodifiableMapView) return _payload;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_payload);
-}
 
 
-/// Create a copy of StoreAddressState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$StoreAddressSuccessCopyWith<StoreAddressSuccess> get copyWith => _$StoreAddressSuccessCopyWithImpl<StoreAddressSuccess>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StoreAddressSuccess&&const DeepCollectionEquality().equals(other._payload, _payload));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StoreAddressSuccess);
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_payload));
+int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'StoreAddressState.storeAddressSuccess(payload: $payload)';
+  return 'StoreAddressState.storeAddressSuccess()';
 }
 
 
 }
+
+
+
 
 /// @nodoc
-abstract mixin class $StoreAddressSuccessCopyWith<$Res> implements $StoreAddressStateCopyWith<$Res> {
-  factory $StoreAddressSuccessCopyWith(StoreAddressSuccess value, $Res Function(StoreAddressSuccess) _then) = _$StoreAddressSuccessCopyWithImpl;
-@useResult
-$Res call({
- Map<String, dynamic> payload
-});
+
+
+class StoreAddressLoading implements StoreAddressState {
+  const StoreAddressLoading();
+  
 
 
 
 
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StoreAddressLoading);
 }
-/// @nodoc
-class _$StoreAddressSuccessCopyWithImpl<$Res>
-    implements $StoreAddressSuccessCopyWith<$Res> {
-  _$StoreAddressSuccessCopyWithImpl(this._self, this._then);
 
-  final StoreAddressSuccess _self;
-  final $Res Function(StoreAddressSuccess) _then;
 
-/// Create a copy of StoreAddressState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? payload = null,}) {
-  return _then(StoreAddressSuccess(
-null == payload ? _self._payload : payload // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'StoreAddressState.storeAddressLoading()';
 }
 
 
 }
+
+
+
 
 // dart format on
