@@ -78,7 +78,12 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                       0,
                     )
                     ..rotateZ(adminHomeCubit.rotate)
-                    ..scale(adminHomeCubit.scaleFactor),
+                    ..scaleByDouble(
+                      adminHomeCubit.scaleFactor,
+                      adminHomeCubit.scaleFactor,
+                      adminHomeCubit.scaleFactor,
+                      1.0,
+                    ),
               duration: const Duration(milliseconds: 250),
               child: Stack(
                 children: [

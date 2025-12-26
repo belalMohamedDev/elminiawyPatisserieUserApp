@@ -146,7 +146,7 @@ class ProductBottomSheet extends StatelessWidget {
   }
 
   Row _productImageRatingNameAndFavoritRow(
-      product, BuildContext context, ResponsiveUtils responsive) {
+      dynamic product, BuildContext context, ResponsiveUtils responsive) {
     return Row(
       children: [
         Padding(
@@ -233,7 +233,7 @@ class ProductBottomSheet extends StatelessWidget {
   }
 
   Container _wishListContainer(
-      BuildContext context, product, ResponsiveUtils responsive) {
+      BuildContext context, dynamic product, ResponsiveUtils responsive) {
     return Container(
       decoration: BoxDecoration(
         color: ColorManger.backgroundItem,

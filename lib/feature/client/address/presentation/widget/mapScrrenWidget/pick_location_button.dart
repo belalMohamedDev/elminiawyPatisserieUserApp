@@ -25,53 +25,73 @@ class PickLocationButton extends StatelessWidget {
       child: CustomButton(
         onPressed: () async {
           if (mapCubit.checkLocationAvailableResponse != null) {
-            if (mapCubit.checkLocationAvailableResponse!
+            if (mapCubit
+                        .checkLocationAvailableResponse!
                         .storeAddressAvailable ==
                     true &&
                 mapCubit.checkLocationAvailableResponse!.isAddressAvailable ==
                     true) {
-              bool loginMap =
-                  SharedPrefHelper.getBool(PrefKeys.prefsSetLoginMap);
+              bool loginMap = SharedPrefHelper.getBool(
+                PrefKeys.prefsSetLoginMap,
+              );
               if (isUpdateMap == true) {
                 mapCubit.moveToLocation(
-                    position: mapCubit.targetPosition,
-                    controller: mapCubit.newAddressMapController);
+                  position: mapCubit.targetPosition,
+                  controller: mapCubit.newAddressMapController,
+                );
                 Navigator.pop(context);
               } else if (isHomeMap == true) {
-                await SharedPrefHelper.setSecuredString(PrefKeys.enLocationArea,
-                    mapCubit.checkLocationAvailableResponse!.englishAddress!);
-                await SharedPrefHelper.setSecuredString(PrefKeys.arLocationArea,
-                    mapCubit.checkLocationAvailableResponse!.arabicAddress!);
+                await SharedPrefHelper.setSecuredString(
+                  PrefKeys.enLocationArea,
+                  mapCubit.checkLocationAvailableResponse!.englishAddress!,
+                );
+                await SharedPrefHelper.setSecuredString(
+                  PrefKeys.arLocationArea,
+                  mapCubit.checkLocationAvailableResponse!.arabicAddress!,
+                );
                 await SharedPrefHelper.setData(
-                    PrefKeys.latAddressHome, mapCubit.targetPosition.latitude);
-                await SharedPrefHelper.setData(PrefKeys.longAddressHome,
-                    mapCubit.targetPosition.longitude);
+                  PrefKeys.latAddressHome,
+                  mapCubit.targetPosition.latitude,
+                );
+                await SharedPrefHelper.setData(
+                  PrefKeys.longAddressHome,
+                  mapCubit.targetPosition.longitude,
+                );
 
                 mapCubit.setLocationToHome();
-                Navigator.pop(context);
+                if (context.mounted) Navigator.pop(context);
               } else if (loginMap == true) {
-                await SharedPrefHelper.setSecuredString(PrefKeys.enLocationArea,
-                    mapCubit.checkLocationAvailableResponse!.englishAddress!);
-                await SharedPrefHelper.setSecuredString(PrefKeys.arLocationArea,
-                    mapCubit.checkLocationAvailableResponse!.arabicAddress!);
+                await SharedPrefHelper.setSecuredString(
+                  PrefKeys.enLocationArea,
+                  mapCubit.checkLocationAvailableResponse!.englishAddress!,
+                );
+                await SharedPrefHelper.setSecuredString(
+                  PrefKeys.arLocationArea,
+                  mapCubit.checkLocationAvailableResponse!.arabicAddress!,
+                );
 
                 await SharedPrefHelper.setData(
-                    PrefKeys.latAddressHome, mapCubit.targetPosition.latitude);
-                await SharedPrefHelper.setData(PrefKeys.longAddressHome,
-                    mapCubit.targetPosition.longitude);
+                  PrefKeys.latAddressHome,
+                  mapCubit.targetPosition.latitude,
+                );
+                await SharedPrefHelper.setData(
+                  PrefKeys.longAddressHome,
+                  mapCubit.targetPosition.longitude,
+                );
 
                 await SharedPrefHelper.setData(
-                    PrefKeys.prefsSetLoginMap, false);
+                  PrefKeys.prefsSetLoginMap,
+                  false,
+                );
 
                 // mapCubit.setLocationToHome();
-                context.pushNamedAndRemoveUntil(Routes.bottomNavBarRoute);
+                if (context.mounted) {
+                  context.pushNamedAndRemoveUntil(Routes.bottomNavBarRoute);
+                }
               } else {
                 // Use the context only if the widget is still mounted.
 
-                Navigator.popAndPushNamed(
-                  context,
-                  Routes.addNewAddress,
-                );
+                Navigator.popAndPushNamed(context, Routes.addNewAddress);
               }
             }
           }
@@ -88,24 +108,29 @@ class PickLocationButton extends StatelessWidget {
               )
             : Text(
                 mapCubit.checkLocationAvailableResponse != null
-                    ? mapCubit.checkLocationAvailableResponse!
-                                    .storeAddressAvailable ==
-                                true &&
-                            mapCubit.checkLocationAvailableResponse!
-                                    .isAddressAvailable ==
-                                true
-                        ? context.translate(AppStrings.pickLocation)
-                        : mapCubit.checkLocationAvailableResponse!
+                    ? mapCubit
+                                      .checkLocationAvailableResponse!
+                                      .storeAddressAvailable ==
+                                  true &&
+                              mapCubit
+                                      .checkLocationAvailableResponse!
+                                      .isAddressAvailable ==
+                                  true
+                          ? context.translate(AppStrings.pickLocation)
+                          : mapCubit
+                                    .checkLocationAvailableResponse!
                                     .isAddressAvailable ==
                                 false
-                            ? context
-                                .translate(AppStrings.addressNotFoundInThisArea)
-                            : context.translate(
-                                AppStrings.serviceNotAvailableInThisArea)
+                          ? context.translate(
+                              AppStrings.addressNotFoundInThisArea,
+                            )
+                          : context.translate(
+                              AppStrings.serviceNotAvailableInThisArea,
+                            )
                     : context.translate(AppStrings.enterCompleteAddress),
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      fontSize: responsive.setTextSize(3.8),
-                    ),
+                  fontSize: responsive.setTextSize(3.8),
+                ),
               ),
       ),
     );

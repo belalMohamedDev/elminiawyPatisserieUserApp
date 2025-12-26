@@ -21,14 +21,15 @@ class FilterBottomSheet extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      left: isEnLocale ? 30.w : 0,
-                      right: isEnLocale ? 0 : 30.w,
-                      bottom: 15.h),
+                    left: isEnLocale ? 30.w : 0,
+                    right: isEnLocale ? 0 : 30.w,
+                    bottom: 15.h,
+                  ),
                   child: Text(
                     context.translate(AppStrings.sortBy),
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontSize: 18.sp,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleLarge!.copyWith(fontSize: 18.sp),
                   ),
                 ),
                 Padding(
@@ -62,7 +63,7 @@ class FilterBottomSheet extends StatelessWidget {
                             searchBloc.selectedOption,
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -75,10 +76,9 @@ class FilterBottomSheet extends StatelessWidget {
                         padding: EdgeInsets.only(top: 30.h, bottom: 15.h),
                         child: Text(
                           context.translate(AppStrings.priceRange),
-                          style:
-                              Theme.of(context).textTheme.titleLarge!.copyWith(
-                                    fontSize: 18.sp,
-                                  ),
+                          style: Theme.of(
+                            context,
+                          ).textTheme.titleLarge!.copyWith(fontSize: 18.sp),
                         ),
                       ),
                       Padding(
@@ -97,9 +97,7 @@ class FilterBottomSheet extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
+                      SizedBox(height: 10.h),
                       RangeSlider(
                         values: searchBloc.selectedRange,
                         min: 0,
@@ -112,24 +110,20 @@ class FilterBottomSheet extends StatelessWidget {
                         ),
                         onChanged: (selectedRange) {
                           searchBloc.add(
-                              SearchEvent.updateSelectedRange(selectedRange));
+                            SearchEvent.updateSelectedRange(selectedRange),
+                          );
                         },
                       ),
-                      SizedBox(
-                        height: 30.h,
-                      ),
+                      SizedBox(height: 30.h),
                       CustomButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
                         widget: Text(
                           context.translate(AppStrings.applyFilter),
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .copyWith(
-                                fontSize: 14.sp,
-                              ),
+                          style: Theme.of(
+                            context,
+                          ).textTheme.headlineSmall!.copyWith(fontSize: 14.sp),
                         ),
                       ),
                     ],
@@ -145,24 +139,25 @@ class FilterBottomSheet extends StatelessWidget {
 }
 
 Widget buildListTile(
-    BuildContext context, String title, int value, int groupValue) {
+  BuildContext context,
+  String title,
+  int value,
+  int groupValue,
+) {
   return SizedBox(
     height: 40.h,
     child: ListTile(
       contentPadding: EdgeInsets.zero,
-      title: Text(
-        title,
-        style: TextStyle(fontSize: 14.sp),
-      ),
-      leading: Radio<int>(
-        activeColor: ColorManger.brun,
+      title: Text(title, style: TextStyle(fontSize: 14.sp)),
+      leading: RadioMenuButton<int>(
         value: value,
         groupValue: groupValue,
         onChanged: (selectedOption) {
-          context
-              .read<SearchBloc>()
-              .add(SearchEvent.updateSelectedOption(selectedOption!));
+          context.read<SearchBloc>().add(
+            SearchEvent.updateSelectedOption(selectedOption!),
+          );
         },
+        child: const SizedBox.shrink(),
       ),
     ),
   );

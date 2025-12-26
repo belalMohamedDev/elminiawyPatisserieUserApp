@@ -72,7 +72,7 @@ class OrderDetailsBody extends StatelessWidget {
                           isEnLocale,
                         ),
                         responsive.setSizeBox(height: 1),
-                        if (order!.driverId != null) ...[
+                        if (order?.driverId != null) ...[
                           _driverInformationContainer(
                             responsive,
                             context,
@@ -161,7 +161,7 @@ class OrderDetailsBody extends StatelessWidget {
                 ),
                 responsive.setSizeBox(width: 2),
                 Text(
-                  "${order!.driverId?.name}",
+                  "${order?.driverId?.name}",
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: ColorManger.brun,
                     fontSize: responsive.setTextSize(3.5),
@@ -175,7 +175,7 @@ class OrderDetailsBody extends StatelessWidget {
                 ),
                 responsive.setSizeBox(width: 2),
                 Text(
-                  "${order.driverId!.phone}",
+                  "${order?.driverId?.phone}",
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: ColorManger.brun,
                     fontSize: responsive.setTextSize(3.5),
@@ -239,12 +239,14 @@ class OrderDetailsBody extends StatelessWidget {
                     ),
                   ),
                   responsive.setSizeBox(width: 2),
-                  _namePriceAndRatingColumn(
-                    order,
-                    index,
-                    orderResponse,
-                    context,
-                    responsive,
+                  Expanded(
+                    child: _namePriceAndRatingColumn(
+                      order,
+                      index,
+                      orderResponse,
+                      context,
+                      responsive,
+                    ),
                   ),
                   const Spacer(),
                 ],

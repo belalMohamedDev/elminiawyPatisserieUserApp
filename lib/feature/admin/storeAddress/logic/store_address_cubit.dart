@@ -144,7 +144,7 @@ class StoreAddressCubit extends Cubit<StoreAddressState> {
         emit(StoreAddressState.storeAddressSuccess());
       },
       failure: (error) {
-        print(error.message);
+      
         emit(StoreAddressState.storeAddressError(error.message!));
       },
     );

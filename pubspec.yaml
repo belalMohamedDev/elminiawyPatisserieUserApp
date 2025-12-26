@@ -19,7 +19,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.8.0 <4.0.0'
+  sdk: ">=3.8.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -119,8 +119,7 @@ dependencies:
   hive_flutter: ^1.1.0
   dotted_border: ^3.1.0
   google_places_flutter: ^2.1.1
-
-
+  vector_math: ^2.1.4
 
 dev_dependencies:
   flutter_test:
@@ -151,11 +150,6 @@ flutter:
     - asset/image/
     - asset/json/
 
-
-
-    
-
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -171,7 +165,6 @@ flutter:
     - family: Acme
       fonts:
         - asset: asset/fonts/Acme-Regular.ttf
-
 
     - family: Cairo
       fonts:
@@ -197,7 +190,7 @@ flutter:
           weight: 400
 
         - asset: asset/fonts/Cairo-SemiBold.ttf
-          weight: 600    
+          weight: 600
 
   #
   # For details regarding fonts from package dependencies,

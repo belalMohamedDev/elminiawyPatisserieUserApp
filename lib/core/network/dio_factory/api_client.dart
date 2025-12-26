@@ -15,7 +15,7 @@ class TokenInterceptor extends Interceptor {
 
     String? language =
         SharedPrefHelper.getString(PrefKeys.prefsLanguage).isEmpty
-            ? 'en'
+            ? 'ar'
             : SharedPrefHelper.getString(PrefKeys.prefsLanguage);
 
     // Add headers

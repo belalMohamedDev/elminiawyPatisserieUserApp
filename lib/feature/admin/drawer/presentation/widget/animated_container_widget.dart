@@ -18,14 +18,15 @@ class AnimatedContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return AnimatedContainer(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         color: color,
       ),
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
-        ..scale(scaleFactor)
+        ..multiply(
+          Matrix4.diagonal3Values(scaleFactor, scaleFactor, scaleFactor),
+        )
         ..rotateZ(rotate),
       duration: const Duration(milliseconds: 250),
     );
