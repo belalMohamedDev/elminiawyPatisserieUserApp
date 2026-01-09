@@ -6,10 +6,10 @@ class FontConsistent {
 
   static String geLocalozedFontFamily() {
     final currentLanguage = SharedPrefHelper.getString(PrefKeys.prefsLanguage);
-    if (currentLanguage == 'ar') {
-      return fontFamilyCairo;
-    } else {
+    if (currentLanguage == 'en') {
       return fontFamilyAcme;
+    } else {
+      return fontFamilyCairo;
     }
   }
 }

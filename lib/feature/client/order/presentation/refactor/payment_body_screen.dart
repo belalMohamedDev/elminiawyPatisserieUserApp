@@ -61,112 +61,106 @@ class PaymentBody extends StatelessWidget {
       builder: (context, state) {
         final paymentCubit = context.read<PaymentCubit>();
 
-        return Column(
-          children: [
-            InkWell(
-              onTap: () {
-                paymentCubit.changePaymentMethod('Cash');
-              },
-              child: Container(
-                width: double.infinity,
-                height: responsive.setHeight(6),
-                decoration: BoxDecoration(
-                  color: paymentCubit.choosePaymentMethod == 'Cash'
-                      ? ColorManger.brownLight
-                      : ColorManger.backgroundItem,
-                  borderRadius: BorderRadius.circular(
-                    responsive.setBorderRadius(2),
-                  ),
-                  border: Border.all(
-                    color: paymentCubit.choosePaymentMethod == 'Cash'
-                        ? ColorManger.brownLight
-                        : ColorManger.backgroundItem,
-                    width: responsive.setWidth(0.1),
-                  ),
-                ),
-                child: Padding(
-                  padding: responsive.setPadding(
-                    left: isEnLocale ? 2 : 0,
-                    right: isEnLocale ? 0 : 2,
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.handshake_rounded, color: ColorManger.brun),
-                      responsive.setSizeBox(width: 3),
-                      Text(
-                        context.translate(AppStrings.cashOnDelivery),
-                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontSize: responsive.setTextSize(4),
-                        ),
-                      ),
-                      const Spacer(),
-                      RadioMenuButton<String>(
-                        value: 'Cash',
-                        groupValue: paymentCubit.choosePaymentMethod,
-                        onChanged: (value) {
-                          paymentCubit.changePaymentMethod(value!);
-                        },
-                        child: const SizedBox.shrink(),
-                      ),
-                    ],
-                  ),
-                ),
+        return RadioGroup<String>(
+          groupValue: paymentCubit.choosePaymentMethod,
+          onChanged: (value) {
+            paymentCubit.changePaymentMethod(value!);
+          },
+          child: Column(
+            children: [
+              _PaymentOptionTile(
+                responsive: responsive,
+                isEnLocale: isEnLocale,
+                isSelected: paymentCubit.choosePaymentMethod == 'Cash',
+                icon: Icons.handshake_rounded,
+                title: context.translate(AppStrings.cashOnDelivery),
+                value: 'Cash',
+                onTap: () => paymentCubit.changePaymentMethod('Cash'),
               ),
-            ),
-            responsive.setSizeBox(height: 1.2),
-            InkWell(
-              onTap: () {
-                paymentCubit.changePaymentMethod('card');
-              },
-              child: Container(
-                width: double.infinity,
-                height: responsive.setHeight(6),
-                decoration: BoxDecoration(
-                  color: paymentCubit.choosePaymentMethod == 'card'
-                      ? ColorManger.brownLight
-                      : ColorManger.backgroundItem,
-                  borderRadius: BorderRadius.circular(
-                    responsive.setBorderRadius(2),
-                  ),
-                  border: Border.all(
-                    color: paymentCubit.choosePaymentMethod == 'card'
-                        ? ColorManger.brownLight
-                        : ColorManger.backgroundItem,
-                    width: responsive.setWidth(0.1),
-                  ),
-                ),
-                child: Padding(
-                  padding: responsive.setPadding(
-                    left: isEnLocale ? 2 : 0,
-                    right: isEnLocale ? 0 : 2,
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.credit_card, color: ColorManger.brun),
-                      responsive.setSizeBox(width: 3),
-                      Text(
-                        context.translate(AppStrings.creditOrDebitCard),
-                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontSize: responsive.setTextSize(4),
-                        ),
-                      ),
-                      const Spacer(),
-                      RadioMenuButton<String>(
-                        value: 'card',
-                        groupValue: paymentCubit.choosePaymentMethod,
-                        onChanged: (value) {
-                          paymentCubit.changePaymentMethod(value!);
-                        },
-                        child: const SizedBox.shrink(),
-                      ),
-                    ],
-                  ),
-                ),
+
+              responsive.setSizeBox(height: 1.2),
+
+              _PaymentOptionTile(
+                responsive: responsive,
+                isEnLocale: isEnLocale,
+                isSelected: paymentCubit.choosePaymentMethod == 'card',
+                icon: Icons.credit_card,
+                title: context.translate(AppStrings.creditOrDebitCard),
+                value: 'card',
+                onTap: () => paymentCubit.changePaymentMethod('card'),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
+    );
+  }
+}
+
+class _PaymentOptionTile extends StatelessWidget {
+  final ResponsiveUtils responsive;
+  final bool isEnLocale;
+  final bool isSelected;
+  final IconData icon;
+  final String title;
+  final String value;
+  final VoidCallback onTap;
+
+  const _PaymentOptionTile({
+    required this.responsive,
+    required this.isEnLocale,
+    required this.isSelected,
+    required this.icon,
+    required this.title,
+    required this.value,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
+      child: Container(
+        width: double.infinity,
+        height: responsive.setHeight(6),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? ColorManger.brownLight
+              : ColorManger.backgroundItem,
+          borderRadius: BorderRadius.circular(responsive.setBorderRadius(2)),
+          border: Border.all(
+            color: isSelected
+                ? ColorManger.brownLight
+                : ColorManger.backgroundItem,
+            width: responsive.setWidth(0.1),
+          ),
+        ),
+        padding: responsive.setPadding(
+          left: isEnLocale ? 2 : 0,
+          right: isEnLocale ? 0 : 2,
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: ColorManger.brun),
+
+            responsive.setSizeBox(width: 3),
+
+            Expanded(
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontSize: responsive.setTextSize(4),
+                ),
+              ),
+            ),
+
+            Radio<String>(value: value, activeColor: ColorManger.brun),
+          ],
+        ),
+      ),
     );
   }
 }

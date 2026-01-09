@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (!mounted) return;
       context.read<LogOutCubit>().getUserName();
 
       if (!AppInitialRoute.isAnonymousUser) {

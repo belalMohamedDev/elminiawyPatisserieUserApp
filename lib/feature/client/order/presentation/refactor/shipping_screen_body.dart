@@ -86,10 +86,8 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                                     color: ColorManger.brun,
                                   ),
                                   responsive.setSizeBox(width: 2),
-                                  ConstrainedBox(
-                                    constraints: BoxConstraints(
-                                      maxWidth: 240.w,
-                                    ),
+
+                                  Expanded(
                                     child: Text(
                                       context.translate(
                                         AppStrings.addNewAddress,
@@ -97,12 +95,13 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                                       maxLines: 1,
                                       textAlign: TextAlign.start,
                                       overflow: TextOverflow.ellipsis,
+
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleLarge!
                                           .copyWith(
                                             fontSize: responsive.setTextSize(
-                                              4.5,
+                                              3.5,
                                             ),
                                           ),
                                     ),
@@ -140,46 +139,44 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
                                 left: isEnLocale ? 2 : 0,
                                 right: isEnLocale ? 0 : 2,
                               ),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    IconlyBold.location,
-                                    color: ColorManger.brun,
-                                  ),
-                                  responsive.setSizeBox(width: 2),
-                                  ConstrainedBox(
-                                    constraints: BoxConstraints(
-                                      maxWidth: 220.w,
+                              child: RadioGroup<int>(
+                                groupValue: userAddressCubit.addressIndex,
+                                onChanged: (value) {
+                                  userAddressCubit.changeBetweenAddress(value!);
+                                },
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      IconlyBold.location,
+                                      color: ColorManger.brun,
                                     ),
-                                    child: Text(
-                                      userAddressCubit
-                                          .addressDataList[index]
-                                          .region!,
-                                      maxLines: 1,
-                                      textAlign: TextAlign.start,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleLarge!
-                                          .copyWith(
-                                            fontSize: responsive.setTextSize(
-                                              3.5,
+
+                                    responsive.setSizeBox(width: 2),
+
+                                    Expanded(
+                                      child: Text(
+                                        userAddressCubit
+                                            .addressDataList[index]
+                                            .region!,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleLarge!
+                                            .copyWith(
+                                              fontSize: responsive.setTextSize(
+                                                3.5,
+                                              ),
                                             ),
-                                          ),
+                                      ),
                                     ),
-                                  ),
-                                  const Spacer(),
-                                  RadioMenuButton<int>(
-                                    value: index,
-                                    groupValue: userAddressCubit.addressIndex,
-                                    onChanged: (value) {
-                                      userAddressCubit.changeBetweenAddress(
-                                        value!,
-                                      );
-                                    },
-                                    child: const SizedBox.shrink(),
-                                  ),
-                                ],
+
+                                    Radio<int>(
+                                      value: index,
+                                      activeColor: ColorManger.brun,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -199,9 +196,7 @@ class _ShippingAddressBodyState extends State<ShippingAddressBody> {
             widget: Text(
               context.translate(AppStrings.saveAndContinue),
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: responsive.setTextSize(
-                  3.8,
-                ), // Adjusted font size for responsiveness
+                fontSize: responsive.setTextSize(3.8),
               ),
             ),
           ),

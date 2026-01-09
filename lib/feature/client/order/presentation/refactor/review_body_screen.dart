@@ -18,8 +18,8 @@ class _ReviewPaymentBodyState extends State<ReviewPaymentBody>
     final addressData = AppInitialRoute.role == "admin"
         ? null
         : context.read<UserAddressCubit>().addressDataList[context
-              .read<PaymentCubit>()
-              .selectedIndex];
+              .read<UserAddressCubit>()
+              .addressIndex];
 
     return Padding(
       padding: responsive.setPadding(top: 3, right: 6, left: 6, bottom: 5),

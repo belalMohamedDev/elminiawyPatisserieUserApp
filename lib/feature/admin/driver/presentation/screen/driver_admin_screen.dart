@@ -12,6 +12,7 @@ class _AdminDriversScreenState extends State<AdminDriversScreen>
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (!mounted) return;
       await Future.wait([context.read<DriverCubit>().fetchGetAllDriver()]);
     });
 

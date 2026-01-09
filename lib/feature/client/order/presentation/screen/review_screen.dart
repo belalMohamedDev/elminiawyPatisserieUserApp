@@ -151,15 +151,15 @@ class ReviewPaymentScreen extends StatelessWidget {
                               shippingAddressId: isAdmin
                                   ? null
                                   : addressCubit
-                                        .addressDataList[paymentCubit
-                                            .selectedIndex]
+                                        .addressDataList[addressCubit
+                                            .addressIndex]
                                         .sId!,
                               nearbyStoreAddress:
                                   addressCubit.addressDataList.isEmpty
                                   ? null
                                   : addressCubit
-                                        .addressDataList[paymentCubit
-                                            .selectedIndex]
+                                        .addressDataList[addressCubit
+                                            .addressIndex]
                                         .nearbyStoreAddress,
                             );
                           },

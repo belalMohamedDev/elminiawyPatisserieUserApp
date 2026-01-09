@@ -27,6 +27,7 @@ class OrderDetailsBody extends StatelessWidget {
               );
               context.pop();
               WidgetsBinding.instance.addPostFrameCallback((_) async {
+                if (!context.mounted) return;
                 await Future.wait([
                   context.read<PaymentCubit>().getCompleteOrdersSummit(),
                   context.read<PaymentCubit>().getOrdersPendingSummit(),

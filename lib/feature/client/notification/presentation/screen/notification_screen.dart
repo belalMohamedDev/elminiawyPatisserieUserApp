@@ -1,6 +1,5 @@
 import 'package:elminiawy/core/common/shared/shared_imports.dart';
 
-
 /// [UserNotificationScreen] is a StatefulWidget that displays user notifications.
 /// It fetches notifications when the screen is initialized and marks all as seen.
 class UserNotificationScreen extends StatefulWidget {
@@ -19,9 +18,10 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
     // Using a post frame callback to ensure it runs after the first frame is rendered.
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       // If the user name is not empty, mark all notifications as seen.
+      if (!mounted) return;
 
       await Future.wait([
-        context.read<UserNotificationCubit>().updateAllNotificationsToSeen()
+        context.read<UserNotificationCubit>().updateAllNotificationsToSeen(),
       ]);
     });
   }
@@ -37,7 +37,8 @@ class _UserNotificationScreenState extends State<UserNotificationScreen> {
         title: Text(
           context.translate(AppStrings.notification),
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
-              fontSize: responsive.setTextSize(4)), // Responsive font size
+            fontSize: responsive.setTextSize(4),
+          ), // Responsive font size
         ),
       ),
       // Body content of the screen, showing notifications to the user.

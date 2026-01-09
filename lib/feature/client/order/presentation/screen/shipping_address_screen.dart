@@ -14,16 +14,17 @@ class _ShippingAddressState extends State<ShippingAddress> {
     final mapCubit = context.read<MapCubit>();
 
     LatLng latLng = LatLng(
-        userAddressCubit
-            .addressDataList[context.read<PaymentCubit>().selectedIndex]
-            .location!
-            .coordinates!
-            .last,
-        userAddressCubit
-            .addressDataList[context.read<PaymentCubit>().selectedIndex]
-            .location!
-            .coordinates!
-            .first);
+      userAddressCubit
+          .addressDataList[context.read<UserAddressCubit>().addressIndex]
+          .location!
+          .coordinates!
+          .last,
+      userAddressCubit
+          .addressDataList[context.read<UserAddressCubit>().addressIndex]
+          .location!
+          .coordinates!
+          .first,
+    );
 
     mapCubit.addCurrentLocationMarkerToMap(latLng);
 
@@ -39,11 +40,10 @@ class _ShippingAddressState extends State<ShippingAddress> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-         context.translate(AppStrings.checkOut),
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(fontSize: responsive.setTextSize(4)),
+          context.translate(AppStrings.checkOut),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge!.copyWith(fontSize: responsive.setTextSize(4)),
         ),
       ),
       body: const ShippingAddressBody(),

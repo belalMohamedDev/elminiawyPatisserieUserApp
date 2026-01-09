@@ -12,7 +12,8 @@ class _AdminProductScreenState extends State<AdminProductScreen> {
   bool isLoadingMore = false;
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (!mounted) return;
       context.read<AdminProductCubit>().fetchGetAllProduct();
       context.read<SubCategoriesCubit>().fetchGetSubCategories(
         disablePagination: true,

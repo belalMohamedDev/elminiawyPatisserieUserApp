@@ -5,7 +5,7 @@ part 'user_address_cubit.freezed.dart';
 
 class UserAddressCubit extends Cubit<UserAddressState> {
   UserAddressCubit(this._userAddressRepository)
-      : super(const UserAddressState.initial());
+    : super(const UserAddressState.initial());
 
   final UserAddressRepositoryImplement _userAddressRepository;
 
@@ -23,40 +23,34 @@ class UserAddressCubit extends Cubit<UserAddressState> {
 
   List<GetAddressResponseData> addressDataList = [];
 
-  int addressIndex=0;
+  int addressIndex = 0;
 
   void changeBetweenAddress(int chooseAdress) {
     addressIndex = chooseAdress;
+
     emit(UserAddressState.chooseAddress(addressIndex));
   }
 
   int regionAreaIndex = 0;
   String aliasData = "Apartment";
   List<Map<String, dynamic>> regionArea = [
-    {
-      "imagePath": ImageAsset.building,
-      "textEn": "Apartment",
-      "textAr": "شقة",
-    },
-    {
-      "imagePath": ImageAsset.home,
-      "textEn": "House",
-      "textAr": "منزل",
-    },
-    {
-      "imagePath": ImageAsset.bag,
-      "textEn": "Office",
-      "textAr": "مكتب",
-    },
+    {"imagePath": ImageAsset.building, "textEn": "Apartment", "textAr": "شقة"},
+    {"imagePath": ImageAsset.home, "textEn": "House", "textAr": "منزل"},
+    {"imagePath": ImageAsset.bag, "textEn": "Office", "textAr": "مكتب"},
   ];
 
   void updateAddressAreaInformation(
-      String newInfo, LatLng latLng, List<MarkerData> markData) {
-    emit(UserAddressState.updateAddressRegion(
-      message: newInfo,
-      markData: markData,
-      latLng: latLng,
-    ));
+    String newInfo,
+    LatLng latLng,
+    List<MarkerData> markData,
+  ) {
+    emit(
+      UserAddressState.updateAddressRegion(
+        message: newInfo,
+        markData: markData,
+        latLng: latLng,
+      ),
+    );
   }
 
   void clearAllControllers() {
@@ -91,9 +85,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       },
       failure: (error) {
         if (error.statusCode != 401) {
-          emit(
-            UserAddressState.getAllAddressError(error),
-          );
+          emit(UserAddressState.getAllAddressError(error));
         }
       },
     );
@@ -107,36 +99,38 @@ class UserAddressCubit extends Cubit<UserAddressState> {
     response.when(
       success: (dataResponse) {
         addressDataList.removeWhere((address) => address.sId == addressId);
-        emit(UserAddressState.removeAddressSuccess(
-            dataResponse, addressDataList));
+        emit(
+          UserAddressState.removeAddressSuccess(dataResponse, addressDataList),
+        );
       },
       failure: (error) {
         if (error.statusCode != 401) {
-          emit(
-            UserAddressState.removeAddressError(error),
-          );
+          emit(UserAddressState.removeAddressError(error));
         }
       },
     );
   }
 
-  Future<void> addNewAddress(
-      {required String arRegion,
-      required String enRegion,
-      required String latitude,
-      required String longitude,
-      required String nearbyStoreAddress}) async {
+  Future<void> addNewAddress({
+    required String arRegion,
+    required String enRegion,
+    required String latitude,
+    required String longitude,
+    required String nearbyStoreAddress,
+  }) async {
     emit(const UserAddressState.createNewAddressLoading());
 
     final createAddressRequestBody = createAddressRequest(
-        arRegion: arRegion,
-        enRegion: enRegion,
-        latitude: latitude,
-        longitude: longitude,
-        nearbyStoreAddress: nearbyStoreAddress);
+      arRegion: arRegion,
+      enRegion: enRegion,
+      latitude: latitude,
+      longitude: longitude,
+      nearbyStoreAddress: nearbyStoreAddress,
+    );
 
-    final response = await _userAddressRepository
-        .createANewAddress(createAddressRequestBody);
+    final response = await _userAddressRepository.createANewAddress(
+      createAddressRequestBody,
+    );
 
     response.when(
       success: (dataResponse) {
@@ -148,9 +142,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       },
       failure: (error) {
         if (error.statusCode != 401) {
-          emit(
-            UserAddressState.createNewAddressError(error),
-          );
+          emit(UserAddressState.createNewAddressError(error));
         }
       },
     );
@@ -170,10 +162,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       buildingName: buildingNameController.text.getOrNull(),
       apartmentNumber: companyController.text.getOrNull(),
       floor: floorController.text.getOrNull(),
-      region: {
-        'en': enRegion ?? "",
-        'ar': arRegion ?? "",
-      },
+      region: {'en': enRegion ?? "", 'ar': arRegion ?? ""},
       streetName: streetController.text.getOrNull(),
       phone: phoneNumberContoller.text.getOrNull(),
       addressLabel: addressLabel.text.getOrNull(),
@@ -202,24 +191,28 @@ class UserAddressCubit extends Cubit<UserAddressState> {
     );
   }
 
-  Future<void> updateAddress(
-      {required String id,
-      required String arRegion,
-      required String enRegion,
-      required String latitude,
-      required String longitude,
-      required String nearbyStoreAddress}) async {
+  Future<void> updateAddress({
+    required String id,
+    required String arRegion,
+    required String enRegion,
+    required String latitude,
+    required String longitude,
+    required String nearbyStoreAddress,
+  }) async {
     emit(const UserAddressState.updateAddressLoading());
 
     final createAddressRequestBody = createAddressRequest(
-        arRegion: arRegion,
-        enRegion: enRegion,
-        latitude: latitude,
-        longitude: longitude,
-        nearbyStoreAddress: nearbyStoreAddress);
+      arRegion: arRegion,
+      enRegion: enRegion,
+      latitude: latitude,
+      longitude: longitude,
+      nearbyStoreAddress: nearbyStoreAddress,
+    );
 
     final response = await _userAddressRepository.updateAddress(
-        id, createAddressRequestBody);
+      id,
+      createAddressRequestBody,
+    );
 
     response.when(
       success: (dataResponse) {
@@ -239,9 +232,7 @@ class UserAddressCubit extends Cubit<UserAddressState> {
       },
       failure: (error) {
         if (error.statusCode != 401) {
-          emit(
-            UserAddressState.updateAddressError(error),
-          );
+          emit(UserAddressState.updateAddressError(error));
         }
       },
     );

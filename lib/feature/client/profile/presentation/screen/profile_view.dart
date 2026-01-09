@@ -27,6 +27,7 @@ class _ProfileViewState extends State<ProfileView> {
         if (!mounted) return;
 
         await _loadOrders();
+        if (!mounted) return;
 
         _localeListener = context.read<AppLogicCubit>().stream.listen((
           locale,
@@ -43,6 +44,8 @@ class _ProfileViewState extends State<ProfileView> {
   }
 
   Future<void> _loadOrders() async {
+    if (!mounted) return;
+
     await Future.wait([
       context.read<PaymentCubit>().getCompleteOrdersSummit(),
       context.read<PaymentCubit>().getOrdersPendingSummit(),
